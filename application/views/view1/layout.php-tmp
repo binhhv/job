@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--Load head for website-->
+<?php echo $head;?>
+</head>
+<body>
+      <!--Content website-->
+      <div id="page" class="container">
+       <header id="header" class="site-header">
+<?php echo $header;?>
+       </header>
+       <div id="main">
+
+       </div>
+       <footer id="footer">
+
+       </footer>
+      </div>
+
+</body>
+</html>

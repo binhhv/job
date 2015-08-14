@@ -1,0 +1,254 @@
+.b-container{
+	margin: 20px auto;
+	max-width: 960px;
+	min-width: 320px;
+	background-color: #FFF;
+
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid #ebebeb;
+  -webkit-box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);
+}
+.row{
+	margin: 0;
+}
+.b-header{
+	padding: 0 5px;
+	position: relative;
+}
+.header-account{
+	position: absolute;
+	top: 5px;
+	right: 0;
+}
+.header-account ul{
+	list-style: none;
+}
+.header-account ul li{
+	float: left;
+}
+.header-account ul li a{
+	color: blue;
+	text-decoration: none;
+}
+.header-account ul li.space{
+	margin: 0 5px;
+}
+.menu{display:block;}
+ 
+.menu li{display: inline-block;
+position: relative;
+z-index:100;
+
+}
+ 
+.menu li a {font-weight:600;
+text-decoration:none;
+padding:11px;
+display:block;
+
+ 
+-webkit-transition: all 0.2s ease-in-out 0s;
+   -moz-transition: all 0.2s ease-in-out 0s;
+   -o-transition: all 0.2s ease-in-out 0s;
+   -ms-transition: all 0.2s ease-in-out 0s;
+   transition: all 0.2s ease-in-out 0s;
+}
+ 
+.menu li a:hover, .menu li:hover > a{
+}
+/* hide the second level menu */
+.menu ul {display: none;
+margin: 0;
+padding: 0;
+width: 150px;
+position: absolute;
+top: 40px;
+left: 0px;
+margin: 0;
+}
+ 
+/* display second level menu on hover */
+.menu li:hover > ul{ display: block;}
+ 
+.menu ul li {display:block;
+float: none;
+background:none;
+margin:0;
+padding:0;
+}
+ 
+.menu ul li a {font-size:12px;
+font-weight:normal;
+display:block;
+}
+ 
+.menu ul li a:hover, .menu ul li:hover > a{
+}
+/* change level 3 menu positions */
+.menu ul ul {left: 149px;
+	top: 0px;
+}
+.mobile-menu{display:none;
+width:100%;
+padding:11px;
+text-transform:uppercase;
+font-weight:600;
+}
+.mobile-menu:hover{background:#3E4156;
+text-decoration:none;
+}
+nav{
+float:right;/*left*/
+}
+nav ul.menu{
+padding: 0;
+		  background: #f8f8f8;
+  border-bottom: 1px dotted #a9a9a9;
+  border-top: 1px dotted #a9a9a9;
+}
+nav ul{
+
+  background-color: #383838;
+
+}
+
+.menu li ul li a{
+color: #ababab;
+  border-bottom: 1px solid #474747;
+  padding: 10px 10px;
+  margin: 0px 10px;}
+.headline{
+	margin-top: 10px;
+}
+.content-page{
+	margin-top: 20px;
+}
+.left-page{
+	padding: 5px;
+}
+ol.products{
+	padding: 0;
+}
+ol.products li.product{
+	list-style: none outside;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	padding: 5px;
+	margin-top: 5px;
+}
+/*.logo-product{
+	height: 75px;
+	width: 90px;
+	margin: 0;
+	padding: 0;
+}*/
+.logo-product img{
+	max-width: 100%;
+	max-height: 100%;
+}
+.row-product{
+	width: 100%;
+	display: table;
+}
+.row-product .logo-product {
+	display: table-cell;
+	height: 90px;
+	width: 90px;
+}
+.row-product .content-product{
+	display: table-cell;
+	vertical-align: top;
+	padding-left: 10px;
+}
+.content-product .status{
+	float: right;
+	background: green;
+	color: #fff;
+	line-height: 15px;
+	padding: 1px 5px;
+}
+.title-product a{
+	color: blue;
+	text-decoration: none;
+	font-weight: bold;
+}
+.option-product{
+	margin-top: 5px;
+}
+.option-product .row [class*="col-"]{
+	padding: 0;
+	margin: 0;
+}
+.red{
+	background-color: red;
+	width: 20px;
+	height: 10px;
+	display: inline-block;
+}
+.green{
+	margin-left: 5px;
+	background-color: green;
+	width: 20px;
+	height: 10px;
+	display: inline-block;
+}
+.right-page{
+	padding: 5px;
+}
+.right-page .widget{
+	margin-top: 5px;
+	padding: 1px;
+}
+.ads{
+	margin-top: 10px;
+	border: 1px solid #ccc;
+	padding: 2px;
+}
+.ads img{
+	width: 100%;
+	height: 100%;
+}
+ul.key-search {
+	list-style: none;
+	display: inline-block;
+	padding: 0;
+}
+ul.key-search li{
+	padding: 2px;
+	margin: 5px;
+	background-color: #ccc;
+	color: #000;
+	float: left;
+
+}
+.tab-pane{
+	border-right: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+ul {
+	list-style: none;
+	padding: 0;
+}
+ul.search{
+	display: inline-block;
+}
+ul.search li{
+	margin: 5px;
+	padding: 5px;
+	width: 100%;
+}
+
+.footer-page{
+	margin: 10px 0;
+}
+.footer-page a{
+	color: #000;
+}
+.footer-page .no-padding{
+	padding: 0;
+}

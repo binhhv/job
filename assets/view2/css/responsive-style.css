@@ -1,0 +1,39 @@
+
+.no-padding{
+	padding: 0 !important;
+}
+@media (min-width: 768px) {
+	
+}
+@media (min-width: 992px) {
+	
+}
+@media (min-width: 1200px) {
+
+}
+
+
+@media (max-width: 767px) {
+	
+.logo {
+		text-align: center;
+	}
+	.logo{
+		margin-left: 0;
+	}
+	.logo img{
+		float: none;
+	}
+	h1.title-page{
+		display: block;
+		padding-left: 0;
+	}
+	.content-top .text-left{
+	margin-bottom: 10px;
+}
+
+}/*end media queries*/
+
+@media (max-width: 479px) {
+	
+}

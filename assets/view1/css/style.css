@@ -1,0 +1,304 @@
+html{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+body{
+	/*font-size: 12px;
+	font-family: "Helvetica Neue", Arial, sans-seri;*/
+	font: 400 13px/normal "Montserrat",sans-serif;
+	-webkit-font-smoothing:antialiased;
+	/*background: #ccc;*/
+
+
+}
+/*h1{
+	font-size: 2.2em;
+}
+h2{
+	font-size: 2em;
+}
+h3{
+	font-size: 1.8em;
+}
+h4{
+	font-size: 1.55em;
+}
+h5{
+	font-size: 1.3em;
+}
+h6{
+	font-size: 1.1em;
+}*/
+#main .container{
+	padding: 0 !important;
+}
+a{
+	text-decoration: none;
+	color: #787878;
+}
+a:hover,a:visited{
+	text-decoration: none !important;
+}
+#page{
+	overflow: hidden;
+	background: #ccc;
+	color: #787878;
+	padding: 0;
+	/*height: 1000px;*/
+	/*max-width: 1190px;*/
+	margin: 0 auto;
+
+}
+header{
+	background: #fff;
+}
+/*css for header*/
+.site-header{
+	color: #787878 !important;
+}
+.site-header{
+	/*box-shadow: inset rgba(0,0,0,.1) 0 -4px 0;*/
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+.site-header{
+	position: relative;
+    z-index: 3;
+}
+
+.site-title span{
+	display: none;
+}
+.site-title span.web-title {
+	display: inline-block;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+.nav-menu-primary li a{
+	font-weight: 600;
+}
+.nav-menu-primary .sub-menu li a{
+	
+	font-weight: 600;
+}
+.nav-menu-primary .sub-menu li a:hover{
+	color: red;
+	/*font-size: 14px;*/
+}
+.site-header.open .primary-menu-toggle{
+	position: absolute !important;
+	top: 5px;
+	right: -25px;
+}
+.site-header .container{
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+
+/*css content*/
+.flex-direction-nav {
+display: none !important;
+}
+.flex-caption{
+left:0 !important;
+}
+.search-box{
+	background: #fff;
+	padding-top: 1px;
+}
+.search-box-title h1{
+	margin: 2px 0 !important;
+
+}
+.search-box .search-box-title{
+	/*border-top:2px solid #ccc;*/
+		padding: 5px 10px;
+		/*border-width: 4px 0 0 ;*/
+}
+.search-box .search-box-content{
+	border-top:2px solid #ccc;
+	padding: 20px;
+}
+.search-box .search-box-content form button.btn-search{
+	font-weight: 700;
+	padding: 6px 20px;
+}
+.company-partner-box{
+	background: #fff;
+	padding-top: 1px;
+	margin-top: 10px;
+}
+.company-partner-box img{
+	max-width: 100%;
+	max-height: auto;
+	height: 90px;
+}
+.company-partner-box .single-ad{
+	background: #fff;
+    border: 1px #e5e5e5 solid;
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    padding: 15px 0;
+    height: 95px;
+}
+.company-partner-box .single-ad img {
+    display: block;
+    margin: 0 auto;
+    max-height: 43px;
+    max-width: 125px;
+}
+.company-partner-box .single-ad .ad-slogan {
+    text-align: center;
+    display: block;
+    color: #555555;
+    line-height: 14px;
+    margin-top: 5px;
+}
+.company-partner-box .item-company-partner{
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	background: #fff;
+}
+.company-partner-box .item-company-partner a.single-ad{
+	margin: 10px;
+
+}
+.content-page .left-page{
+	background: #fff;
+	margin: 10px 0;
+}
+.content-page .right-page{
+	margin: 10px 0;
+	padding-left: 0px;
+}
+.left-page .list-job-box {
+	border-top:10px solid #ccc; 
+}
+.left-page .list-job-box .title-job-box h1{
+	margin: 0 !important;
+}
+.left-page .list-job-box .title-job-box{
+	padding: 5px 10px;
+}
+.left-page .list-job-box .content-job-box{
+	border-top:2px solid #ccc;
+	padding: 20px;
+}
+.job-type.term-5, .job-type.freelance { background-color: #3399cc; } 
+.job-type.term-2, .job-type.full-time { background-color: #01be7e; } 
+.job-type.term-6, .job-type.internship { background-color: #00aabc; } 
+.job-type.term-3, .job-type.part-time { background-color: #f08d3c; } 
+.job-type.term-4, .job-type.temporary { background-color: #e22712; } 
+.content-page .left-page{
+	background: #fff;
+	margin: 10px 0;
+}
+.left-page .list-job-box .title-job-box h1{
+	margin: 0 !important;
+}
+.left-page .list-job-box .title-job-box{
+	padding: 5px 10px;
+}
+.left-page .list-job-box .content-job-box{
+	border-top:2px solid #ccc;
+	padding: 20px;
+}
+/*.load-more-job{
+	    font: 700 14px/normal Montserrat,sans-serif;
+	    color: #ccc;
+	    border: 2px solid #ccc;
+}*/
+.left-page .list-job-box .footer-job-box a:hover{
+	color: red !important;
+	}
+
+.content-page .right-page .search-detail-box {
+    background: #fff;
+    margin: 0px 0;
+}
+.right-page .search-detail-box {
+    border-top: 10px solid #ccc;
+}
+.right-page .search-detail-box .title-search-detail-box h1{
+	margin: 0 !important;
+}
+.right-page .search-detail-box .title-search-detail-box{
+	padding: 5px 10px;
+}
+.right-page .search-detail-box .content-search-detail-box{
+	border-top:2px solid #ccc;
+	padding: 10px;
+}
+.right-page .search-detail-box .footer-search-detail-box{
+	padding: 10px;
+}
+.right-page .banner-ads-box{
+	border-top:2px solid #ccc;
+	padding: 10px;
+	height: auto;
+	  background: #fff;
+	  margin-top: 10px;
+}
+.right-page .banner-ads-box img{
+	max-width: 100%;
+	max-height: auto;
+}
+.right-page .tag-job{
+	background: #fff;
+   border-top: 10px solid #ccc;
+}
+.right-page .tag-job .title-tag-job{
+	padding: 5px 10px;
+}
+.right-page .tag-job .title-tag-job h1{
+	margin: 0 !important;
+}
+.right-page .tag-job .content-tag-job{
+	border-top:2px solid #ccc;
+	padding: 10px;
+}
+.right-page .tag-job .content-tag-job ul.ul-tag-job{
+	overflow: hidden;
+    zoom: 1;
+    margin: 0;
+    padding: 10px!important;
+}
+.right-page .tag-job .content-tag-job ul.ul-tag-job li.item-tag-job{
+	 float: left; 
+     margin: 2px!important; 
+     list-style: none;
+}
+.right-page .tag-job .content-tag-job ul.ul-tag-job li.item-tag-job a{
+	color: #333;
+    float: left;
+    background: #f2f1e9;
+    border-radius: 2px 2px 2px 2px;
+    border-right: 1px solid #eee;
+    font-size: 12px;
+    text-decoration: none!important;
+    text-shadow: 0 1px 0 #E8E8E8;
+    padding: 5px !important;
+}
+
+
+   
+/*css footer*/
+footer{
+	background: #fff;
+	margin-top: 10px;
+	padding: 20px 0;
+}
+footer h1{
+	margin: 2px 0 !important;
+}
+#map{
+	height: 200px;
+	border: 1px solid #ccc;
+	padding: 5px;
+	border-radius: 5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
