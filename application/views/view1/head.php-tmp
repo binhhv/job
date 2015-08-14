@@ -77,5 +77,18 @@
 //         }
 //     });
 // });
+ $(function(){
 
+    $('.flexslider').flexslider({
+        animation: "slide",
+        slideshow: true,
+        start: function(slider){
+          $('body').removeClass('loading');
+           $('.sologan').show();
+        },
+        direction:false,
+    });
+
+   //$('.sologan').show('slow').delay(10000).show('slow');
+});
  </script>
