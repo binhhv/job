@@ -6,7 +6,7 @@
 		}
 	],
 	"settings": {
-        "xdebug": { "url": "http://binhhv.com/job" }
+        "xdebug": { "url": "http://localhost/job" }
     }
 
 }
