@@ -47,7 +47,11 @@
 	z-index: 99999;
 	background: url('../img/page/go_top.png') no-repeat;
 }
-
+footer ul{
+	margin: 10px 0;
+	padding: 0;
+	display: block;
+}
 .sologan {
 	top: 0; left: 0; bottom: 0; right: 0;
 	margin: auto;

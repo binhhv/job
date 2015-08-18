@@ -3,12 +3,12 @@
 			<div class="flexslider" >
 	              <ul class="slides">
 	              	<?php
-	              	//var_dump($slides);
-	              		foreach ($slides as $value) { ?>
-	              			<li><a href="#"><img src="<?php echo base_url() .'assets/view1/img/slide/'.$value;?>" alt="slider" /></a></li>
+//var_dump($slides);
+foreach ($slides as $value) {?>
+	              			<li><a href="#"><img src="<?php echo base_url() . 'assets/main/img/slide/' . $value;?>" alt="slider" /></a></li>
 	              		<?php }
-	              	 ?>
-	            
+?>
+
 	               <!--  <li><a href="gallery-single.htm"><img src="<?php echo base_url();?>assets/common/img/gallery/bg1.jpg" alt="slider" /></a></li>
 	                <li><a href="gallery-single.htm"><img src="<?php echo base_url();?>assets/common/img/gallery/bg2.jpg" alt="slider" /></a></li>
 	                <li><a href="gallery-single.htm"><img src="<?php echo base_url();?>assets/common/img/gallery/bg3.jpg" alt="slider" /></a></li>

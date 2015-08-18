@@ -12,12 +12,12 @@ if (isset($slide)) {
 	<div class="row">
 		<div class="col-sm-12 col-md-12 col-xs-12">
 			<div class="search-box">
-			<div class="search-box-title">
-					<h1>Tìm kiếm việc làm</h1>
+			<div class="search-box-title primary-color">
+					<h2 class="white-color">Tìm kiếm việc làm</h2>
 				</div>
 				<div class="row search-box-content">
-					<div class="col-sm-9 col-md-9 col-xs-12">
-						<form class="form-inline" role="form">
+					<div class="col-sm-12 col-md-12 col-xs-12">
+						<!-- <form class="form-inline" role="form">
 
 					  <div class="form-group ">
 					    <input type="email" class="form-control" id="email" placeholder="Nhập từ khóa">
@@ -34,19 +34,51 @@ if (isset($slide)) {
 					    		<option value="-1">N3</option>
 					    	</select>
 					  </div>
-					  <!-- <div class="form-group col-sm-3 col-md-3 col-xs-12">
-					    <label for="pwd">Cấp bậc:</label>
-					    <select class="form-control select-rank">
-					    		<option value="-1">Tất cả</option>
-					    		<option value="-1">Nhân viên</option>
-					    		<option value="-1">Mới tốt nghiệp</option>
-					    </select>
-					  </div> -->
 					  <div class="form-group ">
 					  		<button type="submit" class="btn btn-danger btn-search">Tìm kiếm</button>
 					  </div>
 
-					</form>
+					</form> -->
+
+					<form role="form">
+				<div class="content-search-detail-box">
+
+					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
+					    <input type="email" class="form-control" id="email" placeholder="Từ khóa" style="height: 39px;">
+					  </div>
+					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
+					   	<select class="fomr-control">
+					   		<option>Chọn tỉnh thành</option>
+					   	</select>
+					  </div>
+					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
+					   	<select class="fomr-control">
+					   		<option>Chọn mức lương</option>
+					   	</select>
+					  </div>
+					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
+					   	<select class="fomr-control">
+					   		<option>Chọn trình độ</option>
+					   	</select>
+					  </div>
+					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
+					   	<select class="fomr-control">
+					   		<option>Chọn giới tính</option>
+					   	</select>
+					  </div>
+					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
+					   	<select class="fomr-control">
+					   		<option>Chọn loại hình công việc</option>
+					   	</select>
+					  </div>
+
+
+
+				</div>
+				<div class="footer-search-detail-box text-center">
+				<button type="submit" class="btn btn-primary">Tìm kiếm</button>
+				</div>
+				</form>
 
 					</div>
 					<div class="col-sm-3 col-md-3 col-xs-12 text-left">
@@ -60,7 +92,7 @@ if (isset($slide)) {
 		<div class="col-sm-12 col-md-12 col-lg-12">
 			<div class="search-box">
 				<div class="search-box-title">
-					<h1>Tìm việc làm</h1>
+					<h2>Tìm việc làm</h2>
 				</div>
 				<div class="search-box-content">
 					<form class="form-inline" role="form">
@@ -117,7 +149,7 @@ if (isset($slide)) {
 					<div class="col-md-12 col-xs-12 col-sm-12">
 						<div class="title-employer-box success-color inline-css">
 							<h2><i class="fa fa-user"></i>&nbsp;Dành cho người tìm việc
-								<button class="btn btn-primary pull-right push-left"><strong>Đăng ký tài khoản</strong></button>
+								<button class="btn btn-primary pull-right push-left btn-xs"><strong>Đăng ký tài khoản</strong></button>
 							</h2>
 						</div>
 					</div>
@@ -132,7 +164,7 @@ if (isset($slide)) {
 
 				<div class="list-job-box">
 					<div class="title-job-box primary-color">
-						<h1 class="white-color">Công việc mới nhất</h1>
+						<h2 class="white-color">Công việc mới nhất</h2>
 					</div>
 					<div class="content-job-box">
 						<ul class="job_listings">
@@ -140,7 +172,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Game Developer</h3>
@@ -155,7 +187,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
-											<li class="date"><date>Posted 2 day ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -165,7 +197,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>PHP Developer</h3>
@@ -180,7 +212,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
-											<li class="date"><date>Posted 2 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -190,7 +222,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Developer mobile</h3>
@@ -205,7 +237,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
-											<li class="date"><date>Posted 3 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -215,7 +247,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Design Technologist</h3>
@@ -230,7 +262,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
-											<li class="date"><date>Posted 5 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -242,11 +274,32 @@ if (isset($slide)) {
 							<a class="load_more_jobs" href="#"><strong><i class="fa fa-plus"></i>Xem thêm công việc</strong></a>
 					</div>
 				</div>
+
+				<div class="employer-box no-padding-top margin-top--10">
+				<div class="row">
+					<div class="col-md-12 col-xs-12 col-sm-12">
+						<div class="title-employer-box primary-color inline-css">
+							<h2><i class="fa fa-paper-plane"></i>&nbsp;text here
+
+							<button class="btn btn-success pull-right-button margin-l-10 btn-xs"><strong>Tạo mới hồ sơ</strong></button>
+							<button class="btn btn-warning pull-right-button margin-l-10 btn-xs"><strong>Gửi CV</strong></button></h2>
+
+						</div>
+					</div>
+					<!-- <div class="col-md-12 col-xs-12 col-sm-12">
+						<div class="content-employer-box">
+							<button class="btn btn-success"><strong>Đăng ký tài khoản</strong></button>
+						</div>
+					</div> -->
+				</div>
+			</div>
+
+
 				<!--find detail job-->
 
-				<div class="list-job-box">
+				<!-- <div class="list-job-box">
 					<div class="title-job-box primary-color">
-						<h1 class="white-color">Tìm kiếm chi tiết</h1>
+						<h2 class="white-color">Tìm kiếm chi tiết</h2>
 					</div>
 					<div class="content-job-box">
 							<div class="search-detail-box">
@@ -291,13 +344,13 @@ if (isset($slide)) {
 				</form>
 			</div>
 					</div>
-				</div>
+				</div> -->
 
 
 				<!--job japanese-->
 				<div class="list-job-box">
 					<div class="title-job-box primary-color">
-						<h1 class="white-color">Công việc ở nước Nhật</h1>
+						<h2 class="white-color">Việc làm tại Nhật</h2>
 					</div>
 					<div class="content-job-box">
 						<ul class="job_listings">
@@ -305,7 +358,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Game Developer</h3>
@@ -320,7 +373,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
-											<li class="date"><date>Posted 2 day ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -330,7 +383,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>PHP Developer</h3>
@@ -345,7 +398,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
-											<li class="date"><date>Posted 2 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -355,7 +408,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Developer mobile</h3>
@@ -370,7 +423,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
-											<li class="date"><date>Posted 3 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -380,7 +433,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Design Technologist</h3>
@@ -395,7 +448,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
-											<li class="date"><date>Posted 5 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -415,7 +468,7 @@ if (isset($slide)) {
 				<!--list job mien trung-->
 				<div class="list-job-box">
 					<div class="title-job-box primary-color">
-						<h1 class="white-color">Công việc theo miền ở Việt Nam</h1>
+						<h2 class="white-color">Việc làm tại Việt Nam</h2>
 					</div>
 					<div class="content-job-box">
 
@@ -435,7 +488,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Game Developer</h3>
@@ -450,7 +503,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
-											<li class="date"><date>Posted 2 day ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -460,7 +513,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>PHP Developer</h3>
@@ -475,7 +528,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
-											<li class="date"><date>Posted 2 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -485,7 +538,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Developer mobile</h3>
@@ -500,7 +553,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
-											<li class="date"><date>Posted 3 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -510,7 +563,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Design Technologist</h3>
@@ -525,7 +578,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
-											<li class="date"><date>Posted 5 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -541,7 +594,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Game Developer</h3>
@@ -556,7 +609,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
-											<li class="date"><date>Posted 2 day ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -566,7 +619,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>PHP Developer</h3>
@@ -581,7 +634,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
-											<li class="date"><date>Posted 2 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -591,7 +644,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Developer mobile</h3>
@@ -606,7 +659,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
-											<li class="date"><date>Posted 3 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -616,7 +669,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Design Technologist</h3>
@@ -631,7 +684,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
-											<li class="date"><date>Posted 5 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -645,7 +698,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Game Developer</h3>
@@ -660,7 +713,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
-											<li class="date"><date>Posted 2 day ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -670,7 +723,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>PHP Developer</h3>
@@ -685,7 +738,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
-											<li class="date"><date>Posted 2 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -695,7 +748,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Developer mobile</h3>
@@ -710,7 +763,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
-											<li class="date"><date>Posted 3 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -720,7 +773,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Design Technologist</h3>
@@ -735,7 +788,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
-											<li class="date"><date>Posted 5 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -758,7 +811,7 @@ if (isset($slide)) {
 				<!--job for department -->
 					<div class="list-job-box">
 					<div class="title-job-box primary-color">
-						<h1 class="white-color">Công việc theo phân loại</h1>
+						<h2 class="white-color">Công việc theo phân loại</h2>
 					</div>
 					<div class="content-job-box">
 
@@ -779,7 +832,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Game Developer</h3>
@@ -794,7 +847,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
-											<li class="date"><date>Posted 2 day ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -804,7 +857,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>PHP Developer</h3>
@@ -819,7 +872,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
-											<li class="date"><date>Posted 2 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -829,7 +882,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Developer mobile</h3>
@@ -844,7 +897,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
-											<li class="date"><date>Posted 3 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -854,7 +907,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Design Technologist</h3>
@@ -869,7 +922,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
-											<li class="date"><date>Posted 5 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -885,7 +938,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Game Developer</h3>
@@ -900,7 +953,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
-											<li class="date"><date>Posted 2 day ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -910,7 +963,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>PHP Developer</h3>
@@ -925,7 +978,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
-											<li class="date"><date>Posted 2 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -935,7 +988,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Developer mobile</h3>
@@ -950,7 +1003,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
-											<li class="date"><date>Posted 3 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -960,7 +1013,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Design Technologist</h3>
@@ -975,7 +1028,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
-											<li class="date"><date>Posted 5 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -989,7 +1042,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Game Developer</h3>
@@ -1004,7 +1057,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
-											<li class="date"><date>Posted 2 day ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -1014,7 +1067,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>PHP Developer</h3>
@@ -1029,7 +1082,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
-											<li class="date"><date>Posted 2 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -1039,7 +1092,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Developer mobile</h3>
@@ -1054,7 +1107,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
-											<li class="date"><date>Posted 3 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -1064,7 +1117,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Design Technologist</h3>
@@ -1079,7 +1132,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
-											<li class="date"><date>Posted 5 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -1096,7 +1149,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Game Developer</h3>
@@ -1111,7 +1164,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
-											<li class="date"><date>Posted 2 day ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -1121,7 +1174,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>PHP Developer</h3>
@@ -1136,7 +1189,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
-											<li class="date"><date>Posted 2 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -1146,7 +1199,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Developer mobile</h3>
@@ -1161,7 +1214,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
-											<li class="date"><date>Posted 3 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -1171,7 +1224,7 @@ if (isset($slide)) {
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url().'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url().'assets/main/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Design Technologist</h3>
@@ -1186,7 +1239,7 @@ if (isset($slide)) {
 
 										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
-											<li class="date"><date>Posted 5 days ago</date></li>
+											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
 								</div>
@@ -1212,24 +1265,7 @@ if (isset($slide)) {
 
 				<!--end list job-->
 			</div>
-	<div class="employer-box no-padding-top margin-top--10">
-				<div class="row">
-					<div class="col-md-12 col-xs-12 col-sm-12">
-						<div class="title-employer-box primary-color inline-css">
-							<h2><i class="fa fa-paper-plane"></i>&nbsp;text here
 
-							<button class="btn btn-success pull-right-button margin-l-10"><strong>Tạo mới hồ sơ</strong></button>
-							<button class="btn btn-warning pull-right-button margin-l-10"><strong>Gửi CV</strong></button></h2>
-
-						</div>
-					</div>
-					<!-- <div class="col-md-12 col-xs-12 col-sm-12">
-						<div class="content-employer-box">
-							<button class="btn btn-success"><strong>Đăng ký tài khoản</strong></button>
-						</div>
-					</div> -->
-				</div>
-			</div>
 
 
 		</div>
@@ -1238,12 +1274,56 @@ if (isset($slide)) {
 	echo $sidebar;
 }
 ?>
-</div>
-		<!-- <div class="row">
-		<div class="col-sm-12 col-md-12 col-xs-12">-->
+		</div>
+		 <div class="row">
+		<div class="col-sm-12 col-md-12 col-xs-12">
+			<div class="company-partner-job">
+				<div class="row">
+			<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+			<div class="company-partner-box">
+				<div class="col-sm-4 col-md-4 col-lg-4 col-xs-6 item-company-partner">
+					<a href="#" class="single-ad">
+						<img src="<?php echo base_url().'assets/main/img/companypartner/canon_fe_88x43_3.png'?>">
+						<span class="ad-slogan">Company</span>
+					</a>
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 col-xs-6 item-company-partner">
+					<a href="#" class="single-ad">
+						<img src="<?php echo base_url().'assets/main/img/companypartner/eva_fe_24jan (1).jpg'?>">
+						<span class="ad-slogan">Company</span>
+					</a>
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 col-xs-6 item-company-partner">
+					<a href="#" class="single-ad">
+						<img src="<?php echo base_url().'assets/main/img/companypartner/eva_fe_24jan.jpg'?>">
+						<span class="ad-slogan">Company</span>
+					</a>
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 col-xs-6 item-company-partner">
+					<a href="#" class="single-ad">
+						<img src="<?php echo base_url().'assets/main/img/companypartner/honda-fe-88x43.gif'?>">
+						<span class="ad-slogan">Company</span>
+					</a>
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 col-xs-6 item-company-partner">
+					<a href="#" class="single-ad">
+						<img src="<?php echo base_url().'assets/main/img/companypartner/logovg_resize.jpg'?>">
+						<span class="ad-slogan">Company</span>
+					</a>
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 col-xs-6 item-company-partner">
+					<a href="#" class="single-ad">
+						<img src="<?php echo base_url().'assets/main/img/companypartner/microsoft.jpg'?>">
+						<span class="ad-slogan">Company</span>
+					</a>
+				</div>
 
-		<!-- </div>
-		</div> -->
+			</div>
+		</div>
+	</div>
+			</div>
+		</div>
+		</div>
 	</div>
 
 	<script type="text/javascript">

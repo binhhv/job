@@ -12,13 +12,15 @@ body{
 
 
 }
-/*h1{
-	font-size: 2.2em;
+h1{
+	font-size: 20px !important;
 }
 h2{
-	font-size: 2em;
+	font-size: 18px !important;
+	/*line-height: 34px !important;*/
+	margin: 0 !important;
 }
-h3{
+/*h3{
 	font-size: 1.8em;
 }
 h4{
@@ -56,6 +58,14 @@ header{
 /*css for header*/
 .site-header{
 	color: #787878 !important;
+
+  /*border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;*/
+  border: 1px solid #ebebeb;
+  -webkit-box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);
 }
 .site-header{
 	/*box-shadow: inset rgba(0,0,0,.1) 0 -4px 0;*/
@@ -106,6 +116,8 @@ left:0 !important;
 }
 .search-box{
 	background: #fff;
+	/*margin-top: 10px;*/
+	border-top: 10px solid #f1f1f1;
 	/*padding: 10px;*/
 }
 .search-box-title h1{
@@ -114,7 +126,7 @@ left:0 !important;
 }
 .search-box .search-box-title{
 	/*border-top:2px solid #f1f1f1;*/
-		padding: 5px 10px;
+		padding: 5px 20px;
 		/*border-width: 4px 0 0 ;*/
 }
 .search-box .search-box-content{
@@ -128,7 +140,7 @@ left:0 !important;
 .company-partner-box{
 	background: #fff;
 	padding-top: 1px;
-	margin-top: 10px;
+	margin: 10px 15px;
 }
 .company-partner-box img{
 	max-width: 100%;
@@ -200,7 +212,7 @@ left:0 !important;
 	margin: 0 !important;
 }
 .left-page .list-job-box .title-job-box{
-	padding: 5px 10px;
+	padding: 5px 20px;
 }
 .left-page .list-job-box .content-job-box{
 	border-top:2px solid #f1f1f1;
@@ -237,7 +249,7 @@ left:0 !important;
 }
 .right-page .banner-ads-box{
 	border-top:2px solid #f1f1f1;
-	padding: 10px;
+	/*padding: 10px;*/
 	height: auto;
 	  background: #fff;
 	  margin-top: 10px;
@@ -319,7 +331,7 @@ left:0 !important;
 
 	color: #fff;
 	font-weight: 500;
-	padding:10px;
+	padding:5px 20px;
 }
 .employer-box .title-employer-box h2{
 	margin: 0;
@@ -334,13 +346,20 @@ left:0 !important;
 	display: block;
 }
 .employer-box .content-employer-box button{
-	margin: 20px 0;
+	margin: 5px 0;
 }
 .sologan{
 	display: none;
 	position:absolute;top:10%;background: rgba(255, 255, 255, 0.3);left:10%;
 	/*z-index: 99999;*/
 	padding: 20px;text-align: center;
+
+
+}
+.sologan h4{
+	margin: 15px 0 !important;
+		font-weight: bold;
+		color: #000;
 }
 .no-padding-top{
 	padding-top: 0 !important;
@@ -395,11 +414,40 @@ left:0 !important;
 /*css footer*/
 footer{
 	background: #fff;
-	margin-top: 10px;
+	margin-top: 5px;
 	padding: 20px 0;
+	  border: 1px solid #ebebeb;
+  -webkit-box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);
 }
 footer h1{
 	margin: 2px 0 !important;
+}
+footer span{
+	display: block;
+}
+footer ul{
+	margin: auto;
+	padding: 0;
+	display: inline-block;
+}
+footer ul.social{
+	display: inline-block;
+	margin-top: 5px;
+		margin: auto;
+}
+footer ul li {
+	list-style: none;
+	float: left;
+	margin:0 10px;
+}
+footer ul li a:hover{
+	font-weight: bold;
+}
+footer span.copyrighttitle{
+	font-weight: bold;
+	font-size: 12px;
 }
 #map{
 	height: 200px;

@@ -3,7 +3,7 @@
 					<a href="<?php echo base_url();?>" title="Jobify Darker" rel="home" class="site-branding">
 						<h1 class="site-title">
 							<img src="<?php if (isset($logo)) {
-	echo base_url().'assets/view1/'.$logo;
+	echo base_url().'assets/main/'.$logo;
 }
 ?>" width="<?php if (isset($logoWidth)) {
 	echo $logoWidth;
@@ -76,8 +76,8 @@
 		<li id="menu-item-1954" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1954"><a href="contact/index.html">Contact</a></li>
 	</ul>
 	</li> -->
-	<li id="register-modal" class="register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Register</a></li>
-	<li id="register-modal" class="register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Login</a></li>
+	<li id="register-modal" class="register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Đăng ký</a></li>
+	<li id="register-modal" class="register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Đăng nhập</a></li>
 	<!-- <li id="login-modal" class="login menu-item menu-item-type-post_type menu-item-object-page menu-item-1900"><a href="login/index.html">Login</a></li> -->
 	<li id="menu-item-2075" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-2075"><a href="find-a-job/index.html">English<i class="fa fa-chevron-down"></i></a>
 			<ul class="sub-menu">

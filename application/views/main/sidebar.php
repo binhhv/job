@@ -10,57 +10,30 @@
 							<span class="text-center">Có <strong>502</strong> CV tìm việc trên website chúng tôi</span>
 							<button class="btn btn-warning">Đăng ký tài khoản</button>
 							<button class="btn btn-warning">Đăng tin tuyển dụng</button>
-							<button class="btn btn-warning">Liên hệ quảng cáo</button>
+							<!-- <button class="btn btn-warning">Liên hệ quảng cáo</button> -->
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="company-partner-job">
-				<div class="row">
-			<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
-			<div class="company-partner-box">
-				<div class="col-sm-4 col-md-4 col-lg-4 col-xs-6 item-company-partner">
-					<a href="#" class="single-ad">
-						<img src="<?php echo base_url() . 'assets/view1/img/companypartner/canon_fe_88x43_3.png'?>">
-						<span class="ad-slogan">Company</span>
-					</a>
-				</div>
-				<div class="col-sm-4 col-md-4 col-lg-4 col-xs-6 item-company-partner">
-					<a href="#" class="single-ad">
-						<img src="<?php echo base_url() . 'assets/view1/img/companypartner/eva_fe_24jan (1).jpg'?>">
-						<span class="ad-slogan">Company</span>
-					</a>
-				</div>
-				<div class="col-sm-4 col-md-4 col-lg-4 col-xs-6 item-company-partner">
-					<a href="#" class="single-ad">
-						<img src="<?php echo base_url() . 'assets/view1/img/companypartner/eva_fe_24jan.jpg'?>">
-						<span class="ad-slogan">Company</span>
-					</a>
-				</div>
-				<div class="col-sm-4 col-md-4 col-lg-4 col-xs-6 item-company-partner">
-					<a href="#" class="single-ad">
-						<img src="<?php echo base_url() . 'assets/view1/img/companypartner/honda-fe-88x43.gif'?>">
-						<span class="ad-slogan">Company</span>
-					</a>
-				</div>
-				<div class="col-sm-4 col-md-4 col-lg-4 col-xs-6 item-company-partner">
-					<a href="#" class="single-ad">
-						<img src="<?php echo base_url() . 'assets/view1/img/companypartner/logovg_resize.jpg'?>">
-						<span class="ad-slogan">Company</span>
-					</a>
-				</div>
-				<div class="col-sm-4 col-md-4 col-lg-4 col-xs-6 item-company-partner">
-					<a href="#" class="single-ad">
-						<img src="<?php echo base_url() . 'assets/view1/img/companypartner/microsoft.jpg'?>">
-						<span class="ad-slogan">Company</span>
-					</a>
-				</div>
 
+			<div class="employer-box">
+				<div class="row">
+					<div class="col-md-12 col-xs-12 col-sm-12">
+						<div class="title-employer-box warning-color">
+							<h2><i class="fa fa-mobile"></i>&nbsp;Liên hệ quảng cáo</h2>
+						</div>
+					</div>
+					<div class="col-md-12 col-xs-12 col-sm-12">
+						<div class="content-employer-box text-center">
+							<strong>0084 946 414 627</strong>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-	</div>
-			</div>
-			<div class="tag-job">
+
+
+
+			<!-- <div class="tag-job">
 				<div class="title-tag-job primary-color">
 					<h1 class="white-color">Tag Công việc</h1>
 				</div>
@@ -95,9 +68,9 @@
 						</li>
 					</ul>
 				</div>
-			</div>
+			</div> -->
 			<!-- <div class="banner-ads-box">
-				<img src="<?php echo base_url() . 'assets/view1/img/slide/slide1.jpg';?>">
+				<img src="<?php echo base_url() . 'assets/main/img/slide/slide1.jpg';?>">
 			</div> -->
 
 
@@ -160,11 +133,11 @@
 
 
 			<div class="banner-ads-box">
-				<img src="<?php echo base_url() . 'assets/view1/img/slide/slide1.jpg';?>">
+				<img src="<?php echo base_url() . 'assets/main/img/slide/slide1.jpg';?>">
 			</div>
 
 			<div class="banner-ads-box">
-				<img src="<?php echo base_url() . 'assets/view1/img/slide/slide1.jpg';?>">
+				<img src="<?php echo base_url() . 'assets/main/img/slide/slide1.jpg';?>">
 			</div>
 			<!-- <div class="employer-box">
 				<div class="row">
@@ -230,26 +203,26 @@
 				</div>
 			</div> -->
 			<!-- <div class="banner-ads-box">
-				<img src="<?php echo base_url() . 'assets/view1/img/slide/slide1.jpg';?>">
+				<img src="<?php echo base_url() . 'assets/main/img/slide/slide1.jpg';?>">
 			</div>
 			<div class="banner-ads-box">
-				<img src="<?php echo base_url() . 'assets/view1/img/slide/slide1.jpg';?>">
+				<img src="<?php echo base_url() . 'assets/main/img/slide/slide1.jpg';?>">
 			</div>-->
 			<div class="banner-ads-box">
-				<img src="<?php echo base_url() . 'assets/view1/img/slide/slide1.jpg';?>">
+				<img src="<?php echo base_url() . 'assets/main/img/slide/slide1.jpg';?>">
 			</div>
 			<div class="banner-ads-box">
-				<img src="<?php echo base_url() . 'assets/view1/img/slide/slide1.jpg';?>">
+				<img src="<?php echo base_url() . 'assets/main/img/slide/slide1.jpg';?>">
 			</div>
 			<div class="banner-ads-box">
-				<img src="<?php echo base_url() . 'assets/view1/img/slide/slide1.jpg';?>">
+				<img src="<?php echo base_url() . 'assets/main/img/slide/slide1.jpg';?>">
 			</div>
 			<div class="banner-ads-box">
-				<img src="<?php echo base_url() . 'assets/view1/img/slide/slide1.jpg';?>">
+				<img src="<?php echo base_url() . 'assets/main/img/slide/slide1.jpg';?>">
 			</div>
 			<div class="banner-ads-box">
-				<img src="<?php echo base_url() . 'assets/view1/img/slide/slide1.jpg';?>">
+				<img src="<?php echo base_url() . 'assets/main/img/slide/slide1.jpg';?>">
 			</div>
-			<div class="banner-ads-box">
-				<img src="<?php echo base_url() . 'assets/view1/img/slide/slide1.jpg';?>">
-			</div>
+			<!-- <div class="banner-ads-box">
+				<img src="<?php echo base_url() . 'assets/main/img/slide/slide1.jpg';?>">
+			</div> -->

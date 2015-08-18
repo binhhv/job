@@ -6423,12 +6423,13 @@ select {
 }
 
 input[type=email], input[type=number], input[type=password], input[type=search], input[type=text], select, textarea {
-    font-size: 16px;
+  /*  font-size: 16px;*/
     padding: 10px 14px;
     background: #fff;
     border: 1px solid #ccc;
     border-radius: 6px;
-    width: 100%
+    width: 100%;
+   
 }
 
 select {
