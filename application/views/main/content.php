@@ -13,7 +13,7 @@ if (isset($slide)) {
 		<div class="col-sm-12 col-md-12 col-xs-12">
 			<div class="search-box">
 			<div class="search-box-title primary-color">
-					<h2 class="white-color">Tìm kiếm việc làm</h2>
+					<h2 class="white-color text-center">Tìm kiếm việc làm</h2>
 				</div>
 				<div class="row search-box-content">
 					<div class="col-sm-12 col-md-12 col-xs-12">
@@ -58,12 +58,12 @@ if (isset($slide)) {
 					  </div>
 					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
 					   	<select class="fomr-control">
-					   		<option>Chọn trình độ</option>
+					   		<option>Chọn giới tính</option>
 					   	</select>
 					  </div>
 					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
 					   	<select class="fomr-control">
-					   		<option>Chọn giới tính</option>
+					   		<option>Chọn trình độ</option>
 					   	</select>
 					  </div>
 					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
@@ -148,8 +148,8 @@ if (isset($slide)) {
 				<div class="row">
 					<div class="col-md-12 col-xs-12 col-sm-12">
 						<div class="title-employer-box success-color inline-css">
-							<h2><i class="fa fa-user"></i>&nbsp;Dành cho người tìm việc
-								<button class="btn btn-primary pull-right push-left btn-xs"><strong>Đăng ký tài khoản</strong></button>
+							<h2 class=""><div><i class="fa fa-user"></i>&nbsp;Dành cho người tìm việc
+								<button class="btn btn-primary pull-right push-left btn-xs btn-tab btn-tab-r"><strong>Đăng ký tài khoản</strong></button></div>
 							</h2>
 						</div>
 					</div>
@@ -164,7 +164,7 @@ if (isset($slide)) {
 
 				<div class="list-job-box">
 					<div class="title-job-box primary-color">
-						<h2 class="white-color">Công việc mới nhất</h2>
+						<h2 class="white-color ">Công việc mới nhất</h2>
 					</div>
 					<div class="content-job-box">
 						<ul class="job_listings">
@@ -279,10 +279,10 @@ if (isset($slide)) {
 				<div class="row">
 					<div class="col-md-12 col-xs-12 col-sm-12">
 						<div class="title-employer-box primary-color inline-css">
-							<h2><i class="fa fa-paper-plane"></i>&nbsp;text here
+							<h2 class=""><i class="fa fa-paper-plane"></i>&nbsp;text here
 
-							<button class="btn btn-success pull-right-button margin-l-10 btn-xs"><strong>Tạo mới hồ sơ</strong></button>
-							<button class="btn btn-warning pull-right-button margin-l-10 btn-xs"><strong>Gửi CV</strong></button></h2>
+							<button class="btn btn-success pull-right-button margin-l-10 btn-xs btn-tab btn-tab-r"><strong>Tạo mới hồ sơ</strong></button>
+							<button class="btn btn-warning pull-right-button margin-l-10 btn-xs btn-tab"><strong>Gửi CV</strong></button></h2>
 
 						</div>
 					</div>
@@ -468,7 +468,7 @@ if (isset($slide)) {
 				<!--list job mien trung-->
 				<div class="list-job-box">
 					<div class="title-job-box primary-color">
-						<h2 class="white-color">Việc làm tại Việt Nam</h2>
+						<h2 class="white-color ">Việc làm tại Việt Nam</h2>
 					</div>
 					<div class="content-job-box">
 
@@ -811,7 +811,7 @@ if (isset($slide)) {
 				<!--job for department -->
 					<div class="list-job-box">
 					<div class="title-job-box primary-color">
-						<h2 class="white-color">Công việc theo phân loại</h2>
+						<h2 class="white-color ">Việc làm theo phân loại</h2>
 					</div>
 					<div class="content-job-box">
 

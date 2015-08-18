@@ -29,6 +29,13 @@
 
 
 @media (max-width: 767px) {
+	  .btn-tab{
+	  	/*margin: 0 auto;*/
+	  	margin-top: 5px;
+	  }
+	    .btn-tab-r{
+	    	margin-right: 0;
+	    }
 	.content-page .right-page{
 	margin: 10px 0;
 	padding-left: 15px;

@@ -92,7 +92,7 @@ if (isset($titlePage)) {
 
     $('.flexslider').flexslider({
         animation: "slide",
-        slideshow: true,
+        slideshow: false,
         start: function(slider){
           $('body').removeClass('loading');
            $('.sologan').show();
