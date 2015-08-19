@@ -1,5 +1,5 @@
 <?php
-class AccountModel extends CI_Model{
+class Register_model extends CI_Model{
 	function __construct() {
 		parent::__construct();
 		$this->load->model('Dbutil', 'dbutil');
@@ -10,7 +10,7 @@ class AccountModel extends CI_Model{
 	}
 	//update account
 	public function updateAccount($data){
-		
+		return $this->dbutil->insertDb($data, 'account');
 	}
 	//delete account
 }

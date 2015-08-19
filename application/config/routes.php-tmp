@@ -66,3 +66,4 @@ $route['admin/checkLogin']                 = 'admin/login/checkLogin';
 $route['admin/logout']                     = 'admin/login/logout';
 $route['admin/jobseeker']                  = 'admin/admin/jobseekerManager';
 $route['admin/jobseeker/getListJobseeker'] = 'admin/admin/jobseeker';
+$route['register']                         = 'register/index';

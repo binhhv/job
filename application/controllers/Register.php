@@ -1,13 +1,27 @@
 <?php
-class AccountController extends CI_Controller{
+class Register extends CI_Controller{
 	function __construct() {
 		parent::__construct();
 		$this->load->helper('url');
-		$this->load->model('Account_model', 'account');
+		$this->load->model('Register_model', 'account');
 	}
 
 	public function index(){
+		$head = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|user register'), TRUE);
+		$header = $this->load->view('main/header', array(
+			'logo' => 'img/header/logo.jpg',
+			'showTitle' => true,
+			'logoWidth' => '70px',
+			'logoHeight' => '70px',
+		), TRUE);
 
+		$csrf = array(
+			'name' => $this->security->get_csrf_token_name(),
+			'hash' => $this->security->get_csrf_hash(),
+		);
+		$content = $this->load->view('main/user_register', array('csrf' => $csrf), TRUE);
+		$footer = $this->load->view('main/footer', array(), TRUE);
+		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
 	}
 	//Add account
 	public function insertAccount(){
