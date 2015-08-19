@@ -34,6 +34,7 @@
 						<div class="form-group text-center">
 							<button type="submit" class="btn btn-primary ">Send</button>
 						</div>
+						<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
 					</form>
 					<!-- <button class="btn btn-success" id="btn-click">click</button> -->
 				</div>

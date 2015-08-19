@@ -44,7 +44,7 @@ if (isset($slide)) {
 				<div class="content-search-detail-box">
 
 					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
-					    <input type="email" class="form-control" id="email" placeholder="Từ khóa" style="height: 39px;">
+					    <input value="<script>alert(12132)</script>" type="text" class="form-control" id="email" placeholder="Từ khóa" style="height: 39px;">
 					  </div>
 					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
 					   	<select class="fomr-control">

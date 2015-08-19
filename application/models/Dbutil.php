@@ -10,6 +10,9 @@ class DBUtil extends CI_Model {
 		$this->load->database();
 
 	}
+	public function escape($value) {
+		return $this->db->escape($value);
+	}
 	public function getFromDb($projections) {
 
 		if ($projections != null) {
