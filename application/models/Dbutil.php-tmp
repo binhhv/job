@@ -82,9 +82,16 @@ class DBUtil extends CI_Model {
 			if ($query->num_rows() > 0) {
 				$insert_id = -1;
 			} else {
+				$this->db->trans_start();
 				$this->db->where($projections["where"]);
 				$this->db->update($projections["from"], $projections["data"]);
-				$insert_id = 1;
+				if ($this->db->trans_status() === FALSE) {
+					$this->db->trans_rollback();
+					return -1;
+				} else {
+					$this->db->trans_complete();
+					$insert_id = 1;
+				}
 			}
 
 			return $insert_id;
@@ -104,9 +111,17 @@ class DBUtil extends CI_Model {
 			if ($query->num_rows() > 0) {
 				$insert_id = -1;
 			} else {
+				$this->db->trans_start();
 				$this->db->where($projections["where"]);
 				$this->db->update($projections["from"], $projections["data"]);
-				$insert_id = 1;
+				if ($this->db->trans_status() === FALSE) {
+					$this->db->trans_rollback();
+					return -1;
+				} else {
+					$this->db->trans_complete();
+					$insert_id = 1;
+				}
+
 			}
 
 			return $insert_id;
@@ -116,9 +131,16 @@ class DBUtil extends CI_Model {
 	}
 
 	public function insertDb($data, $tbl) {
-
+		$this->db->trans_start();
 		$this->db->insert($tbl, $data);
-		return $insert_id = $this->db->insert_id();
+		if ($this->db->trans_status() === FALSE) {
+			$this->db->trans_rollback();
+			return -1;
+		} else {
+			$this->db->trans_complete();
+			return $insert_id = $this->db->insert_id();
+		}
+
 	}
 
 	public function insertDbUnique($unique_field, $unique_value, $data, $tbl) {
@@ -131,9 +153,16 @@ class DBUtil extends CI_Model {
 			$insert_id = -1;
 		} else {
 			// the value not exists, so you can insert it.
+			$this->db->trans_start();
 			$insert_id = $this->insertDb($data, $tbl);
+			if ($this->db->trans_status() === FALSE) {
+				$this->db->trans_rollback();
+				return -1;
+			} else {
+				$this->db->trans_complete();
+				return $insert_id;
+			}
 		}
-
 		return $insert_id;
 	}
 
@@ -148,7 +177,15 @@ class DBUtil extends CI_Model {
 			$insert_id = -1;
 		} else {
 			// the value not exists, so you can insert it.
+			$this->db->trans_start();
 			$insert_id = $this->insertDb($data, $tbl);
+			if ($this->db->trans_status() === FALSE) {
+				$this->db->trans_rollback();
+				return -1;
+			} else {
+				$this->db->trans_complete();
+				return $insert_id;
+			}
 		}
 
 		return $insert_id;
