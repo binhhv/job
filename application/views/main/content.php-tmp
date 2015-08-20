@@ -12,7 +12,7 @@ if (isset($slide)) {
 	<div class="row">
 		<div class="col-sm-12 col-md-12 col-xs-12">
 			<div class="search-box">
-			<div class="search-box-title primary-color">
+			<div class="search-box-title color-5">
 					<h2 class="white-color text-center">Tìm kiếm việc làm</h2>
 				</div>
 				<div class="row search-box-content">
@@ -76,7 +76,7 @@ if (isset($slide)) {
 
 				</div>
 				<div class="footer-search-detail-box text-center">
-				<button type="submit" class="btn btn-primary">Tìm kiếm</button>
+					<button type="submit" class="btn btn-primary"><strong>Tìm kiếm</strong></button>
 				</div>
 				</form>
 
@@ -147,24 +147,26 @@ if (isset($slide)) {
 				<div class="employer-box no-padding-top margin-top-20">
 				<div class="row">
 					<div class="col-md-12 col-xs-12 col-sm-12">
-						<div class="title-employer-box success-color inline-css">
-							<h2 class=""><div><i class="fa fa-user"></i>&nbsp;Dành cho người tìm việc
-								<button class="btn btn-primary pull-right push-left btn-xs btn-tab btn-tab-r"><strong>Đăng ký tài khoản</strong></button></div>
+						<div class="title-employer-box color-5 inline-css">
+							<h2 class=""><i class="fa fa-user"></i>&nbsp;Dành cho người tìm việc
+								<!-- <button class="btn btn-default pull-right push-left btn-xs btn-tab btn-tab-r primary-color-text color-11"><strong>Đăng ký tài khoản</strong></button> -->
 							</h2>
 						</div>
 					</div>
-					<!-- <div class="col-md-12 col-xs-12 col-sm-12">
+					<div class="col-md-12 col-xs-12 col-sm-12">
 						<div class="content-employer-box">
-							<button class="btn btn-success"><strong>Đăng ký tài khoản</strong></button>
+							<button class="btn btn-primary"><strong>Đăng ký tài khoản</strong></button>
+							<button class="btn color-13"><strong>Gửi CV ứng tuyển nhanh</strong></button>
+							<button class="btn btn-info"><strong>Tạo mới hồ sơ trực tuyến</strong></button>
 						</div>
-					</div> -->
+					</div>
 				</div>
 			</div>
 
 
 				<div class="list-job-box">
 					<div class="title-job-box primary-color">
-						<h2 class="white-color ">Công việc mới nhất</h2>
+						<h2 class="white-color ">Việc làm mới nhất</h2>
 					</div>
 					<div class="content-job-box">
 						<ul class="job_listings">
@@ -186,7 +188,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type full-time">Full Time</li>
+											<li class="job-type color-fulltime">Full Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -211,7 +213,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type part-time">Part Time</li>
+											<li class="job-type color-parttime">Part Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -236,7 +238,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type full-time">Full Time</li>
+											<li class="job-type color-fulltime">Full Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -261,7 +263,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type part-time">Part Time</li>
+											<li class="job-type color-parttime">Part Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -275,24 +277,20 @@ if (isset($slide)) {
 					</div>
 				</div>
 
-				<div class="employer-box no-padding-top margin-top--10">
+				<!-- <div class="employer-box no-padding-top margin-top--10">
 				<div class="row">
 					<div class="col-md-12 col-xs-12 col-sm-12">
 						<div class="title-employer-box primary-color inline-css">
 							<h2 class=""><i class="fa fa-paper-plane"></i>&nbsp;text here
 
-							<button class="btn btn-success pull-right-button margin-l-10 btn-xs btn-tab btn-tab-r"><strong>Tạo mới hồ sơ</strong></button>
-							<button class="btn btn-warning pull-right-button margin-l-10 btn-xs btn-tab"><strong>Gửi CV</strong></button></h2>
+							<button class="btn btn-default pull-right-button margin-l-10 btn-xs btn-tab btn-tab-r primary-color-text color-11"><strong>Tạo mới hồ sơ</strong></button>
+							<button class="btn sendcv-color pull-right-button margin-l-10 btn-xs btn-tab color-11"><strong>Gửi CV</strong></button></h2>
 
 						</div>
 					</div>
-					<!-- <div class="col-md-12 col-xs-12 col-sm-12">
-						<div class="content-employer-box">
-							<button class="btn btn-success"><strong>Đăng ký tài khoản</strong></button>
-						</div>
-					</div> -->
+
 				</div>
-			</div>
+			</div> -->
 
 
 				<!--find detail job-->
@@ -372,7 +370,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type full-time">Full Time</li>
+											<li class="job-type color-fulltime">Full Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -397,7 +395,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type part-time">Part Time</li>
+											<li class="job-type color-parttime">Part Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -422,7 +420,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type full-time">Full Time</li>
+											<li class="job-type color-fulltime">Full Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -447,7 +445,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type part-time">Part Time</li>
+											<li class="job-type color-parttime">Part Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -502,7 +500,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type full-time">Full Time</li>
+											<li class="job-type color-fulltime">Full Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -527,7 +525,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type part-time">Part Time</li>
+											<li class="job-type color-parttime">Part Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -552,7 +550,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type full-time">Full Time</li>
+											<li class="job-type color-fulltime">Full Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -577,7 +575,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type part-time">Part Time</li>
+											<li class="job-type color-parttime">Part Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -608,7 +606,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type full-time">Full Time</li>
+											<li class="job-type color-fulltime">Full Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -633,7 +631,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type part-time">Part Time</li>
+											<li class="job-type color-parttime">Part Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -658,7 +656,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type full-time">Full Time</li>
+											<li class="job-type color-fulltime">Full Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -683,7 +681,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type part-time">Part Time</li>
+											<li class="job-type color-parttime">Part Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -712,7 +710,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type full-time">Full Time</li>
+											<li class="job-type color-fulltime">Full Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -737,7 +735,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type part-time">Part Time</li>
+											<li class="job-type color-parttime">Part Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -762,7 +760,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type full-time">Full Time</li>
+											<li class="job-type color-fulltime">Full Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -787,7 +785,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type part-time">Part Time</li>
+											<li class="job-type color-parttime">Part Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -846,7 +844,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type full-time">Full Time</li>
+											<li class="job-type color-fulltime">Full Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -871,7 +869,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type part-time">Part Time</li>
+											<li class="job-type color-parttime">Part Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -896,7 +894,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type full-time">Full Time</li>
+											<li class="job-type color-fulltime">Full Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -921,7 +919,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type part-time">Part Time</li>
+											<li class="job-type color-parttime">Part Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -952,7 +950,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type full-time">Full Time</li>
+											<li class="job-type color-fulltime">Full Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -977,7 +975,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type part-time">Part Time</li>
+											<li class="job-type color-parttime">Part Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -1002,7 +1000,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type full-time">Full Time</li>
+											<li class="job-type color-fulltime">Full Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -1027,7 +1025,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type part-time">Part Time</li>
+											<li class="job-type color-parttime">Part Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -1056,7 +1054,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type full-time">Full Time</li>
+											<li class="job-type color-fulltime">Full Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -1081,7 +1079,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type part-time">Part Time</li>
+											<li class="job-type color-parttime">Part Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -1106,7 +1104,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type full-time">Full Time</li>
+											<li class="job-type color-fulltime">Full Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -1131,7 +1129,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type part-time">Part Time</li>
+											<li class="job-type color-parttime">Part Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -1163,7 +1161,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type full-time">Full Time</li>
+											<li class="job-type color-fulltime">Full Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -1188,7 +1186,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type part-time">Part Time</li>
+											<li class="job-type color-parttime">Part Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -1213,7 +1211,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type full-time">Full Time</li>
+											<li class="job-type color-fulltime">Full Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>
@@ -1238,7 +1236,7 @@ if (isset($slide)) {
 										</div>
 
 										<ul class="meta col-lg-2">
-											<li class="job-type part-time">Part Time</li>
+											<li class="job-type color-parttime">Part Time</li>
 											<li class="date"><date> 20/7/2015</date></li>
 										</ul>
 									</a>

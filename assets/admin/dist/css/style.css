@@ -1,0 +1,26 @@
+.margin-top-10{
+	margin-top: 10px !important;
+}
+.alert-message,.alert-message-delete,.alert-message-create{
+	 position: fixed;
+    z-index: 9999;
+    right: 0;
+    opacity: 0.8;
+    top:50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.item-cv{
+	border-bottom: 1px solid #f1f1f1;
+	margin: 10px 5px;
+}
+
+.item-doc{
+	border-bottom: 1px solid #f1f1f1;
+	margin: 10px 5px;
+	padding: 5px;
+}
+.alert-danger{
+	width: 100%;
+	margin: 0 15px;
+}

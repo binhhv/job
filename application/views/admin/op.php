@@ -162,3 +162,78 @@
       <!-- Add the sidebar's background. This div must be placed
            immediately after the control sidebar -->
       <div class="control-sidebar-bg"></div>
+
+
+
+      app.directive('emailAvailable', function($http) { // available
+    return {
+        restrict: 'A',
+        require: '?ngModel',
+        link: function(scope, elem, attr, ctrl) {
+            ctrl.$parsers.unshift(function(viewValue) {
+                if(viewValue ) {
+                    console.log("variable is defined");
+
+                    $http.get( pathWebsite + 'admin/jobseeker/checkEmailExits/' +viewValue )
+                        .success(function(data, status, headers, config) {
+                            console.log(data);
+                            ctrl.$setValidity('emailAvailable', data);
+                            return viewValue;
+                        })
+                        .error(function(data, status, headers, config) {
+                            console.log("error");
+                            ctrl.$setValidity('emailAvailable', false);
+                            return undefined;
+                        });
+                } else {
+                    console.log("variable is undefined");
+                    return undefined;
+                }
+                //console.log(viewValue);
+            });
+        }
+    };
+});
+
+app.directive('emailValid', function() {
+    return {
+        require: 'ngModel',
+        link: function(scope, elm, attrs, ctrl) {
+            ctrl.$parsers.unshift(function(viewValue) {
+                if (viewValue && viewValue.match(/[a-z0-9\-_]+@[a-z0-9\-_]+\.[a-z0-9\-_]{2,}/)) {
+                    // it is valid
+                    ctrl.$setValidity('emailValid', true);
+                    return viewValue;
+                } else {
+                    // it is invalid, return undefined (no model update)
+                    ctrl.$setValidity('emailValid', false);
+                    return undefined;
+                }
+            });
+        }
+    };
+});
+
+// app.directive("ngUnique", function(AuthService) {
+//   return {
+//     restrict: 'A',
+//     require: 'ngModel',
+//     link: function (scope, element, attrs, ngModel) {
+//       element.bind('blur', function (e) {
+//         if (!ngModel || !element.val()) return;
+//        var keyProperty = scope.$eval(attrs.ngUnique);
+//        var currentValue = element.val();
+//         jobseekerService.checkEmailExits(currentValue)
+//           .then(function (unique) {
+//             //Ensure value that being checked hasn't changed
+//             //since the Ajax call was made
+//            // if (currentValue == element.val()) {
+//               console.log('unique = '+unique);
+//               ngModel.$setValidity('unique', unique);
+//              // scope.$broadcast('show-errors-check-validity');
+//            // }
+//           });
+//       });
+//     }
+//   }
+// });

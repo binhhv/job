@@ -39,6 +39,40 @@ class DBUtil extends CI_Model {
 		}
 	}
 
+	public function getOneRowFromDb($projections) {
+
+		if ($projections != null) {
+			if (isset($projections["fields"])) {
+				$this->db->select($projections["fields"]);
+			} else {
+				$this->db->select('*');
+			}
+			$this->db->from($projections["from"]);
+			if (isset($projections["where"])) {
+				$this->db->where($projections["where"]);
+			}
+
+			if (isset($projections["orderkey"]) && isset($projections["order"])) {
+				$this->db->order_by($projections["orderkey"], $projections["order"]);
+			}
+
+			if (isset($projections["num"]) && isset($projections["startfrom"])) {
+				$this->db->limit($projections["num"], $projections["startfrom"]); // 5 records starting from 1st record
+			}
+			$query = $this->db->get();
+
+			return $query->row();
+		}
+	}
+
+	public function getFromDbQueryBinding($sql, $data) {
+		$query = $this->db->query($sql, $data);
+		return $query->result();
+	}
+	public function getOneRowQueryFromDb($sql, $data) {
+		$query = $this->db->query($sql, $data);
+		return $query->row();
+	}
 	public function updateDb($projections) {
 		if ($projections != null) {
 			$this->db->where($projections["where"]);
@@ -88,12 +122,12 @@ class DBUtil extends CI_Model {
 				$this->db->trans_start();
 				$this->db->where($projections["where"]);
 				$this->db->update($projections["from"], $projections["data"]);
-				if($this->db->trans_status() === FALSE){
-			   		$this->db->trans_rollback();
-			   		return -1;
-				}else{
-				   $this->db->trans_complete();
-				   $insert_id = 1;
+				if ($this->db->trans_status() === FALSE) {
+					$this->db->trans_rollback();
+					return -1;
+				} else {
+					$this->db->trans_complete();
+					$insert_id = 1;
 				}
 			}
 
@@ -117,14 +151,14 @@ class DBUtil extends CI_Model {
 				$this->db->trans_start();
 				$this->db->where($projections["where"]);
 				$this->db->update($projections["from"], $projections["data"]);
-				if($this->db->trans_status() === FALSE){
-			   		$this->db->trans_rollback();
-			   		return -1;
-				}else{
-				   $this->db->trans_complete();
-				   $insert_id = 1;
+				if ($this->db->trans_status() === FALSE) {
+					$this->db->trans_rollback();
+					return -1;
+				} else {
+					$this->db->trans_complete();
+					$insert_id = 1;
 				}
-				
+
 			}
 
 			return $insert_id;
@@ -136,14 +170,16 @@ class DBUtil extends CI_Model {
 	public function insertDb($data, $tbl) {
 		$this->db->trans_start();
 		$this->db->insert($tbl, $data);
-		if($this->db->trans_status() === FALSE){
-	   		$this->db->trans_rollback();
-	   		return -1;
-		}else{
-		   $this->db->trans_complete();
-		   return $insert_id = $this->db->insert_id();
+		if ($this->db->trans_status() === FALSE) {
+			$this->db->trans_rollback();
+			return -1;
+		} else {
+			$insert_id = $this->db->insert_id();
+			$this->db->trans_complete();
+			return $insert_id;
 		}
-		
+		//$this->db->insert($tbl, $data);
+		//return $insert_id = $this->db->insert_id();
 	}
 
 	public function insertDbUnique($unique_field, $unique_value, $data, $tbl) {
@@ -158,12 +194,12 @@ class DBUtil extends CI_Model {
 			// the value not exists, so you can insert it.
 			$this->db->trans_start();
 			$insert_id = $this->insertDb($data, $tbl);
-			if($this->db->trans_status() === FALSE){
-	   			$this->db->trans_rollback();
-	   			return -1;
-			}else{
-			   $this->db->trans_complete();
-			   return $insert_id;
+			if ($this->db->trans_status() === FALSE) {
+				$this->db->trans_rollback();
+				return -1;
+			} else {
+				$this->db->trans_complete();
+				return $insert_id;
 			}
 		}
 		return $insert_id;
@@ -182,12 +218,12 @@ class DBUtil extends CI_Model {
 			// the value not exists, so you can insert it.
 			$this->db->trans_start();
 			$insert_id = $this->insertDb($data, $tbl);
-			if($this->db->trans_status() === FALSE){
-	   			$this->db->trans_rollback();
-	   			return -1;
-			}else{
-			   $this->db->trans_complete();
-			   return $insert_id;
+			if ($this->db->trans_status() === FALSE) {
+				$this->db->trans_rollback();
+				return -1;
+			} else {
+				$this->db->trans_complete();
+				return $insert_id;
 			}
 		}
 

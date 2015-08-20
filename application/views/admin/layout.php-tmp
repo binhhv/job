@@ -6,6 +6,7 @@
 <?php echo $head;?>
 </head>
   <body class="hold-transition skin-blue-light sidebar-mini">
+
     <div class="wrapper">
 
 <?php echo $header;?>
@@ -18,10 +19,39 @@
 </div><!-- /.content-wrapper -->
 
 <?php echo $footer;?>
+         <div class="row">
+   <div class="col-md-12">
+      <div class="alert alert-success alert-dismissable alert-message hide">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4>  <i class="icon fa fa-check"></i> Alert!</h4>
+                   Sửa đổi thành công !!!!
+  </div>
+
+  <div class="alert alert-success alert-dismissable alert-message-delete hide">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4>  <i class="icon fa fa-check"></i> Alert!</h4>
+                  Xóa thành công !!!!
+  </div>
+
+  <div class="alert alert-success alert-dismissable alert-message-create hide">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4>  <i class="icon fa fa-check"></i> Alert!</h4>
+                  Thêm thành công !!!!
+  </div>
+
+   </div>
+ </div>
     </div><!-- ./wrapper -->
-    <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angularjs.min.js"></script>
+
+
   <!-- jQuery 2.1.4 -->
     <script src="<?php echo base_url();?>assets/admin/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular.min.js"></script>
+     <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-animate.min.js"></script>
+      <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-strap.min.js"></script>
+       <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-strap.tpl.min.js"></script>
+
+    <script src="<?php echo base_url();?>assets/admin/angularjs/lib/ui-bootstrap-tpls-0.10.0.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
     <script src="<?php echo base_url();?>assets/admin/bootstrap/js/bootstrap.min.js"></script>
     <!-- FastClick -->
@@ -41,7 +71,9 @@
     <script src="<?php echo base_url();?>assets/admin/dist/js/pages/dashboard2.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="<?php echo base_url();?>assets/admin/dist/js/demo.js"></script>
+     <script src="<?php echo base_url();?>assets/admin/angularjs/lib/loading-bar.js"></script>
      <script src="<?php echo base_url();?>assets/admin/angularjs/app.js"></script>
+     <script src="<?php echo base_url();?>assets/admin/angularjs/service/appservice.js"></script>
 
   </body>
 </html>

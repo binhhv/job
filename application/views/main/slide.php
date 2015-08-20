@@ -18,8 +18,8 @@ foreach ($slides as $value) {?>
 	        </div>
 	          	 <span class="sologan">
 	          	 <span><h4>Chúng tôi đang có <strong>651</strong> tin tuyển dụng trong hôm nay</h4>.</span>
-	              	 	<button class="btn btn-info" >Đăng tin</button>
-	              	 	<button class="btn btn-danger">Tìm việc</button>
+	          	 <button class="btn btn-primary" ><strong>Đăng tin</strong></button>
+	          	 <button class="btn btn-info"><strong>Tìm việc</strong></button>
 	             </span>
 		</div>
 	</div>

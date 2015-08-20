@@ -8,12 +8,12 @@
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url() .'assets/view1/img/job/job-no-image.jpg'; ?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url() . 'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Game Developer</h3>
 											<div class="company">
-												<strong>Gameloft</strong> 									
+												<strong>Gameloft</strong>
 											</div>
 										</div>
 
@@ -21,7 +21,7 @@
 											Đã nẵng
 										</div>
 
-										<ul class="meta col-lg-2">					
+										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
 											<li class="date"><date>Posted 2 day ago</date></li>
 										</ul>
@@ -33,12 +33,12 @@
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url() .'assets/view1/img/job/job-no-image.jpg'; ?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url() . 'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>PHP Developer</h3>
 											<div class="company">
-												<strong>Tinh vân</strong> 									
+												<strong>Tinh vân</strong>
 											</div>
 										</div>
 
@@ -46,7 +46,7 @@
 											Hà nội
 										</div>
 
-										<ul class="meta col-lg-2">					
+										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
 											<li class="date"><date>Posted 2 days ago</date></li>
 										</ul>
@@ -58,12 +58,12 @@
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url() .'assets/view1/img/job/job-no-image.jpg'; ?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url() . 'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Developer mobile</h3>
 											<div class="company">
-												<strong>TMA</strong> 									
+												<strong>TMA</strong>
 											</div>
 										</div>
 
@@ -71,7 +71,7 @@
 											Hồ chí minh
 										</div>
 
-										<ul class="meta col-lg-2">					
+										<ul class="meta col-lg-2">
 											<li class="job-type full-time">Full Time</li>
 											<li class="date"><date>Posted 3 days ago</date></li>
 										</ul>
@@ -83,12 +83,12 @@
 								<div class="row">
 									<a href="job/design-technologist-shopping-innovation/index.html" class="job_listing-link">
 										<div class="logo col-sm-2 col-md-1 col-lg-1">
-											<img class="company_logo" src="<?php echo base_url() .'assets/view1/img/job/job-no-image.jpg'; ?>" alt="Amazon">
+											<img class="company_logo" src="<?php echo base_url() . 'assets/view1/img/job/job-no-image.jpg';?>" alt="Amazon">
 										</div>
 										<div class="position col-xs-12 col-sm-10 col-md-6 col-lg-5">
 											<h3>Design Technologist</h3>
 											<div class="company">
-												<strong>FPT</strong> 									
+												<strong>FPT</strong>
 											</div>
 										</div>
 
@@ -96,17 +96,20 @@
 											Hồ chí minh
 										</div>
 
-										<ul class="meta col-lg-2">					
+										<ul class="meta col-lg-2">
 											<li class="job-type part-time">Part Time</li>
 											<li class="date"><date>Posted 5 days ago</date></li>
 										</ul>
 									</a>
 								</div>
 							</li>
-					
+
 						</ul>
 					</div>
 					<div class="footer-job-box text-center">
-							<a class="load_more_jobs" href="#"><strong>Xem thêm công việc</strong></a>						
+							<a class="load_more_jobs" href="#"><strong>Xem thêm công việc</strong></a>
 					</div>
 				</div>
+
+
+

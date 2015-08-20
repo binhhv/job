@@ -1,15 +1,15 @@
 <div class="employer-box">
 				<div class="row">
 					<div class="col-md-12 col-xs-12 col-sm-12">
-						<div class="title-employer-box warning-color">
+						<div class="title-employer-box color-5">
 							<h2 class=""><i class="fa fa-briefcase"></i>&nbsp;Dành cho nhà tuyển dụng</h2>
 						</div>
 					</div>
 					<div class="col-md-12 col-xs-12 col-sm-12">
 						<div class="content-employer-box">
-							<span class="">Có <strong>502</strong> CV tìm việc trên website chúng tôi</span>
-							<button class="btn btn-warning">Đăng ký tài khoản</button>
-							<button class="btn btn-warning">Đăng tin tuyển dụng</button>
+							<!-- <span class="">Có <strong>502</strong> CV tìm việc trên website chúng tôi</span> -->
+							<button class="btn btn-primary"><strong>Đăng ký</strong></button>
+							<button class="btn btn-primary color-13"><strong>Đăng tin</strong></button>
 							<!-- <button class="btn btn-warning">Liên hệ quảng cáo</button> -->
 						</div>
 					</div>
@@ -19,7 +19,7 @@
 			<div class="employer-box">
 				<div class="row">
 					<div class="col-md-12 col-xs-12 col-sm-12">
-						<div class="title-employer-box warning-color">
+						<div class="title-employer-box color-5">
 							<h2 class=""><i class="fa fa-mobile"></i>&nbsp;Liên hệ quảng cáo</h2>
 						</div>
 					</div>

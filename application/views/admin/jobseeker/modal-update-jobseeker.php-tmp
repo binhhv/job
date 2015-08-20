@@ -1,0 +1,71 @@
+<section ng-controller="jobseekersUpdateController as jobseekersUpCtrl">
+
+    <div class="modal-header">
+        <h3 class="modal-title">Update: {{jobseeker.account_first_name}} {{jobseeker.account_last_name}}</h3>
+    </div>
+    <div class="modal-body">
+            <form name="updatejobseekerForm">
+                <fieldset>
+                    <div class="row">
+                        <div data-ng-show="error" class="text-danger">
+                            <strong data-ng-bind="error"></strong>
+                        </div>
+                        <div class="form-group">
+                            <div data-ng-show="error" class="text-center text-danger">
+                                <div class="alert alert-danger" role="alert">
+                                    <strong data-ng-bind="error"></strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label" for="firstname">Mã số</label>
+                                <div class="controls">
+                                    <input type="text" data-ng-model="jobseeker.account_id" id="accountid" class="form-control" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="firstname">Email</label>
+                                <div class="controls">
+                                    <input type="text" data-ng-model="jobseeker.account_email" id="email" class="form-control" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="surname">Họ </label>
+                                <div class="controls">
+                                    <input type="text" data-ng-model="jobseeker.account_first_name" id="firstname" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="suburb">Tên</label>
+                                <div class="controls">
+                                    <input type="text" data-ng-model="jobseeker.account_last_name" id="lastname" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="country">Mật khẩu</label>
+                                <div class="controls">
+                                    <input type="password" data-ng-model="jobseeker.account_password" id="password" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="country">Trạng thái</label>
+                                <div class="controls">
+                                    <input type="checkbox" data-ng-model="jobseeker.account_is_disabled" id="isdisabled" class="form-control checkbox-left">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group text-right">
+                                <button class="btn btn-success" ng-click="jobseekersUpCtrl.update(jobseeker);ok()" ng-disabled="updatejobseekerForm.$invalid">Update & Close</button>
+                                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+    </div>
+</section>

@@ -42,7 +42,7 @@
 ?> treeview">
               <a href="#">
                 <i class="fa fa-users"></i>
-                <span>Quản lý tin người dùng</span>
+                <span>Quản lý người dùng</span>
                 <span class="label label-primary pull-right">4</span>
               </a>
               <ul class="treeview-menu">
