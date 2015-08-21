@@ -10,6 +10,10 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <h5 class="modal-title">User Register</h5>
+                 <div id="message">
+
+
+                </div>
             </div>
 
             <div class="modal-body">
@@ -62,6 +66,39 @@
 
 
 <script type="text/javascript">
+
+// $('#registerModal').on('hidden.bs.modal', function() {
+//     $('#register-form').formValidation('resetForm', true);
+// });
+
+// $(document).ready(function() {
+//     $('#register-form').formValidation({
+//         framework: 'bootstrap',
+//         excluded: ':disabled',
+//         icon: {
+//             valid: 'glyphicon glyphicon-ok',
+//             invalid: 'glyphicon glyphicon-remove',
+//             validating: 'glyphicon glyphicon-refresh'
+//         },
+//         fields: {
+//             account_email: {
+//                 validators: {
+//                     notEmpty: {
+//                         message: 'The username is required'
+//                     }
+//                 }
+//             },
+//             account_password: {
+//                 validators: {
+//                     notEmpty: {
+//                         message: 'The password is required'
+//                     }
+//                 }
+//             }
+//         }
+//     });
+// });
+
 $(document).ready(function() {
 $("#register-form").submit(function(event){
 	 event.preventDefault();
@@ -71,7 +108,34 @@ $("#register-form").submit(function(event){
 		dataType:"json", // Data type, HTML, json etc.
 		data:$(this).serialize(), //Form variables
 		success:function(response){
-			$('#registerModal').modal('hide')
+            // var objs = $.parseJSON(response);
+            var account_email = response.account_email;
+            var account_password = response.account_password;
+             var account_first_name = response.account_first_name;
+              var account_last_name = response.account_last_name;
+              var csrf_name = response.name;
+              var csrf_hash = response.hash;
+            if(account_email != null)
+            {
+                $('#message').text("");
+                $('#message').append(account_email);
+                $('#message').append("<br>");
+                $('#message').append(account_password);
+                $('#message').append("<br>");
+                $('#message').append(account_first_name);
+                $('#message').append("<br>");
+                $('#message').append(account_last_name);
+                $('input[name="csrf_test_name"]').val(csrf_hash);
+            }
+            else
+            {
+                alert("rrer");
+                $('#message').text("");
+                // $('#message').html(obj);
+                // $('#registerModal').modal('hide')
+            }
+
+
 			// $(".registerModal").html("");
 			// 	var msg = response.msg;
 			// 	$(".contact-box").addClass("text-center padding-150");
@@ -79,7 +143,7 @@ $("#register-form").submit(function(event){
 		},
 		error:function (xhr, ajaxOptions, thrownError){
 			//On error, we alert user
-			alert("failure");
+			// alert("failure");
 			// alert(thrownError);
 		}
 		});
