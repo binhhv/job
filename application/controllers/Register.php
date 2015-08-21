@@ -23,18 +23,21 @@ class Register extends CI_Controller{
 		$footer = $this->load->view('main/footer', array(), TRUE);
 		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
 	}
-	//Add account
+	//Add accountarrau
 	public function insertAccount(){
+		// $output = json_encode(array('email'=> $this->input->post('account_email')));
+		// echo json_encode($output);
+
 		$account_email = $this->input->post('account_email');
 		$account_password = $this->input->post('account_password');
 		$account_first_name = $this->input->post('account_first_name');
 		$account_last_name = $this->input->post('account_last_name');
-		$account_is_get_news = $this->input->post('account_email');
-		$account_map_role = $this->input->post('account_map_role');
-		$account_is_delete = $this->input->post('account_is_delete');
-		$account_is_disabled = $this->input->post('account_is_disabled');
-		$account_updated_at = $this->input->post('account_updated_at');
-		$account_created_at = $this->input->post('account_created_at');
+		$account_is_get_news = '0';
+		$account_map_role = '0';
+		$account_is_delete = '0';
+		$account_is_disabled = '0';
+		// $account_updated_at = new date('Y-m-d')
+		// $account_created_at = new date('Y-m-d')
 		$data = array(
 			'account_email' => $account_email,
 			'account_password' => $account_password,
@@ -46,7 +49,17 @@ class Register extends CI_Controller{
 			'account_map_role' => '1',
 			'account_created_at' => date('Y-m-d'),
 		);
-		$id_account = $this->account->insertAccount($data);
+		$id_account = 0;
+		try {
+			$id_account = $this->account->insertAccount($data);
+		} catch (Exception $e) {
+			
+		}
+		$msg = 'register success';
+		$output = json_encode(array("id" => $id_account,
+			"msg" => $msg));
+		$this->output->set_content_type('application/json');
+		$this->output->set_output($output);
 	}
 	
 }

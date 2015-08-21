@@ -1,76 +1,107 @@
-<div class="row">
-	<div class="col-sm-12 col-md-12 col-xs-12">
-		<div class="contact-content border-top-10">
-			<div class="row">
-				<div class="col-sm-12 col-md-12 col-xs-12">
-					<div class="title-contact info-color text-center">
+<p class="text-center contact-box">
+    <button class="btn btn-default" data-toggle="modal" data-target="#registerModal">Login</button>
+</p>
 
-						<h2>User Register</h2>
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">User Register</h5>
+            </div>
 
-					</div>
-				</div>
-				<!-- <div class="col-sm-4 col-md-4 col-xs-12">
-				</div> -->
-			</div>
-			<div class="row">
-				<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 contact-box">
-					<form role="form" name="contact-form" id="contact-form" method="post">
-						<div class="form-group">
-						<label for="name">Name:</label>
-							<input type="text" class="form-control" id="name" name="name">
-						</div>
-						<div class="form-group">
-						<label for="email">Email:</label>
-							<input type="email" class="form-control" id="email" name="email">
-						</div>
-						<div class="form-group">
-						<label for="subject">Subject:</label>
-							<input type="text" class="form-control" id="subject" name="subject">
-						</div>
-						<div class="form-group">
-							<label for="message">Message:</label>
-							<textarea name="message" id="message" class="form-control" tabindex="3" rows="10" cols="50"></textarea>
-						</div>
-						<div class="form-group text-center">
-							<button type="submit" class="btn btn-primary ">Send</button>
-						</div>
-						<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-					</form>
-					<!-- <button class="btn btn-success" id="btn-click">click</button> -->
-				</div>
-			</div>
-		</div>
-	</div>
+            <div class="modal-body">
+                <!-- The form is placed inside the body of modal -->
+                <form role="form" name="register-form" id="register-form" method="post" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-4 col-md-4 col-xs-4 control-label">Email</label>
+                        <div class="col-sm-8 col-md-8 col-xs-8">
+                            <input type="text" class="form-control" name="account_email" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 col-md-4 col-xs-4 control-label">Password</label>
+                        <div class="col-sm-8 col-md-8 col-xs-8">
+                            <input type="password" class="form-control" name="account_password" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 col-md-4 col-xs-4 control-label">Confirm Password</label>
+                        <div class="col-sm-8 col-md-8 col-xs-8">
+                            <input type="password" class="form-control" name="password" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 col-md-4 col-xs-4 control-label">First Name</label>
+                        <div class="col-sm-8 col-md-8 col-xs-8">
+                            <input type="text" class="form-control" name="account_first_name" />
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label class="col-sm-4 col-md-4 col-xs-4 control-label">Last Name</label>
+                        <div class="col-sm-8 col-md-8 col-xs-8">
+                            <input type="text" class="form-control" name="account_last_name" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12 col-md-12 col-xs-12 row-btn-register">
+                            <button type="submit" class="btn btn-primary">Register</button>
+             				
+                        </div>
+                    </div>
+                    <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+
+
 <script type="text/javascript">
 $(document).ready(function() {
-	var myData = "123123";
-$("#contact-form").submit(function(event){
+$("#register-form").submit(function(event){
 	 event.preventDefault();
-jQuery.ajax({
+		$.ajax({
 		type: "POST", // HTTP method POST or GET
-		url: "<?php echo base_url('contact/insertContact');?>", //Where to make Ajax calls
+		url: "<?php echo base_url('register/insertAccount');?>", //Where to make Ajax calls
 		dataType:"json", // Data type, HTML, json etc.
 		data:$(this).serialize(), //Form variables
 		success:function(response){
-			//on success, hide  element user wants to delete.
-			//var obj = JSON.parse(response);
-			//alert(response.status);
-			if(response.id != 0){
-				$(".contact-box").html("");
-				var msg = response.msg;
-				$(".contact-box").addClass("text-center padding-150");
-				$(".contact-box").append(msg);
-			}
-			else{
-
-			}
+			$('#registerModal').modal('hide')
+			// $(".registerModal").html("");
+			// 	var msg = response.msg;
+			// 	$(".contact-box").addClass("text-center padding-150");
+			// 	$(".contact-box").append(msg);
 		},
 		error:function (xhr, ajaxOptions, thrownError){
 			//On error, we alert user
-			alert(thrownError);
+			alert("failure");
+			// alert(thrownError);
 		}
 		});
 })
 });
+
+
+// //form submit
+// $(document).ready(function () {
+//     $("#register-form").submit(function(){
+//         jQuery.ajax({
+//             type: "POST",
+//            	url: "<?php echo base_url('register/insertAccount'); ?>",
+//            	data:$(this).serialize(), //Form variables
+//             success: function(msg){
+//                  alert(msg);
+//             },
+//             error: function(){
+//                 alert("failure");
+//             }
+//         });
+//     });
+// });
+
 </script>
