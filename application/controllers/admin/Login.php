@@ -62,8 +62,8 @@ class Login extends CI_Controller {
 		#Kiểm tra điều kiện validate
 		$check = true;
 		if ($this->form_validation->run() == TRUE) {
-			$a_UserInfo['email'] = $this->input->post('email', true);
-			$a_UserInfo['password'] = md5($this->input->post('password', true));
+			$a_UserInfo['email'] = $this->security->xss_clean($this->input->post('email', true));
+			$a_UserInfo['password'] = md5($this->security->xss_clean($this->input->post('password', true)));
 			$autologin = ($this->input->post('remember_me') == 'on') ? 1 : 0;
 			$projection = array('from' => 'account', 'where' => "account_email = " . $this->DBUtil->escape($a_UserInfo['email']) . " AND account_password = " . $this->DBUtil->escape($a_UserInfo['password']) . "");
 			$a_UserChecking = $this->DBUtil->getFromDb($projection);
@@ -77,7 +77,8 @@ class Login extends CI_Controller {
 				}
 				$this->session->set_userdata('user', array('id' => $a_UserChecking[0]->account_id,
 					'email' => $a_UserChecking[0]->account_email,
-					'role' => $a_UserChecking[0]->account_map_role));
+					'role' => $a_UserChecking[0]->account_map_role,
+					'isLogged' => true));
 				//var_dump($a_UserChecking[0]);
 				redirect(base_url('admin'));
 			} else {

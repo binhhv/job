@@ -1,15 +1,14 @@
-
-  <div id="jobseeker-ctrl"  ng-controller="jobseekerController">
+<div id="manager-ctrl"  ng-controller="managerController">
 
 
 <section class="content-header">
           <h1>
-           Quản lý người tìm việc
+           Quản lý quản trị viên
           </h1>
           <ol class="breadcrumb">
             <li><a href="<?php echo base_url('admin');?>"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
             <li>Quản lý người dùng</li>
-            <li class="active">Người tìm việc</li>
+            <li class="active">Quản trị viên</li>
           </ol>
         </section>
 
@@ -17,7 +16,7 @@
         <section class="content-header">
           <div class="row">
 
-            <div class="col-md-12"><button class="btn btn-primary" ng-click="modalCreateJobseeker('lg')">tạo người tìm việc</button> &nbsp;
+            <div class="col-md-12"><button class="btn btn-primary" ng-click="modalCreateManager('lg')">Tạo quản trị viên</button> &nbsp;
               <button class="btn btn-success" ng-click="reload();" >tải lại dữ liệu</button></div>
           </div>
         </section>
@@ -27,7 +26,7 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Danh sách người tìm việc</h3>
+                  <h3 class="box-title">Danh sách quản trị viên website.</h3>
                   <div class="box-tools">
                     <div class="input-group" style="width: 150px;">
                       <input type="text" name="table_search" ng-model="search" ng-change="filter()" class="form-control input-sm pull-right" placeholder="tìm kiếm">
@@ -42,31 +41,30 @@
                   <div class="text-center">Không có dữ liệu</div>
                 </div>
                 <div class="box-body table-responsive no-padding"  ng-show="filteredItems > 0">
-                  <table class="table table-hover table-striped hide" id="jobseekerTable" ng-init="getJobseekers()">
+                  <table class="table table-hover table-striped hide" id="managerTable" ng-init="getManagers()">
                     <tr>
-                      <th>Số TT</th>
-                      <th>Email</th>
-                      <th>Họ tên</th>
+                      <th class="text-center">Số TT</th>
+                      <th class="text-center">Email</th>
+                      <th class="text-center">Họ tên</th>
                       <th class="text-center">Trạng thái</th>
-                      <th class="text-center">Số lượng cv</th>
-                      <th class="text-center">Số lượng hồ sơ</th>
-                      <th class="text-center">Số tin tuyển dụng ứng tuyển</th>
+                      <th class="text-center">Ngày đăng ký</th>
                       <th class="text-center"></th>
                     </tr>
                     <tr ng-repeat="data in filtered = (pagedItems | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" data-id="{{data.account_id}}">
-                      <td>{{($index + ((currentPage -1)* entryLimit)) + 1}}</td>
-                      <td>{{data.account_email}}</td>
-                      <td>{{data.account_first_name}} {{data.account_last_name}}</td>
+                      <td class="text-center">{{($index + ((currentPage -1)* entryLimit)) + 1}}</td>
+                      <td class="text-center">{{data.account_email}}</td>
                       <td class="text-center">
-                        <label class="btn btn-xs btn-success" ng-show="data.account_is_disabled == false">hoạt động</label>
-                        <label class="btn btn-xs btn-danger" ng-show="data.account_is_disabled == true">ngừng hoạt động</label>
-                      <!-- {{data.account_is_disabled}} -->
+                          <label><b>{{data.account_first_name}} {{data.account_last_name}}</b></label>
+
                       </td>
-                      <td class="text-center">{{data.numcv}}</td>
-                      <td class="text-center">{{data.numdocon}}</td>
-                      <td class="text-center">{{data.numapp}}</td>
                       <td class="text-center">
-                      <button class="btn btn-xs btn-primary" ng-click="openDetailJobseeker(data,'<?php echo base_url("admin/jobseeker/detail/");?>')">chi tiêt</button>
+  							             <label class="btn btn-xs btn-success" ng-show="data.account_is_disabled == false">hoạt động</label>
+                             <label class="btn btn-xs btn-danger" ng-show="data.account_is_disabled == true">ngừng hoạt động</label>
+                      </td>
+                      <td class="text-center">{{formatDate(data.account_created_at) | date: "dd/MM/yyyy"}}</td>
+
+                      <td class="text-center">
+
                       <button class="btn btn-xs btn-warning" ng-click="modalUpdate('lg',data)" >sửa</button>
                       <button class="btn btn-xs btn-danger" ng-click="modalDelete('sm',data)">xóa</button>
                       </td>
@@ -83,7 +81,7 @@
                 </div>
                 <div class="box-footer clearfix text-right" >
                 <div class="col-md-12" ng-show="filteredItems > 0">
-                    <pagination total-items="filteredItems" on-select-page="setPage(page)" page="currentPage" max-size="itemsPerPage" class="pagination-sm" items-per-page="entryLimit" boundary-links="true"></pagination>
+                <pagination total-items="filteredItems" on-select-page="setPage(page)" page="currentPage" max-size="itemsPerPage" class="pagination-sm" items-per-page="entryLimit" boundary-links="true"></pagination>
             <!-- <div pagination="" page="currentPage" on-select-page="setPage(page)" boundary-links="true" total-items="filteredItems" items-per-page="entryLimit" class="pagination-small" previous-text="&laquo;" next-text="&raquo;"></div> -->
         </div></div>
                 <!-- <div class="box-footer clearfix text-right"  ng-show="filteredItems > 0"> -->
@@ -106,7 +104,3 @@
           </div>
         </section>
         </div>
-          <script type="text/javascript">
-  var token  = "<?php echo $this->security->get_csrf_hash();?>";
-
-  </script>

@@ -9,6 +9,11 @@ class Admin extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library(array('form_validation', 'session'));
 		$this->load->model('admin/Jobseeker_model', 'jobseeker');
+		if (!$this->session->userdata['user']['isLogged']) {
+			redirect(base_url().'admin/login');// no session established, kick back to login page
+		} else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
+			redirect(base_url('error/403'));
+		}
 	}
 	public function index() {
 
@@ -35,11 +40,14 @@ class Admin extends CI_Controller {
 
 	}
 	public function loadViewAdmin() {
+		// $scripts = array(
+		// 	"assets/admin/angularjs/app.js", "assets/admin/angularjs/service/appservice.js");
 		$head     = $this->load->view('admin/head', array(), TRUE);
 		$header   = $this->load->view('admin/header', array(), TRUE);
 		$content  = $this->load->view('admin/content', array(), TRUE);
 		$footer   = $this->load->view('admin/footer', array(), TRUE);
-		$sidemenu = $this->load->view('admin/sidemenu', array('email' => $this->session->userdata['user']['email']), TRUE);
+		$sidemenu = $this->load->view('admin/sidemenu', array('email' => $this->session->userdata['user']['email'],
+				'role'                                                      => $this->session->userdata['user']['role']), TRUE);
 
 		$this->load->view('admin/layout', array('head' => $head,
 				'header'                                     => $header,
@@ -51,11 +59,14 @@ class Admin extends CI_Controller {
 	manager jobseeker
 	 **/
 	function jobseekerManager() {
+		$scripts = array(
+			"assets/admin/angularjs/controller/jobseeker.controller.js", "assets/admin/angularjs/service/jobseeker.service.js");
 		$head     = $this->load->view('admin/head', array(), TRUE);
 		$header   = $this->load->view('admin/header', array(), TRUE);
 		$content  = $this->load->view('admin/jobseeker/jobseeker', array(), TRUE);
 		$footer   = $this->load->view('admin/footer', array(), TRUE);
 		$sidemenu = $this->load->view('admin/sidemenu', array('email' => $this->session->userdata['user']['email'],
+				'role'                                                      => $this->session->userdata['user']['role'],
 				'selected'                                                  => 'userManager',
 				'sub'                                                       => 'jobseeker'), TRUE);
 
@@ -63,7 +74,8 @@ class Admin extends CI_Controller {
 				'header'                                     => $header,
 				'sidemenu'                                   => $sidemenu,
 				'content'                                    => $content,
-				'footer'                                     => $footer));
+				'footer'                                     => $footer,
+				'scripts'                                    => $scripts));
 
 	}
 	function jobseeker($section = 'default') {
@@ -121,13 +133,7 @@ class Admin extends CI_Controller {
 		//$jobseeker_id = $$this->input->post('jobseeker');
 		$jobseeker  = json_decode($this->input->post('jobseeker'), true);
 		$account_id = $jobseeker['account_id'];
-		// $account_email = $jobseeker['account_email'];
-		// $account_password = $jobseeker['account_password'];
-		// $account_first_name = $jobseeker['account_first_name'];
-		// $account_last_name = $jobseeker['account_last_name'];
-		// $account_is_disabled = $jobseeker['account_is_disabled'];
-
-		$paramater = array(
+		$paramater  = array(
 			'account_is_delete' => true);
 		$output = $this->jobseeker->updateJobseeker($paramater, $account_id);
 		echo json_encode($output);
@@ -135,6 +141,8 @@ class Admin extends CI_Controller {
 	}
 	function detailJobseeker($idJobseeker = '') {
 		//var_dump($idJobseeker);
+		$scripts = array(
+			"assets/admin/angularjs/controller/jobseeker.controller.js", "assets/admin/angularjs/service/jobseeker.service.js");
 		$jobseeker    = $this->jobseeker->getJobseeker($idJobseeker);
 		$cvJobseeker  = $this->jobseeker->getListCVJobseeker($idJobseeker);
 		$docJobseeker = $this->jobseeker->getListDocumentJobseeker($idJobseeker);
@@ -149,6 +157,7 @@ class Admin extends CI_Controller {
 				'recApp'       => $recApp), TRUE);
 		$footer   = $this->load->view('admin/footer', array(), TRUE);
 		$sidemenu = $this->load->view('admin/sidemenu', array('email' => $this->session->userdata['user']['email'],
+				'role'                                                      => $this->session->userdata['user']['role'],
 				'selected'                                                  => 'userManager',
 				'sub'                                                       => 'jobseeker'), TRUE);
 
@@ -156,14 +165,11 @@ class Admin extends CI_Controller {
 				'header'                                     => $header,
 				'sidemenu'                                   => $sidemenu,
 				'content'                                    => $content,
-				'footer'                                     => $footer));
+				'footer'                                     => $footer,
+				'scripts'                                    => $scripts));
 	}
 	public function documentJobseeker($id) {
 		$doc = $this->jobseeker->getDocumentJobseeker($id);
-		//echo $doc['docon_map_user'];
-		// $jobseeker = $this->jobseeker->getJobseekerOneRow($doc->docon_map_user);
-		// $doc['name'] = $jobseeker->account_first_name . $jobseeker->account_last_name;
-		// $doc['email'] = $jobseeker->account_email;
 		echo json_encode($doc);
 	}
 	function getToken() {

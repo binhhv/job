@@ -39,6 +39,12 @@
                   Thêm thành công !!!!
   </div>
 
+    <div class="alert alert-danger alert-dismissable alert-message-errors hide">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4>  <i class="icon fa fa-check"></i> Alert!</h4>
+                  Đã có lỗi nghiêm trọng xảy ra.
+  </div>
+
    </div>
  </div>
     </div><!-- ./wrapper -->
@@ -72,8 +78,16 @@
     <!-- AdminLTE for demo purposes -->
     <script src="<?php echo base_url();?>assets/admin/dist/js/demo.js"></script>
      <script src="<?php echo base_url();?>assets/admin/angularjs/lib/loading-bar.js"></script>
-     <script src="<?php echo base_url();?>assets/admin/angularjs/app.js"></script>
-     <script src="<?php echo base_url();?>assets/admin/angularjs/service/appservice.js"></script>
+      <script src="<?php echo base_url();?>assets/admin/angularjs/app.js"></script>
+<?php
+if (isset($scripts)) {
+	foreach ($scripts as $script) {?>
+		    <script src="<?php echo base_url().$script;?>"></script>
+		<?php }
+}
+?>
+     <!--<script src="<?php echo base_url();?>assets/admin/angularjs/app.js"></script>
+     <script src="<?php echo base_url();?>assets/admin/angularjs/service/appservice.js"></script>-->
 
   </body>
 </html>

@@ -131,7 +131,7 @@
                         <div class="col-sm-12">
                             <div class="form-group text-right">
 
-                                <button class="btn btn-success" ng-click="createJobseeker(jobseeker,csrf);ok()" ng-disabled="createJobseekerForm.$invalid">Lưu</button>
+                                <button name="save-jobseeker" class="btn btn-success" ng-click="createJobseeker(jobseeker,csrf);ok()" ng-disabled="createJobseekerForm.$invalid">Lưu</button>
                                 <button class="btn btn-warning" ng-click="cancel()">Huỷ</button>
                             </div>
                         </div>

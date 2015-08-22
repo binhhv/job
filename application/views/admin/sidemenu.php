@@ -56,8 +56,19 @@
                         <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
                   </ul> -->
                 </li>
-                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Nhà tuyển dụng</a></li>
-                <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Quản trị viên</a></li>
+                <li <?php if (isset($sub) && $sub == 'employer') {
+	echo "class=\"active\"";
+}
+?>><a href="<?php echo base_url('admin/employer');?>"><i class="fa fa-circle-o"></i> Nhà tuyển dụng</a></li>
+
+               <?php if (isset($role) && $role == '1') {
+	?>
+                    <li <?php if (isset($sub) && $sub == 'manager') {
+		echo "class=\"active\"";
+	}
+	?> ><a href="<?php echo base_url('admin/manager');?>"><i class="fa fa-circle-o"></i> Quản trị viên</a></li>
+               <?php }
+?>
 
               </ul>
             </li>

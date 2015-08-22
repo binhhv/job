@@ -1,5 +1,5 @@
 
-  <div  ng-controller="jobseekerController" ng-init = "init()">
+  <div id="jobseeker-ctrl"  ng-controller="jobseekerController">
 
 
 <section class="content-header">
@@ -18,7 +18,7 @@
           <div class="row">
 
             <div class="col-md-12"><button class="btn btn-primary" ng-click="modalCreateJobseeker('lg')">tạo người tìm việc</button> &nbsp;
-              <button class="btn btn-success " ng-click="reload()">tải lại dữ liệu</button></div>
+              <button class="btn btn-success" ng-click="reload();" >tải lại dữ liệu</button></div>
           </div>
         </section>
         <section class="content">
@@ -42,9 +42,9 @@
                   <div class="text-center">Không có dữ liệu</div>
                 </div>
                 <div class="box-body table-responsive no-padding"  ng-show="filteredItems > 0">
-                  <table class="table table-hover table-striped hide" id="jobseekerTable">
+                  <table class="table table-hover table-striped hide" id="jobseekerTable" ng-init="getJobseekers()">
                     <tr>
-                      <th>Mã số</th>
+                      <th>Số TT</th>
                       <th>Email</th>
                       <th>Họ tên</th>
                       <th class="text-center">Trạng thái</th>
@@ -53,8 +53,8 @@
                       <th class="text-center">Số tin tuyển dụng ứng tuyển</th>
                       <th class="text-center"></th>
                     </tr>
-                    <tr ng-repeat="data in filtered = (list | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" data-id="{{data.account_id}}">
-                      <td>{{data.account_id}}</td>
+                    <tr ng-repeat="data in filtered = (pagedItems | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" data-id="{{data.account_id}}">
+                      <td>{{($index + ((currentPage -1)* entryLimit)) + 1}}</td>
                       <td>{{data.account_email}}</td>
                       <td>{{data.account_first_name}} {{data.account_last_name}}</td>
                       <td class="text-center">
@@ -81,8 +81,13 @@
 
                   </table>
                 </div>
-                <div class="box-footer clearfix text-right"  ng-show="filteredItems > 0">
-                  <div pagination="" page="currentPage" on-select-page="setPage(page)" boundary-links="true" total-items="filteredItems" items-per-page="entryLimit" class="pagination-small" previous-text="&laquo;" next-text="&raquo;"></div>
+                <div class="box-footer clearfix text-right" >
+                <div class="col-md-12" ng-show="filteredItems > 0">
+                    <pagination total-items="filteredItems" on-select-page="setPage(page)" page="currentPage" max-size="itemsPerPage" class="pagination-sm" items-per-page="entryLimit" boundary-links="true"></pagination>
+            <!-- <div pagination="" page="currentPage" on-select-page="setPage(page)" boundary-links="true" total-items="filteredItems" items-per-page="entryLimit" class="pagination-small" previous-text="&laquo;" next-text="&raquo;"></div> -->
+        </div></div>
+                <!-- <div class="box-footer clearfix text-right"  ng-show="filteredItems > 0"> -->
+                  <!-- <div pagination=""  page="currentPage" on-select-page="setPage(page)" boundary-links="true" total-items="filteredItems" items-per-page="entryLimit" class="pagination-small" previous-text="&laquo;" next-text="&raquo;"></div> -->
                  <!--  <ul class="pagination pagination-sm no-margin pull-right">
                     <li><a href="#">«</a></li>
                     <li><a href="#">1</a></li>
@@ -90,7 +95,8 @@
                     <li><a href="#">3</a></li>
                     <li><a href="#">»</a></li>
                   </ul> -->
-                </div>
+                <!-- </div> -->
+                <!-- <div ng-model="message"></div> -->
                 <!-- /.box-body -->
               </div><!-- /.box -->
               <!-- <div class="box" ng-show="filteredItems == 0">

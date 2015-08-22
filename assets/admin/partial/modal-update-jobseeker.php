@@ -71,8 +71,8 @@
                         <div class="col-sm-12">
                             <div class="form-group text-right">
 
-                                <button class="btn btn-success" ng-click="updateJobseeker(jobseeker);ok()" ng-disabled="updatejobseekerForm.$invalid">Update & Close</button>
-                                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                                <button class="btn btn-success" ng-click="updateJobseeker(jobseeker);ok()" ng-disabled="updatejobseekerForm.$invalid">Lưu</button>
+                                <button class="btn btn-warning" ng-click="cancel()">Hủy</button>
                             </div>
                         </div>
                     </div>

@@ -64,6 +64,7 @@ $route['admin'] = 'admin/admin/index';
 $route['admin/login'] = 'admin/login';
 $route['admin/checkLogin'] = 'admin/login/checkLogin';
 $route['admin/logout'] = 'admin/login/logout';
+//jobseeker admin route
 $route['admin/jobseeker'] = 'admin/admin/jobseekerManager';
 $route['register'] = 'register/index';
 $route['admin/jobseeker/getListJobseeker'] = 'admin/admin/jobseeker';
@@ -74,3 +75,19 @@ $route['admin/jobseeker/getToken'] = 'admin/admin/getToken';
 $route['admin/jobseeker/detail/(:num)'] = 'admin/admin/detailJobseeker/$1';
 $route['admin/jobseeker/detail/document/(:num)'] = 'admin/admin/documentJobseeker/$1';
 $route['admin/jobseeker/checkEmailExits/(:any)'] = 'admin/admin/checkEmailExits/$1';
+//employer admin route
+$route['admin/employer'] = 'admin/admin_employer/index';
+$route['admin/employer/getListEmployer'] = 'admin/admin_employer/getListEmployer';
+
+//manager admin route
+$route['admin/manager'] = 'admin/admin_manager/index';
+$route['admin/manager/getListManager'] = 'admin/admin_manager/getListManager';
+$route['admin/manager/updateManager'] = 'admin/admin_manager/updateManager';
+$route['admin/manager/deleteManager'] = 'admin/admin_manager/deleteManager';
+//errors route
+
+$route['error/403'] = 'admin/admin_error/page403';
+$route['404_override'] = 'error_page/index';
+
+//test some function
+$route['insertDBTest'] = 'admin/test_db/insertDB';
