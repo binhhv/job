@@ -111,10 +111,10 @@ $("#register-form").submit(function(event){
             // var objs = $.parseJSON(response);
             var account_email = response.account_email;
             var account_password = response.account_password;
-             var account_first_name = response.account_first_name;
-              var account_last_name = response.account_last_name;
-              var csrf_name = response.name;
-              var csrf_hash = response.hash;
+            var account_first_name = response.account_first_name;
+            var account_last_name = response.account_last_name;
+            var csrf_name = response.name;
+            var csrf_hash = response.hash;
             if(account_email != null)
             {                           
                 $('#message').text("");
@@ -128,8 +128,7 @@ $("#register-form").submit(function(event){
                 $('input[name="csrf_test_name"]').val(csrf_hash);
             }
             else
-            {       
-                alert("rrer");                      
+            {                             
                 $('#message').text("");
                 // $('#message').html(obj);
                 // $('#registerModal').modal('hide')
