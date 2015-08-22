@@ -290,5 +290,4 @@ class DBUtil extends CI_Model {
 			$this->db->update(self::XMPP_PUSH, $dxmppUpdate);
 		}
 	}
-
 }

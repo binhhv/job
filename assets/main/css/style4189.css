@@ -10687,6 +10687,29 @@ body .pac-container {
 .col-sm-12.col-md-12.col-xs-12.row-btn-register {
     text-align: right;
 }
-h5.modal-title {
-    text-align: center;
+.title_ntd_dky {
+    overflow: hidden;
+    font-weight: bold;
+    border-left: 4px solid #692095;
+    line-height: 29px;
+    padding-right: 0;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding-left: 10px;
+}
+.clear {
+    clear: both;
+}
+.mb_20 {
+    margin-bottom: 20px !important;
+}
+.fwb {
+    font-weight: 500;
+}
+.fs20 {
+    font-size: 20px;
+}
+.txt-color-363636 {
+    color: #363636;
 }

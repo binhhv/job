@@ -101,7 +101,10 @@ $route['404_override'] = 'error_page/index';
 $route['file-not-found'] = 'error_page/filenotfound';
 //test some function
 $route['insertDBTest'] = 'admin/test_db/insertDB';
-$route['sendmail'] = 'Test_mail/index';
+
 //download file
 $route['download/(:any)/(:any)/(:any)'] = 'file/file_controller/download/$1/$2/$3';
 $route['downloadcv/(:num)/(:any)/(:any)'] = 'file/file_controller/downloadcv/$1/$2/$3';
+
+//test send mail
+$route['sendmail'] = 'sendmail/index';
