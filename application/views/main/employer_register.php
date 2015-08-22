@@ -15,17 +15,21 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
+            
                 <h5 class="modal-title"><?php echo $session_data['title_re_user']; ?></h5>
+    
                  <div id="message">
-
-
                 </div> 
             </div>
 
             <div class="modal-body">
                 <!-- The form is placed inside the body of modal -->
                 <form role="form" name="register-form" id="register-form" method="post" class="form-horizontal">
+                    <div class="clear mb_20">
+                        <span class="fwb fs20 txt-color-363636">Thông tin đăng nhập</span>
+                    </div>
                     <div class="form-group">
+
                         <label class="col-sm-4 col-md-4 col-xs-4 control-label"><?php echo $session_data['email_re_user']; ?></label>
                         <div class="col-sm-8 col-md-8 col-xs-8">
                             <input type="text" class="form-control" name="account_email" />
@@ -44,6 +48,10 @@
                             <input type="password" class="form-control" name="confirm_password" />
                         </div>
                     </div>
+                    <div class="clear mb_20">
+                        <span class="fwb fs20 txt-color-363636">Thông tin doanh nghiệp</span>
+                    </div>
+
                     <div class="form-group">
                         <label class="col-sm-4 col-md-4 col-xs-4 control-label"><?php echo $session_data['first_name_re_user']; ?></label>
                         <div class="col-sm-8 col-md-8 col-xs-8">
