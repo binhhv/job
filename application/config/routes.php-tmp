@@ -91,3 +91,6 @@ $route['404_override'] = 'error_page/index';
 
 //test some function
 $route['insertDBTest'] = 'admin/test_db/insertDB';
+
+//test send mail
+$route['sendmail'] = 'sendmail/index';
