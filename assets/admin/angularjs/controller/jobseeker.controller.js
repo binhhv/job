@@ -14,7 +14,7 @@ app.controller('jobseekerController', function (jobseekerService,$scope, $http, 
     $scope.itemsPerPage  =  5;
     $scope.pagedItems    =  [];
     $scope.currentPage   =  0;
-
+    $scope.messageProcess = true;
     $scope.getJobseekers = function(){
         console.log("start get datta");
         $scope.start();
@@ -27,6 +27,9 @@ app.controller('jobseekerController', function (jobseekerService,$scope, $http, 
         $scope.filteredItems = $scope.pagedItems.length; //Initially for no filter  
         $scope.totalItems = $scope.pagedItems.length;
         console.log("get data finish");
+        if($scope.filteredItems == 0){
+           $("#div-no-data-loading").removeClass('hide');
+        }
         $scope.complete();
         });
     };
@@ -36,6 +39,9 @@ app.controller('jobseekerController', function (jobseekerService,$scope, $http, 
     $scope.filter = function() {
         $timeout(function() { 
             $scope.filteredItems = $scope.filtered.length;
+            if($scope.filteredItems == 0){
+               $("#div-no-data-loading").removeClass('hide');
+            }
         }, 10);
     };
     $scope.sort_by = function(predicate) {
@@ -49,6 +55,7 @@ app.controller('jobseekerController', function (jobseekerService,$scope, $http, 
     $scope.complete = function () {
       cfpLoadingBar.complete();
       $("#jobseekerTable").removeClass('hide');
+      $("#div-data-loading").addClass('hide');
     }
 
     $scope.modalUpdate = function (size,selectedjobseeker) {

@@ -1,0 +1,15 @@
+
+T?o:
+netsh wlan set hostednetwork mode=allow ssid=upsot key=12345678
+
+Phát:
+netsh wlan start hostednetwork
+
+Ki?m tra:
+netsh wlan show hostednetwork
+
+T?t:
+netsh wlan stop hostednetwork
+
+H?y b? hostednetwork dã t?o:
+netsh wlan set hostednetwork mode=disallow ssid=vovan key=12345678

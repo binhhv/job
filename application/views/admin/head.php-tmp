@@ -1,4 +1,4 @@
- <title>AdminLTE 2 | Dashboard</title>
+ <title>Admin | Dashboard</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta http-equiv="refresh" content="1200;url=<?php echo base_url('admin/logout')?>">

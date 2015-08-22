@@ -68,4 +68,29 @@ class Admin_manager extends CI_Controller {
 		echo json_encode($output);
 		//var_dump($manager('account_id'));
 	}
+	function createManager() {
+		$manager = json_decode($this->input->post('manager'), true);
+		//$account_id = $manager['account_id'];
+		$account_email = $manager['account_email'];
+		$account_password = $manager['account_password'];
+		$account_first_name = $manager['account_first_name'];
+		$account_last_name = $manager['account_last_name'];
+		//$account_is_disabled = $manager['account_is_disabled'];
+
+		$paramater = array(
+			'account_email' => $account_email,
+			'account_password' => md5(trim($account_password)),
+			'account_first_name' => $account_first_name,
+			'account_last_name' => $account_last_name,
+			'account_is_get_news' => 0,
+			'account_map_role' => 5,
+			'account_is_delete' => 0,
+			'account_is_disabled' => 0,
+			'account_update_at' => date('Y-m-d H:m'),
+			'account_created_at' => date('Y-m-d H:m'));
+		$output = $this->manager->createManager($paramater);
+		//var_dump($ouput);
+		$obManager = $this->manager->getManager($output);
+		echo json_encode($obManager[0]);
+	}
 }

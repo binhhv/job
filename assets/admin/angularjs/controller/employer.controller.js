@@ -49,22 +49,22 @@ app.controller('employerController', function (employerService,$scope, $http, $t
       $("#employerTable").removeClass('hide');
     }
 
-    $scope.modalUpdate = function (size,selectedjobseeker) {
+    $scope.modalUpdate = function (size,selectedemployer) {
             employerService.getToken(function(data){
                 var obToken = JSON.parse(angular.toJson(data));
                //$log.info(obToken['name']);
-                selectedjobseeker.csrf_name = obToken['name'];
-                selectedjobseeker.csrf_hash = obToken['hash'];
+                selectedemployer.csrf_name = obToken['name'];
+                selectedemployer.csrf_hash = obToken['hash'];
             });
             //alert(data);
             var modalInstance = $modal.open({
                 animation: $scope.animationsEnabled,
-                templateUrl: pathWebsite + 'assets/admin/partial/modal-update-jobseeker.php',
-                controller: function ($scope, $modalInstance, jobseeker){
-                    $scope.jobseeker = jobseeker;
-                    $scope.jobseeker.account_password = '';
+                templateUrl: pathWebsite + 'assets/admin/partial/modal-update-employer.php',
+                controller: function ($scope, $modalInstance, employer){
+                    $scope.employer = employer;
+                    $scope.employer.account_password = '';
                     $scope.ok = function () {
-                        $modalInstance.close($scope.jobseeker);
+                        $modalInstance.close($scope.employer);
                     };
 
                     $scope.cancel = function () {
@@ -74,8 +74,8 @@ app.controller('employerController', function (employerService,$scope, $http, $t
                 },
                 size: size,
                 resolve: {
-                    jobseeker: function () {
-                        return selectedjobseeker;
+                    employer: function () {
+                        return selectedemployer;
                     }
                 }
             });
@@ -87,29 +87,29 @@ app.controller('employerController', function (employerService,$scope, $http, $t
             });
         };
 
-        $scope.modalDelete = function (size,selectedjobseeker) {
+        $scope.modalDelete = function (size,selectedemployer) {
 
             employerService.getToken(function(data){
                 var obToken = JSON.parse(angular.toJson(data));
                //$log.info(obToken['name']);
-                selectedjobseeker.csrf_name = obToken['name'];
-                selectedjobseeker.csrf_hash = obToken['hash'];
+                selectedemployer.csrf_name = obToken['name'];
+                selectedemployer.csrf_hash = obToken['hash'];
             });
             //alert(data);
             var modalInstance = $modal.open({
                 animation: $scope.animationsEnabled,
-                templateUrl: pathWebsite + 'assets/admin/partial/modal-delete-jobseeker.php',
-                controller: function ($scope, $modalInstance, jobseeker){
-                    $scope.jobseeker = jobseeker;
-                    $scope.jobseeker.account_password = '';
+                templateUrl: pathWebsite + 'assets/admin/partial/modal-delete-employer.php',
+                controller: function ($scope, $modalInstance, employer){
+                    $scope.employer = employer;
+                    $scope.employer.account_password = '';
                     $scope.ok = function () {
-                        $modalInstance.close($scope.jobseeker);
+                        $modalInstance.close($scope.employer);
                         for (var i in $scope.pagedItems) {
-                            if ($scope.pagedItems[i] === jobseeker) {
+                            if ($scope.pagedItems[i] === employer) {
                                 $scope.pagedItems.splice(i, 1);
                                     }
                         };
-                        $scope.getJobseekers();
+                        $scope.getemployers();
                     };
 
                     $scope.cancel = function () {
@@ -119,8 +119,8 @@ app.controller('employerController', function (employerService,$scope, $http, $t
                 },
                 size: size,
                 resolve: {
-                    jobseeker: function () {
-                        return selectedjobseeker;
+                    employer: function () {
+                        return selectedemployer;
                     }
                 },
                 scope: $scope
@@ -133,10 +133,10 @@ app.controller('employerController', function (employerService,$scope, $http, $t
             });
         };
 
-    $scope.deleteJobseeker = function(jobseeker){
-        if(jobseeker){
-            //$scope.$broadcast('removeRow', { message: jobseeker });
-            employerService.deleteJobseeker(angular.toJson(jobseeker),function(data){
+    $scope.deleteemployer = function(employer){
+        if(employer){
+            //$scope.$broadcast('removeRow', { message: employer });
+            employerService.deleteEmployer(angular.toJson(employer),function(data){
                 if(data){
                     alertDeleteSuccess();
                     
@@ -155,10 +155,10 @@ app.controller('employerController', function (employerService,$scope, $http, $t
 });
 
     $scope.setDisabled = function(value){
-        $scope.jobseeker.account_is_disabled = value;
+        $scope.employer.account_is_disabled = value;
     };
-    $scope.updateJobseeker = function(jobseeker){
-         employerService.updateJobseeker(angular.toJson(jobseeker),function(data){
+    $scope.updateEmployer = function(employer){
+         employerService.updateEmployer(angular.toJson(employer),function(data){
                 if(data){
                     alertEditSuccess();
                 }
@@ -188,23 +188,23 @@ app.controller('employerController', function (employerService,$scope, $http, $t
                     $(".alert-message-errors").alert();
                     window.setTimeout(function() { $(".alert-message-errors").addClass('hide').fadeOut(); }, 1500);
     }
-    $scope.openDetailJobseeker = function(jobseeker,url){
-        $window.location.href = url + "/" +jobseeker.account_id;
+    $scope.openDetailEmployer = function(employer,url){
+        $window.location.href = url + "/" +employer.account_id;
     }
 
-    $scope.modalCreateJobseeker = function (size) {
+    $scope.modalCreateEmployer = function (size) {
 
             
             var modalInstance = $modal.open({
                 animation: $scope.animationsEnabled,
-                templateUrl: pathWebsite + 'assets/admin/partial/modal-create-jobseeker.php',
+                templateUrl: pathWebsite + 'assets/admin/partial/modal-create-employer.php',
                 controller: function ($scope, $modalInstance,csrf){
                     $scope.csrf = csrf;
                     $scope.ok = function () {
                         //$scope.message="changed";
                          
                         $modalInstance.close();
-                       $scope.getJobseekers();
+                       $scope.getemployers();
                        // $scope.setPage(6);
                         //$scope.message ="đâsdasdasdasd";
                     };
@@ -232,10 +232,10 @@ app.controller('employerController', function (employerService,$scope, $http, $t
         };
 
 
-    $scope.createJobseeker = function(jobseeker,csrf){
+    $scope.createEmployer = function(employer,csrf){
         console.log(csrf);
         
-        employerService.createJobseeker(angular.toJson(jobseeker),csrf,function(data){
+        employerService.createEmployer(angular.toJson(employer),csrf,function(data){
             if(data){
                 alertCreateSuccess();
                 $scope.pagedItems[$scope.pagedItems.length] = data;
@@ -249,12 +249,12 @@ app.controller('employerController', function (employerService,$scope, $http, $t
          
     };
     $scope.reload = function(){
-    $scope.getJobseekers();
+    $scope.getemployers();
     }
-    $scope.checkEmailJobseeker = function(emailJobseeker){
-       //console.log(employerService.checkEmailExits(emailJobseeker));
+    $scope.checkEmailEmployer = function(emailEmployer){
+       //console.log(employerService.checkEmailExits(emailemployer));
        $timeout(function() {
-            console.log(employerService.checkEmailExits(emailJobseeker));
+            console.log(employerService.checkEmailExits(emailEmployer));
        }, 100);
     }
 

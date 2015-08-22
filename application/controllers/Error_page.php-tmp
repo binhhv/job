@@ -13,4 +13,7 @@ class Error_page extends CI_Controller {
 	function index() {
 		$this->load->view('admin/errors/404');
 	}
+	function filenotfound() {
+		$this->load->view('admin/errors/file-not-found');
+	}
 }

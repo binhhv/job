@@ -38,8 +38,10 @@
 
                   </div>
                 </div><!-- /.box-header -->
-                <div class="box-body table-responsive no-padding" ng-show="filteredItems == 0">
-                  <div class="text-center">Không có dữ liệu</div>
+
+                <div class="box-body table-responsive no-padding">
+                  <div class="text-center" id="div-data-loading">Đang tải dữ liệu</div>
+                  <div class="text-center hide" id="div-no-data-loading" ng-show="filteredItems == 0" >Không có dữ liệu</div>
                 </div>
                 <div class="box-body table-responsive no-padding"  ng-show="filteredItems > 0">
                   <table class="table table-hover table-striped hide" id="jobseekerTable" ng-init="getJobseekers()">

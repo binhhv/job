@@ -33,7 +33,9 @@ $scope.formatDate = function(date){
         $scope.entryLimit = 20; //max no of items to display in a page
         $scope.filteredItems = $scope.pagedItems.length; //Initially for no filter  
         $scope.totalItems = $scope.pagedItems.length;
-
+        if($scope.filteredItems == 0){
+           $("#div-no-data-loading").removeClass('hide');
+        }
         $scope.complete();
         console.log("finish data");
         });
@@ -44,6 +46,9 @@ $scope.formatDate = function(date){
     $scope.filter = function() {
         $timeout(function() { 
             $scope.filteredItems = $scope.filtered.length;
+            if($scope.filteredItems == 0){
+               $("#div-no-data-loading").removeClass('hide');
+            }
         }, 10);
     };
     $scope.sort_by = function(predicate) {
@@ -57,6 +62,7 @@ $scope.formatDate = function(date){
     $scope.complete = function () {
       cfpLoadingBar.complete();
       $("#managerTable").removeClass('hide');
+      $("#div-data-loading").addClass('hide');
     };
 
     $scope.modalUpdate = function (size,selectedmanager) {
@@ -206,4 +212,86 @@ $scope.formatDate = function(date){
     $scope.reload = function(){
     $scope.getManagers();
     }
+
+    $scope.modalCreateManager = function (size) {
+
+            
+            var modalInstance = $modal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl: pathWebsite + 'assets/admin/partial/modal-create-manager.php',
+                controller: function ($scope, $modalInstance,csrf){
+                    $scope.csrf = csrf;
+                    $scope.ok = function () {
+                        //$scope.message="changed";
+                         
+                       $modalInstance.close();
+                       $scope.getManagers();
+                       // $scope.setPage(6);
+                        //$scope.message ="đâsdasdasdasd";
+                    };
+
+                    $scope.cancel = function () {
+                        $modalInstance.dismiss('cancel');
+                    };
+
+                },
+                size: size,
+                scope:$scope,
+                resolve: {
+                    csrf: function () {
+                      return managerService.getTokenReturn();
+                    }
+                },
+
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                $scope.selected = selectedItem;
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+        };
+
+
+    $scope.createManager = function(manager,csrf){
+        console.log(csrf);
+        
+        managerService.createManager(angular.toJson(manager),csrf,function(data){
+            if(data){
+                alertCreateSuccess();
+                $scope.pagedItems[$scope.pagedItems.length] = data;
+                $scope.ok();
+            }
+            else{
+                alertErrors();
+            }
+        });
+
+         
+    };
 });
+
+app.directive('wcUnique', ['managerService', function (managerService) {
+    return {
+        restrict: 'A',
+        require: 'ngModel',
+        link: function (scope, element, attrs, ngModel) {
+                  scope.$watch(attrs.ngModel, function(value) {
+                    console.log(value);
+                    managerService.checkEmailExits(value)
+                    .then(function (unique) {
+                            console.log(unique + '\n');
+                           // ngModel.$loading = false;
+                           if(unique ==="true")
+                            {ngModel.$setValidity('unique', false); }
+                        else
+                        {
+                           ngModel.$setValidity('unique', true); 
+                        }
+                            
+                        
+                    });
+                  });
+        }
+    }
+}]);
