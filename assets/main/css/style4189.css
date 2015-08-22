@@ -8013,15 +8013,15 @@ blockquote .individual-testimonial-author cite {
     font-size: 80%
 }
 
-.application_details, .modal, .resume_contact_details {
+/*.application_details, .modal, .resume_contact_details {
     display: none
 }
 
 .mfp-content .application_details, .mfp-content .modal, .mfp-content .resume_contact_details {
     display: block !important
-}
+}*/
 
-.modal {
+/*.modal {
     position: relative;
     background: #fafafa;
     width: auto;
@@ -8030,8 +8030,8 @@ blockquote .individual-testimonial-author cite {
     padding: 0;
     border-radius: 6px
 }
-
-.modal hr {
+*/
+/*.modal hr {
     border-top: 0;
     border-bottom-color: #ccc;
     margin: 0
@@ -8060,11 +8060,11 @@ blockquote .individual-testimonial-author cite {
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px
 }
-
-.modal #loginform .login-submit, .modal #loginform .register-submit, .modal #register-form .login-submit, .modal #register-form .register-submit {
+*/
+/*.modal #loginform .login-submit, .modal #loginform .register-submit, .modal #register-form .login-submit, .modal #register-form .register-submit {
     margin: 0 -30px -30px
 }
-
+*/
 button.mfp-close {
     color: #fff !important;
     top: 33px;
@@ -10683,4 +10683,10 @@ body .pac-container {
     text-align: center;
     color: #AAA;
     margin-bottom: 10px
+}
+.col-sm-12.col-md-12.col-xs-12.row-btn-register {
+    text-align: right;
+}
+h5.modal-title {
+    text-align: center;
 }
