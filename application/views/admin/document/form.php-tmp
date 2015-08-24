@@ -17,6 +17,7 @@
           <div class="row">
 
             <div class="col-md-12">
+            <button class="btn btn-primary" ng-click="openModalCreateForm('lg')">tạo hồ sơ mới</button> &nbsp;
               <button class="btn btn-success" ng-click="reloadForm();" >tải lại dữ liệu</button></div>
           </div>
         </section>
@@ -26,16 +27,17 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Danh sách cv của ứng viên.</h3>
-                  <div class="box-tools">
-                    <div class="input-group" style="width: 150px;">
+                  <div class="col-sm-6 col-xs-12">
+                    <h3 class="box-title">Danh sách hồ sơ của ứng viên.</h3></div>
+                  <div class="col-sm-6 col-xs-12"><div class="box-tools">
+                    <div class="input-group search-box" style="width: 150px;">
                       <input type="text" name="table_search" ng-model="search" ng-change="filter()" class="form-control input-sm pull-right" placeholder="tìm kiếm">
                       <div class="input-group-btn">
                         <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
                       </div>
                     </div>
 
-                  </div>
+                  </div></div>
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                   <!-- <div class="text-center">Không có dữ liệu</div> -->
@@ -73,9 +75,9 @@
                       <td class="text-center">{{formatDate(data.docon_created_at) | date: "dd/MM/yyyy"}}</td>
 
                       <td class="text-center">
-                      <button class="btn btn-xs btn-success" ng-click="modalDetail(data)" >xem</button>
-                      <button class="btn btn-xs btn-warning" ng-click="modalUpdate(data)" >sửa</button>
-                      <button class="btn btn-xs btn-warning" ng-click="modalDelete(data)" >xóa</button>
+                      <button class="btn btn-xs btn-success" ng-click="modalDetailForm('sm',data.docon_id)" >xem</button>
+                      <button class="btn btn-xs btn-warning" ng-click="modalUpdateForm('sm',data)" >sửa</button>
+                      <button class="btn btn-xs btn-warning" ng-click="modalDeleteForm('sm',data)" >xóa</button>
                       </td>
                     </tr>
                     <!-- <tr>

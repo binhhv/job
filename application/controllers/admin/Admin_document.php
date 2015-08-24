@@ -8,6 +8,7 @@ class Admin_document extends CI_Controller {
 		$this->load->model('admin/Document_model', 'document');
 		$this->load->model('admin/Account_model', 'account');
 		$this->load->model('admin/Mail_model', 'mail');
+		$this->load->model('admin/Healthy_model', 'healthy');
 		if (!$this->session->userdata['user']['isLogged']) {
 			redirect(base_url() . 'admin/login'); // no session established, kick back to login page
 		} else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
@@ -61,81 +62,108 @@ class Admin_document extends CI_Controller {
 		echo json_encode($output);
 	}
 	function getDetailForm($idForm) {
-
+		$doc = $this->document->getDetailForm($idForm);
+		echo json_encode($doc);
 	}
 	function updateForm() {
-
+		$form = json_decode($this->input->post('form'), true);
+		$docon_id = $form['docon_id'];
+		$docon_birthday = $form['docon_birthday'];
+		$docon_phone = $form['docon_phone'];
+		$docon_career = $form['docon_career'];
+		$docon_degree = $form['docon_degree'];
+		$docon_education = $form['docon_education'];
+		$docon_address = $form['docon_address'];
+		$docon_experience = $form['docon_experience'];
+		$docon_skill = $form['docon_skill'];
+		$docon_healthy = $form['docon_healthy'];
+		$docon_reason_apply = $form['docon_reason_apply'];
+		$docon_salary = $form['docon_salary'];
+		$docon_advance = $form['docon_advance'];
+		$docon_update_at = date('Y-m-d H:m');
+		log_message('error', $message);
+		$paramater = array(
+			'docon_birthday' => $docon_birthday,
+			'docon_phone' => $docon_phone,
+			'docon_career' => $docon_career,
+			'docon_degree' => $docon_degree,
+			'docon_education' => $docon_education,
+			'docon_address' => $docon_address,
+			'docon_experience' => $docon_experience,
+			'docon_skill' => $docon_skill,
+			'docon_healthy' => $docon_healthy,
+			'docon_reason_apply' => $docon_reason_apply,
+			'docon_salary' => $docon_salary,
+			'docon_advance' => $docon_advance,
+			'docon_update_at' => $docon_update_at,
+		);
+		$output = $this->document->updateForm($paramater, $docon_id);
+		echo json_encode($output);
 	}
 	function deleteCV() {
 		$cv = json_decode($this->input->post('cv'), true);
 		$doccv_id = $cv['doccv_id'];
 		$account_id = $cv['doccv_map_user'];
+		log_message('error', $message);
 		$paramater = array(
 			'doccv_is_delete' => true);
 		$output = $this->document->updateCV($paramater, $doccv_id);
-
+		$file_cv = $cv['doccv_file_name'];
 		$user = $this->account->getAccount($account_id);
 		//log_message('error', $user);
-		// if ($output) {
-		// 	$data = array(
-		// 		'mailto' => $user->account_email,
-		// 		'name' => $user->account_first_name . $user->account_last_name,
-		// 		'type' => 'cv',
-		// 		'message' => 'xoa CV :))',
-		// 	);
+		if ($output) {
+			$data = array(
+				'mailsend' => $user->account_email,
+				'name' => $user->account_first_name . $user->account_last_name,
+				'type' => 'delete',
+				'typedelete' => 'CV : ' . $file_cv,
+			);
 
-		// 	$result = $this->mail->sendMail($data);
-		// 	log_message('error', $result);
-		// 	//if($result){
-		// 	echo json_encode($result);
-		// 	//}
-		// }
-		$this->sendmail();
-		echo json_encode($output);
-	}
-	function sendmail() {
-		// $config = Array(
-		// 	'protocol' => 'smtp',
-		// 	'smtp_host' => 'smtp.gmail.com',
-		// 	'smtp_port' => 465,
-		// 	'smtp_user' => 'hvbinh1990@gmail.com',
-		// 	'smtp_pass' => 'binh2381990',
-		// 	'mailtype' => 'html',
-		// 	'charset' => 'iso-8859-1',
-		// 	'starttls' => true,
-		// );
+			$result = $this->mail->sendMail($data);
+			log_message('error', $result);
+			echo json_encode($result);
 
-		// $this->load->library('email', $config);
-		// $this->email->set_newline("\r\n");
-		// $this->email->from('hvbinh1990@gmail.com', 'abcbbcc');
-		// $this->email->to('binhck2@gmail.com');
-		// $this->email->subject('Email Test');
-		// $this->email->message('Testing the email class.');
-
-		// $this->email->send();
-
-		// echo $this->email->print_debugger();die;
-
-		$this->load->library('email');
-
-		$config['protocol'] = 'smtp';
-		$config['smtp_host'] = 'smtp.live.com';
-		$config['smtp_user'] = 'binhhv.live.com';
-		$config['smtp_pass'] = 'Binhminh2381990';
-		$config['smtp_port'] = 587;
-
-		$this->email->initialize($config);
-
-		$this->email->from('binhhv@live.com');
-		$this->email->to('hvbinh19903@gmail.com');
-		$this->email->subject('Test');
-		$this->email->message('Message');
-
-		if ($this->email->send()) {
-			echo 'Sent';
-		} else {
-			$this->email->print_debugger();
+		}
+		//$this->sendmail();
+		else {
+			echo json_encode($output);
 		}
 
 	}
+
+	function deleteForm() {
+		$docon = json_decode($this->input->post('docform'), true);
+		$docon_id = $docon['docon_id'];
+		$account_id = $docon['docon_map_user'];
+		log_message('error', $docon);
+		$paramater = array(
+			'docon_is_delete' => true);
+		$output = $this->document->updateForm($paramater, $docon_id);
+		//$file_cv = $cv['doccv_file_name'];
+		$user = $this->account->getAccount($account_id);
+		//log_message('error', $user);
+		if ($output) {
+			$data = array(
+				'mailsend' => $user->account_email,
+				'name' => $user->account_first_name . $user->account_last_name,
+				'type' => 'delete',
+				'typedelete' => 'hồ sơ với mã số : ' . $docon_id,
+			);
+
+			$result = $this->mail->sendMail($data);
+			log_message('error', $result);
+			echo json_encode($result);
+
+		}
+		//$this->sendmail();
+		else {
+			echo json_encode($output);
+		}
+
+	}
+	public function getListHealthy() {
+		$output = $this->healthy->getListHealthy();
+		echo json_encode($output);
+	}
+
 }

@@ -137,7 +137,8 @@ $scope.formatDate = function(date){
                         return selectedmanager;
                     }
                 },
-                scope: $scope
+                scope: $scope,
+                backdrop: 'static'
             });
 
             modalInstance.result.then(function (selectedItem) {
@@ -148,16 +149,19 @@ $scope.formatDate = function(date){
         };
 
     $scope.deleteManager = function(manager){
+         $scope.disabled_modal = true;
         if(manager){
         	console.log("start delete");
             managerService.deleteManager(angular.toJson(manager),function(data){
                 if(data){
                 	console.log("finish delete");
                     alertDeleteSuccess();
+                     $scope.disabled_modal = false;
                     $scope.ok();
                 }
                 else{
                     alertErrors();
+                     $scope.cancel();
                 }
 
             });
@@ -177,6 +181,7 @@ $scope.formatDate = function(date){
                 }
                 else{
                     alertErrors();
+                     $scope.cancel();
                 }
 
          });
@@ -264,6 +269,7 @@ $scope.formatDate = function(date){
             }
             else{
                 alertErrors();
+                 $scope.cancel();
             }
         });
 
@@ -282,7 +288,7 @@ app.directive('wcUnique', ['managerService', function (managerService) {
                     .then(function (unique) {
                             console.log(unique + '\n');
                            // ngModel.$loading = false;
-                           if(unique ==="true")
+                           if(unique.trim() ==="true")
                             {ngModel.$setValidity('unique', false); }
                         else
                         {

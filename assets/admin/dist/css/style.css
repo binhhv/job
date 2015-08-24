@@ -1,14 +1,14 @@
 .margin-top-10{
 	margin-top: 10px !important;
 }
-.alert-message,.alert-message-delete,.alert-message-create{
+.alert-message,.alert-message-delete,.alert-message-create,.alert-message-setRoleEmployer,.alert-message-errors{
 	 position: fixed;
     z-index: 9999;
     right: 0;
     opacity: 0.8;
     top:50px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 .item-cv{
 	border-bottom: 1px solid #f1f1f1;
@@ -26,4 +26,57 @@
 }
 table#employerTable tr td label{
 	display: block;
+}
+
+
+.search-box{
+	float: right !important;
+}
+.p-relative{
+	position: relative;
+
+}
+.p-relative img{
+	   
+    width: 150px;
+    margin:0 auto;
+}
+.no-box-shadow{
+	box-shadow:none;
+}
+/*.p-relative img{
+	   position: absolute;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 100px;
+}
+.employer-info, .employer-info .invoice-col {  
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    flex:1 0 auto;
+}*/
+.border-top-1{
+	border-top: 1px solid #f4f4f4;
+	margin: 10px 0;
+	padding-top: 10px;
+}
+@media (max-width: 767px) {
+	  .search-box{
+	  	float: left !important;
+	  	margin-top: 10px;
+	  }
+	  .p-relative img{
+	   
+    width: 150px;
+     margin:0 auto;
+     margin-bottom: 10px;
+}
+}/*end media queries*/
+
+@media (max-width: 560px) {
+	
 }

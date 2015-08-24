@@ -134,7 +134,8 @@ app.controller('jobseekerController', function (jobseekerService,$scope, $http, 
                         return selectedjobseeker;
                     }
                 },
-                scope: $scope
+                scope: $scope,
+                 backdrop: 'static'
             });
 
             modalInstance.result.then(function (selectedItem) {
@@ -145,6 +146,7 @@ app.controller('jobseekerController', function (jobseekerService,$scope, $http, 
         };
 
     $scope.deleteJobseeker = function(jobseeker){
+         $scope.disabled_modal = true;
         if(jobseeker){
             console.log("start delete");
             //$scope.$broadcast('removeRow', { message: jobseeker });
@@ -152,10 +154,12 @@ app.controller('jobseekerController', function (jobseekerService,$scope, $http, 
                 if(data){
                     console.log("finish delete");
                     alertDeleteSuccess();
+                     $scope.disabled_modal = false;
                     $scope.ok();
                 }
                 else{
                     alertErrors();
+                     $scope.cancel();
                 }
 
             });
@@ -177,6 +181,7 @@ app.controller('jobseekerController', function (jobseekerService,$scope, $http, 
                 }
                 else{
                     alertErrors();
+                     $scope.cancel();
                 }
 
          });
@@ -256,6 +261,7 @@ app.controller('jobseekerController', function (jobseekerService,$scope, $http, 
             }
             else{
                 alertErrors();
+                 $scope.cancel();
             }
         });
 
@@ -331,7 +337,7 @@ app.directive('wcUnique', ['jobseekerService', function (jobseekerService) {
                     .then(function (unique) {
                             console.log(unique + '\n');
                            // ngModel.$loading = false;
-                           if(unique ==="true")
+                           if(unique.trim() ==="true")
                             {ngModel.$setValidity('unique', false); }
                         else
                         {

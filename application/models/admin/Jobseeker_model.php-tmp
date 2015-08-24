@@ -51,15 +51,16 @@ class Jobseeker_model extends CI_Model {
 	function getListRecruitmentApply($id) {
 		$sql = "select a.*,b.* from recruitment_apply a
 				inner join (select c.*,d.employer_name as name,d.employer_address as address from recruitment as c, employer as d where c.rec_map_employer = d.employer_id
-					group by c.rec_id) as b on a.recapp_map_recruitment = b.rec_id
+					group by c.rec_id) as b on a.recapp_map_recruitment = b.rec_id and b.rec_is_delete = 0
 				where a.recapp_map_user = ? and recapp_is_delete = ?";
 		$data = array($id, 0);
 		return $this->dbutil->getFromDbQueryBinding($sql, $data);
 	}
 	function getDocumentJobseeker($id) {
-		$sql = "select a.*,b.account_email as email, CONCAT(b.account_first_name, ' ', b.account_last_name) as name,DATE_FORMAT(a.docon_birthday,'%d/%m/%Y') as birthday
+		$sql = "select a.*,b.account_email as email, CONCAT(b.account_first_name, ' ', b.account_last_name) as name,DATE_FORMAT(a.docon_birthday,'%d/%m/%Y') as birthday,c.*
 				from document_online a
 				left join account as b on b.account_id = a.docon_map_user
+				left join healthy c  on c.healthy_id = docon_healthy
 				where a.docon_id = ? and a.docon_is_delete = ?";
 
 		$data = array($id, 0);

@@ -3,101 +3,47 @@
  *
  */
 class Mail_model extends CI_Model {
-
+	//protected $mail;
 	function __construct() {
 		parent::__construct();
 		$this->load->helper('url');
-		$this->load->library(array('form_validation', 'session'));
-		//$this->load->library('email', $this->config->item('configEmail'));
-		if (!$this->session->userdata['user']['isLogged']) {
-			redirect(base_url() . 'admin/login'); // no session established, kick back to login page
-		} else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
-			redirect(base_url('error/403'));
-		}
+		$this->config->load('email');
+		$this->load->library('My_PHPMailer');
+
 	}
 	function sendMail($data) {
+		$type = $data['type'];
+		if ($type == 'delete') {
+			$message = file_get_contents(base_url() . 'mail_template/delete_template_mail.html');
+			$message = str_replace('%name%', $data['name'], $message);
+			$message = str_replace('%type%', $data['typedelete'], $message);
+		}
+		$mail = new PHPMailer();
+		$mail->CharSet = $this->config->item('charset');
+		$mail->IsSMTP(); // set mailer to use SMTP
+		$mail->Host = $this->config->item('host'); //
+		$mail->SMTPAuth = true; // turn on SMTP authentication
+		$mail->Username = $this->config->item('username'); // SMTP username
+		$mail->Password = $this->config->item('password'); // SMTP password
+		$mail->From = $this->config->item('username');
+		$mail->FromName = $this->config->item('name');
+		$mail->WordWrap = 50; // set word wrap to 50 characters
+		$mail->IsHTML(true); // set email format to HTML (true) or plain text (false)
 
-		//$message = '';
-		//$this->load->library('email', $config);
-		// $config = $this->config->item('configEmail');
-		// $this->email->set_newline("\r\n");
-		// $this->email->from($config['smtp_user']); // change it to yours
-		// $this->email->to($data['mailto']); // change it to yours
-		// $this->email->subject("test mail binhhv");
-		// //$this->email->message($message);
-		// $body = array('name' => $data['name'],
-		// 	'message' => $data['message'],
-		// 	'mailfrom' => "binhhv@live.com");
-		// if ($data['type'] == 'cv') {
-		// 	$message = $this->load->view('util/mailtemplate/delete-cv', $data, TRUE);
-		// } // this will return you html data as message
-		// else {
-		// 	$message = '';
-		// }
-		// $this->email->message($message);
-		// if ($this->email->send()) {
-		// 	return true;
-		// } else {
-		// 	//show_error($this->email->print_debugger());
-		// 	return false;
-		// }
+		if (isset($data['multisend']) && $data['multisend']) {
+			foreach ($data['listmail'] as $objectMail) {
+				$mail->AddAddress($objectMail->account_email, $objectMail->account_first_name . $objectMail->account_last_name);
+			}
+		} else {
+			$mail->AddAddress($data['mailsend'], $data['name']);
+		}
+		$mail->Subject = 'THÔNG BÁO TỪ BAN QUẢN TRỊ WEBSITE WWW.ALLLSHIGOTO.COM';
+		$mail->MsgHTML($message);
+		$mail->AltBody = strip_tags($message);
 
-		// $this->load->library('email');
-
-		// $config['protocol'] = 'smtp';
-
-		// $config['smtp_host'] = 'ssl://smtp.gmail.com';
-
-		// $config['smtp_port'] = '465';
-
-		// $config['smtp_timeout'] = '7';
-
-		// $config['smtp_user'] = 'hvbinh1990@gmail.com';
-
-		// $config['smtp_pass'] = 'binh2381990';
-
-		// $config['charset'] = 'utf-8';
-
-		// $config['newline'] = "\r\n";
-
-		// $config['mailtype'] = 'text'; // or html
-
-		// $config['validation'] = TRUE; // bool whether to validate email or not
-
-		// $this->email->initialize($config);
-
-		// $this->email->from('hvbinh1990@gmail.com', 'binhhv');
-		// $this->email->to('hvbinh1990@gmail.com');
-
-		// $this->email->subject('Email Test');
-
-		// $this->email->message('Testing the email class.');
-
-		// $this->email->send();
-
-		// echo $this->email->print_debugger();
-
-		$config = Array(
-			'protocol' => 'smtp',
-			'smtp_host' => 'ssl://smtp.googlemail.com',
-			'smtp_port' => 465,
-			'smtp_user' => 'hvbinh1990@gmail.com',
-			'smtp_pass' => 'binh2381990',
-			'mailtype' => 'html',
-			'charset' => 'iso-8859-1',
-			'starttls' => true,
-		);
-
-		$this->load->library('email', $config);
-		$this->email->set_newline("\r\n");
-		$this->email->from('hvbinh1990@gmail.com', 'abcbbcc');
-		$this->email->to('binhck2@gmail.com');
-		$this->email->subject('Email Test');
-		$this->email->message('Testing the email class.');
-
-		$this->email->send();
-
-		echo $this->email->print_debugger();die;
-
+		if (!$mail->Send()) {
+			return true;
+		}
+		return false;
 	}
 }

@@ -3,7 +3,7 @@
         <h3 class="modal-title">Xóa: {{employer.employer_name}} </h3>
     </div>
     <div class="modal-body">
-            <form name="updatejobseekerForm">
+            <form name="deleteEmployerForm">
                 <fieldset>
                     <div class="row">
                         <div class="col-sm-12">
@@ -16,11 +16,12 @@
                     </div>
 
                     <div class="row">
+
                         <div class="col-sm-12">
                             <div class="form-group text-right">
 
-                                <button class="btn btn-success" ng-click="deleteEmployer(employer);" >Xóa</button>
-                                <button class="btn btn-warning" ng-click="cancel()">Hủy bỏ</button>
+                                <button class="btn btn-success" ng-click="deleteEmployer(employer);" ng-disabled="disabled_modal" >Xóa</button>
+                                <button class="btn btn-warning" ng-click="cancel()" ng-disabled="disabled_modal">Hủy bỏ</button>
                             </div>
                         </div>
                     </div>

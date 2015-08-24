@@ -239,3 +239,30 @@ ERROR - 2015-08-22 16:18:15 --> Severity: Error --> Call to undefined method CI_
 ERROR - 2015-08-22 16:18:59 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
 ERROR - 2015-08-22 16:18:59 --> Severity: Error --> Call to undefined method CI_Controller::Controller() C:\xampp\htdocs\job\application\controllers\Test_mail.php 4
 ERROR - 2015-08-22 16:19:19 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-08-22 19:25:47 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-08-22 19:25:47 --> Severity: Parsing Error --> syntax error, unexpected '<' C:\xampp\htdocs\job\application\config\email.php 30
+ERROR - 2015-08-22 19:26:09 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-08-22 19:28:19 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-08-22 19:28:33 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-08-22 19:28:33 --> Severity: Error --> Call to undefined method PHPMailer::SetFrom() C:\xampp\htdocs\job\application\controllers\Test_mail.php 19
+ERROR - 2015-08-22 19:30:30 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-08-22 19:30:30 --> Severity: Notice --> Undefined variable: name C:\xampp\htdocs\job\application\controllers\Test_mail.php 49
+ERROR - 2015-08-22 19:30:30 --> Severity: Warning --> include_once(class.smtp.php): failed to open stream: No such file or directory C:\xampp\htdocs\job\application\libraries\PHPMailer\class.phpmailer.php 515
+ERROR - 2015-08-22 19:30:30 --> Severity: Warning --> include_once(): Failed opening 'class.smtp.php' for inclusion (include_path='.;C:\xampp\php\PEAR') C:\xampp\htdocs\job\application\libraries\PHPMailer\class.phpmailer.php 515
+ERROR - 2015-08-22 19:30:30 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\job\application\libraries\PHPMailer\class.phpmailer.php:583) C:\xampp\htdocs\job\system\core\Common.php 569
+ERROR - 2015-08-22 19:30:30 --> Severity: Error --> Class 'SMTP' not found C:\xampp\htdocs\job\application\libraries\PHPMailer\class.phpmailer.php 583
+ERROR - 2015-08-22 19:30:52 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-08-22 19:30:52 --> Severity: Warning --> include_once(class.smtp.php): failed to open stream: No such file or directory C:\xampp\htdocs\job\application\libraries\PHPMailer\class.phpmailer.php 515
+ERROR - 2015-08-22 19:30:52 --> Severity: Warning --> include_once(): Failed opening 'class.smtp.php' for inclusion (include_path='.;C:\xampp\php\PEAR') C:\xampp\htdocs\job\application\libraries\PHPMailer\class.phpmailer.php 515
+ERROR - 2015-08-22 19:30:52 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\job\application\libraries\PHPMailer\class.phpmailer.php:583) C:\xampp\htdocs\job\system\core\Common.php 569
+ERROR - 2015-08-22 19:30:52 --> Severity: Error --> Class 'SMTP' not found C:\xampp\htdocs\job\application\libraries\PHPMailer\class.phpmailer.php 583
+ERROR - 2015-08-22 19:31:54 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-08-22 19:31:54 --> Severity: 8192 --> Function eregi() is deprecated C:\xampp\htdocs\job\application\libraries\PHPMailer\class.phpmailer.php 594
+ERROR - 2015-08-22 19:32:50 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-08-22 19:33:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-08-22 20:29:23 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-08-22 20:29:23 --> Severity: Error --> Call to undefined method PHPMailer::AltBody() C:\xampp\htdocs\job\application\controllers\Test_mail.php 66
+ERROR - 2015-08-22 20:29:45 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-08-22 20:30:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-08-22 20:33:30 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-08-22 20:35:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.

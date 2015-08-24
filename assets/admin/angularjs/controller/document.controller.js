@@ -8,7 +8,7 @@ app.filter('startFrom', function() {
     }
 });
 
-app.controller('documentController', function (documentService,$scope, $http, $timeout,cfpLoadingBar,$modal,$log,$window) {
+app.controller('documentController', function (documentService,$scope, $http, $timeout,cfpLoadingBar,$modal,$log,$window,$filter) {
 	$scope.completeProcess = false;
 $scope.formatDate = function(date){
           var dateOut = new Date(date);
@@ -96,15 +96,24 @@ $scope.formatDate = function(date){
                 selectedform.csrf_name = obToken['name'];
                 selectedform.csrf_hash = obToken['hash'];
             });
+            documentService.getListHealthy(function(data){
+                selectedform.listHealthy = data;
+
+                console.log(data);
+            });
             //alert(data);
             var modalInstance = $modal.open({
                 animation: $scope.animationsEnabled,
-                templateUrl: pathWebsite + 'assets/admin/partial/modal-update-manager.php',
-                controller: function ($scope, $modalInstance, manager){
-                    $scope.manager = manager;
-                    $scope.manager.account_password = '';
+                templateUrl: pathWebsite + 'assets/admin/partial/modal-update-form.php',
+                controller: function ($scope, $modalInstance, docform){
+                    $scope.docform = docform;
+                    //$scope.docform.docon_healthy = $scope.getValueHealthy($scope.docform.healthy_id,$scope.docform.listHealthy);
+                    $scope.docform.docon_birthday = new Date(docform.docon_birthday);
+                    //$scope.manager.account_password = '';
                     $scope.ok = function () {
-                        $modalInstance.close($scope.manager);
+                        $modalInstance.close($scope.docform);
+
+                        $scope.getForms();
                     };
 
                     $scope.cancel = function () {
@@ -114,10 +123,12 @@ $scope.formatDate = function(date){
                 },
                 size: size,
                 resolve: {
-                    manager: function () {
+                    docform: function () {
                         return selectedform;
                     }
-                }
+                },
+                scope:$scope
+
             });
 
             modalInstance.result.then(function (selectedItem) {
@@ -128,8 +139,29 @@ $scope.formatDate = function(date){
         };
 
         
+    $scope.updateForm = function(docform){
+        documentService.updateForm(angular.toJson(docform),function(data){
+                if(data){
+                    $scope.alertEditSuccess();
 
-    
+                    $scope.ok();
+                }
+                else{
+                    alertErrors();
+                     $scope.cancel();
+                }
+
+         });
+    }
+    $scope.getValueHealthy = function(key,data){
+             for (var i in data) {
+                                    if (data[i]['healthy_id'] === key) {
+                                        //$scope.list.splice(i, 1);
+                                       return data[i]['healthy_id'];
+                                    }
+                                }
+        return 0;
+    }
 
    
 
@@ -137,12 +169,14 @@ $scope.formatDate = function(date){
         $scope.manager.account_is_disabled = value;
     };
     $scope.updateForm = function(manager){
-         documentService.updateManager(angular.toJson(manager),function(data){
+         documentService.updateForm(angular.toJson(manager),function(data){
                 if(data){
                     alertEditSuccess();
+                    $scope.ok();
                 }
                 else{
                     alertErrors();
+                     $scope.cancel();
                 }
 
          });
@@ -190,6 +224,8 @@ $scope.formatDate = function(date){
                 selectedcv.csrf_name = obToken['name'];
                 selectedcv.csrf_hash = obToken['hash'];
             });
+            //selectedcv.subject = 'Xóa CV';
+            //selectedcv.message = 'Chúng tôi đã xem và thấy cv của bạn không hợp lệ. Chúng tôi quyết định xóa CV của bạn.'
             //alert(data);
             var modalInstance = $modal.open({
                 animation: $scope.animationsEnabled,
@@ -198,7 +234,7 @@ $scope.formatDate = function(date){
                     $scope.cv = cv;
                     //$scope.cv.account_password = '';
                     $scope.ok = function () {
-                        $modalInstance.close($scope.employer);
+                        $modalInstance.close($scope.cv);
                         
                         $scope.getCVs();
                     };
@@ -214,7 +250,8 @@ $scope.formatDate = function(date){
                         return selectedcv;
                     }
                 },
-                scope: $scope
+                scope: $scope,
+                backdrop: 'static'
             });
 
             modalInstance.result.then(function (selectedItem) {
@@ -225,21 +262,126 @@ $scope.formatDate = function(date){
         };
 
     $scope.deleteCV = function(cv){
+        $scope.disabled_modal = true;
         if(cv){
             //$scope.$broadcast('removeRow', { message: employer });
             documentService.deleteCV(angular.toJson(cv),function(data){
                 if(data){
                     alertDeleteSuccess();
+                    $scope.disabled_modal = false;
                     $scope.ok();
                 }
                 else{
                     alertErrors();
+                     $scope.cancel();
                 }
 
             });
         }
     };
 
-    
+
+    $scope.modalDeleteForm = function (size,selectedform) {
+
+            documentService.getToken(function(data){
+                var obToken = JSON.parse(angular.toJson(data));
+               //$log.info(obToken['name']);
+                selectedform.csrf_name = obToken['name'];
+                selectedform.csrf_hash = obToken['hash'];
+            });
+            $log.info(selectedform);
+            //selectedcv.subject = 'Xóa CV';
+            //selectedcv.message = 'Chúng tôi đã xem và thấy cv của bạn không hợp lệ. Chúng tôi quyết định xóa CV của bạn.'
+            //alert(data);
+            var modalInstance = $modal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl: pathWebsite + 'assets/admin/partial/modal-delete-form.php',
+                controller: function ($scope, $modalInstance, docform){
+                    $scope.docform = docform;
+                    //$scope.cv.account_password = '';
+                    $scope.ok = function () {
+                        $modalInstance.close($scope.docform);
+                        
+                        $scope.getForms();
+                    };
+
+                    $scope.cancel = function () {
+                        $modalInstance.dismiss('cancel');
+                    };
+
+                },
+                size: size,
+                resolve: {
+                    docform: function () {
+                        return selectedform;
+                    }
+                },
+                scope: $scope,
+                backdrop: 'static'
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                $scope.selected = selectedItem;
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+        };
+
+    $scope.deleteForm = function(docform){
+        $scope.disabled_modal = true;
+        if(docform){
+            //$scope.$broadcast('removeRow', { message: employer });
+            documentService.deleteForm(angular.toJson(docform),function(data){
+                if(data){
+                    alertDeleteSuccess();
+                    $scope.disabled_modal = false;
+                    $scope.ok();
+                }
+                else{
+                    alertErrors();
+                    $scope.cancel();
+                }
+
+            });
+        }
+    };
+
+    $scope.modalDetailForm = function (size,id) {
+           
+            var modalInstance = $modal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl: pathWebsite + 'assets/admin/partial/modal-document-form.php',
+                controller: function ($scope, $modalInstance, documentJobseeker){
+                    $scope.documentJobseeker = documentJobseeker;
+                    $scope.ok = function () {
+                        $modalInstance.close($scope.jobseeker);
+                    };
+
+                    $scope.cancel = function () {
+                        $modalInstance.dismiss('cancel');
+                    };
+
+                },
+                size: size,
+                resolve: {
+                    documentJobseeker: function () {
+                         return documentService.getDetailForm(id);
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                $scope.selected = selectedItem;
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+        };
+
+//    $scope.$watch('docform.docon_birthday', function (newValue) {
+//     $scope.birthday = $filter('date')(newValue, 'dd/MM/yyyy'); 
+// });
 });
+
+
+
 
