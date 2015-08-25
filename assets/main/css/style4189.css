@@ -10713,3 +10713,54 @@ body .pac-container {
 .txt-color-363636 {
     color: #363636;
 }
+
+.icon_upload_file {
+    background: url("../img/job/icon_upload_photoi.png") no-repeat;
+    width: 21px;
+    height: 23px;
+    display: inline-block;
+    position: relative;
+    top: 6px;
+    content: '';
+    margin-right: 5px;
+}
+.pos_absolute {
+    position: absolute !important;
+}
+.bt_input {
+    border: none;
+    background: none;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    left: 0;
+    cursor: pointer;
+}
+.btn-big {
+    font-family: arial;
+    cursor: pointer;
+    padding: 0 12px;
+    border-radius: 2px;
+    height: 34px;
+    border: none;
+    font-size: 14px;
+    display: inline-block;
+    line-height: 35px;
+    background-color: #757575;
+    border-color: #757575;
+    color: #FFFFFF;
+}
+.floatLeft {
+    float: left;
+}
+.select_file_note {
+    font-size: 12px;
+    display: block;
+    line-height: 34px;
+    padding-left: 12px;
+}
+.txt-color-363636 {
+    color: #363636;
+}

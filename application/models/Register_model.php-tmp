@@ -12,9 +12,12 @@ class Register_model extends CI_Model {
 	function checkEmailExits($email) {
 		return $this->dbutil->checkIfExists('account_email', $email, 'account');
 	}
-	//update account
-	public function updateAccount($data) {
-		return $this->dbutil->insertDb($data, 'account');
+	//register deployer
+	public function insertMapEmployer($data) {
+		return $this->dbutil->insertDb($data, 'employer_map_account');
+	}
+	public function insertEmployer($data) {
+		return $this->dbutil->insertDb($data, 'employer');
 	}
 	//delete account
 }

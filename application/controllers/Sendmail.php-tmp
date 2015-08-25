@@ -7,7 +7,7 @@ class SendMail extends CI_Controller {
 
 	}
 	public function index() {
-		$email    = 'vanhungpc@gmail.com';
+		$email    = 'binhhv@live.com';
 		$password = '123456';
 		$this->email// Optional, an account where a human being reads.
 		     ->to($email)
