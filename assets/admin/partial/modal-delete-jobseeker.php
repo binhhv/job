@@ -16,8 +16,8 @@
                         <div class="col-sm-12">
                             <div class="form-group text-right">
 
-                                <button class="btn btn-success" ng-click="deleteJobseeker(jobseeker);" >Xóa</button>
-                                <button class="btn btn-warning" ng-click="cancel()">Hủy bỏ</button>
+                                <button class="btn btn-success" ng-click="deleteJobseeker(jobseeker);" ng-disabled="disabled_modal" >Xóa</button>
+                                <button class="btn btn-warning" ng-click="cancel()" ng-disabled="disabled_modal">Hủy bỏ</button>
                             </div>
                         </div>
                     </div>

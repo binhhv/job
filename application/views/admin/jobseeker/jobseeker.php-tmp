@@ -27,19 +27,21 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Danh sách người tìm việc</h3>
-                  <div class="box-tools">
-                    <div class="input-group" style="width: 150px;">
+                  <div class="col-sm-6 col-xs-12"> <h3 class="box-title">Danh sách người tìm việc</h3></div>
+                   <div class="col-sm-6 col-xs-12"><div class="box-tools">
+                    <div class="input-group search-box" style="width: 150px;">
                       <input type="text" name="table_search" ng-model="search" ng-change="filter()" class="form-control input-sm pull-right" placeholder="tìm kiếm">
                       <div class="input-group-btn">
                         <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
                       </div>
                     </div>
 
-                  </div>
+                  </div></div>
                 </div><!-- /.box-header -->
-                <div class="box-body table-responsive no-padding" ng-show="filteredItems == 0">
-                  <div class="text-center">Không có dữ liệu</div>
+
+                <div class="box-body table-responsive no-padding">
+                  <div class="text-center" id="div-data-loading">Đang tải dữ liệu</div>
+                  <div class="text-center hide" id="div-no-data-loading" ng-show="filteredItems == 0" >Không có dữ liệu</div>
                 </div>
                 <div class="box-body table-responsive no-padding"  ng-show="filteredItems > 0">
                   <table class="table table-hover table-striped hide" id="jobseekerTable" ng-init="getJobseekers()">

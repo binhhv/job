@@ -9,6 +9,7 @@ class Admin extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library(array('form_validation', 'session'));
 		$this->load->model('admin/Jobseeker_model', 'jobseeker');
+		$this->load->model('admin/Mail_model', 'mail');
 		if (!$this->session->userdata['user']['isLogged']) {
 			redirect(base_url().'admin/login');// no session established, kick back to login page
 		} else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
@@ -126,17 +127,39 @@ class Admin extends CI_Controller {
 			$paramater['account_password'] = md5(trim($account_password));
 		}
 		$output = $this->jobseeker->updateJobseeker($paramater, $account_id);
+		log_message('error', $output);
 		echo json_encode($output);
 		//var_dump($jobseeker('account_id'));
 	}
 	function deleteJobseeker() {
 		//$jobseeker_id = $$this->input->post('jobseeker');
-		$jobseeker  = json_decode($this->input->post('jobseeker'), true);
-		$account_id = $jobseeker['account_id'];
-		$paramater  = array(
+		$jobseeker     = json_decode($this->input->post('jobseeker'), true);
+		$account_id    = $jobseeker['account_id'];
+		$account_name  = $jobseeker['account_first_name'].' '.$jobseeker['account_last_name'];
+		$account_email = $jobseeker['account_email'];
+		$paramater     = array(
 			'account_is_delete' => true);
 		$output = $this->jobseeker->updateJobseeker($paramater, $account_id);
-		echo json_encode($output);
+		//$user = $this->account->getAccount($account_id);
+		//log_message('error', $user);
+		if ($output) {
+			$data = array(
+				'mailsend'   => $account_email,
+				'name'       => $account_name,
+				'type'       => 'delete',
+				'typedelete' => 'tài khoản  ('.$account_email.')',
+			);
+
+			$result = $this->mail->sendMail($data);
+			log_message('error', $result);
+			echo json_encode($result);
+
+		}
+		//$this->sendmail();
+		 else {
+			echo json_encode($output);
+		}
+		//echo json_encode($output);
 		//var_dump($jobseeker('account_id'));
 	}
 	function detailJobseeker($idJobseeker = '') {

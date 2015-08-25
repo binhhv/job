@@ -6,6 +6,8 @@ class Admin_manager extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library(array('form_validation', 'session'));
 		$this->load->model('admin/Manager_model', 'manager');
+		$this->load->model('admin/Mail_model', 'mail');
+		$this->load->model('admin/Account_model', 'account');
 		if (!$this->session->userdata['user']['isLogged']) {
 			redirect(base_url().'admin/login');// no session established, kick back to login page
 		} else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
@@ -61,11 +63,55 @@ class Admin_manager extends CI_Controller {
 		//$manager_id = $$this->input->post('manager');
 		//$manager
 		$account_id = json_decode($this->input->post('manager'), true);
+		$user       = $this->account->getAccount($account_id);
 		//$account_id = $manager['account_id'];
 		$paramater = array(
 			'account_is_delete' => true);
 		$output = $this->manager->updateManager($paramater, $account_id);
-		echo json_encode($output);
+		if ($output) {
+			$data = array(
+				'mailsend'   => $user->account_email,
+				'name'       => $user->account_first_name.' '.$user->account_last_name,
+				'type'       => 'delete',
+				'typedelete' => 'tài khoản  ('.$user->account_email.')',
+			);
+
+			$result = $this->mail->sendMail($data);
+			log_message('error', $result);
+			echo json_encode($result);
+
+		}
+		//$this->sendmail();
+		 else {
+			echo json_encode($output);
+		}
+
+		//echo json_encode($output);
 		//var_dump($manager('account_id'));
+	}
+	function createManager() {
+		$manager = json_decode($this->input->post('manager'), true);
+		//$account_id = $manager['account_id'];
+		$account_email      = $manager['account_email'];
+		$account_password   = $manager['account_password'];
+		$account_first_name = $manager['account_first_name'];
+		$account_last_name  = $manager['account_last_name'];
+		//$account_is_disabled = $manager['account_is_disabled'];
+
+		$paramater = array(
+			'account_email'       => $account_email,
+			'account_password'    => md5(trim($account_password)),
+			'account_first_name'  => $account_first_name,
+			'account_last_name'   => $account_last_name,
+			'account_is_get_news' => 0,
+			'account_map_role'    => 5,
+			'account_is_delete'   => 0,
+			'account_is_disabled' => 0,
+			'account_update_at'   => date('Y-m-d H:m'),
+			'account_created_at'  => date('Y-m-d H:m'));
+		$output = $this->manager->createManager($paramater);
+		//var_dump($ouput);
+		$obManager = $this->manager->getManager($output);
+		echo json_encode($obManager[0]);
 	}
 }

@@ -95,15 +95,15 @@
                                 <label class="control-label" >Email</label><label class="text-danger" ng-show="createJobseekerForm.email.$error.required">*</label>
                                 <div class="controls">
                                     <input type="email" name="email"  ng-model="jobseeker.account_email" id="email" class="form-control" required  wc-unique="">
-                                     <span class="hide-while-in-focus"
-     ng-show="createJobseekerForm.email.$error.unique">Username taken!</span>
+                                     <!-- <span class="hide-while-in-focus"
+     ng-show="createJobseekerForm.email.$error.unique">Username taken!</span> -->
                                 </div>
                             </div>
                              <div class="form-group col-sm-6">
                                 <label class="control-label" >Mật khẩu</label><label class="text-danger" ng-show="createJobseekerForm.password.$error.required">*</label>
                                 <div class="controls">
                                     <input type="password" name="password" ng-model="jobseeker.account_password" id="password" class="form-control" ng-minlength=6  required>
-                                     <p class="help-block" ng-show="createJobseekerForm.email.$error.unique">Username is already taken.</p>
+                                     <!-- <p class="help-block" ng-show="createJobseekerForm.email.$error.unique">Username is already taken.</p> -->
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">

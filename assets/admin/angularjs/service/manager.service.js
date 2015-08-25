@@ -8,7 +8,13 @@ app.factory('managerService' ,function ($http,$q){
 			$http.get(pathWebsite + 'admin/jobseeker/getToken').success(callback);
 		};
 		
+		_managerService.createManager = function(manager,csrf,callback){
+			var csrf_hash = csrf['hash'];
+			console.log(csrf_hash);
+			var postData = $.param({'csrf_test_name': csrf_hash,'manager':manager});
 
+			$http.post(pathWebsite + 'admin/manager/createManager', postData, {headers : {'Content-Type': 'application/x-www-form-urlencoded'}}).success(callback);
+		};
 		_managerService.updateManager = function(manager,callback){
 			var objectmanager = JSON.parse(manager);
 			var csrf_name = objectmanager['csrf_name'];
@@ -34,6 +40,17 @@ app.factory('managerService' ,function ($http,$q){
 			    });
 			    return defer.promise;
 		};
+		_managerService.checkEmailExits = function(email){
+			var temp = {};
+			    var defer = $q.defer();
+			    $http.get(pathWebsite + 'admin/jobseeker/checkEmailExits/'+email).success(function(data){
+			            temp =data;
+			            defer.resolve(data);
+
+			    });
+			    return defer.promise;
+		};
+
 		return _managerService;
 
 

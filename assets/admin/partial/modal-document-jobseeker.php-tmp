@@ -70,7 +70,7 @@
                             <div class="form-group col-sm-6">
                                 <label class="control-label" for="surname">Tình trạng sức khỏe </label>
                                 <div class="controls">
-                                    {{documentJobseeker.docon_healthy}}
+                                    {{documentJobseeker.healthy_type}}
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">

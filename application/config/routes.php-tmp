@@ -77,21 +77,47 @@ $route['admin/jobseeker/detail/(:num)']          = 'admin/admin/detailJobseeker/
 $route['admin/jobseeker/detail/document/(:num)'] = 'admin/admin/documentJobseeker/$1';
 $route['admin/jobseeker/checkEmailExits/(:any)'] = 'admin/admin/checkEmailExits/$1';
 //employer admin route
-$route['admin/employer']                 = 'admin/admin_employer/index';
-$route['admin/employer/getListEmployer'] = 'admin/admin_employer/getListEmployer';
+$route['admin/employer']                                   = 'admin/admin_employer/index';
+$route['admin/employer/getListEmployer']                   = 'admin/admin_employer/getListEmployer';
+$route['admin/employer/detail/(:num)']                     = 'admin/admin_employer/detailEmployer/$1';
+$route['admin/employer/getListEmployerUser/(:num)']        = 'admin/admin_employer/getListEmployerUser/$1';
+$route['admin/employer/getListEmployerRecruitment/(:num)'] = 'admin/admin_employer/getListEmployerRecruitment/$1';
+$route['admin/employer/checkAdminEmployerExits/(:num)']    = 'admin/admin_employer/checkAdminEmployerExits/$1';
+$route['admin/employer/setRoleAdminEmployer']              = 'admin/admin_employer/setRoleAdminEmployer';
+$route['admin/employer/deleteEmployerUser']                = 'admin/admin_employer/deleteEmployerUser';
+$route['admin/employer/createEmployerUser']                = 'admin/admin_employer/createEmployerUser';
+$route['admin/employer/deleteEmployerRecruitment']         = 'admin/admin_employer/deleteEmployerRecruitment';
 
 //manager admin route
 $route['admin/manager']                = 'admin/admin_manager/index';
 $route['admin/manager/getListManager'] = 'admin/admin_manager/getListManager';
 $route['admin/manager/updateManager']  = 'admin/admin_manager/updateManager';
 $route['admin/manager/deleteManager']  = 'admin/admin_manager/deleteManager';
+$route['admin/manager/createManager']  = 'admin/admin_manager/createManager';
+
+//document and cv admin route
+$route['admin/document/cv']             = 'admin/admin_document/cvManager';
+$route['admin/document/form']           = 'admin/admin_document/formManager';
+$route['admin/document/getListCV']      = 'admin/admin_document/getCV';
+$route['admin/document/getListForm']    = 'admin/admin_document/getForm';
+$route['admin/document/updateForm']     = 'admin/admin_document/updateForm';
+$route['admin/document/form/(:num)']    = 'admin/admin_document/getDetailForm/$1';
+$route['admin/document/deleteCV']       = 'admin/admin_document/deleteCV';
+$route['admin/document/deleteForm']     = 'admin/admin_document/deleteForm';
+$route['admin/document/getListHealthy'] = 'admin/admin_document/getListHealthy';
 //errors route
 
-$route['error/403']    = 'admin/admin_error/page403';
-$route['404_override'] = 'error_page/index';
-
+$route['error/403']      = 'admin/admin_error/page403';
+$route['404_override']   = 'error_page/index';
+$route['file-not-found'] = 'error_page/filenotfound';
 //test some function
 $route['insertDBTest'] = 'admin/test_db/insertDB';
 
+//download file
+$route['download/(:any)/(:any)/(:any)']   = 'file/file_controller/download/$1/$2/$3';
+$route['downloadcv/(:num)/(:any)/(:any)'] = 'file/file_controller/downloadcv/$1/$2/$3';
+
 //test send mail
-$route['sendmail'] = 'sendmail/index';
+$route['sendmail']     = 'sendmail/index';
+$route['sendmailtest'] = 'Test_mail/index';
+$route['test/array']   = 'Test_controller/testarray';

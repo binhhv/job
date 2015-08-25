@@ -20,4 +20,13 @@ class Manager_model extends CI_Model {
 			'data'  => $data);
 		return $this->dbutil->updateDb($dataObject);
 	}
+	function createManager($data) {
+		return $this->dbutil->insertDb($data, 'account');
+	}
+	function getManager($id) {
+		$data = array(
+			'from'  => 'account',
+			'where' => 'account_id = '.$this->dbutil->escape($id));
+		return $this->dbutil->getFromDb($data);
+	}
 }

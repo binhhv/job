@@ -27,7 +27,7 @@
 
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-files-o"></i>
+                <i class="fa fa-newspaper-o"></i>
                 <span>Quản lý tin tuyển dụng</span>
                 <span class="label label-primary pull-right">4</span>
               </a>
@@ -72,13 +72,20 @@
 
               </ul>
             </li>
-             <li class="treeview">
+             <li class="<?php if (isset($selected) && $selected == 'documentManager') {echo 'active';}
+?> treeview">
               <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Bảng điều khiển</span> <i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-files-o"></i> <span>Quản lý hồ sơ ứng viên</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                <li class=""><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                <li <?php if (isset($sub) && $sub == 'doccv') {
+	echo "class=\"active\"";
+}
+?> ><a href="<?php echo base_url('admin/document/cv');?>"><i class="fa fa-circle-o"></i>CV ứng viên</a></li>
+                <li <?php if (isset($sub) && $sub == 'docon') {
+	echo "class=\"active\"";
+}
+?> ><a href="<?php echo base_url('admin/document/form');?>"><i class="fa fa-circle-o"></i>Hồ sơ online</a></li>
               </ul>
             </li>
             <!-- <li>

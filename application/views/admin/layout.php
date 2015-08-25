@@ -24,26 +24,32 @@
    <div class="col-md-12">
       <div class="alert alert-success alert-dismissable alert-message hide">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <h4>  <i class="icon fa fa-check"></i> Alert!</h4>
+                    <h4>  <i class="icon fa fa-check"></i> Thông báo!</h4>
                    Sửa đổi thành công !!!!
   </div>
 
   <div class="alert alert-success alert-dismissable alert-message-delete hide">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <h4>  <i class="icon fa fa-check"></i> Alert!</h4>
+                    <h4>  <i class="icon fa fa-check"></i> Thông báo!</h4>
                   Xóa thành công !!!!
   </div>
 
   <div class="alert alert-success alert-dismissable alert-message-create hide">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <h4>  <i class="icon fa fa-check"></i> Alert!</h4>
+                    <h4>  <i class="icon fa fa-check"></i> Thông báo!</h4>
                   Thêm thành công !!!!
   </div>
 
     <div class="alert alert-danger alert-dismissable alert-message-errors hide">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <h4>  <i class="icon fa fa-check"></i> Alert!</h4>
+                    <h4>  <i class="icon fa fa-check"></i> Thông báo!</h4>
                   Đã có lỗi nghiêm trọng xảy ra.
+  </div>
+
+   <div class="alert alert-success alert-dismissable alert-message-setRoleEmployer hide">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4>  <i class="icon fa fa-check"></i> Thông báo!</h4>
+                 Chuyển quyền thành công.
   </div>
 
    </div>
