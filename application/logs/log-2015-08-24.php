@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+ERROR - 2015-08-24 23:59:34 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-08-24 23:59:38 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-08-24 23:59:38 --> {"status":"errvalid","content":{"account_email":"<div class=\"error-register\">Tr\u01b0\u1eddng 'email' l\u00e0 b\u1eaft bu\u1ed9c.<\/div>","account_password":"<div class=\"error-register\">Tr\u01b0\u1eddng 'password' l\u00e0 b\u1eaft bu\u1ed9c.<\/div>","confirm_password":"<div class=\"error-register\">Tr\u01b0\u1eddng 'passconf' l\u00e0 b\u1eaft bu\u1ed9c.<\/div>","employer_name":"<div class=\"error-register\">Tr\u01b0\u1eddng 'employer_name_re_depl' l\u00e0 b\u1eaft bu\u1ed9c.<\/div>","employer_size":"","employer_phone":"<div class=\"error-register\">Tr\u01b0\u1eddng 'employer_phone_re_depl' l\u00e0 b\u1eaft bu\u1ed9c.<\/div>","employer_fax":"<div class=\"error-register\">Tr\u01b0\u1eddng 'employer_fax_re_depl' l\u00e0 b\u1eaft bu\u1ed9c.<\/div>","employer_about":"<div class=\"error-register\">Tr\u01b0\u1eddng 'employer_about_re_depl' l\u00e0 b\u1eaft bu\u1ed9c.<\/div>","employer_address":"<div class=\"error-register\">Tr\u01b0\u1eddng 'employer_address_re_depl' l\u00e0 b\u1eaft bu\u1ed9c.<\/div>","employer_map_province":"","employer_contact_name":"<div class=\"error-register\">Tr\u01b0\u1eddng 'employer_contact_name_re_depl' l\u00e0 b\u1eaft bu\u1ed9c.<\/div>","employer_contact_email":"<div class=\"error-register\">Tr\u01b0\u1eddng 'employer_contact_email_re_depl' l\u00e0 b\u1eaft bu\u1ed9c.<\/div>","employer_contact_phone":"<div class=\"error-register\">Tr\u01b0\u1eddng 'employer_contact_phone_re_depl' l\u00e0 b\u1eaft bu\u1ed9c.<\/div>","employer_contact_mobile":"<div class=\"error-register\">Tr\u01b0\u1eddng 'employer_contact_mobile_re_depl' l\u00e0 b\u1eaft bu\u1ed9c.<\/div>","name":"csrf_test_name","hash":"74420547ae74dd35d26817269df822e1"}}
+=======
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
 ERROR - 2015-08-24 03:13:08 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
@@ -2029,6 +2034,7 @@ ERROR - 2015-08-24 15:32:03 --> $config['composer_autoload'] is set to TRUE but 
 ERROR - 2015-08-24 15:32:03 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
 ERROR - 2015-08-24 15:32:03 --> Severity: Notice --> Undefined index: user C:\xampp\htdocs\job\application\controllers\admin\Admin.php 13
 ERROR - 2015-08-24 15:32:03 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+<<<<<<< HEAD
 ERROR - 2015-08-24 16:02:07 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
 ERROR - 2015-08-24 16:02:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
 ERROR - 2015-08-24 16:02:16 --> Severity: Notice --> Undefined index: user C:\xampp\htdocs\job\application\controllers\admin\Admin.php 13
@@ -2582,3 +2588,6 @@ ERROR - 2015-08-24 19:25:11 --> $config['composer_autoload'] is set to TRUE but 
 ERROR - 2015-08-24 19:25:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
 ERROR - 2015-08-24 19:25:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
 ERROR - 2015-08-24 19:26:02 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+=======
+>>>>>>> 6a157cf2c3b8f41ce9597b5dd3bddbb18bd2cd3c
+>>>>>>> 14fd265e6b215aba3876bfa8361a73d677acc37e

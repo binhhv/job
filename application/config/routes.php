@@ -67,6 +67,7 @@ $route['admin/logout'] = 'admin/login/logout';
 //jobseeker admin route
 $route['admin/jobseeker'] = 'admin/admin/jobseekerManager';
 $route['register'] = 'register/index';
+$route['uploadcv'] = 'uploadcv/index';
 $route['admin/jobseeker/getListJobseeker'] = 'admin/admin/jobseeker';
 $route['admin/jobseeker/createJobseeker'] = 'admin/admin/createJobseeker';
 $route['admin/jobseeker/updateJobseeker'] = 'admin/admin/updateJobseeker';

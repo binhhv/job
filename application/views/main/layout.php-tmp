@@ -16,6 +16,7 @@
        <header id="header" class="site-header">
 <?php echo $header;?>
 </header>
+<<<<<<< HEAD
        <div class="container-fluid no-padding">
 <?php echo $slide;?>
 </div>
@@ -34,6 +35,9 @@
 <?php echo $employer;?>
 </div>
        <div id="main" style="display: none;">
+=======
+       <div id="main">
+>>>>>>> 14fd265e6b215aba3876bfa8361a73d677acc37e
           <div class="container">
 <?php echo $content;?>
 </div>

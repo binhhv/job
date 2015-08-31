@@ -45,3 +45,40 @@ $("#register-form").submit(function(event){
 		});
 })
 });
+function register_user(str)){
+    $("#register-form").submit(function(event){
+     event.preventDefault();
+        $.ajax({
+        type: "POST", // HTTP method POST or GET
+        url: "<?php echo base_url('register/insertAccount');?>", //Where to make Ajax calls
+        dataType:"json", // Data type, HTML, json etc.
+        data:$(str).serialize(), //Form variables
+        success:function(response){
+            // var objs = $.parseJSON(response);
+            var status = response.status;
+            if(status == 'errvalid'){
+                var account_email = response.content.account_email;
+                var account_password = response.content.account_password;
+                var confirm_password = response.content.confirm_password;
+                var account_first_name = response.content.account_first_name;
+                var account_last_name = response.content.account_last_name;
+                var csrf_name = response.content.name;
+                var csrf_hash = response.content.hash;
+                $('#message').text("");
+                $('#message').append(account_email);
+                $('#message').append(account_password);
+                $('#message').append(confirm_password);
+                $('#message').append(account_first_name);
+                $('#message').append(account_last_name);
+                $('input[name="csrf_test_name"]').val(csrf_hash);
+            }else if(status == 'success'){
+                $('#message').text("");
+                $('#registerModal').modal('hide')
+            }
+        },
+        error:function (xhr, ajaxOptions, thrownError){
+            // alert("failure");
+        }
+        });
+})
+}
