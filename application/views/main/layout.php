@@ -16,7 +16,24 @@
        <header id="header" class="site-header">
           <?php echo $header;?>
        </header>
-       <div id="main">
+       <div class="container-fluid no-padding">
+            <?php echo $slide;?>
+       </div>
+        <div class="container-fluid no-padding">
+          <div class="container">
+            <?php echo $search;?>
+          </div>
+       </div>
+        <div class="container-fluid no-padding new-job">
+            <?php echo $newjob;?>
+       </div>
+        <div class="container-fluid jobseeker">
+            <?php echo $jobseeker;?>
+       </div>
+       <div class="container-fuild employer">
+          <?php echo $employer;?>
+       </div>
+       <div id="main" style="display: none;">
           <div class="container">
             <?php echo $content;?>
           </div>

@@ -86,7 +86,32 @@ $route['admin/employer/setRoleAdminEmployer'] = 'admin/admin_employer/setRoleAdm
 $route['admin/employer/deleteEmployerUser'] = 'admin/admin_employer/deleteEmployerUser';
 $route['admin/employer/createEmployerUser'] = 'admin/admin_employer/createEmployerUser';
 $route['admin/employer/deleteEmployerRecruitment'] = 'admin/admin_employer/deleteEmployerRecruitment';
+$route['admin/employer/detailEmployerRecruitment/(:num)'] = 'admin/admin_employer/getDetailEmployerRecruitment/$1';
+$route['admin/employer/getListWelfare'] = 'admin/admin_employer/getListWelfare';
+$route['admin/employer/getListForm'] = 'admin/admin_employer/getListForm';
+$route['admin/employer/getListFormChild'] = 'admin/admin_employer/getListFormChild';
+$route['admin/employer/getListLevel'] = 'admin/admin_employer/getListLevel';
+$route['admin/employer/getListContactForm'] = 'admin/admin_employer/getListContactForm';
+$route['admin/employer/getListWelfareEmployerRecruitment/(:num)'] = 'admin/admin_employer/getListWelfareEmployerRecruitment/$1';
+$route['admin/employer/updateEmployerRecruitment'] = 'admin/admin_employer/updateEmployerRecruitment';
+$route['admin/employer/getListProvinceCountry/(:num)'] = 'admin/admin_employer/getListProvinceCountry/$1';
+$route['admin/employer/getListCountry'] = 'admin/admin_employer/getListCountry';
+$route['admin/employer/getListProvinceRecruitment/(:num)'] = 'admin/admin_employer/getListProvinceRecruitment/$1';
+$route['admin/employer/getListProvinceRecruitmentChange/(:num)/(:num)'] = 'admin/admin_employer/getListProvinceRecruitmentChange/$1/$2';
+$route['admin/employer/createEmployerRecruitment'] = 'admin/admin_employer/createEmployerRecruitment';
+$route['admin/employer/approveEmployerRecruitment'] = 'admin/admin_employer/approveEmployerRecruitment';
+$route['admin/employer/updateemployer'] = 'admin/admin_employer/updateEmployer';
+$route['admin/employer/createemployer'] = 'admin/admin_employer/createEmployer';
 
+//recruitment admin manager
+$route['admin/recruitment/recruitment-active'] = 'admin/admin_recruitment/recruitmentActive';
+$route['admin/recruitment/recruitment-approve'] = 'admin/admin_recruitment/recruitmentApprove';
+$route['admin/recruitment/recruitment-disabled'] = 'admin/admin_recruitment/recruitmentDisabled';
+$route['admin/recruitment'] = 'admin/admin_recruitment/recruitmentCreate';
+$route['admin/recruitment/getListEmployer'] = 'admin/admin_recruitment/getListEmployer';
+$route['admin/recruitment/createRecruitment'] = 'admin/admin_recruitment/createRecruitment';
+$route['admin/recruitment/getListRecruitment/(:num)'] = 'admin/admin_recruitment/getListRecruitment/$1';
+$route['admin/recruitment/getRecruitmentApply/(:num)'] = 'admin/admin_recruitment/getRecruitmentApply/$1';
 //manager admin route
 $route['admin/manager'] = 'admin/admin_manager/index';
 $route['admin/manager/getListManager'] = 'admin/admin_manager/getListManager';
@@ -100,12 +125,25 @@ $route['admin/document/form'] = 'admin/admin_document/formManager';
 $route['admin/document/getListCV'] = 'admin/admin_document/getCV';
 $route['admin/document/getListForm'] = 'admin/admin_document/getForm';
 $route['admin/document/updateForm'] = 'admin/admin_document/updateForm';
-$route['admin/document/form/(:num)'] = 'admin/admin_document/getDetailForm/$1';
+$route['admin/document/form/(:num)/(:num)'] = 'admin/admin_document/getDetailForm/$1/$2';
 $route['admin/document/deleteCV'] = 'admin/admin_document/deleteCV';
 $route['admin/document/deleteForm'] = 'admin/admin_document/deleteForm';
 $route['admin/document/getListHealthy'] = 'admin/admin_document/getListHealthy';
-//errors route
+$route['admin/document/cv-store'] = 'admin/admin_document/cvStoreManager';
+$route['admin/document/form-store'] = 'admin/admin_document/formStoreManager';
+$route['admin/document/detail/(:num)'] = 'admin/admin_document/detailDocumentForm/$1';
+$route['admin/document/getListProvinceDocument/(:num)/(:num)'] = 'admin/admin_document/getListProvinceDocument/$1/$2';
+$route['admin/document/createForm'] = 'admin/admin_document/createForm';
+$route['admin/document/uploadCV'] = 'admin/admin_document/uploadCV';
+$route['admin/document/upload'] = 'admin/admin_document/upload';
 
+//contact admin
+$route['admin/contact'] = 'admin/admin_contact/index';
+$route['admin/contact/getListContact'] = 'admin/admin_contact/getListContact';
+$route['admin/contact/deleteContact'] = 'admin/admin_contact/deleteContact';
+$route['admin/contact/replyContact'] = 'admin/admin_contact/replyContact';
+$route['admin/contact/updateContactView/(:num)'] = 'admin/admin_contact/updateContactView/$1';
+//errors route
 $route['error/403'] = 'admin/admin_error/page403';
 $route['404_override'] = 'error_page/index';
 $route['file-not-found'] = 'error_page/filenotfound';
@@ -114,9 +152,13 @@ $route['insertDBTest'] = 'admin/test_db/insertDB';
 
 //download file
 $route['download/(:any)/(:any)/(:any)'] = 'file/file_controller/download/$1/$2/$3';
-$route['downloadcv/(:num)/(:any)/(:any)'] = 'file/file_controller/downloadcv/$1/$2/$3';
+$route['downloadcv/(:num)/(:any)/(:any)/(:num)'] = 'file/file_controller/downloadcv/$1/$2/$3/$4';
 
 //test send mail
 $route['sendmail'] = 'sendmail/index';
 $route['sendmailtest'] = 'Test_mail/index';
 $route['test/array'] = 'Test_controller/testarray';
+
+//coming soon
+$route['admin/category'] = 'admin/admin_comingsoon/index';
+$route['admin/setup'] = 'admin/admin_comingsoon/index';

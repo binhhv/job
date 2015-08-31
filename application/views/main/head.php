@@ -19,6 +19,7 @@ if (isset($titlePage)) {
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/css/responsive-style.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/css/style4189.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/flexslider/flexslider.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/flexslider/flexslider-job.css">
 <!-- <link rel="stylesheet" href="<?php echo base_url()?>/assets/common/css/bootstrap-responsive.css"> -->
 <!-- <link rel="stylesheet" href="<?php echo base_url()?>/assets/common/css/prettyPhoto.css" />
 <link rel="stylesheet" href="<?php echo base_url()?>/assets/common/css/flexslider.css" />
@@ -97,7 +98,21 @@ if (isset($titlePage)) {
           $('body').removeClass('loading');
            $('.sologan').show();
         },
-        direction:false,
+        // direction:false,
+        // controlsContainer: $(".custom-controls-container"),
+        customDirectionNav: $(".custom-navigation a")
+    });
+
+    $('.flexslider-job').flexslider({
+        animation: "slide",
+        slideshow: true,
+        start: function(slider){
+          $('body').removeClass('loading');
+           $('.sologan').show();
+        },
+        // direction:false,
+        // controlsContainer: $(".custom-controls-container"),
+        // customDirectionNav: $(".custom-navigation a")
     });
 
    //$('.sologan').show('slow').delay(10000).show('slow');

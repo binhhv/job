@@ -39,10 +39,10 @@ if (isset($employer)) {
           <div class="row invoice-info employer-info">
             <div class="col-sm-3 invoice-col">
               <div class="col-sm-12 p-relative">
-<?php if (isset($employer->employer_logo) && file_exists('upload/logo/'.$employer->employer_id.'/'.$employer->employer_logo_tmp)) {?>
-	                  <img class="img-responsive" src="<?php echo base_url().'upload/logo/'.$employer->employer_id.'/'.$employer->employer_logo_tmp?>" alt="<?php echo $employer->employer_name?>" />
+<?php if (isset($employer->employer_logo) && file_exists('uploads/logo/'.$employer->employer_id.'/'.$employer->employer_logo_tmp)) {?>
+	                  <img class="img-responsive" src="<?php echo base_url().'uploads/logo/'.$employer->employer_id.'/'.$employer->employer_logo_tmp?>" alt="<?php echo $employer->employer_name?>" />
 	<?php } else {?>
-	                  <img class="img-responsive" src="<?php echo base_url();?>upload/common/logo.png" alt="<?php echo $employer->employer_name?>" />
+	                  <img class="img-responsive" src="<?php echo base_url();?>uploads/common/logo.png" alt="<?php echo $employer->employer_name?>" />
 	<?php }
 ?>
               </div>
@@ -61,8 +61,8 @@ if (isset($employer)) {
                   <b>Quản trị nhà tuyển dụng : </b> <?php echo $employer->account_email;?><br>
                  <b>Người liên hệ :</b> <?php echo $employer->employer_contact_name?><br>
                  <b>Email gười liên hệ :</b> <?php echo $employer->employer_contact_email?><br>
-                 <b>Số điện thoại liên hệ:</b> <?php echo $employer->employer_contact_phone?><br>
-                 <b>Số điện thoại di động liên hệ:</b> <?php echo $employer->employer_contact_mobile?><br>
+                 <b>Điện thoại liên hệ:</b> <?php echo $employer->employer_contact_phone?><br>
+                 <b>Di động liên hệ:</b> <?php echo $employer->employer_contact_mobile?><br>
                </div>
                <div class="col-sm-12 col-xs-12 border-top-1">
                   <b>Giới thiệu :</b> <?php echo $employer->employer_about?><br>
@@ -163,7 +163,8 @@ if (isset($employer)) {
                         </div>
                             <div class="box-footer clearfix text-right" >
                             <div class="col-md-12" ng-show="filteredItems > 0">
-                                <pagination total-items="filteredItems" on-select-page="setPage(page)" page="currentPage" max-size="itemsPerPage" class="pagination-sm" items-per-page="entryLimit" boundary-links="true"></pagination>
+                            <pagination total-items="filteredItems"  on-select-page="setPage(page)" ng-model="currentPage" max-size="itemsPerPage" class="pagination-sm" boundary-links="true" items-per-page="entryLimit"></pagination>
+                                <!-- <pagination total-items="filteredItems" on-select-page="setPage(page)" page="currentPage" max-size="itemsPerPage" class="pagination-sm" items-per-page="entryLimit" boundary-links="true"></pagination> -->
                         <!-- <div pagination="" page="currentPage" on-select-page="setPage(page)" boundary-links="true" total-items="filteredItems" items-per-page="entryLimit" class="pagination-small" previous-text="&laquo;" next-text="&raquo;"></div> -->
                     </div></div>
                 <!-- <div class="box-footer clearfix text-right"  ng-show="filteredItems > 0"> -->
@@ -191,10 +192,11 @@ if (isset($employer)) {
                       <div class="box no-box-shadow">
                         <div class="box-header">
                           <div class="col-sm-6 col-xs-12">
-                           <button class="btn btn-success" ng-click="createEmployerRecruitment('<?php echo $employer->employer_id?>')">tạo tin tuyển dụng</button>&nbsp;
+                           <button class="btn btn-success" ng-click="modalCreateEmployerRecruitment('lg','<?php echo $employer->employer_id?>','<?php echo $country->country_id;?>')">tạo tin tuyển dụng</button>&nbsp;
+
                            <button class="btn btn-info" ng-click="reloadEmployerRecruitment('<?php echo $employer->employer_id?>')">tải lại dữ liệu</button>
                          </div>
-                           <div class="col-sm-12 col-xs-12"><div class="box-tools">
+                           <div class="col-sm-6 col-xs-12"><div class="box-tools">
                             <div class="input-group search-box" style="width: 150px;">
                               <input type="text" name="table_search" ng-model="search" ng-change="filter()" class="form-control input-sm pull-right" placeholder="tìm kiếm">
                               <div class="input-group-btn">
@@ -230,17 +232,19 @@ if (isset($employer)) {
                                       {{data.fjob_type}} - {{data.jcform_type}}
                               </td>
                               <td class="text-center">
-                                <label class="btn btn-xs btn-danger" ng-show="data.rec_is_approve == false">đang chờ duyệt</label>
-                                <label class="btn btn-xs btn-success" ng-show="data.rec_is_approve == true">đã duyệt</label>
+                                <!-- <label class="btn btn-xs btn-danger" ng-show="data.rec_is_approve == false">đang chờ duyệt</label> -->
+                                <label class="btn btn-xs btn-danger" ng-show="data.rec_is_approve == false" ng-click="modalApproveRecruitment('md',data)">duyệt tin</label>
+                                <label class="btn btn-xs btn-success" ng-show="data.rec_is_approve == true" disabled>đã duyệt</label>
                               <!-- {{data.account_is_disabled}} -->
                               </td>
 
                               <td class="text-center">{{formatDate(data.rec_created_at) | date: "dd/MM/yyyy"}}</td>
                               <td class="text-center">{{data.numapply}}</td>
                               <td class="text-center">
-                              <button class="btn btn-xs btn-info" ng-click="modalDetailEmployerRecruitment('lg',data)" >chi tiết</button>
+                              <!-- <label class="btn btn-xs btn-danger" ng-show="data.rec_is_approve == false" ng-click="approveRecruitment(data.rec_id)">duyệt tin</label> -->
+                              <button class="btn btn-xs btn-info" ng-click="modalDetailEmployerRecruitment('lg',data.rec_id)" >chi tiết</button>
                               <button class="btn btn-xs btn-warning" ng-click="modalUpdateEmployerRecruitment('lg',data)" >sửa</button>
-                              <button class="btn btn-xs btn-danger" ng-click="modalDeleteEmployerRecruitment('sm',data)">xóa</button>
+                              <button class="btn btn-xs btn-danger" ng-click="modalDeleteEmployerRecruitment('md',data)">xóa</button>
                               </td>
                             </tr>
                             <!-- <tr>
@@ -255,7 +259,8 @@ if (isset($employer)) {
                         </div>
                             <div class="box-footer clearfix text-right" >
                             <div class="col-md-12" ng-show="filteredItems > 0">
-                                <pagination total-items="filteredItems" on-select-page="setPage(page)" page="currentPage" max-size="itemsPerPage" class="pagination-sm" items-per-page="entryLimit" boundary-links="true"></pagination>
+                             <pagination total-items="filteredItems"  on-select-page="setPage(page)" ng-model="currentPage" max-size="itemsPerPage" class="pagination-sm" boundary-links="true" items-per-page="entryLimit"></pagination>
+                                <!-- <pagination total-items="filteredItems" on-select-page="setPage(page)" page="currentPage" max-size="itemsPerPage" class="pagination-sm" items-per-page="entryLimit" boundary-links="true"></pagination> -->
                         <!-- <div pagination="" page="currentPage" on-select-page="setPage(page)" boundary-links="true" total-items="filteredItems" items-per-page="entryLimit" class="pagination-small" previous-text="&laquo;" next-text="&raquo;"></div> -->
                     </div></div>
                 <!-- <div class="box-footer clearfix text-right"  ng-show="filteredItems > 0"> -->

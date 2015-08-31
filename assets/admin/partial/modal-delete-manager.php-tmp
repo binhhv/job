@@ -2,7 +2,7 @@
     <div class="modal-header">
         <h3 class="modal-title">Xóa: {{manager.account_first_name}} {{manager.account_last_name}} {{manager.account_id}}</h3>
     </div>
-    <div class="modal-body">
+    <div class="modal-body modal-delete">
             <form name="updatejobseekerForm">
                 <fieldset>
                     <div class="row">

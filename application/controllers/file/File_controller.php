@@ -19,12 +19,20 @@ class File_controller extends CI_Controller {
 	function download($value1, $value2, $value3) {
 		echo "file" . $value1 . '-' . $value2 . '-' . $value3;
 	}
-	function downloadcv($foldername, $filenameTemp, $filename) {
+	function downloadcv($foldername, $filenameTemp, $filename, $doccvtype) {
 		//$file = json_decode($this->input->post('file'), true);
 		///$filenameTemp = $file['doccv_file_tmp'];
 		//$filename = $file['doccv_file_name'];
-		$path = base_url() . "upload/cv/" . $foldername . '/' . $filenameTemp;
-		$pathCheck = "upload/cv/" . $foldername . '/' . $filenameTemp;
+		$path = '';
+		$pathCheck = '';
+		if ($doccvtype == 2) {
+			$path .= base_url() . "uploads/cv/store/" . $foldername . '/' . $filenameTemp;
+			$pathCheck = "uploads/cv/store/" . $foldername . '/' . $filenameTemp;
+		} else {
+			$path .= base_url() . "uploads/cv/" . $foldername . '/' . $filenameTemp;
+			$pathCheck = "uploads/cv/" . $foldername . '/' . $filenameTemp;
+		}
+
 		$check = file_exists($pathCheck);
 		if ($check) {
 			$data = file_get_contents($path);

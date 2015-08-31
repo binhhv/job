@@ -25,17 +25,31 @@
           <ul class="sidebar-menu">
             <!-- <li class="header">MAIN NAVIGATION</li> -->
 
-            <li class="treeview">
+            <li class="<?php if (isset($selected) && $selected == 'recruitmentManager') {echo 'active';}
+?> treeview">
               <a href="#">
                 <i class="fa fa-newspaper-o"></i>
                 <span>Quản lý tin tuyển dụng</span>
-                <span class="label label-primary pull-right">4</span>
+                <!-- <span class="label label-primary pull-right">4</span> -->
               </a>
               <ul class="treeview-menu">
-                <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+              <li <?php if (isset($sub) && $sub == 'recruitmentCreate') {
+	echo "class=\"active\"";
+}
+?>><a href="<?php echo base_url('admin/recruitment');?>"><i class="fa fa-circle-o"></i>Tạo tin tuyển dụng</a></li>
+                <li <?php if (isset($sub) && $sub == 'recruitmentActive') {
+	echo "class=\"active\"";
+}
+?>><a href="<?php echo base_url('admin/recruitment/recruitment-active');?>"><i class="fa fa-circle-o"></i> Tin tuyển dụng đã đăng</a></li>
+                <li <?php if (isset($sub) && $sub == 'recruitmentApprove') {
+	echo "class=\"active\"";
+}
+?>><a href="<?php echo base_url('admin/recruitment/recruitment-approve');?>"><i class="fa fa-circle-o"></i> Tin tuyển dụng chờ duyệt</a></li>
+                <li <?php if (isset($sub) && $sub == 'recruitmentDisabled') {
+	echo "class=\"active\"";
+}
+?>><a href="<?php echo base_url('admin/recruitment/recruitment-disabled');?>"><i class="fa fa-circle-o"></i> Tin tuyển dụng hết hạn</a></li>
+                <!-- <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li> -->
               </ul>
             </li>
             <li class="<?php if (isset($selected) && $selected == 'userManager') {echo 'active';}
@@ -43,7 +57,7 @@
               <a href="#">
                 <i class="fa fa-users"></i>
                 <span>Quản lý người dùng</span>
-                <span class="label label-primary pull-right">4</span>
+                <!-- <span class="label label-primary pull-right">4</span> -->
               </a>
               <ul class="treeview-menu">
                 <li <?php if (isset($sub) && $sub == 'jobseeker') {
@@ -75,17 +89,26 @@
              <li class="<?php if (isset($selected) && $selected == 'documentManager') {echo 'active';}
 ?> treeview">
               <a href="#">
-                <i class="fa fa-files-o"></i> <span>Quản lý hồ sơ ứng viên</span> <i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-database"></i> <span>Quản lý dữ liệu</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li <?php if (isset($sub) && $sub == 'doccv') {
 	echo "class=\"active\"";
 }
 ?> ><a href="<?php echo base_url('admin/document/cv');?>"><i class="fa fa-circle-o"></i>CV ứng viên</a></li>
+<!-- <li <?php if (isset($sub) && $sub == 'doccvad') {
+	echo "class=\"active\"";
+}
+?> ><a href="<?php echo base_url('admin/document/cv-store');?>"><i class="fa fa-circle-o"></i>CV lưu trữ</a></li> -->
                 <li <?php if (isset($sub) && $sub == 'docon') {
 	echo "class=\"active\"";
 }
-?> ><a href="<?php echo base_url('admin/document/form');?>"><i class="fa fa-circle-o"></i>Hồ sơ online</a></li>
+?> ><a href="<?php echo base_url('admin/document/form');?>"><i class="fa fa-circle-o"></i>Hồ sơ ứng viên</a></li>
+
+<!-- <li <?php if (isset($sub) && $sub == 'doconad') {
+	echo "class=\"active\"";
+}
+?> ><a href="<?php echo base_url('admin/document/form-store');?>"><i class="fa fa-circle-o"></i>Hồ sơ lưu trữ</a></li> -->
               </ul>
             </li>
             <!-- <li>
@@ -93,35 +116,40 @@
                 <i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">new</small>
               </a>
             </li> -->
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-pie-chart"></i>
-                <span>Charts</span>
+            <li class="<?php if (isset($selected) && $selected == 'comingsoon') {echo 'active';}
+?> treeview">
+              <a href="<?php echo base_url('admin/category')?>">
+                <i class="fa fa-files-o"></i>
+                <span>Quản lý danh mục</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-                <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-              </ul>
+             <!--  <ul class="treeview-menu">
+
+                <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i>Tỉnh/thành phố</a></li>
+                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Sức khỏe</a></li>
+                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i>Hình thức công việc </a></li>
+                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i>Trình độ năng lực </a></li>
+                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i>Phúc lợi</a></li>
+                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i>Ứng viên lưu trữ</a></li>
+              </ul> -->
             </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-laptop"></i>
-                <span>UI Elements</span>
+            <li class="<?php if (isset($selected) && $selected == 'comingsoon') {echo 'active';}
+?> treeview">
+              <a href="<?php echo base_url('admin/setup')?>">
+                <i class="fa fa-cogs"></i>
+                <span>Thiết lập website</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-                <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-                <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-                <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-                <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-                <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
-              </ul>
+              <!-- <ul class="treeview-menu">
+                <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> Thiết lập quảng cáo</a></li>
+                <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Thay đổi hình ảnh slide</a></li>
+                <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Thay đổi logo</a></li>
+                <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Thay đổi tiêu đề website</a></li>
+                <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Thay đổi footer</a></li>
+                <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Thay đổi trang giới thiệu</a></li>
+              </ul> -->
             </li>
-            <li class="treeview">
+            <!-- <li class="treeview">
               <a href="#">
                 <i class="fa fa-edit"></i> <span>Forms</span>
                 <i class="fa fa-angle-left pull-right"></i>
@@ -196,8 +224,10 @@
             <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
             <li class="header">LABELS</li>
             <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+            <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li> -->
+            <li class="<?php if (isset($selected) && $selected == 'contact') {echo 'active';}
+?> treeview"><a href="<?php echo base_url('admin/contact')?>"><i class="fa fa-envelope"></i> <span>Hộp thư liên hệ</span></a></li>
+            <li><a href="<?php echo base_url('admin/logout')?>"><i class="fa fa-sign-out"></i> &nbsp;<span>Đăng xuất</span></a></li>
           </ul>
         </section>
         <!-- /.sidebar -->

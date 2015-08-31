@@ -50,7 +50,17 @@
                     <h4>  <i class="icon fa fa-check"></i> Thông báo!</h4>
                  Chuyển quyền thành công.
   </div>
+  <div class="alert alert-primary alert-dismissable alert-message-approve hide">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4>  <i class="icon fa fa-check"></i> Thông báo!</h4>
+                Duyệt tin thành công.
+  </div>
 
+  <div class="alert alert-primary alert-dismissable alert-message-sendmail hide">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4>  <i class="icon fa fa-check"></i> Thông báo!</h4>
+               Gửi thành công.
+  </div>
    </div>
  </div>
     </div><!-- ./wrapper -->
@@ -60,10 +70,22 @@
     <script src="<?php echo base_url();?>assets/admin/plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular.min.js"></script>
      <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-animate.min.js"></script>
+     <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-sanitize.min.js"></script>
       <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-strap.min.js"></script>
        <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-strap.tpl.min.js"></script>
+       <!--lib advance angularjs-->
+       <!--<script src="http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js"></script>
+        <script src="<?php echo base_url();?>assets/admin/angularjs/lib/oi/select.min.js"></script>
+        <script src="<?php echo base_url();?>assets/admin/angularjs/lib/oi/select-tpls.min.js"></script>
 
-    <script src="<?php echo base_url();?>assets/admin/angularjs/lib/ui-bootstrap-tpls-0.10.0.min.js"></script>
+        <script src="<?php echo base_url();?>assets/admin/angularjs/lib/src/module.js"></script>
+        <script src="<?php echo base_url();?>assets/admin/angularjs/lib/src/directives.js"></script>
+        <script src="<?php echo base_url();?>assets/admin/angularjs/lib/src/filters.js"></script>
+        <script src="<?php echo base_url();?>assets/admin/angularjs/lib/src/services.js"></script>-->
+        <!--lib select-->
+         <script src="<?php echo base_url();?>assets/admin/angularjs/lib/select/dist/select.js"></script>
+    <script src="<?php echo base_url();?>assets/admin/angularjs/lib/ui-bootstrap-tpls-0.13.3.min.js"></script>
+     <!--<script src="<?php echo base_url();?>assets/admin/angularjs/lib/ui-bootstrap-tpls-0.10.0.min.js"></script>-->
     <!-- Bootstrap 3.3.5 -->
     <script src="<?php echo base_url();?>assets/admin/bootstrap/js/bootstrap.min.js"></script>
     <!-- FastClick -->
@@ -80,7 +102,7 @@
     <!-- ChartJS 1.0.1 -->
     <script src="<?php echo base_url();?>assets/admin/plugins/chartjs/Chart.min.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="<?php echo base_url();?>assets/admin/dist/js/pages/dashboard2.js"></script>
+    <!--<script src="<?php echo base_url();?>assets/admin/dist/js/pages/dashboard2.js"></script>-->
     <!-- AdminLTE for demo purposes -->
     <script src="<?php echo base_url();?>assets/admin/dist/js/demo.js"></script>
      <script src="<?php echo base_url();?>assets/admin/angularjs/lib/loading-bar.js"></script>
@@ -94,6 +116,42 @@ if (isset($scripts)) {
 ?>
      <!--<script src="<?php echo base_url();?>assets/admin/angularjs/app.js"></script>
      <script src="<?php echo base_url();?>assets/admin/angularjs/service/appservice.js"></script>-->
+<script>
+$(window).load(function() {
+/** this is come when complete page is fully loaded, including all frames, objects and images **/
+var h = window.innerHeight;
+//$(window).height();
 
+    h = (h*75)/100;
+// (h > 300) ? h-100 : h;
+
+       // $( "<style>.modal-body {height:'"+h+"px'; overflow:auto;}</style>" ).appendTo( "head" )
+    $('<style type="text/css">.modal-body {max-height:'+h+'px; overflow:auto;}</style>').appendTo($('head'));
+
+});
+$( window ).resize(function() {
+  var h = window.innerHeight;
+//$(window).height();
+
+  h = (h*75)/100;
+//(h > 300) ? h-100 : h;
+
+       // $( "<style>.modal-body {height:'"+h+"px'; overflow:auto;}</style>" ).appendTo( "head" )
+  $('<style type="text/css">.modal-body {max-height:'+h+'px; overflow:auto;}</style>').appendTo($('head'));
+
+
+});
+
+//$(function(){
+   // alert("123123");
+  //});
+    //$(document).ready(function(){
+      //  var h = $(window).height();
+
+       // $( "<style>.modal-body {height:'"+h+"px'; overflow:auto;}</style>" ).appendTo( "head" )
+        //$('<style type="text/css">.modal-body {height:'+h+'px; overflow:auto;}</style>').appendTo($('head'));
+
+   // });
+    </script>
   </body>
 </html>

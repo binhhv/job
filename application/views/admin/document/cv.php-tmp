@@ -17,7 +17,7 @@
           <div class="row">
 
             <div class="col-md-12">
-              <button class="btn btn-primary" ng-click="openModalUploadCV('lg')">upload cv mới</button> &nbsp;
+              <a class="btn btn-primary" href="<?php echo base_url('admin/document/uploadCV')?>">upload cv mới</a> &nbsp;
               <button class="btn btn-success" ng-click="reloadCV();" >tải lại dữ liệu</button></div>
           </div>
         </section>
@@ -49,17 +49,19 @@
                       <th class="text-center">Số TT</th>
                       <th class="text-center">Tên file</th>
                       <th class="text-center">Ứng viên</th>
+                      <th class="text-center">Email</th>
                       <th class="text-center">Ngày tạo</th>
                       <th class="text-center"></th>
                     </tr>
                     <tr ng-repeat="data in filtered = (pagedItems | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" data-id="{{data.account_id}}">
                       <td class="text-center">{{($index + ((currentPage -1)* entryLimit)) + 1}}</td>
                       <td class="text-center">
-                        <a href="<?php echo base_url().'downloadcv/';?>{{data.doccv_map_user}}/{{data.doccv_file_tmp}}/{{data.doccv_file_name}}">{{data.doccv_file_name}}</a></td>
+                        <a href="<?php echo base_url().'downloadcv/';?>{{data.userid}}/{{data.doccv_file_tmp}}/{{data.doccv_file_name}}/{{data.doccv_type}}">{{data.doccv_file_name}}</a></td>
                       <td class="text-center">
                           <label><b>{{data.jobseeker_name}}</b></label>
 
                       </td>
+                      <td class="text-center">{{data.jobseeker_email}}</td>
                       <td class="text-center">{{formatDate(data.doccv_created_at) | date: "dd/MM/yyyy"}}</td>
 
                       <td class="text-center">
@@ -80,7 +82,8 @@
                 </div>
                 <div class="box-footer clearfix text-right" >
                 <div class="col-md-12" ng-show="filteredItems > 0">
-                <pagination total-items="filteredItems" on-select-page="setPage(page)" page="currentPage" max-size="itemsPerPage" class="pagination-sm" items-per-page="entryLimit" boundary-links="true"></pagination>
+                <pagination total-items="filteredItems"  on-select-page="setPage(page)" ng-model="currentPage" max-size="itemsPerPage" class="pagination-sm" boundary-links="true" items-per-page="entryLimit"></pagination>
+                <!-- <pagination total-items="filteredItems" on-select-page="setPage(page)" page="currentPage" max-size="itemsPerPage" class="pagination-sm" items-per-page="entryLimit" boundary-links="true"></pagination> -->
             <!-- <div pagination="" page="currentPage" on-select-page="setPage(page)" boundary-links="true" total-items="filteredItems" items-per-page="entryLimit" class="pagination-small" previous-text="&laquo;" next-text="&raquo;"></div> -->
         </div></div>
                 <!-- <div class="box-footer clearfix text-right"  ng-show="filteredItems > 0"> -->

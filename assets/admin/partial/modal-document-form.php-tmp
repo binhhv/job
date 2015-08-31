@@ -10,13 +10,13 @@
                             <div class="form-group col-sm-6">
                                 <label class="control-label" for="firstname">Họ tên</label>
                                 <div class="controls" ng-model="documentJobseeker.name">
-                                    {{documentJobseeker.name}}
+                                    {{documentJobseeker.jobseeker_name}}
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">
                                 <label class="control-label" for="firstname">Ngày sinh</label>
                                 <div class="controls">
-                                    {{documentJobseeker.birthday}}
+                                    {{formatDate(documentJobseeker.docon_birthday) | date: "dd/MM/yyyy"}}
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">
@@ -28,7 +28,19 @@
                             <div class="form-group col-sm-6">
                                 <label class="control-label" for="suburb">Email</label>
                                 <div class="controls">
-                                    {{documentJobseeker.email}}
+                                    {{documentJobseeker.jobseeker_email}}
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="control-label" for="surname">Trình độ/Năng lực</label>
+                                <div class="controls">
+                                    {{documentJobseeker.ljob_level}}
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="control-label" for="surname">Địa điểm làm việc</label>
+                                <div class="controls">
+                                    {{documentJobseeker.province}}
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">
@@ -89,6 +101,12 @@
                                 <label class="control-label" for="suburb">Vấn đề khác</label>
                                 <div class="controls">
                                     {{documentJobseeker.docon_advance}}
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label class="control-label" for="suburb">Nguyện vọng</label>
+                                <div class="controls">
+                                    {{documentJobseeker.docon_wish}}
                                 </div>
                             </div>
                         </div>

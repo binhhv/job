@@ -43,6 +43,7 @@ class Admin extends CI_Controller {
 	public function loadViewAdmin() {
 		// $scripts = array(
 		// 	"assets/admin/angularjs/app.js", "assets/admin/angularjs/service/appservice.js");
+
 		$head = $this->load->view('admin/head', array(), TRUE);
 		$header = $this->load->view('admin/header', array(), TRUE);
 		$content = $this->load->view('admin/content', array(), TRUE);
@@ -54,7 +55,8 @@ class Admin extends CI_Controller {
 			'header' => $header,
 			'sidemenu' => $sidemenu,
 			'content' => $content,
-			'footer' => $footer));
+			'footer' => $footer,
+		));
 	}
 	/**
 	manager jobseeker

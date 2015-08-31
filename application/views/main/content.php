@@ -1,8 +1,4 @@
-	<?php
-if (isset($slide)) {
-	echo $slide;
-}
-?>
+
 	<!--Search box-->
 	<!-- <div class="row">
 	<div class="col-md-12">

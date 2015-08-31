@@ -2,7 +2,7 @@
     <div class="modal-header">
         <h3 class="modal-title">Xóa hồ sơ</h3>
     </div>
-    <div class="modal-body">
+    <div class="modal-body modal-delete">
             <form name="deleteFormForm">
                 <fieldset>
                     <div class="row">
