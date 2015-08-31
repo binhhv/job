@@ -1,5 +1,16 @@
 
 				<div class="container">
+					<div class="row top-header">
+						<div class="col-sm-6 text-center">
+							<a href="">Đăng ký</a> |
+							<a href="">Đăng nhập</a>
+						</div>
+						<div class="col-sm-6 text-right change-language-header">
+							<a href="">Tiếng Việt</a> |
+							<a href="">English</a> |
+							<a href="">日本語</a>
+						</div>
+					</div>
 					<a href="<?php echo base_url();?>" title="Jobify Darker" rel="home" class="site-branding">
 						<h1 class="site-title">
 							<img src="<?php if (isset($logo)) {
@@ -15,7 +26,7 @@
 							<span <?php if (isset($showTitle) && $showTitle) {
 	echo 'class="web-title"';
 }
-?>>JOB7VN</span>
+?>>Tuyển dụng nhân sự tiếng Nhật</span>
 						</h1>
 						<!-- <h2 class="site-description">Job Searching Just Got Easy</h2> -->
 					</a>
@@ -36,8 +47,10 @@
 				<li id="menu-item-2077" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2077"><a href="job-region/palo-alto/index.html">Palo Alto</a></li>
 				<li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="job-region/san-jose/index.html">San Jose</a></li>
 			</ul> -->
+			<li class="active-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-2075">
+				<a href=""><img src="<?php echo base_url()?>assets/main/img/header/home.png"></a>
 			</li>
-			<li id="menu-item-2075" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-2075"><a href="<?php echo base_url('loadview')?>">JOB7VN<i class="fa fa-chevron-down"></i></a>
+			<li id="menu-item-2075" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-2075"><a href="<?php echo base_url('loadview')?>">Về chúng tôi<i class="fa fa-chevron-down"></i></a>
 				<ul class="sub-menu">
 					<li id="menu-item-2076" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2076"><a href="#">Mục đích thành lập</a></li>
 					<li id="menu-item-2077" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2077"><a href="job-region/palo-alto/index.html">Tiêu chí</a></li>
@@ -76,10 +89,11 @@
 		<li id="menu-item-1954" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1954"><a href="contact/index.html">Contact</a></li>
 	</ul>
 	</li> -->
-	<li id="register-modal" class="register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Đăng ký</a></li>
-	<li id="register-modal" class="register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Đăng nhập</a></li>
+	<li  id="register-modal" class="register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Liên hệ</a></li>
+	<li  id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Đăng ký</a></li>
+	<li id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Đăng nhập</a></li>
 	<!-- <li id="login-modal" class="login menu-item menu-item-type-post_type menu-item-object-page menu-item-1900"><a href="login/index.html">Login</a></li> -->
-	<li id="menu-item-2075" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-2075"><a href="find-a-job/index.html">English<i class="fa fa-chevron-down"></i></a>
+	<li id="menu-item-2075" class=" reponsive-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-2075"><a href="find-a-job/index.html">English<i class="fa fa-chevron-down"></i></a>
 			<ul class="sub-menu">
 				<li id="menu-item-2076" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2076"><a href="job-region/san-francisco/index.html">English</a></li>
 				<li id="menu-item-2077" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2077"><a href="job-region/palo-alto/index.html">Tiếng việt</a></li>

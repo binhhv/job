@@ -15,20 +15,24 @@ class Home extends CI_Controller {
 		);
 		$head = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Trang chủ'), TRUE);
 		$header = $this->load->view('main/header', array(
-			'logo' => 'img/header/logo.jpg',
+			'logo' => 'img/header/allSHIGOTO.png',
 			'showTitle' => true,
-			'logoWidth' => '70px',
+			'logoWidth' => '170px',
 			'logoHeight' => '70px',
 		), TRUE);
 		$newJob = $this->load->view('main/new-job', array(), TRUE);
 		$jobseeker = $this->load->view('main/jobseeker', array(), TRUE);
 		$employer = $this->load->view('main/employer', array(), TRUE);
 		$search = $this->load->view('main/search', array(), TRUE);
+		$partner = $this->load->view('main/partner', array(), TRUE);
 		$slide = $this->load->view('main/slide', array('slides' => $slideOb), TRUE);
 		$sidebar = $this->load->view('main/sidebar', array(), TRUE);
 		$content = $this->load->view('main/content', array('slide' => $slide, 'sidebar' => $sidebar, 'userprofile' => $this->session->userdata('fb')), TRUE);
 		$footer = $this->load->view('main/footer', array(), TRUE);
-		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'search' => $search, 'newjob' => $newJob, 'jobseeker' => $jobseeker, 'employer' => $employer, 'content' => $content, 'footer' => $footer));
+		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'search' => $search,
+			'newjob' => $newJob, 'jobseeker' => $jobseeker,
+			'employer' => $employer, 'partner' => $partner,
+			'content' => $content, 'footer' => $footer));
 	}
 	public function getData() {
 		echo json_encode(array("status" => "true"));

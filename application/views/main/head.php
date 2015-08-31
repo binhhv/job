@@ -100,19 +100,29 @@ if (isset($titlePage)) {
         },
         // direction:false,
         // controlsContainer: $(".custom-controls-container"),
-        customDirectionNav: $(".custom-navigation a")
+        // customDirectionNav: $(".custom-navigation a")
     });
 
     $('.flexslider-job').flexslider({
         animation: "slide",
         slideshow: true,
         start: function(slider){
-          $('body').removeClass('loading');
-           $('.sologan').show();
+
         },
         // direction:false,
         // controlsContainer: $(".custom-controls-container"),
-        // customDirectionNav: $(".custom-navigation a")
+        customDirectionNav: $(".custom-navigation a")
+    });
+
+    $('.flexslider-partner').flexslider({
+        animation: "slide",
+        slideshow: true,
+        start: function(slider){
+
+        },
+
+        // controlsContainer: $(".custom-controls-container"),
+        customDirectionNav: $(".custom-navigation-partner a")
     });
 
    //$('.sologan').show('slow').delay(10000).show('slow');

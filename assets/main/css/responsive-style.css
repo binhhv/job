@@ -30,6 +30,15 @@
 
 
 @media (max-width: 767px) {
+	.active-menu{
+		border-bottom: none;
+	}
+	.top-header{
+		display: none;
+	}
+	.reponsive-menu{
+		display: block;
+	}
 	.jobseeker{
 		max-height: none;
 		padding-bottom: 10px;
@@ -39,6 +48,15 @@
 	margin: 0 auto;
 	max-width: 200px;
 	
+}
+.employer-padding-left{
+	padding-left: 0 !important;
+}
+.employer-title-box{
+	margin: 0 auto;
+}
+.image-employer-box{
+	display: none;
 }
 .text-slide{
 	text-align: center;
@@ -61,6 +79,9 @@
     text-align: center;
 }
 .hide-job-responsive-760{
+	display: none;
+}
+.hide-partner-responsive-760{
 	display: none;
 }
 .scrollToTop{

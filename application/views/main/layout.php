@@ -33,6 +33,9 @@
        <div class="container-fuild employer">
           <?php echo $employer;?>
        </div>
+       <div class="container-fluid partner">
+          <?php echo $partner;?>
+       </div>
        <div id="main" style="display: none;">
           <div class="container">
             <?php echo $content;?>
