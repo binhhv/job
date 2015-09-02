@@ -30,6 +30,20 @@
 
 
 @media (max-width: 767px) {
+	.employer-box{
+		padding-bottom: 10px;
+	}
+	.employer-title-box{
+		text-align: center;
+		padding-bottom: 10px;
+	}
+	.btn-employer{
+		margin: 0 auto;
+		display: block;
+	}
+	.jobseeker-title-box{
+		text-align: center;
+	}
 	.active-menu{
 		border-bottom: none;
 	}
@@ -50,7 +64,7 @@
 	
 }
 .employer-padding-left{
-	padding-left: 0 !important;
+	padding-left: 15px !important;
 }
 .employer-title-box{
 	margin: 0 auto;

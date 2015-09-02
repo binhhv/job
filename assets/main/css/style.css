@@ -827,6 +827,18 @@ h5.jobseeker-title{
   	width: 210px;
   	text-align: center;
 }
+.btn-employer{
+		margin-top: 15px;
+	
+	text-transform: none;
+	border-radius: 0 !important;
+	padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+  	width: 210px;
+  	text-align: center;
+}
 .background-color-1{
 	background-color:rgba(0, 0, 0, 0);
 	  border:2px solid #003366;
@@ -930,4 +942,39 @@ h5.partner-title{
 }
 .active-menu{
 	border-bottom: 5px solid #cc3333;
+}
+.employer-title-box{
+	text-align: center;
+}
+.jobseeker-title-box{
+	text-align: center;
+}
+.contact-title h1{
+	margin: 10px 0 5px 0;
+
+}
+.contact-title{
+	padding-bottom: 10px;
+}
+.contact-map{
+	border: 1px solid #f1f1f1;
+	padding: 15px 0;
+}
+.contact-form-box{
+	border:1px solid #f1f1f1;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.map-box{
+	margin: 10px 0;
+}
+.contact-page label{
+	text-transform: none;
+}
+
+.job{
+	background: #f1f1f1;
+}
+a.toggle-menu:hover{
+	color: #fff;
 }

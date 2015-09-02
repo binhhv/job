@@ -9,9 +9,9 @@
 			</div>
 			</div>
 			<div class="col-sm-12">
-			<button class="btn-jobseeker background-color-2 text-color-2">Đăng ký </button>&nbsp;
-			<button class="btn-jobseeker background-color-4 text-color-3">Đăng tin</button>&nbsp;
-			<button class="btn-jobseeker background-color-3 text-color-2">LIÊN HỆ QUẢNG CÁO</button>
+			<button class="btn-employer background-color-2 text-color-2">Đăng ký </button>&nbsp;
+			<button class="btn-employer background-color-4 text-color-3">Đăng tin</button>&nbsp;
+			<button class="btn-employer background-color-3 text-color-2">LIÊN HỆ QUẢNG CÁO</button>
 			</div>
 		</div>
 	</div>

@@ -133,7 +133,12 @@ if (isset($titlePage)) {
     .site-primary-navigation{
       margin-top:-30px;
     }
-
+    .sologan{
+      width:100%;
+    }
+    .toggle-menu{
+      margin-top:-20px;
+    }
     </style>
     <script>
     $(document).ready(function(){

@@ -32,7 +32,7 @@
 					</a>
 
 					<nav id="site-navigation" class="site-primary-navigation slide-left">
-						<a href="#" class="primary-menu-toggle navbar-toggle collapsed toggle-menu" id="toggle-menu-close"><i class="icon-cancel-circled"></i></a>
+						<a href="#" class="primary-menu-toggle navbar-toggle collapsed toggle-menu" id="toggle-menu-close"><i class="fa fa-times-circle"></i></a>
 						<!-- <form role="search" method="get" id="searchform" action="https://demo.astoundify.com/jobify-darker/">
 	    <div><label class="screen-reader-text" for="s">Search for:</label>
 	        <input type="text" value="" name="s" id="s">
@@ -47,16 +47,22 @@
 				<li id="menu-item-2077" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2077"><a href="job-region/palo-alto/index.html">Palo Alto</a></li>
 				<li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="job-region/san-jose/index.html">San Jose</a></li>
 			</ul> -->
-			<li class="active-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-2075">
-				<a href=""><img src="<?php echo base_url()?>assets/main/img/header/home.png"></a>
+			<li class="<?php if (isset($menu) && $menu == 'home') {
+	echo 'active-menu';
+}
+?>  menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-2075">
+				<a href="<?php echo base_url();?>"><img src="<?php echo base_url()?>assets/main/img/header/home.png"></a>
 			</li>
-			<li id="menu-item-2075" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-2075"><a href="<?php echo base_url('loadview')?>">Về chúng tôi<i class="fa fa-chevron-down"></i></a>
+			<li id=" menu-item-2075" class="  <?php if (isset($menu) && $menu == 'aboutus') {
+	echo 'active-menu';
+}
+?> menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-2075"><a href="<?php echo base_url('loadview')?>">Về chúng tôi<i class="fa fa-chevron-down"></i></a>
 				<ul class="sub-menu">
-					<li id="menu-item-2076" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2076"><a href="#">Mục đích thành lập</a></li>
-					<li id="menu-item-2077" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2077"><a href="job-region/palo-alto/index.html">Tiêu chí</a></li>
+					<li id="menu-item-2076" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2076"><a href="<?php echo base_url('about')?>">Giới thiệu</a></li>
+					<!-- <li id="menu-item-2077" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2077"><a href="job-region/palo-alto/index.html">Tiêu chí</a></li> -->
 					<li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="job-region/san-jose/index.html">Tổng quan về facebook JOB7VN</a></li>
 					<li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="job-region/san-jose/index.html">Cơ cấu tổ chức</a></li>
-					<li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="<?php echo base_url('contact');?>">Liên hệ</a></li>
+					<!-- <li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="<?php echo base_url('contact');?>">Liên hệ</a></li> -->
 				</ul>
 			</li>
 	<li id="menu-item-1897" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1897"><a href="post-a-job/index.html">Tìm kiếm</a></li>
@@ -89,7 +95,10 @@
 		<li id="menu-item-1954" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1954"><a href="contact/index.html">Contact</a></li>
 	</ul>
 	</li> -->
-	<li  id="register-modal" class="register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Liên hệ</a></li>
+	<li  id="register-modal" class="<?php if (isset($menu) && $menu == 'contact') {
+	echo 'active-menu';
+}
+?> register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="<?php echo base_url('contact');?>">Liên hệ</a></li>
 	<li  id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Đăng ký</a></li>
 	<li id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Đăng nhập</a></li>
 	<!-- <li id="login-modal" class="login menu-item menu-item-type-post_type menu-item-object-page menu-item-1900"><a href="login/index.html">Login</a></li> -->
@@ -102,5 +111,5 @@
 	</li>
 	</ul></div>				</nav>
 
-									<a href="#" class="primary-menu-toggle in-header toggle-menu" id="toggle-menu-open"><i class="icon-menu"></i></a>
+									<a href="#" class="primary-menu-toggle in-header toggle-menu" id="toggle-menu-open"><i class="fa fa-bars"></i></i></a>
 								</div>

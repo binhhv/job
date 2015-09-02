@@ -58,7 +58,7 @@ $route['logout'] = 'welcome/logout';
 $route['fblogin'] = 'welcome/fblogin';
 $route['404'] = 'welcome/page404';
 $route['home'] = 'home/index';
-$route['contact'] = 'contact/index';
+
 $route['test'] = 'contact/insertExample';
 $route['admin'] = 'admin/admin/index';
 $route['admin/login'] = 'admin/login';
@@ -163,3 +163,15 @@ $route['test/array'] = 'Test_controller/testarray';
 //coming soon
 $route['admin/category'] = 'admin/admin_comingsoon/index';
 $route['admin/setup'] = 'admin/admin_comingsoon/index';
+
+//route main page
+$route['contact'] = 'contact/index';
+$route['contact/send-contact'] = 'contact/sendContact';
+$route['faq'] = 'faq/index';
+$route['about'] = 'home/about';
+
+//job manager
+$route['job/(:any)-(:num).html'] = 'job/job_detail/index/$2';
+
+//test simple
+$route['test1'] = 'test_controller/updateProvince';
