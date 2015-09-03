@@ -26,7 +26,11 @@ class Contact extends CI_Controller {
 			'menu' => 'contact',
 			'user' => $user,
 		), TRUE);
+<<<<<<< HEAD
+		$ab = m;
+=======
 		//$ab = m;
+>>>>>>> a148fb6c99d35e5ec7dbbd382084a9e76d395585
 
 		$csrf = array(
 			'name' => $this->security->get_csrf_token_name(),

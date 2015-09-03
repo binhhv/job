@@ -66,8 +66,6 @@ $route['admin/checkLogin'] = 'admin/login/checkLogin';
 $route['admin/logout'] = 'admin/login/logout';
 //jobseeker admin route
 $route['admin/jobseeker'] = 'admin/admin/jobseekerManager';
-$route['register'] = 'register/index';
-$route['uploadcv'] = 'uploadcv/index';
 $route['admin/jobseeker/getListJobseeker'] = 'admin/admin/jobseeker';
 $route['admin/jobseeker/createJobseeker'] = 'admin/admin/createJobseeker';
 $route['admin/jobseeker/updateJobseeker'] = 'admin/admin/updateJobseeker';
@@ -160,6 +158,10 @@ $route['sendmail'] = 'sendmail/index';
 $route['sendmailtest'] = 'Test_mail/index';
 $route['test/array'] = 'Test_controller/testarray';
 
+//user
+$route['register'] = 'register/index';
+$route['uploadcv'] = 'uploadcv/index';
+$route['createrecruitment'] = 'createrecruitment/index';
 //coming soon
 $route['admin/category'] = 'admin/admin_comingsoon/index';
 $route['admin/setup'] = 'admin/admin_comingsoon/index';
