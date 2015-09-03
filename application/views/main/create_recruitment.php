@@ -19,7 +19,7 @@
                         <div class="row">
                              <div class="form-group col-sm-12">
                                  <div class="error text-center">
-                                        <div class="error text-left" id="message">
+                                        <div class="error text-left" id="message_recruitment">
                                 </div>
                             </div>
 

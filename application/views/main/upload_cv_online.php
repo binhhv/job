@@ -22,10 +22,10 @@
 
                             <div class="col-sm-12">
                                 <div class="error text-center">
-                                    <label class="error alert-danger" id="message">
+                                    <label class="error alert-danger" id="message_upload_cv_online">
                                     </label>
                                 </div>
-                                </label>
+
                             </div>
 
                             <div class="col-sm-12">

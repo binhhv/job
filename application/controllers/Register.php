@@ -42,7 +42,7 @@ class Register extends CI_Controller {
 		$this->form_validation->set_message('matches', $this->lang->line('matches'));
 		$this->form_validation->set_message('regex_match', $this->lang->line('regex_match'));
 
-		$this->form_validation->set_error_delimiters('<div class="error-register">', '</div>');
+		$this->form_validation->set_error_delimiters('<label class="error alert-danger">', '</label>');
 		$this->form_validation->set_rules('account_email', $this->lang->line('email'), 'callback_email_check|trim|required|valid_email|xss_clean');
 		$this->form_validation->set_rules('account_password', $this->lang->line('password'), 'trim|required|min_length[6]|xss_clean|matches[confirm_password]|md5');
 		$this->form_validation->set_rules('confirm_password', $this->lang->line('passconf'), 'trim|required|min_length[6]|xss_clean');
@@ -203,7 +203,7 @@ class Register extends CI_Controller {
 		$this->form_validation->set_message('valid_email', $this->lang->line('invalid-email'));
 		$this->form_validation->set_message('matches', $this->lang->line('matches'));
 
-		$this->form_validation->set_error_delimiters('<div class="error-register">', '</div>');
+		$this->form_validation->set_error_delimiters('<label class="error alert-danger">', '</label>');
 		$this->form_validation->set_rules('account_email', 'lang:email', 'callback_email_check|trim|required|valid_email|xss_clean');
 		$this->form_validation->set_rules('account_password', 'lang:password', 'trim|required|min_length[6]|xss_clean|matches[confirm_password]|md5');
 		$this->form_validation->set_rules('confirm_password', 'lang:passconf', 'trim|required|min_length[6]|xss_clean');

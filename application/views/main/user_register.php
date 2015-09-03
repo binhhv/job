@@ -17,10 +17,9 @@
                          <div class="row">
                             <div class="col-sm-12">
                                 <div class="error text-center">
-                                    <label class="error alert-danger" id="message">
+                                    <label class="error alert-danger" id="message_user">
                                     </label>
                                 </div>
-                                </label>
                             </div>
                              <div class="col-sm-12">
                                 <div class="form-group col-sm-12">

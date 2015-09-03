@@ -59,102 +59,130 @@ class CreateRecruitment extends CI_Controller {
 	}
 	//upload cv
 	public function create_recruitment() {
-		$rec_title = $this->security->xss_clean($this->input->post('rec_title'));
-		$rec_salary = $this->security->xss_clean($this->input->post('rec_salary'));
-		$rec_job_content = $this->security->xss_clean($this->input->post('rec_job_content'));
-		$rec_job_time = $this->security->xss_clean($this->input->post('rec_job_time'));
-		$rec_job_regimen = $this->security->xss_clean($this->input->post('rec_job_regimen'));
-		$rec_job_require = $this->security->xss_clean($this->input->post('rec_job_require'));
-		$rec_job_priority = $this->security->xss_clean($this->input->post('rec_job_priority'));
-		$rec_job_map_form = $this->security->xss_clean($this->input->post('rec_job_map_form'));
-		$rec_job_map_form_child = $this->security->xss_clean($this->input->post('rec_job_map_form_child'));
-		$rec_job_map_level = $this->security->xss_clean($this->input->post('rec_job_map_level'));
-		$rec_job_map_country = $this->security->xss_clean($this->input->post('rec_job_map_country'));
-		$rec_contact_name = $this->security->xss_clean($this->input->post('rec_contact_name'));
-		$rec_contact_email = $this->security->xss_clean($this->input->post('rec_contact_email'));
-		$rec_contact_address = $this->security->xss_clean($this->input->post('rec_contact_address'));
-		$rec_contact_phone = $this->security->xss_clean($this->input->post('rec_contact_phone'));
-		$rec_contact_mobile = $this->security->xss_clean($this->input->post('rec_contact_mobile'));
-		$rec_contact_form = $this->security->xss_clean($this->input->post('rec_contact_form'));
+		//validate
+		$this->form_validation->set_message('required', $this->lang->line('required'));
+		$this->form_validation->set_message('matches', $this->lang->line('matches'));
+		$this->form_validation->set_message('regex_match', $this->lang->line('regex_match'));
+		$this->form_validation->set_error_delimiters('<label class="error alert-danger">', '</label>');
+		$this->form_validation->set_rules('rec_title', $this->lang->line('rec_title'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('rec_salary', $this->lang->line('rec_salary'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('rec_job_content', $this->lang->line('rec_job_content'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('rec_job_time', $this->lang->line('rec_job_time'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('rec_job_regimen', $this->lang->line('rec_job_regimen'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('rec_job_require', $this->lang->line('rec_job_require'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('rec_job_priority', $this->lang->line('rec_job_priority'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('rec_job_map_form', $this->lang->line('rec_job_map_form'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('rec_job_map_form_child', $this->lang->line('rec_job_map_form_child'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('rec_job_map_level', $this->lang->line('rec_job_map_level'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('rec_job_map_country', $this->lang->line('rec_job_map_country'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('province_name', $this->lang->line('province_name'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('welfare', $this->lang->line('welfare_title'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('rec_contact_name', $this->lang->line('rec_contact_name'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('rec_contact_email', $this->lang->line('rec_contact_email'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('rec_contact_address', $this->lang->line('rec_contact_address'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('rec_contact_phone', $this->lang->line('rec_contact_phone'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('rec_contact_mobile', $this->lang->line('rec_contact_mobile'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('rec_contact_form', $this->lang->line('rec_contact_form'), 'trim|required|xss_clean');
+		if ($this->form_validation->run()) {
+			$rec_title = $this->security->xss_clean($this->input->post('rec_title'));
+			$rec_salary = $this->security->xss_clean($this->input->post('rec_salary'));
+			$rec_job_content = $this->security->xss_clean($this->input->post('rec_job_content'));
+			$rec_job_time = $this->security->xss_clean($this->input->post('rec_job_time'));
+			$rec_job_regimen = $this->security->xss_clean($this->input->post('rec_job_regimen'));
+			$rec_job_require = $this->security->xss_clean($this->input->post('rec_job_require'));
+			$rec_job_priority = $this->security->xss_clean($this->input->post('rec_job_priority'));
+			$rec_job_map_form = $this->security->xss_clean($this->input->post('rec_job_map_form'));
+			$rec_job_map_form_child = $this->security->xss_clean($this->input->post('rec_job_map_form_child'));
+			$rec_job_map_level = $this->security->xss_clean($this->input->post('rec_job_map_level'));
+			$rec_job_map_country = $this->security->xss_clean($this->input->post('rec_job_map_country'));
+			$rec_contact_name = $this->security->xss_clean($this->input->post('rec_contact_name'));
+			$rec_contact_email = $this->security->xss_clean($this->input->post('rec_contact_email'));
+			$rec_contact_address = $this->security->xss_clean($this->input->post('rec_contact_address'));
+			$rec_contact_phone = $this->security->xss_clean($this->input->post('rec_contact_phone'));
+			$rec_contact_mobile = $this->security->xss_clean($this->input->post('rec_contact_mobile'));
+			$rec_contact_form = $this->security->xss_clean($this->input->post('rec_contact_form'));
 
-		$datainsert = array(
-			'rec_title' => $rec_title,
-			'rec_salary' => $rec_salary,
-			'rec_job_content' => $rec_job_content,
-			'rec_job_time' => $rec_job_time,
-			'rec_job_regimen' => $rec_job_regimen,
-			'rec_job_require' => $rec_job_require,
-			'rec_job_priority' => $rec_job_priority,
-			'rec_job_map_form' => $rec_job_map_form,
-			'rec_job_map_form_child' => $rec_job_map_form_child,
-			'rec_job_map_level' => $rec_job_map_level,
-			'rec_job_map_country' => $rec_job_map_country,
-			'rec_contact_name' => $rec_contact_name,
-			'rec_contact_email' => $rec_contact_email,
-			'rec_contact_address' => $rec_contact_address,
-			'rec_contact_phone' => $rec_contact_phone,
-			'rec_contact_mobile' => $rec_contact_mobile,
-			'rec_contact_form' => $rec_contact_form,
+			$datainsert = array(
+				'rec_title' => $rec_title,
+				'rec_salary' => $rec_salary,
+				'rec_job_content' => $rec_job_content,
+				'rec_job_time' => $rec_job_time,
+				'rec_job_regimen' => $rec_job_regimen,
+				'rec_job_require' => $rec_job_require,
+				'rec_job_priority' => $rec_job_priority,
+				'rec_job_map_form' => $rec_job_map_form,
+				'rec_job_map_form_child' => $rec_job_map_form_child,
+				'rec_job_map_level' => $rec_job_map_level,
+				'rec_job_map_country' => $rec_job_map_country,
+				'rec_contact_name' => $rec_contact_name,
+				'rec_contact_email' => $rec_contact_email,
+				'rec_contact_address' => $rec_contact_address,
+				'rec_contact_phone' => $rec_contact_phone,
+				'rec_contact_mobile' => $rec_contact_mobile,
+				'rec_contact_form' => $rec_contact_form,
 
-			'rec_map_employer' => '1',
-			'rec_map_user_employer' => '1',
-			'rec_is_approve' => '0',
-			'rec_is_delete' => '0',
-			'rec_is_disabled' => '0',
-			'rec_update_at' => date('Y-m-d'),
-			'rec_created_at' => date('Y-m-d'),
-		);
-		$id_rec = $this->recruitment->insertRecruitment($datainsert);
-		//insert welfare maps
-		$arr_welfare_data = $this->security->xss_clean($this->input->post('welfare'));
-		foreach ($arr_welfare_data as $rows) {
-			$arr_welfare = array(
-				'recmj_map_rec' => $id_rec,
-				'recmj_map_welfare' => $rows,
-				'recmj_is_delete' => '0',
-				'recmj_created_at' => date('Y-m-d'),
+				'rec_map_employer' => '1',
+				'rec_map_user_employer' => '1',
+				'rec_is_approve' => '0',
+				'rec_is_delete' => '0',
+				'rec_is_disabled' => '0',
+				'rec_update_at' => date('Y-m-d'),
+				'rec_created_at' => date('Y-m-d'),
 			);
-			$id_welfare = $this->recruitment->insertRecruitment_Map_Welfare($arr_welfare);
+			$id_rec = $this->recruitment->insertRecruitment($datainsert);
+			//insert welfare maps
+			$arr_welfare_data = $this->security->xss_clean($this->input->post('welfare'));
+			foreach ($arr_welfare_data as $rows) {
+				$arr_welfare = array(
+					'recmj_map_rec' => $id_rec,
+					'recmj_map_welfare' => $rows,
+					'recmj_is_delete' => '0',
+					'recmj_created_at' => date('Y-m-d'),
+				);
+				$id_welfare = $this->recruitment->insertRecruitment_Map_Welfare($arr_welfare);
+			}
+
+			//insert recruitment_map_province
+			$arr_province_name = $this->security->xss_clean($this->input->post('province_name'));
+			foreach ($arr_province_name as $rows) {
+				$arr_province = array(
+					'recmp_map_rec' => $id_rec,
+					'recmp_map_province' => $rows,
+					'recmp_is_delete' => '0',
+					'recmp_created_at' => date('Y-m-d'),
+				);
+				$id_province = $this->recruitment->insertRecruitment_Map_Province($arr_province);
+			}
+			echo json_encode(array('status' => 'success', 'content' => 'upload success'));
+		} else {
+			$dataerr = array(
+				'rec_title' => form_error('rec_title'),
+				'rec_job_map_country' => form_error('rec_job_map_country'),
+				'province_name' => form_error('province_name'),
+				'rec_salary' => form_error('rec_salary'),
+				'welfare' => form_error('welfare'),
+				'rec_job_content' => form_error('rec_job_content'),
+				'rec_job_regimen' => form_error('rec_job_regimen'),
+				'rec_job_time' => form_error('rec_job_time'),
+				'rec_job_require' => form_error('rec_job_require'),
+				'rec_job_priority' => form_error('rec_job_priority'),
+
+				'rec_job_map_form' => form_error('rec_job_map_form'),
+				'rec_job_map_form_child' => form_error('rec_job_map_form_child'),
+				'rec_job_map_level' => form_error('rec_job_map_level'),
+
+				'rec_contact_name' => form_error('rec_contact_name'),
+				'rec_contact_email' => form_error('rec_contact_email'),
+				'rec_contact_address' => form_error('rec_contact_address'),
+				'rec_contact_phone' => form_error('rec_contact_phone'),
+				'rec_contact_mobile' => form_error('rec_contact_mobile'),
+				'rec_contact_form' => form_error('rec_contact_form'),
+				'name' => $this->security->get_csrf_token_name(),
+				'hash' => $this->security->get_csrf_hash(),
+			);
+			echo json_encode(array('status' => 'errvalid', 'content' => $dataerr));
 		}
 
-		//insert recruitment_map_province
-		$arr_province_name = $this->security->xss_clean($this->input->post('province_name'));
-		foreach ($arr_province_name as $rows) {
-			$arr_province = array(
-				'recmp_map_rec' => $id_rec,
-				'recmp_map_province' => $rows,
-				'recmp_is_delete' => '0',
-				'recmp_created_at' => date('Y-m-d'),
-			);
-			$id_province = $this->recruitment->insertRecruitment_Map_Province($arr_province);
-		}
-		echo json_encode(array('status' => 'success', 'content' => 'upload success'));
-		// $id_account = '100';
-		// $file_img_upload = $this->do_upload($id_account);
-		// if ($file_img_upload['status'] == 'success') {
-		// 	//upload images
-		// 	$doccv_file_tmp = $file_img_upload['name_new']; //$this->uploadImages($file_img_upload, $id_account);
-		// 	$doccv_file_name = $file_img_upload['name_old']; //$_FILES["image"]["name"];
-
-		// 	$dataupload = array(
-		// 		'doccv_map_user' => $id_account,
-		// 		'doccv_file_tmp' => $doccv_file_tmp,
-		// 		'doccv_file_name' => $doccv_file_name,
-		// 		'doccv_is_delete' => '0',
-		// 		'doccv_created_at' => date('Y-m-d'),
-		// 		'doccv_update_at' => date('Y-m-d'),
-		// 	);
-		// 	$id_upload = $this->upload_cv->insertcvUser($dataupload);
-		// 	echo json_encode(array('status' => 'success', 'content' => 'upload success'));
-		// } else {
-
-		// 	$arr_err = array(
-		// 		'contente' => $file_img_upload['content'],
-		// 		'name' => $this->security->get_csrf_token_name(),
-		// 		'hash' => $this->security->get_csrf_hash(),
-		// 	);
-		// 	echo json_encode(array('status' => 'error', 'content' => $arr_err));
-		// }
 	}
 
 }

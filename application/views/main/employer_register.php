@@ -18,7 +18,7 @@
 
                              <div class="col-sm-12">
                                 <div class="error text-center">
-                                    <label class="error alert-danger" id="message">
+                                    <label class="error alert-danger" id="message_empoyer">
                                     </label>
                                 </div>
                                 </label>
