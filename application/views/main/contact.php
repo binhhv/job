@@ -5,14 +5,15 @@
 					<div class="border-bottom-title border-color-1"></div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row contact-error hide">
 		<div class="col-sm-12 text-center text-danger hide" id="alert-error-contact">Đã có lỗi xảy ra. Vui lòng thử lại sau.</div>
 	</div>
 	<div class="row ">
 	 <div class="col-md-8 col-md-push-4   col-xs-12">
 	 <div class="row">
-	 	<div class="col-sm-12 msg-success hide text-left text-success"></div>
-	 		<div class="col-sm-12 ">
+	 	<!-- <div class="col-sm-12 msg-success hide text-left text-success contact-success no-padding-left"></div> -->
+	 		<div class="col-sm-12 no-padding-right">
+	 			<div class="col-sm-12 msg-success hide text-center text-success contact-success no-padding-left"></div>
 	 		<div class="contact-form-box">
 	 			<form class="form-horizontal" role="form" method="post" name="fcontact" id="fcontact">
 					  <div class="form-group">
@@ -86,7 +87,7 @@
 				<div class="row contact-map">
 
 						<div class="col-sm-12"><strong>allSHIGOTO</strong></div>
-						<div class="col-sm-12"><i class="fa fa-home"></i>&nbsp;Địa chỉSố 5, Lê quang định, phường Thắng nhất , TP Vũng Tàu</div>
+						<div class="col-sm-12"><i class="fa fa-home"></i>&nbsp;Địa chỉ : Số 5, Lê quang định, phường Thắng nhất , TP Vũng Tàu</div>
 						<div class="col-sm-12"><i class="fa fa-phone"></i>&nbsp;xxxxxxx</div>
 						<div class="col-sm-12"><i class="fa fa-envelope"></i> &nbsp;contact@allshigoto.com</div>
 						<div class="col-sm-12 map-box">
@@ -126,8 +127,8 @@
 
 
 
-             var i = 0;
-             for (item in t) {
+             //var i = 0;
+             for (var i = 0 ; i < t.length; i ++) {
                  var m = new google.maps.Marker({
                      map: google_map,
                      animation: google.maps.Animation.DROP,
@@ -138,7 +139,7 @@
 
                  //m.setTitle((i + 1).toString());
                  attachSecretMessage(m);
-                 i++;
+                // i++;
              }
 
              function attachSecretMessage(marker) {
@@ -169,7 +170,7 @@ $(document).ready(function() {
 
 $("#fcontact").submit(function(event){
 	 event.preventDefault();
-jQuery.ajax({
+$.ajax({
 		type: "POST", // HTTP method POST or GET
 		url: "<?php echo base_url('contact/send-contact');?>", //Where to make Ajax calls
 		dataType:"json", // Data type, HTML, json etc.
@@ -178,6 +179,7 @@ jQuery.ajax({
 			//on success, hide  element user wants to delete.
 			//var obj = JSON.parse(response);
 			//alert(response.status);
+			//alert("ádasdasd");
 			if(response.status == 'error'){
 				// $(".contact-box").html("");
 				// var msg = response.msg;

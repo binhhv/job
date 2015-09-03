@@ -15,7 +15,8 @@ class Contact extends CI_Controller {
 
 	}
 	public function index() {
-
+		// $user = $this->session->userdata['user'];
+		$user = (isset($this->session->userdata['user'])) ? $this->session->userdata['user'] : null;
 		$head = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Contact'), TRUE);
 		$header = $this->load->view('main/header', array(
 			'logo' => 'img/header/allSHIGOTO.png',
@@ -23,6 +24,7 @@ class Contact extends CI_Controller {
 			'logoWidth' => '170px',
 			'logoHeight' => '70px',
 			'menu' => 'contact',
+			'user' => $user,
 		), TRUE);
 		//$ab = m;
 

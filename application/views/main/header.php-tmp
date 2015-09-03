@@ -3,7 +3,7 @@
 					<div class="row top-header">
 						<div class="col-sm-6 text-center">
 							<a href="">Đăng ký</a> |
-							<a href="">Đăng nhập</a>
+							<a href="<?php echo base_url('login');?>?url=<?php echo urlencode(current_url());?>">Đăng nhập</a>
 						</div>
 						<div class="col-sm-6 text-right change-language-header">
 							<a href="">Tiếng Việt</a> |

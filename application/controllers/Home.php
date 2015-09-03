@@ -11,6 +11,7 @@ class Home extends CI_Controller {
 
 	}
 	public function index() {
+		$user = (isset($this->session->userdata['user'])) ? $this->session->userdata['user'] : null;
 		$slideOb = array('slide1.jpg', 'slide1.jpg', 'slide1.jpg', 'slide1.jpg',
 		);
 		$head = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Trang chủ'), TRUE);
@@ -20,6 +21,7 @@ class Home extends CI_Controller {
 			'logoWidth' => '170px',
 			'logoHeight' => '70px',
 			'menu' => 'home',
+			'user' => $user,
 		), TRUE);
 		$newJob = $this->load->view('main/new-job', array(), TRUE);
 		$jobseeker = $this->load->view('main/jobseeker', array(), TRUE);

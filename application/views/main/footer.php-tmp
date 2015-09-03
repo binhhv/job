@@ -115,7 +115,7 @@
 </div>
 
 <script>
-$(window).load(function() {
+$(document).ready(function() {
 /** this is come when complete page is fully loaded, including all frames, objects and images **/
 var h = window.innerHeight;
 //$(window).height();

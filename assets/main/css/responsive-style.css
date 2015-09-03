@@ -30,6 +30,10 @@
 
 
 @media (max-width: 767px) {
+	.no-padding-right{
+		padding-right: 15px;
+		padding-left: 0 !important;
+	}
 	.employer-box{
 		padding-bottom: 10px;
 	}
