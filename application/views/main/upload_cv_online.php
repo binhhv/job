@@ -24,6 +24,13 @@
                         <div class="row">
 
 
+                            <div class="col-sm-12">
+                                <div class="error text-center">
+                                    <label class="error alert-danger" id="message">
+                                    </label>
+                                </div>
+                                </label>
+                            </div>
 
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
@@ -35,14 +42,8 @@
                                 <div class="form-group col-sm-6">
                                     <label class="control-label"><?php echo lang('docon_salary');?> <span class="colorRed">*</span></label>
                                         <div class="controls">
-                                            <select class="form-control" name="docon_salary" id="docon_salary">
-                                                <option value="0">Chọn mức lương mong muốn</option>
-                                                <option>Từ 1 đến 2 triệu</option>
-                                                <option>từ 2 đến 5 triệu</option>
-                                                <option>Từ 5 đến 10 triệu</option>
-                                                <option>Trên 10 triệu</option>
-                                                <option>Khác</option>
-                                            </select>
+                                            <input type="text" class="form-control" name="docon_salary" />
+
                                         </div>
                                 </div>
                             </div>
@@ -51,13 +52,8 @@
                                 <div class="form-group col-sm-6">
                                     <label class="control-label"><?php echo lang('docon_degree');?> <span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <select class="form-control input-lg2" name="docon_degree" id="docon_degree">
-                                            <option value="0">Chọn trình độ học vấn</option>
-                                            <option>Đại học</option>
-                                            <option>Cao đẳng</option>
-                                            <option>Trung cấp</option>
-                                            <option>Khác</option>
-                                        </select>
+                                         <input type="text" class="form-control" name="docon_degree" />
+
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-6">
@@ -72,14 +68,8 @@
                                 <div class="form-group col-sm-6">
                                     <label class="control-label"><?php echo lang('docon_experience');?> <span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <select class="form-control" name="docon_experience" id="docon_experience">
-                                            <option value="0">Chọn kinh nghiệm làm việc</option>
-                                            <option>Dưới 1 năm</option>
-                                            <option>Từ 1 đến 2 năm</option>
-                                            <option>Từ 2 đến 3 năm</option>
-                                            <option>Trên 3 năm</option>
-                                            <option>Khác</option>
-                                    </select>
+                                        <input type="text" class="form-control" name="docon_experience" />
+
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-6">
@@ -87,11 +77,9 @@
                                         <div class="controls">
                                             <select class="form-control input-lg2" name="docon_healthy" id="docon_healthy">
                                                 <option value="0">Chọn tình trạng sức khỏe </option>
-                                                <option>Sức khỏe tốt</option>
-                                                <option>Bị bệnh</option>
-                                                <option>Yếu ớt</option>
-                                                <option>gầy còm</option>
-                                                <option>Khác</option>
+                                                <?php foreach ($healthy as $rows): ?>
+                                                    <option value="<?php echo $rows->healthy_id;?>"><?php echo $rows->healthy_type;?></option>
+                                                <?php endforeach?>
                                             </select>
                                         </div>
                                 </div>
@@ -163,11 +151,7 @@
                             </div>
                         </div>
 
-
-
                     </fieldset>
-
-
 
                     <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                 </form>

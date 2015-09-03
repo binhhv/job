@@ -158,12 +158,10 @@ $route['sendmail'] = 'sendmail/index';
 $route['sendmailtest'] = 'Test_mail/index';
 $route['test/array'] = 'Test_controller/testarray';
 
-<<<<<<< HEAD
 //user
 $route['register'] = 'register/index';
 $route['uploadcv'] = 'uploadcv/index';
 $route['createrecruitment'] = 'createrecruitment/index';
-=======
 //coming soon
 $route['admin/category'] = 'admin/admin_comingsoon/index';
 $route['admin/setup'] = 'admin/admin_comingsoon/index';
@@ -179,4 +177,3 @@ $route['job/(:any)-(:num).html'] = 'job/job_detail/index/$2';
 
 //test simple
 $route['test1'] = 'test_controller/updateProvince';
->>>>>>> a148fb6c99d35e5ec7dbbd382084a9e76d395585

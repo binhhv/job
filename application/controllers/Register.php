@@ -26,7 +26,10 @@ class Register extends CI_Controller {
 			'name' => $this->security->get_csrf_token_name(),
 			'hash' => $this->security->get_csrf_hash(),
 		);
-		$content = $this->load->view('main/user_register', array('csrf' => $csrf), TRUE);
+		//register empoyer
+		$provinceData = $this->account->getAllProvinceByCountry();
+
+		$content = $this->load->view('main/employer_register', array('csrf' => $csrf, 'province' => $provinceData), TRUE);
 		$footer = $this->load->view('main/footer', array(), TRUE);
 		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
 	}
