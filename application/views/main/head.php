@@ -8,7 +8,7 @@ if (isset($titlePage)) {
 }
 ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta http-equiv="refresh" content="1200;url=<?php echo base_url('logout')?>">
 <!-- CSS
 ================================================== -->
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
@@ -60,12 +60,18 @@ if (isset($titlePage)) {
 <script src="<?php echo base_url()?>/assets/main/js/bootstrap.js"></script>
 <script src="<?php echo base_url()?>/assets/main/flexslider/jquery.flexslider.js"></script>
 <script src="<?php echo base_url()?>/assets/main/js/job7vn.js"></script>
+
+ <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+ <script src="<?php echo base_url()?>/assets/main/js/jquery.placeholder.min.js"></script>
+
+
 <script src="<?php echo base_url()?>/assets/main/js/job7vn-register.js"></script>
 <script src="<?php echo base_url()?>/assets/main/js/dobPicker.min.js"></script>
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
 <script src="<?php echo base_url()?>/assets/main/bootstrap/dist/js/bootstrap-select.js"></script>
 <script src="<?php echo base_url()?>/assets/main/datetimepicker/DateTimePicker.js"></script>
 <script src="<?php echo base_url()?>/assets/main/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
 <!--<script src="<?php echo base_url()?>/assets/main/js/jquery4a80.js"></script>-->
 <!-- <script src="<?php echo base_url()?>/assets/common/js/jquery.prettyPhoto.js"></script>
 <script src="<?php echo base_url()?>/assets/common/js/jquery.flexslider.js"></script>
@@ -155,6 +161,7 @@ if (isset($titlePage)) {
     </style>
     <script>
     $(document).ready(function(){
+    $('input, textarea').placeholder();
      $('ul#menu-main-menu').each(function() {
           var taga = $(this).find('li');
           if(taga.find('ul').length){

@@ -1,11 +1,11 @@
-<div class="container-fluid no-padding">
+<div class="container-fluid no-padding slide-page">
             <?php
 if (isset($slide)) {
 	echo $slide;
 }
 ?>
        </div>
-        <div class="container-fluid no-padding">
+        <div class="container-fluid no-padding search-job">
           <div class="container">
             <?php
 if (isset($search)) {

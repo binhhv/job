@@ -18,3 +18,5 @@ ERROR - 2015-09-02 18:03:05 --> $config['composer_autoload'] is set to TRUE but 
 ERROR - 2015-09-02 18:04:51 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
 ERROR - 2015-09-02 18:04:51 --> Severity: Parsing Error --> syntax error, unexpected 'print_r' (T_STRING) C:\xampp\htdocs\job\application\controllers\Test_controller.php 15
 ERROR - 2015-09-02 18:05:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-02 19:05:03 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-02 19:05:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.

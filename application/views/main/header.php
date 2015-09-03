@@ -1,10 +1,31 @@
 
 				<div class="container">
 					<div class="row top-header">
+					<?php if (!isset($user)) {?>
 						<div class="col-sm-6 text-center">
 							<a href="">Đăng ký</a> |
-							<a href="">Đăng nhập</a>
+							<a href="<?php echo base_url('login');?>?url=<?php echo urlencode(current_url());?>">Đăng nhập</a>
 						</div>
+						<?php } else {
+	?>
+							<div class="col-sm-6 text-center">
+
+								<?php if ($user['role'] == 2 || $user['role'] == 3) {?>
+									<a href="<?php echo base_url('employer');?>">Trang nhà tuyển dụng</a> |
+									<a href="<?php echo base_url('logout');?>">Đăng xuất</a>
+									<?php } else if ($user['role'] == 4) {?>
+									<a href="">Trang của tôi</a> |
+									<a href="<?php echo base_url('logout');?>">Đăng xuất</a>
+	<?php } else if ($user['role'] == 1 || $user['role'] == 5) {?>
+									<a href="">Trang admin</a> |
+									<a href="<?php echo base_url('logout');?>">Đăng xuất</a>
+	<?php }
+	?>
+
+
+						</div>
+						<?php }
+?>
 						<div class="col-sm-6 text-right change-language-header">
 							<a href="">Tiếng Việt</a> |
 							<a href="">English</a> |
@@ -99,8 +120,33 @@
 	echo 'active-menu';
 }
 ?> register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="<?php echo base_url('contact');?>">Liên hệ</a></li>
-	<li  id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Đăng ký</a></li>
+<?php if (!isset($user)) {?>
+
+							<li  id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Đăng ký</a></li>
 	<li id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Đăng nhập</a></li>
+
+						<?php } else {
+	?>
+
+
+								<?php if ($user['role'] == 2 || $user['role'] == 3) {?>
+									<li  id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="<?php echo base_url('employer');?>">Trang nhà tuyển dụng</a></li>
+	<li id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="<?php echo base_url('logout')?>">Đăng xuất</a></li>
+									<?php } else if ($user['role'] == 4) {?>
+									<li  id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Trang của tôi</a></li>
+	<li id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="<?php echo base_url('logout')?>">Đăng xuất</a></li>
+	<?php } else if ($user['role'] == 1 || $user['role'] == 5) {?>
+									<li  id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Trang admin</a></li>
+	<li id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="<?php echo base_url('logout')?>">Đăng xuất</a></li>
+	<?php }
+	?>
+
+
+
+						<?php }
+?>
+
+
 	<!-- <li id="login-modal" class="login menu-item menu-item-type-post_type menu-item-object-page menu-item-1900"><a href="login/index.html">Login</a></li> -->
 	<li id="menu-item-2075" class=" reponsive-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-2075"><a href="find-a-job/index.html">English<i class="fa fa-chevron-down"></i></a>
 			<ul class="sub-menu">
@@ -111,5 +157,5 @@
 	</li>
 	</ul></div>				</nav>
 
-									<a href="#" class="primary-menu-toggle in-header toggle-menu" id="toggle-menu-open"><i class="fa fa-bars"></i></i></a>
+									<a href="#" class="primary-menu-toggle in-header toggle-menu" id="toggle-menu-open"><i class="fa fa-bars"></i></a>
 								</div>

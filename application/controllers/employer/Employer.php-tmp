@@ -1,0 +1,38 @@
+<?php
+/**
+ *
+ */
+class Employer extends CI_Controller {
+
+	function __construct() {
+		parent::__construct();
+		$this->load->helper('url');
+		$this->load->library(array('form_validation', 'session'));
+
+		// if (!$this->session->userdata['user']['isLogged']) {
+		// 	redirect(base_url() . 'admin/login'); // no session established, kick back to login page
+		// } else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
+		// 	redirect(base_url('error/403'));
+		// }
+	}
+	function index() {
+		$head   = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Contact'), TRUE);
+		$header = $this->load->view('main/header', array(
+				'logo'       => 'img/header/allSHIGOTO.png',
+				'showTitle'  => true,
+				'logoWidth'  => '170px',
+				'logoHeight' => '70px',
+				'menu'       => '',
+			), TRUE);
+		//$ab = m;
+
+		$csrf = array(
+			'name' => $this->security->get_csrf_token_name(),
+			'hash' => $this->security->get_csrf_hash(),
+		);
+		$content = $this->load->view('main/employer/index', array('csrf' => $csrf), TRUE);
+		$footer  = $this->load->view('main/footer', array(), TRUE);
+		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
+
+	}
+}

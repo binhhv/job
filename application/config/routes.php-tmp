@@ -175,3 +175,8 @@ $route['job/(:any)-(:num).html'] = 'job/job_detail/index/$2';
 
 //test simple
 $route['test1'] = 'test_controller/updateProvince';
+
+//login
+$route['login']      = 'login/index';
+$route['logout']     = 'login/logout';
+$route['checkLogin'] = 'login/checkLogin';

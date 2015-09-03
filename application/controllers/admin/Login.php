@@ -25,34 +25,24 @@ class Login extends CI_Controller {
 		$this->load->helper(array('form', 'url', 'cookie'));
 		$this->load->library(array('form_validation', 'session'));
 		$this->load->model('DBUtil');
+
 	}
 
 	public function index() {
+		if (!isset($this->session->userdata['user']) || !$this->session->userdata['user']['isLogged']) {
+			$csrf = array(
+				'name' => $this->security->get_csrf_token_name(),
+				'hash' => $this->security->get_csrf_hash(),
+			);
+			$this->load->view('admin/login/layout', array('titlePage' => 'ADMIN JOB7VN|Login', 'page' => 'job7vn', 'csrf' => $csrf));
+		} else {
+			if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
+				redirect(base_url('error/403'));
+			} else {
+				redirect(base_url() . 'admin');
+			}
 
-		// if (isset($this->session->userdata['user']['id'])) {
-		// 	redirect(base_url('admin'));
-		// } else {
-		// 	#check autologin
-		// 	$cookie_name = 'siteAuth';
-		// 	// Check if the cookie exists
-		// 	if (isset($_COOKIE[$cookie_name])) {
-		// 		$a_User = parse_str($_COOKIE[$cookie_name]);
-		// 		// Register the session
-		// 		$user_info = array(
-		// 			'email' => $a_User['email'],
-		// 			'password' => $a_User['password'],
-		// 			'role' => $a_User['role'],
-		// 		);
-		// 		$this->session->set_userdata('user', $user_info);
-		// 		redirect(base_url('admin'));
-		// 	} else {
-		$csrf = array(
-			'name' => $this->security->get_csrf_token_name(),
-			'hash' => $this->security->get_csrf_hash(),
-		);
-		$this->load->view('admin/login/layout', array('titlePage' => 'ADMIN JOB7VN|Login', 'page' => 'job7vn', 'csrf' => $csrf));
-		//}
-		//}
+		}
 
 	}
 
@@ -73,7 +63,7 @@ class Login extends CI_Controller {
 					$cookie_name = 'siteAuth';
 					$cookie_time = 3600 * 24 * 30; // 30 days.
 					setcookie('ci-session', 'user=' . "", time() - 3600); // Unset cookie of user
-					setcookie($cookie_name, 'user=' . $a_UserChecking[0]->account_email . '&password=' . $a_UserChecking[0]->account_password . '&role=' . $a_UserChecking[0]->account_map_role . '&id=' . $a_UserChecking[0]->account_id, time() + $cookie_time);
+					setcookie($cookie_name, 'user=' . $a_UserChecking[0]->account_email . '&password=' . $a_UserChecking[0]->account_password . '&role=' . $a_UserChecking[0]->account_map_role . '&id=' . $a_UserChecking[0]->account_id, time() + $cookie_time . '$isLogged=1');
 				}
 				$this->session->set_userdata('user', array('id' => $a_UserChecking[0]->account_id,
 					'email' => $a_UserChecking[0]->account_email,
