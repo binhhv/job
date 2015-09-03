@@ -1,0 +1,143 @@
+<div id="recruitmentActive-ctrl"  ng-controller="recruitmentController" >
+
+<?php
+$titleRecruitment = '';
+$titleCrumb       = '';
+switch ($type) {
+	case 1:
+		$titleRecruitment = 'Quản lý tin tuyển dụng đã đăng';
+		$titleCrumb       = 'Tin tuyển dụng đã đăng';
+		break;
+	case 2:
+		$titleRecruitment = 'Quản lý tin tuyển dụng chờ duyệt';
+		$titleCrumb       = 'Tin tuyển dụng chờ duyệt';
+		break;
+	default:
+		$titleRecruitment = 'Quản lý tint tuyển dụng hết hạn';
+		$titleCrumb       = 'Tin tuyển dụng đã hết hạn';
+		break;
+}
+?>
+<section class="content-header">
+          <h1>
+
+<?php echo $titleRecruitment;?>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="<?php echo base_url('admin');?>"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li>Quản lý tin tuyển dụng</li>
+            <li class="active"><?php echo $titleCrumb;?></li>
+          </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content-header">
+          <div class="row">
+
+              <div class="col-sm-12">
+                <button class="btn btn-success" ng-click="reload('<?php echo $type;?>');" >tải lại dữ liệu</button></div>
+          </div>
+        </section>
+        <section class="content">
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <div class="col-sm-6 col-xs-12"> <h3 class="box-title">Danh sách tin tuyển dụng</h3></div>
+                   <div class="col-sm-6 col-xs-12"><div class="box-tools">
+                    <div class="input-group search-box" style="width: 150px;">
+                      <input type="text" name="table_search" ng-model="search.$" ng-change="filter()" class="form-control input-sm pull-right" placeholder="tìm kiếm">
+                      <div class="input-group-btn">
+                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
+
+                  </div></div>
+                </div><!-- /.box-header -->
+
+                <div class="box-body table-responsive no-padding">
+                  <div class="text-center" id="div-data-loading">Đang tải dữ liệu</div>
+                  <div class="text-center hide" id="div-no-data-loading" ng-show="filteredItems == 0" >Không có dữ liệu</div>
+                </div>
+                <div class="box-body table-responsive no-padding"  ng-show="filteredItems > 0">
+                    <table class="table table-hover table-striped hide" id="recruitmentTable" ng-init="getRecruitments('<?php echo $type;?>');">
+                            <tr>
+                              <th>Số TT</th>
+                              <th>Tiêu đề tin</th>
+                              <th>Mức lương</th>
+                              <th class="text-center">Hình thức công việc</th>
+                              <th class="text-center">Trạng thái</th>
+                              <th class="text-center">Ngày đăng tin</th>
+<?php if ($type == 1 || $type == 3) {?><th class="text-center">Số lượng ứng tuyển</th><?php }
+?>
+<th class="text-center"></th>
+                            </tr>
+                            <tr ng-repeat="data in filtered = (pagedItems | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" data-id="{{data.account_id}}">
+                              <td>{{($index + ((currentPage -1)* entryLimit)) + 1}}</td>
+                              <td>{{data.rec_title}}</td>
+                              <td>{{data.rec_salary}} </td>
+                              <td class="text-center">
+                                      {{data.fjob_type}} - {{data.jcform_type}}
+                              </td>
+                              <td class="text-center">
+                                <!-- <label class="btn btn-xs btn-danger" ng-show="data.rec_is_approve == false">đang chờ duyệt</label> -->
+                                <label class="btn btn-xs btn-danger" ng-show="data.rec_is_approve == false" ng-click="modalApproveRecruitment('md',data)">duyệt tin</label>
+                                <label class="btn btn-xs btn-success" ng-show="data.rec_is_approve == true" disabled>đã duyệt</label>
+                              <!-- {{data.account_is_disabled}} -->
+                              </td>
+
+                              <td class="text-center">{{formatDate(data.rec_created_at) | date: "dd/MM/yyyy"}}</td>
+<?php if ($type == 1 || $type == 3) {?>
+	<td class="text-center">
+	                              <label ng-show="data.numapply == 0"> {{data.numapply}}</label>
+	                              <button class="btn btn-xs btn-primary btn-numapply" ng-show="data.numapply > 0" ng-click="openModalViewApply('lg',data.rec_id);">{{data.numapply}}</button>
+
+	                              </td>
+
+	<?php }
+?>
+<td class="text-center">
+                              <!-- <label class="btn btn-xs btn-danger" ng-show="data.rec_is_approve == false" ng-click="approveRecruitment(data.rec_id)">duyệt tin</label> -->
+                              <button class="btn btn-xs btn-info" ng-click="modalDetailEmployerRecruitment('lg',data.rec_id)" >chi tiết</button>
+                              <button class="btn btn-xs btn-warning" ng-click="modalUpdateEmployerRecruitment('lg',data)" >sửa</button>
+                              <button class="btn btn-xs btn-danger" ng-click="modalDeleteEmployerRecruitment('md',data)">xóa</button>
+                              </td>
+                            </tr>
+                            <!-- <tr>
+                              <td>183</td>
+                              <td>John Doe</td>
+                              <td>11-7-2014</td>
+                              <td><span class="label label-success">Approved</span></td>
+                              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                            </tr> -->
+
+                          </table>
+                </div>
+                <div class="box-footer clearfix text-right" >
+                <div class="col-md-12" ng-show="filteredItems > 0">
+                <pagination total-items="filteredItems"  on-select-page="setPage(page)" ng-model="currentPage" max-size="itemsPerPage" class="pagination-sm" boundary-links="true" items-per-page="entryLimit"></pagination>
+                    <!-- <pagination total-items="filteredItems" on-select-page="setPage(page)" page="currentPage" max-size="itemsPerPage" class="pagination-sm" items-per-page="entryLimit" boundary-links="true"></pagination> -->
+            <!-- <div pagination="" page="currentPage" on-select-page="setPage(page)" boundary-links="true" total-items="filteredItems" items-per-page="entryLimit" class="pagination-small" previous-text="&laquo;" next-text="&raquo;"></div> -->
+        </div></div>
+                <!-- <div class="box-footer clearfix text-right"  ng-show="filteredItems > 0"> -->
+                  <!-- <div pagination=""  page="currentPage" on-select-page="setPage(page)" boundary-links="true" total-items="filteredItems" items-per-page="entryLimit" class="pagination-small" previous-text="&laquo;" next-text="&raquo;"></div> -->
+                 <!--  <ul class="pagination pagination-sm no-margin pull-right">
+                    <li><a href="#">«</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">»</a></li>
+                  </ul> -->
+                <!-- </div> -->
+                <!-- <div ng-model="message"></div> -->
+                <!-- /.box-body -->
+              </div><!-- /.box -->
+              <!-- <div class="box" ng-show="filteredItems == 0">
+                <div class="text-center">Không có dữ liệu</div>
+              </div> -->
+            </div>
+          </div>
+        </section>
+        </div>
+

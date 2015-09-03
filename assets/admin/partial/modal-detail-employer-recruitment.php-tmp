@@ -7,88 +7,134 @@
             <fieldset>
                 <div class="row">
                     <div class="col-sm-12">
-                            <div class="form-group col-sm-12">
+                            <div class="form-group col-sm-12 text-center">
                                 <!-- <label class="control-label" for="firstname">Họ tên</label> -->
                                 <div class="controls" ng-model="documentJobseeker.name">
-                                <b>{{recruitment.rec_title}}</b>
+                                <h4><b>{{rec.rec_title}}</b></h4>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label class="control-label" for="firstname">Địa điểm làm việc : {{rec.country_name}}</label>
+                                <div class="controls">
+                                    <b>Tỉnh/Thành phố </b>
+                                <ul ng-repeat="item in rec.provinces">
+                                    <li>{{item.nameprovince}}</li>
+                                </ul>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label class="control-label" for="firstname">Phúc lợi</label>
+                                <div class="controls" style="background: #f2f9f2">
+                                <!-- {{rec.welfares}} -->
+                                    <div ng-show="rec.welfares === null || rec.welfares.length <= 0">
+                                             Không có.
+                                    </div>
+                                    <div ng-repeat="item in rec.welfares">
+                                        <i ng-class="item.iconwelfare"></i> &nbsp; {{item.titlewelfare}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label class="control-label" for="surname">Mức lương </label>
+                                <div class="controls">
+                                    {{rec.rec_salary}}
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label class="control-label" for="suburb">MÔ TẢ CÔNG VIỆC</label>
+                                <div class="controls">
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label class="control-label" for="surname">Nội dung công việc</label>
+                                <div class="controls">
+                                    {{rec.rec_job_content}}
+                                </div>
+                            </div>
+                             <div class="form-group col-sm-12">
+                                <label class="control-label" for="surname">Chế độ hậu đãi </label>
+                                <div class="controls">
+                                {{rec.rec_job_regimen}}
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">
-                                <label class="control-label" for="firstname">Ngày sinh</label>
+                                <label class="control-label" for="suburb">Thời gian làm việc</label>
                                 <div class="controls">
-                                    {{documentJobseeker.birthday}}
+                                    {{formatDate(rec.rec_job_time) | date: "dd/MM/yyyy"}}
+                                </div>
+                            </div>
+
+                            <div class="form-group col-sm-12">
+                                <label class="control-label" for="suburb">YÊU CẦU CÔNG VIỆC</label>
+                                <div class="controls">
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label class="control-label" for="surname">Yêu cầu bắt buộc</label>
+                                <div class="controls">
+                                    {{rec.rec_job_require}}
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label class="control-label" for="suburb">Điều kiện/Ưu tiên</label>
+                                <div class="controls">
+                                    {{rec.rec_job_priority}}
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">
-                                <label class="control-label" for="surname">Số điện thoại </label>
+                                <label class="control-label" for="surname">Hình thức công việc </label>
                                 <div class="controls">
-                                    {{documentJobseeker.docon_phone}}
+                                    {{rec.fjob_type}} - {{rec.jcform_type}}
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="control-label" for="suburb">Trình độ tiếng nhật</label>
+                                <div class="controls">
+                                    {{rec.ljob_level}}
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label class="control-label" for="suburb">THÔNG TIN LIÊN HỆ </label>
+                                <div class="controls">
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label class="control-label" for="suburb">Người liên hệ</label>
+                                <div class="controls">
+                                    {{rec.rec_contact_name}}
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">
                                 <label class="control-label" for="suburb">Email</label>
                                 <div class="controls">
-                                    {{documentJobseeker.email}}
+                                    {{rec.rec_contact_email}}
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">
-                                <label class="control-label" for="surname">Nghề nghiệp </label>
+                                <label class="control-label" for="suburb">Địa chỉ</label>
                                 <div class="controls">
-                                    {{documentJobseeker.docon_career}}
+                                    {{rec.rec_contact_address}}
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">
-                                <label class="control-label" for="suburb">Bằng cấp/Giấy chứng nhận</label>
+                                <label class="control-label" for="suburb">Điện thoại</label>
                                 <div class="controls">
-                                    {{documentJobseeker.docon_degree}}
+                                    {{rec.rec_contact_phone}}
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">
-                                <label class="control-label" for="surname">Học vấn </label>
+                                <label class="control-label" for="suburb">Di động</label>
                                 <div class="controls">
-                                    {{documentJobseeker.docon_education}}
+                                    {{rec.rec_contact_mobile}}
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">
-                                <label class="control-label" for="suburb">Nơi ở hiện tại</label>
+                                <label class="control-label" for="suburb">Hình thức liên hệ</label>
                                 <div class="controls">
-                                    {{documentJobseeker.docon_address}}
-                                </div>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="control-label" for="surname">Kinh nghiệm </label>
-                                <div class="controls">
-                                    {{documentJobseeker.docon_experience}}
-                                </div>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="control-label" for="suburb">Sở thích/Kỹ năng đặc biệt</label>
-                                <div class="controls">
-                                    {{documentJobseeker.docon_skill}}
-                                </div>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="control-label" for="surname">Tình trạng sức khỏe </label>
-                                <div class="controls">
-                                    {{documentJobseeker.healthy_type}}
-                                </div>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="control-label" for="suburb">Lý do ứng tuyển</label>
-                                <div class="controls">
-                                    {{documentJobseeker.docon_reason_apply}}
-                                </div>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="control-label" for="suburb">Mức lương </label>
-                                <div class="controls">
-                                    {{documentJobseeker.docon_salary}}
-                                </div>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label class="control-label" for="suburb">Vấn đề khác</label>
-                                <div class="controls">
-                                    {{documentJobseeker.docon_advance}}
+                                    {{rec.contact_form_type}}
                                 </div>
                             </div>
                         </div>

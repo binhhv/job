@@ -1,4 +1,44 @@
-app.filter('startFrom', function() {
+// app.filter('startFrom', function() {
+//     return function(input, start) {
+//         if(input) {
+//             start = +start; //parse to int
+//             return input.slice(start);
+//         }
+//         return [];
+//     }
+// });
+
+app.filter('propsFilter', function() {
+  return function(items, props) {
+    var out = [];
+
+    if (angular.isArray(items)) {
+      var keys = Object.keys(props);
+        
+      items.forEach(function(item) {
+        var itemMatches = false;
+
+        for (var i = 0; i < keys.length; i++) {
+          var prop = keys[i];
+          var text = props[prop].toLowerCase();
+          if (item[prop].toString().toLowerCase().indexOf(text) !== -1) {
+            itemMatches = true;
+            break;
+          }
+        }
+
+        if (itemMatches) {
+          out.push(item);
+        }
+      });
+    } else {
+      // Let the output be the input untouched
+      out = items;
+    }
+
+    return out;
+  };
+}).filter('startFrom', function() {
     return function(input, start) {
         if(input) {
             start = +start; //parse to int
@@ -6,7 +46,7 @@ app.filter('startFrom', function() {
         }
         return [];
     }
-});
+})
 
 app.controller('documentController', function (documentService,$scope, $http, $timeout,cfpLoadingBar,$modal,$log,$window,$filter) {
 	$scope.completeProcess = false;
@@ -86,10 +126,10 @@ $scope.formatDate = function(date){
     };
     $scope.downloadCV = function(data,url){
         //console.log(url);
-        $window.location.href = url +data.doccv_map_user+'/'+data.doccv_file_tmp+'/'+data.doccv_file_name;
+        $window.location.href = url +data.userid+'/'+data.doccv_file_tmp+'/'+data.doccv_file_name+'/'+data.doccv_type;
     }
 
-    $scope.modalUpdateForm = function (size,selectedform) {
+    $scope.modalUpdateForm = function (size,selectedform,country) {
             documentService.getToken(function(data){
                 var obToken = JSON.parse(angular.toJson(data));
                //$log.info(obToken['name']);
@@ -99,16 +139,30 @@ $scope.formatDate = function(date){
             documentService.getListHealthy(function(data){
                 selectedform.listHealthy = data;
 
-                console.log(data);
+                
             });
-            //alert(data);
+           
+            //if(selectedform.numprovince >= 5){
+                 //console.log("trtetre");
+                 
+           //}
             var modalInstance = $modal.open({
                 animation: $scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-update-form.php',
-                controller: function ($scope, $modalInstance, docform){
+                controller: function ($scope, $modalInstance, docform,provinceform,listProvinces,listCountries,listLevels){
                     $scope.docform = docform;
+                   $scope.docform.object_docon_healthy = {healthy_id:docform.docon_healthy,healthy_type:docform.healthy_type};
                     //$scope.docform.docon_healthy = $scope.getValueHealthy($scope.docform.healthy_id,$scope.docform.listHealthy);
                     $scope.docform.docon_birthday = new Date(docform.docon_birthday);
+                    $scope.docform.object_level = {ljob_id:selectedform.ljob_id,ljob_level:selectedform.ljob_level};
+                    
+                    $scope.docform.listLevels = listLevels;
+                    $scope.docform.listCountries = listCountries;
+                    $scope.docform.object_country = selectedform.docon_map_country;
+                    $scope.docform.provinceSelected = (provinceform) ? provinceform : [];
+                    $scope.docform.listProvinces = listProvinces;
+                    //$("#select-Province").addClass('hide');
+                    console.log(selectedform.docon_map_country);
                     //$scope.manager.account_password = '';
                     $scope.ok = function () {
                         $modalInstance.close($scope.docform);
@@ -125,25 +179,75 @@ $scope.formatDate = function(date){
                 resolve: {
                     docform: function () {
                         return selectedform;
+                    },
+                    provinceform:function(){
+                        return documentService.getListProvinceDocument(selectedform.docon_id,selectedform.docon_map_country);
+                    },
+                    listProvinces:function(){
+                        return documentService.getListProvinceCountry(selectedform.docon_map_country);
+                    },
+                    listCountries:function(){
+                        return documentService.getListCountry();
+                    },
+                    listLevels:function(){
+                        return documentService.getListLevel();
                     }
                 },
-                scope:$scope
+                scope:$scope,
+                backdrop:'static'
 
             });
 
             modalInstance.result.then(function (selectedItem) {
                 $scope.selected = selectedItem;
+
             }, function () {
                 $log.info('Modal dismissed at: ' + new Date());
             });
         };
 
-        
+         $scope.changeProvinceCreate = function(){
+        var numSelected = $scope.docform.provinceSelected.length;
+        console.log(numSelected);
+        if(numSelected >= 5){
+           //$scope.rec.provinceSelected.splice(5,1);
+             //$scope.isFull = false;
+             //console.log($scope.rec.provinceSelected);
+             if(numSelected == 6){
+                $scope.docform.provinceSelected.shift();
+             }
+             $("#select-Province").addClass('hide');
+        }
+        else {
+            $("#select-Province").removeClass('hide');
+            
+        }
+
+       };
+
+       $scope.changeCountry = function(){
+            var idcountry = $scope.docform.object_country;
+            console.log(idcountry);
+          documentService.getListProvinceCountry(idcountry).then(function(data){
+                $scope.docform.listProvinces = data;
+                 //$scope.docform.provinceSelected =$scope.docform.listProvinces[0];
+            });
+            $scope.docform.provinceSelected = [];
+           
+           documentService.getListProvinceDocument($scope.docform.docon_id,idcountry).then(function(data){
+               $scope.docform.provinceSelected =data;
+               //console.log($scope.rec['rec_id'] + idcountry);
+               console.log(data);
+           });
+            
+        }
+ 
     $scope.updateForm = function(docform){
+         $scope.disabled_modal = true;
         documentService.updateForm(angular.toJson(docform),function(data){
                 if(data){
                     $scope.alertEditSuccess();
-
+                $scope.disabled_modal = false;
                     $scope.ok();
                 }
                 else{
@@ -161,10 +265,127 @@ $scope.formatDate = function(date){
                                     }
                                 }
         return 0;
-    }
+    };
 
-   
+    
+    $scope.openModalCreateForm = function (size,country) {
+      
+            var modalInstance = $modal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl: pathWebsite + 'assets/admin/partial/modal-create-form.php',
+                controller: function ($scope, $modalInstance,listProvinces,listCountries,listLevels,csrf,listHealthy){
+                    $scope.docform = {};
+                  // $scope.docform.object_docon_healthy = {healthy_id:docform.docon_healthy,healthy_type:docform.healthy_type};
+                    //$scope.docform.docon_healthy = $scope.getValueHealthy($scope.docform.healthy_id,$scope.docform.listHealthy);
+                    $scope.docform.docon_birthday = new Date("1990-01-01T12:00:00");
+                    $scope.docform.object_level = listLevels[0];//{ljob_id:selectedform.ljob_id,ljob_level:selectedform.ljob_level};
+                    $scope.docform.listHealthy = listHealthy;
+                    $scope.docform.csrf = csrf;
+                    $scope.docform.listLevels = listLevels;
+                    $scope.docform.listCountries = listCountries;
+                    $scope.docform.object_country = country;
+                    $scope.docform.provinceSelected = [];
+                    $scope.docform.listProvinces = listProvinces;
+                    $scope.docform.object_docon_healthy = listHealthy[0];
+                    //$("#select-Province").addClass('hide');
+                    //console.log(selectedform.docon_map_country);
+                    //$scope.manager.account_password = '';
+                    $scope.ok = function () {
+                        $modalInstance.close($scope.docform);
 
+                        $scope.getForms();
+                    };
+
+                    $scope.cancel = function () {
+                        $modalInstance.dismiss('cancel');
+                    };
+
+                },
+                size: size,
+                resolve: {
+                   
+                    listProvinces:function(){
+                        return documentService.getListProvinceCountry(country);
+                    },
+                    listCountries:function(){
+                        return documentService.getListCountry();
+                    },
+                    listLevels:function(){
+                        return documentService.getListLevel();
+                    },
+                    csrf:function(){
+                        return documentService.getTokenNoRT();
+                    },
+                    listHealthy: function(){
+                        return documentService.getListHealthyNoRT();
+                    }
+
+                },
+                scope:$scope,
+                backdrop:'static'
+
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                $scope.selected = selectedItem;
+
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+        };
+
+    $scope.changeProvinceCreateForm = function(){
+        var numSelected = $scope.docform.provinceSelected.length;
+        console.log(numSelected);
+        if(numSelected >= 5){
+           //$scope.rec.provinceSelected.splice(5,1);
+             //$scope.isFull = false;
+             //console.log($scope.rec.provinceSelected);
+             if(numSelected == 6){
+                $scope.docform.provinceSelected.shift();
+             }
+             $("#select-Province").addClass('hide');
+        }
+        else {
+            $("#select-Province").removeClass('hide');
+            
+        }
+
+       };
+
+       $scope.changeCountryCreateForm = function(){
+            var idcountry = $scope.docform.object_country;
+            console.log(idcountry);
+          documentService.getListProvinceCountry(idcountry).then(function(data){
+                $scope.docform.listProvinces = data;
+                $scope.docform.provinceSelected = data[0];
+                 //$scope.docform.provinceSelected =$scope.docform.listProvinces[0];
+            });
+            //$scope.docform.provinceSelected = [];
+           
+           //documentService.getListProvinceDocument($scope.docform.docon_id,idcountry).then(function(data){
+               //$scope.docform.provinceSelected =data;
+               //console.log($scope.rec['rec_id'] + idcountry);
+               //console.log(data);
+           //});
+            
+        }
+        $scope.createForm = function(docform){
+            $scope.disabled_modal = true;
+            if(docform){
+                documentService.createForm(angular.toJson(docform),function(data){
+                    if(data){
+                        alertCreateSuccess();
+                    $scope.disabled_modal = false;
+                        $scope.ok();
+                    }
+                    else{
+                        alertErrors();
+                        $scope.cancel();
+                    }
+                });
+            }
+        }
     $scope.setDisabled = function(value){
         $scope.manager.account_is_disabled = value;
     };
@@ -346,7 +567,7 @@ $scope.formatDate = function(date){
         }
     };
 
-    $scope.modalDetailForm = function (size,id) {
+    $scope.modalDetailForm = function (size,id,type) {
            
             var modalInstance = $modal.open({
                 animation: $scope.animationsEnabled,
@@ -365,7 +586,7 @@ $scope.formatDate = function(date){
                 size: size,
                 resolve: {
                     documentJobseeker: function () {
-                         return documentService.getDetailForm(id);
+                         return documentService.getDetailForm(id,type);
                     }
                 }
             });
@@ -377,11 +598,98 @@ $scope.formatDate = function(date){
             });
         };
 
+
+    $scope.openModalUploadCV = function(size){
+        var modalInstance = $modal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl: pathWebsite + 'assets/admin/partial/modal-upload-cv.php',
+                controller: function ($scope, $modalInstance,csrf){
+                   // $scope.documentJobseeker = documentJobseeker;
+                   $scope.cv = {}
+                   $scope.cv.csrf = csrf;
+                   $scope.cv.fileDocument ='';
+                   $scope.cv.fileTypeValidate = false;
+                    $scope.ok = function () {
+                        $modalInstance.close($scope.jobseeker);
+                    };
+
+                    $scope.cancel = function () {
+                        $modalInstance.dismiss('cancel');
+                    };
+
+                },
+                size: size,
+                resolve: {
+                    csrf:function(){
+                        return documentService.getTokenNoRT();
+                    }
+                },
+                scope:$scope,
+                backdrop:'static'
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                $scope.selected = selectedItem;
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+    };
+
+    $scope.uploadFile = function(files) {
+        $scope.cv.fileTypeValidate = false;
+        if(files){
+        var type = files[0].type; //MIME type
+        var size = files[0].size;
+        if(type.indexOf("application/pdf") == -1
+            && type.indexOf("application/msword") == -1 
+            &&  type.indexOf("application/vnd.openxmlformats-officedocument.wordprocessingml.document") == -1){
+            $scope.cv.fileTypeValidate = true;
+        console.log("adasd");
+        } //File size in bytes
+        
+        console.log(files[0].type);
+        $scope.cv.fileDocument = files[0].name;
+        $scope.cv.file = files[0];
+    }
+        //$scope.employer.logoExtension = files[0].type;
+    }; 
+
+    $scope.uploadCV = function(cv){
+        if(cv){
+            documentService.uploadCV(angular.toJson(cv),function(data){
+                if(data){
+
+                }
+                else{
+
+                }
+            });
+        }
+    }
+
+
 //    $scope.$watch('docform.docon_birthday', function (newValue) {
 //     $scope.birthday = $filter('date')(newValue, 'dd/MM/yyyy'); 
 // });
 });
 
+
+app.directive('onlyDigits', function () {
+
+    return {
+        restrict: 'A',
+        require: '?ngModel',
+        link: function (scope, element, attrs, ngModel) {
+            if (!ngModel) return;
+            ngModel.$parsers.unshift(function (inputValue) {
+                var digits = inputValue.split('').filter(function (s) { return (!isNaN(s) && s != ' '); }).join('');
+                ngModel.$viewValue = digits;
+                ngModel.$render();
+                return digits;
+            });
+        }
+    };
+});
 
 
 

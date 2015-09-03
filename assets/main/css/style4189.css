@@ -12,6 +12,18 @@ Text Domain: jobify
 Domain Path: /languages/
 Tags: white, one-column, right-sidebar, responsive-layout, custom-background, custom-header, theme-options, full-width-template, featured-images, flexible-header, custom-menu, translation-ready
 */
+@font-face {
+    font-family: 'VNHongHaHep';
+    src: url('AftaSerifThin-Regular-webfont.eot');
+    src: url('AftaSerifThin-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('AftaSerifThin-Regular-webfont.woff') format('woff'),
+         url('fonts/UVNHongHaHep.TTF') format('truetype'),
+         url('AftaSerifThin-Regular-webfont.svg#AftaserifRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 .animated {
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
@@ -3738,7 +3750,7 @@ button.mfp-arrow, button.mfp-close {
     color: #fff;
     font-style: normal;
     font-size: 28px;
-    font-family: Arial, Baskerville, monospace
+    font-family: "VNHongHaHep",Arial, Baskerville, monospace
 }
 
 .mfp-close:focus, .mfp-close:hover {
@@ -4117,7 +4129,7 @@ body, html {
 }
 
 button, html, input, select, textarea {
-    font-family: "Varela Round", Helvetica, sans-serif
+    font-family: "VNHongHaHep","Varela Round", Helvetica, sans-serif
 }
 
 body {
@@ -4152,7 +4164,7 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
     clear: both;
-    font-family: 'Varela Round', sans-serif;
+    font-family: "VNHongHaHep",'Varela Round', sans-serif;
     line-height: 1.3
 }
 
@@ -4213,7 +4225,7 @@ p {
 }
 
 code, kbd, pre, samp {
-    font-family: monospace, serif;
+    font-family: "VNHongHaHep",monospace, serif;
     font-size: 14px;
     -webkit-hyphens: none;
     -moz-hyphens: none;
@@ -4224,7 +4236,7 @@ code, kbd, pre, samp {
 pre {
     background: #f5f5f5;
     color: #666;
-    font-family: monospace;
+    font-family: "VNHongHaHep",monospace;
     font-size: 14px;
     margin: 20px 0;
     overflow: auto;
@@ -4441,7 +4453,7 @@ hr {
 }
 
 .application-deadline.expired:before, .application-deadline.expiring:before, .application-deadline:before, .candidate-dashboard-action-edit:before, .entry-content #job-manager-book-marks ul.job-manager-bookmark-actions li:after, .entypo, .filter_wide.filter_by_tag a.active:before, .footer-social a:before, .job-dashboard-action-edit:before, .job-dashboard-action-mark_filled:before, .job-dashboard-action-mark_not_filled:before, .job-manager-pagination a:before, .job-manager-pagination span:before, .load_more_jobs:before, .nav-menu-primary li.has-children > a:after, .resume-file:before, .resume-link a:before, .select:before, .showing_jobs .alert:before, .showing_jobs .reset:before, .showing_jobs .rss_link:before, .showing_resumes .reset:before, .single-job_listing .job-manager-applications-applied-notice::before, .single-resume-content dd .date:before, .type-resume .resume-meta .resume-category:before, .type-resume .resume-meta date:before, .zilla-likes.active:before, .zilla-likes:before, [class*=" icon-"]:before, [class^=icon-]:before, body .chosen-container-multi .chosen-choices li.search-choice .search-choice-close, body .chosen-container-single .chosen-single div:before, div.job-applications ul.job-applications li.job-application footer ul.actions li a:before, div.job-applications ul.job-applications li.job-application header .job-application-rating span:before, div.job-applications ul.job-applications li.job-application header .job-application-rating:before, div.job-applications ul.job-applications li.job-application section.job-application-content .hide_section:before, div.job-applications ul.job-applications li.job-application section.job-application-edit .hide_section:before, div.job-applications ul.job-applications li.job-application section.job-application-notes .hide_section:before, li.type-job_listing .location:before, li.type-resume .location:before, ul.job_listings .job-manager-applications-applied-notice:before, ul.job_listings.loading:before, ul.resumes.loading:before {
-    font-family: fontello !important;
+    font-family: "VNHongHaHep",fontello !important;
     font-style: normal;
     font-weight: 400;
     speak: none;
@@ -6319,7 +6331,7 @@ hr {
 }
 
 #searchsubmit, #submitcomment, #wp-submit, .button, .button-medium, .button-secondary, .button-small, .job-manager-form.wp-job-manager-bookmarks-form .jobify_widget_slider_hero a.bookmark-notice, .job-manager-form.wp-job-manager-bookmarks-form .jobify_widget_slider_hero a.remove-bookmark, .job-manager-form.wp-job-manager-bookmarks-form .woocommerce a.bookmark-notice, .job-manager-form.wp-job-manager-bookmarks-form .woocommerce a.remove-bookmark, .job-manager-form.wp-job-manager-bookmarks-form a.bookmark-notice, .job-manager-form.wp-job-manager-bookmarks-form a.remove-bookmark, .job-manager-pagination .jobify_widget_slider_hero a, .job-manager-pagination .woocommerce a, .job-manager-pagination .woocommerce span, .job-manager-pagination a, .job-manager-pagination span, .job_listing .jobify_widget_slider_hero a.view-video, .job_listing .woocommerce a.view-video, .job_listing a.view-video, .jobify_widget_slider a.button-secondary, .jobify_widget_slider_hero .job-manager-form.wp-job-manager-bookmarks-form a.bookmark-notice, .jobify_widget_slider_hero .job-manager-form.wp-job-manager-bookmarks-form a.remove-bookmark, .jobify_widget_slider_hero .job-manager-pagination a, .jobify_widget_slider_hero .job_listing a.view-video, .jobify_widget_slider_hero .resume a.view-video, .jobify_widget_slider_hero .single_job_listing .application a.apply-with-linkedin, .jobify_widget_slider_hero a.button, .load_more_jobs, .load_more_resumes, .resume .jobify_widget_slider_hero a.view-video, .resume .woocommerce a.view-video, .resume a.view-video, .single_job_listing .application .apply-with-linkedin, .single_job_listing .application .jobify_widget_slider_hero a.apply-with-linkedin, .single_job_listing .application .woocommerce .apply-with-linkedin, .woocommerce .button, .woocommerce .job-manager-form.wp-job-manager-bookmarks-form a.bookmark-notice, .woocommerce .job-manager-form.wp-job-manager-bookmarks-form a.remove-bookmark, .woocommerce .job-manager-pagination a, .woocommerce .job-manager-pagination span, .woocommerce .job_listing a.view-video, .woocommerce .resume a.view-video, .woocommerce .single_job_listing .application .apply-with-linkedin, .woocommerce input.button, .woocommerce input.import-from-linkedin, button, input.import-from-linkedin, input[type=submit] {
-    font: 700 18px/normal Montserrat, sans-serif;
+    font: 700 18px/normal "VNHongHaHep",Montserrat, sans-serif;
     text-transform: uppercase;
     text-align: center;
     padding: 20px 50px;
@@ -6406,12 +6418,12 @@ a.button-white {
 }
 
 label {
-    font: 400 14px/normal Montserrat, sans-serif;
+    font: 400 14px/normal "VNHongHaHep",Montserrat, sans-serif;
     text-transform: uppercase
 }
 
 button, input, textarea {
-    font: 400 17px "Varela Round", Helvetica, sans-serif;
+    font: 400 17px "VNHongHaHep","Varela Round", Helvetica, sans-serif;
     padding: 11px 15px;
     border: 0
 }
@@ -6541,7 +6553,7 @@ img.aligncenter {
 }
 
 .page-header {
-    font: 400 38px/normal 'Varela Round', sans-serif;
+    font: 400 38px/normal "VNHongHaHep",'Varela Round', sans-serif;
     text-align: center;
     padding: 20px 0;
     background: #fafafa;
@@ -6569,7 +6581,7 @@ img.aligncenter {
 }
 
 .page-subtitle {
-    font: 400 14px/normal Montserrat, sans-serif;
+    font: 400 14px/normal "VNHongHaHep",Montserrat, sans-serif;
     color: #9a9b9e;
     margin-top: -15px
 }
@@ -6658,7 +6670,7 @@ img.aligncenter {
 }
 
 .paginate-links .page-numbers {
-    font: 400 13px/normal Montserrat, sans-serif;
+    font: 400 13px/normal "VNHongHaHep",Montserrat, sans-serif;
     text-align: center;
     padding: 8px 13px;
     border: 1px solid #ccc;
@@ -6943,7 +6955,7 @@ img.aligncenter {
 }
 
 .homepage-widget-title {
-    font: 400 24px/normal 'Varela Round', sans-serif;
+    font: 400 24px/normal "VNHongHaHep", 'Varela Round', sans-serif;
     text-align: center;
     color: #787878;
     margin: 0 0 30px;
@@ -7545,7 +7557,7 @@ blockquote .individual-testimonial-author cite {
 }
 
 .site-title {
-    font: 700 22px/normal Montserrat, sans-serif;
+    font: 700 22px/normal "VNHongHaHep",Montserrat, sans-serif;
     text-transform: uppercase;
     margin: 0 36px 0 0;
     padding: 0
@@ -7644,7 +7656,7 @@ blockquote .individual-testimonial-author cite {
 }
 
 .nav-menu-primary li a {
-    font: 600 14px 'Varela Round', sans-serif;
+    font: 600 14px "VNHongHaHep",'Varela Round', sans-serif;
     text-transform: none;
     padding: 10px 0
 }
@@ -7789,7 +7801,7 @@ blockquote .individual-testimonial-author cite {
 }
 
 .copyright {
-    font: 700 12px/normal Montserrat, sans-serif;
+    font: 700 12px/normal "VNHongHaHep",Montserrat, sans-serif;
     text-transform: uppercase;
     padding: 30px 0;
     overflow: hidden;
@@ -7890,7 +7902,7 @@ blockquote .individual-testimonial-author cite {
 }
 
 .footer-widget #wp-calendar caption, .footer-widget-title {
-    font: 400 18px Varela Round, sans-serif;
+    font: 400 18px "VNHongHaHep",Varela Round, sans-serif;
     color: #fff;
     margin: 0 0 12px
 }
@@ -7994,7 +8006,7 @@ blockquote .individual-testimonial-author cite {
 }
 
 .mailbag-input label {
-    font: 400 16px/normal "Varela Round", Helvetica, sans-serif;
+    font: 400 16px/normal "VNHongHaHep","Varela Round", Helvetica, sans-serif;
     color: #adadad;
     text-transform: none;
     margin-bottom: 4px
@@ -8159,7 +8171,7 @@ div.wpcf7-mail-sent-ok {
 }
 
 .candidate-dashboard-actions a, .job-dashboard-actions a {
-    font: 400 12px/normal Montserrat, sans-serif;
+    font: 400 12px/normal "VNHongHaHep",Montserrat, sans-serif;
     color: #6e6e6e
 }
 
@@ -8741,7 +8753,7 @@ select {
 
 .search_jobs .filter_by_tag a {
     color: #fff;
-    font: 700 12px/normal Montserrat, sans-serif !important
+    font: 700 12px/normal "VNHongHaHep",Montserrat, sans-serif !important
 }
 
 .filter_wide.filter_by_tag a.active:before {
@@ -8757,7 +8769,7 @@ select {
 }
 
 .job_types li {
-    font: 700 12px/normal Montserrat, sans-serif;
+    font: 700 12px/normal "VNHongHaHep",Montserrat, sans-serif;
     text-transform: uppercase;
     border-bottom: 1px solid #ccc;
     padding: 20px;
@@ -8857,7 +8869,7 @@ ul.resumes li.no_resumes_found a, ul.resumes li.resume a {
 }
 
 li.type-job_listing, li.type-resume {
-    font: 16px/normal 'Varela Round', sans-serif;
+    font: 16px/normal "VNHongHaHep",'Varela Round', sans-serif;
     text-align: left;
     color: #787878;
     padding: 24px;
@@ -8963,7 +8975,7 @@ li.type-job_listing .location:before, li.type-resume .location:before {
 }
 
 .job-type {
-    font: 700 12px/normal Montserrat, sans-serif;
+    font: 700 12px/normal "VNHongHaHep",Montserrat, sans-serif;
     text-transform: uppercase;
     text-align: center;
     color: #fff;
@@ -8993,7 +9005,7 @@ ul.job_listings.loading:before, ul.resumes.loading:before {
 }
 
 .job-manager-pagination a, .job-manager-pagination span, .load_more_jobs, .load_more_resumes {
-    font: 700 14px/normal Montserrat, sans-serif;
+    font: 700 14px/normal "VNHongHaHep",Montserrat, sans-serif;
     text-transform: uppercase;
     text-align: center;
     display: inline-block;
@@ -9286,7 +9298,7 @@ li.type-resume .resume-meta .resume-category {
 }
 
 .single-resume-content dd .date {
-    font: 400 12px/normal Montserrat, sans-serif;
+    font: 400 12px/normal "VNHongHaHep",Montserrat, sans-serif;
     text-transform: uppercase;
     color: #919191;
     display: block
@@ -9412,7 +9424,7 @@ li.type-resume .resume-meta .resume-category {
 }
 
 .company-letters a {
-    font: 700 14px/normal Montserrat, sans-serif;
+    font: 700 14px/normal "VNHongHaHep",Montserrat, sans-serif;
     display: inline-block;
     padding: 14px 10px
 }
@@ -9440,7 +9452,7 @@ li.type-resume .resume-meta .resume-category {
 }
 
 .company-letter {
-    font: 700 24px/normal Montserrat, sans-serif;
+    font: 700 24px/normal "VNHongHaHep",Montserrat, sans-serif;
     padding: 0 0 8px;
     border-bottom: 2px solid #eee
 }
@@ -9561,7 +9573,7 @@ div.job-applications ul.job-applications li.job-application footer ul.actions li
 }
 
 .rcp_level_duration {
-    font: 700 14px/normal Montserrat, sans-serif;
+    font: 700 14px/normal "VNHongHaHep",Montserrat, sans-serif;
     text-transform: uppercase
 }
 
@@ -9871,7 +9883,7 @@ body .chosen-container-single .chosen-search input[type=text] {
     outline: 0;
     border: 1px solid #aaa;
     font-size: 1em;
-    font-family: sans-serif;
+    font-family: "VNHongHaHep",sans-serif;
     line-height: normal;
     border-radius: 0
 }
@@ -10476,7 +10488,7 @@ body .chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b {
     .site-primary-navigation {
         position: absolute;
         right: 0;
-        top: 50%;
+        top: 60%;/*50*/
         -webkit-transform: translatey(-50%);
         -moz-transform: translatey(-50%);
         transform: translatey(-50%)
@@ -10513,10 +10525,10 @@ body .chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b {
     }
 
     .nav-menu-primary li a, .nav-menu-primary ul li a {
-        font: 700 14px/normal Montserrat, sans-serif;
+        font: 700 14px/normal "VNHongHaHep",Montserrat, sans-serif;
         text-transform: uppercase;
         vertical-align: middle;
-       	color: #787878;
+       	color: #fff;
         margin: 2px 0;
         padding: 8px 14px;
         display: block;
@@ -10541,9 +10553,9 @@ body .chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b {
         position: absolute;
         top: 100%;
         left: 50%;
-        background: #fff;
+        background: #000;
         z-index: 99999;
-        border: 1px solid #ccc;
+       /* border: 1px solid #ccc;*/
         border-bottom-left-radius: 6px;
         border-bottom-right-radius: 6px;
         /*box-shadow: inset rgba(0, 0, 0, .1) 0 -4px 0;*/
@@ -10739,7 +10751,7 @@ body .pac-container {
     cursor: pointer;
 }
 .btn-big {
-    font-family: arial;
+    font-family: "VNHongHaHep",arial;
     cursor: pointer;
     padding: 0 12px;
     border-radius: 2px;

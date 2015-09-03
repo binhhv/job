@@ -19,8 +19,12 @@ if (isset($titlePage)) {
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/css/responsive-style.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/css/style4189.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/flexslider/flexslider.css">
+
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/bootstrap/dist/css/bootstrap-select.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/datetimepicker/css/bootstrap-datetimepicker.min.css">
+
+<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/flexslider/flexslider-job.css">
+
 <!-- <link rel="stylesheet" href="<?php echo base_url()?>/assets/common/css/bootstrap-responsive.css"> -->
 <!-- <link rel="stylesheet" href="<?php echo base_url()?>/assets/common/css/prettyPhoto.css" />
 <link rel="stylesheet" href="<?php echo base_url()?>/assets/common/css/flexslider.css" />
@@ -107,7 +111,31 @@ if (isset($titlePage)) {
           $('body').removeClass('loading');
            $('.sologan').show();
         },
-        direction:false,
+        // direction:false,
+        // controlsContainer: $(".custom-controls-container"),
+        // customDirectionNav: $(".custom-navigation a")
+    });
+
+    $('.flexslider-job').flexslider({
+        animation: "slide",
+        slideshow: true,
+        start: function(slider){
+
+        },
+        // direction:false,
+        // controlsContainer: $(".custom-controls-container"),
+        customDirectionNav: $(".custom-navigation a")
+    });
+
+    $('.flexslider-partner').flexslider({
+        animation: "slide",
+        slideshow: true,
+        start: function(slider){
+
+        },
+
+        // controlsContainer: $(".custom-controls-container"),
+        customDirectionNav: $(".custom-navigation-partner a")
     });
 
    //$('.sologan').show('slow').delay(10000).show('slow');
@@ -118,7 +146,12 @@ if (isset($titlePage)) {
     .site-primary-navigation{
       margin-top:-30px;
     }
-
+    .sologan{
+      width:100%;
+    }
+    .toggle-menu{
+      margin-top:-20px;
+    }
     </style>
     <script>
     $(document).ready(function(){
@@ -133,6 +166,9 @@ if (isset($titlePage)) {
     });
     </script>
 <![endif]-->
+<<<<<<< HEAD
 <script>
   var base_website = "<?php echo base_url();?>";
 </script>
+=======
+>>>>>>> a148fb6c99d35e5ec7dbbd382084a9e76d395585

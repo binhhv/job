@@ -16,7 +16,8 @@
         <section class="content-header">
           <div class="row">
 
-            <div class="col-md-12"><button class="btn btn-primary" ng-click="modalCreateEmployer('lg')">Tạo nhà tuyển dụng</button> &nbsp;
+            <div class="col-md-12"><button class="btn btn-primary" ng-click="modalCreateEmployer('lg','<?php echo $country->country_id;?>')">Tạo nhà tuyển dụng</button> &nbsp;
+
               <button class="btn btn-success" ng-click="reload();" >tải lại dữ liệu</button></div>
           </div>
         </section>
@@ -54,7 +55,7 @@
                     </tr>
                     <tr ng-repeat="data in filtered = (pagedItems | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" data-id="{{data.account_id}}">
                       <td class="text-center">{{$index + 1}}</td>
-                      <td class="text-center">{{data.employer_logo}}</td>
+                      <td class="text-center"><img class="logo-small" ng-src ="<?php echo base_url();?>uploads/logo/{{data.employer_id}}/{{data.employer_logo_tmp}}" alt="logo employer"></td>
                       <td class="text-center">
                       <label><b>{{data.employer_name}}</b></label>
                       <label class="text-muted">{{data.employer_address}}</label>
@@ -67,8 +68,8 @@
                       <td class="text-center">{{data.numrecs}}</td>
                       <td class="text-center">
                       <button class="btn btn-xs btn-primary" ng-click="openDetailEmployer(data,'<?php echo base_url("admin/employer/detail/");?>')">chi tiêt</button>
-                      <button class="btn btn-xs btn-warning" ng-click="modalUpdate('lg',data)" >sửa</button>
-                      <button class="btn btn-xs btn-danger" ng-click="modalDelete('sm',data)">xóa</button>
+                      <button class="btn btn-xs btn-warning" ng-click="modalUpdateEmployer('lg',data)" >sửa</button>
+                      <button class="btn btn-xs btn-danger" ng-click="modalDelete('md',data)">xóa</button>
                       </td>
                     </tr>
                     <!-- <tr>
@@ -83,7 +84,8 @@
                 </div>
                 <div class="box-footer clearfix text-right" >
                 <div class="col-md-12" ng-show="filteredItems > 0">
-                <pagination total-items="filteredItems" on-select-page="setPage(page)" page="currentPage" max-size="itemsPerPage" class="pagination-sm" items-per-page="entryLimit" boundary-links="true"></pagination>
+                <pagination total-items="filteredItems"  on-select-page="setPage(page)" ng-model="currentPage" max-size="itemsPerPage" class="pagination-sm" boundary-links="true" items-per-page="entryLimit"></pagination>
+                <!-- <pagination total-items="filteredItems" on-select-page="setPage(page)" page="currentPage" max-size="itemsPerPage" class="pagination-sm" items-per-page="entryLimit" boundary-links="true"></pagination> -->
             <!-- <div pagination="" page="currentPage" on-select-page="setPage(page)" boundary-links="true" total-items="filteredItems" items-per-page="entryLimit" class="pagination-small" previous-text="&laquo;" next-text="&raquo;"></div> -->
         </div></div>
                 <!-- <div class="box-footer clearfix text-right"  ng-show="filteredItems > 0"> -->

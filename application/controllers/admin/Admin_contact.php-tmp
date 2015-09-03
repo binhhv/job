@@ -1,0 +1,61 @@
+<?php
+class Admin_contact extends CI_Controller {
+
+	function __construct() {
+		parent::__construct();
+		$this->load->helper('url');
+		$this->load->library(array('form_validation', 'session'));
+		$this->load->model('admin/Document_model', 'document');
+		$this->load->model('admin/Account_model', 'account');
+		$this->load->model('admin/Mail_model', 'mail');
+		$this->load->model('admin/Healthy_model', 'healthy');
+		$this->load->model('admin/Contact_model', 'contact');
+		if (!$this->session->userdata['user']['isLogged']) {
+			redirect(base_url().'admin/login');// no session established, kick back to login page
+		} else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
+			redirect(base_url('error/403'));
+		}
+	}
+	function index() {
+		$scripts = array(
+			"assets/admin/angularjs/controller/contact.controller.js", "assets/admin/angularjs/service/contact.service.js");
+		$head     = $this->load->view('admin/head', array(), TRUE);
+		$header   = $this->load->view('admin/header', array(), TRUE);
+		$content  = $this->load->view('admin/contact/contact', array(), TRUE);
+		$footer   = $this->load->view('admin/footer', array(), TRUE);
+		$sidemenu = $this->load->view('admin/sidemenu', array('email' => $this->session->userdata['user']['email'],
+				'role'                                                      => $this->session->userdata['user']['role'],
+				'selected'                                                  => 'contact',
+				'sub'                                                       => 'contact'), TRUE);
+
+		$this->load->view('admin/layout', array('head' => $head,
+				'header'                                     => $header,
+				'sidemenu'                                   => $sidemenu,
+				'content'                                    => $content,
+				'footer'                                     => $footer,
+				'scripts'                                    => $scripts));
+	}
+	function getListContact() {
+		$output = $this->contact->getListContact();
+		echo json_encode($output);
+	}
+	function deleteContact() {
+		$contact = json_decode($this->input->post('contact'), true);
+		$output  = $this->contact->deleteContact($contact);
+		echo json_encode($output);
+	}
+	function replyContact() {
+		$contact         = json_decode($this->input->post('contact'), true);
+		$contact_subject = $contact['subjectRep'];
+		$contact_message = $contact['messageRep'];
+		$contact_name    = $contact['cont_name'];
+		$contact_to      = $contact['cont_email'];
+		$updateRep       = $this->contact->updateReplyContact($contact['cont_id']);
+		$result          = $this->mail->sendmailContact($contact_to, $contact_subject, $contact_message, $contact_name);
+		echo json_encode($result);
+	}
+	function updateContactView($id) {
+		$result = $this->contact->updateContactView($id);
+		echo json_encode($result);
+	}
+}

@@ -38,7 +38,9 @@ class DBUtil extends CI_Model {
 			return $query->result();
 		}
 	}
-
+	public function insert_batch($data, $tbl) {
+		return $this->db->insert_batch($data, $tbl);
+	}
 	public function getOneRowFromDb($projections) {
 
 		if ($projections != null) {

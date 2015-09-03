@@ -1,3 +1,16 @@
+
+@font-face {
+    font-family: 'VNHongHaHep';
+    src: url('AftaSerifThin-Regular-webfont.eot');
+    src: url('AftaSerifThin-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('AftaSerifThin-Regular-webfont.woff') format('woff'),
+         url('fonts/UVNHongHaHep.TTF') format('truetype'),
+         url('AftaSerifThin-Regular-webfont.svg#AftaserifRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html{
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -6,14 +19,14 @@ html{
 body{
 	/*font-size: 12px;
 	font-family: "Helvetica Neue", Arial, sans-seri;*/
-	font: 400 13px/normal "Montserrat",sans-serif;
+	font: 400 13px/normal "VNHongHaHep",sans-serif;
 	-webkit-font-smoothing:antialiased;
 	/*background: #f1f1f1;*/
 
 
 }
 h1{
-	font-size: 20px !important;
+	font-size: 22px !important;
 }
 h2{
 	font-size: 19px !important;
@@ -37,14 +50,14 @@ h6{
 }
 a{
 	text-decoration: none;
-	color: #787878;
+	color: #fff;
 }
 a:hover,a:visited{
 	text-decoration: none !important;
 }
 #page{
 	overflow: hidden;
-	background: #f1f1f1;
+	background: #ffffff;
 	color: #787878;
 	padding: 0;
 	/*height: 1000px;*/
@@ -62,10 +75,10 @@ header{
   /*border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;*/
-  border: 1px solid #ebebeb;
-  -webkit-box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);
+  border: 1px solid #121212;
+  -webkit-box-shadow: 0 0px 18px rgba(255, 255, 255, 0.2);
+  -moz-box-shadow: 0 0px 18px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0px 18px rgba(255, 255, 255, 0.2);
 }
 .site-header{
 	/*box-shadow: inset rgba(0,0,0,.1) 0 -4px 0;*/
@@ -76,6 +89,8 @@ header{
 .site-header{
 	position: relative;
     z-index: 3;
+    background: #121212 !important;
+    color: #fff !important;
 }
 
 .site-title span{
@@ -84,6 +99,10 @@ header{
 .site-title span.web-title {
 	display: inline-block;
     clip: rect(1px, 1px, 1px, 1px);
+    font-size: 12px;
+    text-transform: none;
+    display: block;
+    color: #fff;
 }
 .nav-menu-primary li a{
 	font-weight: 600;
@@ -417,7 +436,9 @@ background: #31b0d5;
 }
 .sologan{
 	display: none;
-	position:absolute;top:10%;background: rgba(255, 255, 255, 0.3);left:10%;
+	position:absolute;top:30%;
+	left: 20%;
+	/*background: rgba(255, 255, 255, 0.3);left:10%;*/
 	/*z-index: 99999;*/
 	padding: 20px;text-align: center;
 
@@ -555,13 +576,14 @@ button.color-10:hover{
 	border-color: #82CAFF !important;
 }
 footer{
-	background: #fff;
-	margin-top: 5px;
+	background: #000;
+	/*margin-top: 5px;*/
 	padding: 20px 0;
-	  border: 1px solid #ebebeb;
-  -webkit-box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);
+	  border: 1px solid #000;
+	  color: #fff;
+  /*-webkit-box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px 18px rgba(0, 0, 0, 0.2);*/
 }
 footer h1{
 	margin: 2px 0 !important;
@@ -576,20 +598,26 @@ footer ul{
 }
 footer ul.social{
 	display: inline-block;
-	margin-top: 5px;
+	padding-top: 15px;
 		margin: auto;
 }
 footer ul li {
 	list-style: none;
 	float: left;
 	margin:0 10px;
+
+}
+footer ul li a{
+	color: #fff;
 }
 footer ul li a:hover{
 	font-weight: bold;
+	color: #fff;
 }
 footer span.copyrighttitle{
 	font-weight: bold;
 	font-size: 12px;
+	margin-top:15px;
 }
 #map{
 	height: 200px;
@@ -600,7 +628,16 @@ footer span.copyrighttitle{
 	-moz-border-radius:5px;
 }
 
-
+.hotline{
+	width: 100px;
+}
+.phone{
+	margin-top: 20px;
+	margin-left: 10px;
+}
+.phone h1{
+	font-size: 30px !important;
+}
 .share-btn-wrp {
 	list-style: none;
 	display: block;
@@ -650,4 +687,294 @@ footer span.copyrighttitle{
 }
 .scrollToTop:hover{
 	text-decoration:none;
+}
+
+
+/*style version 2*/
+.search-box-2{
+	margin-bottom: 20px;
+}
+.title-search-box-2{
+	margin: 10px 0 20px 0;
+}
+.title-search-box-2 h1{
+	color: #3b3b3b;
+	margin: 5px;
+}
+.border-bottom-title{
+	width: 35px;
+	height: 6px;
+	margin: 0  auto;
+}
+.border-color-1{
+	background-color: #cc3333;
+}
+.border-color-2{
+	background-color: #fff;
+}
+.border-color-3{
+	background-color: #003366;
+}
+
+
+.button-custom-search{
+	
+	font-weight: bold;
+	color: #fff;
+	background-color: #003366;
+	text-transform: uppercase;
+	border-radius: 0 !important;
+	padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+.new-job{
+	background: #cc3333;
+	padding-bottom: 20px !important;
+}
+.list-item-new-job{
+	
+	padding: 20px;
+	position: relative;
+}
+.item-new-job{
+	border:5px solid #fff;
+	margin: 0 auto;
+	/*max-width: 200px;*/
+	
+}
+.item-new-job img{
+	max-width: 100%;
+	max-height: 200px;
+	height: auto;
+
+}
+h1.title-new-job{
+	color: #fff;
+	margin: 10px 0 5px 0;
+}
+.flex-prev{
+	position: absolute;
+	top:40%;
+	left: 50px;
+}
+.flex-next{
+position: absolute;
+	top:40%;
+	right: 50px;
+}
+.flex-prev-partner{
+	position: absolute;
+	top:25%;
+	left: 50px;
+}
+.flex-next-partner{
+position: absolute;
+	top:25%;
+	right: 50px;
+}
+.num-job-slide{
+	font-size: 30px;
+	color: #fff;
+}
+.title-job-slide{
+	font-size: 20px;
+	color: #fff;
+	text-transform: none;
+}
+.sologan label{
+	margin-bottom: 0;
+	font-weight: 400;
+}
+.btn-apply-slide{
+	margin-top: 20px;
+	color: #fff;
+	background-color:rgba(0, 0, 0, 0);
+	text-transform: uppercase;
+	border-radius: 0 !important;
+	padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    border:2px solid #fff;
+}
+.text-slide{
+	text-align: left;
+}
+.jobseeker{
+	background: #a1deff;
+	max-height: 300px;
+}
+img.img-responsive{
+	max-width: 100%;
+	max-height: auto;
+}
+h5.jobseeker-title{
+	color: #003366;
+	margin: 20px 0 10px 0;
+	font-size: 15px !important;
+}
+.btn-jobseeker{
+	margin-top: 15px;
+	
+	text-transform: none;
+	border-radius: 0 !important;
+	padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+  	width: 210px;
+  	text-align: center;
+}
+.btn-employer{
+		margin-top: 15px;
+	
+	text-transform: none;
+	border-radius: 0 !important;
+	padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+  	width: 210px;
+  	text-align: center;
+}
+.background-color-1{
+	background-color:rgba(0, 0, 0, 0);
+	  border:2px solid #003366;
+}
+.background-color-2{
+	background-color: #cc3333;
+	 border:2px solid #cc3333;
+}
+.background-color-3{
+	background-color: #003366;
+	 border:2px solid #003366;
+}
+.background-color-4{
+	background-color:rgba(0, 0, 0, 0);
+	  border:2px solid #cc3333;
+}
+.text-color-1{
+	color: #003366;
+}
+.text-color-2{
+	color:#fff;
+}
+.text-color-3{
+	color:#cc3333;
+}
+.jobseeker-bg{
+	max-height: 300px;
+	overflow: hidden;
+}
+.jobseeker-box{
+	width: 240px;
+	margin: 0 auto;
+}
+.jobseeker-title-box{
+	margin-bottom: 15px;
+}
+
+.employer{
+	background: #eeeeee;
+}
+.employer-title-box{
+	width: 240px;
+	
+}
+h5.employer-title{
+	    color: #000;
+    margin: 20px 0 10px 0;
+    font-size: 15px !important;
+
+}
+.employer-box{
+	padding: 0 25px 0 25px;
+}
+.employer-padding-left{
+	padding-left: 100px !important;
+}
+.image-employer-box{
+	padding-top: 20px;
+}
+.image-employer-box img{
+	max-width: 100%;
+	max-height: 100px;
+}
+h5.partner-title{
+	    color: #000;
+    margin: 20px 0 10px 0;
+    font-size: 15px !important;
+}
+.partner-box{
+	padding-bottom: 20px;
+	/*padding: 0 150px 20px 150px;*/
+}
+.flexslider-partner{
+	padding-left: 100px;
+	padding-right: 100px;
+}
+.item-partner img{
+	max-width: 100%;
+	vertical-align: middle;
+	margin: 0 auto;
+	max-height: 70px;
+}
+.top-header{
+	padding: 5px 0;
+}
+.top-header a{
+	font-size: 12px;
+	text-decoration: none;
+}
+.top-header a:hover{
+	color:#fff;
+}
+.top-header .change-language-header{
+	padding-right: 30px;
+}
+.reponsive-menu{
+	display: none;
+}
+.site-branding{
+	margin-bottom: 5px;
+}
+.active-menu{
+	border-bottom: 5px solid #cc3333;
+}
+.employer-title-box{
+	text-align: center;
+}
+.jobseeker-title-box{
+	text-align: center;
+}
+.contact-title h1{
+	margin: 10px 0 5px 0;
+
+}
+.contact-title{
+	padding-bottom: 10px;
+}
+.contact-map{
+	border: 1px solid #f1f1f1;
+	padding: 15px 0;
+}
+.contact-form-box{
+	border:1px solid #f1f1f1;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.map-box{
+	margin: 10px 0;
+}
+.contact-page label{
+	text-transform: none;
+}
+
+.job{
+	background: #f1f1f1;
+}
+a.toggle-menu:hover{
+	color: #fff;
 }

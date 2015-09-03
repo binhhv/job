@@ -76,26 +76,67 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6 col-md-6 col-xs-12 ">
-            <span><strong>JOB7VN GROUP</strong></span>
+            <!-- <span><strong>JOB7VN GROUP</strong></span>
             <span>Số điện thoại: xxxxxxx</span>
-            <span>Địa chỉSố 5, Lê quang định, phường Thắng nhất , TP Vũng Tàu</span>
-        </div>
-         <div class="col-sm-6 col-md-6 col-xs-12 text-center">
+            <span>Địa chỉSố 5, Lê quang định, phường Thắng nhất , TP Vũng Tàu</span> -->
             <ul>
                 <li><a href="#">Giới thiệu</a></li>
+
+                <li>|</li>
+
+                 <li><a href="<?php echo base_url('faq');?>">FAQ</a></li>
+                   <li>|</li>
                  <li><a href="#">Điều khoản sử dụng</a></li>
-                <li><a href="#">Liên hệ</a></li>
+                 <li>|</li>
+                <li><a href="<?php echo base_url('contact')?>">Liên hệ</a></li>
+                <li>|</li>
                 <li><a href="#">Giúp đỡ</a></li>
             </ul>
-             <ul class="social">
-                <li><a href="#"><img src="<?php echo base_url();?>assets/main/img/share-button/facebook-icon.png"></a></li>
-                <li><a href="#"><img src="<?php echo base_url();?>assets/main/img/share-button/twitter-icon.png"></a></li>
-                <li><a href="#"><img src="<?php echo base_url();?>assets/main/img/share-button/pinterest-icon.png"></a></li>
-                <li><a href="#"><img src="<?php echo base_url();?>assets/main/img/share-button/youtube.png"></a></li>
+            <ul class="social">
+                <li><a href="#"><img src="<?php echo base_url();?>assets/main/img/social/facebook.png"></a></li>
+                <li><a href="#"><img src="<?php echo base_url();?>assets/main/img/social/twitter.png"></a></li>
+                <li><a href="#"><img src="<?php echo base_url();?>assets/main/img/social/g+.png"></a></li>
+                <li><a href="#"><img src="<?php echo base_url();?>assets/main/img/social/skype.png"></a></li>
+                <li><a href="#"><img src="<?php echo base_url();?>assets/main/img/social/youtube.png"></a></li>
             </ul>
+             <span class="copyrighttitle">Copyright 2015 JOB7VN Group | All Rights Reserved </span>
         </div>
-        <div class="col-sm-12 col-md-12 col-xs-12 text-center">
-        <span class="copyrighttitle">Copyright 2015 JOB7VN Group | All Rights Reserved </span>
+         <div class="col-sm-6 col-md-6 col-xs-12 text-center">
+            <div class="hotline">
+            <h2>HOTLINE</h2>
+            <div class="border-bottom-title border-color-1"></div>
+            </div>
+            <div class="phone text-left">
+            <h1>XX-XXX-XXXX-XX</h1>
+            </div>
         </div>
+
     </div>
 </div>
+
+<script>
+$(window).load(function() {
+/** this is come when complete page is fully loaded, including all frames, objects and images **/
+var h = window.innerHeight;//$(window).height();
+    h = (h*80)/100;// (h > 300) ? h-100 : h;
+       // $( "<style>.modal-body {height:'"+h+"px'; overflow:auto;}</style>" ).appendTo( "head" )
+    $('<style type="text/css">#main-page {min-height:'+h+'px; }</style>').appendTo($('head'));
+});
+$( window ).resize(function() {
+  var h = window.innerHeight;//$(window).height();
+  h = (h*80)/100;//(h > 300) ? h-100 : h;
+       // $( "<style>.modal-body {height:'"+h+"px'; overflow:auto;}</style>" ).appendTo( "head" )
+  $('<style type="text/css">#main-page {min-height:'+h+'px; }</style>').appendTo($('head'));
+
+});
+
+//$(function(){
+   // alert("123123");
+  //});
+    //$(document).ready(function(){
+      //  var h = $(window).height();
+
+       // $( "<style>.modal-body {height:'"+h+"px'; overflow:auto;}</style>" ).appendTo( "head" )
+        //$('<style type="text/css">.modal-body {height:'+h+'px; overflow:auto;}</style>').appendTo($('head'));
+   // });
+    </script>

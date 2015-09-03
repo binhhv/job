@@ -2,7 +2,7 @@
     <div class="modal-header">
         <h3 class="modal-title">Xóa: {{recruitment.rec_title}}</h3>
     </div>
-    <div class="modal-body">
+    <div class="modal-body modal-delete">
             <form name="deleteCVForm">
                 <fieldset>
                     <div class="row">

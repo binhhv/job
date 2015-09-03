@@ -23,6 +23,16 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/admin/angularjs/lib/select/dist/select.css">
+    <?php
+if (isset($styles)) {
+	foreach ($styles as $style) {?>
+     <link rel="stylesheet" href="<?php echo base_url() . $style;?>">
+
+    <?php }
+}
+?>
     <script type="text/javascript">
     var pathWebsite = "<?php echo base_url();?>";
     </script>
+

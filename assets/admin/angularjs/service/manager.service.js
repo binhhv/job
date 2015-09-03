@@ -1,4 +1,4 @@
-app.factory('managerService' ,function ($http,$q){
+app.factory('managerService' ,function ($http,$q,$timeout){
 		var _managerService = {};
 		_managerService.getListManager = function(callback){
 			return $http.get(pathWebsite + 'admin/manager/getListManager').success(callback);
@@ -35,7 +35,9 @@ app.factory('managerService' ,function ($http,$q){
 			    var defer = $q.defer();
 			    $http.get(pathWebsite + 'admin/jobseeker/getToken').success(function(data){
 			            temp =data;
-			            defer.resolve(data);
+			            $timeout(function(){
+					      defer.resolve(data);
+					    }, 750) 
 
 			    });
 			    return defer.promise;
@@ -45,7 +47,9 @@ app.factory('managerService' ,function ($http,$q){
 			    var defer = $q.defer();
 			    $http.get(pathWebsite + 'admin/jobseeker/checkEmailExits/'+email).success(function(data){
 			            temp =data;
-			            defer.resolve(data);
+			             $timeout(function(){
+					      defer.resolve(data);
+					    }, 750) 
 
 			    });
 			    return defer.promise;

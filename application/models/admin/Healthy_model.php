@@ -8,6 +8,7 @@ class Healthy_model extends CI_Model {
 	}
 	public function getListHealthy() {
 		$data = array(
+			'fields' => 'healthy_id,healthy_type',
 			'from' => 'healthy',
 			'where' => 'healthy_is_delete = 0');
 		return $this->dbutil->getFromDb($data);

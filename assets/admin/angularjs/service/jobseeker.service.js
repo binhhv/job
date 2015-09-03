@@ -1,6 +1,6 @@
 
 //SERVICE FOR ADMIN JOBSEEKER MANAGER
-app.factory('jobseekerService' ,function ($http,$q){
+app.factory('jobseekerService' ,function ($http,$q,$timeout){
 		var _jobseekerService = {};
 		var _jobseeker;
 
@@ -40,7 +40,9 @@ app.factory('jobseekerService' ,function ($http,$q){
 			           // alert(data);
 			           console.log(data);
 			            temp =data;
-			            defer.resolve(data);
+			             $timeout(function(){
+					      defer.resolve(data);
+					    }, 750) 
 
 			    });
 			    return defer.promise;
@@ -50,7 +52,9 @@ app.factory('jobseekerService' ,function ($http,$q){
 			    var defer = $q.defer();
 			    $http.get(pathWebsite + 'admin/jobseeker/getToken').success(function(data){
 			            temp =data;
-			            defer.resolve(data);
+			             $timeout(function(){
+					      defer.resolve(data);
+					    }, 750) 
 
 			    });
 			    return defer.promise;
@@ -60,7 +64,9 @@ app.factory('jobseekerService' ,function ($http,$q){
 			    var defer = $q.defer();
 			    $http.get(pathWebsite + 'admin/jobseeker/checkEmailExits/'+email).success(function(data){
 			            temp =data;
-			            defer.resolve(data);
+			             $timeout(function(){
+					      defer.resolve(data);
+					    }, 750) 
 
 			    });
 			    return defer.promise;

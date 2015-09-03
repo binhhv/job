@@ -16,11 +16,13 @@
        <header id="header" class="site-header">
           <?php echo $header;?>
        </header>
-       <div id="main">
-          <div class="container">
-            <?php echo $content;?>
-          </div>
+       <div id="main-page">
+          <?php if (isset($content)) {
+	echo $content;
+}
+?>
        </div>
+
        <footer id="footer">
           <?php echo $footer;?>
        </footer>

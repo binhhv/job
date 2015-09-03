@@ -13,6 +13,7 @@
 	margin: 10px 0;
 	/*padding-left: 15px;*/
 }
+
 }
 @media (min-width: 992px) {
 	.search-box .search-box-content form select.select-address,
@@ -29,6 +30,51 @@
 
 
 @media (max-width: 767px) {
+	.employer-box{
+		padding-bottom: 10px;
+	}
+	.employer-title-box{
+		text-align: center;
+		padding-bottom: 10px;
+	}
+	.btn-employer{
+		margin: 0 auto;
+		display: block;
+	}
+	.jobseeker-title-box{
+		text-align: center;
+	}
+	.active-menu{
+		border-bottom: none;
+	}
+	.top-header{
+		display: none;
+	}
+	.reponsive-menu{
+		display: block;
+	}
+	.jobseeker{
+		max-height: none;
+		padding-bottom: 10px;
+	}
+	.item-new-job{
+	border:5px solid #fff;
+	margin: 0 auto;
+	max-width: 200px;
+	
+}
+.employer-padding-left{
+	padding-left: 15px !important;
+}
+.employer-title-box{
+	margin: 0 auto;
+}
+.image-employer-box{
+	display: none;
+}
+.text-slide{
+	text-align: center;
+}
 	  .btn-tab{
 	  	/*margin: 0 auto;*/
 	  	margin-top: 5px;
@@ -39,6 +85,18 @@
 	.content-page .right-page{
 	margin: 10px 0;
 	padding-left: 15px;
+}
+.flex-control-nav {
+    width: 100%;
+    position: absolute;
+    bottom: -100px;
+    text-align: center;
+}
+.hide-job-responsive-760{
+	display: none;
+}
+.hide-partner-responsive-760{
+	display: none;
 }
 .scrollToTop{
 	width:32px; 
@@ -61,10 +119,20 @@ footer ul{
 }
 .sologan {
 	top: 0; left: 0; bottom: 0; right: 0;
-	margin: auto;
+	margin: 0 auto;
 }
 .sologan h4{
 	font-size: 15px;
+}
+.flex-prev{
+	position: absolute;
+	top:40%;
+	margin-left: 30px;
+}
+.flex-next{
+position: absolute;
+	top:40%;
+	margin-right: 30px;
 }
 }/*end media queries*/
 
@@ -81,4 +149,7 @@ footer ul{
   	display: inherit;
   	margin-bottom: 10px;
   }
+  .hide-job-responsive-480{
+	display: none;
+}
 }

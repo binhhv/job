@@ -149,6 +149,157 @@
 
 
 
+//default value is vietnam with 1
+           
+           // $http.get(pathWebsite + 'admin/employer/getListProvinceCountry/'+selectedrecruitment['rec_job_map_country']).success(function(data){
+                       // alert(data);
+                      // console.log(data);
+                        //selectedrecruitment.listProvinces =data;
+                        //defer.resolve(data);
+
+               // });
+            // selectedrecruitment.multipleDemo.listProvinces = employerRecruitmentService.getListProvinceCountryNoRT(selectedrecruitment['rec_job_map_country']);//,function(data){
+                  //selectedrecruitment.listProvinces = data;
+                 //  var arrTmp = [];
+                 // angular.forEach(data, function(value, key) {
+                 //       //console.log("key :" + key + "value :" + value['province_name']);
+                 //       selectedrecruitment.multipleDemo.listProvinces.push({province_id:value['province_id'],province_name:value['province_name']});
+                 //    });
+                 //  //selectedrecruitment.listProvinces = arrTmp;
+                 //  arrTmp = null;
+                 //console.log("=="+selectedrecruitment.multipleDemo.listProvinces);
+                // $scope.multipleDemo.listProvinces = data;
+            //});
+            //console.log(  $scope.recruitmentCreate.listProvinces );
+
+            //recruitmentCreate.welfareSelected = [];
+            //$scope.getListWelfareEmployerRecruitment(selectedrecruitment['rec_id'],function(data){
+                //selectedrecruitment.welfareSelected = data;
+           // });
+            // recruitmentCreate.provinceSelected = [];
+            //employerRecruitmentService.getListProvinceRecruitment(selectedrecruitment['rec_id']).success(function(data){
+               //selectedrecruitment.provinceSelected =data;
+               //if(data.length >= 5){
+                       //$("#select-Province").addClass('hide');
+                    //}
+           //});
+           //$http.get(pathWebsite + 'admin/employer/getListProvinceRecruitment/'+selectedrecruitment['rec_id']).success(function(data){
+                       // alert(data);
+                       //console.log(data);
+                        //selectedrecruitment.provinceSelected =data;
+                        //defer.resolve(data);
+
+            //});
+           //selectedrecruitment.multipleDemo.provinceSelected = employerRecruitmentService.getListProvinceRecruitmentNoRT(selectedrecruitment['rec_id']);//,function(data){
+                // selectedrecruitment.provinceSelected = data;
+                // var arrTmp = [];
+                // angular.forEach(data, function(value, key) {
+                //        //console.log("key :" + key + "value :" + value['province_name']);
+                //         selectedrecruitment.multipleDemo.provinceSelected.push(selectedrecruitment.multipleDemo.listProvinces[getIndexIfObjWithOwnAttr(selectedrecruitment.multipleDemo.listProvinces,'province_id',value['province_id'])]);;//({province_id:value['province_id'],province_name:value['province_name']});//(selectedrecruitment.listProvinces[getIndexIfObjWithOwnAttr(selectedrecruitment.listProvinces,'province_id',value['province_id'])]);//
+                //     });
+                //selectedrecruitment.multipleDemo.provinceSelected = arrTmp;
+                 //console.log(selectedrecruitment.provinceSelected);
+                //selectedrecruitment.provinceSelectd = data;
+               // console.log(selectedrecruitment.provinceSelectd);
+                //$scope.multipleDemo.provinceSelected = data;
+           // });
+
+            
+           
+            //selectedrecruitment.multipleDemo = {};
+             // selectedrecruitment.multipleDemo.people = [
+             //    { name: 'Adam',      email: 'adam@email.com',      age: 12, country: 'United States' },
+             //    { name: 'Amalie',    email: 'amalie@email.com',    age: 12, country: 'Argentina' },
+             //    { name: 'Estefanía', email: 'estefania@email.com', age: 21, country: 'Argentina' },
+             //    { name: 'Adrian',    email: 'adrian@email.com',    age: 21, country: 'Ecuador' },
+             //    { name: 'Wladimir',  email: 'wladimir@email.com',  age: 30, country: 'Ecuador' },
+             //    { name: 'Samantha',  email: 'samantha@email.com',  age: 30, country: 'United States' },
+             //    { name: 'Nicole',    email: 'nicole@email.com',    age: 43, country: 'Colombia' },
+             //    { name: 'Natasha',   email: 'natasha@email.com',   age: 54, country: 'Ecuador' },
+             //    { name: 'Michael',   email: 'michael@email.com',   age: 15, country: 'Colombia' },
+             //    { name: 'Nicolás',   email: 'nicolas@email.com',    age: 43, country: 'Colombia' }
+             //  ];
+
+              //$scope.availableColors = ['Red','Green','Blue','Yellow','Magenta','Maroon','Umbra','Turquoise'];
+
+              //$scope.singleDemo = {};
+              //$scope.singleDemo.color = '';
+              
+              //$scope.multipleDemo.colors = ['Blue','Red'];
+             // $scope.multipleDemo.colors2 = ['Blue','Red'];
+             // selectedrecruitment.multipleDemo.selectedPeople = [selectedrecruitment.multipleDemo.people[5]];
+
+
+
+//  employerRecruitmentService.getTokenReturn().then(function(data){
+           //      recruitmentCreate.csrf = data;
+           //  });
+           // employerRecruitmentService.getListWelfareR().then(function(data){
+           //  recruitmentCreate.listWelfares = data;
+           // });
+           //  employerRecruitmentService.getListFormR().then(function(data){
+           //  recruitmentCreate.listForms =data;
+           // });
+           //  employerRecruitmentService.getListFormChildR().then(function(data){
+           //  recruitmentCreate.listFormChilds =data;
+           // });
+           // employerRecruitmentService.getListLevelR().then(function(data){
+           //  recruitmentCreate.listLevels =  data;
+           // });
+           // employerRecruitmentService.getListContactFormR().then(function(data){
+           //  recruitmentCreate.listContactForms =  data;
+           // });
+           //  employerRecruitmentService.getListCountryR().then(function(data){
+           //    recruitmentCreate.listCountrys =  data;
+           // });
+          // var resultCallCsrf = false;
+           // employerUserService.getToken(function(data){
+                //var obToken = JSON.parse(angular.toJson(data));
+               //$log.info(obToken['name']);                // $scope.recruitmentCreate.csrf_name = obToken['name'];
+                 //$scope.recruitmentCreate.csrf_hash = obToken['hash'];
+                
+                 //resultCallCsrf = true;
+            //});
+             //$log.info(resultCallCsrf);
+            // employerRecruitmentService.getListWelfare(function(data){
+            //      $scope.recruitmentCreate.listWelfares = data;
+            // });
+            // employerRecruitmentService.getListForm(function(data){
+            //      $scope.recruitmentCreate.listForms = data;
+            //      $log.info("call forms");
+            // });
+            // employerRecruitmentService.getListFormChild(function(data){
+            //      $scope.recruitmentCreate.listFormChilds = data;
+            //      $log.info("call form child");
+            // });
+            // employerRecruitmentService.getListLevel(function(data){
+            //      $scope.recruitmentCreate.listLevels = data;
+            //      $log.info("call level");
+            // });
+            // employerRecruitmentService.getListContactForm(function(data){
+            //      $scope.recruitmentCreate.listContactForms = data;
+            //      $log.info("call contact form");
+            // });
+            // $scope.firstCountry = {};
+            // // selectedrecruitment.listProvinces = [];
+            // employerRecruitmentService.getListCountry(function(data){
+            //      $scope.recruitmentCreate.listCountrys = data;
+            //     $log.info("call country");
+            //     $scope.firstCountry = data[0];
+            //      employerRecruitmentService.getListProvinceCountry($scope.firstCountry['country_id']).success(function(data){
+            //      $scope.recruitmentCreate.listProvinces = data;
+            //      $log.info("call province");
+            // });
+
+            // });
+            //selectedrecruitment.listProvinces = [];
+
+
+
+
+
+
+
 
 
 

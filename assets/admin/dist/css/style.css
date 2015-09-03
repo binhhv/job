@@ -1,7 +1,7 @@
 .margin-top-10{
 	margin-top: 10px !important;
 }
-.alert-message,.alert-message-delete,.alert-message-create,.alert-message-setRoleEmployer,.alert-message-errors{
+.alert-message,.alert-message-sendmail,.alert-message-delete,.alert-message-create,.alert-message-setRoleEmployer,.alert-message-errors,.alert-message-approve{
 	 position: fixed;
     z-index: 9999;
     right: 0;
@@ -44,6 +44,13 @@ table#employerTable tr td label{
 .no-box-shadow{
 	box-shadow:none;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
 /*.p-relative img{
 	   position: absolute;
     margin: 0 auto;
@@ -59,12 +66,72 @@ table#employerTable tr td label{
     display: flex;
     flex:1 0 auto;
 }*/
+.logo-modal img{
+	/*width: 100px;
+	height: 100px;*/
+	margin: 0 auto;
+	padding-bottom: 10px;
+	/*max-width: 100%;
+	max-height: auto;*/
+	height: auto; 
+    width: auto; 
+    max-width: 115px; 
+    max-height: 115px;
+}
+img.logo-small{
+	max-width: 50px;
+	max-height: 50px;
+	vertical-align: middle;
+	margin: 0 auto;
+	height: auto;
+	width: auto;
+}
+.error-upload{
+	position: absolute;
+	margin-left: 120px;
+	top:10%;
+}
+.error-upload span{
+	display: block;
+}
+.image-preview{
+	max-width: 120px; 
+    max-height: 118px;
+    height: 120px;
+}
 .border-top-1{
 	border-top: 1px solid #f4f4f4;
 	margin: 10px 0;
 	padding-top: 10px;
 }
+
+.controls hr{
+	margin: 0;
+	padding:0;
+}
+.no-padding{
+	padding: 0 !important;
+}
+.no-padding-child{
+	padding: 0 !important;
+}
+.no-padding-right{
+	padding-right: 0 !important;
+}
+.modal-delete{
+	height: auto !important;
+}
+.btn-numapply{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.search-tools{
+	margin-top: 5px;
+}
 @media (max-width: 767px) {
+	.margin-top-5-res{
+		margin-top: 5px;
+	}
 	  .search-box{
 	  	float: left !important;
 	  	margin-top: 10px;
@@ -74,6 +141,23 @@ table#employerTable tr td label{
     width: 150px;
      margin:0 auto;
      margin-bottom: 10px;
+}
+img.logo-small{
+	max-width: 30px;
+	max-height: 30px;
+	vertical-align: middle;
+	margin: 0 auto;
+	height: auto;
+	width: auto;
+}
+.no-padding{
+	padding: 0 15px !important;
+}
+.no-padding-right{
+	padding-right: 15px !important;
+}
+.no-padding-responsive{
+	padding: 0 !important;
 }
 }/*end media queries*/
 

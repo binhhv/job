@@ -30,7 +30,7 @@
                   <div class="col-sm-6 col-xs-12"> <h3 class="box-title">Danh sách người tìm việc</h3></div>
                    <div class="col-sm-6 col-xs-12"><div class="box-tools">
                     <div class="input-group search-box" style="width: 150px;">
-                      <input type="text" name="table_search" ng-model="search" ng-change="filter()" class="form-control input-sm pull-right" placeholder="tìm kiếm">
+                      <input type="text" name="table_search" ng-model="search.$" ng-change="filter()" class="form-control input-sm pull-right" placeholder="tìm kiếm">
                       <div class="input-group-btn">
                         <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
                       </div>
@@ -85,7 +85,8 @@
                 </div>
                 <div class="box-footer clearfix text-right" >
                 <div class="col-md-12" ng-show="filteredItems > 0">
-                    <pagination total-items="filteredItems" on-select-page="setPage(page)" page="currentPage" max-size="itemsPerPage" class="pagination-sm" items-per-page="entryLimit" boundary-links="true"></pagination>
+                <pagination total-items="filteredItems"  on-select-page="setPage(page)" ng-model="currentPage" max-size="itemsPerPage" class="pagination-sm" boundary-links="true" items-per-page="entryLimit"></pagination>
+                    <!-- <pagination total-items="filteredItems" on-select-page="setPage(page)" page="currentPage" max-size="itemsPerPage" class="pagination-sm" items-per-page="entryLimit" boundary-links="true"></pagination> -->
             <!-- <div pagination="" page="currentPage" on-select-page="setPage(page)" boundary-links="true" total-items="filteredItems" items-per-page="entryLimit" class="pagination-small" previous-text="&laquo;" next-text="&raquo;"></div> -->
         </div></div>
                 <!-- <div class="box-footer clearfix text-right"  ng-show="filteredItems > 0"> -->

@@ -2,7 +2,7 @@
     <div class="modal-header">
         <h3 class="modal-title">Xóa: {{employer.employer_name}} </h3>
     </div>
-    <div class="modal-body">
+    <div class="modal-body modal-delete">
             <form name="deleteEmployerForm">
                 <fieldset>
                     <div class="row">

@@ -17,7 +17,7 @@
           <div class="row">
 
             <div class="col-md-12">
-            <button class="btn btn-primary" ng-click="openModalCreateForm('lg')">tạo hồ sơ mới</button> &nbsp;
+              <button class="btn btn-primary" ng-click="openModalCreateForm('lg','<?php echo $country->country_id;?>')">tạo hồ sơ mới</button> &nbsp;
               <button class="btn btn-success" ng-click="reloadForm();" >tải lại dữ liệu</button></div>
           </div>
         </section>
@@ -29,13 +29,36 @@
                 <div class="box-header">
                   <div class="col-sm-6 col-xs-12">
                     <h3 class="box-title">Danh sách hồ sơ của ứng viên.</h3></div>
-                  <div class="col-sm-6 col-xs-12"><div class="box-tools">
-                    <div class="input-group search-box" style="width: 150px;">
-                      <input type="text" name="table_search" ng-model="search" ng-change="filter()" class="form-control input-sm pull-right" placeholder="tìm kiếm">
+                  <div class="col-sm-12 col-xs-12">
+                  <div class="box-tools">
+                    <div class="row search-tools">
+                      <div class="col-sm-4 margin-top-5-res">
+
+                        <div class="input-group " >
+                      <input type="text" name="table_search" ng-model="search.$" ng-change="filter()" class="form-control input-sm" placeholder="Tìm tất cả">
                       <div class="input-group-btn">
                         <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
                       </div>
                     </div>
+                      </div>
+                      <div class="col-sm-4 margin-top-5-res">
+                        <div class="input-group " >
+                      <input type="text" name="table_search" ng-model="search.ljob_level" ng-change="filter()" class="form-control input-sm" placeholder="Theo trình độ">
+                      <div class="input-group-btn">
+                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
+                      </div>
+                      <div class="col-sm-4 margin-top-5-res">
+                        <div class="input-group " >
+                      <input type="text" name="table_search" ng-model="search.province" ng-change="filter()" class="form-control input-sm" placeholder="Theo địa điểm">
+                      <div class="input-group-btn">
+                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
+                      </div>
+                    </div>
+
 
                   </div></div>
                 </div><!-- /.box-header -->
@@ -51,9 +74,9 @@
                       <th class="text-center">Họ tên</th>
                       <th class="text-center">Email</th>
                       <th class="text-center">Số điện thoại</th>
-                      <th class="text-center">Ngành nghề</th>
-                      <th class="text-center">Bằng cấp</th>
-                      <th class="text-center">Kinh nghiệm</th>
+                      <th class="text-center">Trình độ/Năng lực</th>
+                      <th class="text-center">Địa điểm làm việc</th>
+                      <!-- <th class="text-center">Kinh nghiệm</th> -->
                       <th class="text-center">Ngày tạo</th>
                       <th class="text-center"></th>
                     </tr>
@@ -69,15 +92,15 @@
                           <label><b>{{data.docon_phone}}</b></label>
 
                       </td>
-                      <td class="text-center">{{data.docon_career}}</td>
-                      <td class="text-center">{{data.docon_degree}}</td>
-                      <td class="text-center">{{data.docon_experience}}</td>
+                      <td class="text-center">{{data.ljob_level}}</td>
+                      <td class="text-center">{{data.province}}</td>
+                      <!-- <td class="text-center">{{data.docon_experience}}</td> -->
                       <td class="text-center">{{formatDate(data.docon_created_at) | date: "dd/MM/yyyy"}}</td>
 
                       <td class="text-center">
-                      <button class="btn btn-xs btn-success" ng-click="modalDetailForm('sm',data.docon_id)" >xem</button>
-                      <button class="btn btn-xs btn-warning" ng-click="modalUpdateForm('sm',data)" >sửa</button>
-                      <button class="btn btn-xs btn-warning" ng-click="modalDeleteForm('sm',data)" >xóa</button>
+                      <button class="btn btn-xs btn-success" ng-click="modalDetailForm('lg',data.docon_id,data.docon_type)" >xem</button>
+                      <button class="btn btn-xs btn-warning" ng-click="modalUpdateForm('lg',data,'<?php echo $country->country_id;?>')" >sửa</button>
+                      <button class="btn btn-xs btn-warning" ng-click="modalDeleteForm('md',data)" >xóa</button>
                       </td>
                     </tr>
                     <!-- <tr>
@@ -92,7 +115,8 @@
                 </div>
                 <div class="box-footer clearfix text-right" >
                 <div class="col-md-12" ng-show="filteredItems > 0">
-                <pagination total-items="filteredItems" on-select-page="setPage(page)" page="currentPage" max-size="itemsPerPage" class="pagination-sm" items-per-page="entryLimit" boundary-links="true"></pagination>
+                <pagination total-items="filteredItems"  on-select-page="setPage(page)" ng-model="currentPage" max-size="itemsPerPage" class="pagination-sm" boundary-links="true" items-per-page="entryLimit"></pagination>
+                <!-- <pagination total-items="filteredItems" on-select-page="setPage(page)" page="currentPage" max-size="itemsPerPage" class="pagination-sm" items-per-page="entryLimit" boundary-links="true"></pagination> -->
             <!-- <div pagination="" page="currentPage" on-select-page="setPage(page)" boundary-links="true" total-items="filteredItems" items-per-page="entryLimit" class="pagination-small" previous-text="&laquo;" next-text="&raquo;"></div> -->
         </div></div>
                 <!-- <div class="box-footer clearfix text-right"  ng-show="filteredItems > 0"> -->
