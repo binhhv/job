@@ -1,8 +1,3 @@
-
-<p class="text-center contact-box">
-    <button class="btn btn-default" data-toggle="modal" data-target="#registerModal">Regiser</button>
-</p>
-
 <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">

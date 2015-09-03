@@ -1,3 +1,6 @@
+$(function () {
+    $('#datetimepicker1').datetimepicker();
+});
 //employer register
 function uploadOnChange(objFile) {
         fileName = objFile.value.replace(/C:\\fakepath\\/i, '');

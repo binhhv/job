@@ -1,7 +1,3 @@
-<p class="text-center contact-box">
-    <button class="btn btn-default" data-toggle="modal" data-target="#createcv_onlineModel">createcv_online</button>
-</p>
-
 <div class="modal fade" id="createcv_onlineModel" tabindex="-1" role="dialog" aria-labelledby="createcv_online" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">

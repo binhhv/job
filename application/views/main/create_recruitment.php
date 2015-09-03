@@ -1,31 +1,3 @@
-<style type="text/css">
-.error-create_recruitment {
-    color: red;
-}
- </style>
-
-
-<!-- Button to trigger modal -->
-<a href="#myModal" role="button" class="btn" data-toggle="modal">Open Modal</a>
-
-<!-- Modal -->
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Modal</h3>
-  </div>
-
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary">Save changes</button>
-  </div>
-</div>
-
-
-
-<p class="text-center contact-box">
-    <button class="btn btn-default" data-toggle="modal" data-target="#create_recruitmentModel">create_recruitment</button>
-</p>
 
 <div class="modal fade" id="create_recruitmentModel" tabindex="-1" role="dialog" aria-labelledby="create_recruitment" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -305,8 +277,3 @@
         </div>
     </div>
 </div>
- <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker1').datetimepicker();
-            });
-        </script>

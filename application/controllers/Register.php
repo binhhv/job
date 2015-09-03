@@ -35,7 +35,6 @@ class Register extends CI_Controller {
 	}
 	//deployer
 	public function insertEmployer() {
-
 		// log_message('error', $file_element_name);
 		//set validate
 		$this->form_validation->set_message('required', $this->lang->line('required'));

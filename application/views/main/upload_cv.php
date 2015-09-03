@@ -4,11 +4,6 @@
 }
  </style>
 
-
-<p class="text-center contact-box">
-    <button class="btn btn-default" data-toggle="modal" data-target="#uploadcvModel">Uploadcv</button>
-</p>
-
 <div class="modal fade" id="uploadcvModel" tabindex="-1" role="dialog" aria-labelledby="uploadcv" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
