@@ -10764,3 +10764,108 @@ body .pac-container {
 .txt-color-363636 {
     color: #363636;
 }
+
+.input-lg2 {
+    height: 40px;
+    vertical-align: middle;
+    border-radius: 0px !important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    border: 1px solid #e0e0e0!important;
+}
+.colorRed {
+    color: #ff4242;
+}
+.control-label-info {
+    text-align: right;
+    display: block;
+    float: left;
+    position: relative;
+    line-height: 37px;
+    height: 40px;
+}
+.require_info {
+    font-size: 12px;
+    float: right;
+    margin-right: 16px;
+}
+.italic {
+    font-style: italic;
+}
+.mb_10 {
+    margin-bottom: 10px !important;
+}
+.mb_20 {
+    margin-bottom: 20px !important;
+}
+.mb_3 {
+    margin-bottom: 3px !important;
+}
+select.input-lg {
+    height: 40px;
+    line-height: 18px !important;
+    text-align: center;
+    border-radius: 0px;
+    padding: 0px 0px 0px 30%;
+}
+/*@media screen and (min-width: 768px) {
+    
+    #uploadcvModel .modal-dialog  {width:900px;}
+
+}
+#uploadcvModel .modal-dialog  {width:75%;}*/
+.row_padding{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    margin-right: 5px;
+}
+.row_margin{
+    margin-left: 15px;
+    margin-right: 0px;
+}
+.col-xs-2.col-sm-2.col-md-2 {
+    padding-left: 0px !important;
+    padding-right: 5px !important;
+    width: 33.33%;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Source Sans Pro',sans-serif;
+}
+.form-control {
+    border-radius: 0 !important;
+    box-shadow: none;
+    border-color: #d2d6de;
+    height: 40px;
+    vertical-align: middle;
+}
+.error-createcv_online {
+    color: red;
+}
+
+.alert-danger {
+    width: 100%;
+    margin: 0 15px;
+        padding: 3px 0 3px 15px;
+}
+.alert-danger, .alert-error, .label-danger, .modal-danger .modal-body {
+    background-color: #dd4b39 !important;
+    color: #fff !important;
+}
+.error.text-center {
+    margin-right: 25px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+.controls_label {
+    margin-top: 10px;
+}
+.welfare_backgound{
+    background-color: #F2F7F6;
+}
+button.btn.dropdown-toggle.btn-default {
+    border-radius: 0 !important;
+    box-shadow: none;
+    border-color: #d2d6de;
+    height: 40px;
+    vertical-align: middle;
+}

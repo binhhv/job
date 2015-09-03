@@ -19,6 +19,8 @@ if (isset($titlePage)) {
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/css/responsive-style.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/css/style4189.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/flexslider/flexslider.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/bootstrap/dist/css/bootstrap-select.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/datetimepicker/css/bootstrap-datetimepicker.min.css">
 <!-- <link rel="stylesheet" href="<?php echo base_url()?>/assets/common/css/bootstrap-responsive.css"> -->
 <!-- <link rel="stylesheet" href="<?php echo base_url()?>/assets/common/css/prettyPhoto.css" />
 <link rel="stylesheet" href="<?php echo base_url()?>/assets/common/css/flexslider.css" />
@@ -49,17 +51,25 @@ if (isset($titlePage)) {
 ================================================== -->
 <!-- <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="<?php echo base_url()?>/assets/main/js/bootstrap.js"></script>
 <script src="<?php echo base_url()?>/assets/main/flexslider/jquery.flexslider.js"></script>
 <script src="<?php echo base_url()?>/assets/main/js/job7vn.js"></script>
- <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="<?php echo base_url()?>/assets/main/js/job7vn-register.js"></script>
+<script src="<?php echo base_url()?>/assets/main/js/dobPicker.min.js"></script>
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="<?php echo base_url()?>/assets/main/bootstrap/dist/js/bootstrap-select.js"></script>
+<script src="<?php echo base_url()?>/assets/main/datetimepicker/DateTimePicker.js"></script>
+<script src="<?php echo base_url()?>/assets/main/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
 <!--<script src="<?php echo base_url()?>/assets/main/js/jquery4a80.js"></script>-->
 <!-- <script src="<?php echo base_url()?>/assets/common/js/jquery.prettyPhoto.js"></script>
 <script src="<?php echo base_url()?>/assets/common/js/jquery.flexslider.js"></script>
 <script src="<?php echo base_url()?>/assets/common/js/jquery.custom.js"></script>
 <script src="<?php echo base_url()?>/assets/common/js/b-scripts.js"></script>-->
+<!-- Fullsized calendars -->
 <script type="text/javascript">
+
 // $(document).ready(function () {
 
 //     $("#btn-blog-next").click(function () {
@@ -123,3 +133,6 @@ if (isset($titlePage)) {
     });
     </script>
 <![endif]-->
+<script>
+  var base_website = "<?php echo base_url();?>";
+</script>

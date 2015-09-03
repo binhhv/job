@@ -19,7 +19,7 @@ class Contact extends CI_Controller {
 			'logoWidth' => '70px',
 			'logoHeight' => '70px',
 		), TRUE);
-			$ab = m;
+		$ab = m;
 
 		$csrf = array(
 			'name' => $this->security->get_csrf_token_name(),
