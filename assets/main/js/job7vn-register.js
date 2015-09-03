@@ -25,6 +25,24 @@ function uploadOnChange_cv(objFile) {
         err_ext = false;
     }
 }
+function closeModal(){
+    $('#message_recruitment').text("");
+    $('#create_recruitmentModel').modal('hide');
+
+    $('#message_user').text("");
+    $('#registerModal').modal('hide');
+
+    $('#message_upload_cv').text("");
+    $('#uploadcvModel').modal('hide');
+
+    $('#message_upload_cv_online').text("");
+    $('#createcv_onlineModel').modal('hide');
+
+    $('#message_recruitment').text("");
+    $('#create_recruitmentModel').modal('hide');
+  
+}
+
 $(document).ready(function() {
     //user register
     $("#register-form").submit(function(event) {
@@ -133,7 +151,7 @@ $(document).ready(function() {
                     $('#message_empoyer').append(employer_contact_mobile);
                     $('input[name="csrf_test_name"]').val(csrf_hash);
                 } else if (status == 'success') {
-                    $('#message').text("");
+                    $('#message_empoyer').text("");
                     $('#employer_registerModal').modal('hide')
                 }
             },
@@ -188,6 +206,7 @@ $(document).ready(function() {
                     // var objs = $.parseJSON(response);
                     var status = response.status;
                     if (status == 'success') {
+                        $('#message_upload_cv_online').text("");
                         $('#createcv_onlineModel').modal('hide');
                     } else {
                         var docon_career = response.content.docon_career;
@@ -240,6 +259,7 @@ $(document).ready(function() {
                     // var objs = $.parseJSON(response);
                     var status = response.status;
                     if (status == 'success') {
+                         $('#message_recruitment').text("");
                         $('#create_recruitmentModel').modal('hide');
                     } else {
                         var rec_title = response.content.rec_title;
@@ -316,11 +336,12 @@ $(document).ready(function() {
                     // var objs = $.parseJSON(response);
                     var status = response.status;
                     if (status == 'success') {
+                        $('#message_upload_cv').text("");
                         $('#uploadcvModel').modal('hide');
                     } else {
                         var content = response.content.contente;
-                        $('#message').text("");
-                        $('#message').append(content);
+                        $('#message_upload_cv').text("");
+                        $('#message_upload_cv').append(content);
                         $('input[name="csrf_test_name"]').val(csrf_hash);
                     }
                     // if(status == 'errvalid'){

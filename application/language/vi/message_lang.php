@@ -1,5 +1,15 @@
 <?php
-
+#pages home
+#jobseeker
+$lang['jobseeker_title'] = "DÀNH CHO NGƯỜI TÌM VIỆC";
+$lang['jobseeker_register'] = "Đăng ký tài khoản";
+$lang['jobseeker_create_cv'] = "Gửi CV không cần đăng ký";
+$lang['jobseeker_create_cv_online'] = "Tạo hồ sơ ứng tuyển";
+#employer
+$lang['employer_title'] = "DÀNH CHO NHÀ TUYỂN DỤNG";
+$lang['employer_register'] = "Đăng ký";
+$lang['employer_recruitment'] = "Đăng tin";
+$lang['employer_contact_advertising'] = "LIÊN HỆ QUẢNG CÁO";
 #
 $lang['require_info'] = "Thông tin bắt buộc nhập";
 # validate err

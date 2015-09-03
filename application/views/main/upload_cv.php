@@ -14,7 +14,7 @@
 
                 <h5 class="modal-title"><?php echo lang('title_upload_cv');?></h5>
 
-                 <div id="message">
+                 <div id="message_upload_cv">
                 </div>
             </div>
 
