@@ -327,3 +327,61 @@ ERROR - 2015-09-03 06:51:35 --> $config['composer_autoload'] is set to TRUE but 
 ERROR - 2015-09-03 06:51:35 --> {"status":"errvalid","content":{"account_email":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'T\u00e0i kho\u1ea3n' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","account_password":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'M\u1eadt kh\u1ea9u' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","confirm_password":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'X\u00e1c nh\u1eadn M\u1eadt kh\u1ea9u' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_name":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'T\u00ean doanh nghi\u1ec7p' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_size":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'Qui m\u00f4 doanh nghi\u1ec7p' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_phone":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng '\u0110i\u1ec7n tho\u1ea1i c\u1ed1 \u0111\u1ecbnh' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_fax":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'S\u1ed1 fax' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_about":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'Gi\u1edbi thi\u1ec7u doanh nghi\u1ec7p' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_address":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng '\u0110\u1ecba ch\u1ec9' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_map_province":"","employer_contact":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'T\u00ean ng\u01b0\u1eddi li\u00ean h\u1ec7' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_contact_email":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'Email li\u00ean h\u1ec7' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_contact_phone":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 's\u1ed1 \u0111i\u1ec7n tho\u1ea1i li\u00ean h\u1ec7' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_contact_mobile":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'S\u1ed1 di \u0111\u1ed9ng' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","name":"csrf_test_name","hash":"908b0001571122aa7e8939647377cae8"}}
 ERROR - 2015-09-03 07:45:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
 ERROR - 2015-09-03 07:45:05 --> Could not find the language line "rec_job_map_form_child"
+ERROR - 2015-09-03 08:13:38 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 08:13:39 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 08:13:40 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 08:37:36 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 08:37:38 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 08:37:42 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:09:15 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:09:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:09:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:09:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:10:43 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:10:43 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:10:44 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:10:46 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:10:46 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:11:01 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:11:09 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:11:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:11:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:11:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:11:20 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:11:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:11:31 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:25:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:25:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:25:39 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:25:39 --> Could not find the language line "form_validation_email"
+ERROR - 2015-09-03 09:25:39 --> Could not find the language line "form_validation_password"
+ERROR - 2015-09-03 09:25:39 --> Could not find the language line "form_validation_passconf"
+ERROR - 2015-09-03 09:25:39 --> Could not find the language line "form_validation_first_name"
+ERROR - 2015-09-03 09:25:39 --> Could not find the language line "form_validation_last_name"
+ERROR - 2015-09-03 09:25:47 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:25:53 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:25:53 --> {"status":"errvalid","content":{"account_email":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'T\u00e0i kho\u1ea3n' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","account_password":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'M\u1eadt kh\u1ea9u' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","confirm_password":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'X\u00e1c nh\u1eadn M\u1eadt kh\u1ea9u' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_name":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'T\u00ean doanh nghi\u1ec7p' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_size":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'Qui m\u00f4 doanh nghi\u1ec7p' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_phone":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng '\u0110i\u1ec7n tho\u1ea1i c\u1ed1 \u0111\u1ecbnh' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_fax":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'S\u1ed1 fax' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_about":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'Gi\u1edbi thi\u1ec7u doanh nghi\u1ec7p' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_address":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng '\u0110\u1ecba ch\u1ec9' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_map_province":"","employer_contact":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'T\u00ean ng\u01b0\u1eddi li\u00ean h\u1ec7' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_contact_email":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'Email li\u00ean h\u1ec7' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_contact_phone":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 's\u1ed1 \u0111i\u1ec7n tho\u1ea1i li\u00ean h\u1ec7' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","employer_contact_mobile":"<label class=\"error alert-danger\">Tr\u01b0\u1eddng 'S\u1ed1 di \u0111\u1ed9ng' l\u00e0 b\u1eaft bu\u1ed9c.<\/label>","name":"csrf_test_name","hash":"9c70cab89cbd062342e100865ac08ff4"}}
+ERROR - 2015-09-03 09:25:59 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:25:59 --> Could not find the language line "rec_job_map_form_child"
+ERROR - 2015-09-03 09:26:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:26:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:26:12 --> Could not find the language line "rec_job_map_form_child"
+ERROR - 2015-09-03 09:26:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:26:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:26:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:26:27 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:26:33 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:27:31 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:27:31 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:27:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:27:35 --> Could not find the language line "rec_job_map_form_child"
+ERROR - 2015-09-03 09:28:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:28:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:28:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:28:14 --> Could not find the language line "rec_job_map_form_child"
+ERROR - 2015-09-03 09:31:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:31:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:31:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:31:16 --> Could not find the language line "rec_job_map_form_child"
+ERROR - 2015-09-03 09:31:30 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-09-03 09:31:30 --> Could not find the language line "rec_job_map_form_child"

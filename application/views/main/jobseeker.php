@@ -8,17 +8,17 @@
 			<div class="col-sm-12 ">
 			<div class="jobseeker-box">
 			<div class="col-sm-12 jobseeker-title-box">
-				<h5 class="jobseeker-title">DÀNH CHO NGƯỜI TÌM VIỆC</h5>
+				<h5 class="jobseeker-title"><?php echo lang('jobseeker_title');?> </h5>
 				<div class="border-bottom-title border-color-1"></div>
 			</div>
 			<div class="col-sm-12">
-				<button class="btn-jobseeker background-color-1 text-color-1" data-toggle="modal" data-target="#registerModal">Đăng ký tài khoản</button>
+				<button class="btn-jobseeker background-color-1 text-color-1" data-toggle="modal" data-target="#registerModal"><?php echo lang('jobseeker_register');?></button>
 			</div>
 			<div class="col-sm-12">
-				<button class="btn-jobseeker background-color-2 text-color-2" data-toggle="modal" data-target="#createcv_onlineModel">Tạo hồ sơ ứng tuyển</button>
+				<button class="btn-jobseeker background-color-2 text-color-2" data-toggle="modal" data-target="#createcv_onlineModel"><?php echo lang('jobseeker_create_cv_online');?></button>
 			</div>
 			<div class="col-sm-12">
-				<button class="btn-jobseeker background-color-3 text-color-2"  data-toggle="modal" data-target="#uploadcvModel">Gửi CV không cần đăng ký</button>
+				<button class="btn-jobseeker background-color-3 text-color-2"  data-toggle="modal" data-target="#uploadcvModel"><?php echo lang('jobseeker_create_cv');?></button>
 			</div>
 			</div>
 		</div>
