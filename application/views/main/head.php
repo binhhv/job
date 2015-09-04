@@ -65,6 +65,7 @@ if (isset($titlePage)) {
  <script src="<?php echo base_url()?>/assets/main/js/jquery.placeholder.min.js"></script>
 
 
+<script src="<?php echo base_url()?>/assets/main/js/employer/job7vn_employer.js"></script>
 <script src="<?php echo base_url()?>/assets/main/js/job7vn-register.js"></script>
 <script src="<?php echo base_url()?>/assets/main/js/dobPicker.min.js"></script>
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>

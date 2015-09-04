@@ -54,7 +54,7 @@ class Register extends CI_Controller {
 		$this->form_validation->set_rules('employer_address', $this->lang->line('employer_address_re_depl'), 'trim|required|xss_clean');
 		$this->form_validation->set_rules('employer_map_province', $this->lang->line('employer_map_province_re_depl'), 'trim|required|xss_clean');
 		$this->form_validation->set_rules('employer_contact', $this->lang->line('employer_contact_name_re_depl'), 'trim|required|xss_clean');
-		$this->form_validation->set_rules('employer_contact_email', $this->lang->line('employer_contact_email_re_depl'), 'callback_email_check|trim|required|valid_email|xss_clean');
+		$this->form_validation->set_rules('employer_contact_email', $this->lang->line('employer_contact_email_re_depl'), 'trim|required|valid_email|xss_clean');
 		$this->form_validation->set_rules('employer_contact_phone', $this->lang->line('employer_contact_phone_re_depl'), 'trim|required|regex_match[/^[0-9]{10}$/]|xss_clean');
 		$this->form_validation->set_rules('employer_contact_mobile', $this->lang->line('employer_contact_mobile_re_depl'), 'trim|required|regex_match[/^[0-9]{10}$/]|xss_clean');
 

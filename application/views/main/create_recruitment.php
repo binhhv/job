@@ -20,6 +20,7 @@
                              <div class="form-group col-sm-12">
                                  <div class="error text-center">
                                         <div class="error text-left" id="message_recruitment">
+                                        </div>
                                 </div>
                             </div>
 
@@ -115,7 +116,7 @@
                                 </div>
 
                             </div>
-                             <div class="col-sm-12">
+                            <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
                                     <label class="control-label"><?php echo lang('rec_job_time');?></label>
                                     <div class="controls input-append date" id="datetimepicker1">
@@ -129,7 +130,7 @@
                             </div>
 
 
-                              <div class="col-sm-12">
+                            <div class="col-sm-12">
                                 <div class="form-group col-sm-12">
                                     <label class="control-label"><?php echo lang('title_job_requirement');?></label>
                                 </div>

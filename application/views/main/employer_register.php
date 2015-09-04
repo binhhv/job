@@ -21,7 +21,7 @@
                                     <label class="error alert-danger" id="message_empoyer">
                                     </label>
                                 </div>
-                                </label>
+
                             </div>
                             <div class="col-sm-12 clear mb_20">
                                 <span class="fwb fs20 txt-color-363636"><?php echo lang('title_register_re_depl');?></span>
@@ -116,7 +116,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_website_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_website_re_depl');?></label>
                                     <div class="controls">
                                          <input type="text" class="form-control" name="employer_website" />
                                     </div>
