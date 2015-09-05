@@ -1,6 +1,6 @@
 <section ng-controller="documentController">
     <div class="modal-header">
-        <h3 class="modal-title">Thông tin hồ sơ</h3>
+        <h3 class="modal-title">Thông tin hồ sơ <label class="btn btn-default">{{documentJobseeker.docon_code}}</label></h3>
     </div>
     <div class="modal-body">
             <form name="updatedocumentJobseekerForm">
@@ -46,7 +46,7 @@
                             <div class="form-group col-sm-6">
                                 <label class="control-label" for="surname">Nghề nghiệp </label>
                                 <div class="controls">
-                                    {{documentJobseeker.docon_career}}
+                                    {{documentJobseeker.career_name}}
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">

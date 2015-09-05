@@ -17,7 +17,7 @@ class Employer extends CI_Controller {
 	function index() {
 		$user = $this->session->userdata['user'];
 		$employerInfo = $this->employer->getInfoEmployer($user['id']);
-		$head = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Contact'), TRUE);
+		$head = $this->load->view('main/head', array('user' => $user, 'titlePage' => 'JOB7VN Group|Contact'), TRUE);
 		$header = $this->load->view('main/header', array(
 			'logo' => 'img/header/allSHIGOTO.png',
 			'showTitle' => true,

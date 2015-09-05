@@ -13,8 +13,10 @@ $(function(){
 	$(window).scroll(function(){
 		if ($(this).scrollTop() > 100) {
 			$('.scrollToTop').fadeIn();
+			$('.title-job-scroll').removeClass('hide');
 		} else {
 			$('.scrollToTop').fadeOut();
+			$('.title-job-scroll').addClass('hide');
 		}
 	});
 	

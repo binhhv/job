@@ -8,7 +8,9 @@ if (isset($titlePage)) {
 }
 ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="refresh" content="1200;url=<?php echo base_url('logout')?>">
+<?php if (isset($user)) {?>
+<meta http-equiv="refresh" content="1200;url=<?php echo base_url('logout')?>"><?php }
+?>
 <!-- CSS
 ================================================== -->
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
@@ -72,6 +74,14 @@ if (isset($titlePage)) {
 <script src="<?php echo base_url()?>/assets/main/datetimepicker/DateTimePicker.js"></script>
 <script src="<?php echo base_url()?>/assets/main/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
 
+ <!-- <script src="<?php echo base_url()?>/assets/main/js/map/markerwithlabel.js"></script>-->
+ <?php
+if (isset($scriptJob)) {
+	foreach ($scriptJob as $script) {?>
+    <script src="<?php echo base_url() . $script;?>"></script>
+  <?php }
+}
+?>
 <!--<script src="<?php echo base_url()?>/assets/main/js/jquery4a80.js"></script>-->
 <!-- <script src="<?php echo base_url()?>/assets/common/js/jquery.prettyPhoto.js"></script>
 <script src="<?php echo base_url()?>/assets/common/js/jquery.flexslider.js"></script>
@@ -176,3 +186,4 @@ if (isset($titlePage)) {
 <script>
   var base_website = "<?php echo base_url();?>";
 </script>
+

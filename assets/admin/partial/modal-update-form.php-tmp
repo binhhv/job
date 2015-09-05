@@ -1,6 +1,6 @@
 <section ng-controller="documentController">
     <div class="modal-header">
-        <h3 class="modal-title">Thông tin hồ sơ</h3>
+        <h3 class="modal-title">Thông tin hồ sơ <label class="btn btn-default">{{docform.docon_code}}</label></h3>
     </div>
     <div class="modal-body">
             <form name="updateFormForm" novalidate>
@@ -43,9 +43,7 @@
                                 <select class="form-control" name="docon_map_job_level" id="docon_map_job_level"
       ng-options="option.ljob_level for option in docform.listLevels track by option.ljob_id"
       ng-model="docform.object_level"></select>
-                                   <!-- <select name="rec_job_map_level" ng-model="rec.rec_job_map_level" class="form-control">
-                                      <option ng-repeat="option in rec.listLevels" value="{{option.ljob_id}}">{{option.ljob_level}}</option>
-                                    </select> -->
+
                                 </div>
                             </div>
 
@@ -100,10 +98,17 @@
                             </div>
 
                             <div class="form-group col-sm-6">
-                                <label class="control-label" for="surname">Nghề nghiệp </label><label class="text-danger" >*</label>
+                             <label class="control-label" for="suburb">Nghề nghiệp</label><label class="text-danger">(*)</label>
+                                <div class="controls">
+                                <select class="form-control" name="docon_career" id="docon_career"
+      ng-options="option.career_name for option in docform.listCareers track by option.career_id"
+      ng-model="docform.object_career"></select>
+
+                                </div>
+                                <!-- <label class="control-label" for="surname">Nghề nghiệp </label><label class="text-danger" >*</label>
                                 <div class="controls">
                                     <input type="text" name="career" ng-model="docform.docon_career" id="career" class="form-control" required>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="form-group col-sm-6">
                                 <label class="control-label" for="suburb">Bằng cấp/Giấy chứng nhận</label><label class="text-danger" >*</label>

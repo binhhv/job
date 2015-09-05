@@ -114,40 +114,24 @@
     </div>
 </div>
 
-<script>
+<script type="text/javascript">
 $(document).ready(function() {
-/** this is come when complete page is fully loaded, including all frames, objects and images **/
-var h = window.innerHeight;
-//$(window).height();
+ // alert("123123");
+var h = document.documentElement.clientHeight;
+//window.innerHeight;
 
     h = (h*80)/100;
-// (h > 300) ? h-100 : h;
-
-       // $( "<style>.modal-body {height:'"+h+"px'; overflow:auto;}</style>" ).appendTo( "head" )
-    $('<style type="text/css">#main-page {min-height:'+h+'px; }</style>').appendTo($('head'));
+    //alert(h+'');
+    $('<style type="text/css">#main-page,.contact-page,.job-detail {min-height:'+h+'px; }</style>').appendTo($('head'));
 
 });
 $( window ).resize(function() {
-  var h = window.innerHeight;
-//$(window).height();
+  var h = document.documentElement.clientHeight;
+//window.innerHeight;
 
   h = (h*80)/100;
-//(h > 300) ? h-100 : h;
-
-       // $( "<style>.modal-body {height:'"+h+"px'; overflow:auto;}</style>" ).appendTo( "head" )
-  $('<style type="text/css">#main-page {min-height:'+h+'px; }</style>').appendTo($('head'));
+  $('<style type="text/css">#main-page,.contact-page,.job-detail {min-height:'+h+'px; }</style>').appendTo($('head'));
 
 
 });
-
-//$(function(){
-   // alert("123123");
-  //});
-    //$(document).ready(function(){
-      //  var h = $(window).height();
-
-       // $( "<style>.modal-body {height:'"+h+"px'; overflow:auto;}</style>" ).appendTo( "head" )
-        //$('<style type="text/css">.modal-body {height:'+h+'px; overflow:auto;}</style>').appendTo($('head'));
-
-   // });
     </script>

@@ -6419,7 +6419,7 @@ a.button-white {
 
 label {
     font: 400 14px/normal "VNHongHaHep",Montserrat, sans-serif;
-    text-transform: uppercase
+    /*text-transform: uppercase*/
 }
 
 button, input, textarea {

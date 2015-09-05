@@ -30,6 +30,12 @@
 
 
 @media (max-width: 767px) {
+	.job-detail{
+		padding: 0 !important;
+	}
+	.employer-page{
+		padding: 0 !important;
+	}
 	.no-padding-right{
 		padding-right: 15px;
 		padding-left: 0 !important;

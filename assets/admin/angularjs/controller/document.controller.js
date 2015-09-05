@@ -149,18 +149,19 @@ $scope.formatDate = function(date){
             var modalInstance = $modal.open({
                 animation: $scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-update-form.php',
-                controller: function ($scope, $modalInstance, docform,provinceform,listProvinces,listCountries,listLevels){
+                controller: function ($scope, $modalInstance, docform,provinceform,listProvinces,listCountries,listLevels,listCareers){
                     $scope.docform = docform;
                    $scope.docform.object_docon_healthy = {healthy_id:docform.docon_healthy,healthy_type:docform.healthy_type};
                     //$scope.docform.docon_healthy = $scope.getValueHealthy($scope.docform.healthy_id,$scope.docform.listHealthy);
                     $scope.docform.docon_birthday = new Date(docform.docon_birthday);
                     $scope.docform.object_level = {ljob_id:selectedform.ljob_id,ljob_level:selectedform.ljob_level};
-                    
+                    $scope.docform.object_career = {career_id:selectedform.docon_career,career_name:selectedform.career_name};
                     $scope.docform.listLevels = listLevels;
                     $scope.docform.listCountries = listCountries;
                     $scope.docform.object_country = selectedform.docon_map_country;
                     $scope.docform.provinceSelected = (provinceform) ? provinceform : [];
                     $scope.docform.listProvinces = listProvinces;
+                    $scope.docform.listCareers = listCareers;
                     //$("#select-Province").addClass('hide');
                     console.log(selectedform.docon_map_country);
                     //$scope.manager.account_password = '';
@@ -191,6 +192,9 @@ $scope.formatDate = function(date){
                     },
                     listLevels:function(){
                         return documentService.getListLevel();
+                    },
+                    listCareers:function(){
+                        return documentService.getListCareer();
                     }
                 },
                 scope:$scope,
@@ -273,7 +277,7 @@ $scope.formatDate = function(date){
             var modalInstance = $modal.open({
                 animation: $scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-create-form.php',
-                controller: function ($scope, $modalInstance,listProvinces,listCountries,listLevels,csrf,listHealthy){
+                controller: function ($scope, $modalInstance,listProvinces,listCountries,listLevels,csrf,listHealthy,listCareers){
                     $scope.docform = {};
                   // $scope.docform.object_docon_healthy = {healthy_id:docform.docon_healthy,healthy_type:docform.healthy_type};
                     //$scope.docform.docon_healthy = $scope.getValueHealthy($scope.docform.healthy_id,$scope.docform.listHealthy);
@@ -287,6 +291,8 @@ $scope.formatDate = function(date){
                     $scope.docform.provinceSelected = [];
                     $scope.docform.listProvinces = listProvinces;
                     $scope.docform.object_docon_healthy = listHealthy[0];
+                    $scope.docform.listCareers = listCareers;
+                    $scope.docform.object_career = listCareers[0];
                     //$("#select-Province").addClass('hide');
                     //console.log(selectedform.docon_map_country);
                     //$scope.manager.account_password = '';
@@ -318,6 +324,9 @@ $scope.formatDate = function(date){
                     },
                     listHealthy: function(){
                         return documentService.getListHealthyNoRT();
+                    },
+                    listCareers:function(){
+                        return documentService.getListCareer();
                     }
 
                 },

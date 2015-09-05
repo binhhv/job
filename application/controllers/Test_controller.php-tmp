@@ -27,5 +27,8 @@ class Test_controller extends CI_Controller {
 		$valuelat  = (int) $arrlat[1]+(((int) $arrlat[2])/60)+(((int) $arrlat[3])/3600);
 		return array("long" => $valuelong, "lat" => $valuelat);
 	}
+	function getLongLatFromAddress() {
+
+	}
 
 }

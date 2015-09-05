@@ -34,7 +34,7 @@
                             <div class="form-group col-sm-6">
                                 <label class="control-label" for="surname">Nghề nghiệp </label>
                                 <div class="controls">
-                                    {{documentJobseeker.docon_career}}
+                                    {{documentJobseeker.career_name}}
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">

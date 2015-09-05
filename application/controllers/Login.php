@@ -24,23 +24,27 @@ class Login extends CI_Controller {
 				'name' => $this->security->get_csrf_token_name(),
 				'hash' => $this->security->get_csrf_hash(),
 			);
-			$this->loadViewLogin();
-		} else {
-			//if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
-			//$current_url = $this->session->userdata('last_page');
-			//$this->session->unset_userdata('last_page');
-			//redirect(base_url($current_url));
 			$url = $this->input->get('url');
-			if (strlen($url) > 0) {
-				redirect($url);
-			} else {
-				redirect(base_url('/'));
-			}
-			//} else {
-			//redirect(base_url() . 'admin');
-			//}
-
+			log_message('error', $url);
+			$this->session->set_userdata('redirect', array('url' => $url));
+			$this->loadViewLogin();
 		}
+		// } else {
+		// 	//if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
+		// 	//$current_url = $this->session->userdata('last_page');
+		// 	//$this->session->unset_userdata('last_page');
+		// 	//redirect(base_url($current_url));
+		// 	$url = $this->input->get('url');
+		// 	if (strlen($url) > 0) {
+		// 		redirect($url);
+		// 	} else {
+		// 		redirect(base_url('/'));
+		// 	}
+		// 	//} else {
+		// 	//redirect(base_url() . 'admin');
+		// 	//}
+
+		// }
 	}
 	function loadViewLogin($error = null) {
 		$head = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Contact'), TRUE);
@@ -116,13 +120,17 @@ class Login extends CI_Controller {
 			//$current_url = $this->session->userdata['last_page'];
 			//$this->session->unset_userdata('last_page');
 			//redirect($current_url, 'refresh');
-			$url = $this->input->get('url');
-			if (strlen($url) > 0) {
+			$url = $this->session->userdata['redirect']['url'];
+			log_message('error', $url);
+			if (isset($url)) {
+				//$url = $this->session->userdata['redirect'];
+				//unset($_SESSION['redicrect']);
+				$this->session->unset_userdata('redirect');
 				redirect($url);
-			} else {
-				redirect(base_url('/'));
-			}
 
+			} else {
+				redirect(base_url());
+			}
 		}
 
 	}

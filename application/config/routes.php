@@ -135,6 +135,7 @@ $route['admin/document/getListProvinceDocument/(:num)/(:num)'] = 'admin/admin_do
 $route['admin/document/createForm'] = 'admin/admin_document/createForm';
 $route['admin/document/uploadCV'] = 'admin/admin_document/uploadCV';
 $route['admin/document/upload'] = 'admin/admin_document/upload';
+$route['admin/document/getListCareer'] = 'admin/admin_document/getListCareer';
 
 //contact admin
 $route['admin/contact'] = 'admin/admin_contact/index';

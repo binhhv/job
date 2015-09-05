@@ -94,6 +94,18 @@ app.factory('documentService' ,function ($http,$q,$timeout){
 			    });
 			    return defer.promise;
 		};
+		_documentService.getListCareer = function(){
+			var temp = {};
+			    var defer = $q.defer();
+			    $http.get(pathWebsite + 'admin/document/getListCareer').success(function(data){
+			            temp =data;
+			            $timeout(function(){
+					      defer.resolve(data);
+					    }, 750) 
+
+			    });
+			    return defer.promise;
+			};
 		_documentService.getTokenReturn = function(){
 			var temp = {};
 			    var defer = $q.defer();

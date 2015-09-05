@@ -226,7 +226,7 @@ class Document_model extends CI_Model {
 			$queryjoin .= " jobseeker b on b.jobseeker_id = a.docon_map_jobseeker and b.jobseeker_is_delete = 0";
 		}
 		$sql = "select a.*," . $querystatement . ",c.*,
-				d.province,e.*
+				d.province,e.*,f.*
 				from document_online a
 				left join " . $queryjoin . "
 				left join healthy c on c.healthy_id = a.docon_healthy
@@ -236,6 +236,7 @@ class Document_model extends CI_Model {
 							where doconmp_is_delete = 0
 							group by doconmp_map_docon) as d on d.doconmp_map_docon = a.docon_id
 				left join job_level e on e.ljob_id = a.docon_map_job_level and ljob_is_delete = 0
+				left join career f on f.career_id = a.docon_career and f.career_is_delete = 0
 				where a.docon_is_delete = 0 and a.docon_type = " . $doctype . " and docon_id = ?";
 		$data = array($id);
 		return $this->dbutil->getOneRowQueryFromDb($sql, $data);
@@ -257,6 +258,13 @@ class Document_model extends CI_Model {
 		return $this->dbutil->getFromDb($data);
 	}
 
+	function getListCareer() {
+		$data = array(
+			'fields' => 'career_id,career_name',
+			'from' => 'career',
+			'where' => 'career_is_delete = 0');
+		return $this->dbutil->getFromDb($data);
+	}
 	//doc type  on recruitment_apply
 	//1: cv
 	//2: doc online

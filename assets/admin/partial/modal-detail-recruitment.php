@@ -1,4 +1,4 @@
-<section>
+<section ng-controller="recruitmentController">
     <div class="modal-header">
         <h3 class="modal-title">Chi tiết tin tuyển dụng</h3>
     </div>

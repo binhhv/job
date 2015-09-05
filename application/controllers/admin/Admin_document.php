@@ -91,7 +91,7 @@ class Admin_document extends CI_Controller {
 		$docon_id = $form['docon_id'];
 		$docon_birthday = $form['docon_birthday'];
 		$docon_phone = $form['docon_phone'];
-		$docon_career = $form['docon_career'];
+		$docon_career = $form['object_career']['career_id'];
 		$docon_degree = $form['docon_degree'];
 		$docon_education = $form['docon_education'];
 		$docon_address = $form['docon_address'];
@@ -147,7 +147,7 @@ class Admin_document extends CI_Controller {
 		$docon_id = $form['docon_id'];
 		$docon_birthday = $form['docon_birthday'];
 		$docon_phone = $form['docon_phone'];
-		$docon_career = $form['docon_career'];
+		$docon_career = $form['object_career']['career_id'];
 		$docon_degree = $form['docon_degree'];
 		$docon_education = $form['docon_education'];
 		$docon_address = $form['docon_address'];
@@ -276,7 +276,10 @@ class Admin_document extends CI_Controller {
 		$output = $this->healthy->getListHealthy();
 		echo json_encode($output);
 	}
-
+	public function getListCareer() {
+		$output = $this->document->getListCareer();
+		echo json_encode($output);
+	}
 	public function cvStoreManager() {
 		$scripts = array(
 			"assets/admin/angularjs/controller/document.controller.js", "assets/admin/angularjs/service/document.service.js");

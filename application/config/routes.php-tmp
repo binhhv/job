@@ -66,8 +66,6 @@ $route['admin/checkLogin'] = 'admin/login/checkLogin';
 $route['admin/logout']     = 'admin/login/logout';
 //jobseeker admin route
 $route['admin/jobseeker']                        = 'admin/admin/jobseekerManager';
-$route['register']                               = 'register/index';
-$route['uploadcv']                               = 'uploadcv/index';
 $route['admin/jobseeker/getListJobseeker']       = 'admin/admin/jobseeker';
 $route['admin/jobseeker/createJobseeker']        = 'admin/admin/createJobseeker';
 $route['admin/jobseeker/updateJobseeker']        = 'admin/admin/updateJobseeker';
@@ -137,6 +135,7 @@ $route['admin/document/getListProvinceDocument/(:num)/(:num)'] = 'admin/admin_do
 $route['admin/document/createForm']                            = 'admin/admin_document/createForm';
 $route['admin/document/uploadCV']                              = 'admin/admin_document/uploadCV';
 $route['admin/document/upload']                                = 'admin/admin_document/upload';
+$route['admin/document/getListCareer']                         = 'admin/admin_document/getListCareer';
 
 //contact admin
 $route['admin/contact']                          = 'admin/admin_contact/index';
@@ -160,6 +159,10 @@ $route['sendmail']     = 'sendmail/index';
 $route['sendmailtest'] = 'Test_mail/index';
 $route['test/array']   = 'Test_controller/testarray';
 
+//user
+$route['register']          = 'register/index';
+$route['uploadcv']          = 'uploadcv/index';
+$route['createrecruitment'] = 'createrecruitment/index';
 //coming soon
 $route['admin/category'] = 'admin/admin_comingsoon/index';
 $route['admin/setup']    = 'admin/admin_comingsoon/index';
@@ -180,3 +183,6 @@ $route['test1'] = 'test_controller/updateProvince';
 $route['login']      = 'login/index';
 $route['logout']     = 'login/logout';
 $route['checkLogin'] = 'login/checkLogin';
+
+//employer page
+$route['employer'] = 'employer/employer/index';

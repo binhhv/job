@@ -100,10 +100,17 @@
                             </div>
 
                             <div class="form-group col-sm-6">
-                                <label class="control-label" for="surname">Nghề nghiệp </label><label class="text-danger" >*</label>
+                            <label class="control-label" for="suburb">Nghề nghiệp</label><label class="text-danger">(*)</label>
+                                <div class="controls">
+                                <select class="form-control" name="docon_career" id="docon_career"
+      ng-options="option.career_name for option in docform.listCareers track by option.career_id"
+      ng-model="docform.object_career"></select>
+
+                                </div>
+                                <!-- <label class="control-label" for="surname">Nghề nghiệp </label><label class="text-danger" >*</label>
                                 <div class="controls">
                                     <input type="text" name="career" ng-model="docform.docon_career" id="career" class="form-control" required>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="form-group col-sm-6">
                                 <label class="control-label" for="suburb">Bằng cấp/Giấy chứng nhận</label><label class="text-danger" >*</label>

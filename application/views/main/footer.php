@@ -120,12 +120,12 @@ $(document).ready(function() {
 var h = document.documentElement.clientHeight;//window.innerHeight;
     h = (h*80)/100;
     //alert(h+'');
-    $('<style type="text/css">#main-page,.contact-page {min-height:'+h+'px; }</style>').appendTo($('head'));
+    $('<style type="text/css">#main-page,.contact-page,.job-detail {min-height:'+h+'px; }</style>').appendTo($('head'));
 });
 $( window ).resize(function() {
   var h = document.documentElement.clientHeight;//window.innerHeight;
   h = (h*80)/100;
-  $('<style type="text/css">#main-page,.contact-page {min-height:'+h+'px; }</style>').appendTo($('head'));
+  $('<style type="text/css">#main-page,.contact-page,.job-detail {min-height:'+h+'px; }</style>').appendTo($('head'));
 
 });
     </script>
