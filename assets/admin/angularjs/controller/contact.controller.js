@@ -72,7 +72,7 @@ $scope.formatDate = function(date){
     $scope.openModalRead = function (size,contact) {
             
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-read-contact.php',
                 controller: function ($scope, $modalInstance, contact,view){
                     $scope.contact = contact;
@@ -101,7 +101,8 @@ $scope.formatDate = function(date){
 
                 },
                 scope:$scope,
-                backdrop:'static'
+                backdrop:'static',
+                 windowClass: "modal fade in"
 
             });
 
@@ -117,7 +118,7 @@ $scope.formatDate = function(date){
         $scope.openModalReply = function (size,contact) {
             
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-reply-contact.php',
                 controller: function ($scope, $modalInstance, contact,csrf){
                     $scope.contact = contact;
@@ -145,7 +146,8 @@ $scope.formatDate = function(date){
                     }
                 },
                 scope:$scope,
-                backdrop:'static'
+                backdrop:'static',
+                 windowClass: "modal fade in"
 
             });
 
@@ -190,7 +192,7 @@ $scope.formatDate = function(date){
         $scope.openModalDelete = function (size,contact) {
             
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-delete-contact.php',
                 controller: function ($scope, $modalInstance, contact,csrf){
                     $scope.contact = contact;
@@ -216,7 +218,8 @@ $scope.formatDate = function(date){
                     }
                 },
                 scope:$scope,
-                backdrop:'static'
+                backdrop:'static',
+                 windowClass: "modal fade in"
 
             });
 

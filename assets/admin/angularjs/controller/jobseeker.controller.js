@@ -67,7 +67,7 @@ app.controller('jobseekerController', function (jobseekerService,$scope, $http, 
             });
             //alert(data);
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-update-jobseeker.php',
                 controller: function ($scope, $modalInstance, jobseeker){
                     $scope.jobseeker = jobseeker;
@@ -82,6 +82,7 @@ app.controller('jobseekerController', function (jobseekerService,$scope, $http, 
 
                 },
                 size: size,
+                 windowClass: "modal fade in",
                 resolve: {
                     jobseeker: function () {
                         return selectedjobseeker;
@@ -106,7 +107,7 @@ app.controller('jobseekerController', function (jobseekerService,$scope, $http, 
             });
             //alert(data);
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-delete-jobseeker.php',
                 controller: function ($scope, $modalInstance, jobseeker){
                     $scope.jobseeker = jobseeker;
@@ -135,7 +136,8 @@ app.controller('jobseekerController', function (jobseekerService,$scope, $http, 
                     }
                 },
                 scope: $scope,
-                 backdrop: 'static'
+                 backdrop: 'static',
+                  windowClass: "modal fade in"
             });
 
             modalInstance.result.then(function (selectedItem) {
@@ -214,7 +216,7 @@ app.controller('jobseekerController', function (jobseekerService,$scope, $http, 
 
             
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-create-jobseeker.php',
                 controller: function ($scope, $modalInstance,csrf){
                     $scope.csrf = csrf;
@@ -232,6 +234,8 @@ app.controller('jobseekerController', function (jobseekerService,$scope, $http, 
                     };
 
                 },
+               //  animation: false,
+                windowClass: "modal fade in",
                 size: size,
                 scope:$scope,
                 resolve: {
@@ -257,6 +261,8 @@ app.controller('jobseekerController', function (jobseekerService,$scope, $http, 
             if(data){
                 alertCreateSuccess();
                 $scope.pagedItems[$scope.pagedItems.length] = data;
+
+                $scope.ok();
 
             }
             else{
@@ -293,7 +299,7 @@ app.controller('detailJobseekerController', function (jobseekerService,$scope, $
     $scope.modalDocument = function (size,id) {
            
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-document-jobseeker.php',
                 controller: function ($scope, $modalInstance, documentJobseeker){
                     $scope.documentJobseeker = documentJobseeker;
@@ -307,6 +313,7 @@ app.controller('detailJobseekerController', function (jobseekerService,$scope, $
 
                 },
                 size: size,
+                windowClass: "modal fade in",
                 resolve: {
                     documentJobseeker: function () {
                          return jobseekerService.getDetailDocument(id);

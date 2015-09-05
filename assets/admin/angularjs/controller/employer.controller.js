@@ -87,7 +87,7 @@ app.controller('employerController', function (employerService,employerRecruitme
             });
             //alert(data);
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-update-employer.php',
                 controller: function ($scope, $modalInstance, employer,listCountrys,listProvinces){
                     $scope.employer = employer;
@@ -124,7 +124,8 @@ app.controller('employerController', function (employerService,employerRecruitme
                     }
                 },
                 scope:$scope,
-                backdrop:'static'
+                backdrop:'static',
+                 windowClass: "modal fade in"
             });
 
             modalInstance.result.then(function (selectedItem) {
@@ -188,7 +189,7 @@ app.controller('employerController', function (employerService,employerRecruitme
             });
             //alert(data);
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-delete-employer.php',
                 controller: function ($scope, $modalInstance, employer){
                     $scope.employer = employer;
@@ -215,7 +216,8 @@ app.controller('employerController', function (employerService,employerRecruitme
                     }
                 },
                 scope: $scope,
-                backdrop: 'static'
+                backdrop: 'static',
+                 windowClass: "modal fade in"
             });
 
             modalInstance.result.then(function (selectedItem) {
@@ -281,7 +283,7 @@ app.controller('employerController', function (employerService,employerRecruitme
 
             
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-create-employer.php',
                 controller: function ($scope, $modalInstance,csrf,listCountrys,listProvinces){
                     $scope.employer = {};
@@ -324,7 +326,9 @@ app.controller('employerController', function (employerService,employerRecruitme
                         return employerRecruitmentService.getListProvinceCountry(countrySelected);
                     }
                 },
-                backdrop:'static'
+                backdrop:'static',
+                 windowClass: "modal fade in"
+
 
             });
 
@@ -510,7 +514,7 @@ $scope.formatDate = function(date){
             //alert(data);
            // console.log(selecteduseremployer);
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-update-employer-user.php',
                 controller: function ($scope, $modalInstance, jobseeker){
                     $scope.jobseeker = jobseeker;
@@ -527,6 +531,7 @@ $scope.formatDate = function(date){
 
                 },
                 size: size,
+                 windowClass: "modal fade in",
                 resolve: {
                     jobseeker: function () {
                         return selecteduseremployer;
@@ -551,7 +556,7 @@ $scope.formatDate = function(date){
             });
             //alert(data);
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-delete-employer-user.php',
                 controller: function ($scope, $modalInstance, jobseeker){
                     $scope.jobseeker = jobseeker;
@@ -582,7 +587,8 @@ $scope.formatDate = function(date){
                     }
                 },
                 scope: $scope,
-                 backdrop: 'static'
+                 backdrop: 'static',
+                  windowClass: "modal fade in"
             });
 
             modalInstance.result.then(function (selectedItem) {
@@ -643,7 +649,7 @@ $scope.formatDate = function(date){
 
             
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-create-employer-user.php',
                 controller: function ($scope, $modalInstance,csrf,employerid,employername,exitsAdminCreate){
                     $scope.csrf = csrf;
@@ -669,6 +675,7 @@ $scope.formatDate = function(date){
                 },
                 size: size,
                 scope:$scope,
+                 windowClass: "modal fade in",
                 resolve: {
                     csrf: function () {
                       return jobseekerService.getTokenReturn();
@@ -791,7 +798,7 @@ $scope.modalDetailEmployerRecruitment = function (size,idrec) {
            // console.log(selecteduseremployer);
            // $scope.listWelfares = [];
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-detail-employer-recruitment.php',
                 controller: function ($scope, $modalInstance, rec){
                     $scope.rec = rec;
@@ -814,6 +821,7 @@ $scope.modalDetailEmployerRecruitment = function (size,idrec) {
 
                 },
                 size: size,
+                 windowClass: "modal fade in",
                 resolve: {
                     rec: function () {
                         return employerRecruitmentService.getDetailEmployerRecruitment(idrec);
@@ -881,7 +889,7 @@ $scope.modalDetailEmployerRecruitment = function (size,idrec) {
             console.log(selectedrecruitment.welfareSelected);
             
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-update-employer-recruitment.php',
                 controller: function ($scope, $modalInstance, rec,listCareers){
                     $scope.rec = rec;
@@ -918,7 +926,8 @@ $scope.modalDetailEmployerRecruitment = function (size,idrec) {
                     }
                 },
                 scope:$scope,
-                backdrop: 'static'
+                backdrop: 'static',
+                 windowClass: "modal fade in"
             });
 
             modalInstance.result.then(function (selectedItem) {
@@ -1001,7 +1010,7 @@ $scope.modalDetailEmployerRecruitment = function (size,idrec) {
             //alert(data);
             //console.log(selectedrecruitment);
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-delete-employer-recruitment.php',
                 controller: function ($scope, $modalInstance, recruitment){
                     $scope.recruitment = recruitment;
@@ -1025,7 +1034,8 @@ $scope.modalDetailEmployerRecruitment = function (size,idrec) {
                     }
                 },
                 scope:$scope,
-                 backdrop: 'static'
+                 backdrop: 'static',
+                  windowClass: "modal fade in"
             });
 
             modalInstance.result.then(function (selectedItem) {
@@ -1189,7 +1199,7 @@ $scope.modalDetailEmployerRecruitment = function (size,idrec) {
            
             
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-create-employer-recruitment.php',
                 controller: function ($scope, $modalInstance,idemployer,csrf,listWelfares,listCountrys,listContactForms,listForms,listFormChilds,listLevels,listProvinces,listCareers){
                     //$log.info("get object");
@@ -1270,7 +1280,8 @@ $scope.modalDetailEmployerRecruitment = function (size,idrec) {
                     // }
                 },
                 scope:$scope,
-                backdrop: 'static'
+                backdrop: 'static',
+                 windowClass: "modal fade in"
             });
 
             modalInstance.result.then(function (selectedItem) {
@@ -1321,7 +1332,7 @@ $scope.modalDetailEmployerRecruitment = function (size,idrec) {
             //alert(data);
             //console.log(selectedrecruitment);
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-approve-recruitment.php',
                 controller: function ($scope, $modalInstance, recruitment){
                     $scope.recruitment = recruitment;
@@ -1345,7 +1356,8 @@ $scope.modalDetailEmployerRecruitment = function (size,idrec) {
                     }
                 },
                 scope:$scope,
-                 backdrop: 'static'
+                 backdrop: 'static',
+                  windowClass: "modal fade in"
             });
 
             modalInstance.result.then(function (selectedItem) {

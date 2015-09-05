@@ -74,7 +74,7 @@ $scope.formatDate = function(date){
             });
             //alert(data);
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-update-manager.php',
                 controller: function ($scope, $modalInstance, manager){
                     $scope.manager = manager;
@@ -89,6 +89,7 @@ $scope.formatDate = function(date){
 
                 },
                 size: size,
+                 windowClass: "modal fade in",
                 resolve: {
                     manager: function () {
                         return selectedmanager;
@@ -113,7 +114,7 @@ $scope.formatDate = function(date){
             });
    
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-delete-manager.php',
                 controller: function ($scope, $modalInstance, manager){
                     $scope.manager = manager;
@@ -138,7 +139,8 @@ $scope.formatDate = function(date){
                     }
                 },
                 scope: $scope,
-                backdrop: 'static'
+                backdrop: 'static',
+                 windowClass: "modal fade in",
             });
 
             modalInstance.result.then(function (selectedItem) {
@@ -222,7 +224,7 @@ $scope.formatDate = function(date){
 
             
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-create-manager.php',
                 controller: function ($scope, $modalInstance,csrf){
                     $scope.csrf = csrf;
@@ -242,6 +244,7 @@ $scope.formatDate = function(date){
                 },
                 size: size,
                 scope:$scope,
+                 windowClass: "modal fade in",
                 resolve: {
                     csrf: function () {
                       return managerService.getTokenReturn();

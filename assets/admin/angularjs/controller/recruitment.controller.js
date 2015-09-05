@@ -230,7 +230,7 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
            // console.log(selecteduseremployer);
            // $scope.listWelfares = [];
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-detail-recruitment.php',
                 controller: function ($scope, $modalInstance, rec){
                    // rec.controller = "recruitmentActiveController";
@@ -254,6 +254,7 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
 
                 },
                 size: size,
+                 windowClass: "modal fade in",
                 resolve: {
                     rec: function () {
                         return employerRecruitmentService.getDetailEmployerRecruitment(idrec);
@@ -321,7 +322,7 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
             console.log(selectedrecruitment.welfareSelected);
             
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-update-recruitment.php',
                 controller: function ($scope, $modalInstance, rec,listCareers){
                     $scope.rec = rec;
@@ -374,7 +375,8 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
 
                 },
                 scope:$scope,
-                backdrop: 'static'
+                backdrop: 'static',
+                 windowClass: "modal fade in",
             });
 
             modalInstance.result.then(function (selectedItem) {
@@ -457,7 +459,7 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
             //alert(data);
             //console.log(selectedrecruitment);
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-delete-recruitment.php',
                 controller: function ($scope, $modalInstance, recruitment){
                     $scope.recruitment = recruitment;
@@ -481,7 +483,8 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
                     }
                 },
                 scope:$scope,
-                 backdrop: 'static'
+                 backdrop: 'static',
+                  windowClass: "modal fade in",
             });
 
             modalInstance.result.then(function (selectedItem) {
@@ -646,7 +649,7 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
             //alert(data);
             //console.log(selectedrecruitment);
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-set-approve-recruitment.php',
                 controller: function ($scope, $modalInstance, recruitment){
                     $scope.recruitment = recruitment;
@@ -670,7 +673,8 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
                     }
                 },
                 scope:$scope,
-                 backdrop: 'static'
+                 backdrop: 'static',
+                  windowClass: "modal fade in",
             });
 
             modalInstance.result.then(function (selectedItem) {
@@ -702,7 +706,7 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
        $scope.openModalViewApply = function(size,idrecruitment){
         //getRecruitmentApply
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-apply-recruitment.php',
                 controller: function ($scope, $modalInstance, idrecruitment,listApply){
                     //$scope.rec = {}
@@ -731,7 +735,8 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
 
                 },
                 scope:$scope,
-                 backdrop: 'static'
+                 backdrop: 'static',
+                  windowClass: "modal fade in",
             });
 
             modalInstance.result.then(function (selectedItem) {

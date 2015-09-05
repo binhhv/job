@@ -147,7 +147,7 @@ $scope.formatDate = function(date){
                  
            //}
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,///$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-update-form.php',
                 controller: function ($scope, $modalInstance, docform,provinceform,listProvinces,listCountries,listLevels,listCareers){
                     $scope.docform = docform;
@@ -198,7 +198,8 @@ $scope.formatDate = function(date){
                     }
                 },
                 scope:$scope,
-                backdrop:'static'
+                backdrop:'static',
+                 windowClass: "modal fade in"
 
             });
 
@@ -275,7 +276,7 @@ $scope.formatDate = function(date){
     $scope.openModalCreateForm = function (size,country) {
       
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-create-form.php',
                 controller: function ($scope, $modalInstance,listProvinces,listCountries,listLevels,csrf,listHealthy,listCareers){
                     $scope.docform = {};
@@ -331,7 +332,8 @@ $scope.formatDate = function(date){
 
                 },
                 scope:$scope,
-                backdrop:'static'
+                backdrop:'static',
+                 windowClass: "modal fade in"
 
             });
 
@@ -459,7 +461,7 @@ $scope.formatDate = function(date){
             //selectedcv.message = 'Chúng tôi đã xem và thấy cv của bạn không hợp lệ. Chúng tôi quyết định xóa CV của bạn.'
             //alert(data);
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-delete-cv.php',
                 controller: function ($scope, $modalInstance, cv){
                     $scope.cv = cv;
@@ -482,7 +484,8 @@ $scope.formatDate = function(date){
                     }
                 },
                 scope: $scope,
-                backdrop: 'static'
+                backdrop: 'static',
+                 windowClass: "modal fade in"
             });
 
             modalInstance.result.then(function (selectedItem) {
@@ -525,7 +528,7 @@ $scope.formatDate = function(date){
             //selectedcv.message = 'Chúng tôi đã xem và thấy cv của bạn không hợp lệ. Chúng tôi quyết định xóa CV của bạn.'
             //alert(data);
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-delete-form.php',
                 controller: function ($scope, $modalInstance, docform){
                     $scope.docform = docform;
@@ -548,7 +551,8 @@ $scope.formatDate = function(date){
                     }
                 },
                 scope: $scope,
-                backdrop: 'static'
+                backdrop: 'static',
+                 windowClass: "modal fade in"
             });
 
             modalInstance.result.then(function (selectedItem) {
@@ -580,7 +584,7 @@ $scope.formatDate = function(date){
     $scope.modalDetailForm = function (size,id,type) {
            
             var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-document-form.php',
                 controller: function ($scope, $modalInstance, documentJobseeker){
                     $scope.documentJobseeker = documentJobseeker;
@@ -594,6 +598,7 @@ $scope.formatDate = function(date){
 
                 },
                 size: size,
+                 windowClass: "modal fade in",
                 resolve: {
                     documentJobseeker: function () {
                          return documentService.getDetailForm(id,type);
@@ -611,7 +616,7 @@ $scope.formatDate = function(date){
 
     $scope.openModalUploadCV = function(size){
         var modalInstance = $modal.open({
-                animation: $scope.animationsEnabled,
+                animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-upload-cv.php',
                 controller: function ($scope, $modalInstance,csrf){
                    // $scope.documentJobseeker = documentJobseeker;
@@ -635,7 +640,8 @@ $scope.formatDate = function(date){
                     }
                 },
                 scope:$scope,
-                backdrop:'static'
+                backdrop:'static',
+                 windowClass: "modal fade in",
             });
 
             modalInstance.result.then(function (selectedItem) {
