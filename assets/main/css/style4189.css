@@ -10857,7 +10857,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .alert-danger {
     width: 100%;
     margin: 0 15px;
-        padding: 3px 0 3px 15px;
+        padding: 3px 15px 3px 15px;
 }
 .alert-danger, .alert-error, .label-danger, .modal-danger .modal-body {
     background-color: #dd4b39 !important;

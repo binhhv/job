@@ -33,25 +33,27 @@ $lang['last_name_re_user'] = "Họ";
 $lang['btn_register_re_user'] = "ĐĂNG KÝ";
 
 #Deployer register
-$lang['title_re_depl'] = "DOANH NGHIỆP ĐĂNG KÝ";
+$lang['title_re_depl'] = "CÔNG TY ĐĂNG KÝ";
 $lang['title_register_re_depl'] = "Thông tin đăng nhập";
-$lang['title_depoyer_re_depl'] = "Thông tin doanh nghiệp";
+$lang['title_depoyer_re_depl'] = "Thông tin công ty";
 $lang['title_user_re_depl'] = "Thông tin chủ tài khoản";
-$lang['employer_name_re_depl'] = "Tên doanh nghiệp";
-$lang['employer_size_re_depl'] = "Qui mô doanh nghiệp";
-$lang['employer_phone_re_depl'] = "Điện thoại cố định";
+$lang['employer_name_re_depl'] = "Tên công ty";
+$lang['employer_size_re_depl'] = "Quy mô";
+$lang['employer_phone_re_depl'] = "Số điện thoại";
 $lang['employer_fax_re_depl'] = "Số fax";
-$lang['employer_about_re_depl'] = "Giới thiệu doanh nghiệp";
+$lang['employer_about_re_depl'] = "Giới thiệu công ty";
 $lang['employer_address_re_depl'] = "Địa chỉ";
-$lang['employer_map_province_re_depl'] = "Tỉnh/thành phố";
+$lang['employer_map_province_re_depl'] = "Tỉnh/Thành phố";
 $lang['employer_website_re_depl'] = "Website";
-$lang['employer_logo_re_depl'] = "Logo doanh nghiệp";
-
+$lang['employer_logo_re_depl'] = "Logo công ty";
 $lang['employer_contact_name_re_depl'] = "Tên người liên hệ";
 $lang['employer_contact_email_re_depl'] = "Email liên hệ";
 $lang['employer_contact_phone_re_depl'] = "số điện thoại liên hệ";
 $lang['employer_contact_mobile_re_depl'] = "Số di động";
 
+#Deployer update imformation
+$lang['title_re_depl_update'] = "CẬP NHẬT THÔNG TIN CÔNG TY";
+$lang['btn_update_employer'] = "CẬP NHẬT";
 #upload cv
 $lang['title_upload_cv'] = "GỬI HỒ SƠ CHO NHÀ TUYỂN DỤNG";
 $lang['doccv_file_tmp'] = "Tệp đính kèm";

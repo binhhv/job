@@ -1,3 +1,4 @@
+
 	<div class="container employer-page">
 		<div class="row">
 			<div class="col-sm-4 col-sm-push-8">
@@ -58,7 +59,7 @@ default:
 								</div>
 								<div class="col-sm-12 employer-line"></div>
 								<div class="col-sm-12 employer-tools-item">
-									<a href=""><i class="fa fa-pencil-square-o"></i>&nbsp;Đăng tin tuyển dụng</a>
+									<a href="#create_recruitmentModel"  data-toggle="modal"><i class="fa fa-pencil-square-o"></i>&nbsp;Đăng tin tuyển dụng</a>
 								</div>
 								<div class="col-sm-12 employer-line"></div>
 								<div class="col-sm-12 employer-tools-item">
@@ -159,7 +160,7 @@ default:
 					<div class="col-sm-12 employer-line"></div>
 					<?php if ($employerInfo->account_map_role == 2) {?>
 					<div class="col-sm-12 item-field-employer text-left">
-						<button class="btn btn-primary"><i class="fa fa-pencil-square-o"></i> &nbsp; Chỉnh sửa</button>
+						<button class="btn btn-primary" data-toggle="modal" data-target="#employer_updateModal"><i class="fa fa-pencil-square-o"></i> &nbsp; Chỉnh sửa</button>
 					</div>
 					<div class="col-sm-12 employer-line"></div>
 					<?php }
@@ -196,7 +197,7 @@ default:
 					</div>
 					<div class="col-sm-12 employer-line"></div>
 					<div class="col-sm-12 item-field-employer text-left">
-						<button class="btn btn-primary"><i class="fa fa-pencil-square-o"></i> &nbsp; Chỉnh sửa</button>
+						<button class="btn btn-primary" data-toggle="modal" data-target="#employer_contact_updateModal"><i class="fa fa-pencil-square-o"></i> &nbsp; Chỉnh sửa</button>
 					</div>
 					<div class="col-sm-12 employer-line"></div>
 				</div>
@@ -222,7 +223,7 @@ default:
 					</div>
 					<div class="col-sm-12 employer-line"></div>
 					<div class="col-sm-12 item-field-employer text-left">
-						<button class="btn btn-primary"><i class="fa fa-pencil-square-o"></i> &nbsp; Chỉnh sửa</button>
+						<button class="btn btn-primary" data-toggle="modal" data-target="#employer_account_updateModal"><i class="fa fa-pencil-square-o"></i> &nbsp; Chỉnh sửa</button>
 					</div>
 					<div class="col-sm-12 employer-line"></div>
 
@@ -233,3 +234,7 @@ default:
 
 		</div>
 	</div>
+		<?php echo $update_imfomation_employer?>
+	<?php echo $update_contact_employer?>
+	<?php echo $update_account_employer?>
+	<?php echo $recruitment?>

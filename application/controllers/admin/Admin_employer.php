@@ -444,7 +444,6 @@ class Admin_employer extends CI_Controller {
 			'employer_logo' => '',
 			'employer_logo_tmp' => '',
 		);
-
 		$employer_admin_email = $employer['employer_admin_email'];
 		$employer_admin_first_name = $employer['employer_admin_first_name'];
 		$employer_admin_last_name = $employer['employer_admin_last_name'];
