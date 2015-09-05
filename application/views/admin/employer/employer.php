@@ -43,7 +43,7 @@
                 <div class="box-body table-responsive no-padding"  ng-show="filteredItems > 0">
                   <table class="table table-hover table-striped hide" id="employerTable" ng-init="getEmployers()">
                     <tr>
-                      <th class="text-center">Số TT</th>
+                      <th class="text-center">Mã số</th>
                       <th class="text-center">Logo</th>
                       <th class="text-center">Tên nhà tuyển dụng</th>
                       <th class="text-center">Số điện thoại</th>
@@ -53,7 +53,7 @@
                       <th class="text-center"></th>
                     </tr>
                     <tr ng-repeat="data in filtered = (pagedItems | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" data-id="{{data.account_id}}">
-                      <td class="text-center">{{$index + 1}}</td>
+                      <td class="text-center">{{data.employer_code}}</td><!--{{$index + 1}}-->
                       <td class="text-center"><img class="logo-small" ng-src ="<?php echo base_url();?>uploads/logo/{{data.employer_id}}/{{data.employer_logo_tmp}}" alt="logo employer"></td>
                       <td class="text-center">
                       <label><b>{{data.employer_name}}</b></label>

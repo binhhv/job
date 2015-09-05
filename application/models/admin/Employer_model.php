@@ -5,6 +5,7 @@ class Employer_model extends CI_Model {
 		# code...
 		parent::__construct();
 		$this->load->model('Dbutil', 'dbutil');
+		$this->load->model('UtilModel', 'util');
 	}
 
 	public function getListEmployer() {
@@ -75,10 +76,16 @@ class Employer_model extends CI_Model {
 		}
 	}
 	public function createEmployer($data) {
-		return $this->dbutil->insertDb($data, 'employer');
+		$result = $this->dbutil->insertDb($data, 'employer');
+		$code = $this->util->General_Code('employer', $result, 0);
+		$this->util->update_Code('employer', 'employer_code', $code, 'employer_id', $result);
+		return $result;
 	}
 	public function createAdminEmployer($data) {
-		return $this->dbutil->insertDb($data, 'account');
+		$result = $this->dbutil->insertDb($data, 'account');
+		$code = $this->util->General_Code('account', $result, 2);
+		$this->util->update_Code('account', 'account_code', $code, 'account_id', $result);
+		return $result;
 	}
 	public function insertMapEmployerAccount($data) {
 		return $this->dbutil->insertDb($data, 'employer_map_account');
@@ -102,6 +109,8 @@ class Employer_model extends CI_Model {
 	public function createEmployerUser($parameter, $parameterMapAccount, $employerid) {
 		$result = 0;
 		$idUser = $this->dbutil->insertDb($parameter, 'account');
+		$code = $this->util->General_Code('account', $idUser, 3);
+		$this->util->update_Code('account', 'account_code', $code, 'account_id', $idUser);
 		if ($idUser) {
 			$parameterMapAccount['emac_map_account'] = $idUser;
 			$idMapAccount = $this->dbutil->insertDb($parameterMapAccount, 'employer_map_account');
@@ -137,7 +146,8 @@ class Employer_model extends CI_Model {
 	}
 
 	public function getDetailEmployerRecruitment($idrecruitment) {
-		$sql = "select a.*,b.*,c.*,d.*,e.*,REPLACE(f.welfares,'\'','\"') as welfares,g.*,REPLACE(h.provinces,'\'','\"') as provinces
+		$sql = "select a.*,b.*,c.*,d.*,e.*,REPLACE(f.welfares,'\'','\"') as welfares,
+				g.*,REPLACE(h.provinces,'\'','\"') as provinces, i.*
 				from recruitment a
 				left join job_form b on b.fjob_id = a.rec_job_map_form and b.fjob_is_delete = 0
 				left join job_form_child c on c.jcform_id = a.rec_job_map_form_child and c.jcform_is_delete = 0
@@ -158,6 +168,7 @@ class Employer_model extends CI_Model {
 					FROM recruitment_map_province b left join province a on a.province_id = b.recmp_map_province
 					and a.province_is_delete = 0 where b.recmp_is_delete = 0 group by b.recmp_map_rec) as h on h.recruitment_id_ob_p = a.rec_id
 					and h.country_ob = a.rec_job_map_country
+				left join career i on i.career_id = a.rec_job_map_career and i.career_is_delete = 0
 				where a.rec_id = " . $idrecruitment;
 		return $this->dbutil->getOneRowQueryFromDb($sql, array());
 

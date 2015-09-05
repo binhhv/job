@@ -116,7 +116,7 @@ if (isset($employer)) {
                         <div class="box-body table-responsive no-padding"  ng-show="filteredItems > 0">
                           <table class="table table-hover table-striped hide" id="employerUserTable" ng-init="getEmployerUsers('<?php echo $employer->employer_id?>')">
                             <tr>
-                              <th>Số TT</th>
+                              <th>Mã số</th>
                               <th>Email</th>
                               <th>Họ tên</th>
                               <th class="text-center">Loại người dùng</th>
@@ -127,7 +127,7 @@ if (isset($employer)) {
                             </tr>
 
                             <tr ng-repeat="data in filtered = (pagedItems | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" data-id="{{data.account_id}}">
-                              <td>{{($index + ((currentPage -1)* entryLimit)) + 1}}</td>
+                              <td>{{data.account_code}}</td><!--{{($index + ((currentPage -1)* entryLimit)) + 1}}-->
                               <td>{{data.account_email}}</td>
                               <td>{{data.account_first_name}} {{data.account_last_name}}</td>
                               <td class="text-center">
@@ -213,7 +213,7 @@ if (isset($employer)) {
                         <div class="box-body table-responsive no-padding"  ng-show="filteredItems > 0">
                           <table class="table table-hover table-striped hide" id="employerRecruitmentTable" ng-init="getEmployerRecruitments('<?php echo $employer->employer_id?>')">
                             <tr>
-                              <th>Số TT</th>
+                              <th>Mã số</th>
                               <th>Tiêu đề tin</th>
                               <th>Mức lương</th>
                               <th class="text-center">Hình thức công việc</th>
@@ -223,7 +223,7 @@ if (isset($employer)) {
                               <th class="text-center"></th>
                             </tr>
                             <tr ng-repeat="data in filtered = (pagedItems | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" data-id="{{data.account_id}}">
-                              <td>{{($index + ((currentPage -1)* entryLimit)) + 1}}</td>
+                              <td>{{data.rec_code}}</td><!--{{($index + ((currentPage -1)* entryLimit)) + 1}}-->
                               <td>{{data.rec_title}}</td>
                               <td>{{data.rec_salary}} </td>
                               <td class="text-center">

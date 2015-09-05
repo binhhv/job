@@ -5,7 +5,9 @@ class Jobseeker_model extends CI_Model {
 		# code...
 		parent::__construct();
 		$this->load->model('Dbutil', 'dbutil');
+		$this->load->model('UtilModel', 'util');
 	}
+
 	function getListJobseeker() {
 		$sql = "select a.*, IFNULL(b.numcv, 0) as numcv ,
 				IFNULL(c.numdocon, 0) as numdocon,IFNULL(d.numapp, 0) as numapp
@@ -29,7 +31,10 @@ class Jobseeker_model extends CI_Model {
 		return $this->dbutil->getFromDbQueryBinding($sql, $data);
 	}
 	function createJobseeker($data) {
-		return $this->dbutil->insertDb($data, 'account');
+		$result = $this->dbutil->insertDb($data, 'account');
+		$code   = $this->util->General_Code('account', $result, 4);
+		$this->util->update_Code('account', 'account_code', $code, 'account_id', $result);
+		return $result;
 	}
 	function updateJobseeker($data, $condition) {
 		$dataObject = array(

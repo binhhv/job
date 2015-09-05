@@ -133,6 +133,7 @@ class Admin_document extends CI_Controller {
 
 		if ($jobseeker) {
 			$output = $this->document->insertDocument($paramater, $docon_province_selected, $jobseeker);
+			echo json_encode($output);
 		} else {
 			echo json_encode($jobseeker);
 		}

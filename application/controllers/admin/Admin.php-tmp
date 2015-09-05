@@ -10,6 +10,7 @@ class Admin extends CI_Controller {
 		$this->load->library(array('form_validation', 'session'));
 		$this->load->model('admin/Jobseeker_model', 'jobseeker');
 		$this->load->model('admin/Mail_model', 'mail');
+		$this->load->model('UtilModel', 'util');
 		if (!$this->session->userdata['user']['isLogged']) {
 			redirect(base_url().'admin/login');// no session established, kick back to login page
 		} else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
@@ -107,6 +108,9 @@ class Admin extends CI_Controller {
 			'account_created_at'  => date('Y-m-d H:m'));
 		$output = $this->jobseeker->createJobseeker($paramater);
 		//var_dump($ouput);
+		$code         = $this->util->General_Code('account', $output, 4);
+		$outputupdate = $this->util->update_Code('account', 'account_code', $code, 'account_id', $output);
+		log_message('error', $output);
 		$obJobseeker = $this->jobseeker->getJobseeker($output);
 		echo json_encode($obJobseeker[0]);
 	}

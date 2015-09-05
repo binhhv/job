@@ -7,7 +7,7 @@
             <div class="box-body table-responsive no-padding" >
                   <table class="table table-hover table-striped " id="applyRecruitmentTable" >
                     <tr>
-                      <th>Số TT</th>
+                      <th>Mã số</th>
                       <th>Email</th>
                       <th>Họ tên</th>
                       <th class="text-center">Ngày ứng tuyển</th>
@@ -17,7 +17,7 @@
                       </th>
                     </tr>
                     <tr ng-repeat="data in listApply">
-                      <td>{{$index + 1}}</td>
+                      <td>{{data.account_code}}</td><!--{{$index + 1}}-->
                       <td>{{data.account_email}}</td>
                       <td>{{data.account_first_name}} {{data.account_last_name}}</td>
                       <td class="text-center">

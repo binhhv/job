@@ -66,6 +66,9 @@ app.controller('recruitmentCreateController', function (recruitmentService,emplo
         return employerRecruitmentService.getListFormChildR();
       }).then(function(data){
         recruitmentCreate.listFormChilds = data;
+        return employerRecruitmentService.getListCareer();
+      }).then(function(data){
+        recruitmentCreate.listCareers = data;
         return employerRecruitmentService.getListProvinceCountry(countryGET);
       }).then(function(data){
           
@@ -81,9 +84,10 @@ app.controller('recruitmentCreateController', function (recruitmentService,emplo
         recruitmentCreate.rec_job_map_country =( recruitmentCreate.listCountrys) ? (recruitmentCreate.listCountrys[0]['country_id'] ): {};
         recruitmentCreate.rec_job_time = new Date();
         recruitmentCreate.object_employer =($scope.listEmployers.length > 0 ) ? $scope.listEmployers[0] : {};
+        recruitmentCreate.object_career = (recruitmentCreate.listCareers.length > 0) ? recruitmentCreate.listCareers[0] : {};
         console.log(recruitmentCreate.object_contact_form);
         $scope.rec =recruitmentCreate;
-        console.log($scope.listEmployers);
+        console.log($scope.listCareers);
         
           $("#message-load-data").addClass('hide');
           $("#recruitmentCreateForm").removeClass('hide');
@@ -319,16 +323,18 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
             var modalInstance = $modal.open({
                 animation: $scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-update-recruitment.php',
-                controller: function ($scope, $modalInstance, rec){
+                controller: function ($scope, $modalInstance, rec,listCareers){
                     $scope.rec = rec;
 
                     console.log(rec);
                     $scope.rec.rec_job_time = new Date(rec.rec_job_time);
+                    $scope.rec.listCareers = listCareers;
                     $scope.rec.welfareSelected = rec.welfareSelected;
                     $scope.rec.object_contact_form = {contact_form_id:rec.rec_contact_form,contact_form_type:rec.contact_form_type};
                     $scope.rec.object_form = {fjob_id:rec.rec_job_map_form,fjob_type:rec.fjob_typpe};
                     $scope.rec.object_form_child = {jcform_id:rec.rec_job_map_form_child,jcform_type:rec.jcform_type};
                     $scope.rec.object_level = {ljob_id:rec.rec_job_map_level,ljob_level:rec.ljob_level};
+                    $scope.rec.object_career = {career_id:rec.rec_job_map_career,career_name:rec.career_name};
                    // if($scope.rec.provinceSelected.length >= 5){
                        // $("#select-Province").addClass('hide');
                     //}
@@ -361,7 +367,11 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
                 resolve: {
                     rec: function () {
                         return selectedrecruitment;
+                    },
+                    listCareers:function(){
+                      return employerRecruitmentService.getListCareer();
                     }
+
                 },
                 scope:$scope,
                 backdrop: 'static'

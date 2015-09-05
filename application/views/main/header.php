@@ -17,7 +17,7 @@
 									<a href="">Trang của tôi</a> |
 									<a href="<?php echo base_url('logout');?>">Đăng xuất</a>
 	<?php } else if ($user['role'] == 1 || $user['role'] == 5) {?>
-									<a href="">Trang admin</a> |
+									<a href="<?php echo base_url('admin')?>">Trang admin</a> |
 									<a href="<?php echo base_url('logout');?>">Đăng xuất</a>
 	<?php }
 	?>

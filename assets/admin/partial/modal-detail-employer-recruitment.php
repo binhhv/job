@@ -14,6 +14,10 @@
                                 </div>
                             </div>
                             <div class="form-group col-sm-12">
+                                <label class="control-label" for="firstname">Ngành nghề : {{rec.career_name}}</label>
+
+                            </div>
+                            <div class="form-group col-sm-12">
                                 <label class="control-label" for="firstname">Địa điểm làm việc : {{rec.country_name}}</label>
                                 <div class="controls">
                                     <b>Tỉnh/Thành phố </b>

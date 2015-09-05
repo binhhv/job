@@ -380,6 +380,7 @@ $scope.formatDate = function(date){
             
         }
         $scope.createForm = function(docform){
+            console.log(docform.docon_skill);
             $scope.disabled_modal = true;
             if(docform){
                 documentService.createForm(angular.toJson(docform),function(data){

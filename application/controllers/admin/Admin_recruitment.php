@@ -8,6 +8,7 @@ class Admin_recruitment extends CI_Controller {
 		$this->load->model('admin/Employer_model', 'employer');
 		$this->load->model('admin/Jobseeker_model', 'jobseeker');
 		$this->load->model('admin/Mail_model', 'mail');
+		$this->load->model('UtilModel', 'util');
 		$this->load->model('admin/Recruitment_model', 'recruitment');
 		if (!$this->session->userdata['user']['isLogged']) {
 			redirect(base_url() . 'admin/login'); // no session established, kick back to login page
@@ -154,6 +155,7 @@ class Admin_recruitment extends CI_Controller {
 			'rec_job_map_form_child' => $object_form_child['jcform_id'], //$rec['rec_job_map_form_child'],
 			'rec_job_map_level' => $object_level['ljob_id'], //$rec['rec_job_map_level'],
 			'rec_job_map_country' => $rec['rec_job_map_country'],
+			'rec_job_map_country' => $rec['object_career']['career_id'],
 			'rec_contact_name' => $rec['rec_contact_name'],
 			'rec_contact_email' => $rec['rec_contact_email'],
 			'rec_contact_address' => $rec['rec_contact_address'],

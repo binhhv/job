@@ -5,6 +5,7 @@ class Manager_model extends CI_Model {
 		# code...
 		parent::__construct();
 		$this->load->model('Dbutil', 'dbutil');
+		$this->load->model('UtilModel', 'util');
 	}
 
 	public function getListManager() {
@@ -21,7 +22,10 @@ class Manager_model extends CI_Model {
 		return $this->dbutil->updateDb($dataObject);
 	}
 	function createManager($data) {
-		return $this->dbutil->insertDb($data, 'account');
+		$result = $this->dbutil->insertDb($data, 'account');
+		$code   = $this->util->General_Code('account', $result, 5);
+		$this->util->update_Code('account', 'account_code', $code, 'account_id', $result);
+		return $result;
 	}
 	function getManager($id) {
 		$data = array(

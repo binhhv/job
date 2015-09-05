@@ -8,11 +8,24 @@
             <fieldset>
                 <div class="row">
                     <div class="col-sm-12">
-                            <div class="form-group col-sm-12">
+                            <div class="form-group col-sm-6">
                                 <label class="control-label" for="firstname">Tiêu đề</label><label class="text-danger">(*)</label>
                                 <div class="controls">
                                     <input type="text" class="form-control" ng-model="rec.rec_title" required>
                                 </div>
+                            </div>
+                             <div class="form-group col-sm-6">
+                             <label class="control-label" for="suburb">Ngành nghề</label><label class="text-danger">(*)</label>
+                                <div class="controls">
+                                <select class="form-control" name="rec_job_map_career" id="rec_job_map_career"
+      ng-options="option.career_name for option in rec.listCareers track by option.career_id"
+      ng-model="rec.object_career"></select>
+
+                                </div>
+                                <!-- <label class="control-label" for="surname">Nghề nghiệp </label><label class="text-danger" >*</label>
+                                <div class="controls">
+                                    <input type="text" name="career" ng-model="docform.docon_career" id="career" class="form-control" required>
+                                </div> -->
                             </div>
                             <div class="form-group col-sm-6">
                                 <label class="control-label" for="firstname">Việc làm tại  </label><label class="text-danger">(*)</label>

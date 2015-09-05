@@ -45,7 +45,7 @@
                 <div class="box-body table-responsive no-padding"  ng-show="filteredItems > 0">
                   <table class="table table-hover table-striped hide" id="managerTable" ng-init="getManagers()">
                     <tr>
-                      <th class="text-center">Số TT</th>
+                      <th class="text-center">Mã số</th>
                       <th class="text-center">Email</th>
                       <th class="text-center">Họ tên</th>
                       <th class="text-center">Trạng thái</th>
@@ -53,7 +53,7 @@
                       <th class="text-center"></th>
                     </tr>
                     <tr ng-repeat="data in filtered = (pagedItems | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" data-id="{{data.account_id}}">
-                      <td class="text-center">{{($index + ((currentPage -1)* entryLimit)) + 1}}</td>
+                      <td class="text-center">{{data.account_code}}</td><!--{{($index + ((currentPage -1)* entryLimit)) + 1}}-->
                       <td class="text-center">{{data.account_email}}</td>
                       <td class="text-center">
                           <label><b>{{data.account_first_name}} {{data.account_last_name}}</b></label>

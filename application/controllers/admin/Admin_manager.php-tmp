@@ -7,6 +7,7 @@ class Admin_manager extends CI_Controller {
 		$this->load->library(array('form_validation', 'session'));
 		$this->load->model('admin/Manager_model', 'manager');
 		$this->load->model('admin/Mail_model', 'mail');
+		$this->load->model('UtilModel', 'util');
 		$this->load->model('admin/Account_model', 'account');
 		if (!$this->session->userdata['user']['isLogged']) {
 			redirect(base_url().'admin/login');// no session established, kick back to login page

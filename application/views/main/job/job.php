@@ -90,12 +90,12 @@ foreach ($welfares as $value) {
 											<div class="row">
 												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj ">Nội dung công việc</span>
 													<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_job_content;?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo nl2br($jobDetail->rec_job_content);?></div>
 												</div>
 
 												<div class="col-sm-12 item-option-detail-job"><span class="title-item-dj">Chế độ hậu đãi</span>
 														<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_job_regimen;?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo nl2br($jobDetail->rec_job_regimen);?></div>
 												</div>
 
 												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Thời gian làm việc</span>
@@ -105,12 +105,12 @@ foreach ($welfares as $value) {
 
 												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Yêu cầu bắt buộc</span>
 													<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_job_require;?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo nl2br($jobDetail->rec_job_require);?></div>
 												</div>
 
 												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Điều kiện/Ưu tiên</span>
 													<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_job_priority;?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo nl2br($jobDetail->rec_job_priority);?></div>
 												</div>
 
 											</div>

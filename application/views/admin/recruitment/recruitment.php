@@ -64,7 +64,7 @@ default:
                 <div class="box-body table-responsive no-padding"  ng-show="filteredItems > 0">
                     <table class="table table-hover table-striped hide" id="recruitmentTable" ng-init="getRecruitments('<?php echo $type;?>');">
                             <tr>
-                              <th>Số TT</th>
+                              <th>Mã số</th>
                               <th>Tiêu đề tin</th>
                               <th>Mức lương</th>
                               <th class="text-center">Hình thức công việc</th>
@@ -75,7 +75,7 @@ default:
                               <th class="text-center"></th>
                             </tr>
                             <tr ng-repeat="data in filtered = (pagedItems | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" data-id="{{data.account_id}}">
-                              <td>{{($index + ((currentPage -1)* entryLimit)) + 1}}</td>
+                              <td>{{data.rec_code}}</td><!--{{($index + ((currentPage -1)* entryLimit)) + 1}}-->
                               <td>{{data.rec_title}}</td>
                               <td>{{data.rec_salary}} </td>
                               <td class="text-center">

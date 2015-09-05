@@ -5,6 +5,7 @@ class Recruitment_model extends CI_Model {
 		# code...
 		parent::__construct();
 		$this->load->model('Dbutil', 'dbutil');
+		$this->load->model('UtilModel', 'util');
 	}
 	public function getListEmployer() {
 		$data = array(
@@ -15,6 +16,8 @@ class Recruitment_model extends CI_Model {
 	}
 	public function createRecruitment($data, $dataWelfare, $dateProvince, $iduser) {
 		$idRec = $this->dbutil->insertDb($data, 'recruitment');
+		$code  = $this->util->General_Code('recruitment', $idRec, 5);
+		$this->util->update_Code('recruitment', 'rec_code', $code, 'rec_id', $idRec);
 		if ($idRec) {
 			$resultWelfare  = $this->insertEmployerRecruitmentWelfare($dataWelfare, $idRec);
 			$resultProvince = $this->insertEmployerRecruitmentProvince($dateProvince, $idRec);

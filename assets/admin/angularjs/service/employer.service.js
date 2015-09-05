@@ -189,7 +189,7 @@ app.factory('employerRecruitmentService' ,function ($http,$q,$timeout){
 			            temp =data;
 			            $timeout(function(){
 					      defer.resolve(data);
-					    }, 750) 
+					    }, 350) 
 
 			    });
 			    return defer.promise;
@@ -205,7 +205,7 @@ app.factory('employerRecruitmentService' ,function ($http,$q,$timeout){
 			            temp =data;
 			            $timeout(function(){
 					      defer.resolve(data);
-					    }, 750) 
+					    }, 350) 
 
 			    });
 			    return defer.promise;
@@ -219,7 +219,7 @@ app.factory('employerRecruitmentService' ,function ($http,$q,$timeout){
 			            temp =data;
 			            $timeout(function(){
 					      defer.resolve(data);
-					    }, 750) 
+					    }, 350) 
 
 			    });
 			    return defer.promise;
@@ -240,7 +240,7 @@ app.factory('employerRecruitmentService' ,function ($http,$q,$timeout){
 			            temp =data;
 			            $timeout(function(){
 					      defer.resolve(data);
-					    }, 750) 
+					    }, 350) 
 
 			    });
 			    return defer.promise;
@@ -276,7 +276,7 @@ app.factory('employerRecruitmentService' ,function ($http,$q,$timeout){
 			            temp =data;
 			             $timeout(function(){
 					      defer.resolve(data);
-					    }, 750) 
+					    }, 350) 
 			            console.log("call token");
 
 			    });
@@ -289,12 +289,23 @@ app.factory('employerRecruitmentService' ,function ($http,$q,$timeout){
 			            temp =data;
 			            $timeout(function(){
 					      defer.resolve(data);
-					    }, 750) 
+					    }, 350) 
 
 			    });
 			    return defer.promise;
 		};
+		_employerRecruitmentService.getListCareer = function(){
+			var temp = {};
+			    var defer = $q.defer();
+			    $http.get(pathWebsite + 'admin/document/getListCareer').success(function(data){
+			            temp =data;
+			            $timeout(function(){
+					      defer.resolve(data);
+					    }, 350) 
 
+			    });
+			    return defer.promise;
+			};
 		//function with resolve
 		_employerRecruitmentService.getListWelfareR = function(callback){
 				var temp = {};
@@ -303,7 +314,7 @@ app.factory('employerRecruitmentService' ,function ($http,$q,$timeout){
 			            temp =data;
 			             $timeout(function(){
 					      defer.resolve(data);
-					    }, 750) 
+					    }, 350) 
 
 			    });
 			    return defer.promise;
@@ -316,7 +327,7 @@ app.factory('employerRecruitmentService' ,function ($http,$q,$timeout){
 			            temp =data;
 			           $timeout(function(){
 					      defer.resolve(data);
-					    }, 750) 
+					    }, 350) 
 
 			    });
 			    return defer.promise;
@@ -329,7 +340,7 @@ app.factory('employerRecruitmentService' ,function ($http,$q,$timeout){
 			            temp =data;
 			            $timeout(function(){
 					      defer.resolve(data);
-					    }, 750) 
+					    }, 350) 
 
 			    });
 			    return defer.promise;
@@ -342,7 +353,7 @@ app.factory('employerRecruitmentService' ,function ($http,$q,$timeout){
 			            temp =data;
 			            $timeout(function(){
 					      defer.resolve(data);
-					    }, 750) 
+					    }, 350) 
 
 			    });
 			    return defer.promise;
@@ -355,7 +366,7 @@ app.factory('employerRecruitmentService' ,function ($http,$q,$timeout){
 			            temp =data;
 			             $timeout(function(){
 					      defer.resolve(data);
-					    }, 750) 
+					    }, 350) 
 
 			    });
 			    return defer.promise;
@@ -368,7 +379,7 @@ app.factory('employerRecruitmentService' ,function ($http,$q,$timeout){
 			            temp =data;
 			            $timeout(function(){
 					      defer.resolve(data);
-					    }, 750) 
+					    }, 350) 
 
 			    });
 			    return defer.promise;
@@ -381,7 +392,7 @@ app.factory('employerRecruitmentService' ,function ($http,$q,$timeout){
 			            temp =data;
 			            $timeout(function(){
 					      defer.resolve(data);
-					    }, 750) 
+					    }, 350) 
 
 			    });
 			    return defer.promise;
@@ -396,7 +407,7 @@ app.factory('employerRecruitmentService' ,function ($http,$q,$timeout){
 			            temp =data;
 			            $timeout(function(){
 					      defer.resolve(data);
-					    }, 750) 
+					    }, 350) 
 
 			    });
 			    return defer.promise;

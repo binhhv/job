@@ -5,6 +5,7 @@ class Document_model extends CI_Model {
 		# code...
 		parent::__construct();
 		$this->load->model('Dbutil', 'dbutil');
+		$this->load->model('UtilModel', 'util');
 	}
 	public function getCV() {
 		$sql = "select a.doccv_map_user as userid, a.*,b.account_email as jobseeker_email, CONCAT(b.account_first_name, ' ', b.account_last_name) as jobseeker_name
@@ -129,10 +130,15 @@ class Document_model extends CI_Model {
 		}
 	}
 	function insertJobseeker($dataJobseeker) {
-		return $this->dbutil->insertDb($dataJobseeker, 'jobseeker');
+		$output       = $this->dbutil->insertDb($dataJobseeker, 'jobseeker');
+		$code         = $this->util->General_Code('jobseeker', $output, 0);
+		$outputupdate = $this->util->update_Code('jobseeker', 'jobseeker_code', $code, 'jobseeker_id', $output);
+		return $output;
 	}
 	function insertDocument($data, $provinceSelected, $jobseeker) {
 		$result = $this->dbutil->insertDb($data, 'document_online');
+		$code   = $this->util->General_Code('document_online', $result, 0);
+		$this->util->update_Code('document_online', 'docon_code', $code, 'docon_id', $result);
 		if ($result) {
 			foreach ($provinceSelected as $value) {
 				$dataInsertMap[] = array(
@@ -278,7 +284,10 @@ class Document_model extends CI_Model {
 	//2: doccv without user
 
 	function insertCV($data) {
-		return $this->dbutil->insertDb($data, 'document_cv');
+		$result = $this->dbutil->insertDb($data, 'document_cv');
+		$code   = $this->util->General_Code('document_cv', $result, 0);
+		$this->util->update_Code('document_cv', 'doccv_code', $code, 'doccv_id', $result);
+		return $result;
 	}
 
 }

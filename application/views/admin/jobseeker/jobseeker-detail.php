@@ -85,7 +85,7 @@ if ($jobseeker[0]->account_is_disabled) {?>
 	?>
                       <div class="item-cv">
                         <div class="row ">
-                        <div class="col-md-4 col-xs-4 "><b>Số thứ tự</b></div>
+                        <div class="col-md-4 col-xs-4 "><b>Mã số</b></div>
                           <div class="col-md-4 col-xs-4"><b>Tên file</b></div>
                           <div class="col-md-4 col-xs-4 "><b>Ngày tạo</b></div>
                         </div>
@@ -94,7 +94,7 @@ if ($jobseeker[0]->account_is_disabled) {?>
 	foreach ($cvJobseeker as $cv) {?>
                       <div class="item-cv">
                         <div class="row">
-                          <div class="col-md-4 col-xs-4 "><?php echo $index;?></div>
+                          <div class="col-md-4 col-xs-4 "><?php echo $cv->doccv_code;?></div>
                           <div class="col-md-4 col-xs-4"><a href=""><?php echo $cv->doccv_file_name;?></a></div>
                           <div class="col-md-4 col-xs-4 "><?php echo date('d/m/Y', strtotime($cv->doccv_created_at));?></div>
 
@@ -114,7 +114,7 @@ if ($jobseeker[0]->account_is_disabled) {?>
 	?>
                       <div class="item-doc">
                         <div class="row ">
-                        <div class="col-md-3 col-xs-6 "><b>Số thứ tự</b></div>
+                        <div class="col-md-3 col-xs-6 "><b>Mã số</b></div>
                           <div class="col-md-3 col-xs-6 "><b>Ngày tạo</b></div>
                           <div class="col-md-3 col-xs-6 "><b>Ngày chỉnh sửa</b></div>
                           <div class="col-md-3 col-xs-6"><b></b></div>
@@ -124,7 +124,7 @@ if ($jobseeker[0]->account_is_disabled) {?>
 	foreach ($docJobseeker as $doc) {?>
                       <div class="item-doc">
                         <div class="row">
-                          <div class="col-md-3 col-xs-6 "><?php echo $index;?></div>
+                          <div class="col-md-3 col-xs-6 "><?php echo $doc->docon_code;?></div>
                           <div class="col-md-3 col-xs-6 "><?php echo date('d/m/Y', strtotime($doc->docon_created_at));?></div>
                           <div class="col-md-3 col-xs-6 "><?php echo date('d/m/Y', strtotime($doc->docon_update_at));?></div>
                           <div class="col-md-3 col-xs-6 "><button class="btn btn-primary btn-xs" ng-click="modalDocument('lg','<?php echo $doc->docon_id;?>')">xem chi tiết</button></div>
@@ -144,7 +144,7 @@ if ($jobseeker[0]->account_is_disabled) {?>
 	?>
                       <div class="item-doc">
                         <div class="row ">
-                        <div class="col-md-1 col-xs-6 "><b>Số thứ tự</b></div>
+                        <div class="col-md-1 col-xs-6 "><b>Mã số</b></div>
                           <div class="col-md-4 col-xs-6 "><b>Tin tuyển dụng</b></div>
                           <div class="col-md-4 col-xs-6 "><b>Nhà tuyển dụng</b></div>
                           <div class="col-md-3 col-xs-6 "><b>Ngày ứng tuyển</b></div>
@@ -154,7 +154,7 @@ if ($jobseeker[0]->account_is_disabled) {?>
 	foreach ($recApp as $rec) {?>
                       <div class="item-doc">
                         <div class="row">
-                          <div class="col-md-1 col-xs-6 "><?php echo $index;?></div>
+                          <div class="col-md-1 col-xs-6 "><?php echo $rec->rec_code;?></div>
                           <div class="col-md-4 col-xs-6 "><?php echo $rec->rec_title?></div>
                           <div class="col-md-4 col-xs-6 "><?php echo '<b>' . $rec->name . '</b>' . '<br>' . $rec->address;?></div>
                           <div class="col-md-3 col-xs-6 "><?php echo date('d/m/Y', strtotime($rec->recapp_created_at));?></div>
