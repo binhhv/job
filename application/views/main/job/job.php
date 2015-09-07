@@ -5,7 +5,7 @@
 	<?php if (!isset($user) || $user['role'] == 4) {?>
 	<div class=" title-job-scroll hide">
 		<div class="col-sm-8 text-center"><label class="lb-title-job-scroll"><?php echo $jobDetail->rec_title;?></label></div>
-		<div class="col-sm-4 text-center"><button class="btn btn-lg btn-danger">NỘP HỒ SƠ</button></div>
+		<div class="col-sm-4 text-center"><button class="btn btn-lg btn-danger btn-scroll-apply-job">NỘP HỒ SƠ</button></div>
 	</div>
 	<?php }
 	?>
@@ -24,7 +24,7 @@
 
 										<h3 class="title-field-detail-job">Chi tiết công việc
 										<?php if (!isset($user) || $user['role'] == 4) {?>
-										<button class="btn btn-danger btn-md pull-right">Nộp hồ sơ</button>
+										<button class="btn btn-danger btn-md pull-right btn-apply-job">Nộp hồ sơ</button>
 										<?php }
 	?>
 										</h3>
@@ -200,9 +200,10 @@ foreach ($welfares as $value) {
 							</div>
 						</div>
 
-						<?php if (!isset($user) || $user['role'] == 4) {?>
+						<?php if (!isset($user) || $user['role'] == 4) {
+		?>
 						<div class="job-left-item col-sm-12">
-						<div class="row">
+						<div class="row" id="focus-apply">
 							<div class="col-sm-12 employer-box-header text-center background-color-3">
 								<!-- <label class="text-color-1 field-job"> -->
 									<h3 class="alert-field-job employer-tools-title text-color-2">Nộp hồ sơ trong một bước</h3>
@@ -210,23 +211,41 @@ foreach ($welfares as $value) {
 							</div>
 							<div class="col-sm-12 field-job-line"></div>
 							<div class="col-sm-12 margin-top-10" >
-							<form class="form-horizontal" role="form">
+							<form class="form-horizontal" role="form" name="form-apply" id="form-apply" method="post" enctype="multipart/form-data">
 							  	<div class="form-group">
 							    <label class="control-label col-sm-2" for="firstname">Họ</label>
 							    <div class="col-sm-10">
-							      <input type="text" class="form-control" id="firstname" placeholder="Họ">
+							    <input type="hidden" name="idjob" value="<?php echo $jobDetail->rec_id;?>">
+							    <input type="hidden" name="idjobseeker" value="<?php
+if (isset($user)) {
+			echo $user['id'];
+		}
+		?>">
+							      <input type="text" class="form-control" id="firstname" placeholder="Họ" <?php
+if (isset($user)) {
+			echo 'value = "' . $user['firstname'] . '" disabled';
+		}
+		?>>
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <label class="control-label col-sm-2" for="lastname">Tên</label>
 							    <div class="col-sm-10">
-							      <input type="text" class="form-control" id="lastname" placeholder="Tên">
+							      <input type="text" class="form-control" id="lastname" placeholder="Tên" <?php
+if (isset($user)) {
+			echo 'value = "' . $user['lastname'] . '" disabled';
+		}
+		?>>
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <label class="control-label col-sm-2" for="email">Email</label>
 							    <div class="col-sm-10">
-							      <input type="email" class="form-control" id="email" placeholder="Email">
+							      <input type="email" class="form-control" id="email" placeholder="Email" <?php
+if (isset($user)) {
+			echo 'value = "' . $user['email'] . '" disabled';
+		}
+		?>>
 							    </div>
 							  </div>
 							  <div class="form-group">
@@ -236,13 +255,33 @@ foreach ($welfares as $value) {
 							    	<label><input type="radio" name="doc" value="doccv">Hồ sơ đính kèm</label>
 							    </div>
 							  </div>
+							  <div class="form-group hide">
+
+							    <div class="col-sm-10 token">
+
+							    </div>
+							  </div>
+							  <div class="form-group hide" id="data-doc">
+							    <label class="control-label col-sm-2"></label>
+							    <div class="col-sm-10 data-doc-user ">
+							    	<div class="col-sm-12"></div>
+							    </div>
+							  </div>
 
 							  <div class="form-group">
 							    <div class="col-sm-offset-2 col-sm-10">
-							      <button type="submit" class="btn btn-danger">Nộp hồ sơ</button>
+							    <!-- <input type="file" class="form-control file-cv" name="cv1"> -->
+							    <?php if (isset($user) && $user['role'] == 4) {?>
+							    	<button type="submit" class="btn btn-danger">Nộp hồ sơ</button>
+							    <?php } else {?>
+							    	<a href="<?php echo base_url('login');?>?url=<?php echo urlencode(current_url());?>" class="btn btn-primary">Đăng nhập để nộp hồ sơ</a>
+							    	<?php	}
+		?>
+
 							    </div>
 							  </div>
 							</form>
+							<div  class="col-sm-12 text-center msg-apply hide"></div>
 							</div>
 							</div>
 						</div>
@@ -267,35 +306,6 @@ foreach ($welfares as $value) {
 								<?php }
 	}
 	?>
-
-
-							<!-- <div class="col-sm-12 item-job-advance" >
-								<a href="#">Kỹ sư cầu nối</a>
-								<small>Hà nội</small>
-							</div>
-							<div class="col-sm-12 field-job-line "></div>
-							<div class="col-sm-12 item-job-advance" >
-								<a href="#">Kế toán doanh nghiệp</a>
-								<small>Bình dương</small>
-							</div>
-							<div class="col-sm-12 field-job-line "></div>
-							<div class="col-sm-12 item-job-advance" >
-								<a href="#">Kế toán trưởng</a>
-								<small>Đồng nai</small>
-							</div>
-
-							<div class="col-sm-12 field-job-line "></div>
-							<div class="col-sm-12 item-job-advance" >
-								<a href="#">Kế toán trưởng</a>
-								<small>Đồng nai</small>
-							</div>
-							<div class="col-sm-12 field-job-line "></div>
-							<div class="col-sm-12 item-job-advance" >
-								<a href="#">Kế toán trưởng</a>
-								<small>Đồng nai</small>
-							</div>
-							<div class="col-sm-12 field-job-line "></div> -->
-
 							</div>
 						</div>
 
@@ -317,6 +327,162 @@ foreach ($welfares as $value) {
 ?>
 </div>
 <script type="text/javascript">
+$(document).ready(function(){
+	$('input:radio[name="doc"]').attr('checked', false);
+
+	$("#form-apply").submit(function(event){
+	 event.preventDefault();
+	 if(!checkSelectedDoc()) {
+	 	alert("chua chon");
+	 }
+	 else{
+				 	var form = $(this);
+			        var formdata = false;
+			        if (window.FormData) {
+			            formdata = new FormData(form[0]);
+			        }
+				$.ajax({
+				type: "POST", // HTTP method POST or GET
+				url: "<?php echo base_url('job/apply-job');?>", //Where to make Ajax calls
+				dataType:"json", // Data type, HTML, json etc.
+				data:  new FormData(this),
+	            mimeType:"multipart/form-data",
+	            contentType: false,
+	            cache: false,
+	            processData:false,
+				//data:formdata ? formdata : form.serialize(),//$(this).serialize(), //Form variables
+				success:function(response){
+					if(response.status == 'success'){
+						$("#form-apply").addClass('hide');
+						$(".msg-apply").removeClass('hide');
+						$(".msg-apply").append(response.msg);
+					}
+					else{
+						if(response.type=='data'){
+							$(".msg-apply").removeClass('hide');
+							$(".msg-apply").append(response.msg);
+						}
+						else if(response.type=='file'){
+							$(".error-file").removeClass('hide');
+							$(".token").empty();
+				        	var token ='<input type="hidden" name="'+response.name+'" value="'+response.hash+'" />';
+				        	$(".token").append(token);
+							$(".error-file").empty();
+							$(".error-file").append(response.msg);
+						}
+					}
+				},
+				error:function (xhr, ajaxOptions, thrownError){
+					alert("error");
+					//On error, we alert user
+					//$("#alert-error-contact").removeClass('hide');
+					//alert(thrownError);
+				}
+				});
+		}
+});
+
+});
+$(".btn-scroll-apply-job").on("click",function(e){
+	//e.preventDefault();
+	//$("#focus-apply").focus();
+	//alert("doconline");
+	$('html, body').animate({
+    scrollTop: ($('#focus-apply').first().offset().top)
+},500);
+
+});
+$(".btn-apply-job").on("click",function(e){
+	$('html, body').animate({
+    scrollTop: ($('#focus-apply').first().offset().top)
+},500);
+});
+function checkSelectedDoc(){
+	var resutlt = false;
+	if($("input:radio[name='doc']").is(":checked") && $("input:radio[name='doc-user']").is(":checked") ){
+		resutlt = true;
+	}
+
+	if($("input:radio[name='doc']").is(":checked") && $("input:radio[name='cv-user']").is(":checked")){
+		resutlt = true;
+	}
+
+	return resutlt;
+}
+	$('input:radio[name="doc"]').change(
+    function(){
+        if ($(this).val() == 'doconline') {
+            //alert("doconline");
+            $(".data-doc-user").empty();
+           // getToken(getDoconline(data,<?php echo $user['id'];?>));
+           getToken(getDoconline);
+        }
+        else if($(this).val() == 'doccv') {
+            $(".data-doc-user").empty();
+             getToken(getCV);
+        }
+    });
+
+    function getDoconline(data){
+
+    	var name = ''+data.name+'';
+    	var hash = ''+data.hash+'';
+    	var id = data.id;
+    	var dataOb = {'csrf_test_name':hash,'id':id};
+    	//console.log(hash);
+    	   $.ajax({
+        url: '<?php echo base_url() . "job/getListDoconUser"?>',
+        data: dataOb, // change this to send js object
+        type: "post",
+        dataType:'html',
+        success: function(data){
+           //document.write(data); just do not use document.write
+           //console.log(data);
+           if(data){
+           		$("#data-doc").removeClass('hide');
+           		$(".data-doc-user").append(data);
+           }
+        }
+      });
+    };
+    function getCV(data){
+    	var name = ''+data.name+'';
+    	var hash = ''+data.hash+'';
+    	var id = data.id;
+    	var dataOb = {'csrf_test_name':hash,'id':id};
+    	//console.log(hash);
+    	   $.ajax({
+        url: '<?php echo base_url() . "job/getListCVUser"?>',
+        data: dataOb, // change this to send js object
+        type: "post",
+        dataType:'html',
+        success: function(data){
+           //document.write(data); just do not use document.write
+           //console.log(data);
+           if(data){
+           		$("#data-doc").removeClass('hide');
+           		$(".data-doc-user").append(data);
+           }
+        }
+      });
+    };
+    var getToken = function(callback){
+    	 $.ajax({
+        url: '<?php echo base_url() . "job/getToken"?>',
+        type: "get",
+        dataType:'json',
+        success: function(data){
+        	$(".token").empty();
+        	//var token ='<input type="hidden" name="'+data.name+'" value="'+data.hash+'" />';
+        	//$(".token").append(token);
+           //document.write(data); just do not use document.write
+           //console.log(data);
+           callback(data);
+           //console.log(data.name);
+        }
+      });
+    };
+
 
       function initialize() {
 
@@ -354,7 +520,7 @@ foreach ($welfares as $value) {
                  labelAnchor: new google.maps.Point((data.numjob.length >= 3)? 10 : ((data.numjob.length >= 2) ? 7 : 4), 25),
                  labelClass: "mapIconLabel", // the CSS class for the label
                  labelInBackground: false,
-                  url: "http://www.google.com"
+                  url: "<?php echo base_url('province') . '/'?>"+  data.province_name.replace(' ', '-')  + '-'  + data.province_id + '.html',
 				});
 				 var infowindow = new google.maps.InfoWindow({
 				                     content: data.province_name + "<br>" + data.numjob +" việc làm. "

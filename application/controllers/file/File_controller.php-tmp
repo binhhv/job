@@ -10,11 +10,12 @@ class File_controller extends CI_Controller {
 		$this->load->helper('file');
 		$this->load->helper('download');
 		$this->load->library(array('form_validation', 'session'));
-		if (!$this->session->userdata['user']['isLogged']) {
-			redirect(base_url().'admin/login');// no session established, kick back to login page
-		} else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
-			redirect(base_url('error/403'));
-		}
+		// if (!$this->session->userdata['user']['isLogged']) {
+		// 	redirect(base_url() . 'admin/login'); // no session established, kick back to login page
+		// }
+		// else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
+		// 	redirect(base_url('error/403'));
+		// }
 	}
 	function download($value1, $value2, $value3) {
 		echo "file".$value1.'-'.$value2.'-'.$value3;

@@ -96,12 +96,15 @@ class Login extends CI_Controller {
 					$cookie_name = 'siteAuth';
 					$cookie_time = 3600 * 24 * 30; // 30 days.
 					setcookie('ci-session', 'user=' . "", time() - 3600); // Unset cookie of user
-					setcookie($cookie_name, 'user=' . $a_UserChecking[0]->account_email . '&password=' . $a_UserChecking[0]->account_password . '&role=' . $a_UserChecking[0]->account_map_role . '&id=' . $a_UserChecking[0]->account_id, time() + $cookie_time . '$isLogged=1');
+					setcookie($cookie_name, 'user=' . $a_UserChecking[0]->account_email . '&password=' . $a_UserChecking[0]->account_password . '&role=' . $a_UserChecking[0]->account_map_role . '&id=' . $a_UserChecking[0]->account_id, time() + $cookie_time . '$isLogged=1'
+						. '&firstname = ' . $a_UserChecking[0]->account_first_name . '&lastname = ' . $a_UserChecking[0]->account_last_name);
 				}
 				$this->session->set_userdata('user', array('id' => $a_UserChecking[0]->account_id,
 					'email' => $a_UserChecking[0]->account_email,
 					'role' => $a_UserChecking[0]->account_map_role,
-					'isLogged' => true));
+					'isLogged' => true,
+					'firstname' => $a_UserChecking[0]->account_first_name,
+					'lastname' => $a_UserChecking[0]->account_last_name));
 
 				//redirect(base_url('admin'));
 			} else {
@@ -126,6 +129,9 @@ class Login extends CI_Controller {
 				//$url = $this->session->userdata['redirect'];
 				//unset($_SESSION['redicrect']);
 				$this->session->unset_userdata('redirect');
+				if (strpos($url, "login") > 0) {
+					$url = base_url('/');
+				}
 				redirect($url);
 
 			} else {

@@ -175,7 +175,17 @@ $route['about'] = 'home/about';
 
 //job manager
 $route['job/(:any)-(:num).html'] = 'job/job_detail/index/$2';
+$route['job/getListDoconUser'] = 'job/job_detail/getListDoconUser';
+$route['job/getListCVUser'] = 'job/job_detail/getListCVUser';
+$route['job/getToken'] = 'job/job_detail/getToken';
+$route['job/getDetailDoc/(:num)'] = 'job/job_detail/getDocView/$1';
+$route['job/apply-job'] = 'job/job_detail/applyJob';
+$route['job/getCreateForm/(:num)'] = 'job/job_detail/getCreateForm/$1';
+$route['job/getListLevel'] = 'job/job_detail/getListLevel';
+$route['job/apply-create-form-job'] = 'job/job_detail/applyCreateFormJob';
 
+//job of province
+$route['province/(:any)-(:num).html'] = 'job/job_province/index/$2';
 //test simple
 $route['test1'] = 'test_controller/updateProvince';
 
@@ -186,3 +196,5 @@ $route['checkLogin'] = 'login/checkLogin';
 
 //employer page
 $route['employer'] = 'employer/employer/index';
+
+//test get

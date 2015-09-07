@@ -264,6 +264,8 @@ class Employer_model extends CI_Model {
 	}
 	public function createEmployerRecruitment($data, $welfareSelected, $provinceSelected, $idmapcountry, $iduser) {
 		$resultRecruitment = $this->dbutil->insertDb($data, 'recruitment');
+		$code = $this->util->General_Code('recruitment', $resultRecruitment, 0);
+		$this->util->update_Code('recruitment', 'rec_code', $code, 'rec_id', $resultRecruitment);
 		if ($resultRecruitment) {
 			$resultMapWelfare = $this->insertEmployerRecruitmentWelfare($welfareSelected, $resultRecruitment);
 			$resultMapProvince = $this->insertEmployerRecruitmentProvince($provinceSelected, $resultRecruitment);

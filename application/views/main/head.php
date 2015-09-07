@@ -26,6 +26,13 @@ if (isset($titlePage)) {
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/datetimepicker/css/bootstrap-datetimepicker.min.css">
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/flexslider/flexslider-job.css">
+ <?php
+if (isset($styleJob)) {
+	foreach ($styleJob as $style) {?>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . $style;?>">
+  <?php }
+}
+?>
 
 <!-- <link rel="stylesheet" href="<?php echo base_url()?>/assets/common/css/bootstrap-responsive.css"> -->
 <!-- <link rel="stylesheet" href="<?php echo base_url()?>/assets/common/css/prettyPhoto.css" />

@@ -1293,3 +1293,65 @@ h3.title-field-detail-job{
 	font-size: 15px;
 	display: block;
 }
+a.create-doc-user{
+	color: blue;
+	font-weight: bold;
+}
+.view-doc{
+	cursor: pointer;
+	color: blue;
+}
+a.download-cv{
+	color: blue;
+	font-weight: bold;
+}
+.margin-top-5{
+	margin-top: 5px;
+}
+.job-province{
+	padding: 10px 0;
+}
+.job-province-item{
+	border: 1px solid #fff;
+    -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    background: #fff;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+
+}
+.job-province-alert{
+	border: 1px solid #fff;
+    -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    background: #fff;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+
+}
+.job-province-item span.num-job-province{
+	font-size: 20px;
+	margin: 0;
+	
+}
+.job-province-item label{
+	text-transform: none;
+	display: block;
+}
+.job-province-item label.title{
+	font-weight: bold;
+}
+.job-province-item label.data{
+	font-size: 12px;
+}
+.job-province-item{
+	cursor: pointer !important;
+}
+.job-province-item:hover{
+	background: #f1f1f1;
+}
+
