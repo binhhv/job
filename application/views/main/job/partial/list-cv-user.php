@@ -3,7 +3,7 @@ if (isset($cvs)) {
 	foreach ($cvs as $value) {?>
 		<div class="col-sm-12">
 			<label>
-				<input type="radio" name="cv-user" value="<?php echo $value->doccv_id?>">
+				<input type="radio" name="cvuser" value="<?php echo $value->doccv_id?>">
 				<?php echo $value->doccv_code?>
 
 			</label>
@@ -14,9 +14,9 @@ if (isset($cvs)) {
 	if (count($cvs) < 3) {
 		?>
 		<div class="col-sm-12">
-		<label><input type="radio" name="cv-user" value="-1">upload cv</label><label class="text-danger">(doc|docx|pdf)</label>
+		<label><input type="radio" name="cvuser" value="-1">upload cv</label><label class="text-danger">(doc|docx|pdf)</label>
 
-		<input type="file" class="form-control hide file-cv" name="cv">
+		<input type="file" class="form-control hide file-cv" name="cv" id="cv">
 		<label class="text-danger error-file hide"></label>
 		</div>
 <?php }
@@ -26,7 +26,7 @@ if (isset($cvs)) {
 }
 ?>
 <script type="text/javascript">
-	$('input:radio[name="cv-user"]').change(function(){
+	$('input:radio[name="cvuser"]').change(function(){
 			$.ajax({
 		        url: '<?php echo base_url() . "job/getToken"?>',
 		        type: "get",

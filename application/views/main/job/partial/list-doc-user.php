@@ -3,7 +3,7 @@ if (isset($docs)) {
 	foreach ($docs as $value) {?>
 		<div class="col-sm-12">
 			<label>
-				<input type="radio" name="doc-user" value="<?php echo $value->docon_id?>">
+				<input type="radio" name="docuser" value="<?php echo $value->docon_id?>">
 				<?php echo $value->docon_code?>
 
 			</label>
@@ -15,11 +15,16 @@ if (isset($docs)) {
 		?>
 		<div class="col-sm-12">
 		<label>
-			<input type="radio" name="doc-user" value="-1" data-id="<?php echo $value->docon_id?>">Tạo hồ sơ mới
+			<input type="radio" name="docuser" value="-1" data-id="<?php echo $value->docon_id?>">Tạo hồ sơ mới
 
 		</label>
 		<!-- <a class="create-doc-user" href="#" onclick="openModalCreateDocon" >Tạo hồ sơ mới</a> -->
 		</div>
+		<div class="col-sm-10 token hide"></div>
+		<!-- <div class="col-sm-12 hide">
+			<div id="token-name"></div>
+			<div id="token-hash"></div>
+		</div> -->
 <?php }
 	?>
 <?php } else {
@@ -57,20 +62,30 @@ if (isset($docs)) {
       });
     });
 
-	 $('input:radio[name="doc-user"]').change(function(){
+	 $('input:radio[name="docuser"]').change(function(){
+	 	//alert("123123");
 			$.ajax({
 		        url: '<?php echo base_url() . "job/getToken"?>',
 		        type: "get",
 		        dataType:'json',
 		        success: function(data){
+		        	//$("#token-name").empty();
 		        	$(".token").empty();
 		        	var token ='<input type="hidden" name="'+data.name+'" value="'+data.hash+'" />';
 		        	$(".token").append(token);
+		        	//alert(token);
+		        	//$("#token-hash").val(data);
 		           //document.write(data); just do not use document.write
 		           //console.log(data);
 		          // callback(data);
-		           //console.log(data.name);
-		        }
+		           //console.log(data);
+		        },
+		        error:function (xhr, ajaxOptions, thrownError){
+					alert(thrownError);
+					//On error, we alert user
+					//$("#alert-error-contact").removeClass('hide');
+					//alert(thrownError);
+				}
 		  });
 		 if ($(this).val() == '-1') {
 		 	var id = $(this).data('id');
@@ -97,7 +112,7 @@ if (isset($docs)) {
 	});
 $('#modal-create-document').on('hidden.bs.modal', function () {
   // do something…
- $('input:radio[name="doc-user"]').attr("checked",false);
+ $('input:radio[name="docuser"]').attr("checked",false);
 })
 
 

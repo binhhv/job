@@ -1318,7 +1318,7 @@ a.download-cv{
     box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
     background: #fff;
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     margin-top: 5px;
 
 }
@@ -1353,5 +1353,8 @@ a.download-cv{
 }
 .job-province-item:hover{
 	background: #f1f1f1;
+}
+input[type="file"]#fileupload{
+	font-size: 13px;
 }
 

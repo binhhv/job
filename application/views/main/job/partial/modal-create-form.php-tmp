@@ -250,6 +250,7 @@ if (isset($listCountry)) {
                   <div class="form-group">
                       <div class="col-sm-12 text-center">
                       <div class="token-create-form">
+                        <input type="hidden" name="province">
                          <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" /></div>
                           <button type="button" class="btn btn-default"
                         data-dismiss="modal">
@@ -358,18 +359,19 @@ $("#form-create-form-apply").submit(function(event){
 
     });
     //alert(province);
-    var formData = new FormData(this);
+    ///var formData = new FormData(this);
     //alert("123123");
-    formData.append("province", province);
+    //formData.append("province", province);
+    $("input[name=province]:hidden").val(province);
     $.ajax({
                 type: "POST", // HTTP method POST or GET
                 url: "<?php echo base_url('job/apply-create-form-job');?>", //Where to make Ajax calls
                 dataType:"json", // Data type, HTML, json etc.
-                data:formData,
-                mimeType:"multipart/form-data",
-                contentType: false,
-                cache: false,
-                processData:false,
+                data:$(this).serialize(),
+                // mimeType:"multipart/form-data",
+                // contentType: false,
+                // cache: false,
+                // processData:false,
                 //data:formdata ? formdata : form.serialize(),//$(this).serialize(), //Form variables
                 success:function(response){
                     if(response.status == 'success'){

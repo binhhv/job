@@ -16,12 +16,19 @@ class Job_detail extends CI_Controller {
 
 	}
 	function index($job = null) {
-
+// 		<script src="js/vendor/jquery.ui.widget.js"></script>
+		// <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+		// <script src="js/jquery.iframe-transport.js"></script>
+		// <!-- The basic File Upload plugin -->
+		// <script src="js/jquery.fileupload.js"></script>
 		$user = (isset($this->session->userdata['user'])) ? $this->session->userdata['user'] : null;
 		$scriptJob = array(
 			"assets/main/js/map/markerwithlabel.js",
 			"assets/main/chosen/chosen.jquery.js",
-			"assets/main/chosen/prism.js");
+			"assets/main/chosen/prism.js",
+			"server_upload/js/vendor/jquery.ui.widget.js",
+			"server_upload/js/jquery.iframe-transport.js",
+			"server_upload/js/jquery.fileupload.js");
 		$styleJob = array(
 			// "assets/main/chosen/style.css",
 			"assets/main/chosen/prism.css",
@@ -43,6 +50,7 @@ class Job_detail extends CI_Controller {
 		);
 
 		//$jobid = substr(strrchr($job, "-"), 1);
+
 		if (isset($job)) {
 			$jobDetail = $this->job->getDetailRecruitment($job);
 			$centerMap = json_encode($this->job->getCenterMapFromRecruitment($job));
@@ -54,14 +62,22 @@ class Job_detail extends CI_Controller {
 			$jobMap = null;
 			$jobSames = null;
 		}
-
+		if (isset($user)) {
+			$docs = $this->job->getListDoconUser($user['id']);
+			$cvs = $this->job->getListCVUser($user['id']);
+		} else {
+			$docs = null;
+			$cvs = null;
+		}
 		$content = $this->load->view('main/job/job', array('job' => $job,
 			'jobDetail' => $jobDetail,
 			'centerMap' => $centerMap,
 			'jobMap' => $jobMap,
 			'jobSames' => $jobSames,
 			'user' => $user,
-			'csrf' => $csrf), TRUE);
+			'csrf' => $csrf,
+			'docs' => $docs,
+			'cvs' => $cvs), TRUE);
 
 		$footer = $this->load->view('main/footer', array(), TRUE);
 		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
@@ -95,6 +111,15 @@ class Job_detail extends CI_Controller {
 		echo $view;
 		exit;
 	}
+	function getTokenView() {
+		$csrf = array(
+			'name' => $this->security->get_csrf_token_name(),
+			'hash' => $this->security->get_csrf_hash(),
+		);
+		$view = $this->load->view('main/job/partial/token-view', array('csrf' => $csrf), TRUE);
+		echo $view;
+		exit;
+	}
 	function getCreateForm($id) {
 		$listLevel = $this->job->getListLevel();
 		$listHealthy = $this->job->getListHealthy();
@@ -124,8 +149,9 @@ class Job_detail extends CI_Controller {
 		$idjobseeker = $this->input->post('idjobseeker');
 		$idjob = $this->input->post('idjob');
 		$doc = $this->input->post('doc');
+		log_message('error', $idjobseeker . '-' . $idjob . '-' . $doc);
 		if ($doc == 'doccv') {
-			$cv = $this->input->post('cv-user');
+			$cv = $this->input->post('cvuser');
 
 			if ($cv != -1) {
 				$data = array(
@@ -151,77 +177,79 @@ class Job_detail extends CI_Controller {
 			} else {
 				//$check = $this->input->post('cv');
 				//log_message('error', $check);
-				$file_name = $_FILES['cv']['name'];
+				// $file_name = $_FILES['cv']['name'];
 				if (!file_exists('uploads/cv/' . $idjobseeker)) {
 					mkdir('uploads/cv/' . $idjobseeker, 0777, true);
 				}
-				$config['upload_path'] = 'uploads/cv/' . $idjobseeker;
-				$config['allowed_types'] = 'doc|docx|pdf';
-				$config['max_size'] = 100000000;
-				$config['encrypt_name'] = TRUE;
-				//$config['max_width'] = 1024;
-				//$config['max_height'] = 768;
+				// $config['upload_path'] = 'uploads/cv/' . $idjobseeker;
+				// $config['allowed_types'] = 'doc|docx|pdf';
+				// $config['max_size'] = 100000000;
+				// $config['encrypt_name'] = TRUE;
+				// //$config['max_width'] = 1024;
+				// //$config['max_height'] = 768;
 
-				$this->load->library('upload', $config);
+				// $this->load->library('upload', $config);
 
-				if (!$this->upload->do_upload('cv')) {
-					$error = array('error' => $this->upload->display_errors());
-					// $csrf = array(
-					// 	'name' => $this->security->get_csrf_token_name(),
-					// 	'hash' => $this->security->get_csrf_hash(),
-					// );
-					$errorArr = array(
-						'status' => 'error',
-						'type' => 'file',
-						'msg' => "file không đúng định dạng.",
-						'name' => $this->security->get_csrf_token_name(),
-						'hash' => $this->security->get_csrf_hash());
-					echo json_encode($errorArr);
+				// if (!$this->upload->do_upload('cv')) {
+				// 	$error = array('error' => $this->upload->display_errors());
+				// 	// $csrf = array(
+				// 	// 	'name' => $this->security->get_csrf_token_name(),
+				// 	// 	'hash' => $this->security->get_csrf_hash(),
+				// 	// );
+				// 	$errorArr = array(
+				// 		'status' => 'error',
+				// 		'type' => 'file',
+				// 		'msg' => "file không đúng định dạng.",
+				// 		'name' => $this->security->get_csrf_token_name(),
+				// 		'hash' => $this->security->get_csrf_hash());
+				// 	echo json_encode($errorArr);
+				// 	exit;
+				// 	//$this->load->view('upload_form', $error);
+				// } else {
+				//$upload_data = $this->upload->data();
+				//$file_name_upload = $upload_data['file_name'];
+				$file_name = substr(strrchr($this->input->post('file-name'), "\\"), 1);
+				$file_name_upload = $this->input->post('file-tmp');
+				$dataCV = array(
+					'doccv_type' => 1,
+					'doccv_map_user' => $idjobseeker,
+					'doccv_map_jobseeker' => 0,
+					'doccv_file_tmp' => $file_name_upload,
+					'doccv_file_name' => $file_name,
+					'doccv_is_delete' => false,
+					'doccv_update_at' => date('Y-m-d H:m'),
+					'doccv_created_at' => date('Y-m-d H:m'));
+				$cv = $this->job->insertCV($dataCV);
+				$tmp_name = 'files/' . $file_name_upload;
+				copy($tmp_name, 'uploads/cv/' . $idjobseeker . '/' . $file_name_upload);
+				$data = array(
+					'recapp_map_recruitment' => $idjob,
+					'recapp_map_user' => $idjobseeker,
+					'recapp_doc_type' => 1,
+					'recapp_map_doc' => $cv,
+					'recapp_is_delete' => false,
+					'recapp_created_at' => date('Y-m-d H:m'));
+				$result = $this->job->applyJob($data);
+				if ($result) {
+					$resultArr = array(
+						'status' => 'success',
+						'msg' => 'Bạn đã apply thành công.');
+					echo json_encode($resultArr);
 					exit;
-					//$this->load->view('upload_form', $error);
 				} else {
-					$upload_data = $this->upload->data();
-					$file_name_upload = $upload_data['file_name'];
-
-					$dataCV = array(
-						'doccv_type' => 1,
-						'doccv_map_user' => $idjobseeker,
-						'doccv_map_jobseeker' => 0,
-						'doccv_file_tmp' => $file_name_upload,
-						'doccv_file_name' => $file_name,
-						'doccv_is_delete' => false,
-						'doccv_update_at' => date('Y-m-d H:m'),
-						'doccv_created_at' => date('Y-m-d H:m'));
-					$cv = $this->job->insertCV($dataCV);
-
-					$data = array(
-						'recapp_map_recruitment' => $idjob,
-						'recapp_map_user' => $idjobseeker,
-						'recapp_doc_type' => 1,
-						'recapp_map_doc' => $cv,
-						'recapp_is_delete' => false,
-						'recapp_created_at' => date('Y-m-d H:m'));
-					$result = $this->job->applyJob($data);
-					if ($result) {
-						$resultArr = array(
-							'status' => 'success',
-							'msg' => 'Bạn đã apply thành công.');
-						echo json_encode($resultArr);
-						exit;
-					} else {
-						$resultArr = array(
-							'status' => 'error',
-							'type' => 'data',
-							'msg' => 'Đã có lỗi xảy ra vui lòng thử lại sau');
-						echo json_encode($resultArr);
-					}
-
-					//$this->load->view('upload_success', $data);
+					$resultArr = array(
+						'status' => 'error',
+						'type' => 'data',
+						'msg' => 'Đã có lỗi xảy ra vui lòng thử lại sau');
+					echo json_encode($resultArr);
 				}
+
+				//$this->load->view('upload_success', $data);
+				//}
 
 			}
 		} else {
-			$doc = $this->input->post('doc-user');
+			$doc = $this->input->post('docuser');
 			if ($doc != -1) {
 				$data = array(
 					'recapp_map_recruitment' => $idjob,
