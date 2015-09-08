@@ -81,8 +81,8 @@
 				<ul class="sub-menu">
 					<li id="menu-item-2076" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2076"><a href="<?php echo base_url('about')?>">Giới thiệu</a></li>
 					<!-- <li id="menu-item-2077" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2077"><a href="job-region/palo-alto/index.html">Tiêu chí</a></li> -->
-					<li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="job-region/san-jose/index.html">Tổng quan về facebook JOB7VN</a></li>
-					<li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="job-region/san-jose/index.html">Cơ cấu tổ chức</a></li>
+					<li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="<?php echo base_url('service')?>">Tổng quan về facebook JOB7VN</a></li>
+					<li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="<?php echo base_url('organizational-structure')?>">Cơ cấu tổ chức</a></li>
 					<!-- <li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="<?php echo base_url('contact');?>">Liên hệ</a></li> -->
 				</ul>
 			</li>

@@ -1357,4 +1357,120 @@ a.download-cv{
 input[type="file"]#fileupload{
 	font-size: 13px;
 }
-
+.about-title-box{
+		border: 1px solid #fff;
+    -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    background: #fff;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.service-title-box{
+		border: 1px solid #fff;
+    -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    background: #fff;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.about-title-box h1{
+	margin: 10px 0 5px 0;
+	font-size: 22px !important;
+}
+.service-title-box h1{
+	margin: 10px 0 5px 0;
+	font-size: 22px !important;
+}
+.about-box{
+			border: 1px solid #fff;
+    -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    background: #fff;
+}
+.service-box-item{
+			border: 1px solid #fff;
+    -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    background: #fff;
+}
+.service-box{
+				/*border: 1px solid #fff;
+    -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);*/
+   /* background: #fff;*/
+   border: 1px solid #fff;
+    margin-top: 10px;
+}
+h1.title-about-box-item{
+	font-size: 22px !important;
+	margin: 5px;
+	color: #fff;
+}
+h1.title-service-box-item{
+	font-size: 22px !important;
+	margin: 5px;
+	color: #fff;
+}
+.line-about-box{
+	border-top:1px solid #f1f1f1;
+}
+.about-box-item{
+	padding: 10px;
+}
+.about-box-item p{
+	font-size: 15px;
+	text-align: justify;
+}
+.left-about-box,.right-about-box{
+	margin-bottom: 10px;
+}
+.alert-service{
+	text-transform: none;
+	/*margin: 10px;*/
+}
+.alert-service h5{
+	margin: 5px;
+	
+}
+h5.alert-field-service{
+	border-left: 5px solid #003366;
+	padding-left: 5px;
+}
+h5.title-package{
+	margin: 5px;
+	color: #fff;
+}
+.line-service-box{
+	border-top:1px solid #f1f1f1;
+}
+.service-box-item{
+	font-size: 15px;
+	color: #000;
+	font-weight: normal !important;
+}
+label.info-service{
+	display: block;
+	font-size: 15px;
+}
+.service-page{
+	padding-bottom: 10px;
+}
+p.p-service{
+	text-align: justify;
+}
+.detail-package{
+	border:1px solid #f1f1f1;
+	margin-bottom: 10px;
+}
+img.img-service{
+	max-width: 100%;
+	max-height: auto;
+	width: auto;
+	height: auto;
+	vertical-align: middle;
+}

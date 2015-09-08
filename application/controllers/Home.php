@@ -91,6 +91,7 @@ class Home extends CI_Controller {
 		echo json_encode(array("status" => "true"));
 	}
 	function about() {
+		$user = (isset($this->session->userdata['user'])) ? $this->session->userdata['user'] : null;
 		$head = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Contact'), TRUE);
 		$header = $this->load->view('main/header', array(
 			'logo' => 'img/header/allSHIGOTO.png',
@@ -98,6 +99,7 @@ class Home extends CI_Controller {
 			'logoWidth' => '170px',
 			'logoHeight' => '70px',
 			'menu' => 'aboutus',
+			'user' => $user,
 		), TRUE);
 		//$ab = m;
 
@@ -106,6 +108,50 @@ class Home extends CI_Controller {
 			'hash' => $this->security->get_csrf_hash(),
 		);
 		$content = $this->load->view('main/about', array('csrf' => $csrf), TRUE);
+		$footer = $this->load->view('main/footer', array(), TRUE);
+		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
+
+	}
+	function structure() {
+		$user = (isset($this->session->userdata['user'])) ? $this->session->userdata['user'] : null;
+		$head = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Contact'), TRUE);
+		$header = $this->load->view('main/header', array(
+			'logo' => 'img/header/allSHIGOTO.png',
+			'showTitle' => true,
+			'logoWidth' => '170px',
+			'logoHeight' => '70px',
+			'menu' => 'aboutus',
+			'user' => $user,
+		), TRUE);
+		//$ab = m;
+
+		$csrf = array(
+			'name' => $this->security->get_csrf_token_name(),
+			'hash' => $this->security->get_csrf_hash(),
+		);
+		$content = $this->load->view('main/structure', array('csrf' => $csrf), TRUE);
+		$footer = $this->load->view('main/footer', array(), TRUE);
+		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
+
+	}
+	function service() {
+		$user = (isset($this->session->userdata['user'])) ? $this->session->userdata['user'] : null;
+		$head = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Contact'), TRUE);
+		$header = $this->load->view('main/header', array(
+			'logo' => 'img/header/allSHIGOTO.png',
+			'showTitle' => true,
+			'logoWidth' => '170px',
+			'logoHeight' => '70px',
+			'menu' => 'aboutus',
+			'user' => $user,
+		), TRUE);
+		//$ab = m;
+
+		$csrf = array(
+			'name' => $this->security->get_csrf_token_name(),
+			'hash' => $this->security->get_csrf_hash(),
+		);
+		$content = $this->load->view('main/service', array('csrf' => $csrf), TRUE);
 		$footer = $this->load->view('main/footer', array(), TRUE);
 		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
 
