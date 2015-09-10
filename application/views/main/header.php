@@ -86,13 +86,22 @@
 					<!-- <li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="<?php echo base_url('contact');?>">Liên hệ</a></li> -->
 				</ul>
 			</li>
-	<li id="menu-item-1897" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1897"><a href="post-a-job/index.html">Tìm kiếm</a></li>
-	<li id="menu-item-2075" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-2075"><a href="find-a-job/index.html">Việc làm<i class="fa fa-chevron-down"></i></a>
+	<li id="menu-item-1897" class="<?php if (isset($menu) && $menu == 'search') {
+	echo 'active-menu';
+}
+?> menu-item menu-item-type-post_type menu-item-object-page menu-item-1897"><a href="<?php echo base_url() . 'search/all'?>">Tìm kiếm</a></li>
+	<li id="menu-item-2075" class="<?php if (isset($menu) && $menu == 'jobs') {
+	echo 'active-menu';
+}
+?> menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-2075"><a href="#">Việc làm<i class="fa fa-chevron-down"></i></a>
 			<ul class="sub-menu">
-				<li id="menu-item-2076" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2076"><a href="job-region/san-francisco/index.html">Việc làm mới nhất</a></li>
-				<li id="menu-item-2077" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2077"><a href="job-region/palo-alto/index.html">Việc làm ở Nhật</a></li>
-				<li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="job-region/san-jose/index.html">Việc làm theo miền</a></li>
-				<li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="job-region/san-jose/index.html">Việc làm phân loại</a></li>
+				<li id="menu-item-2076" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2076"><a href="<?php echo base_url('job') . '/new-jobs/all';?>">Việc làm mới nhất</a></li>
+				<li id="menu-item-2077" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2077"><a href="<?php echo base_url('job') . '/jobs-at-japanese/all';?>">Việc làm ở Nhật</a></li>
+				<li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="<?php echo base_url('job') . '/jobs-at-north/all';?>">Việc làm miền bắc</a></li>
+				<li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="<?php echo base_url('job') . '/jobs-at-middle/all';?>">Việc làm miền trung</a></li>
+				<li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="<?php echo base_url('job') . '/jobs-at-south/all';?>">Việc làm miền nam</a></li>
+				<!-- <li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="job-region/san-jose/index.html">Việc làm full time</a></li>
+				<li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="job-region/san-jose/index.html">Việc làm part time</a></li> -->
 			</ul>
 	</li>
 	<!-- <li id="menu-item-6454" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6454"><a href="post-a-resume/index.html">Việc làm miền Bắc</a></li>

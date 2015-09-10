@@ -1,91 +1,121 @@
 <div class="row">
 		<div class="col-sm-12 col-md-12 col-xs-12">
 			<div class="search-box-2">
-			<div class=" text-center title-search-box-2">
-					<h1 class="">Tìm kiếm việc làm</h1>
-					<div class="border-bottom-title border-color-1"></div>
+			<div class=" text-center background-color-3 margin-bottom-5">
+					<h1 class="title-search-horizontal">Tìm kiếm việc làm</h1>
+					<!-- <div class="border-bottom-title border-color-1"></div> -->
 				</div>
 				<div class="row search-box-content">
 					<div class="col-sm-12 col-md-12 col-xs-12">
-						<!-- <form class="form-inline" role="form">
-
-					  <div class="form-group ">
-					    <input type="email" class="form-control" id="email" placeholder="Nhập từ khóa">
-					  </div>
-					  <div class="form-group ">
-					    	<select class="form-control select-address input-large" data-width="100%">
-					    		<option value="-1">Chọn địa điểm</option>
-					    		<option value="-1">Hồ chí minh</option>
-					    	</select>
-					  </div>
-					  <div class="form-group ">
-					    	<select class="form-control select-address input-large" data-width="100%">
-					    		<option value="-1">Chọn năng lực tiếng nhật</option>
-					    		<option value="-1">N3</option>
-					    	</select>
-					  </div>
-					  <div class="form-group ">
-					  		<button type="submit" class="btn btn-danger btn-search">Tìm kiếm</button>
-					  </div>
-
-					</form> -->
-
-					<form role="form" id="formSearch" method="get">
+					<form role="form">
 				<div class="content-search-detail-box">
 
-					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
-					    <input type="text" class="form-control" name="key-word" id="key-word" placeholder="Từ khóa" style="height: 39px;">
+					  <div class="form-group col-sm-12 col-md-12 col-xs-12">
+					    <input <?php if ($keyWord != "all") {
+	echo 'value="'.$keyWord.'"';
+}
+?>name="key-word" id="key-word" placeholder="Từ khóa" type="text" class="form-control"  style="height: 39px;">
 					  </div>
-					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
+					  <div class="form-group col-sm-12 col-md-12 col-xs-12">
+					  	<label>Tỉnh thành:</label>
 					   	<select class="fomr-control" name="province" id="province">
 					   		<option value="-1">Chọn tỉnh thành</option>
 <?php if (isset($province)) {
-	foreach ($province as $value) {?>
-							   				<option value="<?php echo $value->province_id;?>"><?php echo $value->province_name;
+	foreach ($province as $value) {
+		?>
+							   				<option <?php if (isset($keyArr[0]) && array_values($keyArr[0])[0] == $value->province_id) {
+			echo 'selected';
+		}
+		?> value="<?php echo $value->province_id;?>"><?php echo $value->province_name;
 		?></option>
 		<?php }
 }
 ?>
 </select>
 					  </div>
-					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
+					  <div class="form-group col-sm-12 col-md-12 col-xs-12">
+					  <label>Ngành nghề:</label>
+					   	<select class="fomr-control" name="career" id="career">
+					   		<option value="-1">Chọn ngành nghề</option>
+<?php if (isset($career)) {
+	foreach ($career as $value) {
+		?>
+							   				<option <?php if (isset($keyArr[5]) && array_values($keyArr[5])[0] == $value->career_id) {
+			echo 'selected';
+		}
+		?> value="<?php echo $value->career_id;?>"><?php echo $value->career_name;
+		?></option>
+		<?php }
+}
+?>
+</select>
+					  </div>
+					  <div class="form-group col-sm-12 col-md-12 col-xs-12">
+					  <label>Mức lương:</label>
 					   	<select class="fomr-control" name="salary" id="salary">
 					   		<option value="-1">Chọn mức lương</option>
 <?php if (isset($salary)) {
-	foreach ($salary as $value) {?>
-							   				<option value="<?php echo $value->salary_id;?>"><?php echo $value->salary_value;
+	foreach ($salary as $value) {
+		?>
+							   				<option <?php if (isset($keyArr[1]) && array_values($keyArr[1])[0] == $value->salary_id) {
+			echo 'selected';
+		}
+		?> value="<?php echo $value->salary_id;?>"><?php echo $value->salary_value;
 		?></option>
 		<?php }
 }
 ?>
 </select>
 					  </div>
-					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
+					  <div class="form-group col-sm-12 col-md-12 col-xs-12">
+					  <label>Giới tính:</label>
+<?php if (isset($keyArr[2])) {$valueSex = array_values($keyArr[2])[0];} else { $valueSex = -1;}
+?>
 					   	<select class="fomr-control" name="sex" id="sex">
-					   		<option value="-1">Chọn giới tính</option>
-					   		<option value="1">Nam</option>
-					   		<option value="0">Nữ</option>
+
+					   		<option  <?php if ($valueSex == -1) {
+	echo 'selected';
+}
+?>  value="-1">Chọn giới tính</option>
+					   		<option <?php if ($valueSex == 1) {
+	echo 'selected';
+}
+?> value="1">Nam</option>
+					   		<option <?php if ($valueSex == 0) {
+	echo 'selected';
+}
+?>value="0">Nữ</option>
 					   	</select>
 					  </div>
-					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
+					  <div class="form-group col-sm-12 col-md-12 col-xs-12">
+					  <label>Trình độ/Năng lực:</label>
 					   	<select class="fomr-control" name="level" id="level">
 					   		<option value="-1">Chọn trình độ</option>
 <?php if (isset($level)) {
-	foreach ($level as $value) {?>
-							   				<option value="<?php echo $value->ljob_id;?>"><?php echo $value->ljob_level;
+	foreach ($level as $value) {
+		?>
+							   				<option <?php if (isset($keyArr[3]) && array_values($keyArr[3])[0] == $value->ljob_id) {
+			echo 'selected';
+		}
+		?> value="<?php echo $value->ljob_id;?>"><?php echo $value->ljob_level;
 		?></option>
 		<?php }
 }
 ?>
 </select>
 					  </div>
-					  <div class="form-group col-sm-6 col-md-6 col-xs-12" >
+					  <div class="form-group col-sm-12 col-md-12 col-xs-12">
+					  <label>Loại hình công việc:</label>
 					   	<select class="fomr-control" id="type-job" name="type-job">
 					   		<option value="-1">Chọn loại hình công việc</option>
 <?php if (isset($jobform) && isset($jobformchild)) {
 	foreach ($jobform as $valueForm) {
-		foreach ($jobformchild as $valueFromChild) {?>
-													<option value="<?php echo $valueForm->fjob_id.'-'.$valueFromChild->jcform_id;?>"><?php echo $valueForm->fjob_type.'-'.$valueFromChild->jcform_type;
+		foreach ($jobformchild as $valueFromChild) {
+			?>
+													<option <?php if (isset($keyArr[4]) && array_values($keyArr[4])[0] == ($valueForm->fjob_id.'-'.$valueFromChild->jcform_id)) {
+				echo 'selected';
+			}
+			?> value="<?php echo $valueForm->fjob_id.'-'.$valueFromChild->jcform_id;?>"><?php echo $valueForm->fjob_type.'-'.$valueFromChild->jcform_type;
 			?></option>
 			<?php }}
 }
@@ -110,7 +140,6 @@
 		</div>
 	</div>
 
-
 	<script type="text/javascript">
 	$("#btnSearch").on("click",function(event){
 		 event.preventDefault();
@@ -126,6 +155,8 @@
 		 var levelJobText = $("#level option:selected" ).text();
 		 var typeJobID = $("#type-job option:selected" ).val();
 		 var typeJobText = $("#type-job option:selected" ).text();
+		 var careerID = $("#career option:selected" ).val();
+		 var careerText = $("#career option:selected" ).text();
 
 		 var query = "";
 		 var queryKeyWord ="";
@@ -157,14 +188,20 @@
 		 	query +=typeJobText ;
 		 	parameter +='t'+typeJobID;
 		 }
+		 if(careerID !='-1'){
+		 	query +=careerText ;
+		 	parameter +='c'+careerID;
+		 }
 		 if(parameter.length <= 0){
 		 	link+=queryKeyWord;
 		 }
 		 else{
 		 	link +=queryKeyWord+'_'+query + '_'+parameter;
 		 }
+		 //alert(query + '_'+parameter);
 
 		 link = link.replace(/ /g,"-");
+		 //alert(link);
 		 window.open('<?php echo base_url("search");?>'+'/'+link,'_self');
 
 

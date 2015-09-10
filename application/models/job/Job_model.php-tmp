@@ -190,4 +190,174 @@ class Job_model extends CI_Model {
 		}
 
 	}
+	public function searchJob($keySearch, $option = null, $perpage = 0, $page = 0) {
+		$likeQuery = "";
+		if ($keySearch != "all") {
+			$likeQuery = " and (b.rec_title REGEXP '(%s)' or b.rec_job_content REGEXP '(%s)' or b.rec_job_require REGEXP '(%s)') ";
+		}
+		if (strlen($keySearch) > 0) {
+			$keyRegex  = array('*', '?', '(', ')', '+', '\'', "\"", '-', '_', "=");
+			$keySearch = str_replace($keyRegex, "|", trim($keySearch));
+			$likeQuery = str_replace("%s", $keySearch, $likeQuery);
+		}
+		$andQuery = "";
+		if (isset($option)) {
+			foreach ($option as $value) {
+
+				$optionKey   = array_keys($value)[0];
+				$optionValue = array_values($value)[0];
+				switch ($optionKey) {
+					case 'p':
+						if ($optionValue != 0) {
+							$andQuery .= " and b.rec_id in (
+							select recmp_map_rec from recruitment_map_province
+							where recmp_is_delete = 0 and recmp_map_province = "	.$optionValue.")";
+						}
+						break;
+					case 's':
+						if ($optionValue != 0) {
+							$andQuery .= " and b.rec_map_salary = ".$optionValue;
+						}
+						break;
+					case 'x':
+						if ($optionValue >= 0) {
+							$andQuery .= " and b.rec_job_require_sex = ".$optionValue;
+						}
+
+						break;
+					case 'l':
+						if ($optionValue != 0) {
+							$andQuery .= " and b.rec_job_map_level = ".$optionValue;
+						}
+						break;
+					case 't':
+						if ($optionValue != 0) {
+							$arrForm = explode("-", trim($optionValue));
+							$andQuery .= " and b.rec_job_map_form = ".$arrForm[0]." and b.rec_job_map_form_child = ".$arrForm[1];
+						}
+						break;
+					default:
+						if ($optionValue != 0) {
+							$andQuery .= " and b.rec_job_map_career = ".$optionValue;
+						}
+						break;
+				}
+			}
+		}
+		$query      = 'b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0 '.$likeQuery.$andQuery;
+		$queryLimit = '';
+		if ($perpage > 0 || $page > 0) {
+			$queryLimit .= ' limit '.$page.', '.$perpage;
+			//'. $page . ', ' . $perpage';
+
+		}
+		$sql = "select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  ".$query." order by b.rec_created_at DESC".$queryLimit;
+		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
+	public function searchJobs($route, $keySearch, $option = null, $perpage = 0, $page = 0) {
+		$optionQuery       = "";
+		$optionRegionQuery = "";
+		if (isset($route)) {
+			switch ($route) {
+				case 'new-jobs':
+					$optionQuery .= "";
+					break;
+				case 'jobs-at-japanese':
+					$optionQuery .= " and b.rec_job_map_country = 2";
+					break;
+				case 'jobs-at-north':
+					$optionQuery .= " and f.province_map_region = 3 and b.rec_job_map_country = 1";
+					$optionRegionQuery .= "";
+					break;
+				case 'jobs-at-middle':
+					$optionQuery .= " and f.province_map_region = 2 and b.rec_job_map_country = 1";
+					$optionRegionQuery .= "";
+					break;
+				case 'jobs-at-south':
+					$optionQuery .= " and f.province_map_region = 1 and b.rec_job_map_country = 1";
+					$optionRegionQuery .= "";
+					break;
+				default:
+					$optionQuery .= "";
+					break;
+			}
+		}
+		$likeQuery = "";
+		if ($keySearch != "all") {
+			$likeQuery = " and (b.rec_title REGEXP '(%s)' or b.rec_job_content REGEXP '(%s)' or b.rec_job_require REGEXP '(%s)') ";
+		}
+		if (strlen($keySearch) > 0) {
+			$keyRegex  = array('*', '?', '(', ')', '+', '\'', "\"", '-', '_', "=");
+			$keySearch = str_replace($keyRegex, "|", trim($keySearch));
+			$likeQuery = str_replace("%s", $keySearch, $likeQuery);
+		}
+		$andQuery = "";
+		if (isset($option)) {
+			foreach ($option as $value) {
+
+				$optionKey   = array_keys($value)[0];
+				$optionValue = array_values($value)[0];
+				switch ($optionKey) {
+					case 'p':
+						if ($optionValue != 0) {
+							$andQuery .= " and b.rec_id in (
+							select recmp_map_rec from recruitment_map_province
+							where recmp_is_delete = 0 and recmp_map_province = "	.$optionValue.")";
+						}
+						break;
+					case 's':
+						if ($optionValue != 0) {
+							$andQuery .= " and b.rec_map_salary = ".$optionValue;
+						}
+						break;
+					case 'x':
+						if ($optionValue >= 0) {
+							$andQuery .= " and b.rec_job_require_sex = ".$optionValue;
+						}
+
+						break;
+					case 'l':
+						if ($optionValue != 0) {
+							$andQuery .= " and b.rec_job_map_level = ".$optionValue;
+						}
+						break;
+					case 't':
+						if ($optionValue != 0) {
+							$arrForm = explode("-", trim($optionValue));
+							$andQuery .= " and b.rec_job_map_form = ".$arrForm[0]." and b.rec_job_map_form_child = ".$arrForm[1];
+						}
+						break;
+					default:
+						if ($optionValue != 0) {
+							$andQuery .= " and b.rec_job_map_career = ".$optionValue;
+						}
+						break;
+				}
+			}
+		}
+		$query      = 'b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0 '.$likeQuery.$andQuery;
+		$queryLimit = '';
+		if ($perpage > 0 || $page > 0) {
+			$queryLimit .= ' limit '.$page.', '.$perpage;
+			//'. $page . ', ' . $perpage';
+
+		}
+		$sql = "select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  ".$query.$optionQuery." order by b.rec_created_at DESC".$queryLimit;
+		log_message('error', $sql);
+		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
 }

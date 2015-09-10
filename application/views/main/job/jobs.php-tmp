@@ -4,8 +4,8 @@
 		<div class="col-sm-4 col-sm-push-8">
 			<!-- <div class="col-sm-12 "> -->
 				<div class="job-province-box">
-<?php if (isset($searchHorizontal)) {
-	echo $searchHorizontal;
+<?php if (isset($searchJobs)) {
+	echo $searchJobs;
 }
 ?>
 </div>
@@ -16,21 +16,23 @@
 		<!-- <div class="col-sm-12"> -->
 				<div class="job-province-alert text-center">
 <?php if (isset($listJob) && count($listJob) > 0) {?>
-					<h1 class="numjob-province-title"><label><?php echo $numjob;
-	?></label> việc làm tại <?php echo $province->province_name;
-	?></h1>
+					<h1 class="numjob-province-title">Tìm thấy&nbsp;
+	<label> <?php echo $numjob;
+	?></label> việc làm </h1>
 						<div class="border-bottom-title border-color-1"></div>
-						<!-- Có <span class="text-danger num-job-province"><?php echo count($listJob);
-	?></span> việc làm tại <?php echo $province->province_name;
-	?>-->
+
 	<?php } else {?>
-	Không có công việc nào.
+	Không tìm thấy việc làm nào.
 	<?php }
 ?>
-</div>
+				</div>
 			<!-- </div> -->
-			<div class="job-province-box ">
+			<div class="job-province-box <?php if (!isset($listJob) || count($listJob) <= 0) {
+	echo 'hide';
+}
+?>">
 <?php if (isset($listJob)) {
+	//var_dump($listJob);
 	foreach ($listJob as $value) {?>
 						<!-- <div class="col-sm-12"> -->
 						<div class="job-province-item" onclick="location.href='<?php echo base_url('job').'/'.str_replace(' ', '-', $value->rec_title).'-'.$value->recmp_map_rec.'.html'?>'">
@@ -62,7 +64,7 @@
 					<!-- </div> -->
 		<?php }
 	?>
-	<div class="text-center job-province-item">
+	<div class="text-center job-province-item ">
 	<?php if (isset($pagination)) {
 		echo $pagination;
 	}

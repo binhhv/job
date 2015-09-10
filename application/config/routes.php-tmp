@@ -188,7 +188,19 @@ $route['job/getListLevel']          = 'job/job_detail/getListLevel';
 $route['job/apply-create-form-job'] = 'job/job_detail/applyCreateFormJob';
 
 //job of province
-$route['province/(:any)-(:num).html'] = 'job/job_province/index/$2';
+$route['province/(:any)-(:num).html']        = 'job/job_province/index/$1/$2';
+$route['province/(:any)-(:num).html/(:num)'] = 'job/job_province/index/$1/$2';
+
+//new job-japanesejob-region job
+$route['job/(:any)/(:any)_(:any)_(:any)']        = 'job/job/index/$1/$2/$3/$4';
+$route['job/(:any)/(:any)_(:any)_(:any)/(:num)'] = 'job/job/index/$1/$2/$3/$4';
+$route['job/(:any)/(:any)']                      = 'job/job/index/$1/$2';
+$route['job/(:any)/(:any)/(:num)']               = 'job/job/index/$1/$2';
+
+$route['search/(:any)_(:any)_(:any)']        = 'job/job_search/index/$1/$2/$3';
+$route['search/(:any)_(:any)_(:any)/(:num)'] = 'job/job_search/index/$1/$2/$3';
+$route['search/(:any)']                      = 'job/job_search/index/$1';
+$route['search/(:any)/(:num)']               = 'job/job_search/index/$1';
 //test simple
 $route['test1'] = 'test_controller/updateProvince';
 

@@ -404,7 +404,7 @@
 	<?php if (isset($jobSames)) {
 		foreach ($jobSames as $value) {?>
 													<div class="col-sm-12  item-job-advance" >
-														<a href="<?php echo base_url('job').'/'.str_replace(' ', '-', $value->rec_title).'-'.$value->recmp_map_rec.'.html'?>"><?php echo $value->rec_title;?></a>
+														<a href="<?php echo base_url('job').'/'.str_replace(' ', '-', $value->rec_title).'-'.$value->recmp_map_rec.'.html'?>"><?php echo (strlen($value->rec_title) > 30)?substr($value->rec_title, 0, 30).'...':$value->rec_title;?></a>
 														<small><?php echo $value->employer_name;?></small>
 													</div>
 													<div class="col-sm-12 field-job-line "></div>
@@ -715,9 +715,10 @@ function checkSelectedDoc(){
 				                 });
 
 				 google.maps.event.addListener(marker, 'click', function() {
-				         window.open(marker.url);
+				        // window.open(marker.url);
 // window.location.href = marker.url;
 
+				        window.open(marker.url, '_self');
 				    });
 				 google.maps.event.addListener(marker, 'mouseover', function() {
 				    infowindow.open(map, this);

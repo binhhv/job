@@ -16,12 +16,12 @@ class Recruitment_model extends CI_Model {
 
 	public function getAllProvinceByCountry($country_id) {
 		$sql = "select a.*
-				from province a where a.province_is_delete = 0 and a.province_map_country = " . $country_id;
+				from province a where a.province_is_delete = 0 and a.province_map_country = ".$country_id;
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
 	}
 	public function getAllProvinceByCountryRegion($region, $country_id) {
 		$sql = "select a.*
-				from province a where a.province_is_delete = 0 and a.province_map_country = " . $country_id . " and a.province_map_region = " . $region;
+				from province a where a.province_is_delete = 0 and a.province_map_country = ".$country_id." and a.province_map_region = ".$region;
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
 	}
 	public function getAllProvince() {

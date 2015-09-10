@@ -1308,20 +1308,28 @@ a.download-cv{
 .margin-top-5{
 	margin-top: 5px;
 }
+.margin-bottom-5{
+	margin-bottom: 5px;
+}
 .job-province{
 	padding: 10px 0;
 }
-.job-province-item{
+.job-province-box{
 	border: 1px solid #fff;
     -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
     background: #fff;
     width: 100%;
-    padding: 5px;
+    /*padding: 5px;*/
     margin-top: 5px;
 
 }
+h1.title-search-horizontal{
+	margin: 5px;
+	color: #fff;
+}
+
 .job-province-alert{
 	border: 1px solid #fff;
     -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
@@ -1329,7 +1337,7 @@ a.download-cv{
     box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
     background: #fff;
     width: 100%;
-    padding: 10px;
+    /*padding: 10px;*/
     margin-top: 5px;
 
 }
@@ -1337,6 +1345,12 @@ a.download-cv{
 	font-size: 20px;
 	margin: 0;
 	
+}
+.job-province-item{
+	padding: 5px 10px;
+}
+.job-line-province-item{
+	border-top:2px solid #f1f1f1;
 }
 .job-province-item label{
 	text-transform: none;
@@ -1353,6 +1367,10 @@ a.download-cv{
 }
 .job-province-item:hover{
 	background: #f1f1f1;
+}
+.job-province-item .pagination{
+	margin: 0 !important;
+	padding: 0 !important;
 }
 input[type="file"]#fileupload{
 	font-size: 13px;
@@ -1473,4 +1491,13 @@ img.img-service{
 	width: auto;
 	height: auto;
 	vertical-align: middle;
+}
+h1.numjob-province-title{
+	margin: 5px 0 0 0;
+	font-size: 18px !important;
+}
+h1.numjob-province-title label{
+	color: red;
+	font-size: 25px;
+	font-weight: bold;
 }
