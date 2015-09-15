@@ -128,7 +128,32 @@ img.logo-small{
 .search-tools{
 	margin-top: 5px;
 }
+.chart-recruitment{
+	min-height: 368px;
+	max-height: 368px;
+}
+.chart-note-jobseeker{
+	width: 20px;
+	height: 10px;
+	background: #D2D6DE;
+	margin-bottom: 0 !important;
+}
+.chart-note-employer{
+	width: 20px;
+	height: 10px;
+	background: #00C0EF;
+
+	margin-bottom: 0 !important;
+}
 @media (max-width: 767px) {
+	.chart-recruitment{
+	min-height: auto;
+	max-height: auto;
+}
+	.ul-list-support-chart{
+	height: 200px;
+	overflow: auto;
+}
 	.margin-top-5-res{
 		margin-top: 5px;
 	}
@@ -164,4 +189,10 @@ img.logo-small{
 @media (max-width: 560px) {
 	
 }
-
+.ul-list-support-chat{
+	height: 310px;
+	overflow: auto;
+}
+.support-chat-readed{
+	background: #d2d6de;
+}

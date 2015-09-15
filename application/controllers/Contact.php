@@ -31,8 +31,9 @@ class Contact extends CI_Controller {
 			'name' => $this->security->get_csrf_token_name(),
 			'hash' => $this->security->get_csrf_hash(),
 		);
+		$popup = $this->load->view('main/popup', array('csrf' => $csrf), TRUE);
 		$content = $this->load->view('main/contact', array('csrf' => $csrf), TRUE);
-		$footer = $this->load->view('main/footer', array(), TRUE);
+		$footer = $this->load->view('main/footer', array('popup' => $popup), TRUE);
 		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
 
 	}

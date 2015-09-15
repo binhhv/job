@@ -3,6 +3,16 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta http-equiv="refresh" content="1200;url=<?php echo base_url('admin/logout')?>">
     <!-- Bootstrap 3.3.5 -->
+
+    <!-- for FF, Chrome, Opera -->
+    <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/favicons/favicon-32x32.png" sizes="32x32">
+
+    <!-- for IE -->
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url();?>assets/favicons/favicon.ico" >
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url();?>assets/favicons/favicon.ico"/>
+
+
     <link rel="stylesheet" href="<?php echo base_url();?>assets/admin/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?php echo base_url();?>assets/admin/font-awesome/4.4.0/css/font-awesome.min.css">

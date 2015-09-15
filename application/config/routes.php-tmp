@@ -111,6 +111,7 @@ $route['admin/recruitment/getListEmployer']            = 'admin/admin_recruitmen
 $route['admin/recruitment/createRecruitment']          = 'admin/admin_recruitment/createRecruitment';
 $route['admin/recruitment/getListRecruitment/(:num)']  = 'admin/admin_recruitment/getListRecruitment/$1';
 $route['admin/recruitment/getRecruitmentApply/(:num)'] = 'admin/admin_recruitment/getRecruitmentApply/$1';
+$route['admin/recruitment/getListSalary']              = 'admin/admin_recruitment/getListSalary';
 //manager admin route
 $route['admin/manager']                = 'admin/admin_manager/index';
 $route['admin/manager/getListManager'] = 'admin/admin_manager/getListManager';
@@ -143,6 +144,14 @@ $route['admin/contact/getListContact']           = 'admin/admin_contact/getListC
 $route['admin/contact/deleteContact']            = 'admin/admin_contact/deleteContact';
 $route['admin/contact/replyContact']             = 'admin/admin_contact/replyContact';
 $route['admin/contact/updateContactView/(:num)'] = 'admin/admin_contact/updateContactView/$1';
+//support admin
+$route['admin/support'] = 'admin/admin_support/index';
+//admin api
+$route['admin/getNotifyContact']              = 'admin/admin_api/getNotifyContact';
+$route['admin/getNotifySupport']              = 'admin/admin_api/getNotifySupport';
+$route['admin/support/getListSupportChat']    = 'admin/admin_api/getListSupportChat';
+$route['admin/getDataChartRecruitment']       = 'admin/admin_api/getDataChartRecruitment';
+$route['admin/getDataChartJobseekerEmployer'] = 'admin/admin_api/getDataChartJobseekerEmployer';
 //errors route
 $route['error/403']      = 'admin/admin_error/page403';
 $route['404_override']   = 'error_page/index';
@@ -174,6 +183,7 @@ $route['faq']                      = 'faq/index';
 $route['about']                    = 'home/about';
 $route['organizational-structure'] = 'home/structure';
 $route['service']                  = 'home/service';
+$route['getNewsRecruitment']       = 'home/getNewsRecruitment';
 
 //job manager
 $route['job/(:any)-(:num).html']    = 'job/job_detail/index/$2';
@@ -214,3 +224,11 @@ $route['employer'] = 'employer/employer/index';
 
 //test upload
 $route['uploads/do_upload'] = 'uploads/do_upload';
+
+//SUPPORT API
+$route['supportAPI/getMessage/(:any)']                 = 'admin/admin_support/getMessage/$1';
+$route['supportAPI/getMessageClient/(:any)']           = 'admin/admin_support/getMessageClient/$1';
+$route['supportAPI/startChatWithSend']                 = 'admin/admin_support/startChatWithSend';
+$route['supportAPI/startChatWithReply']                = 'admin/admin_support/startChatWithReply';
+$route['supportAPI/getMessageReply/(:any)/(:num)']     = 'admin/admin_support/getMessageReply/$1/$2';
+$route['supportAPI/getMessageReplyUser/(:any)/(:num)'] = 'admin/admin_support/getMessageReplyUser/$1/$2';

@@ -7,7 +7,7 @@
 				</div>
 				<div class="row search-box-content">
 					<div class="col-sm-12 col-md-12 col-xs-12">
-					<form role="form">
+					<form role="form" id="sform">
 				<div class="content-search-detail-box">
 
 					  <div class="form-group col-sm-12 col-md-12 col-xs-12">
@@ -122,7 +122,7 @@
 
 				</div>
 				<div class="footer-search-detail-box text-center">
-					<button type="submit" class="button-custom-search" id="btnSearch"><strong>Tìm kiếm</strong></button>
+					<button type="button" class="button-custom-search" id="btnSearch"><strong>Tìm kiếm</strong></button>
 				</div>
 				</form>
 
@@ -136,6 +136,16 @@
 	</div>
 
 	<script type="text/javascript">
+	$(document).ready(function(){
+	$("input").keypress(function(event) {
+	    if (event.which == 13) {
+	    	event.preventDefault();
+	    	$("#btnSearch").click();
+	    }
+	});
+	});
+
+
 	$("#btnSearch").on("click",function(event){
 		 event.preventDefault();
 		 //alert("123123");

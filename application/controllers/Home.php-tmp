@@ -11,6 +11,7 @@ class Home extends CI_Controller {
 		$this->load->model('Register_model', 'account');
 		$this->load->model('Uploadcv_model', 'upload_cv');
 		$this->load->model('Recruitment_model', 'recruitment');
+		//$this->load->model('job/Job_model', 'job');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		$this->lang->load('message', 'vi');
@@ -69,6 +70,7 @@ class Home extends CI_Controller {
 				'jobform'      => $arr_job_form,
 				'jobformchild' => $job_form_child), TRUE);
 		$partner = $this->load->view('main/partner', array(), TRUE);
+		$popup   = $this->load->view('main/popup', array('csrf'   => $csrf), TRUE);
 		$slide   = $this->load->view('main/slide', array('slides' => $slideOb), TRUE);
 
 		//$sidebar = $this->load->view('main/sidebar', array(), TRUE);
@@ -84,12 +86,15 @@ class Home extends CI_Controller {
 				'user_upload_cv'             => $user_upload_cv,
 				'user_upload_cv_online'      => $user_upload_cv_online,
 				'empoyer_register'           => $empoyer_register,
-				'empoyer_create_recruitment' => $empoyer_create_recruitment), TRUE);
-		$footer = $this->load->view('main/footer', array(), TRUE);
+				'empoyer_create_recruitment' => $empoyer_create_recruitment,
+			), TRUE);
+		$footer        = $this->load->view('main/footer', array('popup' => $popup), TRUE);
+		$supportOnline = $this->load->view('main/support-online', array(), TRUE);
 		$this->load->view('main/layout', array('head' => $head,
 				'header'                                    => $header,
 				'content'                                   => $content,
-				'footer'                                    => $footer));
+				'footer'                                    => $footer,
+				'supportOnline'                             => $supportOnline));
 	}
 	public function getData() {
 		echo json_encode(array("status" => "true"));
@@ -162,6 +167,23 @@ class Home extends CI_Controller {
 		$footer  = $this->load->view('main/footer', array(), TRUE);
 		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
 
+	}
+
+	function getNewsRecruitment() {
+		$email = $this->security->xss_clean($this->input->post('email-popup-user', true));
+		$data  = array(
+			'rece_email'      => $email,
+			'rece_is_reply'   => 0,
+			'rece_is_delete'  => 0,
+			'rece_created_at' => date('Y-m-d H:m'));
+		$result = $this->recruitment->getNewsRecruitment($data);
+		if ($result) {
+			$output = array('status' => 'success');
+			echo json_encode($output);
+		} else {
+			$output = array('status' => 'error');
+			echo json_encode($output);
+		}
 	}
 
 }

@@ -4,7 +4,7 @@
           <!-- Sidebar user panel -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="<?php echo base_url();?>assets/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+              <img src="<?php echo base_url();?>assets/admin/dist/img/supportonline/icon_black.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
               <p><?php echo $email?></p>
@@ -24,7 +24,7 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <!-- <li class="header">MAIN NAVIGATION</li> -->
-
+            <li class="treeview"><a href="<?php echo base_url('')?>"><i class="fa fa-home"></i> <span>allSHIGOTO Page</span></a></li>
             <li class="<?php if (isset($selected) && $selected == 'recruitmentManager') {echo 'active';}
 ?> treeview">
               <a href="#">

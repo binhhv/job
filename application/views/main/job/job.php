@@ -447,6 +447,34 @@ if (isset($cvs) && count($cvs) > 0) {
  </div>
 </div>
 
+<div class="modal fade" id="modalApplyJobAlert">
+ <div class="vertical-alignment-helper">
+  <div class="modal-dialog modal-sm vertical-align-center">
+    <div class="modal-content">
+      <div class="modal-header background-color-3">
+      	<div class="modal-popup-box">
+      		<!-- <span>Modal title</span> -->
+      		<img src="<?php echo base_url();?>assets/main/img/header/allSHIGOTO.png" >
+      		 <button type="button" class="close pull-right" data-dismiss="modal" aria-hidden="true">×</button>
+      	</div>
+
+        <!-- <h4 class="modal-title">Modal title</h4> -->
+      </div>
+      <div class="modal-body">
+      	<p class="text-danger">Bạn chưa chọn hồ sơ hoặc cv để nộp hồ sơ.</p>
+
+		<div class="text-right"><button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Đóng</button></div>
+
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div><!-- /.modal-content has-error has-feedback-->
+  </div><!-- /.modal-dialog -->
+	</div>
+</div><!-- /.modal -->
+
 <script type="text/javascript">
 $(document).ready(function(){
 	$('input:radio[name="doc"]').attr('checked', false);
@@ -465,7 +493,7 @@ $(document).ready(function(){
 
 	 if(!checkSelectedDoc()) {
 	 	//alert("chua chon");
-
+	 	$("#modalApplyJobAlert").modal("show");
 	 }
 	 else{
 	 			//alert($("#token-name").val());

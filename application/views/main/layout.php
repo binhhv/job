@@ -12,6 +12,10 @@
 
     </ul>
     <a href="#" class="scrollToTop"></a>
+    <?php if (isset($supportOnline)) {
+	echo $supportOnline;
+}
+?>
       <div id="page" class="">
        <header id="header" class="site-header">
           <?php echo $header;?>

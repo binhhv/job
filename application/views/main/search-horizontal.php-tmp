@@ -11,7 +11,7 @@
 				<div class="content-search-detail-box">
 
 					  <div class="form-group col-sm-12 col-md-12 col-xs-12">
-					    <input <?php if ($keyWord != "all") {
+					    <input <?php if (isset($keyWord) && $keyWord != "all") {
 	echo 'value="'.$keyWord.'"';
 }
 ?>name="key-word" id="key-word" placeholder="Từ khóa" type="text" class="form-control"  style="height: 39px;">
@@ -127,7 +127,7 @@
 
 				</div>
 				<div class="footer-search-detail-box text-center">
-					<button type="submit" class="button-custom-search" id="btnSearch"><strong>Tìm kiếm</strong></button>
+					<button type="button" class="button-custom-search" id="btnSearch"><strong>Tìm kiếm</strong></button>
 				</div>
 				</form>
 
@@ -141,6 +141,14 @@
 	</div>
 
 	<script type="text/javascript">
+	$(document).ready(function(){
+	$("input").keypress(function(event) {
+	    if (event.which == 13) {
+	    	event.preventDefault();
+	    	$("#btnSearch").click();
+	    }
+	});
+	});
 	$("#btnSearch").on("click",function(event){
 		 event.preventDefault();
 		 //alert("123123");

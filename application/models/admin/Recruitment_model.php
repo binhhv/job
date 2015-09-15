@@ -14,6 +14,13 @@ class Recruitment_model extends CI_Model {
 			'where' => 'employer_is_delete = 0');
 		return $this->dbutil->getFromDb($data);
 	}
+	public function getListSalary() {
+		$data = array(
+			'fields' => 'salary_id,salary_value',
+			'from' => 'salary',
+			'where' => 'salary_is_delete = 0');
+		return $this->dbutil->getFromDb($data);
+	}
 	public function createRecruitment($data, $dataWelfare, $dateProvince, $iduser) {
 		$idRec = $this->dbutil->insertDb($data, 'recruitment');
 		$code = $this->util->General_Code('recruitment', $idRec, 5);
@@ -91,13 +98,14 @@ class Recruitment_model extends CI_Model {
 			$condition = ' a.rec_is_delete = 0 and a.rec_is_approve = 1 and a.rec_is_disabled = 1';
 			break;
 		}
-		$sql = "select a.*,IFNULL(d.numapply, 0) as numapply ,e.*,f.*,g.*
+		$sql = "select a.*,IFNULL(d.numapply, 0) as numapply ,e.*,f.*,g.*,k.*
 				from recruitment a
 				left join (select c.recapp_map_recruitment, count(recapp_map_user) as numapply from recruitment_apply c where c.recapp_is_delete = 0 group by c.recapp_map_recruitment) d
 				on d.recapp_map_recruitment = a.rec_id
 				left join job_form e on e.fjob_id = a.rec_job_map_form
 				left join job_form_child f on f.jcform_id = a.rec_job_map_form_child
 				left join contact_form g on g.contact_form_id = a.rec_contact_form and g.contact_form_is_delete = 0
+				left join salary k on k.salary_id = a.rec_map_salary and k.salary_is_delete = 0
 				where " . $condition;
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
 	}

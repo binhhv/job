@@ -31,7 +31,7 @@
 					</div>
 					<a href="<?php echo base_url();?>" title="Jobify Darker" rel="home" class="site-branding">
 						<h1 class="site-title">
-							<img src="<?php if (isset($logo)) {
+							<img  src="<?php if (isset($logo)) {
 	echo base_url().'assets/main/'.$logo;
 }
 ?>" width="<?php if (isset($logoWidth)) {
@@ -69,12 +69,12 @@
 	echo 'active-menu';
 }
 ?>  menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-2075">
-				<a href="<?php echo base_url();?>"><img src="<?php echo base_url()?>assets/main/img/header/home.png"></a>
+				<a href="<?php echo base_url();?>"><img class="logo-allshigoto" src="<?php echo base_url()?>assets/main/img/header/home.png"></a>
 			</li>
 			<li id=" menu-item-2075" class="  <?php if (isset($menu) && $menu == 'aboutus') {
 	echo 'active-menu';
 }
-?> menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-2075"><a href="<?php echo base_url('loadview')?>">Về chúng tôi<i class="fa fa-chevron-down"></i></a>
+?> menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-2075"><a href="#">Về chúng tôi<i class="fa fa-chevron-down"></i></a>
 				<ul class="sub-menu">
 					<li id="menu-item-2076" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2076"><a href="<?php echo base_url('about')?>">Giới thiệu</a></li>
 					<!-- <li id="menu-item-2077" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2077"><a href="job-region/palo-alto/index.html">Tiêu chí</a></li> -->

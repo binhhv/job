@@ -98,11 +98,21 @@ class Job_detail extends CI_Controller {
 		exit;
 	}
 	function getToken() {
-		$csrf = array(
-			'name' => $this->security->get_csrf_token_name(),
-			'hash' => $this->security->get_csrf_hash(),
-			'id' => $this->session->userdata['user']['id'],
-		);
+		$user = (isset($this->session->userdata['user'])) ? $this->session->userdata['user'] : null;
+		if (isset($user)) {
+			$csrf = array(
+				'name' => $this->security->get_csrf_token_name(),
+				'hash' => $this->security->get_csrf_hash(),
+				'id' => $this->session->userdata['user']['id'],
+			);
+		} else {
+			$csrf = array(
+				'name' => $this->security->get_csrf_token_name(),
+				'hash' => $this->security->get_csrf_hash(),
+				'id' => 0,
+			);
+		}
+
 		echo json_encode($csrf);
 	}
 	function getDocView($id) {

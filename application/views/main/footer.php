@@ -112,8 +112,18 @@
         </div>
 
     </div>
+    <!-- <div class="row support-online">
+      <div class="col-sm-12 text-right">
+        <label class="btn btn-succss ">allSHIGOTO</label>
+      </div>
+    </div> -->
 </div>
 
+
+<?php if (isset($popup)) {
+	echo $popup;
+}
+?>
 <script type="text/javascript">
 $(document).ready(function() {
  // alert("123123");

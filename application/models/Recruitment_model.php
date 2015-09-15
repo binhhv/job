@@ -72,4 +72,8 @@ class Recruitment_model extends CI_Model {
 				from career a where a.career_is_delete = 0";
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
 	}
+
+	public function getNewsRecruitment($data) {
+		return $this->dbutil->insertDb($data, 'recruitment_email_get_news');
+	}
 }

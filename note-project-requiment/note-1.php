@@ -10,7 +10,8 @@ Trong link trên, bạn chọn xem ksan ở hcm rồi chọn bất kì khách s�
 , và nhấn vào chữ xem bản đồ ở cạnh tên hotel.
 
 http://www.agoda.com/vi-vn/liberty-central-saigon-riverside-hotel/hotel/ho-chi-minh-city-vn.html?asq=XqlQ7bJ0pUN0G2iz%2fnzAiCzyBqAkHV9KPSwEE%2fJQ7PP4N7uQHxEqqNnHX0VgaoC8mjpX11VpAw3P8dNUhGK6r3ctXx9i8gNFhbXcbrbVbhUsVO1U%2bkZDgbfMDc93rsShwbZZWlqVkA%2f7UAXTYzezfrEfAg93RbM0SsDFqhw0i2W3OD3GNYBesrH%2fp0MxPIBScpgWFO8fAk9TVcB3Dc1ZiHxhdT0YeDlACk50HELky9Z4DZnRG%2bpbIXr2sxylVbY7&cid=1415320&tag=90cdb2fd-a098-4191-84d7-8c37b4e933ce&tyra=1%7c1&searchrequestid=2c6acce3-40d6-41e8-82a1-ee3508dba484&pingnumber=1
-[11:03:27 AM] Take La: 4. Khi user vao xem trag top thi sau 3 phut tu luc vao xem se hien thi pop up (1 man hh thog bao sau)
+[11:03:27 AM] Take La:
+4. Khi user vao xem trag top thi sau 3 phut tu luc vao xem se hien thi pop up (1 man hh thog bao sau)
 
 Ban muon nhan tin tuyen dung tu chung toi qua email?
 Hay vui long de lai email nhe.

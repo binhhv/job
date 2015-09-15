@@ -118,9 +118,9 @@ class Job extends CI_Controller {
 
 		$this->pagination->initialize($config);
 		$page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
-		if ($page * $config["per_page"] >= count($jobSearch)) {
-			$page = 0;
-		}
+		// if ($page * $config["per_page"] >= count($jobSearch)) {
+		// 	$page = 0;
+		// }
 		//call the model function to get the department data
 		$jobSearchPagingnation = $this->job->searchJobs(urldecode($value1), $value2, $keyArr, $config["per_page"], $page);
 		//log_message('error', count($listRecruitmentProvincePage));

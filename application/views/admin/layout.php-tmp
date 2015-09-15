@@ -73,6 +73,8 @@
      <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-sanitize.min.js"></script>
       <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-strap.min.js"></script>
        <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-strap.tpl.min.js"></script>
+       <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-nl2br.min.js"></script>
+
        <!--lib advance angularjs-->
        <!--<script src="http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js"></script>
         <script src="<?php echo base_url();?>assets/admin/angularjs/lib/oi/select.min.js"></script>
@@ -107,6 +109,16 @@
     <script src="<?php echo base_url();?>assets/admin/dist/js/demo.js"></script>
      <script src="<?php echo base_url();?>assets/admin/angularjs/lib/loading-bar.js"></script>
       <script src="<?php echo base_url();?>assets/admin/angularjs/app.js"></script>
+
+
+      <script type="text/javascript">
+  var config ={
+    base_url:'<?php echo base_url();?>'
+  }
+</script>
+<script src="<?php echo base_url();?>assets/admin/dist/js/admin.js"></script>
+
+
 <?php
 if (isset($scripts)) {
 	foreach ($scripts as $script) {?>
@@ -142,16 +154,8 @@ $( window ).resize(function() {
 
 });
 
-//$(function(){
-   // alert("123123");
-  //});
-    //$(document).ready(function(){
-      //  var h = $(window).height();
+</script>
 
-       // $( "<style>.modal-body {height:'"+h+"px'; overflow:auto;}</style>" ).appendTo( "head" )
-        //$('<style type="text/css">.modal-body {height:'+h+'px; overflow:auto;}</style>').appendTo($('head'));
 
-   // });
-    </script>
   </body>
 </html>

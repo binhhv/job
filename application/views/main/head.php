@@ -9,6 +9,12 @@ if (isset($titlePage)) {
 ?></title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="<?php echo base_url();?>assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/favicons/favicon-32x32.png" sizes="32x32">
+
+    <!-- for IE -->
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url();?>assets/favicons/favicon.ico" >
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url();?>assets/favicons/favicon.ico"/>
 <?php if (isset($user)) {?>
 <meta http-equiv="refresh" content="1200;url=<?php echo base_url('logout')?>"><?php }
 ?>
@@ -16,6 +22,8 @@ if (isset($titlePage)) {
 ================================================== -->
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="<?php echo base_url()?>assets/main/bootstrap/dist/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="<?php echo base_url()?>assets/main/css/modal/bootstrap-dialog.min.css"> -->
+
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="<?php echo base_url();?>assets/main/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/css/style.css">
@@ -71,6 +79,7 @@ if (isset($styleJob)) {
 <script src="<?php echo base_url()?>/assets/main/flexslider/jquery.flexslider.js"></script>
 <script src="<?php echo base_url()?>/assets/main/js/job7vn.js"></script>
 
+<script src="<?php echo base_url()?>/assets/main/js/cookies/jquery.cookie.js"></script>
  <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
  <script src="<?php echo base_url()?>/assets/main/js/jquery.placeholder.min.js"></script>
 

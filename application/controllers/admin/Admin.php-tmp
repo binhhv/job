@@ -10,6 +10,7 @@ class Admin extends CI_Controller {
 		$this->load->library(array('form_validation', 'session'));
 		$this->load->model('admin/Jobseeker_model', 'jobseeker');
 		$this->load->model('admin/Mail_model', 'mail');
+		$this->load->model('admin/Admin_api_model', 'api');
 		$this->load->model('UtilModel', 'util');
 		if (!$this->session->userdata['user']['isLogged']) {
 			redirect(base_url().'admin/login');// no session established, kick back to login page
@@ -42,12 +43,24 @@ class Admin extends CI_Controller {
 
 	}
 	public function loadViewAdmin() {
-		// $scripts = array(
-		// 	"assets/admin/angularjs/app.js", "assets/admin/angularjs/service/appservice.js");
+		$numRecruitment    = $this->api->getNumRecruitment();
+		$numEmployer       = $this->api->getNumEmployer();
+		$numJobseeker      = $this->api->getNumJobseeker();
+		$numDoc            = $this->api->getNumCVDocument();
+		$recentRecruitment = $this->api->getRecentRecruitment();
+		$recentUser        = $this->api->getRecentJobseekerAndEmployer();
+		$scripts           = array(
+			"assets/admin/dist/js/admin-chart.js");
 
-		$head     = $this->load->view('admin/head', array(), TRUE);
-		$header   = $this->load->view('admin/header', array(), TRUE);
-		$content  = $this->load->view('admin/content', array(), TRUE);
+		$head    = $this->load->view('admin/head', array(), TRUE);
+		$header  = $this->load->view('admin/header', array(), TRUE);
+		$content = $this->load->view('admin/content', array(
+				'numRecruitment'    => $numRecruitment,
+				'numEmployer'       => $numEmployer,
+				'numJobseeker'      => $numJobseeker,
+				'numDoc'            => $numDoc,
+				'recentRecruitment' => $recentRecruitment,
+				'recentUser'        => $recentUser), TRUE);
 		$footer   = $this->load->view('admin/footer', array(), TRUE);
 		$sidemenu = $this->load->view('admin/sidemenu', array('email' => $this->session->userdata['user']['email'],
 				'role'                                                      => $this->session->userdata['user']['role']), TRUE);
@@ -57,6 +70,7 @@ class Admin extends CI_Controller {
 				'sidemenu'                                   => $sidemenu,
 				'content'                                    => $content,
 				'footer'                                     => $footer,
+				'scripts'                                    => $scripts,
 			));
 	}
 	/**
