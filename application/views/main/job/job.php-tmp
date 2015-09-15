@@ -263,114 +263,117 @@
 															<input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" />
 														</div>
 									  </div>
-									  <div class="form-group hide" id="data-doc">
-									    <label class="control-label col-sm-2"></label>
-									    <div class="col-sm-10 data-doc-user hide">
-		<?php
-		if (isset($docs) && count($docs) > 0) {
-			foreach ($docs as $value) {?>
-																<div class="col-sm-12">
+		<?php if (isset($user) && $user['role'] == 4) {
+			?>
+			<div class="form-group hide" id="data-doc">
+										    <label class="control-label col-sm-2"></label>
+										    <div class="col-sm-10 data-doc-user hide">
+			<?php
+			if (isset($docs) && count($docs) > 0) {
+				foreach ($docs as $value) {?>
+																	<div class="col-sm-12">
+																		<label>
+																			<input type="radio" name="docuser" value="<?php echo $value->docon_id?>">
+					<?php echo $value->docon_code?>
+
+																		</label>
+																		&nbsp;(<span class="view-doc" data-id="<?php echo $value->docon_id?>">xem</span>)
+																	</div>
+					<?php }
+
+				if (count($docs) < 3) {
+					?>
+																	<div class="col-sm-12">
 																	<label>
-																		<input type="radio" name="docuser" value="<?php echo $value->docon_id?>">
-				<?php echo $value->docon_code?>
+																		<input type="radio" name="docuser" value="-1" data-id="<?php echo $value->docon_id?>">Tạo hồ sơ mới
 
 																	</label>
-																	&nbsp;(<span class="view-doc" data-id="<?php echo $value->docon_id?>">xem</span>)
-																</div>
-				<?php }
+																	<!-- <a class="create-doc-user" href="#" onclick="openModalCreateDocon" >Tạo hồ sơ mới</a> -->
+																	</div>
 
-			if (count($docs) < 3) {
+																	<!-- <div class="col-sm-12 hide">
+																		<div id="token-name"></div>
+																		<div id="token-hash"></div>
+																	</div> -->
+					<?php }
 				?>
-																<div class="col-sm-12">
-																<label>
-																	<input type="radio" name="docuser" value="-1" data-id="<?php echo $value->docon_id?>">Tạo hồ sơ mới
+														<?php } else {?>
+				<label >Bạn chưa có hồ sơ nào.</label><br>
+															<label>
+																	<input  type="radio" name="docuser" value="-1" data-id="0">Tạo hồ sơ mới
 
 																</label>
-																<!-- <a class="create-doc-user" href="#" onclick="openModalCreateDocon" >Tạo hồ sơ mới</a> -->
-																</div>
-
-																<!-- <div class="col-sm-12 hide">
-																	<div id="token-name"></div>
-																	<div id="token-hash"></div>
-																</div> -->
 				<?php }
 			?>
-													<?php } else {?>
-			<label >Bạn chưa có hồ sơ nào.</label><br>
-														<label>
-																<input  type="radio" name="docuser" value="-1" data-id="0">Tạo hồ sơ mới
+			<!-- <div class="col-sm-12"></div> -->
+										    </div>
+										    <div class="col-sm-10 data-cv-user hide">
+			<?php
+			if (isset($cvs) && count($cvs) > 0) {
+				foreach ($cvs as $value) {?>
+																	<div class="col-sm-12">
+																		<label>
+																			<input type="radio" name="cvuser" value="<?php echo $value->doccv_id?>">
+					<?php echo $value->doccv_code?>
 
-															</label>
-			<?php }
-		?>
-		<!-- <div class="col-sm-12"></div> -->
-									    </div>
-									    <div class="col-sm-10 data-cv-user hide">
-		<?php
-		if (isset($cvs) && count($cvs) > 0) {
-			foreach ($cvs as $value) {?>
-																<div class="col-sm-12">
-																	<label>
-																		<input type="radio" name="cvuser" value="<?php echo $value->doccv_id?>">
-				<?php echo $value->doccv_code?>
+																		</label>
+																		&nbsp;(<a class="download-cv" href="<?php echo base_url().'downloadcv/'.$value->doccv_map_user.'/'.$value->doccv_file_tmp.'/'.$value->doccv_file_name.'/1'?>">tải xuống</a>)
+																	</div>
+					<?php }
 
-																	</label>
-																	&nbsp;(<a class="download-cv" href="<?php echo base_url().'downloadcv/'.$value->doccv_map_user.'/'.$value->doccv_file_tmp.'/'.$value->doccv_file_name.'/1'?>">tải xuống</a>)
-																</div>
-				<?php }
-
-			if (count($cvs) < 3) {
+				if (count($cvs) < 3) {
+					?>
+					<div class="col-sm-12">
+																	<label><input type="radio" name="cvuser" value="-1">upload cv</label><label class="text-danger">(doc|docx|pdf)</label>
+																	<div class="fileupload hide">
+																	<!-- <input type="file" class="form-control hide file-cv" name="cv" id="cv"> -->
+																	<!-- <span class="btn btn-success fileinput-button">
+																        <i class="glyphicon glyphicon-plus"></i>
+																        <span>Select files...</span> -->
+																        <!-- The file input field used as target for the file upload widget -->
+																        <input id="fileupload" type="file" name="files" >
+																    <!-- </span>
+																    <br> -->
+																    <br>
+																    <!-- The global progress bar -->
+																    <div id="progress" class="progress">
+																        <div class="progress-bar progress-bar-success"></div>
+																    </div>
+																    <!-- The container for the uploaded files -->
+																    <div id="files" class="files"></div>
+																	</div>
+																	<label class="text-danger error-file hide"></label>
+																	</div>
+					<?php }
 				?>
-				<div class="col-sm-12">
-																<label><input type="radio" name="cvuser" value="-1">upload cv</label><label class="text-danger">(doc|docx|pdf)</label>
-																<div class="fileupload hide">
-																<!-- <input type="file" class="form-control hide file-cv" name="cv" id="cv"> -->
-																<!-- <span class="btn btn-success fileinput-button">
-															        <i class="glyphicon glyphicon-plus"></i>
-															        <span>Select files...</span> -->
-															        <!-- The file input field used as target for the file upload widget -->
-															        <input id="fileupload" type="file" name="files" >
-															    <!-- </span>
-															    <br> -->
-															    <br>
-															    <!-- The global progress bar -->
-															    <div id="progress" class="progress">
-															        <div class="progress-bar progress-bar-success"></div>
-															    </div>
-															    <!-- The container for the uploaded files -->
-															    <div id="files" class="files"></div>
-																</div>
-																<label class="text-danger error-file hide"></label>
-																</div>
+														<?php } else {?>
+				<label>Bạn chưa có cv nào.</label><br>
+															<label>
+															<input type="radio" name="cvuser" value="-1" >upload cv
+															</label><label class="text-danger">(doc|docx|pdf)</label>
+															<div class="fileupload hide">
+															<!-- <span class="btn btn-success fileinput-button">
+														        <i class="glyphicon glyphicon-plus"></i> -->
+														        <!-- <span>Select files...</span> -->
+														        <!-- The file input field used as target for the file upload widget -->
+														        <input id="fileupload" type="file" name="files" >
+														    <!-- </span> -->
+														    <!-- <br> -->
+														    <br>
+														    <!-- The global progress bar -->
+														    <div id="progress" class="progress">
+														        <div class="progress-bar progress-bar-success"></div>
+														    </div>
+														    <!-- The container for the uploaded files -->
+														    <div id="files" class="files"></div>
+															</div>
+															<!-- <input type="file" class="form-control hide file-cv" name="cv" id="cv"> -->
+															<label class="text-danger error-file hide"></label>
 				<?php }
 			?>
-													<?php } else {?>
-			<label>Bạn chưa có cv nào.</label><br>
-														<label>
-														<input type="radio" name="cvuser" value="-1" >upload cv
-														</label><label class="text-danger">(doc|docx|pdf)</label>
-														<div class="fileupload hide">
-														<!-- <span class="btn btn-success fileinput-button">
-													        <i class="glyphicon glyphicon-plus"></i> -->
-													        <!-- <span>Select files...</span> -->
-													        <!-- The file input field used as target for the file upload widget -->
-													        <input id="fileupload" type="file" name="files" >
-													    <!-- </span> -->
-													    <!-- <br> -->
-													    <br>
-													    <!-- The global progress bar -->
-													    <div id="progress" class="progress">
-													        <div class="progress-bar progress-bar-success"></div>
-													    </div>
-													    <!-- The container for the uploaded files -->
-													    <div id="files" class="files"></div>
-														</div>
-														<!-- <input type="file" class="form-control hide file-cv" name="cv" id="cv"> -->
-														<label class="text-danger error-file hide"></label>
-			<?php }
+										    </div>
+										  </div> <?php }
 		?>
-									    </div>
-									  </div>
 									  <!-- <div class="hide" id="value-doc"></div> -->
 									  <div class="form-group">
 									    <div class="col-sm-offset-2 col-sm-10">

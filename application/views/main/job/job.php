@@ -261,12 +261,14 @@ if (isset($user)) {
 													<input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" />
 												</div>
 							  </div>
+							   <?php if (isset($user) && $user['role'] == 4) {
+			?>
 							  <div class="form-group hide" id="data-doc">
 							    <label class="control-label col-sm-2"></label>
 							    <div class="col-sm-10 data-doc-user hide">
 							    	<?php
 if (isset($docs) && count($docs) > 0) {
-			foreach ($docs as $value) {?>
+				foreach ($docs as $value) {?>
 												<div class="col-sm-12">
 													<label>
 														<input type="radio" name="docuser" value="<?php echo $value->docon_id?>">
@@ -277,8 +279,8 @@ if (isset($docs) && count($docs) > 0) {
 												</div>
 												<?php }
 
-			if (count($docs) < 3) {
-				?>
+				if (count($docs) < 3) {
+					?>
 												<div class="col-sm-12">
 												<label>
 													<input type="radio" name="docuser" value="-1" data-id="<?php echo $value->docon_id?>">Tạo hồ sơ mới
@@ -292,7 +294,7 @@ if (isset($docs) && count($docs) > 0) {
 													<div id="token-hash"></div>
 												</div> -->
 										<?php }
-			?>
+				?>
 										<?php } else {?>
 										<label >Bạn chưa có hồ sơ nào.</label><br>
 											<label>
@@ -300,13 +302,13 @@ if (isset($docs) && count($docs) > 0) {
 
 												</label>
 		<?php }
-		?>
+			?>
 							    	<!-- <div class="col-sm-12"></div> -->
 							    </div>
 							    <div class="col-sm-10 data-cv-user hide">
 							    		<?php
 if (isset($cvs) && count($cvs) > 0) {
-			foreach ($cvs as $value) {?>
+				foreach ($cvs as $value) {?>
 												<div class="col-sm-12">
 													<label>
 														<input type="radio" name="cvuser" value="<?php echo $value->doccv_id?>">
@@ -317,8 +319,8 @@ if (isset($cvs) && count($cvs) > 0) {
 												</div>
 												<?php }
 
-			if (count($cvs) < 3) {
-				?>
+				if (count($cvs) < 3) {
+					?>
 												<div class="col-sm-12">
 												<label><input type="radio" name="cvuser" value="-1">upload cv</label><label class="text-danger">(doc|docx|pdf)</label>
 												<div class="fileupload hide">
@@ -341,7 +343,7 @@ if (isset($cvs) && count($cvs) > 0) {
 												<label class="text-danger error-file hide"></label>
 												</div>
 										<?php }
-			?>
+				?>
 										<?php } else {?>
 										<label>Bạn chưa có cv nào.</label><br>
 											<label>
@@ -366,9 +368,10 @@ if (isset($cvs) && count($cvs) > 0) {
 											<!-- <input type="file" class="form-control hide file-cv" name="cv" id="cv"> -->
 											<label class="text-danger error-file hide"></label>
 		<?php }
-		?>
+			?>
 							    </div>
-							  </div>
+							  </div> <?php }
+		?>
 							  <!-- <div class="hide" id="value-doc"></div> -->
 							  <div class="form-group">
 							    <div class="col-sm-offset-2 col-sm-10">

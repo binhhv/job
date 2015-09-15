@@ -40,7 +40,7 @@ function getNotifyContact(){
            };
         },
         error:function (xhr, ajaxOptions, thrownError){
-					alert(thrownError);
+					//alert(thrownError);
 
 		}
 
@@ -69,7 +69,7 @@ function getNotifySupport(){
            };
         },
         error:function (xhr, ajaxOptions, thrownError){
-					alert(thrownError);
+					//alert(thrownError);
 
 		}
 

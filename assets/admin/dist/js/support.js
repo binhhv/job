@@ -45,7 +45,7 @@ function getMessageReply(cookie_id,schat_id){
 
               },
               error:function (xhr, ajaxOptions, thrownError){
-                alert(thrownError);
+                //alert(thrownError);
 
               }
 
@@ -82,7 +82,7 @@ function startChat(){
 
     },
     error:function (xhr, ajaxOptions, thrownError){
-      alert(thrownError);
+      //alert(thrownError);
     }
     });
 }
@@ -104,7 +104,7 @@ function getListSupportChat(){
            //updateListSupportChat();
         },
         error:function (xhr, ajaxOptions, thrownError){
-					alert(thrownError);
+					//alert(thrownError);
 
 		}
 
@@ -127,7 +127,7 @@ function getAndUpdateListSupportChat(callback){
            callback(data);
         },
         error:function (xhr, ajaxOptions, thrownError){
-          alert(thrownError);
+         //alert(thrownError);
 
     }
 
@@ -175,7 +175,7 @@ function getTokenSP(callback){
            //console.log(data);
         },
         error:function (xhr, ajaxOptions, thrownError){
-          alert(thrownError);
+          //alert(thrownError);
 
         }
 
@@ -221,7 +221,7 @@ function getAllMessageWithCookieId(cookie_id){
                  addCookieUserInput(data[data.length-1].schat_cookie_user);
 			        },
 			        error:function (xhr, ajaxOptions, thrownError){
-								alert(thrownError);
+								//alert(thrownError);
 
 							}
 

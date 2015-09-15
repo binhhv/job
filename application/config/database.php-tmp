@@ -64,9 +64,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn' => '',
-	// 'hostname' => '127.8.63.130',
-	// 'username' => 'adminlpWcYNT',
-	// 'password' => 'nIb8BFbKc2yW',
+	// 'hostname' => '127.6.91.130',
+	// 'username' => 'adminXhnX4EM',
+	// 'password' => 'fib_XtjANz3N',
 	'hostname'     => 'localhost',
 	'username'     => 'root',
 	'password'     => '',

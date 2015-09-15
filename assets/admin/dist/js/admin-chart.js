@@ -12,7 +12,7 @@ function getDataChartRecruitment(callback){
                  console.log(data);
               },
               error:function (xhr, ajaxOptions, thrownError){
-                alert(thrownError);
+                //alert(thrownError);
 
               }
 
@@ -28,7 +28,7 @@ function getDataChartJobseekerEmployer(callback){
                  console.log(data);
               },
               error:function (xhr, ajaxOptions, thrownError){
-                alert(thrownError);
+               // alert(thrownError);
 
               }
 
