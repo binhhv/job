@@ -34,7 +34,7 @@
                                 </div>
 
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_job_map_country');?> <span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('rec_job_map_country');?><span class="colorRed">*</span></label>
                                         <div class="controls controls_label">
 
                                           <!--   <select class="form-control" name="rec_job_map_country" id="rec_job_map_country">
@@ -43,11 +43,12 @@
                                                 <option value="1">Từ 5 đến 10 triệu</option>
 
                                             </select> -->
-                                            <?php foreach ($arr_country as $row) {?>
-                                                 <label class="radio-inline">
-                                                <input type="radio" value = "<?php echo $row->country_id;?>" name="rec_job_map_country"><?php echo $row->country_name;?>
-                                                </label>
-                                            <?php }
+<?php foreach ($arr_country as $row) {?>
+	                                                 <label class="radio-inline">
+	                                                <input type="radio" value = "<?php echo $row->country_id;?>" name="rec_job_map_country"><?php echo $row->country_name;
+	?>
+	</label>
+	<?php }
 ?>
 
 
@@ -76,9 +77,10 @@
                                     <div class="controls">
 
                                         <select class="form-control" name="rec_map_salary" id="rec_map_salary">
-                                             <?php foreach ($salary as $row) {?>
-                                                <option value="<?php echo $row->salary_id;?>"><?php echo $row->salary_value;?></option>
-                                            <?php }
+<?php foreach ($salary as $row) {?>
+	                                                <option value="<?php echo $row->salary_id;?>"><?php echo $row->salary_value;
+	?></option>
+	<?php }
 ?>
                                         </select>
 
@@ -93,11 +95,12 @@
                                 <div class="form-group col-sm-12">
                                     <label class="control-label"><?php echo lang('welfare_title');?></label>
                                     <div class="controls welfare_backgound">
-                                        <?php foreach ($arr_welfare as $row) {?>
-                                            <div class="checkbox">
-                                                <label><input type="checkbox" name="welfare[]" value="<?php echo $row->welfare_id;?>"><?php echo $row->welfare_title;?></label>
-                                             </div>
-                                        <?php }
+<?php foreach ($arr_welfare as $row) {?>
+	                                            <div class="checkbox">
+	                                                <label><input type="checkbox" name="welfare[]" value="<?php echo $row->welfare_id;?>"><?php echo $row->welfare_title;
+	?></label>
+	                                             </div>
+	<?php }
 ?>
 
                                        <!--  <input type="text" class="form-control" name="welfare_title" /> -->
@@ -170,9 +173,10 @@
                                     <div class="controls">
 
                                         <select class="form-control" name="rec_job_map_form" id="rec_job_map_form">
-                                             <?php foreach ($arr_job_form as $row) {?>
-                                                <option value="<?php echo $row->fjob_id;?>"><?php echo $row->fjob_type;?></option>
-                                            <?php }
+<?php foreach ($arr_job_form as $row) {?>
+	                                                <option value="<?php echo $row->fjob_id;?>"><?php echo $row->fjob_type;
+	?></option>
+	<?php }
 ?>
                                         </select>
 
@@ -182,11 +186,12 @@
                                     <label class="control-label"><?php echo lang('rec_job_map_level');?><span class="colorRed">*</span></label>
                                         <div class="controls">
                                             <select class="form-control" name="rec_job_map_level" id="rec_job_map_level">
-                                                  <?php foreach ($job_level as $row) {?>
-                                                <option value="<?php echo $row->ljob_id;?>"><?php echo $row->ljob_level;?></option>
-                                            <?php }
+<?php foreach ($job_level as $row) {?>
+	                                                <option value="<?php echo $row->ljob_id;?>"><?php echo $row->ljob_level;
+	?></option>
+	<?php }
 ?>
-                                            </select>
+</select>
 
                                         </div>
                                 </div>
@@ -194,9 +199,10 @@
                                  <div class="form-group col-sm-6">
                                     <div class="controls">
                                          <select class="form-control" name="rec_job_map_form_child" id="rec_job_map_form_child">
-                                            <?php foreach ($job_form_child as $row) {?>
-                                                <option value="<?php echo $row->jcform_id;?>"><?php echo $row->jcform_type;?></option>
-                                            <?php }
+<?php foreach ($job_form_child as $row) {?>
+	                                                <option value="<?php echo $row->jcform_id;?>"><?php echo $row->jcform_type;
+	?></option>
+	<?php }
 ?>
                                         </select>
                                     </div>
@@ -253,9 +259,10 @@
                                     <label class="control-label"><?php echo lang('rec_contact_form');?><span class="colorRed">*</span></label>
                                     <div class="controls">
                                         <select class="form-control" name="rec_contact_form" id="rec_contact_form">
-                                            <?php foreach ($contact_form as $row) {?>
-                                                <option value="<?php echo $row->contact_form_id;?>"><?php echo $row->contact_form_type;?></option>
-                                            <?php }
+<?php foreach ($contact_form as $row) {?>
+	                                                <option value="<?php echo $row->contact_form_id;?>"><?php echo $row->contact_form_type;
+	?></option>
+	<?php }
 ?>
                                         </select>
                                     </div>

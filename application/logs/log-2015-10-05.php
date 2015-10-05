@@ -832,3 +832,643 @@ ERROR - 2015-10-05 05:42:21 --> $config['composer_autoload'] is set to TRUE but 
 ERROR - 2015-10-05 05:42:21 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
 ERROR - 2015-10-05 05:43:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
 ERROR - 2015-10-05 05:43:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:44:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:44:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:45:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:45:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:46:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:46:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:46:51 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:46:51 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:46:51 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:47:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:47:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:48:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:48:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:49:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:49:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:50:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:50:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:51:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:51:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:51:27 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:51:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:51:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:51:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:52:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:52:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:53:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:53:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:54:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:54:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:36 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:37 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\job\application\views\main\job\job-search.php 21
+ERROR - 2015-10-05 05:55:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:38 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:39 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:39 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:39 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:42 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:42 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:42 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:43 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:44 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:44 --> http://localhost/job/
+ERROR - 2015-10-05 05:55:44 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:44 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:49 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:50 --> http://localhost/job/
+ERROR - 2015-10-05 05:55:50 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:50 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:55:50 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:06 --> http://localhost/job/
+ERROR - 2015-10-05 05:56:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:11 --> http://localhost/job/
+ERROR - 2015-10-05 05:56:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:14 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\job\application\views\main\job\job-search.php 21
+ERROR - 2015-10-05 05:56:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:25 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:27 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:56:42 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:57:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:57:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:57:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:57:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:58:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:58:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:58:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:58:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:59:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:59:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:59:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 05:59:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:00:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:00:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:00:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:00:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:01:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:01:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:01:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:01:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:02:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:02:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:02:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:02:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:02:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:02:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:02:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:02:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:03:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:03:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:03:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:03:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:04:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:04:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:04:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:04:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:04:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:04:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:04:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:05:18 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:05:18 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:05:18 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:05:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:05:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:05:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:05:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:06:01 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:06:02 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:06:02 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:06:03 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:06:19 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:06:19 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:06:19 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:06:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:06:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:06:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:06:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:07:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:07:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:07:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:07:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:08:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:08:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:08:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:08:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:09:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:09:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:09:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:09:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:10:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:10:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:10:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:10:29 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:11:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:11:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:11:28 --> Severity: Notice --> Undefined index: user C:\xampp\htdocs\job\application\controllers\admin\Admin.php 15
+ERROR - 2015-10-05 06:11:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:12:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:12:11 --> value 4
+ERROR - 2015-10-05 06:12:11 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC
+ERROR - 2015-10-05 06:12:11 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC limit 0, 10
+ERROR - 2015-10-05 06:12:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:12:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:15:36 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:15:37 --> value 4
+ERROR - 2015-10-05 06:15:37 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC
+ERROR - 2015-10-05 06:15:37 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC limit 10, 10
+ERROR - 2015-10-05 06:15:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:15:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:34:50 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:34:50 --> value 4
+ERROR - 2015-10-05 06:34:50 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC
+ERROR - 2015-10-05 06:34:50 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC limit 10, 10
+ERROR - 2015-10-05 06:34:50 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:35:40 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:35:40 --> value 4
+ERROR - 2015-10-05 06:35:40 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC
+ERROR - 2015-10-05 06:35:40 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC limit 10, 10
+ERROR - 2015-10-05 06:35:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:53:53 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:53:53 --> value 4
+ERROR - 2015-10-05 06:53:53 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC
+ERROR - 2015-10-05 06:53:53 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC limit 10, 10
+ERROR - 2015-10-05 06:53:53 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:54:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:54:04 --> value 4
+ERROR - 2015-10-05 06:54:04 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC
+ERROR - 2015-10-05 06:54:04 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC limit 0, 10
+ERROR - 2015-10-05 06:54:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:54:08 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:54:08 --> value 4
+ERROR - 2015-10-05 06:54:08 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC
+ERROR - 2015-10-05 06:54:08 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC limit 0, 10
+ERROR - 2015-10-05 06:54:08 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:54:46 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:54:46 --> value 4
+ERROR - 2015-10-05 06:54:46 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC
+ERROR - 2015-10-05 06:54:46 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC limit 0, 10
+ERROR - 2015-10-05 06:54:47 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:55:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:55:06 --> value 4
+ERROR - 2015-10-05 06:55:06 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC
+ERROR - 2015-10-05 06:55:06 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC limit 0, 10
+ERROR - 2015-10-05 06:55:07 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:55:15 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 06:55:15 --> value 4
+ERROR - 2015-10-05 06:55:15 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC
+ERROR - 2015-10-05 06:55:15 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC limit 0, 10
+ERROR - 2015-10-05 06:55:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:28:40 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:29:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:29:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:29:38 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:29:46 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:29:46 --> value 4
+ERROR - 2015-10-05 08:29:46 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC
+ERROR - 2015-10-05 08:29:46 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC limit 0, 10
+ERROR - 2015-10-05 08:29:46 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:29:46 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:29:46 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:30:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:30:05 --> value 4
+ERROR - 2015-10-05 08:30:05 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC
+ERROR - 2015-10-05 08:30:05 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC limit 10, 10
+ERROR - 2015-10-05 08:30:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:30:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:30:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:30:13 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:30:14 --> value 4
+ERROR - 2015-10-05 08:30:14 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC
+ERROR - 2015-10-05 08:30:14 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC limit 0, 10
+ERROR - 2015-10-05 08:33:34 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:33:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:33:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:40:55 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:40:55 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:40:56 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:42:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:42:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:42:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:43:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:43:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:43:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:44:53 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:44:53 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:54:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:54:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:54:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:56:51 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:56:51 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:56:52 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:56:57 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:56:57 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:57:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:57:25 --> Could not find the language line "rec_job_map_form_child"
+ERROR - 2015-10-05 08:57:45 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:57:45 --> Could not find the language line "rec_job_map_form_child"
+ERROR - 2015-10-05 08:57:57 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:57:57 --> Could not find the language line "rec_job_map_form_child"
+ERROR - 2015-10-05 08:58:03 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:58:03 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:58:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:58:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:58:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:58:21 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:58:21 --> value 4
+ERROR - 2015-10-05 08:58:21 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC
+ERROR - 2015-10-05 08:58:21 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC limit 0, 10
+ERROR - 2015-10-05 08:58:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:58:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:58:25 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:58:33 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:58:33 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:59:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 08:59:17 --> Could not find the language line "rec_job_map_form_child"
+ERROR - 2015-10-05 09:02:15 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:02:15 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:02:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:02:20 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:02:20 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:02:52 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:02:52 --> Could not find the language line "rec_job_map_form_child"
+ERROR - 2015-10-05 09:02:52 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\job\application\controllers\CreateRecruitment.php 137
+ERROR - 2015-10-05 09:02:52 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\job\application\controllers\CreateRecruitment.php 149
+ERROR - 2015-10-05 09:03:07 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:10:44 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:10:45 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:10:45 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:12:18 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:12:18 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:12:20 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:12:20 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:12:56 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:12:57 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:13:09 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:13:09 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:13:36 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:13:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:14:36 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:14:36 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:15:21 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:15:22 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:15:25 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:15:25 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:15:25 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:15:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:15:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:17:39 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:17:40 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:18:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:18:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:19:18 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:19:18 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:19:19 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:19:39 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:19:39 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:19:40 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:20:22 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:20:23 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:20:47 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:20:48 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:20:48 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:22:33 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:22:33 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:22:53 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:22:53 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:22:54 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:24:58 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:24:58 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:26:51 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:26:52 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:26:52 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:28:02 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:28:03 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:28:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:28:55 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:28:55 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:28:56 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:30:36 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:30:36 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:31:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:31:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:31:39 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:31:40 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:31:40 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:33:31 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:33:32 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:33:32 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:34:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:34:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:34:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:34:40 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:34:40 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:34:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:35:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:35:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:35:13 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:35:23 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:35:24 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:35:25 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:36:20 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:36:21 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:36:21 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:37:00 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:37:00 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:37:01 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:37:13 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:37:13 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:37:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:37:46 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:37:47 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:37:47 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:39:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:39:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:39:18 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:39:18 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:39:27 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:39:27 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:39:28 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:41:51 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:41:51 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:41:51 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:43:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:43:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:43:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:44:11 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:44:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:44:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:44:34 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:44:34 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:44:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:44:56 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:44:56 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:44:57 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:45:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:45:06 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:45:07 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:45:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:45:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:45:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:46:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:46:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:47:01 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:47:01 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:47:34 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:47:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:49:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:49:04 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:49:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:49:59 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:49:59 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:50:00 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:50:34 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:50:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:50:35 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:52:48 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:52:48 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:52:49 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:54:14 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:54:15 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:58:40 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:58:41 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:59:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:59:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:59:38 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:59:38 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:59:39 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:59:56 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:59:56 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 09:59:57 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:00:25 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:00:26 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:00:42 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:00:43 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:03:58 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:03:58 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:03:59 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:04:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:04:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:04:13 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:05:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:05:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:05:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:05:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.

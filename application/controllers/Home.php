@@ -58,7 +58,7 @@ class Home extends CI_Controller {
 		$province = $this->recruitment->getAllProvince();
 		$empoyer_create_recruitment = $this->load->view('main/create_recruitment', array('csrf' => $csrf, 'arr_country' => $arr_country,
 			'arr_welfare' => $arr_welfare, 'arr_job_form' => $arr_job_form, 'job_form_child' => $job_form_child, 'job_level' => $job_level,
-			'contact_form' => $contact_form), TRUE);
+			'contact_form' => $contact_form, 'salary' => $salary), TRUE);
 
 		$newJob = $this->load->view('main/new-job', array(), TRUE);
 		$jobseeker = $this->load->view('main/jobseeker', array(), TRUE);
@@ -184,6 +184,28 @@ class Home extends CI_Controller {
 			$output = array('status' => 'error');
 			echo json_encode($output);
 		}
+	}
+	function term() {
+		$user = (isset($this->session->userdata['user'])) ? $this->session->userdata['user'] : null;
+		$head = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Contact'), TRUE);
+		$header = $this->load->view('main/header', array(
+			'logo' => 'img/header/allSHIGOTO.png',
+			'showTitle' => true,
+			'logoWidth' => '170px',
+			'logoHeight' => '70px',
+			'menu' => 'aboutus',
+			'user' => $user,
+		), TRUE);
+		//$ab = m;
+
+		$csrf = array(
+			'name' => $this->security->get_csrf_token_name(),
+			'hash' => $this->security->get_csrf_hash(),
+		);
+		$content = $this->load->view('main/term', array('csrf' => $csrf), TRUE);
+		$footer = $this->load->view('main/footer', array(), TRUE);
+		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
+
 	}
 
 }

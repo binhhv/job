@@ -65,7 +65,7 @@ class CreateRecruitment extends CI_Controller {
 		$this->form_validation->set_message('regex_match', $this->lang->line('regex_match'));
 		$this->form_validation->set_error_delimiters('<label class="error alert-danger">', '</label>');
 		$this->form_validation->set_rules('rec_title', $this->lang->line('rec_title'), 'trim|required|xss_clean');
-		$this->form_validation->set_rules('rec_salary', $this->lang->line('rec_salary'), 'trim|required|xss_clean');
+		//$this->form_validation->set_rules('rec_salary', $this->lang->line('rec_salary'), 'trim|required|xss_clean');
 		$this->form_validation->set_rules('rec_job_content', $this->lang->line('rec_job_content'), 'trim|required|xss_clean');
 		$this->form_validation->set_rules('rec_job_time', $this->lang->line('rec_job_time'), 'trim|required|xss_clean');
 		$this->form_validation->set_rules('rec_job_regimen', $this->lang->line('rec_job_regimen'), 'trim|required|xss_clean');
@@ -75,8 +75,8 @@ class CreateRecruitment extends CI_Controller {
 		$this->form_validation->set_rules('rec_job_map_form_child', $this->lang->line('rec_job_map_form_child'), 'trim|required|xss_clean');
 		$this->form_validation->set_rules('rec_job_map_level', $this->lang->line('rec_job_map_level'), 'trim|required|xss_clean');
 		$this->form_validation->set_rules('rec_job_map_country', $this->lang->line('rec_job_map_country'), 'trim|required|xss_clean');
-		$this->form_validation->set_rules('province_name', $this->lang->line('province_name'), 'trim|required|xss_clean');
-		$this->form_validation->set_rules('welfare', $this->lang->line('welfare_title'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('province_name', $this->lang->line('province_name'), 'trim|xss_clean');
+		$this->form_validation->set_rules('welfare', $this->lang->line('welfare_title'), 'trim|xss_clean');
 		$this->form_validation->set_rules('rec_contact_name', $this->lang->line('rec_contact_name'), 'trim|required|xss_clean');
 		$this->form_validation->set_rules('rec_contact_email', $this->lang->line('rec_contact_email'), 'trim|required|xss_clean');
 		$this->form_validation->set_rules('rec_contact_address', $this->lang->line('rec_contact_address'), 'trim|required|xss_clean');
@@ -85,8 +85,9 @@ class CreateRecruitment extends CI_Controller {
 		$this->form_validation->set_rules('rec_contact_form', $this->lang->line('rec_contact_form'), 'trim|required|xss_clean');
 		if ($this->form_validation->run()) {
 			$rec_title = $this->security->xss_clean($this->input->post('rec_title'));
-			$rec_salary = $this->security->xss_clean($this->input->post('rec_salary'));
+			$rec_salary = ''; //$this->security->xss_clean($this->input->post('rec_salary'));
 			$rec_job_content = $this->security->xss_clean($this->input->post('rec_job_content'));
+			$rec_map_salary = $this->security->xss_clean($this->input->post('rec_map_salary'));
 			$rec_job_time = $this->security->xss_clean($this->input->post('rec_job_time'));
 			$rec_job_regimen = $this->security->xss_clean($this->input->post('rec_job_regimen'));
 			$rec_job_require = $this->security->xss_clean($this->input->post('rec_job_require'));
@@ -105,6 +106,7 @@ class CreateRecruitment extends CI_Controller {
 			$datainsert = array(
 				'rec_title' => $rec_title,
 				'rec_salary' => $rec_salary,
+				'rec_map_salary' => $rec_map_salary,
 				'rec_job_content' => $rec_job_content,
 				'rec_job_time' => $rec_job_time,
 				'rec_job_regimen' => $rec_job_regimen,

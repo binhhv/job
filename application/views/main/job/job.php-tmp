@@ -382,15 +382,19 @@
 									     <!-- <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" /> -->
 									    <!-- <input type="file" class="form-control file-cv" name="cv1"> -->
 		<?php if (isset($user) && $user['role'] == 4) {?>
-			<button type="submit" class="btn btn-danger" disabled="true" id="btn-apply">Nộp hồ sơ</button>
+			<button type="submit" class="btn btn-danger" disabled="true" id="btn-apply">Nộp đơn</button>
 			<?php } else {?>
 										    	<a href="<?php echo base_url('login');?>?url=<?php echo urlencode(current_url());?>" class="btn btn-primary">Đăng nhập để nộp hồ sơ</a>
 			<?php	}
 		?>
-		</div>
+
+									    </div>
 									  </div>
 									</form>
 									<div  class="col-sm-12 text-center msg-apply hide"></div>
+									</div>
+									<div class="col-sm-12 text-center">
+										*Nhấp chọn "Nộp đơn", tôi đã đọc và đồng ý với các <a class="a-term" href="<?php echo base_url('about/term');?>">Thỏa thuận sử dụng</a>.
 									</div>
 									</div>
 								</div>

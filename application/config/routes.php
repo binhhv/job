@@ -258,6 +258,7 @@ $route['contact'] = 'contact/index';
 $route['contact/send-contact'] = 'contact/sendContact';
 $route['faq'] = 'faq/index';
 $route['about'] = 'home/about';
+$route['about/term'] = 'home/term';
 $route['organizational-structure'] = 'home/structure';
 $route['service'] = 'home/service';
 $route['getNewsRecruitment'] = 'home/getNewsRecruitment';

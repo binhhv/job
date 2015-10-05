@@ -288,7 +288,7 @@ $(document).ready(function() {
                         $('#message_recruitment').append(rec_title);
                         $('#message_recruitment').append(rec_job_map_country);
                         $('#message_recruitment').append(province_name);
-                        $('#message_recruitment').append(rec_salary);
+                        //$('#message_recruitment').append(rec_salary);
                         $('#message_recruitment').append(welfare);
                         $('#message_recruitment').append(rec_job_regimen);
                         $('#message_recruitment').append(rec_job_content);

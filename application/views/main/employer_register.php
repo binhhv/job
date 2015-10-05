@@ -181,6 +181,9 @@
                                      <button type="submit" class="btn btn-primary"><?php echo lang('btn_register_re_user');?></button>
                                 </div>
                             </div>
+                            <div class="col-sm-12">
+                                <span class="colorRed">*</span> Nhấp chọn "Đăng Ký"đồng nghĩa với việc tôi đã đọc và đồng ý với các <a class="a-term" href="<?php echo base_url('about/term');?>">Thỏa thuận sử dụng</a>.
+                            </div>
                         </div>
                     </fieldset>
                     <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?=$csrf['hash'];?>" />

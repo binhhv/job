@@ -1673,3 +1673,91 @@ span.open-support-online,span.close-support-online{
 #close-support-online-box,#open-support-online-box{
 	cursor: pointer;
 }
+
+/*fix 5.10.2015*/
+ul.sub-menu li.menu-item a{
+	text-align: left;
+}
+a.a-term{
+	color: blue;
+	font-weight: bold;
+}
+a.a-term:hover{
+		color: blue;
+	font-weight: bold;
+}
+a.a-mail-to,a.a-mail-to:hover{
+		color: blue;
+	font-weight: bold;
+}
+
+ol.ol-term{
+	padding-left: 20px !important;
+}
+ol.ol-term li.li-term-item{
+	font-weight: bold;
+	color: black;
+	font-size: 15px;
+
+}
+ul.ul-term-1{
+	padding-left: 5px;
+	list-style: none;
+	color: #787878;
+	margin: 10px 0;
+}
+ul.ul-term-1 > li {
+/* handle multiline */
+    overflow: visible;
+    padding-left: 17px;
+    position: relative;
+}
+
+ul.ul-term-1 >li:before {
+/* your own marker in content */
+   content: "\00af";
+   left: 0;
+   position: absolute;
+   top:5px;
+}
+
+ul.ul-term-child-2{
+	padding-left: 5px;
+	list-style: none;
+	color: #787878;
+	margin: 10px 0;
+}
+ul.ul-term-child-2 > li {
+/* handle multiline */
+    overflow: visible;
+    padding-left: 17px;
+    position: relative;
+}
+
+ul.ul-term-child-2 >li:before {
+/* your own marker in content */
+   content: "+";
+   left: 0;
+   position: absolute;
+ 
+}
+
+
+/*ul.ul-term-1 li:before {content:"\00af";}*/
+ul.ul-term-1 li{
+	text-align: justify;
+
+	/*line-height: 25px;*/
+}
+ul.ul-term-1 li p{
+	margin-bottom: 5px;
+}
+ul.ul-term-child-1{
+	padding-left: 20px;
+	list-style: lower-alpha;
+	color: #787878;
+	margin: 10px 0;
+}
+.margin-bottom-10{
+	margin-bottom: 10px !important;
+}

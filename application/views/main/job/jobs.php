@@ -1,7 +1,7 @@
 	<div class="container job-province">
 
 		<div class="row">
-		<div class="col-sm-4 col-sm-push-8">
+		<div class="col-sm-4 col-sm-push-8 jobs-content-right">
 			<!-- <div class="col-sm-12 "> -->
 				<div class="job-province-box">
 				<?php if (isset($searchJobs)) {
@@ -11,7 +11,7 @@
 			</div>
 		<!-- </div> -->
 		</div>
-		<div class="col-sm-8 col-sm-pull-4">
+		<div class="col-sm-8 col-sm-pull-4 jobs-content-left">
 
 		<!-- <div class="col-sm-12"> -->
 				<div class="job-province-alert text-center">

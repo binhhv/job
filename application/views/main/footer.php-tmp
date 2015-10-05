@@ -86,7 +86,7 @@
 
                  <li><a href="<?php echo base_url('faq');?>">FAQ</a></li>
                    <li>|</li>
-                 <li><a href="<?php echo base_url()?>">Điều khoản sử dụng</a></li>
+                 <li><a href="<?php echo base_url('about/term')?>">Điều khoản sử dụng</a></li>
                  <li>|</li>
                 <li><a href="<?php echo base_url('contact')?>">Liên hệ</a></li>
                 <li>|</li>
@@ -145,3 +145,11 @@ $( window ).resize(function() {
 
 });
     </script>
+
+<?php
+if (isset($scriptOption)) {
+	foreach ($scriptOption as $script) {?>
+		    <script src="<?php echo base_url().$script;?>"></script>
+		<?php }
+}
+?>

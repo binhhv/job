@@ -151,8 +151,8 @@ class Job extends CI_Controller {
 
 		$content = $this->load->view('main/job/jobs', array('searchJobs' => $searchJobs, 'listJob' => $jobSearchPagingnation, 'numjob' => count($jobSearch), 'pagination' => $pagination,
 				'value4'                                                       => $value4, 'keyArr'                                                       => $keyArr), TRUE);
-
-		$footer = $this->load->view('main/footer', array(), TRUE);
-		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
+		$scriptOption = array('assets/main/js/fix-content-list-job.js');
+		$footer       = $this->load->view('main/footer', array('scriptOption' => $scriptOption), TRUE);
+		$this->load->view('main/layout', array('head'                         => $head, 'header'                         => $header, 'content'                         => $content, 'footer'                         => $footer));
 	}
 }
