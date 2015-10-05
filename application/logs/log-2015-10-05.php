@@ -1490,3 +1490,21 @@ ERROR - 2015-10-05 10:05:37 --> $config['composer_autoload'] is set to TRUE but 
 =======
 >>>>>>> origin/master
 >>>>>>> 198b30dac28bb9c11205421e4e2435b42cc89b16
+ERROR - 2015-10-05 10:39:12 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:39:12 --> Severity: Error --> Call to undefined method Recruitment_model::getAllCareer() C:\xampp\htdocs\job\application\controllers\Home.php 58
+ERROR - 2015-10-05 10:41:27 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:41:27 --> Severity: Notice --> Undefined variable: arr_Salary C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
+ERROR - 2015-10-05 10:41:27 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
+ERROR - 2015-10-05 10:41:27 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:42:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:42:37 --> Severity: Notice --> Undefined variable: arr_Salary C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
+ERROR - 2015-10-05 10:42:37 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
+ERROR - 2015-10-05 10:42:38 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:43:15 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:43:15 --> Severity: Notice --> Undefined variable: arr_Salary C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
+ERROR - 2015-10-05 10:43:15 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
+ERROR - 2015-10-05 10:43:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:43:49 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 10:43:49 --> Severity: Notice --> Undefined variable: arr_Salary C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
+ERROR - 2015-10-05 10:43:49 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
+ERROR - 2015-10-05 10:43:50 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.

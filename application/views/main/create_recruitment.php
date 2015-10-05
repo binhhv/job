@@ -320,14 +320,16 @@
                             </div>
 
                         </div>
-                        <div class="row">
+                        <div class="col-sm-12">
                              <div class="col-sm-12">
                                 <div class="form-group text-right">
                                     <button type="submit" class="btn btn-primary"><?php echo lang('btn_upload');?></button>
                                 </div>
                             </div>
                             <div class="col-sm-12">
+                                <div class="form-group ">
                                 *Nhấp chọn "ĐăngTin"đồng nghĩa với việc tôi đã đọc và đồng ý với các <a class="a-term" href="<?php echo base_url('about/term');?>">Thỏa thuận sử dụng</a>.
+                            </div>
                             </div>
                         </div>
                     </fieldset>
