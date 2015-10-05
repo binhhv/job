@@ -80,17 +80,17 @@
             <span>Số điện thoại: xxxxxxx</span>
             <span>Địa chỉSố 5, Lê quang định, phường Thắng nhất , TP Vũng Tàu</span> -->
             <ul>
-                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="<?php echo base_url('about');?>">Giới thiệu</a></li>
 
                 <li>|</li>
 
                  <li><a href="<?php echo base_url('faq');?>">FAQ</a></li>
                    <li>|</li>
-                 <li><a href="#">Điều khoản sử dụng</a></li>
+                 <li><a href="<?php echo base_url()?>">Điều khoản sử dụng</a></li>
                  <li>|</li>
                 <li><a href="<?php echo base_url('contact')?>">Liên hệ</a></li>
                 <li>|</li>
-                <li><a href="#">Giúp đỡ</a></li>
+                <li><a href="<?php echo base_url()?>">Giúp đỡ</a></li>
             </ul>
             <ul class="social">
                 <li><a href="#"><img src="<?php echo base_url();?>assets/main/img/social/facebook.png"></a></li>
@@ -112,8 +112,18 @@
         </div>
 
     </div>
+    <!-- <div class="row support-online">
+      <div class="col-sm-12 text-right">
+        <label class="btn btn-succss ">allSHIGOTO</label>
+      </div>
+    </div> -->
 </div>
 
+
+<?php if (isset($popup)) {
+	echo $popup;
+}
+?>
 <script type="text/javascript">
 $(document).ready(function() {
  // alert("123123");

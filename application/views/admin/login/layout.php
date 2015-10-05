@@ -22,7 +22,13 @@ if (isset($titlePage)) {
     <link rel="stylesheet" href="<?php echo base_url();?>assets/admin/dist/css/AdminLTE.min.css">
     <!-- iCheck -->
     <link rel="stylesheet" href="<?php echo base_url();?>assets/admin/plugins/iCheck/square/blue.css">
+    <!-- for FF, Chrome, Opera -->
+    <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/favicons/favicon-32x32.png" sizes="32x32">
 
+    <!-- for IE -->
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url();?>assets/favicons/favicon.ico" >
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url();?>assets/favicons/favicon.ico"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

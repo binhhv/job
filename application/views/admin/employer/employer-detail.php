@@ -224,8 +224,8 @@ if (isset($employer)) {
                             </tr>
                             <tr ng-repeat="data in filtered = (pagedItems | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" data-id="{{data.account_id}}">
                               <td>{{data.rec_code}}</td><!--{{($index + ((currentPage -1)* entryLimit)) + 1}}-->
-                              <td>{{data.rec_title}}</td>
-                              <td>{{data.rec_salary}} </td>
+                              <td>{{data.rec_title | cut:true:20:' ...'}}</td>
+                              <td>{{data.salary_value}} </td>
                               <td class="text-center">
                                       {{data.fjob_type}} - {{data.jcform_type}}
                               </td>

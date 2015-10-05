@@ -6330,7 +6330,7 @@ hr {
     z-index: 100000
 }
 
-#searchsubmit, #submitcomment, #wp-submit, .button, .button-medium, .button-secondary, .button-small, .job-manager-form.wp-job-manager-bookmarks-form .jobify_widget_slider_hero a.bookmark-notice, .job-manager-form.wp-job-manager-bookmarks-form .jobify_widget_slider_hero a.remove-bookmark, .job-manager-form.wp-job-manager-bookmarks-form .woocommerce a.bookmark-notice, .job-manager-form.wp-job-manager-bookmarks-form .woocommerce a.remove-bookmark, .job-manager-form.wp-job-manager-bookmarks-form a.bookmark-notice, .job-manager-form.wp-job-manager-bookmarks-form a.remove-bookmark, .job-manager-pagination .jobify_widget_slider_hero a, .job-manager-pagination .woocommerce a, .job-manager-pagination .woocommerce span, .job-manager-pagination a, .job-manager-pagination span, .job_listing .jobify_widget_slider_hero a.view-video, .job_listing .woocommerce a.view-video, .job_listing a.view-video, .jobify_widget_slider a.button-secondary, .jobify_widget_slider_hero .job-manager-form.wp-job-manager-bookmarks-form a.bookmark-notice, .jobify_widget_slider_hero .job-manager-form.wp-job-manager-bookmarks-form a.remove-bookmark, .jobify_widget_slider_hero .job-manager-pagination a, .jobify_widget_slider_hero .job_listing a.view-video, .jobify_widget_slider_hero .resume a.view-video, .jobify_widget_slider_hero .single_job_listing .application a.apply-with-linkedin, .jobify_widget_slider_hero a.button, .load_more_jobs, .load_more_resumes, .resume .jobify_widget_slider_hero a.view-video, .resume .woocommerce a.view-video, .resume a.view-video, .single_job_listing .application .apply-with-linkedin, .single_job_listing .application .jobify_widget_slider_hero a.apply-with-linkedin, .single_job_listing .application .woocommerce .apply-with-linkedin, .woocommerce .button, .woocommerce .job-manager-form.wp-job-manager-bookmarks-form a.bookmark-notice, .woocommerce .job-manager-form.wp-job-manager-bookmarks-form a.remove-bookmark, .woocommerce .job-manager-pagination a, .woocommerce .job-manager-pagination span, .woocommerce .job_listing a.view-video, .woocommerce .resume a.view-video, .woocommerce .single_job_listing .application .apply-with-linkedin, .woocommerce input.button, .woocommerce input.import-from-linkedin, button, input.import-from-linkedin, input[type=submit] {
+#searchsubmit, #submitcomment, #wp-submit, .button, .button-medium, .button-secondary, .button-small, .job-manager-form.wp-job-manager-bookmarks-form .jobify_widget_slider_hero a.bookmark-notice, .job-manager-form.wp-job-manager-bookmarks-form .jobify_widget_slider_hero a.remove-bookmark, .job-manager-form.wp-job-manager-bookmarks-form .woocommerce a.bookmark-notice, .job-manager-form.wp-job-manager-bookmarks-form .woocommerce a.remove-bookmark, .job-manager-form.wp-job-manager-bookmarks-form a.bookmark-notice, .job-manager-form.wp-job-manager-bookmarks-form a.remove-bookmark, .job-manager-pagination .jobify_widget_slider_hero a, .job-manager-pagination .woocommerce a, .job-manager-pagination .woocommerce span, .job-manager-pagination a, .job-manager-pagination span, .job_listing .jobify_widget_slider_hero a.view-video, .job_listing .woocommerce a.view-video, .job_listing a.view-video, .jobify_widget_slider a.button-secondary, .jobify_widget_slider_hero .job-manager-form.wp-job-manager-bookmarks-form a.bookmark-notice, .jobify_widget_slider_hero .job-manager-form.wp-job-manager-bookmarks-form a.remove-bookmark, .jobify_widget_slider_hero .job-manager-pagination a, .jobify_widget_slider_hero .job_listing a.view-video, .jobify_widget_slider_hero .resume a.view-video, .jobify_widget_slider_hero .single_job_listing .application a.apply-with-linkedin, .jobify_widget_slider_hero a.button, .load_more_jobs, .load_more_resumes, .resume .jobify_widget_slider_hero a.view-video, .resume .woocommerce a.view-video, .resume a.view-video, .single_job_listing .application .apply-with-linkedin, .single_job_listing .application .jobify_widget_slider_hero a.apply-with-linkedin, .single_job_listing .application .woocommerce .apply-with-linkedin, .woocommerce .button, .woocommerce .job-manager-form.wp-job-manager-bookmarks-form a.bookmark-notice, .woocommerce .job-manager-form.wp-job-manager-bookmarks-form a.remove-bookmark, .woocommerce .job-manager-pagination a, .woocommerce .job-manager-pagination span, .woocommerce .job_listing a.view-video, .woocommerce .resume a.view-video, .woocommerce .single_job_listing .application .apply-with-linkedin, .woocommerce input.button, .woocommerce input.import-from-linkedin, input.import-from-linkedin, input[type=submit] {
     font: 700 18px/normal "VNHongHaHep",Montserrat, sans-serif;
     text-transform: uppercase;
     text-align: center;
@@ -9769,12 +9769,13 @@ body .chosen-container {
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    font-size: 16px;
+    font-size: 14px;
     zoom: 1;
     *display: inline;
     background: #fff;
-    border-radius: 6px;
-    border: 1px solid #CCC
+    /*border-radius: 6px;*/
+    border: 1px solid #CCC;
+    width: 100% !important;
 }
 
 body .chosen-container * {
@@ -9807,7 +9808,7 @@ body .chosen-container a {
 body .chosen-container-single .chosen-single {
     position: relative;
     display: block;
-    padding: 12px 14px;
+   /* padding: 12px 14px;*/
     text-decoration: none;
     white-space: nowrap;
     line-height: 1;
@@ -10003,7 +10004,7 @@ body .chosen-container-multi .chosen-choices li.search-choice span {
 body .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
     color: #818080;
     position: absolute;
-    top: 7px;
+    top: 3px;
     left: 6px;
     display: block;
     font-size: 14px
@@ -10488,7 +10489,7 @@ body .chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b {
     .site-primary-navigation {
         position: absolute;
         right: 0;
-        top: 60%;/*50*/
+        top: 65%;/*60/50*/
         -webkit-transform: translatey(-50%);
         -moz-transform: translatey(-50%);
         transform: translatey(-50%)
@@ -10507,7 +10508,8 @@ body .chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b {
     .nav-menu-primary li, .nav-menu-primary ul li {
         margin-left: 10px;
         float: left;
-        position: relative
+        position: relative;
+        margin-bottom: 0px;
     }
 
     .nav-menu-primary li .sub-menu {
@@ -10553,7 +10555,7 @@ body .chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b {
         position: absolute;
         top: 100%;
         left: 50%;
-        background: #000;
+        background:#121212; /*#000;*/
         z-index: 99999;
        /* border: 1px solid #ccc;*/
         border-bottom-left-radius: 6px;

@@ -41,7 +41,7 @@
                             <div class="form-group col-sm-12">
                                 <label class="control-label" for="surname">Mức lương </label>
                                 <div class="controls">
-                                    {{rec.rec_salary}}
+                                    {{rec.salary_value}}
                                 </div>
                             </div>
                             <div class="form-group col-sm-12">

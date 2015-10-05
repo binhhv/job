@@ -45,3 +45,5 @@ if (isset($newjob)) {
        <?php echo $user_upload_cv_online;?>
        <?php echo $empoyer_register;?>
        <?php echo $empoyer_create_recruitment;?>
+
+

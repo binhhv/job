@@ -1,6 +1,13 @@
 .margin-top-10{
 	margin-top: 10px !important;
 }
+.alert-send-mail{
+	 position: fixed;
+    z-index: 9999;
+    right: 0;
+    opacity: 0.8;
+    top:0;
+}
 .alert-message,.alert-message-sendmail,.alert-message-delete,.alert-message-create,.alert-message-setRoleEmployer,.alert-message-errors,.alert-message-approve{
 	 position: fixed;
     z-index: 9999;
@@ -128,10 +135,36 @@ img.logo-small{
 .search-tools{
 	margin-top: 5px;
 }
+.chart-recruitment{
+	min-height: 368px;
+	max-height: 368px;
+}
+.chart-note-jobseeker{
+	width: 20px;
+	height: 10px;
+	background: #D2D6DE;
+	margin-bottom: 0 !important;
+}
+.chart-note-employer{
+	width: 20px;
+	height: 10px;
+	background: #00C0EF;
+
+	margin-bottom: 0 !important;
+}
 @media (max-width: 767px) {
+	.chart-recruitment{
+	min-height: auto;
+	max-height: auto;
+}
+	.ul-list-support-chart{
+	height: 200px;
+	overflow: auto;
+}
 	.margin-top-5-res{
 		margin-top: 5px;
 	}
+
 	  .search-box{
 	  	float: left !important;
 	  	margin-top: 10px;
@@ -164,4 +197,167 @@ img.logo-small{
 @media (max-width: 560px) {
 	
 }
+.ul-list-support-chat{
+	height: 310px;
+	overflow: auto;
+}
+.support-chat-readed{
+	background: #d2d6de;
+}
 
+.padding-top-10{
+	padding-top: 10px;
+}
+#map_region {
+    width: 100%;
+    height: 200px;
+}
+#current {
+    padding-top: 25px;
+}
+.welfare-icon{
+	padding: 2px 5px;
+}
+.list-group li {
+    list-style: none;
+}
+.panel-info, .panel-rating, .panel-more1 {
+    float: left;
+    /*margin: 5px 10px;*/
+
+}
+.panel-more1 div.item-box{
+	border: 1px solid #f1f1f1;
+}
+.logo-box .panel-default{
+	border: none;
+
+}
+.logo-box .panel-default .panel-body{
+	padding: 0 !important;
+}
+.logo-box img.item-logo{
+	max-height: auto;
+	max-width: 100%;
+	/*width: 170px;*/
+	height: 100px;
+	
+}
+.logo-box .panel-more1{
+	
+	padding: 5px;
+}
+.logo-box .panel-more1 .span-active-logo{
+	margin: 5px;
+	width: 100%;
+}
+.logo-box .panel-more1 .span-name-logo{
+	border-top:1px solid #f1f1f1;
+	border-bottom: 1px solid #f1f1f1;
+}
+.logo-box .panel-more1 .logo-active{
+	background-color: #f1f1f1;
+}
+img.icon-checked{
+	max-height: auto;
+	max-width: 100%;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	/*top: 0;*/
+	right: 5px;
+}
+img.icon-checked-site{
+	max-height: auto;
+	max-width: 100%;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	
+}
+img.icon-checked-mail{
+	max-height: auto;
+	max-width: 100%;
+	width: 10px;
+	height: 10px;
+	margin: 0 5px;
+	cursor: pointer;
+	
+}
+
+.item-slide-selected{
+	text-align: center;
+	margin-top: 5px;
+}
+.item-slide-selected .img-item-slide{
+	max-width: 100%;
+	max-height: auto;
+	height: 150px;
+	border: 1px solid #f1f1f1;
+	padding: 5px;
+}
+.li-item-slide{
+	list-style: none;
+	float: left;
+	max-width: 225px;
+}
+img.td-item-logo{
+	max-width: 100%;
+	max-height: auto;
+	height: 50px;
+	border: 1px solid #f1f1f1;
+	padding: 2px;
+}
+a.a-item-slide-selected{
+	display: inline-block;
+	position: relative;
+}
+img.icon-slide-selected{
+	position: absolute;
+	right: -5px;
+	top:-5px;
+	cursor: pointer;
+}
+#statusbar{
+	display: none;
+}
+.margin-top-5{
+		margin-top: 5px;
+	}
+	#input-mail-to{
+		max-height: 300px;
+		overflow:auto;
+	}
+	img.icon-deleted-mail{
+		max-height: auto;
+		max-width: 100%;
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+		position: absolute;
+    	right: 0;
+    	top:-5px;
+    	
+	}
+	.item-mail-to{
+		position: relative;
+	}
+	.mail-to{
+
+		/*width: 95% !important;*/
+	}
+
+	table#comments_tbl{
+		width: 100%;
+	}
+
+p.file-attach{
+	border: 1px solid #f1f1f1;
+	background: #f1f1f1;
+}
+.icon-delete-file-attach{
+	float: right;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+}

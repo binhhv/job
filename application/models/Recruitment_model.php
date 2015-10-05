@@ -23,6 +23,16 @@ class Recruitment_model extends CI_Model {
 				from province a where a.province_is_delete = 0 and a.province_map_country = " . $country_id;
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
 	}
+	public function getAllProvinceByCountryRegion($region, $country_id) {
+		$sql = "select a.*
+				from province a where a.province_is_delete = 0 and a.province_map_country = " . $country_id . " and a.province_map_region = " . $region;
+		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
+	public function getAllProvince() {
+		$sql = "select a.*
+				from province a where a.province_is_delete = 0 ";
+		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
 	public function getAllRecruitment() {
 		$sql = "select a.* from recruitmentn a, employer b, province c";
 	}
@@ -56,7 +66,13 @@ class Recruitment_model extends CI_Model {
 				from contact_form a where a.contact_form_is_delete = 0";
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
 	}
-	public function getAllCareer() {
+
+	public function getAllJob_Salary() {
+		$sql = "select a.salary_value, a.salary_id
+				from salary a where a.salary_is_delete = 0";
+		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
+	public function getAllJob_Career() {
 		$sql = "select a.career_id, a.career_name
 				from career a where a.career_is_delete = 0";
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
@@ -65,5 +81,9 @@ class Recruitment_model extends CI_Model {
 		$sql = "select a.salary_id, a.salary_value, a.salary_type
 				from salary a where a.salary_is_delete = 0";
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
+
+	public function getNewsRecruitment($data) {
+		return $this->dbutil->insertDb($data, 'recruitment_email_get_news');
 	}
 }

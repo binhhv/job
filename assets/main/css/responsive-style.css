@@ -30,6 +30,9 @@
 
 
 @media (max-width: 767px) {
+	.site-title span.web-title{
+		text-align: left;
+	}
 	.job-detail{
 		padding: 0 !important;
 	}

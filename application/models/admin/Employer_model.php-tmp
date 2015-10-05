@@ -36,13 +36,14 @@ class Employer_model extends CI_Model {
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
 	}
 	public function getListEmployerRecruitment($id) {
-		$sql = "select a.*,IFNULL(d.numapply, 0) as numapply ,e.*,f.*,g.*
+		$sql = "select a.*,IFNULL(d.numapply, 0) as numapply ,e.*,f.*,g.*,k.*
 				from recruitment a
 				left join (select c.recapp_map_recruitment, count(recapp_map_user) as numapply from recruitment_apply c where c.recapp_is_delete = 0 group by c.recapp_map_recruitment) d
 				on d.recapp_map_recruitment = a.rec_id
 				left join job_form e on e.fjob_id = a.rec_job_map_form
 				left join job_form_child f on f.jcform_id = a.rec_job_map_form_child
 				left join contact_form g on g.contact_form_id = a.rec_contact_form and g.contact_form_is_delete = 0
+				left join salary k on k.salary_id = a.rec_map_salary and k.salary_is_delete = 0
 				where a.rec_map_employer = ".$id." and a.rec_is_delete = 0";
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
 	}
@@ -147,7 +148,7 @@ class Employer_model extends CI_Model {
 
 	public function getDetailEmployerRecruitment($idrecruitment) {
 		$sql = "select a.*,b.*,c.*,d.*,e.*,REPLACE(f.welfares,'\'','\"') as welfares,
-				g.*,REPLACE(h.provinces,'\'','\"') as provinces, i.*
+				g.*,REPLACE(h.provinces,'\'','\"') as provinces, i.*,k.*
 				from recruitment a
 				left join job_form b on b.fjob_id = a.rec_job_map_form and b.fjob_is_delete = 0
 				left join job_form_child c on c.jcform_id = a.rec_job_map_form_child and c.jcform_is_delete = 0
@@ -169,6 +170,7 @@ class Employer_model extends CI_Model {
 					and a.province_is_delete = 0 where b.recmp_is_delete = 0 group by b.recmp_map_rec) as h on h.recruitment_id_ob_p = a.rec_id
 					and h.country_ob = a.rec_job_map_country
 				left join career i on i.career_id = a.rec_job_map_career and i.career_is_delete = 0
+				left join salary k on k.salary_id = a.rec_map_salary and k.salary_is_delete = 0
 				where a.rec_id = ".$idrecruitment;
 		return $this->dbutil->getOneRowQueryFromDb($sql, array());
 
@@ -264,6 +266,8 @@ class Employer_model extends CI_Model {
 	}
 	public function createEmployerRecruitment($data, $welfareSelected, $provinceSelected, $idmapcountry, $iduser) {
 		$resultRecruitment = $this->dbutil->insertDb($data, 'recruitment');
+		$code              = $this->util->General_Code('recruitment', $resultRecruitment, 0);
+		$this->util->update_Code('recruitment', 'rec_code', $code, 'rec_id', $resultRecruitment);
 		if ($resultRecruitment) {
 			$resultMapWelfare  = $this->insertEmployerRecruitmentWelfare($welfareSelected, $resultRecruitment);
 			$resultMapProvince = $this->insertEmployerRecruitmentProvince($provinceSelected, $resultRecruitment);

@@ -53,7 +53,7 @@
                         <tr ng-repeat="data in filtered = (pagedItems | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" >
                          <!--  <td class="text-center">{{($index + ((currentPage -1)* entryLimit)) + 1}}</td> -->
                           <td >{{data.cont_email}}</td>
-                          <td class="text-center">{{data.cont_subject}}</td>
+                          <td class="text-center">{{data.cont_subject | cut:true:50:' ...'}}</td>
                           <!-- <td class="text-center">{{data.cont_name}}</td> -->
 
                           <td class="text-center">{{data.cont_view}}</td>

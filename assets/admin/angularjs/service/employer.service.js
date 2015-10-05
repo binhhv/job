@@ -413,5 +413,18 @@ app.factory('employerRecruitmentService' ,function ($http,$q,$timeout){
 			    return defer.promise;
 			//$http.get(pathWebsite + 'admin/employer/getListCountry').success(callback);
 		};
+		_employerRecruitmentService.getListSalary = function(callback){
+			var temp = {};
+			    var defer = $q.defer();
+			    $http.get(pathWebsite + 'admin/recruitment/getListSalary').success(function(data){
+			            temp =data;
+			            $timeout(function(){
+					      defer.resolve(data);
+					    }, 350) 
+
+			    });
+			    return defer.promise;
+			//$http.get(pathWebsite + 'admin/employer/getListCountry').success(callback);
+		};
 		return _employerRecruitmentService;
 });

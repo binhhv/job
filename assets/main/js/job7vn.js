@@ -19,7 +19,16 @@ $(function(){
 			$('.title-job-scroll').addClass('hide');
 		}
 	});
-	
+	$( window ).resize(function() {
+  var w = document.documentElement.clientWidth;//window.innerHeight;
+ // alert(w);
+  if(w > 768){
+  	var header = $("header#header");
+  	header.removeClass("open");
+  }
+  //$('<style type="text/css">#main-page,.contact-page,.job-detail {min-height:'+h+'px; }</style>').appendTo($('head'));
+
+});
 	//Click event to scroll to top
 	$('.scrollToTop').click(function(){
 		$('html, body').animate({scrollTop : 0},800);

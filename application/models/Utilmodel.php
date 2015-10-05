@@ -5,6 +5,26 @@ class UtilModel extends CI_Model {
 		parent::__construct();
 		$this->load->model('Dbutil', 'dbutil');
 	}
+	function generalCodeConfig($type, $id) {
+		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$charactersLength = strlen($characters);
+		$code_genaral = "";
+		$randomString = '';
+		for ($i = 0; $i < 6; $i++) {
+			$randomString .= $characters[rand(0, $charactersLength - 1)];
+		}
+		if ($type == "logo") {
+			$code_genaral = "LOGO" . $id . $randomString;
+		} else if ($type == "slide") {
+			$code_genaral = "SLIDE" . $id . $randomString;
+		} else if ($type == "ads") {
+			$code_genaral = "ADS" . $id . $randomString;
+		} else if ($type == "site") {
+			$code_genaral = "SITE" . $id . $randomString;
+		}
+		return $code_genaral;
+	}
+
 	function General_Code($table_create, $id_create, $role = 0) {
 		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 		$charactersLength = strlen($characters);

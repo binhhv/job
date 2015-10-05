@@ -30,35 +30,62 @@
 
 					</form> -->
 
-					<form role="form">
+					<form role="form" id="formSearch" method="get">
 				<div class="content-search-detail-box">
 
 					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
-					    <input value="<script>alert(12132)</script>" type="text" class="form-control" id="email" placeholder="Từ khóa" style="height: 39px;">
+					    <input type="text" class="form-control" name="key-word" id="key-word" placeholder="Từ khóa" style="height: 39px;">
 					  </div>
 					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
-					   	<select class="fomr-control">
-					   		<option>Chọn tỉnh thành</option>
+					   	<select class="fomr-control" name="province" id="province">
+					   		<option value="-1">Chọn tỉnh thành</option>
+					   		<?php if (isset($province)) {
+	foreach ($province as $value) {?>
+					   				<option value="<?php echo $value->province_id;?>"><?php echo $value->province_name;?></option>
+					   			<?php }
+}
+?>
 					   	</select>
 					  </div>
 					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
-					   	<select class="fomr-control">
-					   		<option>Chọn mức lương</option>
+					   	<select class="fomr-control" name="salary" id="salary">
+					   		<option value="-1">Chọn mức lương</option>
+					   		<?php if (isset($salary)) {
+	foreach ($salary as $value) {?>
+					   				<option value="<?php echo $value->salary_id;?>"><?php echo $value->salary_value;?></option>
+					   			<?php }
+}
+?>
 					   	</select>
 					  </div>
 					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
-					   	<select class="fomr-control">
-					   		<option>Chọn giới tính</option>
+					   	<select class="fomr-control" name="sex" id="sex">
+					   		<option value="-1">Chọn giới tính</option>
+					   		<option value="1">Nam</option>
+					   		<option value="0">Nữ</option>
 					   	</select>
 					  </div>
 					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
-					   	<select class="fomr-control">
-					   		<option>Chọn trình độ</option>
+					   	<select class="fomr-control" name="level" id="level">
+					   		<option value="-1">Chọn trình độ</option>
+					   		<?php if (isset($level)) {
+	foreach ($level as $value) {?>
+					   				<option value="<?php echo $value->ljob_id;?>"><?php echo $value->ljob_level;?></option>
+					   			<?php }
+}
+?>
 					   	</select>
 					  </div>
-					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
-					   	<select class="fomr-control">
-					   		<option>Chọn loại hình công việc</option>
+					  <div class="form-group col-sm-6 col-md-6 col-xs-12" >
+					   	<select class="fomr-control" id="type-job" name="type-job">
+					   		<option value="-1">Chọn loại hình công việc</option>
+					   		<?php if (isset($jobform) && isset($jobformchild)) {
+	foreach ($jobform as $valueForm) {
+		foreach ($jobformchild as $valueFromChild) {?>
+										<option value="<?php echo $valueForm->fjob_id . '-' . $valueFromChild->jcform_id;?>"><?php echo $valueForm->fjob_type . '-' . $valueFromChild->jcform_type;?></option>
+					   			<?php }}
+}
+?>
 					   	</select>
 					  </div>
 
@@ -66,7 +93,7 @@
 
 				</div>
 				<div class="footer-search-detail-box text-center">
-					<button type="submit" class="button-custom-search"><strong>Tìm kiếm</strong></button>
+					<button type="submit" class="button-custom-search" id="btnSearch"><strong>Tìm kiếm</strong></button>
 				</div>
 				</form>
 
@@ -78,3 +105,64 @@
 			</div>
 		</div>
 	</div>
+
+
+	<script type="text/javascript">
+	$("#btnSearch").on("click",function(event){
+		 event.preventDefault();
+		 //alert("123123");
+		 var keyWord = $("input[name='key-word']").val();
+		 var provinceID = $("#province option:selected" ).val();
+		 var provinceText = $("#province option:selected" ).text();
+		 var salaryJobID = $("#salary option:selected" ).val();
+		 var salaryJobText = $("#salary option:selected" ).text();
+		 var sexID = $("#sex option:selected" ).val();
+		 var sexText = $("#sex option:selected" ).text();
+		 var levelJobID = $("#level option:selected" ).val();
+		 var levelJobText = $("#level option:selected" ).text();
+		 var typeJobID = $("#type-job option:selected" ).val();
+		 var typeJobText = $("#type-job option:selected" ).text();
+
+		 var query = "";
+		 var queryKeyWord ="";
+		 var parameter="";
+		 var link="";
+		 if(keyWord.length > 0){
+		 	queryKeyWord+=keyWord.replace(' ','-');
+		 }
+		 else{
+		 	queryKeyWord += 'all';
+		 }
+		 if(provinceID != '-1'){
+		 	query +=provinceText ;
+		 	parameter +='p'+provinceID;
+		 }
+		 if(salaryJobID !='-1'){
+		 	query +=salaryJobText ;
+		 	parameter +='s'+salaryJobID;
+		 }
+		 if(sexID !='-1'){
+		 	query +=sexText ;
+		 	parameter +='x'+sexID;
+		 }
+		 if(levelJobID !='-1'){
+		 	query +=levelJobText;
+		 	parameter +='l'+levelJobID;
+		 }
+		 if(typeJobID !='-1'){
+		 	query +=typeJobText ;
+		 	parameter +='t'+typeJobID;
+		 }
+		 if(parameter.length <= 0){
+		 	link+=queryKeyWord;
+		 }
+		 else{
+		 	link +=queryKeyWord+'_'+query + '_'+parameter;
+		 }
+
+		 link = link.replace(/ /g,"-");
+		 window.open('<?php echo base_url("search");?>'+'/'+link,'_self');
+
+		 //alert(keyWord);
+	});
+	</script>

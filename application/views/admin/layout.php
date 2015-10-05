@@ -8,7 +8,9 @@
   <body class="hold-transition skin-blue-light sidebar-mini">
 
     <div class="wrapper">
-
+    <div class="alert alert-success alert-send-mail hide" role="alert">
+         Gủi mail thành công!!!!
+    </div>
       <?php echo $header;?>
       <!-- Left side column. contains the logo and sidebar -->
       <?php echo $sidemenu;?>
@@ -74,6 +76,8 @@
      <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-sanitize.min.js"></script>
       <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-strap.min.js"></script>
        <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-strap.tpl.min.js"></script>
+       <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-nl2br.min.js"></script>
+       <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
        <!--lib advance angularjs-->
        <!--<script src="http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js"></script>
         <script src="<?php echo base_url();?>assets/admin/angularjs/lib/oi/select.min.js"></script>
@@ -108,6 +112,19 @@
     <script src="<?php echo base_url();?>assets/admin/dist/js/demo.js"></script>
      <script src="<?php echo base_url();?>assets/admin/angularjs/lib/loading-bar.js"></script>
       <script src="<?php echo base_url();?>assets/admin/angularjs/app.js"></script>
+
+
+
+      <script type="text/javascript">
+  var config ={
+    base_url:'<?php echo base_url();?>'
+  }
+</script>
+<script src="<?php echo base_url();?>assets/admin/dist/js/admin.js"></script>
+<script src="<?php echo base_url();?>assets/admin/dist/js/admin-map-region.js"></script>
+
+
+
      <?php
 if (isset($scripts)) {
 	foreach ($scripts as $script) {?>
@@ -133,15 +150,34 @@ $( window ).resize(function() {
 
 });
 
-//$(function(){
-   // alert("123123");
-  //});
-    //$(document).ready(function(){
-      //  var h = $(window).height();
+</script>
 
-       // $( "<style>.modal-body {height:'"+h+"px'; overflow:auto;}</style>" ).appendTo( "head" )
-        //$('<style type="text/css">.modal-body {height:'+h+'px; overflow:auto;}</style>').appendTo($('head'));
-   // });
+
+    <!-- Page Script -->
+    <?php
+if (isset($scriptOption)) {
+	if ($scriptOption == 1) {?>
+    <script type="text/javascript">
+
+    tinyMCE.init({
+            mode : "textareas",
+            theme : "advanced",
+            plugins : "emotions,spellchecker,advhr,insertdatetime,preview",
+            width: "100%",
+
+            // Theme options - button# indicated the row# only
+            theme_advanced_buttons1 : "newdocument,|,bold,italic,underline,|,justifyleft,justifycenter,justifyright,fontselect,fontsizeselect,formatselect",
+            theme_advanced_buttons2 : "cut,copy,paste,|,bullist,numlist,|,outdent,indent,|,undo,redo,|,link,unlink,anchor,image,|,code,preview,|,forecolor,backcolor",
+            theme_advanced_buttons3 : "insertdate,inserttime,|,spellchecker,advhr,,removeformat,|,sub,sup,|,charmap,emotions",
+            theme_advanced_toolbar_location : "top",
+            theme_advanced_toolbar_align : "left",
+            theme_advanced_statusbar_location : "bottom",
+            theme_advanced_resizing : true
+    });
     </script>
+          <?php }
+}
+?>
+
   </body>
 </html>

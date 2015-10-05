@@ -36,7 +36,36 @@ app.filter('propsFilter', function() {
         }
         return [];
     }
-})
+}).filter('nl2br', function($sce){
+    return function(msg,is_xhtml) { 
+        var is_xhtml = is_xhtml || true;
+        var breakTag = (is_xhtml) ? '<br />' : '<br>';
+        var msg = (msg + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
+        return $sce.trustAsHtml(msg);
+    }
+}).filter('trusted_html', ['$sce', function($sce){
+    return function(text) {
+        return $sce.trustAsHtml(text);
+    };
+}]).filter('cut', function () {
+        return function (value, wordwise, max, tail) {
+            if (!value) return '';
+
+            max = parseInt(max, 10);
+            if (!max) return value;
+            if (value.length <= max) return value;
+
+            value = value.substr(0, max);
+            if (wordwise) {
+                var lastspace = value.lastIndexOf(' ');
+                if (lastspace != -1) {
+                    value = value.substr(0, lastspace);
+                }
+            }
+
+            return value + (tail || ' …');
+        };
+    });
 app.controller('recruitmentCreateController', function (recruitmentService,employerRecruitmentService,jobseekerService,$scope, $http, $timeout,cfpLoadingBar,$modal,$log,$window,$filter) {
     
     $scope.rec = {};
@@ -54,6 +83,9 @@ app.controller('recruitmentCreateController', function (recruitmentService,emplo
           return employerRecruitmentService.getListContactFormR();
       }).then(function(data){
           recruitmentCreate.listContactForms = data;
+          return employerRecruitmentService.getListSalary();
+      }).then(function(data){
+          recruitmentCreate.listSalaries = data;
           return employerRecruitmentService.getListFormR();
       }).then(function(data){
           recruitmentCreate.listForms = data;
@@ -81,6 +113,7 @@ app.controller('recruitmentCreateController', function (recruitmentService,emplo
         recruitmentCreate.object_form = (recruitmentCreate.listForms) ?  recruitmentCreate.listForms[0] : [];//rec.listForms[0];//{fjob_id:rec.rec_job_map_form,fjob_type:rec.fjob_typpe};
         recruitmentCreate.object_form_child = ( recruitmentCreate.listFormChilds) ? recruitmentCreate.listFormChilds[0] :{};//rec.listFormChilds[0];//{jcform_id:rec.rec_job_map_form_child,jcform_type:rec.jcform_type};
         recruitmentCreate.object_level = ( recruitmentCreate.listLevels ) ? recruitmentCreate.listLevels[0] : {};//rec.listLevels[0];//{ljob_id:rec.rec_job_map_level,ljob_level:rec.ljob_level};
+        recruitmentCreate.object_salary =(recruitmentCreate.listSalaries) ? recruitmentCreate.listSalaries[0] :{};
         recruitmentCreate.rec_job_map_country =( recruitmentCreate.listCountrys) ? (recruitmentCreate.listCountrys[0]['country_id'] ): {};
         recruitmentCreate.rec_job_time = new Date();
         recruitmentCreate.object_employer =($scope.listEmployers.length > 0 ) ? $scope.listEmployers[0] : {};
@@ -324,11 +357,12 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
             var modalInstance = $modal.open({
                 animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-update-recruitment.php',
-                controller: function ($scope, $modalInstance, rec,listCareers){
+                controller: function ($scope, $modalInstance, rec,listCareers,listSalaries){
                     $scope.rec = rec;
 
                     console.log(rec);
                     $scope.rec.rec_job_time = new Date(rec.rec_job_time);
+                    $scope.rec.listSalaries = listSalaries;
                     $scope.rec.listCareers = listCareers;
                     $scope.rec.welfareSelected = rec.welfareSelected;
                     $scope.rec.object_contact_form = {contact_form_id:rec.rec_contact_form,contact_form_type:rec.contact_form_type};
@@ -336,6 +370,7 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
                     $scope.rec.object_form_child = {jcform_id:rec.rec_job_map_form_child,jcform_type:rec.jcform_type};
                     $scope.rec.object_level = {ljob_id:rec.rec_job_map_level,ljob_level:rec.ljob_level};
                     $scope.rec.object_career = {career_id:rec.rec_job_map_career,career_name:rec.career_name};
+                    $scope.rec.object_salary ={salary_id:rec.rec_map_salary,salary_value:rec.salary_value};
                    // if($scope.rec.provinceSelected.length >= 5){
                        // $("#select-Province").addClass('hide');
                     //}
@@ -371,6 +406,9 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
                     },
                     listCareers:function(){
                       return employerRecruitmentService.getListCareer();
+                    },
+                    listSalaries:function(){
+                      return employerRecruitmentService.getListSalary();
                     }
 
                 },

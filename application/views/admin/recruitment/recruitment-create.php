@@ -158,7 +158,10 @@
                             <div class="form-group col-sm-12">
                                 <label class="control-label" for="surname">Mức lương </label><label class="text-danger">(*)</label>
                                 <div class="controls">
-                                   <input type="text" class="form-control" ng-model="rec.rec_salary" required>
+                                   <!-- <input type="text" class="form-control" ng-model="rec.rec_salary" required> -->
+                                   <select class="form-control" name="rec_map_salary" id="rec_map_salary"
+      ng-options="option.salary_value for option in rec.listSalaries track by option.salary_id"
+      ng-model="rec.object_salary"></select>
                                 </div>
                             </div>
                             <div class="form-group col-sm-12">

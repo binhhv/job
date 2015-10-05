@@ -235,9 +235,11 @@ class Admin_employer extends CI_Controller {
 		$object_form = $rec['object_form'];
 		$object_form_child = $rec['object_form_child'];
 		$object_level = $rec['object_level'];
+		$object_salary = $rec['object_salary'];
 		$data = array(
 			'rec_title' => $rec['rec_title'],
-			'rec_salary' => $rec['rec_salary'],
+			'rec_salary' => "",
+			'rec_map_salary' => $object_salary['salary_id'],
 			'rec_job_content' => $rec['rec_job_content'],
 			'rec_job_time' => $rec['rec_job_time'],
 			'rec_job_regimen' => $rec['rec_job_regimen'],
@@ -273,10 +275,12 @@ class Admin_employer extends CI_Controller {
 		$object_level = $rec['object_level'];
 		$iduser = $this->session->userdata['user']['id'];
 		$idemployer = $rec['idemployer'];
+		$object_salary = $rec['object_salary'];
 		log_message('error', $iduser);
 		$data = array(
 			'rec_title' => $rec['rec_title'],
-			'rec_salary' => $rec['rec_salary'],
+			'rec_salary' => "",
+			'rec_map_salary' => $object_salary['salary_id'],
 			'rec_job_content' => $rec['rec_job_content'],
 			'rec_job_time' => $rec['rec_job_time'],
 			'rec_job_regimen' => $rec['rec_job_regimen'],

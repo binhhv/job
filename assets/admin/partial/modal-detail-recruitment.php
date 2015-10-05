@@ -41,7 +41,7 @@
                             <div class="form-group col-sm-12">
                                 <label class="control-label" for="surname">Mức lương </label>
                                 <div class="controls">
-                                    {{rec.rec_salary}}
+                                    {{rec.salary_value}}
                                 </div>
                             </div>
                             <div class="form-group col-sm-12">
@@ -52,14 +52,14 @@
                             </div>
                             <div class="form-group col-sm-12">
                                 <label class="control-label" for="surname">Nội dung công việc</label>
-                                <div class="controls">
-                                    {{rec.rec_job_content}}
+                                <div class="controls" ng-bind-html="rec.rec_job_content|nl2br">
+                                    <!-- {{rec.rec_job_content|trusted_html|nl2br}} -->
                                 </div>
                             </div>
                              <div class="form-group col-sm-12">
                                 <label class="control-label" for="surname">Chế độ hậu đãi </label>
-                                <div class="controls">
-                                {{rec.rec_job_regimen}}
+                                <div class="controls" ng-bind-html="rec.rec_job_regimen|nl2br" >
+                                <!-- {{rec.rec_job_regimen|trusted_html|nl2br}} -->
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">
@@ -77,14 +77,14 @@
                             </div>
                             <div class="form-group col-sm-12">
                                 <label class="control-label" for="surname">Yêu cầu bắt buộc</label>
-                                <div class="controls">
-                                    {{rec.rec_job_require}}
+                                <div class="controls" ng-bind-html="rec.rec_job_require|nl2br">
+                                    <!-- {{rec.rec_job_require|trusted_html|nl2br}} -->
                                 </div>
                             </div>
                             <div class="form-group col-sm-12">
                                 <label class="control-label" for="suburb">Điều kiện/Ưu tiên</label>
-                                <div class="controls">
-                                    {{rec.rec_job_priority}}
+                                <div class="controls" ng-bind-html="rec.rec_job_priority|nl2br">
+                                   <!--  {{r}} -->
                                 </div>
                             </div>
                             <div class="form-group col-sm-6">

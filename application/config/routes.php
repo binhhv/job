@@ -111,6 +111,7 @@ $route['admin/recruitment/getListEmployer'] = 'admin/admin_recruitment/getListEm
 $route['admin/recruitment/createRecruitment'] = 'admin/admin_recruitment/createRecruitment';
 $route['admin/recruitment/getListRecruitment/(:num)'] = 'admin/admin_recruitment/getListRecruitment/$1';
 $route['admin/recruitment/getRecruitmentApply/(:num)'] = 'admin/admin_recruitment/getRecruitmentApply/$1';
+$route['admin/recruitment/getListSalary'] = 'admin/admin_recruitment/getListSalary';
 //manager admin route
 $route['admin/manager'] = 'admin/admin_manager/index';
 $route['admin/manager/getListManager'] = 'admin/admin_manager/getListManager';
@@ -143,6 +144,91 @@ $route['admin/contact/getListContact'] = 'admin/admin_contact/getListContact';
 $route['admin/contact/deleteContact'] = 'admin/admin_contact/deleteContact';
 $route['admin/contact/replyContact'] = 'admin/admin_contact/replyContact';
 $route['admin/contact/updateContactView/(:num)'] = 'admin/admin_contact/updateContactView/$1';
+//support admin
+$route['admin/support'] = 'admin/admin_support/index';
+
+//category admin
+$route['admin/province'] = 'admin/admin_category/province';
+$route['admin/category/getListProvinceCountry/(:num)'] = 'admin/admin_category/getListProvinceCountry/$1';
+$route['admin/category/getListRegionCountry/(:num)'] = 'admin/admin_category/getListRegionCountry/$1';
+$route['admin/category/updateProvince'] = 'admin/admin_category/updateProvince';
+$route['admin/category/createProvince'] = 'admin/admin_category/createProvince';
+$route['admin/category/deleteProvince'] = 'admin/admin_category/deleteProvince';
+$route['admin/health'] = 'admin/admin_category/health';
+$route['admin/category/getListHealth'] = 'admin/admin_category/getListHealth';
+$route['admin/category/createHealth'] = 'admin/admin_category/createHealth';
+$route['admin/category/updateHealth'] = 'admin/admin_category/updateHealth';
+$route['admin/category/deleteHealth'] = 'admin/admin_category/deleteHealth';
+$route['admin/form'] = 'admin/admin_category/form';
+$route['admin/level'] = 'admin/admin_category/level';
+$route['admin/welfare'] = 'admin/admin_category/welfare';
+$route['admin/career'] = 'admin/admin_category/career';
+$route['admin/contact-form'] = 'admin/admin_category/contactForm';
+$route['admin/salary'] = 'admin/admin_category/salary';
+$route['admin/faq'] = 'admin/admin_category/faq';
+$route['admin/category/getListForm'] = 'admin/admin_category/getListForm';
+$route['admin/category/createForm'] = 'admin/admin_category/createForm';
+$route['admin/category/updateForm'] = 'admin/admin_category/updateForm';
+$route['admin/category/deleteForm'] = 'admin/admin_category/deleteForm';
+$route['admin/category/getListLevel'] = 'admin/admin_category/getListLevel';
+$route['admin/category/createLevel'] = 'admin/admin_category/createLevel';
+$route['admin/category/updateLevel'] = 'admin/admin_category/updateLevel';
+$route['admin/category/deleteLevel'] = 'admin/admin_category/deleteLevel';
+$route['admin/category/getListWelfare'] = 'admin/admin_category/getListWelfare';
+$route['admin/category/createWelfare'] = 'admin/admin_category/createWelfare';
+$route['admin/category/updateWelfare'] = 'admin/admin_category/updateWelfare';
+$route['admin/category/deleteWelfare'] = 'admin/admin_category/deleteWelfare';
+$route['admin/category/getListCareer'] = 'admin/admin_category/getListCareer';
+$route['admin/category/getListContactForm'] = 'admin/admin_category/getListContactForm';
+$route['admin/category/getListFAQ'] = 'admin/admin_category/getListFAQ';
+$route['admin/category/getListSalary'] = 'admin/admin_category/getListSalary';
+$route['admin/category/createCareer'] = 'admin/admin_category/createCareer';
+$route['admin/category/createContactForm'] = 'admin/admin_category/createContactForm';
+$route['admin/category/createFAQ'] = 'admin/admin_category/createFAQ';
+$route['admin/category/createSalary'] = 'admin/admin_category/createSalary';
+$route['admin/category/updateCareer'] = 'admin/admin_category/updateCareer';
+$route['admin/category/updateContactForm'] = 'admin/admin_category/updateContactForm';
+$route['admin/category/updateFAQ'] = 'admin/admin_category/updateFAQ';
+$route['admin/category/updateSalary'] = 'admin/admin_category/updateSalary';
+$route['admin/category/deleteCareer'] = 'admin/admin_category/deleteCareer';
+$route['admin/category/deleteContactForm'] = 'admin/admin_category/deleteContactForm';
+$route['admin/category/deleteFAQ'] = 'admin/admin_category/deleteFAQ';
+$route['admin/category/deleteSalary'] = 'admin/admin_category/deleteSalary';
+$route['admin/category/getListIcon'] = 'admin/admin_category/getListIcon';
+
+//admin config page
+$route['admin/logo'] = 'admin/admin_config/logo';
+$route['admin/config/getListLogo'] = 'admin/admin_config/getListLogo';
+$route['admin/config/activeDeleteLogo'] = 'admin/admin_config/activeDeleteLogo';
+$route['admin/config/uploadLogo'] = 'admin/admin_config/uploadLogo';
+$route['admin/ads'] = 'admin/admin_config/ads';
+$route['admin/slide'] = 'admin/admin_config/slide';
+$route['admin/site'] = 'admin/admin_config/site';
+$route['admin/config/getListSlide/(:num)'] = 'admin/admin_config/getListSlide/$1';
+$route['admin/config/uploadSlide'] = 'admin/admin_config/uploadSlide';
+$route['admin/config/deleteSlide'] = 'admin/admin_config/deleteSlide';
+$route['admin/config/activeSlide/(:num)/(:num)'] = 'admin/admin_config/activeSlide/$1/$2';
+$route['admin/config/deactiveSlide/(:num)/(:num)'] = 'admin/admin_config/deactiveSlide/$1/$2';
+$route['admin/config/getListTitleSite'] = 'admin/admin_config/getListTitleSite';
+$route['admin/config/selectedTitleSite/(:num)/(:num)'] = 'admin/admin_config/selectedTitleSite/$1/$2';
+//$route['admin/config/unselectedTitleSite'] = 'admin/admin_config/unselectedTitleSite';
+$route['admin/config/deleteTitleSite'] = 'admin/admin_config/deleteTitleSite';
+$route['admin/config/createTitleSite'] = 'admin/admin_config/createTitleSite';
+
+//mail admin
+$route['admin/mail/send-mail-jobseeker'] = 'admin/admin_mail/mailJobseeker';
+$route['admin/mail/send-mail-employer'] = 'admin/admin_mail/mailEmployer';
+$route['admin/mail/getListMailJobseeker'] = 'admin/admin_mail/getListMailJobseeker';
+$route['admin/mail/getListMailEmployer'] = 'admin/admin_mail/getListMailEmployer';
+$route['admin/mail/uploadAttachFile'] = 'admin/admin_mail/uploadAttachFile';
+$route['admin/mail/sendMail'] = 'admin/admin_mail/sendMail';
+//$route['admin/mai/success']
+//admin api
+$route['admin/getNotifyContact'] = 'admin/admin_api/getNotifyContact';
+$route['admin/getNotifySupport'] = 'admin/admin_api/getNotifySupport';
+$route['admin/support/getListSupportChat'] = 'admin/admin_api/getListSupportChat';
+$route['admin/getDataChartRecruitment'] = 'admin/admin_api/getDataChartRecruitment';
+$route['admin/getDataChartJobseekerEmployer'] = 'admin/admin_api/getDataChartJobseekerEmployer';
 //errors route
 $route['error/403'] = 'admin/admin_error/page403';
 $route['404_override'] = 'error_page/index';
@@ -172,10 +258,36 @@ $route['contact'] = 'contact/index';
 $route['contact/send-contact'] = 'contact/sendContact';
 $route['faq'] = 'faq/index';
 $route['about'] = 'home/about';
+$route['organizational-structure'] = 'home/structure';
+$route['service'] = 'home/service';
+$route['getNewsRecruitment'] = 'home/getNewsRecruitment';
 
 //job manager
 $route['job/(:any)-(:num).html'] = 'job/job_detail/index/$2';
+$route['job/getListDoconUser'] = 'job/job_detail/getListDoconUser';
+$route['job/getListCVUser'] = 'job/job_detail/getListCVUser';
+$route['job/getToken'] = 'job/job_detail/getToken';
+$route['job/getTokenView'] = 'job/job_detail/getTokenView';
+$route['job/getDetailDoc/(:num)'] = 'job/job_detail/getDocView/$1';
+$route['job/apply-job'] = 'job/job_detail/applyJob';
+$route['job/getCreateForm/(:num)'] = 'job/job_detail/getCreateForm/$1';
+$route['job/getListLevel'] = 'job/job_detail/getListLevel';
+$route['job/apply-create-form-job'] = 'job/job_detail/applyCreateFormJob';
 
+//job of province
+$route['province/(:any)-(:num).html'] = 'job/job_province/index/$1/$2';
+$route['province/(:any)-(:num).html/(:num)'] = 'job/job_province/index/$1/$2';
+
+//new job-japanesejob-region job
+$route['job/(:any)/(:any)_(:any)_(:any)'] = 'job/job/index/$1/$2/$3/$4';
+$route['job/(:any)/(:any)_(:any)_(:any)/(:num)'] = 'job/job/index/$1/$2/$3/$4';
+$route['job/(:any)/(:any)'] = 'job/job/index/$1/$2';
+$route['job/(:any)/(:any)/(:num)'] = 'job/job/index/$1/$2';
+
+$route['search/(:any)_(:any)_(:any)'] = 'job/job_search/index/$1/$2/$3';
+$route['search/(:any)_(:any)_(:any)/(:num)'] = 'job/job_search/index/$1/$2/$3';
+$route['search/(:any)'] = 'job/job_search/index/$1';
+$route['search/(:any)/(:num)'] = 'job/job_search/index/$1';
 //test simple
 $route['test1'] = 'test_controller/updateProvince';
 
@@ -186,3 +298,14 @@ $route['checkLogin'] = 'login/checkLogin';
 
 //employer page
 $route['employer'] = 'employer/employer/index';
+
+//test upload
+$route['uploads/do_upload'] = 'uploads/do_upload';
+
+//SUPPORT API
+$route['supportAPI/getMessage/(:any)'] = 'admin/admin_support/getMessage/$1';
+$route['supportAPI/getMessageClient/(:any)'] = 'admin/admin_support/getMessageClient/$1';
+$route['supportAPI/startChatWithSend'] = 'admin/admin_support/startChatWithSend';
+$route['supportAPI/startChatWithReply'] = 'admin/admin_support/startChatWithReply';
+$route['supportAPI/getMessageReply/(:any)/(:num)'] = 'admin/admin_support/getMessageReply/$1/$2';
+$route['supportAPI/getMessageReplyUser/(:any)/(:num)'] = 'admin/admin_support/getMessageReplyUser/$1/$2';

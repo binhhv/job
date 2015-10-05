@@ -44,4 +44,5 @@ class Contact_model extends CI_Model {
 			'data' => array('cont_view' => $numRep));
 		return $this->dbutil->updateDb($data, array());
 	}
+
 }

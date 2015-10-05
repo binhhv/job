@@ -1,13 +1,15 @@
 <div class="container contact-page">
 	<div class="row">
-		<div class="col-sm-12 text-center contact-title">
+		<div class="col-sm-12 text-center ">
+		<div class="contact-title">
 			<h1 class="">Các câu hỏi thường gặp</h1>
 					<div class="border-bottom-title border-color-1"></div>
+				</div>
 		</div>
 	</div>
 	<div class="row ">
 	 <div class="col-sm-12">
-	 		<hr>
+
 	 	<div class="panel-group" id="accordion">
 		  <div class="panel panel-default">
 		    <div class="panel-heading">
