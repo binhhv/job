@@ -5,8 +5,11 @@
 			"path": "."
 		}
 	],
-	"settings": {
-        "xdebug": { "url": "http://binhhv.com/job" }
-    }
-
+	"settings":
+	{
+		"xdebug":
+		{
+			"url": "http://localhost/job"
+		}
+	}
 }

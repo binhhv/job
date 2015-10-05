@@ -101,10 +101,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_job_require_sex');?>
+                                    <label class="control-label"><?php echo lang('rec_job_require_sex');?> <label class="text-danger">(*)</label></label>
                                     <div class="controls">
                                         <label class="col-sm-6 ng-binding ng-scope">
-                                            <input type="radio" value = "0" name="rec_job_require_sex">Nữ
+                                            <input type="radio" value = "0" name="rec_job_require_sex" checked="true">Nữ
                                         </label>
                                         <label class="col-sm-6 ng-binding ng-scope">
                                             <input type="radio" value = "1" name="rec_job_require_sex">Nam

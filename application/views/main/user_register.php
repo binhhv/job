@@ -15,10 +15,10 @@
                 <form role="form" name="register-form" id="register-form" method="post">
                      <fieldset>
                          <div class="row">
-                            <div class="col-sm-12">
+                            <div class="form-group col-sm-12">
                                 <div class="error text-center">
-                                    <label class="error alert-danger" id="message_user">
-                                    </label>
+                                    <div class="error text-left" id="message_user">
+                                    </div>
                                 </div>
                             </div>
                              <div class="col-sm-12">

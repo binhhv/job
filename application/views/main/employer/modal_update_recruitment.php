@@ -1,5 +1,5 @@
 
-<div class="modal fade" id="create_recruitmentModel" tabindex="-1" role="dialog" aria-labelledby="create_recruitment" aria-hidden="true">
+<div class="modal fade" id="update_recruitmentModel" tabindex="-1" role="dialog" aria-labelledby="create_recruitment" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -14,7 +14,7 @@
 
             <div class="modal-body">
                 <!-- The form is placed inside the body of modal -->
-                <form role="form" name="create_recruitment-form" id="create_recruitment-form" method="post">
+                <form role="form" name="update_recruitment-form" id="update_recruitment-form" method="post">
                     <fieldset>
                         <div class="row">
                              <div class="form-group col-sm-12">
@@ -29,7 +29,7 @@
                                 <div class="form-group col-sm-6">
                                     <label class="control-label"><?php echo lang('rec_title');?> <label class="text-danger">(*)</label></label>
                                     <div class="controls">
-                                        <input type="text" class="form-control" name="rec_title" />
+                                        <input type="text" class="form-control" name="rec_title" value="<?php echo $employerInfo->employer_contact_name;?>"/>
                                     </div>
                                 </div>
 
@@ -101,10 +101,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_job_require_sex');?>
+                                    <label class="control-label"><?php echo lang('rec_job_require_sex');?> </label>
                                     <div class="controls">
                                         <label class="col-sm-6 ng-binding ng-scope">
-                                            <input type="radio" value = "0" name="rec_job_require_sex">Nữ
+                                            <input type="radio" value = "0" name="rec_job_require_sex" checked="true">Nữ
                                         </label>
                                         <label class="col-sm-6 ng-binding ng-scope">
                                             <input type="radio" value = "1" name="rec_job_require_sex">Nam

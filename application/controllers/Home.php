@@ -53,9 +53,10 @@ class Home extends CI_Controller {
 		$job_form_child = $this->recruitment->getAllJob_Form_Child();
 		$job_level = $this->recruitment->getAllJob_Job_Level();
 		$contact_form = $this->recruitment->getAllJob_Contact_Form();
+		$arr_career = $this->recruitment->getAllCareer();
 		$empoyer_create_recruitment = $this->load->view('main/create_recruitment', array('csrf' => $csrf, 'arr_country' => $arr_country,
 			'arr_welfare' => $arr_welfare, 'arr_job_form' => $arr_job_form, 'job_form_child' => $job_form_child, 'job_level' => $job_level,
-			'contact_form' => $contact_form), TRUE);
+			'contact_form' => $contact_form, 'arr_career' => $arr_career), TRUE);
 
 		$newJob = $this->load->view('main/new-job', array(), TRUE);
 		$jobseeker = $this->load->view('main/jobseeker', array(), TRUE);

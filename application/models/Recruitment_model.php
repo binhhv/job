@@ -3,9 +3,13 @@ class Recruitment_model extends CI_Model {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('Dbutil', 'dbutil');
+		$this->load->model('UtilModel', 'util');
 	}
 	public function insertRecruitment($data) {
-		return $this->dbutil->insertDb($data, 'recruitment');
+		$id_recruitment = $this->dbutil->insertDb($data, 'recruitment');
+		$update_code = $this->util->General_Code('recruitment', $id_recruitment, 0);
+		$this->util->update_Code('recruitment', 'rec_code', $update_code, 'rec_id', $id_recruitment);
+		return $id_recruitment;
 	}
 	public function insertRecruitment_Map_Welfare($data) {
 		return $this->dbutil->insertDb($data, 'recruitment_map_welfare');
@@ -50,6 +54,16 @@ class Recruitment_model extends CI_Model {
 	public function getAllJob_Contact_Form() {
 		$sql = "select a.contact_form_id, a.contact_form_type
 				from contact_form a where a.contact_form_is_delete = 0";
+		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
+	public function getAllCareer() {
+		$sql = "select a.career_id, a.career_name
+				from career a where a.career_is_delete = 0";
+		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
+	public function getAllSalary() {
+		$sql = "select a.salary_id, a.salary_value, a.salary_type
+				from salary a where a.salary_is_delete = 0";
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
 	}
 }

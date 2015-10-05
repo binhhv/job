@@ -4,107 +4,13 @@
 			<div class="col-sm-4 col-sm-push-8">
 				<div class="row">
 					<div class="col-sm-12">
-						<div class="card">
-							<div class="info-employer row">
-								<div class="col-sm-3 col-xs-3">
-									<?php if (isset($employerInfo->employer_logo) && isset($employerInfo->employer_logo_tmp)) {?>
-										<img src="<?php echo base_url() . 'uploads/logo/' . $employerInfo->employer_id . '/' . $employerInfo->employer_logo_tmp?>" class="logo-employer">
-									<?php } else {?>
-										<img src="<?php echo base_url()?>uploads/common/logo.png" class="logo-employer">
-									<?php }
-
-?>
-								</div>
-								<div class="col-sm-9 col-xs-9">
-									<label class="employer-name"><?php echo $employerInfo->employer_name;?></label>
-									<span class="employer-detail-info"><strong>
-									<?php
-switch ($employerInfo->account_map_role) {
-case 2:
-	# code...
-	echo 'Quản trị';
-	break;
-
-default:
-	# code...
-	echo 'Nhân viên';
-	break;
-}
-?> </strong>
-									</span>
-									<a class="employer-logout" href="<?php echo base_url('logout')?>"><i class="fa fa-sign-out"></i>Đăng xuất</a>
-								</div>
-
-							</div>
-
-							<div class="row-employer row employer-tools">
-								<div class="col-sm-12 employer-box-header text-center background-color-3">
-									<h5 class="employer-tools-title">Nhà tuyển dụng</h5>
-									<!-- <div class="border-bottom-title border-color-3"></div> -->
-								</div>
-								<div class="col-sm-12 employer-line"></div>
-								<div class="col-sm-12 employer-tools-item">
-									<a href=""><i class="fa fa-user"></i>&nbsp;Quản lý tài khoản</a>
-								</div>
-								<div class="col-sm-12 employer-line"></div>
-								<?php if ($employerInfo->account_map_role == 2) {?>
-								<div class="col-sm-12 employer-tools-item">
-									<a href=""><i class="fa fa-users"></i>&nbsp;Quản lý nhân viên</a>
-								</div>
-								<div class="col-sm-12 employer-line"></div>
-								<?php }
-?>
-								<div class="col-sm-12 employer-tools-item">
-									<a href=""><i class="fa fa-suitcase"></i>&nbsp;Quản lý tin tuyển dụng</a>
-								</div>
-								<div class="col-sm-12 employer-line"></div>
-								<div class="col-sm-12 employer-tools-item">
-									<a href="#create_recruitmentModel"  data-toggle="modal"><i class="fa fa-pencil-square-o"></i>&nbsp;Đăng tin tuyển dụng</a>
-								</div>
-								<div class="col-sm-12 employer-line"></div>
-								<div class="col-sm-12 employer-tools-item">
-									<a href=""><i class="fa fa-file-text-o"></i>&nbsp;Tìm kiếm hồ sơ ứng viên</a>
-								</div>
-								<div class="col-sm-12 employer-line"></div>
-								<div class="col-sm-12 employer-tools-item">
-									<a href=""><i class="fa fa-pencil-square-o"></i>&nbsp;Đăng tin tuyển dụng</a>
-								</div>
-								<div class="col-sm-12 employer-line"></div>
-
-							</div>
-
-							<div class="row-employer row employer-tools">
-								<div class="col-sm-12 employer-tools-item">
-									<a href=""><i class="fa fa-bars"></i>&nbsp;Hồ sơ theo ngành nghề</a>
-								</div>
-								<div class="col-sm-12 employer-line"></div>
-								<div class="col-sm-12 employer-tools-item">
-									<a href=""><i class="fa fa-map-marker"></i>&nbsp;Hồ sơ theo tỉnh thành</a>
-								</div>
-								<div class="col-sm-12 employer-line"></div>
-
-							</div>
-
-							<div class="row-employer row employer-tools">
-								<div class="col-sm-12 employer-box-header background-color-2 text-center">
-									<h5 class="employer-tools-title">Liên hệ quảng cáo</h5>
-									<!-- <div class="border-bottom-title border-color-1"></div> -->
-								</div>
-								<div class="col-sm-12 employer-line"></div>
-								<div class="col-sm-12 employer-tools-item text-center">
-									<h5><i class="fa fa-phone"></i>&nbsp;XXXXXXXXXXXX</h5>
-								</div>
-								<div class="col-sm-12 employer-line"></div>
-
-
-							</div>
-
-
-						</div>
+						<?php echo $employer_menu;?>
 
 					</div>
 				</div>
 			</div>
+
+
 			<div class="col-sm-8 col-sm-pull-4">
 			<div class="card">
 				<div class="row-employer row">

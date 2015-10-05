@@ -16,10 +16,10 @@
                     <fieldset>
                          <div class="row">
 
-                             <div class="col-sm-12">
+                             <div class="form-group col-sm-12">
                                 <div class="error text-center">
-                                    <label class="error alert-danger" id="message_empoyer">
-                                    </label>
+                                    <div class="error text-left" id="message_empoyer">
+                                    </div>
                                 </div>
 
                             </div>

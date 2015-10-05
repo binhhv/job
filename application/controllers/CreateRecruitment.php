@@ -31,9 +31,11 @@ class CreateRecruitment extends CI_Controller {
 		$job_form_child = $this->recruitment->getAllJob_Form_Child();
 		$job_level = $this->recruitment->getAllJob_Job_Level();
 		$contact_form = $this->recruitment->getAllJob_Contact_Form();
+		$arr_career = $this->recruitment->getAllCareer();
+		$arr_Salary = $this->recruitment->getAllSalary();
 		$content = $this->load->view('main/create_recruitment', array('csrf' => $csrf, 'arr_country' => $arr_country,
 			'arr_welfare' => $arr_welfare, 'arr_job_form' => $arr_job_form, 'job_form_child' => $job_form_child, 'job_level' => $job_level,
-			'contact_form' => $contact_form), TRUE);
+			'contact_form' => $contact_form, 'arr_career' => $arr_career, 'arr_Salary' => $arr_Salary), TRUE);
 		$footer = $this->load->view('main/footer', array(), TRUE);
 		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
 	}
@@ -67,7 +69,11 @@ class CreateRecruitment extends CI_Controller {
 		$this->form_validation->set_rules('rec_title', $this->lang->line('rec_title'), 'trim|required|xss_clean');
 		$this->form_validation->set_rules('rec_salary', $this->lang->line('rec_salary'), 'trim|required|xss_clean');
 		$this->form_validation->set_rules('rec_job_content', $this->lang->line('rec_job_content'), 'trim|required|xss_clean');
-		$this->form_validation->set_rules('rec_job_time', $this->lang->line('rec_job_time'), 'trim|required|xss_clean');
+
+		$this->form_validation->set_rules('job_day', $this->lang->line('rec_job_time'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('job_month', $this->lang->line('rec_job_time'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('job_year', $this->lang->line('rec_job_time'), 'trim|required|xss_clean');
+
 		$this->form_validation->set_rules('rec_job_regimen', $this->lang->line('rec_job_regimen'), 'trim|required|xss_clean');
 		$this->form_validation->set_rules('rec_job_require', $this->lang->line('rec_job_require'), 'trim|required|xss_clean');
 		$this->form_validation->set_rules('rec_job_priority', $this->lang->line('rec_job_priority'), 'trim|required|xss_clean');
@@ -75,13 +81,13 @@ class CreateRecruitment extends CI_Controller {
 		$this->form_validation->set_rules('rec_job_map_form_child', $this->lang->line('rec_job_map_form_child'), 'trim|required|xss_clean');
 		$this->form_validation->set_rules('rec_job_map_level', $this->lang->line('rec_job_map_level'), 'trim|required|xss_clean');
 		$this->form_validation->set_rules('rec_job_map_country', $this->lang->line('rec_job_map_country'), 'trim|required|xss_clean');
-		$this->form_validation->set_rules('province_name', $this->lang->line('province_name'), 'trim|required|xss_clean');
-		$this->form_validation->set_rules('welfare', $this->lang->line('welfare_title'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('province_name[]', $this->lang->line('province_name'), 'trim|required|xss_clean');
 		$this->form_validation->set_rules('rec_contact_name', $this->lang->line('rec_contact_name'), 'trim|required|xss_clean');
-		$this->form_validation->set_rules('rec_contact_email', $this->lang->line('rec_contact_email'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('rec_contact_email', $this->lang->line('rec_contact_email'), 'trim|valid_email|required|xss_clean');
 		$this->form_validation->set_rules('rec_contact_address', $this->lang->line('rec_contact_address'), 'trim|required|xss_clean');
 		$this->form_validation->set_rules('rec_contact_phone', $this->lang->line('rec_contact_phone'), 'trim|required|xss_clean');
-		$this->form_validation->set_rules('rec_contact_mobile', $this->lang->line('rec_contact_mobile'), 'trim|required|xss_clean');
+		$this->form_validation->set_rules('rec_job_map_career', $this->lang->line('rec_job_map_career'), 'trim|required|xss_clean');
+
 		$this->form_validation->set_rules('rec_contact_form', $this->lang->line('rec_contact_form'), 'trim|required|xss_clean');
 		if ($this->form_validation->run()) {
 			$rec_title = $this->security->xss_clean($this->input->post('rec_title'));
@@ -101,17 +107,28 @@ class CreateRecruitment extends CI_Controller {
 			$rec_contact_phone = $this->security->xss_clean($this->input->post('rec_contact_phone'));
 			$rec_contact_mobile = $this->security->xss_clean($this->input->post('rec_contact_mobile'));
 			$rec_contact_form = $this->security->xss_clean($this->input->post('rec_contact_form'));
+			$rec_job_map_career = $this->security->xss_clean($this->input->post('rec_job_map_career'));
+			$rec_day = $this->security->xss_clean($this->input->post('rec_day'));
+			$rec_month = $this->security->xss_clean($this->input->post('rec_month'));
+			$rec_year = $this->security->xss_clean($this->input->post('rec_year'));
 
+			$rec_job_require_sex = $this->security->xss_clean($this->input->post('rec_job_require_sex'));
+			if ($rec_job_require_sex == "") {
+				$rec_job_require_sex = -1;
+			}
+			$user = $this->session->userdata['user'];
+			$employerInfo = $this->employer->getInfoEmployer($user['id']);
 			$datainsert = array(
 				'rec_title' => $rec_title,
 				'rec_salary' => $rec_salary,
 				'rec_job_content' => $rec_job_content,
-				'rec_job_time' => $rec_job_time,
+				'rec_job_time' => $rec_year . "-" . $rec_month . "-" . $rec_day,
 				'rec_job_regimen' => $rec_job_regimen,
 				'rec_job_require' => $rec_job_require,
 				'rec_job_priority' => $rec_job_priority,
 				'rec_job_map_form' => $rec_job_map_form,
 				'rec_job_map_form_child' => $rec_job_map_form_child,
+				'rec_job_require_sex' => $rec_job_require_sex,
 				'rec_job_map_level' => $rec_job_map_level,
 				'rec_job_map_country' => $rec_job_map_country,
 				'rec_contact_name' => $rec_contact_name,
@@ -120,9 +137,9 @@ class CreateRecruitment extends CI_Controller {
 				'rec_contact_phone' => $rec_contact_phone,
 				'rec_contact_mobile' => $rec_contact_mobile,
 				'rec_contact_form' => $rec_contact_form,
-
-				'rec_map_employer' => '1',
-				'rec_map_user_employer' => '1',
+				'rec_job_map_career' => $rec_job_map_career,
+				'rec_map_employer' => $employerInfo->rec_map_employer,
+				'rec_map_user_employer' => $user['id'],
 				'rec_is_approve' => '0',
 				'rec_is_delete' => '0',
 				'rec_is_disabled' => '0',
@@ -160,14 +177,15 @@ class CreateRecruitment extends CI_Controller {
 				'rec_job_map_country' => form_error('rec_job_map_country'),
 				'province_name' => form_error('province_name'),
 				'rec_salary' => form_error('rec_salary'),
-				'welfare' => form_error('welfare'),
 				'rec_job_content' => form_error('rec_job_content'),
 				'rec_job_regimen' => form_error('rec_job_regimen'),
-				'rec_job_time' => form_error('rec_job_time'),
+				'rec_day' => form_error('rec_day'),
+				'rec_month' => form_error('rec_month'),
+				'rec_year' => form_error('rec_year'),
 				'rec_job_require' => form_error('rec_job_require'),
 				'rec_job_priority' => form_error('rec_job_priority'),
-
 				'rec_job_map_form' => form_error('rec_job_map_form'),
+				'rec_job_map_career' => form_error('rec_job_map_career'),
 				'rec_job_map_form_child' => form_error('rec_job_map_form_child'),
 				'rec_job_map_level' => form_error('rec_job_map_level'),
 
@@ -175,7 +193,6 @@ class CreateRecruitment extends CI_Controller {
 				'rec_contact_email' => form_error('rec_contact_email'),
 				'rec_contact_address' => form_error('rec_contact_address'),
 				'rec_contact_phone' => form_error('rec_contact_phone'),
-				'rec_contact_mobile' => form_error('rec_contact_mobile'),
 				'rec_contact_form' => form_error('rec_contact_form'),
 				'name' => $this->security->get_csrf_token_name(),
 				'hash' => $this->security->get_csrf_hash(),

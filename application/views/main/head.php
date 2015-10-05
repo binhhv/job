@@ -23,9 +23,9 @@ if (isset($titlePage)) {
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/flexslider/flexslider.css">
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/bootstrap/dist/css/bootstrap-select.css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/datetimepicker/css/bootstrap-datetimepicker.min.css">
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/main/flexslider/flexslider-job.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/dataTables.bootstrap.min.css">
 
 <!-- <link rel="stylesheet" href="<?php echo base_url()?>/assets/common/css/bootstrap-responsive.css"> -->
 <!-- <link rel="stylesheet" href="<?php echo base_url()?>/assets/common/css/prettyPhoto.css" />
@@ -65,16 +65,16 @@ if (isset($titlePage)) {
 
  <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
  <script src="<?php echo base_url()?>/assets/main/js/jquery.placeholder.min.js"></script>
-
+<script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.9/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/1.0.7/js/dataTables.responsive.min.js"></script>
 
 <script src="<?php echo base_url()?>/assets/main/js/employer/job7vn_employer.js"></script>
 <script src="<?php echo base_url()?>/assets/main/js/job7vn-register.js"></script>
 <script src="<?php echo base_url()?>/assets/main/js/dobPicker.min.js"></script>
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
 <script src="<?php echo base_url()?>/assets/main/bootstrap/dist/js/bootstrap-select.js"></script>
-<script src="<?php echo base_url()?>/assets/main/datetimepicker/DateTimePicker.js"></script>
-<script src="<?php echo base_url()?>/assets/main/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
-
+<script src="<?php echo base_url()?>/assets/main/js/upload/ajaxfileupload.js"></script>
  <!-- <script src="<?php echo base_url()?>/assets/main/js/map/markerwithlabel.js"></script>-->
  <?php
 if (isset($scriptJob)) {

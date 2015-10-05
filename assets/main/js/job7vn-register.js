@@ -1,6 +1,3 @@
-$(function() {
-    $('#datetimepicker1').datetimepicker();
-});
 //employer register
 function uploadOnChange(objFile) {
     fileName = objFile.value.replace(/C:\\fakepath\\/i, '');
@@ -13,18 +10,30 @@ function getExt(filename) {
     if (ext == filename) return "";
     return ext;
 }
+// var img_file = "";
 
-function uploadOnChange_cv(objFile) {
-    fileName = objFile.value.replace(/C:\\fakepath\\/i, '');
-    var ext = getExt(fileName);
-    if (ext == "doc" || ext == "docx" || ext == "pdf") {
-        $("#note_file_select").html(fileName);
-        err_ext = true;
-    } else {
-        $("#note_file_select").html('file định dạng không đúng');
-        err_ext = false;
-    }
-}
+// function uploadOnChange_cv(objFile) {
+//     fileName = objFile.value.replace(/C:\\fakepath\\/i, '');
+//     var ext = getExt(fileName);
+//     if (ext == "doc" || ext == "docx" || ext == "pdf") {
+//         $("#note_file_select").html(fileName);
+//         err_ext = true;
+
+//         var oFReader = new FileReader();
+//         oFReader.readAsDataURL(document.getElementById("userfile").files[0]);
+//         oFReader.onload = function (oFREvent) {
+//             var binaryString = oFREvent.target.result;
+//                 img_file = btoa(binaryString);
+//         };
+
+
+        
+
+//     } else {
+//         $("#note_file_select").html('file định dạng không đúng');
+//         err_ext = false;
+//     }
+// }
 function closeModal(){
     $('#message_recruitment').text("");
     $('#create_recruitmentModel').modal('hide');
@@ -44,6 +53,7 @@ function closeModal(){
 }
 
 $(document).ready(function() {
+    $("#upload_cv").hide();
     //user register
     $("#register-form").submit(function(event) {
         event.preventDefault();
@@ -80,23 +90,7 @@ $(document).ready(function() {
             }
         });
     })
-    $.dobPicker({
-        daySelector: '#dobday',
-        /* Required */
-        monthSelector: '#dobmonth',
-        /* Required */
-        yearSelector: '#dobyear',
-        /* Required */
-        dayDefault: 'Day',
-        /* Optional */
-        monthDefault: 'Month',
-        /* Optional */
-        yearDefault: 'Year',
-        /* Optional */
-        minimumAge: 8,
-        /* Optional */
-        maximumAge: 100 /* Optional */
-    });
+    
     //employer register
     $("#employer-register-form").submit(function(event) {
         event.preventDefault();
@@ -266,10 +260,12 @@ $(document).ready(function() {
                         var rec_job_map_country = response.content.rec_job_map_country;
                         var province_name = response.content.province_name;
                         var rec_salary = response.content.rec_salary;
-                        var welfare = response.content.welfare;
+                        var rec_job_map_career = response.content.rec_job_map_career;
                         var rec_job_regimen = response.content.rec_job_regimen;
                         var rec_job_content = response.content.rec_job_content;
-                        var rec_job_time = response.content.rec_job_time;
+                        var rec_day = response.content.rec_day;
+                        var rec_month = response.content.rec_month;
+                        var rec_year = response.content.rec_year;
                         var rec_job_require = response.content.rec_job_require;
                         var rec_job_priority = response.content.rec_job_priority;
                         var rec_job_map_form = response.content.rec_job_map_form;
@@ -279,7 +275,6 @@ $(document).ready(function() {
                         var rec_contact_email = response.content.rec_contact_email;
                         var rec_contact_address = response.content.rec_contact_address;
                         var rec_contact_phone = response.content.rec_contact_phone;
-                        var rec_contact_mobile = response.content.rec_contact_mobile;
                         var rec_contact_form = response.content.rec_contact_form;
                         // var docon_birthday = response.content.docon_birthday;
                         var csrf_name = response.content.name;
@@ -289,10 +284,12 @@ $(document).ready(function() {
                         $('#message_recruitment').append(rec_job_map_country);
                         $('#message_recruitment').append(province_name);
                         $('#message_recruitment').append(rec_salary);
-                        $('#message_recruitment').append(welfare);
+                        $('#message_recruitment').append(rec_job_map_career);
                         $('#message_recruitment').append(rec_job_regimen);
                         $('#message_recruitment').append(rec_job_content);
-                        $('#message_recruitment').append(rec_job_time);
+                        $('#message_recruitment').append(rec_day);
+                        $('#message_recruitment').append(rec_month);
+                        $('#message_recruitment').append(rec_year);
                         $('#message_recruitment').append(rec_job_require);
                         $('#message_recruitment').append(rec_job_priority);
                         $('#message_recruitment').append(rec_job_map_form);
@@ -302,7 +299,6 @@ $(document).ready(function() {
                         $('#message_recruitment').append(rec_contact_email);
                         $('#message_recruitment').append(rec_contact_address);
                         $('#message_recruitment').append(rec_contact_phone);
-                        $('#message_recruitment').append(rec_contact_mobile);
                         $('#message_recruitment').append(rec_contact_form);
                         // $('#message').append(docon_birthday);
                         $('input[name="csrf_test_name"]').val(csrf_hash);
@@ -316,56 +312,79 @@ $(document).ready(function() {
         //upload cv
     $("#uploadcv-form").submit(function(event) {
         event.preventDefault();
-        var form = $(this);
-        var formdata = false;
-        if (window.FormData) {
-            formdata = new FormData(form[0]);
-        }
-        var formAction = form.attr('action');
+        var cct = $("input[name=csrf_test_name]").val(); //alert(cct);
+       //var data_send = {'file_name': img_file, 'csrf_test_name':cct};
+
+       // console.log(data_send);
         if (err_ext) {
             $.ajax({
                 type: "POST", // HTTP method POST or GET
-                url: base_website + "uploadcv/upload_cv", //Where to make Ajax calls
+                url: base_website + "uploadcv/upload_cv", //Where to make Ajax cal1*-ls
+                secureuri : false,
+                fileElementId : "userfile",
                 dataType: "json", // Data type, HTML, json etc.
-                cache: false,
-                data: formdata ? formdata : form.serialize(),
-                contentType: false,
-                processData: false,
+                data: $(this).serialize(),
                 success: function(response) {
-                    // alert(response);
-                    // var objs = $.parseJSON(response);
-                    var status = response.status;
-                    if (status == 'success') {
-                        $('#message_upload_cv').text("");
-                        $('#uploadcvModel').modal('hide');
-                    } else {
-                        var content = response.content.contente;
-                        $('#message_upload_cv').text("");
-                        $('#message_upload_cv').append(content);
-                        $('input[name="csrf_test_name"]').val(csrf_hash);
-                    }
-                    // if(status == 'errvalid'){
-                    //     // var account_email = response.content.account_email;
-                    //     // var account_password = response.content.account_password;
-                    //     // var csrf_name = response.content.name;
-                    //     // var csrf_hash = response.content.hash;
-                    //     // $('#message').text("");
-                    //     // $('#message').append(account_email);
-                    //     // $('#message').append(account_password);
-                    //     // $('input[name="csrf_test_name"]').val(csrf_hash);
-                    //      $('#message').text("");
-                    //     $('#uploadcvModel').modal('hide')
-                    // }else if(status == 'success'){
-                    //     $('#message').text("");
-                    //     $('#uploadcvModel').modal('hide')
+                    console.log(response);
+                    $("#upload_cv").show();
+                    // var status = response.status;
+                    // if (status == 'success') {
+                    //     $('#message_upload_cv').text("");
+                    //     $('#uploadcvModel').modal('hide');
+                    // } else {
+                    //     var content = response.content.contente;
+                    //     $('#message_upload_cv').text("");
+                    //     $('#message_upload_cv').append(content);
+                    //     $('input[name="csrf_test_name"]').val(csrf_hash);
                     // }
                 },
                 error: function(xhr, ajaxOptions, thrownError) {
-                    alert("failure");
+
+                    alert(xhr.status);
+                    console.log(xhr.responseText);
+                    alert(thrownError);
                 }
             });
         } else {
             $("#note_file_select").html('file dinh dang khong dung');
         }
     })
+
+$.dobPicker({
+        daySelector: '#job_day',
+        /* Required */
+        monthSelector: '#job_month',
+        /* Required */
+        yearSelector: '#job_year',
+
+        /* Required */
+        dayDefault: 'Ngày',
+        /* Optional */
+        monthDefault: 'Tháng',
+        /* Optional */
+        yearDefault: 'Năm',
+        /* Optional */
+        minimumAge: 0,
+        /* Optional */
+        maximumAge: 100 /* Optional */
+    });
+
+$.dobPicker({
+        daySelector: '#dobday',
+        /* Required */
+        monthSelector: '#dobmonth',
+        /* Required */
+        yearSelector: '#dobyear',
+
+        /* Required */
+        dayDefault: 'Day',
+        /* Optional */
+        monthDefault: 'Month',
+        /* Optional */
+        yearDefault: 'Year',
+        /* Optional */
+        minimumAge: 10,
+        /* Optional */
+        maximumAge: 100 /* Optional */
+    });
 });
