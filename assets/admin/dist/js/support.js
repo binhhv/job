@@ -244,7 +244,7 @@ function appendListSupportChat(data){
                 liSupport+='</div></div></a></li>';
                 $("ul.ul-list-support-chat").append(liSupport); 
 }
-function appendMessage(data){
+function appendMessage(data,scroll){
     	if(data.schat_type == 0){
     		var html ='<div class="direct-chat-msg">';
                 html+='<img class="direct-chat-img" src="'+base_url+'assets/admin/dist/img/supportonline/icon_user_support.png" alt="message user image">';
@@ -263,4 +263,7 @@ function appendMessage(data){
                 html+='</div>';
             $(".direct-chat-messages").append(html);
     	}
+      if (typeof scroll !== "undefined") {
+            scrollChatBox();
+      }
     }

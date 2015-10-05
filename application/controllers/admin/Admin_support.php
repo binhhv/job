@@ -34,7 +34,8 @@ class Admin_support extends CI_Controller {
 		$cookie_user = $this->input->post('cookie_user');
 		log_message('error', $cookie_user);
 		$output = array('cookie_id' => $cookie_id);
-		if ($cookie_id == 0) {
+		log_message('error', $cookie_id);
+		if ($cookie_id == '0') {
 			$cookie_id = md5(date('Y-m-d H:m:s:u'));
 			$output['cookie_id'] = $cookie_id;
 			$cookie_user = $this->randomUserSP();
@@ -127,7 +128,9 @@ class Admin_support extends CI_Controller {
 		$content = $this->load->view('admin/support', array(), TRUE);
 		$footer = $this->load->view('admin/footer', array(), TRUE);
 		$sidemenu = $this->load->view('admin/sidemenu', array('email' => $this->session->userdata['user']['email'],
-			'role' => $this->session->userdata['user']['role']), TRUE);
+			'role' => $this->session->userdata['user']['role'],
+			'selected' => 'mailbox',
+			'sub' => 'support'), TRUE);
 
 		$this->load->view('admin/layout', array('head' => $head,
 			'header' => $header,

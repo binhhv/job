@@ -26,7 +26,8 @@ app.filter('startFrom', function() {
         };
     });
 app.controller('contactController', function (contactService,$scope, $http, $timeout,cfpLoadingBar,$modal,$log,$window,$filter) {
-	$scope.completeProcess = false;
+	
+    $scope.completeProcess = false;
 $scope.formatDate = function(date){
           var dateOut = new Date(date);
           return dateOut;

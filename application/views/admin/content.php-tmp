@@ -71,7 +71,7 @@
          <div class="col-sm-8">
            <div class="box box-success chart-recruitment">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Biểu đồ ứng viên và nhà tuyển dụng</h3>
+                  <h3 class="box-title">Biểu đồ tin tuyển dụng</h3>
                   <div class="box-tools pull-right">
 
                   </div>

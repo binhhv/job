@@ -1,0 +1,563 @@
+<?php
+/**
+ *
+ */
+class Admin_category extends CI_Controller {
+
+	function __construct() {
+		parent::__construct();
+		$this->load->helper('url');
+		$this->load->library(array('form_validation', 'session'));
+		$this->load->model('admin/Jobseeker_model', 'jobseeker');
+		$this->load->model('admin/Mail_model', 'mail');
+		$this->load->model('admin/Admin_api_model', 'api');
+		$this->load->model('admin/Category_model', 'category');
+		$this->load->model('UtilModel', 'util');
+		if (!$this->session->userdata['user']['isLogged']) {
+			redirect(base_url().'admin/login');// no session established, kick back to login page
+		} else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
+			redirect(base_url('error/403'));
+		}
+	}
+	function province() {
+		$scripts = array(
+
+			'assets/admin/angularjs/controller/category.controller.js',
+			'assets/admin/angularjs/service/category.service.js',
+		);
+		$countries = $this->category->getListCountry();
+		$head      = $this->load->view('admin/head', array(), TRUE);
+		$header    = $this->load->view('admin/header', array(), TRUE);
+		$content   = $this->load->view('admin/category/province', array(
+				'countries' => $countries), TRUE);
+		$footer   = $this->load->view('admin/footer', array(), TRUE);
+		$sidemenu = $this->load->view('admin/sidemenu', array('email' => $this->session->userdata['user']['email'],
+				'role'                                                      => $this->session->userdata['user']['role'],
+				'selected'                                                  => 'category',
+				'sub'                                                       => 'province'), TRUE);
+
+		$this->load->view('admin/layout', array('head' => $head,
+				'header'                                     => $header,
+				'sidemenu'                                   => $sidemenu,
+				'content'                                    => $content,
+				'footer'                                     => $footer,
+				'scripts'                                    => $scripts,
+			));
+	}
+	function getListProvinceCountry($countryid) {
+		if (isset($countryid) && is_numeric($countryid)) {
+			$output = $this->category->getListProvinceCountry($countryid);
+			echo json_encode($output);
+		} else {
+			echo json_encode(array(""));
+		}
+
+	}
+	function getListRegionCountry($countryid) {
+		if (isset($countryid) && is_numeric($countryid)) {
+			$output = $this->category->getListRegionCountry($countryid);
+			echo json_encode($output);
+		} else {
+			echo json_encode(array(""));
+		}
+	}
+	function updateProvince() {
+		$province = json_decode($this->input->post('province'), true);
+
+		$data = array(
+			'province_name'       => $province['province_name'],
+			'province_type'       => $province['province_type'],
+			'province_update_at'  => date('Y-m-d H:m'),
+			'province_lat'        => $province['province_lat'],
+			'province_long'       => $province['province_long'],
+			'province_long_lat'   => $province['province_long_lat'],
+			'province_map_region' => $province['objectRegion']['region_id']);
+		$output = $this->category->updateProvince($data, $province['province_id']);
+		echo json_encode($output);
+	}
+	function createProvince() {
+		$province = json_decode($this->input->post('province'), true);
+		$data     = array(
+			'province_name'        => $province['province_name'],
+			'province_type'        => $province['province_type'],
+			'province_map_country' => $province['province_map_country'],
+			'province_type'        => $province['province_type'],
+			'province_is_delete'   => false,
+			'province_created_at'  => date('Y-m-d H:m'),
+			'province_update_at'   => date('Y-m-d H:m'),
+			'province_lat'         => $province['province_lat'],
+			'province_long'        => $province['province_long'],
+			'province_long_lat'    => $province['province_long_lat'],
+			'province_map_region'  => $province['objectRegion']['region_id']);
+		$output = $this->category->createProvince($data);
+		echo json_encode($output);
+	}
+	function deleteProvince() {
+		$province = json_decode($this->input->post('province'), true);
+		$data     = array(
+			'province_is_delete' => true,
+			'province_update_at' => date('Y-m-d H:m'));
+		$output = $this->category->deleteProvince($data, $province['province_id']);
+		echo json_encode($output);
+	}
+
+	function health() {
+		$scripts = array(
+
+			'assets/admin/angularjs/controller/category.controller.js',
+			'assets/admin/angularjs/service/category.service.js',
+		);
+		//$countries = $this->category->getListCountry();
+		$head     = $this->load->view('admin/head', array(), TRUE);
+		$header   = $this->load->view('admin/header', array(), TRUE);
+		$content  = $this->load->view('admin/category/health', array(), TRUE);
+		$footer   = $this->load->view('admin/footer', array(), TRUE);
+		$sidemenu = $this->load->view('admin/sidemenu', array('email' => $this->session->userdata['user']['email'],
+				'role'                                                      => $this->session->userdata['user']['role'],
+				'selected'                                                  => 'category',
+				'sub'                                                       => 'health'), TRUE);
+
+		$this->load->view('admin/layout', array('head' => $head,
+				'header'                                     => $header,
+				'sidemenu'                                   => $sidemenu,
+				'content'                                    => $content,
+				'footer'                                     => $footer,
+				'scripts'                                    => $scripts,
+			));
+	}
+
+	function getListHealth() {
+		$output = $this->category->getListHealth();
+		echo json_encode($output);
+	}
+	function createHealth() {
+		$health = json_decode($this->input->post('health'), true);
+		$data   = array(
+			'healthy_type'       => $health['healthy_type'],
+			'healthy_is_delete'  => false,
+			'healthy_update_at'  => date('Y-m-d H:m'),
+			'healthy_created_at' => date('Y-m-d H:m'));
+		$output = $this->category->createHealth($data);
+		echo json_encode($output);
+	}
+	function updateHealth() {
+		$health = json_decode($this->input->post('health'), true);
+		$data   = array(
+			'healthy_type'      => $health['healthy_type'],
+			'healthy_update_at' => date('Y-m-d H:m'));
+		$output = $this->category->updateHealth($data, $health['healthy_id']);
+		echo json_encode($output);
+	}
+	function deleteHealth() {
+		$health = json_decode($this->input->post('health'), true);
+		$data   = array(
+			'healthy_is_delete' => true,
+			'healthy_update_at' => date('Y-m-d H:m'));
+		$output = $this->category->updateHealth($data, $health['healthy_id']);
+		echo json_encode($output);
+
+	}
+	function form() {
+		$scripts = array(
+
+			'assets/admin/angularjs/controller/category.controller.js',
+			'assets/admin/angularjs/service/category.service.js',
+		);
+		//$countries = $this->category->getListCountry();
+		$head     = $this->load->view('admin/head', array(), TRUE);
+		$header   = $this->load->view('admin/header', array(), TRUE);
+		$content  = $this->load->view('admin/category/job-form', array(), TRUE);
+		$footer   = $this->load->view('admin/footer', array(), TRUE);
+		$sidemenu = $this->load->view('admin/sidemenu', array('email' => $this->session->userdata['user']['email'],
+				'role'                                                      => $this->session->userdata['user']['role'],
+				'selected'                                                  => 'category',
+				'sub'                                                       => 'form'), TRUE);
+
+		$this->load->view('admin/layout', array('head' => $head,
+				'header'                                     => $header,
+				'sidemenu'                                   => $sidemenu,
+				'content'                                    => $content,
+				'footer'                                     => $footer,
+				'scripts'                                    => $scripts,
+			));
+	}
+	function getListForm() {
+		$output = $this->category->getListForm();
+		echo json_encode($output);
+	}
+	function createForm() {
+		$jobForm = json_decode($this->input->post('jobForm'), true);
+		$data    = array(
+			'fjob_type'       => $jobForm['fjob_type'],
+			'fjob_is_delete'  => false,
+			'fjob_update_at'  => date('Y-m-d H:m'),
+			'fjob_created_at' => date('Y-m-d H:m'));
+		$output = $this->category->createForm($data);
+		echo json_encode($output);
+	}
+	function updateForm() {
+		$jobForm = json_decode($this->input->post('jobForm'), true);
+		$data    = array(
+			'fjob_type'      => $jobForm['fjob_type'],
+			'fjob_update_at' => date('Y-m-d H:m'));
+		$output = $this->category->updateForm($data, $jobForm['fjob_id']);
+		echo json_encode($output);
+	}
+	function deleteForm() {
+		$jobForm = json_decode($this->input->post('jobForm'), true);
+		$data    = array(
+			'fjob_is_delete' => true,
+			'fjob_update_at' => date('Y-m-d H:m'));
+		$output = $this->category->updateForm($data, $jobForm['fjob_id']);
+		echo json_encode($output);
+
+	}
+
+	function level() {
+		$scripts = array(
+
+			'assets/admin/angularjs/controller/category.controller.js',
+			'assets/admin/angularjs/service/category.service.js',
+		);
+		//$countries = $this->category->getListCountry();
+		$head     = $this->load->view('admin/head', array(), TRUE);
+		$header   = $this->load->view('admin/header', array(), TRUE);
+		$content  = $this->load->view('admin/category/job-level', array(), TRUE);
+		$footer   = $this->load->view('admin/footer', array(), TRUE);
+		$sidemenu = $this->load->view('admin/sidemenu', array('email' => $this->session->userdata['user']['email'],
+				'role'                                                      => $this->session->userdata['user']['role'],
+				'selected'                                                  => 'category',
+				'sub'                                                       => 'level'), TRUE);
+
+		$this->load->view('admin/layout', array('head' => $head,
+				'header'                                     => $header,
+				'sidemenu'                                   => $sidemenu,
+				'content'                                    => $content,
+				'footer'                                     => $footer,
+				'scripts'                                    => $scripts,
+			));
+	}
+	function getListLevel() {
+		$output = $this->category->getListLevel();
+		echo json_encode($output);
+	}
+	function createLevel() {
+		$jobLevel = json_decode($this->input->post('jobLevel'), true);
+		$data     = array(
+			'ljob_level'      => $jobLevel['ljob_level'],
+			'ljob_is_delete'  => false,
+			'ljob_update_at'  => date('Y-m-d H:m'),
+			'ljob_created_at' => date('Y-m-d H:m'));
+		$output = $this->category->createLevel($data);
+		echo json_encode($output);
+	}
+	function updateLevel() {
+		$jobLevel = json_decode($this->input->post('jobLevel'), true);
+		$data     = array(
+			'ljob_level'     => $jobLevel['ljob_level'],
+			'ljob_update_at' => date('Y-m-d H:m'));
+		$output = $this->category->updateLevel($data, $jobLevel['ljob_id']);
+		echo json_encode($output);
+	}
+	function deleteLevel() {
+		$jobLevel = json_decode($this->input->post('jobLevel'), true);
+		$data     = array(
+			'ljob_is_delete' => true,
+			'ljob_update_at' => date('Y-m-d H:m'));
+		$output = $this->category->updateLevel($data, $jobLevel['ljob_id']);
+		echo json_encode($output);
+
+	}
+
+	function welfare() {
+		$scripts = array(
+
+			'assets/admin/angularjs/controller/category.controller.js',
+			'assets/admin/angularjs/service/category.service.js',
+		);
+		//$countries = $this->category->getListCountry();
+		$head     = $this->load->view('admin/head', array(), TRUE);
+		$header   = $this->load->view('admin/header', array(), TRUE);
+		$content  = $this->load->view('admin/category/job-welfare', array(), TRUE);
+		$footer   = $this->load->view('admin/footer', array(), TRUE);
+		$sidemenu = $this->load->view('admin/sidemenu', array('email' => $this->session->userdata['user']['email'],
+				'role'                                                      => $this->session->userdata['user']['role'],
+				'selected'                                                  => 'category',
+				'sub'                                                       => 'welfare'), TRUE);
+
+		$this->load->view('admin/layout', array('head' => $head,
+				'header'                                     => $header,
+				'sidemenu'                                   => $sidemenu,
+				'content'                                    => $content,
+				'footer'                                     => $footer,
+				'scripts'                                    => $scripts,
+			));
+	}
+
+	function career() {
+		$scripts = array(
+
+			'assets/admin/angularjs/controller/category.controller.js',
+			'assets/admin/angularjs/service/category.service.js',
+		);
+		//$countries = $this->category->getListCountry();
+		$head     = $this->load->view('admin/head', array(), TRUE);
+		$header   = $this->load->view('admin/header', array(), TRUE);
+		$content  = $this->load->view('admin/category/career', array(), TRUE);
+		$footer   = $this->load->view('admin/footer', array(), TRUE);
+		$sidemenu = $this->load->view('admin/sidemenu', array('email' => $this->session->userdata['user']['email'],
+				'role'                                                      => $this->session->userdata['user']['role'],
+				'selected'                                                  => 'category',
+				'sub'                                                       => 'career'), TRUE);
+
+		$this->load->view('admin/layout', array('head' => $head,
+				'header'                                     => $header,
+				'sidemenu'                                   => $sidemenu,
+				'content'                                    => $content,
+				'footer'                                     => $footer,
+				'scripts'                                    => $scripts,
+			));
+	}
+
+	function salary() {
+		$scripts = array(
+
+			'assets/admin/angularjs/controller/category.controller.js',
+			'assets/admin/angularjs/service/category.service.js',
+		);
+		//$countries = $this->category->getListCountry();
+		$head     = $this->load->view('admin/head', array(), TRUE);
+		$header   = $this->load->view('admin/header', array(), TRUE);
+		$content  = $this->load->view('admin/category/salary', array(), TRUE);
+		$footer   = $this->load->view('admin/footer', array(), TRUE);
+		$sidemenu = $this->load->view('admin/sidemenu', array('email' => $this->session->userdata['user']['email'],
+				'role'                                                      => $this->session->userdata['user']['role'],
+				'selected'                                                  => 'category',
+				'sub'                                                       => 'salary'), TRUE);
+
+		$this->load->view('admin/layout', array('head' => $head,
+				'header'                                     => $header,
+				'sidemenu'                                   => $sidemenu,
+				'content'                                    => $content,
+				'footer'                                     => $footer,
+				'scripts'                                    => $scripts,
+			));
+	}
+
+	function contactForm() {
+		$scripts = array(
+
+			'assets/admin/angularjs/controller/category.controller.js',
+			'assets/admin/angularjs/service/category.service.js',
+		);
+		//$countries = $this->category->getListCountry();
+		$head     = $this->load->view('admin/head', array(), TRUE);
+		$header   = $this->load->view('admin/header', array(), TRUE);
+		$content  = $this->load->view('admin/category/contact-form', array(), TRUE);
+		$footer   = $this->load->view('admin/footer', array(), TRUE);
+		$sidemenu = $this->load->view('admin/sidemenu', array('email' => $this->session->userdata['user']['email'],
+				'role'                                                      => $this->session->userdata['user']['role'],
+				'selected'                                                  => 'category',
+				'sub'                                                       => 'contactform'), TRUE);
+
+		$this->load->view('admin/layout', array('head' => $head,
+				'header'                                     => $header,
+				'sidemenu'                                   => $sidemenu,
+				'content'                                    => $content,
+				'footer'                                     => $footer,
+				'scripts'                                    => $scripts,
+			));
+	}
+
+	function faq() {
+		$scripts = array(
+
+			'assets/admin/angularjs/controller/category.controller.js',
+			'assets/admin/angularjs/service/category.service.js',
+		);
+		//$countries = $this->category->getListCountry();
+		$head     = $this->load->view('admin/head', array(), TRUE);
+		$header   = $this->load->view('admin/header', array(), TRUE);
+		$content  = $this->load->view('admin/category/faq', array(), TRUE);
+		$footer   = $this->load->view('admin/footer', array(), TRUE);
+		$sidemenu = $this->load->view('admin/sidemenu', array('email' => $this->session->userdata['user']['email'],
+				'role'                                                      => $this->session->userdata['user']['role'],
+				'selected'                                                  => 'category',
+				'sub'                                                       => 'faq'), TRUE);
+
+		$this->load->view('admin/layout', array('head' => $head,
+				'header'                                     => $header,
+				'sidemenu'                                   => $sidemenu,
+				'content'                                    => $content,
+				'footer'                                     => $footer,
+				'scripts'                                    => $scripts,
+			));
+	}
+
+	function getListSalary() {
+		$output = $this->category->getListSalary();
+		echo json_encode($output);
+	}
+	function getListCareer() {
+		$output = $this->category->getListCareer();
+		echo json_encode($output);
+	}
+	function getListContactForm() {
+		$output = $this->category->getListContactForm();
+		echo json_encode($output);
+	}
+	function getListFAQ() {
+		$output = $this->category->getListFAQ();
+		echo json_encode($output);
+	}
+	function getListWelfare() {
+		$output = $this->category->getListWelfare();
+		echo json_encode($output);
+	}
+
+	function createSalary() {
+		$salary = json_decode($this->input->post('salary'), true);
+		$data   = array(
+			'salary_value'      => $salary['salary_value'],
+			'salary_type'       => $salary['salary_type'],
+			'salary_is_delete'  => false,
+			'salary_update_at'  => date('Y-m-d H:m'),
+			'salary_created_at' => date('Y-m-d H:m'));
+		$output = $this->category->createSalary($data);
+		echo json_encode($output);
+	}
+	function createCareer() {
+		$career = json_decode($this->input->post('career'), true);
+		$data   = array(
+			'career_name'       => $career['career_name'],
+			'career_is_delete'  => false,
+			'career_update_at'  => date('Y-m-d H:m'),
+			'career_created_at' => date('Y-m-d H:m'));
+		$output = $this->category->createCareer($data);
+		echo json_encode($output);
+	}
+	function createContactForm() {
+		$contactform = json_decode($this->input->post('contactform'), true);
+		$data        = array(
+			'contact_form_type'       => $contactform['contact_form_type'],
+			'contact_form_is_delete'  => false,
+			'contact_form_update_at'  => date('Y-m-d H:m'),
+			'contact_form_created_at' => date('Y-m-d H:m'));
+		$output = $this->category->createContactForm($data);
+		echo json_encode($output);
+	}
+	function createFAQ() {
+		$faq  = json_decode($this->input->post('faq'), true);
+		$data = array(
+			'faq_question'    => $faq['faq_question'],
+			'faq_answer'      => $faq['faq_answer'],
+			'faq_map_account' => $this->session->userdata['user']['id'],
+			'faq_is_delete'   => false,
+			'faq_update_at'   => date('Y-m-d H:m'),
+			'faq_created_at'  => date('Y-m-d H:m'));
+		$output = $this->category->createFAQ($data);
+		echo json_encode($output);
+	}
+	function createWelfare() {
+		$welfare = json_decode($this->input->post('welfare'), true);
+		$data    = array(
+			'welfare_title'      => $welfare['welfare_title'],
+			'welfare_icon'       => $welfare['welfare_icon'],
+			'welfare_is_delete'  => false,
+			'welfare_update_at'  => date('Y-m-d H:m'),
+			'welfare_created_at' => date('Y-m-d H:m'));
+		$output = $this->category->createWelfare($data);
+		echo json_encode($output);
+	}
+
+	//update
+	function updateSalary() {
+		$salary = json_decode($this->input->post('salary'), true);
+		$data   = array(
+			'salary_value'     => $salary['salary_value'],
+			'salary_type'      => $salary['salary_type'],
+			'salary_update_at' => date('Y-m-d H:m'));
+		$output = $this->category->updateSalary($data, $salary['salary_id']);
+		echo json_encode($output);
+	}
+	function updateCareer() {
+		$career = json_decode($this->input->post('career'), true);
+		$data   = array(
+			'career_name'      => $career['career_name'],
+			'career_update_at' => date('Y-m-d H:m'));
+		$output = $this->category->updateCareer($data, $career['career_id']);
+		echo json_encode($output);
+	}
+	function updateContactForm() {
+		$contactform = json_decode($this->input->post('contactform'), true);
+		$data        = array(
+			'contact_form_type'      => $contactform['contact_form_type'],
+			'contact_form_update_at' => date('Y-m-d H:m'));
+		$output = $this->category->updateContactForm($data, $contactform['contact_form_id']);
+		echo json_encode($output);
+	}
+	function updateFAQ() {
+		$faq  = json_decode($this->input->post('faq'), true);
+		$data = array(
+			'faq_question'    => $faq['faq_question'],
+			'faq_answer'      => $faq['faq_answer'],
+			'faq_map_account' => $this->session->userdata['user']['id'],
+			'faq_update_at'   => date('Y-m-d H:m'));
+		$output = $this->category->updateFAQ($data, $faq['faq_id']);
+		echo json_encode($output);
+	}
+	function updateWelfare() {
+		$welfare = json_decode($this->input->post('welfare'), true);
+		$data    = array(
+			'welfare_title'     => $welfare['welfare_title'],
+			'welfare_icon'      => $welfare['welfare_icon'],
+			'welfare_update_at' => date('Y-m-d H:m'));
+		$output = $this->category->updateWelfare($data, $welfare['welfare_id']);
+		echo json_encode($output);
+	}
+
+	function deleteSalary() {
+		$salary = json_decode($this->input->post('salary'), true);
+		$data   = array(
+			'salary_is_delete' => true,
+			'salary_update_at' => date('Y-m-d H:m'));
+		$output = $this->category->updateSalary($data, $salary['salary_id']);
+		echo json_encode($output);
+	}
+	function deleteCareer() {
+		$career = json_decode($this->input->post('career'), true);
+		$data   = array(
+			'career_is_delete' => true,
+			'career_update_at' => date('Y-m-d H:m'));
+		$output = $this->category->updateCareer($data, $career['career_id']);
+		echo json_encode($output);
+	}
+	function deleteContactForm() {
+		$contactform = json_decode($this->input->post('contactform'), true);
+		$data        = array(
+			'contact_form_is_delete' => true,
+			'contact_form_update_at' => date('Y-m-d H:m'));
+		$output = $this->category->updateContactForm($data, $contactform['contact_form_id']);
+		echo json_encode($output);
+	}
+	function deleteFAQ() {
+		$faq  = json_decode($this->input->post('faq'), true);
+		$data = array(
+			'faq_is_delete' => true,
+			'faq_update_at' => date('Y-m-d H:m'));
+		$output = $this->category->updateFAQ($data, $faq['faq_id']);
+		echo json_encode($output);
+	}
+	function deleteWelfare() {
+		$welfare = json_decode($this->input->post('welfare'), true);
+		$data    = array(
+			'welfare_is_delete' => true,
+			'welfare_update_at' => date('Y-m-d H:m'));
+		$output = $this->category->updateWelfare($data, $welfare['welfare_id']);
+		echo json_encode($output);
+	}
+	function getListIcon() {
+		$output = $this->category->getListIcon();
+		echo json_encode($output);
+	}
+}

@@ -68,7 +68,7 @@ var datetime = "Last Sync: " + currentdate.getDate() + "/"
 			// }, 3000);
 			setTimeout(function() {
 			       $("#myModal").modal("show");
-			 }, 5000);
+			 }, 120000);
 			// var timesRun = 0;
 			// var interval = setInterval(function(){
 			//     timesRun += 1;
@@ -113,14 +113,14 @@ var datetime = "Last Sync: " + currentdate.getDate() + "/"
   		setTimeout(function() {
 			       $("#myModal").modal("show");
 			       $.cookie('onetime', '1', { expires: 7 });
-			 }, 10000);
+			 }, 300000);
   	}
 
   	if (onetime=="1"){
   		setTimeout(function() {
 			       $("#myModal").modal("show");
 			       $.cookie('onetime', '2', { expires: 7 });
-			 }, 15000);
+			 }, 600000);
   	}
   	//var twotime = $.cookie('onetime');
  //  	if(onetime=="undefined"){
