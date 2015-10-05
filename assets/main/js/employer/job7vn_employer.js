@@ -1,6 +1,4 @@
-$(function() {
-    $('#datetimepicker1').datetimepicker();
-});
+
 //employer register
 function uploadOnChange(objFile) {
     fileName = objFile.value.replace(/C:\\fakepath\\/i, '');
@@ -25,7 +23,8 @@ function uploadOnChange_cv(objFile) {
         err_ext = false;
     }
 }
-function closeModal_update(){
+
+function closeModal_update() {
     $('#message_update_empoyer').text("");
     $('#employer_updateModal').modal('hide');
     $('#message_update_contact_empoyer').text("");
@@ -68,111 +67,99 @@ $(document).ready(function() {
             }
         });
     });
-
-  
     //employer update imfomation
     $("#employer-update-form").submit(function(event) {
-        event.preventDefault();
-        var form = $(this);
-        var formdata = false;
-        if (window.FormData) {
-            formdata = new FormData(form[0]);
-        }
-        var formAction = form.attr('action');
-        $.ajax({
-            type: "POST", // HTTP method POST or GET
-            url: base_website + "employer/employer/update_information_employer", //Where to make Ajax calls
-            dataType: "json", // Data type, HTML, json etc.
-            cache: false,
-            data: formdata ? formdata : form.serialize(),
-            contentType: false,
-            processData: false,
-            success: function(response) {
-                // var objs = $.parseJSON(response);
-                var status = response.status;
-                if (status == 'errvalid') {
-                    
-                    var employer_name = response.content.employer_name;
-                    var employer_size = response.content.employer_size;
-                    var employer_phone = response.content.employer_phone;
-                    var employer_about = response.content.employer_about;
-                    var employer_address = response.content.employer_address;
-                    var employer_map_province = response.content.employer_map_province;
-                    var csrf_name = response.content.name;
-                    var csrf_hash = response.content.hash;
-                    $('#message_update_empoyer').text("");
-                    $('#message_update_empoyer').append(employer_name);
-                    $('#message_update_empoyer').append(employer_address);
-                     $('#message_update_empoyer').append(employer_map_province);
-                     $('#message_update_empoyer').append(employer_phone);
-                    $('#message_update_empoyer').append(employer_size);
-                    $('#message_update_empoyer').append(employer_about);
-                    $('input[name="csrf_test_name"]').val(csrf_hash);
-
-
-                } else if (status == 'success') {
-                    $('#message_update_empoyer').text("");
-                    $('#employer_updateModal').modal('hide');
-                    window.location.reload();
-                }
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                alert('lalue');
+            event.preventDefault();
+            var form = $(this);
+            var formdata = false;
+            if (window.FormData) {
+                formdata = new FormData(form[0]);
             }
-        });
-    })
-
-
-//employer update imfomation
+            var formAction = form.attr('action');
+            $.ajax({
+                type: "POST", // HTTP method POST or GET
+                url: base_website + "employer/employer/update_information_employer", //Where to make Ajax calls
+                dataType: "json", // Data type, HTML, json etc.
+                cache: false,
+                data: formdata ? formdata : form.serialize(),
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    // var objs = $.parseJSON(response);
+                    var status = response.status;
+                    if (status == 'errvalid') {
+                        var employer_name = response.content.employer_name;
+                        var employer_size = response.content.employer_size;
+                        var employer_phone = response.content.employer_phone;
+                        var employer_about = response.content.employer_about;
+                        var employer_address = response.content.employer_address;
+                        var employer_map_province = response.content.employer_map_province;
+                        var csrf_name = response.content.name;
+                        var csrf_hash = response.content.hash;
+                        $('#message_update_empoyer').text("");
+                        $('#message_update_empoyer').append(employer_name);
+                        $('#message_update_empoyer').append(employer_address);
+                        $('#message_update_empoyer').append(employer_map_province);
+                        $('#message_update_empoyer').append(employer_phone);
+                        $('#message_update_empoyer').append(employer_size);
+                        $('#message_update_empoyer').append(employer_about);
+                        $('input[name="csrf_test_name"]').val(csrf_hash);
+                    } else if (status == 'success') {
+                        $('#message_update_empoyer').text("");
+                        $('#employer_updateModal').modal('hide');
+                        window.location.reload();
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert('lalue');
+                }
+            });
+        })
+        //employer update imfomation
     $("#employer-contact-update-form").submit(function(event) {
-        event.preventDefault();
-        var form = $(this);
-        var formdata = false;
-        if (window.FormData) {
-            formdata = new FormData(form[0]);
-        }
-        var formAction = form.attr('action');
-        $.ajax({
-            type: "POST", // HTTP method POST or GET
-            url: base_website + "employer/employer/update_contact_info_employer", //Where to make Ajax calls
-            dataType: "json", // Data type, HTML, json etc.
-            cache: false,
-            data: formdata ? formdata : form.serialize(),
-            contentType: false,
-            processData: false,
-            success: function(response) {
-                // var objs = $.parseJSON(response);
-                var status = response.status;
-                if (status == 'errvalid') {
-                    var employer_contact_name = response.content.employer_contact_name;
-                    var employer_contact_phone = response.content.employer_contact_phone;
-                    var employer_contact_mobile = response.content.employer_contact_mobile;
-                    var employer_contact_email = response.content.employer_contact_email;
-                    var csrf_name = response.content.name;
-                    var csrf_hash = response.content.hash;
-                    $('#message_update_contact_empoyer').text("");
-                    $('#message_update_contact_empoyer').append(employer_contact_name);
-                    $('#message_update_contact_empoyer').append(employer_contact_phone);
-                     $('#message_update_contact_empoyer').append(employer_contact_mobile);
-                     $('#message_update_contact_empoyer').append(employer_contact_email);
-                
-                    $('input[name="csrf_test_name"]').val(csrf_hash);
-
-
-                } else if (status == 'success') {
-                    $('#message_update_contact_empoyer').text("");
-                    $('#employer_contact_updateModal').modal('hide');
-                    window.location.reload();
-                }
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                alert('lalue');
+            event.preventDefault();
+            var form = $(this);
+            var formdata = false;
+            if (window.FormData) {
+                formdata = new FormData(form[0]);
             }
-        });
-    })
-
-
-//employer update account
+            var formAction = form.attr('action');
+            $.ajax({
+                type: "POST", // HTTP method POST or GET
+                url: base_website + "employer/employer/update_contact_info_employer", //Where to make Ajax calls
+                dataType: "json", // Data type, HTML, json etc.
+                cache: false,
+                data: formdata ? formdata : form.serialize(),
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    // var objs = $.parseJSON(response);
+                    var status = response.status;
+                    if (status == 'errvalid') {
+                        var employer_contact_name = response.content.employer_contact_name;
+                        var employer_contact_phone = response.content.employer_contact_phone;
+                        var employer_contact_mobile = response.content.employer_contact_mobile;
+                        var employer_contact_email = response.content.employer_contact_email;
+                        var csrf_name = response.content.name;
+                        var csrf_hash = response.content.hash;
+                        $('#message_update_contact_empoyer').text("");
+                        $('#message_update_contact_empoyer').append(employer_contact_name);
+                        $('#message_update_contact_empoyer').append(employer_contact_phone);
+                        $('#message_update_contact_empoyer').append(employer_contact_mobile);
+                        $('#message_update_contact_empoyer').append(employer_contact_email);
+                        $('input[name="csrf_test_name"]').val(csrf_hash);
+                    } else if (status == 'success') {
+                        $('#message_update_contact_empoyer').text("");
+                        $('#employer_contact_updateModal').modal('hide');
+                        window.location.reload();
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert('lalue');
+                }
+            });
+        })
+        //employer update account
     $("#employer-account-update-form").submit(function(event) {
         event.preventDefault();
         var form = $(this);
@@ -200,10 +187,7 @@ $(document).ready(function() {
                     $('#message_update_account_empoyer').text("");
                     $('#message_update_account_empoyer').append(account_password);
                     $('#message_update_account_empoyer').append(confirm_password);
-                
                     $('input[name="csrf_test_name"]').val(csrf_hash);
-
-
                 } else if (status == 'success') {
                     $('#message_update_account_empoyer').text("");
                     $('#employer_account_updateModal').modal('hide');
@@ -215,7 +199,4 @@ $(document).ready(function() {
             }
         });
     })
-  
-
 });
-

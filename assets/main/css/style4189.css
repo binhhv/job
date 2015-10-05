@@ -10883,3 +10883,79 @@ button.btn.dropdown-toggle.btn-default {
     height: 40px;
     vertical-align: middle;
 }
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+.box-header {
+    color: #444;
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+box-body {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 10px;
+}
+@media (max-width: 768px) {
+    td#row_jcform_type, td#row_rec_is_approve, td#row_rec_created_at, td#row_numapply,
+    th#row_jcform_type_th , th#row_rec_is_approve_th, th#row_rec_created_at_th, th#row_numapply_th {
+        display: none;
+    }
+    td#row_action, th#row_action_th {
+         
+    }
+}
+div#recruitment_active_tb_length {
+    display: none;
+}
+div#recruitment_active_tb_info {
+    display: none;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    border-top: 1px solid #f4f4f4;
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+.box-body>.table {
+    margin-bottom: 0;
+}
+.btn-info {
+    background-color: #00c0ef;
+    border-color: #00acd6;
+}
+.btn {
+    border-radius: 3px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid transparent;
+}
+.btn-warning:hover, .btn-warning:active, .btn-warning.hover {
+    background-color: #e08e0b;
+}
+.btn-danger:hover, .btn-danger:active, .btn-danger.hover {
+    background-color: #d73925;
+}
+ .menu_left{
+    margin: 0px 0 !important;
+    padding: 0 0 0 40px
+ }
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+        width: 20px;
+} 
+input.form-control.input-sm {
+    height: 30px;
+}

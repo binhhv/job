@@ -27,24 +27,36 @@
 
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_title');?> <span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('rec_title');?> <label class="text-danger">(*)</label></label>
                                     <div class="controls">
                                         <input type="text" class="form-control" name="rec_title" />
                                     </div>
                                 </div>
 
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_job_map_country');?> <span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('rec_salary');?><label class="text-danger">(*)</label></label>
+                                    <div class="controls">
+
+                                    <select class="form-control" name="rec_salary" id="rec_salary">
+                                             <?php foreach ($arr_Salary as $row) {?>
+                                                <option value="<?php echo $row->salary_id;?>"><?php echo $row->salary_value . " " . $row->salary_type;?></option>
+                                            <?php }
+?>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                             <div class="col-sm-12">
+
+                             <div class="form-group col-sm-6">
+                                    <label class="control-label"><?php echo lang('rec_job_map_country');?> <label class="text-danger">(*)</label></label>
                                         <div class="controls controls_label">
-
-                                          <!--   <select class="form-control" name="rec_job_map_country" id="rec_job_map_country">
-                                                <option value="0">Chọn mức lương mong muốn</option>
-                                                <option value="1">từ 2 đến 5 triệu</option>
-                                                <option value="1">Từ 5 đến 10 triệu</option>
-
-                                            </select> -->
                                             <?php foreach ($arr_country as $row) {?>
-                                                 <label class="radio-inline">
+                                                 <label class="col-sm-6 ng-binding ng-scope">
                                                 <input type="radio" value = "<?php echo $row->country_id;?>" name="rec_job_map_country"><?php echo $row->country_name;?>
                                                 </label>
                                             <?php }
@@ -55,20 +67,30 @@
                                         </div>
                                 </div>
 
-                            </div>
-
-
-                             <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('province_name');?> <span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('province_name');?> <label class="text-danger">(*)</label></label>
                                     <div class="controls">
                                             <select class="form-control selectpicker" id="province_name" multiple data-max-options="5" name="province_name[]">
 
                                             </select>
-                                        </div>
+                                    </div>
+                                     <label class="text-danger"> (tối thiểu 1 tỉnh thành và tối đa 5 tỉnh thành)</label>
                                 </div>
 
+
+
+
+
+
+                            </div>
+
+                            <div class="col-sm-12">
+
+
+
+
                                 <div class="form-group col-sm-6">
+
                                     <label class="control-label"><?php echo lang('rec_salary');?></label>
                                     <!-- <div class="controls">
                                         <input type="text" class="form-control" name="rec_salary" />
@@ -82,10 +104,28 @@
 ?>
                                         </select>
 
+                                    <label class="control-label"><?php echo lang('rec_job_map_career');?> <label class="text-danger">(*)</label></label>
+                                    <div class="controls">
+                                        <select class="form-control" name="rec_job_map_career" id="rec_job_map_career">
+                                             <?php foreach ($arr_career as $row) {?>
+                                                <option value="<?php echo $row->career_id;?>"><?php echo $row->career_name;?></option>
+                                            <?php }
+?>
+                                        </select>
                                     </div>
                                 </div>
+                                <div class="form-group col-sm-6">
+                                    <label class="control-label"><?php echo lang('rec_job_require_sex');?>
+                                    <div class="controls">
+                                        <label class="col-sm-6 ng-binding ng-scope">
+                                            <input type="radio" value = "0" name="rec_job_require_sex">Nữ
+                                        </label>
+                                        <label class="col-sm-6 ng-binding ng-scope">
+                                            <input type="radio" value = "1" name="rec_job_require_sex">Nam
+                                        </label>
 
-
+                                    </div>
+                                </div>
 
                             </div>
 
@@ -113,13 +153,13 @@
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_job_content');?></label>
+                                    <label class="control-label"><?php echo lang('rec_job_content');?><label class="text-danger">(*)</label></label>
                                     <div class="controls">
                                         <textarea class="form-control" name="rec_job_content" rows="3"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_job_regimen');?></label>
+                                    <label class="control-label"><?php echo lang('rec_job_regimen');?><label class="text-danger">(*)</label></label>
                                     <div class="controls">
                                         <textarea class="form-control" name="rec_job_regimen" rows="3"></textarea>
                                     </div>
@@ -128,16 +168,28 @@
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_job_time');?></label>
-                                    <div class="controls input-append date" id="datetimepicker1">
-                                        <!-- <input type="text" class="form-control" name="welfare_title" /> -->
+                                    <label class="control-label"><?php echo lang('rec_job_time');?><label class="text-danger">(*)</label></label>
 
-                                        <input data-format="dd/MM/yyyy hh:mm:ss" type="text" name="rec_job_time"></input>
-                                          <span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+
+                                    <div class="controls">
+                                        <div class="col-xs-2 col-sm-2 col-md-2">
+                                            <select id="job_day" name="job_day" class="form-control"></select>
+                                        </div>
+                                        <div class="col-xs-2 col-sm-2 col-md-2 ">
+                                            <select id="job_month" name="job_month" class="form-control"></select>
+                                        </div>
+                                        <div class="col-xs-2 col-sm-2 col-md-2">
+                                            <select id="job_year" name="job_year" class="form-control"></select>
+                                        </div>
                                     </div>
+
+
 
                                 </div>
                             </div>
+
+
+
 
 
                             <div class="col-sm-12">
@@ -149,14 +201,14 @@
 
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_job_require');?></label>
+                                    <label class="control-label"><?php echo lang('rec_job_require');?><label class="text-danger">(*)</label></label>
                                     <div class="controls">
                                         <textarea class="form-control" name="rec_job_require" rows="3"></textarea>
                                     </div>
                                 </div>
 
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_job_priority');?></label>
+                                    <label class="control-label"><?php echo lang('rec_job_priority');?><label class="text-danger">(*)</label></label>
                                     <div class="controls">
                                         <textarea class="form-control" name="rec_job_priority" rows="3"></textarea>
                                     </div>
@@ -166,7 +218,7 @@
 
                              <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_job_map_form');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('rec_job_map_form');?><label class="text-danger">(*)</label></label>
                                     <div class="controls">
 
                                         <select class="form-control" name="rec_job_map_form" id="rec_job_map_form">
@@ -179,7 +231,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_job_map_level');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('rec_job_map_level');?><label class="text-danger">(*)</label></label>
                                         <div class="controls">
                                             <select class="form-control" name="rec_job_map_level" id="rec_job_map_level">
                                                   <?php foreach ($job_level as $row) {?>
@@ -212,13 +264,13 @@
 
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_contact_name');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('rec_contact_name');?><label class="text-danger">(*)</label></label>
                                     <div class="controls">
                                         <input type="text" class="form-control" name="rec_contact_name" />
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_contact_email');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('rec_contact_email');?><label class="text-danger">(*)</label></label>
                                     <div class="controls">
                                         <input type="text" class="form-control" name="rec_contact_email" />
                                     </div>
@@ -228,13 +280,13 @@
 
                              <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_contact_address');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('rec_contact_address');?><label class="text-danger">(*)</label></label>
                                     <div class="controls">
                                         <input type="text" class="form-control" name="rec_contact_address" />
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_contact_phone');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('rec_contact_phone');?><label class="text-danger">(*)</label></label>
                                     <div class="controls">
                                         <input type="text" class="form-control" name="rec_contact_phone" />
                                     </div>
@@ -244,13 +296,13 @@
 
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_contact_mobile');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('rec_contact_mobile');?></label>
                                     <div class="controls">
                                         <input type="text" class="form-control" name="rec_contact_mobile" />
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_contact_form');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('rec_contact_form');?><label class="text-danger">(*)</label></label>
                                     <div class="controls">
                                         <select class="form-control" name="rec_contact_form" id="rec_contact_form">
                                             <?php foreach ($contact_form as $row) {?>
@@ -278,13 +330,7 @@
                                 *Nhấp chọn "ĐăngTin"đồng nghĩa với việc tôi đã đọc và đồng ý với các <a class="a-term" href="<?php echo base_url('about/term');?>">Thỏa thuận sử dụng</a>.
                             </div>
                         </div>
-
-
-
                     </fieldset>
-
-
-
                     <input type="hidden" id="csrf" name="<?php echo $csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                 </form>
             </div>

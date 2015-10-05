@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+<<<<<<< HEAD
+				"json",
+				"json_encode"
+			],
+			[
+				"jso",
+				"json_encode〔function〕"
+			],
+			[
+				"w",
+				"width	Attr"
+=======
 				"uns",
 				"unset_userdata('last_page"
 			],
@@ -94,12 +106,81 @@
 			[
 				"te",
 				"text-transform"
+>>>>>>> origin/master
 			],
 			[
 				"max",
-				"max-height"
+				"max-width"
 			],
 			[
+<<<<<<< HEAD
+				"back",
+				"background-color: 〔property〕"
+			],
+			[
+				"em",
+				"employer"
+			],
+			[
+				"sty",
+				"$style_create〔variable〕"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"va",
+				"value	Attr"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"for",
+				"foreach	<?php foreach (…) … <?php endforeach ?>"
+			],
+			[
+				"nam",
+				"name_res"
+			],
+			[
+				"do",
+				"dobyear"
+			],
+			[
+				"ba",
+				"base_url"
+			],
+			[
+				"ma",
+				"margin-right"
+			],
+			[
+				"csrf",
+				"csrf_hash"
+			],
+			[
+				"csr",
+				"csrf_name"
+			],
+			[
+				"hr",
+				"href	Attr"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"survey",
+				"survey_id"
+			],
+			[
+				"surve",
+				"surveyModel"
+=======
 				"im",
 				"important"
 			],
@@ -514,11 +595,14 @@
 			[
 				"employerREc",
 				"employerRecruitmentService"
+>>>>>>> origin/master
 			]
 		]
 	},
 	"buffers":
 	[
+<<<<<<< HEAD
+=======
 		{
 			"file": "application/controllers/Login.php",
 			"settings":
@@ -595,6 +679,7 @@
 				"scratch": true
 			}
 		}
+>>>>>>> origin/master
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -603,6 +688,15 @@
 	"build_varint": "",
 	"command_palette":
 	{
+<<<<<<< HEAD
+		"height": 150.0,
+		"last_filter": "Package Control: ins",
+		"selected_items":
+		[
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+=======
 		"height": 219.0,
 		"last_filter": "removepa",
 		"selected_items":
@@ -618,44 +712,60 @@
 			[
 				"php",
 				"phpfmt: format now"
+>>>>>>> origin/master
+			],
+			[
+				"xdebug",
+				"Xdebug: Session - Execute"
+			],
+			[
+<<<<<<< HEAD
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"html",
+				"HTMLPrettify"
+=======
+				"Package Control: remove",
+				"Package Control: Remove Package"
+>>>>>>> origin/master
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Contro",
+				"Package Control: Install Package"
 			],
 			[
 				"install",
 				"Package Control: Install Package"
 			],
 			[
-				"Package Control: remove",
-				"Package Control: Remove Package"
-			],
-			[
-				"Package Control: ",
-				"Package Control: Remove Package"
-			],
-			[
-				"packae",
-				"Package Control: Install Package"
-			],
-			[
 				"insta",
-				"Package Control: Install Package"
-			],
-			[
-				"installpa",
-				"Package Control: Install Package"
-			],
-			[
-				"instal",
 				"Package Control: Install Package"
 			]
 		],
+<<<<<<< HEAD
+		"width": 528.0
+=======
 		"width": 817.0
+>>>>>>> origin/master
 	},
 	"console":
 	{
 		"height": 126.0,
 		"history":
 		[
-			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
 	},
 	"distraction_free":
@@ -671,6 +781,149 @@
 	[
 		"/C/xampp/htdocs/job",
 		"/C/xampp/htdocs/job/application",
+<<<<<<< HEAD
+		"/C/xampp/htdocs/job/assets",
+		"/C/xampp/htdocs/job/assets/main",
+		"/C/xampp/htdocs/job/assets/main/css",
+		"/C/xampp/htdocs/job/assets/main/css/upload",
+		"/C/xampp/htdocs/job/assets/main/js",
+		"/C/xampp/htdocs/job/assets/main/js/upload"
+	],
+	"file_history":
+	[
+		"/C/xampp/htdocs/job/application/views/main/upload_cv.php",
+		"/C/xampp/htdocs/job/assets/main/js/upload/ajaxfileupload.js",
+		"/C/xampp/htdocs/job/application/views/main/upload_view.php",
+		"/C/xampp/htdocs/job/assets/main/js/job7vn-register.js",
+		"/C/xampp/htdocs/job/application/views/main/head.php",
+		"/C/xampp/htdocs/job/application/views/main/upload_cv_online.php",
+		"/C/xampp/htdocs/job/application/controllers/Uploadcv.php",
+		"/C/xampp/htdocs/job/application/logs/log-2015-09-17.php",
+		"/C/xampp/htdocs/job/application/controllers/admin/Admin_document.php",
+		"/C/xampp/htdocs/job/system/core/CodeIgniter.php",
+		"/C/xampp/htdocs/job/system/core/Common.php",
+		"/C/xampp/htdocs/job/application/views/main/create_recruitment.php",
+		"/C/xampp/htdocs/job/application/views/main/employer/modal_update_recruitment.php",
+		"/C/xampp/htdocs/job/application/models/employer/Employer_model.php",
+		"/C/xampp/htdocs/job/application/views/main/employer/manager_recruitment.php",
+		"/C/xampp/htdocs/job/application/views/main/employer/modal_detail_recruitment.php",
+		"/C/xampp/htdocs/job/application/controllers/employer/Employer.php",
+		"/C/xampp/htdocs/job/application/models/admin/Recruitment_model.php",
+		"/C/xampp/htdocs/job/application/models/admin/Manager_model.php",
+		"/C/xampp/htdocs/job/application/controllers/admin/Admin_recruitment.php",
+		"/C/xampp/htdocs/job/application/logs/log-2015-09-15.php",
+		"/C/xampp/htdocs/job/application/views/admin/recruitment/recruitment-active.php-tmp",
+		"/C/xampp/htdocs/job/application/views/admin/recruitment/recruitment.php",
+		"/C/xampp/htdocs/job/application/views/admin/recruitment/recruitment-approve.php",
+		"/C/xampp/htdocs/job/application/logs/log-2015-09-14.php",
+		"/C/xampp/htdocs/job/application/controllers/admin/Admin_manager.php",
+		"/C/xampp/htdocs/job/application/models/admin/Employer_model.php",
+		"/C/xampp/htdocs/job/application/views/main/employer/modal_update_contact_info_employer.php",
+		"/C/xampp/htdocs/job/assets/main/js/employer/job7vn_employer.js",
+		"/C/xampp/htdocs/job/application/logs/log-2015-09-13.php",
+		"/C/xampp/htdocs/job/application/views/admin/employer/employer.php",
+		"/C/xampp/htdocs/job/application/views/main/employer/modal_create_recruitment.php",
+		"/C/xampp/htdocs/job/application/views/main/employer/employer_menu.php",
+		"/C/xampp/htdocs/job/application/views/main/employer/index.php",
+		"/C/xampp/htdocs/job/assets/main/css/style4189.css",
+		"/C/xampp/htdocs/job/application/views/main/employer/modal_recruitment_active.php",
+		"/C/xampp/htdocs/job/application/views/main/employer/modal_manager_recruitment_bk.php",
+		"/C/xampp/htdocs/job/application/views/main/employer/modal_delete_recruitment.php",
+		"/C/xampp/htdocs/job/application/models/Recruitment_model.php",
+		"/C/xampp/htdocs/job/application/controllers/CreateRecruitment.php",
+		"/C/xampp/htdocs/job/application/language/vi/message_lang.php",
+		"/C/xampp/htdocs/job/assets/main/js/dobPicker.js",
+		"/C/xampp/htdocs/job/application/views/main/employer.php-tmp",
+		"/C/xampp/htdocs/job/application/controllers/Home.php",
+		"/C/xampp/htdocs/job/application/views/main/employer_register.php",
+		"/C/xampp/htdocs/job/application/views/main/user_register.php",
+		"/C/xampp/htdocs/job/application/views/main/employer/modal_update_account_employer.php",
+		"/C/xampp/htdocs/job/application/views/main/employer/modal_update_information_employer.php",
+		"/C/xampp/htdocs/job/application/models/Utilmodel.php-tmp",
+		"/C/xampp/htdocs/job/application/controllers/Register.php",
+		"/C/xampp/htdocs/job/application/models/Utilmodel.php",
+		"/C/xampp/htdocs/job/application/controllers/admin/Admin_employer.php",
+		"/C/xampp/htdocs/job/application/views/main/employer/modal_update_account_empoyer.php",
+		"/C/xampp/htdocs/job/assets/main/js/job7vn_employer.js",
+		"/C/xampp/htdocs/job/application/views/main/employer.php",
+		"/C/xampp/htdocs/job/application/logs/log-2015-09-03.php",
+		"/C/xampp/htdocs/job/application/views/main/jobseeker.php",
+		"/C/xampp/htdocs/job/application/views/main/content.php",
+		"/C/xampp/htdocs/job/application/models/Register_model.php",
+		"/C/xampp/htdocs/job/application/models/Uploadcv_model.php",
+		"/C/xampp/htdocs/job/application/config/routes.php",
+		"/C/xampp/htdocs/job/assets/main/datetimepicker/css/bootstrap-datetimepicker.min.css",
+		"/C/xampp/htdocs/job/assets/main/datetimepicker/js/bootstrap-datetimepicker.min.js",
+		"/C/xampp/htdocs/job/assets/main/datetimepicker/js/bootstrap-datetimepicker.js",
+		"/C/xampp/htdocs/job/assets/main/js/demo.js",
+		"/C/xampp/htdocs/job/assets/main/css/Selectivity/selectivity-full.min.js",
+		"/C/xampp/htdocs/job/application/models/Create_recruitment_model.php",
+		"/C/xampp/htdocs/job/application/logs/log-2015-08-31.php",
+		"/C/xampp/htdocs/job/application/logs/log-2015-08-30.php",
+		"/C/xampp/htdocs/job/job.sublime-project",
+		"/C/xampp/htdocs/job/application/controllers/Create_recruitment.php",
+		"/C/xampp/htdocs/http___bright-and-bold-demo.mybigcommerce.com_/bright-and-bold-demo.mybigcommerce.com/rssdcab.php",
+		"/C/xampp/htdocs/job/assets/main/js/dobPicker.min.js",
+		"/C/xampp/htdocs/job/assets/main/js/jquery-birthday-picker.min.js",
+		"/C/xampp/htdocs/job/application/views/main/header.php",
+		"/C/xampp/htdocs/job/application/views/main/footer.php",
+		"/C/xampp/htdocs/job/application/controllers/Contact.php",
+		"/C/xampp/htdocs/job/system/libraries/Upload.php",
+		"/C/xampp/htdocs/job/system/core/Loader.php",
+		"/C/xampp/htdocs/job/application/logs/log-2015-08-23.php",
+		"/C/Users/maxmalla006/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/C/Users/maxmalla006/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/xampp/htdocs/job/application/views/main/layout.php",
+		"/C/xampp/htdocs/job/assets/main/css/responsive-style.css",
+		"/C/xampp/htdocs/job/application/controllers/Sendmail.php",
+		"/C/xampp/htdocs/job/application/language/vietnamese/vi_lang.php",
+		"/C/xampp/htdocs/job/application/models/Dbutil.php",
+		"/C/xampp/htdocs/job/application/models/Ultils",
+		"/C/xampp/htdocs/job/application/models/Contact_model.php",
+		"/C/xampp/htdocs/job/application/models/User_model",
+		"/C/xampp/htdocs/job/application/controllers/User_controller",
+		"/C/xampp/htdocs/surveymaxmalla/assets/css/style.css",
+		"/C/xampp/htdocs/chuupamobile/application/config/database.php",
+		"/C/xampp/htdocs/chuupamobile/chuupamobile.sublime-project",
+		"/C/xampp/htdocs/dwe/dwe.sublime-project",
+		"/C/Users/maxmalla006/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/xampp/htdocs/surveymaxmalla/application/config/facebook.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/config/config.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/views/admintration.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/config/database.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/controllers/Welcome.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/config/autoload.php-tmp",
+		"/C/xampp/htdocs/surveymaxmalla/application/config/autoload.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/controllers/Defaultpage.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/config/config_1.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/config/routes.php",
+		"/C/xampp/htdocs/surveymaxmalla/system/core/CodeIgniter.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/views/login.php",
+		"/C/xampp/htdocs/surveymaxmalla/system/core/Common.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/controllers/welcome.php",
+		"/C/xampp/htdocs/surveymaxmalla/surveymaxmalla.sublime-project",
+		"/C/xampp/htdocs/surveymaxmalla/application/libraries/lib_login.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/vendor/facebook/php-sdk-v4/autoload.php",
+		"/C/xampp/htdocs/surveymaxmalla/controllers/login.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/views/example.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/models/Surveymodel.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/views/createquestion.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/views/admintration.php-tmp",
+		"/C/xampp/htdocs/surveymaxmalla/application/controllers/Survey.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/libraries/fb_connect.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/libraries/Facebook/Facebook.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/libraries/base_facebook.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/models/Resultmodel.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/views/survey.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/models/Questionmodel.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/controllers/Question.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/models/Answermodel.php",
+		"/C/xampp/htdocs/surveymaxmalla/application/controllers/surveymaxmalla.sublime-project"
+	],
+	"find":
+	{
+		"height": 36.0
+=======
 		"/C/xampp/htdocs/job/application/controllers",
 		"/C/xampp/htdocs/job/application/controllers/job",
 		"/C/xampp/htdocs/job/application/views",
@@ -811,14 +1064,13 @@
 	"find":
 	{
 		"height": 23.0
+>>>>>>> origin/master
 	},
 	"find_in_files":
 	{
 		"height": 90.0,
 		"where_history":
 		[
-			"C:\\xampp\\htdocs\\admin_master\\public",
-			"C:\\xampp\\htdocs\\admin_master\\app\\views"
 		]
 	},
 	"find_state":
@@ -826,6 +1078,84 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+<<<<<<< HEAD
+			"ufile",
+			"do_upload",
+			"img_file",
+			"do_upload",
+			"img_file",
+			"userfile",
+			"do_upload",
+			"img_file",
+			"do_upload",
+			"detail_recruitmnet",
+			"create_recruitment-form",
+			"var",
+			"detail_recruitment",
+			"detail_recruitmnet",
+			"DateTimePicker.js",
+			"arr_career",
+			"modal_update_recruitment",
+			"create_recruitment-form",
+			"create_recruitmentModel",
+			"nopading",
+			"addEventListener",
+			"salary",
+			"do_upload",
+			"768px",
+			"modal-dialog",
+			"jquery.form.js",
+			"job_day1",
+			"minimumAge",
+			"getFullYear",
+			"dobPicker",
+			"dobday",
+			"dobPicker",
+			"rec_job_map_career",
+			"selectpicker",
+			"getAllProvince",
+			"career",
+			"carre",
+			"carrer",
+			"care",
+			"incrementalHash",
+			"update_contact_info_employer",
+			"employer_updateModal",
+			"message_recruitment",
+			"11",
+			"employer-register-form",
+			"employer_registerModal",
+			"create_recruitmentModel",
+			"message_upload_cv_online",
+			"rec_job_time",
+			"regimen",
+			"province_name",
+			"user_upload_cv_online",
+			"userprofile",
+			"_default",
+			"check_default",
+			"uploadcv-form",
+			"		\n",
+			"error",
+			"alert",
+			"alert-danger",
+			"message",
+			"mesage",
+			"mesages",
+			"mesage",
+			"-->\n",
+			"                                \n",
+			"float-left",
+			"bootstrap-datetimepicker.min",
+			"datetimepicker1",
+			"rec_job_map_country",
+			"rec_job_map_form_child",
+			"console",
+			"fn",
+			"example-getting-started",
+			"Multiselect",
+			"province_name",
+=======
 			"job-content",
 			"job-left",
 			"job",
@@ -945,11 +1275,59 @@
 			"common/",
 			"PAGE",
 			"validateUser",
+>>>>>>> origin/master
 			"multiple",
-			"<img",
-			"p",
-			"h1",
-			">"
+			"multiple_id",
+			"browsers",
+			"province_name",
+			"arr_welfare",
+			"rec_job_map_country",
+			"id_make",
+			"rec_job_map_country",
+			"  <select class=\"form-control\" name=\"rec_job_map_country\" id=\"rec_job_map_country\">\n                                                <option value=\"0\">Chọn mức lương mong muốn</option>\n                                                <option value=\"1\">từ 2 đến 5 triệu</option>\n                                                <option value=\"1\">Từ 5 đến 10 triệu</option>\n\n                                            </select>",
+			"rec_job_map_country",
+			"console_log",
+			"createcv_online",
+			"email_check",
+			"callback_email_check",
+			"uploadcv",
+			"docon_birthday",
+			"mb_20",
+			"December",
+			"tabs-2",
+			"tabs-1",
+			"tabs-2",
+			"open-",
+			"update_status",
+			"tabs-2",
+			"tabs-1",
+			"tabs-2",
+			"tabs-1",
+			"http://surveymaxmalla-surveymax.rhcloud.com1",
+			"http://surveymaxmalla-surveymax.rhcloud.com",
+			"tabs-1",
+			"tabs-2",
+			"upload_path",
+			"constants",
+			"upload ",
+			"do_upload",
+			"image",
+			"uploadImages",
+			"session_data",
+			"mci_current",
+			"$data['sess_data'] = $this->lang->mci_current();",
+			"checkEmailExits",
+			"message",
+			"update_status",
+			"bootstrap",
+			">",
+			"escape",
+			"insert",
+			"contact",
+			"tabs-2",
+			"tabs",
+			"tabs-2",
+			";?>"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -957,6 +1335,18 @@
 		"regex": false,
 		"replace_history":
 		[
+<<<<<<< HEAD
+			"update_recruitment-form",
+			"update_recruitmentModel",
+			"detail_recruitmentModel",
+			"employer-contact-update-form",
+			"employer-update-form",
+			"employer_updateModal",
+			"create_recruitment",
+			"createcv_online",
+			"mb_10",
+			"site_lang"
+=======
 			"province",
 			"'2015-09-02 00:00:00'",
 			"'",
@@ -974,6 +1364,7 @@
 			"'",
 			"../lib/",
 			""
+>>>>>>> origin/master
 		],
 		"reverse": false,
 		"show_context": true,
@@ -984,6 +1375,10 @@
 	"groups":
 	[
 		{
+<<<<<<< HEAD
+			"sheets":
+			[
+=======
 			"selected": 2,
 			"sheets":
 			[
@@ -1350,12 +1745,14 @@
 					"stack_index": 1,
 					"type": "text"
 				}
+>>>>>>> origin/master
 			]
 		},
 		{
-			"selected": 0,
 			"sheets":
 			[
+<<<<<<< HEAD
+=======
 				{
 					"buffer": 4,
 					"semi_transient": false,
@@ -1416,12 +1813,14 @@
 					"stack_index": 5,
 					"type": "text"
 				}
+>>>>>>> origin/master
 			]
 		},
 		{
-			"selected": 0,
 			"sheets":
 			[
+<<<<<<< HEAD
+=======
 				{
 					"buffer": 6,
 					"semi_transient": false,
@@ -1482,16 +1881,21 @@
 					"stack_index": 7,
 					"type": "text"
 				}
+>>>>>>> origin/master
 			]
 		}
 	],
 	"incremental_find":
 	{
+<<<<<<< HEAD
+		"height": 28.0
+=======
 		"height": 23.0
+>>>>>>> origin/master
 	},
 	"input":
 	{
-		"height": 31.0
+		"height": 82.0
 	},
 	"layout":
 	{
@@ -1525,28 +1929,32 @@
 		"rows":
 		[
 			0.0,
-			0.7,
+			0.695555555556,
 			1.0
 		]
 	},
 	"menu_visible": true,
-	"output.exec":
-	{
-		"height": 94.0
-	},
 	"output.find_results":
 	{
 		"height": 0.0
 	},
 	"output.xdebug":
 	{
+<<<<<<< HEAD
+		"height": 142.0
+=======
 		"height": 0.0
+>>>>>>> origin/master
 	},
 	"pinned_build_system": "",
 	"project": "job.sublime-project",
 	"replace":
 	{
+<<<<<<< HEAD
+		"height": 66.0
+=======
 		"height": 42.0
+>>>>>>> origin/master
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1581,12 +1989,75 @@
 	{
 		"xdebug":
 		{
+			"hide_conflict": false,
 			"restore_index":
 			{
+<<<<<<< HEAD
+				"24":
+				{
+					"group": 0,
+					"index": 0
+				},
+				"30":
+				{
+					"group": 0,
+					"index": 7
+				},
+				"32":
+				{
+					"group": 0,
+					"index": 5
+				},
+				"33":
+				{
+					"group": 0,
+					"index": 1
+				},
+				"49":
+				{
+					"group": 0,
+					"index": 6
+				},
+				"60":
+				{
+					"group": 0,
+					"index": 4
+				},
+				"79":
+				{
+					"group": 2,
+					"index": 1
+				},
+				"80":
+				{
+					"group": 1,
+					"index": 0
+				},
+				"81":
+				{
+					"group": 2,
+					"index": 0
+				},
+				"82":
+				{
+					"group": 1,
+					"index": 1
+				},
+				"83":
+				{
+					"group": 0,
+					"index": 3
+				},
+				"84":
+				{
+					"group": 0,
+					"index": 2
+=======
 				"82":
 				{
 					"group": 0,
 					"index": 0
+>>>>>>> origin/master
 				}
 			},
 			"restore_layout":
@@ -1621,7 +2092,11 @@
 				"rows":
 				[
 					0.0,
+<<<<<<< HEAD
+					0.695555555556,
+=======
 					0.793333333333,
+>>>>>>> origin/master
 					1.0
 				]
 			}
@@ -1631,7 +2106,11 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
+<<<<<<< HEAD
+	"side_bar_width": 326.0,
+=======
 	"side_bar_width": 323.0,
+>>>>>>> origin/master
 	"status_bar_visible": true,
 	"template_settings":
 	{

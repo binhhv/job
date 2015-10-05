@@ -18,8 +18,8 @@
                          <div class="row">
                              <div class="form-group col-sm-12">
                                 <div class="error text-center">
-                                    <label class="error alert-danger" id="message_update_contact_empoyer">
-                                    </label>
+                                    <div class="error text-left" id="message_update_contact_empoyer">
+                                    </div>
                                 </div>
 
                             </div>

@@ -14,13 +14,37 @@ class Employer_model extends CI_Model {
 		$this->load->model('Dbutil', 'dbutil');
 	}
 	public function insertRecruitment($data) {
-		return $this->dbutil->insertDb($data, 'recruitment');
+		$id_recruitment = $this->dbutil->insertDb($data, 'recruitment');
+		$update_code = $this->util->General_Code('recruitment', $id_recruitment, 0);
+		$this->util->update_Code('recruitment', 'rec_code', $update_code, 'rec_id', $id_recruitment);
+		return $id_recruitment;
 	}
 	public function insertRecruitment_Map_Welfare($data) {
 		return $this->dbutil->insertDb($data, 'recruitment_map_welfare');
 	}
 	public function insertRecruitment_Map_Province($data) {
 		return $this->dbutil->insertDb($data, 'recruitment_map_province');
+	}
+	public function update_Recruitment($data, $condition) {
+		$dataObject = array(
+			'from' => 'recruitment',
+			'where' => 'rec_id = ' . $this->dbutil->escape($condition),
+			'data' => $data);
+		return $this->dbutil->updateDb($dataObject);
+	}
+	public function updateRecruitment_Map_Welfare($data) {
+		$dataObject = array(
+			'from' => 'recruitment_map_welfare',
+			'where' => 'recmj_id = ' . $this->dbutil->escape($condition),
+			'data' => $data);
+		return $this->dbutil->updateDb($dataObject);
+	}
+	public function updateRecruitment_Map_Province($data) {
+		$dataObject = array(
+			'from' => 'recruitment_map_province',
+			'where' => 'recmp_id = ' . $this->dbutil->escape($condition),
+			'data' => $data);
+		return $this->dbutil->updateDb($dataObject);
 	}
 	public function updateImfomationEmployer($data, $condition) {
 		$dataObject = array(
@@ -95,5 +119,50 @@ class Employer_model extends CI_Model {
 		$sql = "select a.contact_form_id, a.contact_form_type
 				from contact_form a where a.contact_form_is_delete = 0";
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
+	public function getAllCareer() {
+		$sql = "select a.career_id, a.career_name
+				from career a where a.career_is_delete = 0";
+		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
+	public function getAllSalary() {
+		$sql = "select a.salary_id, a.salary_value, a.salary_type
+				from salary a where a.salary_is_delete = 0";
+		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
+	public function getListRecruitment($type) {
+		$condition = '';
+		switch ($type) {
+		case 1:
+			$condition = ' a.rec_is_delete = 0 and a.rec_is_approve = 1 and a.rec_is_disabled = 0';
+			break;
+		case 2:
+			$condition = ' a.rec_is_delete = 0 and a.rec_is_approve = 0 and a.rec_is_disabled = 0';
+			break;
+		default:
+			$condition = ' a.rec_is_delete = 0 and a.rec_is_approve = 1 and a.rec_is_disabled = 1';
+			break;
+		}
+		$sql = "select a.*,IFNULL(d.numapply, 0) as numapply ,e.*,f.*,g.*
+				from recruitment a
+				left join (select c.recapp_map_recruitment, count(recapp_map_user) as numapply from recruitment_apply c where c.recapp_is_delete = 0 group by c.recapp_map_recruitment) d
+				on d.recapp_map_recruitment = a.rec_id
+				left join job_form e on e.fjob_id = a.rec_job_map_form
+				left join job_form_child f on f.jcform_id = a.rec_job_map_form_child
+				left join contact_form g on g.contact_form_id = a.rec_contact_form and g.contact_form_is_delete = 0
+				where " . $condition;
+		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
+
+	public function getRecruitmentApply($idrecruitment) {
+		$sql = "select a.*,b.*,c.doccv_id,c.doccv_map_user ,c.doccv_map_jobseeker,c.doccv_type,c.doccv_file_name,c.doccv_file_tmp,d.docon_id,d.docon_map_user
+				from recruitment_apply a
+				left join account b on b.account_id = a.recapp_map_user and  b.account_is_delete = 0
+				left join document_cv c on c.doccv_id = a.recapp_map_doc and a.recapp_is_delete = 0 and c.doccv_type = 1 and a.recapp_doc_type =1
+				left join document_online d on d.docon_id = a.recapp_map_doc and a.recapp_is_delete = 0 and d.docon_type =1
+				and a.recapp_doc_type = 2
+				where a.recapp_is_delete = 0 and recapp_map_recruitment = ?";
+		$data = array($idrecruitment);
+		return $this->dbutil->getFromDbQueryBinding($sql, $data);
 	}
 }

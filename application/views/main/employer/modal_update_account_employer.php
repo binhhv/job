@@ -17,9 +17,10 @@
 
                          <div class="row">
                              <div class="form-group col-sm-12">
+
                                 <div class="error text-center">
-                                    <label class="error alert-danger" id="message_update_account_empoyer">
-                                    </label>
+                                    <div class="error text-left" id="message_update_account_empoyer">
+                                    </div>
                                 </div>
 
                             </div>
@@ -44,7 +45,7 @@
                                  <div class="form-group col-sm-12">
                                     <label class="control-label"><?php echo lang('password_re_user');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                          <input type="text" class="form-control" name="account_password" />
+                                          <input type="password" class="form-control" name="account_password" />
                                     </div>
                                 </div>
                             </div>
@@ -54,7 +55,7 @@
                                 <div class="form-group col-sm-12">
                                     <label class="control-label"><?php echo lang('passconf_re_user');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                         <input type="text" class="form-control" name="confirm_password"/>
+                                         <input type="password" class="form-control" name="confirm_password"/>
                                     </div>
                                 </div>
                             </div>

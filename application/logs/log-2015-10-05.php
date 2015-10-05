@@ -1,5 +1,19 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
+<<<<<<< HEAD
+ERROR - 2015-10-05 03:49:44 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 03:49:46 --> Severity: Notice --> Undefined variable: arr_Salary C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
+ERROR - 2015-10-05 03:49:47 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
+ERROR - 2015-10-05 03:49:49 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 04:33:42 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 04:33:42 --> Severity: Notice --> Undefined variable: arr_Salary C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
+ERROR - 2015-10-05 04:33:42 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
+ERROR - 2015-10-05 04:33:43 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 04:36:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 04:36:17 --> Severity: Notice --> Undefined variable: arr_Salary C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
+ERROR - 2015-10-05 04:36:17 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
+ERROR - 2015-10-05 04:36:17 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+=======
 ERROR - 2015-10-05 03:03:36 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
 ERROR - 2015-10-05 03:03:36 --> Severity: Notice --> Undefined index: user C:\xampp\htdocs\job\application\controllers\admin\Admin.php 15
 ERROR - 2015-10-05 03:03:36 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
@@ -832,6 +846,7 @@ ERROR - 2015-10-05 05:42:21 --> $config['composer_autoload'] is set to TRUE but 
 ERROR - 2015-10-05 05:42:21 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
 ERROR - 2015-10-05 05:43:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
 ERROR - 2015-10-05 05:43:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+<<<<<<< HEAD
 ERROR - 2015-10-05 05:44:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
 ERROR - 2015-10-05 05:44:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
 ERROR - 2015-10-05 05:45:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
@@ -1472,3 +1487,6 @@ ERROR - 2015-10-05 10:05:10 --> $config['composer_autoload'] is set to TRUE but 
 ERROR - 2015-10-05 10:05:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
 ERROR - 2015-10-05 10:05:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
 ERROR - 2015-10-05 10:05:37 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+=======
+>>>>>>> origin/master
+>>>>>>> 198b30dac28bb9c11205421e4e2435b42cc89b16

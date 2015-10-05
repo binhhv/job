@@ -109,6 +109,10 @@ class Recruitment_model extends CI_Model {
 				where " . $condition;
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
 	}
+	public function getDetailRecruitment($idrecruitment) {
+		$sql = "select a.* from recruitment a left join ";
+
+	}
 	public function getRecruitmentApply($idrecruitment) {
 		//doc type  on recruitment_apply
 		//1: cv
