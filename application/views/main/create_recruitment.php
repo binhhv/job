@@ -38,8 +38,8 @@
                                     <div class="controls">
 
                                     <select class="form-control" name="rec_salary" id="rec_salary">
-                                             <?php foreach ($arr_Salary as $row) {?>
-                                                <option value="<?php echo $row->salary_id;?>"><?php echo $row->salary_value . " " . $row->salary_type;?></option>
+                                             <?php foreach ($salary as $row) {?>
+                                                <option value="<?php echo $row->salary_id;?>"><?php echo $row->salary_value;?></option>
                                             <?php }
 ?>
                                         </select>
@@ -84,26 +84,12 @@
 
                             </div>
 
-                            <div class="col-sm-12">
+                           <div class="col-sm-12">
 
 
 
 
                                 <div class="form-group col-sm-6">
-
-                                    <label class="control-label"><?php echo lang('rec_salary');?></label>
-                                    <!-- <div class="controls">
-                                        <input type="text" class="form-control" name="rec_salary" />
-                                    </div> -->
-                                    <div class="controls">
-
-                                        <select class="form-control" name="rec_map_salary" id="rec_map_salary">
-                                             <?php foreach ($salary as $row) {?>
-                                                <option value="<?php echo $row->salary_id;?>"><?php echo $row->salary_value;?></option>
-                                            <?php }
-?>
-                                        </select>
-
                                     <label class="control-label"><?php echo lang('rec_job_map_career');?> <label class="text-danger">(*)</label></label>
                                     <div class="controls">
                                         <select class="form-control" name="rec_job_map_career" id="rec_job_map_career">
@@ -115,19 +101,22 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('rec_job_require_sex');?>
+                                    <label class="control-label"><?php echo lang('rec_job_require_sex');?> </label>
                                     <div class="controls">
                                         <label class="col-sm-6 ng-binding ng-scope">
-                                            <input type="radio" value = "0" name="rec_job_require_sex">Nữ
+                                            <input type="radio" value = "0" name="rec_job_require_sex" checked="true">Nữ
                                         </label>
                                         <label class="col-sm-6 ng-binding ng-scope">
                                             <input type="radio" value = "1" name="rec_job_require_sex">Nam
                                         </label>
-
                                     </div>
                                 </div>
 
                             </div>
+
+
+
+
 
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-12">
@@ -319,7 +308,7 @@
                                 <label class="text-danger"></label>
                             </div>
 
-                        </div>
+
                         <div class="col-sm-12">
                              <div class="col-sm-12">
                                 <div class="form-group text-right">

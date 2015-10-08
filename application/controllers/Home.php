@@ -39,6 +39,8 @@ class Home extends CI_Controller {
 		//user register
 		$user_register = $this->load->view('main/user_register', array('csrf' => $csrf), TRUE);
 		$user_upload_cv = $this->load->view('main/upload_cv', array('csrf' => $csrf), TRUE);
+
+		$popup_redirect_login = $this->load->view('main/popup_redirect_login', array('csrf' => $csrf), TRUE);
 		//upload cv online
 		$healthyData = $this->upload_cv->getAllHealthy();
 		$user_upload_cv_online = $this->load->view('main/upload_cv_online', array('csrf' => $csrf, 'healthy' => $healthyData), TRUE);
@@ -77,7 +79,6 @@ class Home extends CI_Controller {
 
 		//$sidebar = $this->load->view('main/sidebar', array(), TRUE);
 		$content = $this->load->view('main/content', array(
-
 			'slide' => $slide,
 			'search' => $search,
 			'newjob' => $newJob,
@@ -86,6 +87,7 @@ class Home extends CI_Controller {
 			'userprofile' => $this->session->userdata('fb'),
 			'user_register' => $user_register,
 			'user_upload_cv' => $user_upload_cv,
+			'popup_redirect_login' => $popup_redirect_login,
 			'user_upload_cv_online' => $user_upload_cv_online,
 			'empoyer_register' => $empoyer_register,
 			'empoyer_create_recruitment' => $empoyer_create_recruitment,
@@ -208,6 +210,11 @@ class Home extends CI_Controller {
 		$footer = $this->load->view('main/footer', array(), TRUE);
 		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
 
+	}
+	public function checkLogin() {
+		if ($this->session->userdata['user'] == null) {
+
+		}
 	}
 
 }

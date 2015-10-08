@@ -114,7 +114,8 @@ class UploadCv extends CI_Controller {
 	}
 	//upload cv
 	public function upload_cv() {
-		$id_account = '100';
+		$user = $this->session->userdata['user'];
+		$id_account = $user['id'];
 		$file_img_upload = $this->do_upload($id_account);
 		echo json_encode('success');
 		// if ($file_img_upload['status'] == 'success') {
@@ -157,7 +158,7 @@ class UploadCv extends CI_Controller {
 		// return 'abc.docx';
 
 		$config['upload_path'] = $path;
-		$config['allowed_types'] = 'gif|jpg|png|doc|txt|docx';
+		$config['allowed_types'] = 'txt|doc|docx|pdf|xlsx|xls';
 		$config['max_size'] = 1024 * 8;
 		$config['encrypt_name'] = TRUE;
 		$this->load->library("upload", $config);

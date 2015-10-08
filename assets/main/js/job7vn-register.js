@@ -74,11 +74,13 @@ $(document).ready(function() {
                     var csrf_name = response.content.name;
                     var csrf_hash = response.content.hash;
                     $('#message_user').text("");
+                    $('#message_user').append(account_last_name);
+                    $('#message_user').append(account_first_name);
                     $('#message_user').append(account_email);
                     $('#message_user').append(account_password);
                     $('#message_user').append(confirm_password);
-                    $('#message_user').append(account_first_name);
-                    $('#message_user').append(account_last_name);
+                    
+                    
                     $('input[name="csrf_test_name"]').val(csrf_hash);
                 } else if (status == 'success') {
                     $('#message_user').text("");
@@ -331,7 +333,7 @@ $(document).ready(function() {
                 data: $(this).serialize(),
                 success: function(response) {
                     console.log(response);
-                    $("#upload_cv").show();
+                    $("#upload_cv").modal('hide');
                     // var status = response.status;
                     // if (status == 'success') {
                     //     $('#message_upload_cv').text("");
