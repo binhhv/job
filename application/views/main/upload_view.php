@@ -37,7 +37,7 @@
 				}
 			});
 			return false;
-		}); //ket thuc upload file
+		}); //finish upload file
 	})
 </script>
 
