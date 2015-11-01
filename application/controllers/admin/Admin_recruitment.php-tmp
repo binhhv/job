@@ -10,12 +10,18 @@ class Admin_recruitment extends CI_Controller {
 		$this->load->model('admin/Mail_model', 'mail');
 		$this->load->model('UtilModel', 'util');
 		$this->load->model('admin/Recruitment_model', 'recruitment');
+		// if (!$this->session->userdata['user']['isLogged']) {
+		// 	redirect(base_url() . 'admin/login'); // no session established, kick back to login page
+		// } else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
+		// 	redirect(base_url('error/403'));
+		// }
 		if (!$this->session->userdata['user']['isLogged']) {
-			redirect(base_url().'admin/login');// no session established, kick back to login page
+			redirect(base_url('404'));
+			//redirect(base_url() . 'admin/login'); // no session established, kick back to login page
 		} else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
-			redirect(base_url('error/403'));
+			//redirect(base_url('error/403'));
+			redirect(base_url('404'));
 		}
-
 		//set value to call page
 		//active:1
 		//aprrove:2
@@ -185,6 +191,57 @@ class Admin_recruitment extends CI_Controller {
 	}
 	function getListSalary() {
 		$output = $this->recruitment->getListSalary();
+		echo json_encode($output);
+	}
+	function recruitmentHighLight() {
+		$scripts = array(
+			"assets/admin/angularjs/service/recruitment.service.js",
+			"assets/admin/angularjs/service/jobseeker.service.js",
+			"assets/admin/angularjs/service/employer.service.js",
+			"assets/admin/angularjs/controller/recruitment.controller.js",
+		);
+
+		$listCountries = $this->employer->getListCountry();
+		$head          = $this->load->view('admin/head', array(), TRUE);
+		$header        = $this->load->view('admin/header', array(), TRUE);
+		$content       = $this->load->view('admin/recruitment/recruitment-highlight', array("countryGET" => $listCountries[0]), TRUE);
+		$footer        = $this->load->view('admin/footer', array(), TRUE);
+		$sidemenu      = $this->load->view('admin/sidemenu', array('email' => $this->session->userdata['user']['email'],
+				'role'                                                           => $this->session->userdata['user']['role'],
+				'selected'                                                       => 'recruitmentManager',
+				'sub'                                                            => 'recruitmentHighLight'), TRUE);
+
+		$this->load->view('admin/layout', array('head' => $head,
+				'header'                                     => $header,
+				'sidemenu'                                   => $sidemenu,
+				'content'                                    => $content,
+				'footer'                                     => $footer,
+				'scripts'                                    => $scripts,
+			));
+	}
+	function editShowRecruitment() {
+		$rec                 = json_decode($this->input->post('rec'), true);
+		$rec_id              = $rec['rec_id'];
+		$rec_is_show_top     = $rec['rec_is_show_top'];
+		$rec_is_show_another = $rec['rec_is_show_another'];
+		$data                = array(
+			'from'  => 'recruitment',
+			'where' => 'rec_id = '.$rec_id,
+			'data'  => array('rec_is_show_top'  => $rec_is_show_top, 'rec_is_show_another'  => $rec_is_show_another, 'rec_update_at'  => date('Y-m-d')));
+		$output = $this->recruitment->editShowRecruitment($data);
+		echo json_encode($output);
+	}
+
+	function disabledRecruitment() {
+		$rec    = json_decode($this->input->post('rec'), true);
+		$rec_id = $rec['rec_id'];
+		//$rec_is_show_top = $rec['rec_is_show_top'];
+		//$rec_is_show_another = $rec['rec_is_show_another'];
+		$data = array(
+			'from'  => 'recruitment',
+			'where' => 'rec_id = '.$rec_id,
+			'data'  => array('rec_is_disabled'  => $rec['option'], 'rec_update_at'  => date('Y-m-d')));
+		$output = $this->recruitment->disabledRecruitment($data);
 		echo json_encode($output);
 	}
 }

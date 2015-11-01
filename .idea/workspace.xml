@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="31d40f2e-f3dd-4fb8-b123-a25cd6981aed" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_api.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_api.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_api.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_api.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_category.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_category.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_category.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_category.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_comingsoon.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_comingsoon.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_comingsoon.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_comingsoon.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_config.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_config.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_config.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_contact.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_contact.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_contact.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_contact.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_document.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_document.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_document.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_document.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_employer.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_employer.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_employer.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_employer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_mail.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_mail.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_mail.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_mail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_manager.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_manager.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_manager.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_manager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_recruitment.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_recruitment.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_recruitment.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_recruitment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Home.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/Home.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Home.php" afterPath="$PROJECT_DIR$/application/controllers/Home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Login.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Login.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Login.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/about.php-tmp" afterPath="$PROJECT_DIR$/application/views/main/about.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/about.php" afterPath="$PROJECT_DIR$/application/views/main/about.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/head.php-tmp" afterPath="$PROJECT_DIR$/application/views/main/head.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/head.php" afterPath="$PROJECT_DIR$/application/views/main/head.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/header.php-tmp" afterPath="$PROJECT_DIR$/application/views/main/header.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/header.php" afterPath="$PROJECT_DIR$/application/views/main/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/logs/log-2015-10-05.php" afterPath="$PROJECT_DIR$/application/logs/log-2015-10-05.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/language/vi/message_lang.php-tmp" afterPath="$PROJECT_DIR$/application/language/vi/message_lang.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/language/vi/message_lang.php" afterPath="$PROJECT_DIR$/application/language/vi/message_lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/popup.php-tmp" afterPath="$PROJECT_DIR$/application/views/main/popup.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/popup.php" afterPath="$PROJECT_DIR$/application/views/main/popup.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php-tmp" afterPath="$PROJECT_DIR$/application/config/routes.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php" afterPath="$PROJECT_DIR$/application/config/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/main/css/style.css" afterPath="$PROJECT_DIR$/assets/main/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/main/css/style4189.css" afterPath="$PROJECT_DIR$/assets/main/css/style4189.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/support-online.php-tmp" afterPath="$PROJECT_DIR$/application/views/main/support-online.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/support-online.php" afterPath="$PROJECT_DIR$/application/views/main/support-online.php" />
+    </list>
+    <ignored path="job.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="job" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="style-adwords.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/main/css/style-adwords.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.22118959">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="2" selection-end-line="2195" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/assets/main/css/style-adwords.css" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1370" />
+    <option name="height" value="754" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="31d40f2e-f3dd-4fb8-b123-a25cd6981aed" name="Default" comment="" />
+      <created>1444268977190</created>
+      <option name="number" value="Default" />
+      <updated>1444268977190</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1370" height="754" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24961832" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/assets/main/css/style-adwords.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22118959">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="2" selection-end-line="2195" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

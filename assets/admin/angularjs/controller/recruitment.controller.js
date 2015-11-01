@@ -800,9 +800,129 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
     }
 
 
+    $scope.openModalEditShowRecruitment = function(size,recruitment){
+       var modalInstance = $modal.open({
+                animation: false,//$scope.animationsEnabled,
+                templateUrl: pathWebsite + 'assets/admin/partial/modal-edit-show-recruitment.php',
+                controller: function ($scope, $modalInstance, recruitment,csrf){
+                    $scope.recruitment = recruitment;
+                    $scope.recruitment.csrf = csrf;
+                    //$scope.jobseeker.account_password = '';
+                    $scope.ok = function () {
+                        $modalInstance.close($scope.recruitment);
+                        $scope.getRecruitments($scope.typeRecruitment);
+                       //var employerid = $scope.jobseeker['emac_map_employer'];
+                       //$scope.getEmployerUsers(employerid);
+                    };
+
+                    $scope.cancel = function () {
+                        $modalInstance.dismiss('cancel');
+                    };
+
+                },
+                size: size,
+                resolve: {
+                    recruitment: function () {
+                        return recruitment;
+                    },
+                    csrf: function(){
+                      return recruitmentService.getToken();
+                    }
+                },
+                scope:$scope,
+                 backdrop: 'static',
+                  windowClass: "modal fade in",
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                $scope.selected = selectedItem;
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+    }
+
+    $scope.editShowRecruitment = function(recruitment){
+      $scope.disabled_modal = true;
+        recruitmentService.editShowRecruitment(angular.toJson(recruitment),function(data){
+            if(data){
+               // alertCreateSuccess();
+                $scope.ok();
+                $scope.disabled_modal = false;
+            }
+            else{
+                alertErrors();
+                 $scope.cancel();
+            }
+        });
+    }
+
+    $scope.modalDisabledEmployerRecruitment = function(size,recruitment,option){
+       var modalInstance = $modal.open({
+                animation: false,//$scope.animationsEnabled,
+                templateUrl: pathWebsite + 'assets/admin/partial/modal-disabled-recruitment.php',
+                controller: function ($scope, $modalInstance, recruitment,csrf,option){
+                    $scope.recruitment = recruitment;
+                    $scope.recruitment.csrf = csrf;
+                    $scope.recruitment.option = option;
+                    //$scope.jobseeker.account_password = '';
+                    $scope.ok = function () {
+                        $modalInstance.close($scope.recruitment);
+                        $scope.getRecruitments($scope.typeRecruitment);
+                       //var employerid = $scope.jobseeker['emac_map_employer'];
+                       //$scope.getEmployerUsers(employerid);
+                    };
+
+                    $scope.cancel = function () {
+                        $modalInstance.dismiss('cancel');
+                    };
+
+                },
+                size: size,
+                resolve: {
+                    recruitment: function () {
+                        return recruitment;
+                    },
+                    csrf: function(){
+                      return recruitmentService.getToken();
+                    },
+                    option:function(){
+                      return option;
+                    }
+                },
+                scope:$scope,
+                 backdrop: 'static',
+                  windowClass: "modal fade in",
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                $scope.selected = selectedItem;
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+    }
+    $scope.disabledRecruitment = function(recruitment){
+      $scope.disabled_modal = true;
+        recruitmentService.disabledRecruitment(angular.toJson(recruitment),function(data){
+            if(data){
+               // alertCreateSuccess();
+                $scope.ok();
+                $scope.disabled_modal = false;
+            }
+            else{
+                alertErrors();
+                 $scope.cancel();
+            }
+        });
+    }
+
 
 });
 
+
+app.controller('recruitmentHLController', function (recruitmentService,employerRecruitmentService,employerUserService,jobseekerService,$scope, $http, $timeout,cfpLoadingBar,$modal,$log,$window,$filter) {
+
+
+});
 
 app.directive('onlyDigits', function () {
 

@@ -136,4 +136,10 @@ class Recruitment_model extends CI_Model {
 		$data = array($idrecruitment);
 		return $this->dbutil->getFromDbQueryBinding($sql, $data);
 	}
+	function editShowRecruitment($data) {
+		return $this->dbutil->updateDb($data);
+	}
+	function disabledRecruitment($data) {
+		return $this->dbutil->updateDb($data);
+	}
 }

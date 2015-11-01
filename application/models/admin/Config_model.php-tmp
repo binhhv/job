@@ -78,21 +78,33 @@ class Config_model extends CI_Model {
 			'data'  => array('config_is_active'  => false));
 		return $this->dbutil->updateDb($data);
 	}
-	function getListTitleSite() {
-		$sql = "select * from config where config_is_delete = 0 and config_map_attribute = 4";
+	function getListTitleSite($option) {
+		$attribute = 4;
+		if ($option) {
+			$attribute = 5;
+		}
+		$sql = "select * from config where config_is_delete = 0 and config_map_attribute = ".$attribute;
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
 	}
-	function deleteTitleSite($site) {
+	function deleteTitleSite($site, $option) {
+		$attribute = 4;
+		if ($option) {
+			$attribute = 5;
+		}
 		$data = array(
 			'from'  => 'config',
-			'where' => 'config_id = '.$site['config_id'].' and config_map_attribute = 4',
+			'where' => 'config_id = '.$site['config_id'].' and config_map_attribute = '.$attribute,
 			'data'  => array('config_is_delete'  => true));
 		return $this->dbutil->updateDb($data);
 	}
-	function selectedTitleSite($site, $active = 0) {
+	function selectedTitleSite($site, $active = 0, $option) {
+		$attribute = 4;
+		if ($option) {
+			$attribute = 5;
+		}
 		$dataUpdate = array(
 			'from'  => 'config',
-			'where' => 'config_map_attribute = 4',
+			'where' => 'config_map_attribute = '.$attribute,
 			'data'  => array('config_is_active'  => false));
 		$this->dbutil->updateDb($dataUpdate);
 		$config_is_active = true;
@@ -102,11 +114,182 @@ class Config_model extends CI_Model {
 
 		$data = array(
 			'from'  => 'config',
-			'where' => 'config_id = '.$site.' and config_map_attribute = 4',
+			'where' => 'config_id = '.$site.' and config_map_attribute = '.$attribute,
 			'data'  => array('config_is_active'  => $active));
 		return $this->dbutil->updateDb($data);
 	}
 	function createTitleSite($data) {
 		return $this->dbutil->insertDb($data, 'config');
+	}
+	function getListAdwords() {
+		$sql = "select * from config where config_is_delete = 0 and config_map_attribute = 6";
+		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
+	function updateAdword($data, $config_id) {
+		$dataUpdate = array(
+			'from'  => 'config',
+			'where' => 'config_id = '.$config_id,
+			'data'  => $data);
+		return $this->dbutil->updateDb($dataUpdate);
+	}
+	function getListMember() {
+		$sql = "select * from config where config_is_delete = 0 and config_map_attribute = 7 order by config_is_active desc, config_content asc";
+		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
+	function choiceMember($config_id) {
+		$sqlContent = "select * from config where config_is_delete = 0 and config_is_active = 1 and config_map_attribute = 7
+					 order by config_content desc";
+		$valueContent = $this->dbutil->getFromDbQueryBinding($sqlContent, array());
+		$index        = 0;
+		if (count($valueContent) > 0) {
+			$index = (int) $valueContent[0]->config_content;
+		}
+		$index++;
+
+		$data = array(
+			'from'  => 'config',
+			'where' => 'config_id = '.$config_id,
+			'data'  => array('config_content'  => $index, 'config_is_active'  => true));
+		return $this->dbutil->updateDb($data);
+	}
+	function unchoiceMember($config_id) {
+		$data = array(
+			'from'  => 'config',
+			'where' => 'config_id = '.$config_id,
+			'data'  => array('config_is_active'  => false));
+		return $this->dbutil->updateDb($data);
+	}
+	function changeMember($idOld, $idNew) {
+		$data = array('fields' => 'config_content',
+			'from'                => 'config',
+			'where'               => 'config_map_attribute = 7 and config_id = '.$idOld);
+		$indexMemberOld = $this->dbutil->getFromDb($data);
+
+		$dataMemberOld = array('from' => 'config',
+			'where'                      => 'config_map_attribute = 7 and config_id = '.$idOld,
+			'data'                       => array('config_is_active'                       => false, 'config_content'                       => ''));
+		$resultMemberOld = $this->dbutil->updateDb($dataMemberOld);
+
+		$dataMemberNew = array('from' => 'config',
+			'where'                      => 'config_map_attribute = 7 and config_id = '.$idNew,
+			'data'                       => array('config_is_active'                       => true, 'config_content'                       => $indexMemberOld[0]->config_content));
+		$resultMemberNew = $this->dbutil->updateDb($dataMemberNew);
+
+		if ($resultMemberOld && $resultMemberNew) {
+			return true;
+		} else {return false;}
+
+	}
+	function deleteMember($member_id) {
+		$data = array('from' => 'config',
+			'where'             => 'config_map_attribute = 7 and config_id = '.$member_id,
+			'data'              => array('config_is_active'              => false, 'config_is_delete'              => true));
+		return $this->dbutil->updateDb($data);
+	}
+	function createMember($data, $member, $file_name, $file_tmp) {
+		$indexConfigContent = '';
+		if ($member['isActive']) {
+			// $dataIndex = array('fields' => 'config_content',
+			// 	'from' => 'config',
+			// 	'where' => 'config_map_attribute = 7 and config_id = ' . $idOld);
+			// $indexMemberOld = $this->dbutil->getFromDb($dataIndex);
+			// $indexConfigContent .= $indexMemberOld[0]->config_content;
+			$sqlContent = "select * from config where config_is_delete = 0 and config_is_active = 1 and config_map_attribute = 7
+					 order by config_content desc";
+			$valueContent = $this->dbutil->getFromDbQueryBinding($sqlContent, array());
+			$index        = 0;
+			if (count($valueContent) > 0) {
+				$index = (int) $valueContent[0]->config_content;
+			}
+			$index++;
+			$indexConfigContent .= $index;
+		}
+
+		$config_data_json         = '{"file":"'.$file_name.'","file_tmp":"'.$file_tmp.'","name":"'.$member['name'].'","position":"'.$member['position'].'","facebook":"","email":"'.$member['mail'].'","twitter":"","skype":"","phone":"'.$member['phone'].'"}';
+		$data['config_content']   = $indexConfigContent;
+		$data['config_data_json'] = $config_data_json;
+		return $this->dbutil->insertDb($data, 'config');
+	}
+	function updateMember($member, $file_name, $file_tmp) {
+		if (strlen($file_name) <= 0 || strlen($file_tmp) <= 0) {
+			$file_name = $member['file'];
+			$file_tmp  = $member['file_tmp'];
+		}
+		$config_data_json = '{"file":"'.$file_name.'","file_tmp":"'.$file_tmp.'","name":"'.$member['name'].'","position":"'.$member['position'].'","facebook":"","email":"'.$member['mail'].'","twitter":"","skype":"","phone":"'.$member['phone'].'"}';
+		$data             = array('from' => 'config',
+			'where'                         => 'config_id = '.$member['config_id'],
+			'data'                          => array('config_data_json'                          => $config_data_json));
+		return $this->dbutil->updateDb($data);
+	}
+	function getListVideos() {
+		$sql = "select * from config where config_is_delete = 0 and config_map_attribute = 8";
+		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
+	function activeDeleteVideo($video) {
+		$type = $video['typeAction'];
+
+		if ($type == '0') {
+			$dataActive = array(
+				'from'  => 'config',
+				'where' => 'config_map_attribute = 8',
+				'data'  => array('config_is_active'  => false));
+			$result = $this->dbutil->updateDb($dataActive);
+			$data   = array(
+				'from'  => 'config',
+				'where' => 'config_id = '.$video['config_id'].' and config_map_attribute = 8',
+				'data'  => array('config_is_active'  => true));
+		} else {
+			$data = array(
+				'from'  => 'config',
+				'where' => 'config_id = '.$video['config_id'].' and config_map_attribute = 8',
+				'data'  => array('config_is_delete'  => true));
+		}
+		return $this->dbutil->updateDb($data);
+	}
+	function uploadVideo($data) {
+		return $this->dbutil->insertDb($data, 'config');
+	}
+	function getConfigNumRecruitment() {
+		$sql = "select * from config where config_is_delete = 0 and (config_map_attribute = 9 or config_map_attribute = 10)";
+		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
+	function updateConfigNumRecruitment($data, $configid) {
+		$dataUpdate = array(
+			'from'  => 'config',
+			'where' => 'config_id = '.$configid,
+			'data'  => $data);
+		return $this->dbutil->updateDb($dataUpdate);
+	}
+
+	function getImageRec() {
+		$sql = "select * from config where config_is_delete = 0 and config_map_attribute = 11";
+		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
+	function deleteImageRec($slide) {
+
+		$data = array(
+			'from'  => 'config',
+			'where' => 'config_id = '.$slide['config_id'].' and config_map_attribute = 11',
+			'data'  => array('config_is_delete'  => true));
+		return $this->dbutil->updateDb($data);
+	}
+	function uploadImageRecModel($data) {
+		return $this->dbutil->insertDb($data, 'config');
+	}
+	function activeImageRec($id) {
+
+		$data = array(
+			'from'  => 'config',
+			'where' => 'config_id = '.$id.' and config_map_attribute = 11',
+			'data'  => array('config_is_active'  => true));
+		return $this->dbutil->updateDb($data);
+	}
+	function deactiveImageRec($id) {
+
+		$data = array(
+			'from'  => 'config',
+			'where' => 'config_id = '.$id.' and config_map_attribute = 11',
+			'data'  => array('config_is_active'  => false));
+		return $this->dbutil->updateDb($data);
 	}
 }

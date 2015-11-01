@@ -81,7 +81,11 @@ class DBUtil extends CI_Model {
 			return $this->db->update($projections["from"], $projections["data"]);
 		}
 	}
-
+	function updateIncrementField($table, $field, $fieldCondition, $valueFieldCondition) {
+		$this->db->set($field, $field . '+1', FALSE);
+		$this->db->where($fieldCondition, $valueFieldCondition);
+		$this->db->update($table);
+	}
 	public function checkIfExists($unique_field, $unique_value, $from) {
 		$insert_id = FALSE;
 		//if ($projections != null) {

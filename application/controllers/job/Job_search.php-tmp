@@ -20,6 +20,18 @@ class Job_search extends CI_Controller {
 
 	}
 	function index($value1, $value2 = "", $value3 = "") {
+		$scriptJob = array(
+			"assets/main/js/map/markerwithlabel.js",
+			"assets/main/chosen/chosen.jquery.js",
+			"assets/main/chosen/prism.js",
+			"server_upload/js/vendor/jquery.ui.widget.js",
+			"server_upload/js/jquery.iframe-transport.js",
+			"server_upload/js/jquery.fileupload.js");
+		$styleJob = array(
+			// "assets/main/chosen/style.css",
+			"assets/main/chosen/prism.css",
+			"assets/main/chose/chosen.css");
+
 		//$url = htmlspecialchars("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]", ENT_QUOTES, 'UTF-8');
 		$keyArr = array(array("p" => 0),
 			array("s"                => 0),
@@ -98,7 +110,7 @@ class Job_search extends CI_Controller {
 
 		$user = (isset($this->session->userdata['user']))?$this->session->userdata['user']:null;
 
-		$head = $this->load->view('main/head', array('user' => $user, 'titlePage' => 'JOB7VN Group|Contact'), TRUE);
+		$head = $this->load->view('main/head', array('scriptJob' => $scriptJob, 'styleJob' => $styleJob, 'user' => $user, 'titlePage' => 'JOB7VN Group|Contact'), TRUE);
 
 		//get value to search
 		$arr_job_form   = $this->recruitment->getAllJob_Form();
@@ -107,7 +119,7 @@ class Job_search extends CI_Controller {
 		$salary         = $this->recruitment->getAllJob_Salary();
 		$province       = $this->recruitment->getAllProvince();
 		$career         = $this->recruitment->getAllJob_Career();
-
+		//var_dump($keyArr[0]['p']);
 		$searchHorizontal = $this->load->view('main/search-horizontal', array(
 				'province'     => $province,
 				'jobform'      => $arr_job_form,
@@ -126,11 +138,19 @@ class Job_search extends CI_Controller {
 				'user'       => $user,
 				'menu'       => 'search',
 			), TRUE);
+		//$jobDetail = $this->job->getDetailRecruitment($job);
+		// if ($keyArr[0]['p'] != 0) {
+		// 	//var_dump($keyArr[0]['p']);
+		// } else {
 
-		$content = $this->load->view('main/job/job-search', array('searchHorizontal' => $searchHorizontal, 'listJob' => $jobSearchPagingnation, 'numjob' => count($jobSearch), 'pagination' => $pagination), TRUE);
+		// }
+		$centerMap = json_encode($this->job->getCenterMap($keyArr[0]['p']));
+		$jobMap    = json_encode($this->job->getAllRecruitmentForMap());
+		//$jobSames = $this->job->getSameRecruitment($job);
+		$content = $this->load->view('main/job/job-search', array('centerMap' => $centerMap, 'jobMap' => $jobMap, 'searchHorizontal' => $searchHorizontal, 'listJob' => $jobSearchPagingnation, 'numjob' => count($jobSearch), 'pagination' => $pagination), TRUE);
 
 		$footer = $this->load->view('main/footer', array(), TRUE);
-		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
+		$this->load->view('main/layout', array('isGray' => true, 'head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
 	}
 
 }

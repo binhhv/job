@@ -41,7 +41,7 @@
                 		</div>
                 	</div>
                     <ul class="chat">
-                        <li class="left clearfix"><span class="chat-img pull-left">
+                        <!-- <li class="left clearfix"><span class="chat-img pull-left">
                             <img width="35" src="<?php echo base_url()?>assets/main/img/supportonline/icon_user_support.png" alt="User Avatar" class="icon-support-online " />
                         </span>
                             <div class="chat-body clearfix">
@@ -54,18 +54,16 @@
                                     dolor, quis ullamcorper ligula sodales.
                                 </p>
                             </div>
-                        </li>
+                        </li>-->
                         <li class="right clearfix"><span class="chat-img pull-right-chat">
                             <img width="35"src="<?php echo base_url()?>assets/main/img/header/icon_black.png" alt="User Avatar" class="icon-support-online " />
                         </span>
                             <div class="chat-body clearfix">
-                                <div class="header">
-                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
-                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
-                                </div>
+
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                    dolor, quis ullamcorper ligula sodales.
+                                    <small>Chào bạn, bạn cần hỗ trợ gì không?</small>
+									<!-- Hi, you. May I help you?
+									こんにちは。何かありましたら、ご連絡下さい。 -->
                                 </p>
                             </div>
                         </li>

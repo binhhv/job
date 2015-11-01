@@ -9,10 +9,17 @@ class Admin_manager extends CI_Controller {
 		$this->load->model('admin/Mail_model', 'mail');
 		$this->load->model('UtilModel', 'util');
 		$this->load->model('admin/Account_model', 'account');
+		// if (!$this->session->userdata['user']['isLogged']) {
+		// 	redirect(base_url() . 'admin/login'); // no session established, kick back to login page
+		// } else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
+		// 	redirect(base_url('error/403'));
+		// }
 		if (!$this->session->userdata['user']['isLogged']) {
-			redirect(base_url() . 'admin/login'); // no session established, kick back to login page
+			redirect(base_url('404'));
+			//redirect(base_url() . 'admin/login'); // no session established, kick back to login page
 		} else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
-			redirect(base_url('error/403'));
+			//redirect(base_url('error/403'));
+			redirect(base_url('404'));
 		}
 	}
 	function index() {

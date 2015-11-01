@@ -18,6 +18,13 @@ class Admin_contact extends CI_Controller {
 		// } else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
 		// 	redirect(base_url('error/403'));
 		// }
+		if (!$this->session->userdata['user']['isLogged']) {
+			redirect(base_url('404'));
+			//redirect(base_url() . 'admin/login'); // no session established, kick back to login page
+		} else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
+			//redirect(base_url('error/403'));
+			redirect(base_url('404'));
+		}
 	}
 	function index() {
 		$scripts = array(

@@ -10,6 +10,7 @@ app.factory('recruitmentService' ,function ($http,$q,$timeout){
 			//console.log(csrf['hash']);
 			var postData = $.param({'csrf_test_name': csrf_hash,'rec':rec});
 			$http.post(pathWebsite + 'admin/recruitment/createRecruitment', postData, {headers : {'Content-Type': 'application/x-www-form-urlencoded'}}).success(callback);
+		
 		};
 		_recruitmentService.getListRecruitments = function(type,callback){
 			console.log("call service");
@@ -27,7 +28,39 @@ app.factory('recruitmentService' ,function ($http,$q,$timeout){
 			    });
 			    return defer.promise;
 		}
+		_recruitmentService.getToken = function(){
+			var temp = {};
+			    var defer = $q.defer();
+			    $http.get(pathWebsite + 'admin/jobseeker/getToken').success(function(data){
+			            temp =data;
+			            $timeout(function(){
+					      defer.resolve(data);
+					    }, 350) 
+			           
 
+			    });
+			    return defer.promise;
+		};
+
+		_recruitmentService.editShowRecruitment = function(rec,callback){
+			var objectRecruitment = JSON.parse(rec);
+			
+			var csrf_name = objectRecruitment['csrf']['name'];
+			var csrf_hash = objectRecruitment['csrf']['hash'];
+			var postData = $.param({'csrf_test_name': csrf_hash,'rec':rec});
+			$http.post(pathWebsite + 'admin/recruitment/editShowRecruitment', postData, {headers : {'Content-Type': 'application/x-www-form-urlencoded'}}).success(callback);
+		
+		}
+
+		_recruitmentService.disabledRecruitment = function(rec,callback){
+			var objectRecruitment = JSON.parse(rec);
+			
+			var csrf_name = objectRecruitment['csrf']['name'];
+			var csrf_hash = objectRecruitment['csrf']['hash'];
+			var postData = $.param({'csrf_test_name': csrf_hash,'rec':rec});
+			$http.post(pathWebsite + 'admin/recruitment/disabledRecruitment', postData, {headers : {'Content-Type': 'application/x-www-form-urlencoded'}}).success(callback);
+		
+		}
 		
 		return _recruitmentService;
 });

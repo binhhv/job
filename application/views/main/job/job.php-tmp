@@ -11,6 +11,9 @@
 	?>
 		<div class="container">
 			<div class="row">
+				<div class="col-sm-12">
+					<div class="col-sm-12 map-job margin-top-10" id="map-job"></div>
+				</div>
 				<div class="col-sm-8">
 					<div class=" job-content">
 
@@ -29,14 +32,24 @@
 	?>
 											</h3>
 											<div class="col-sm-12 field-job-line"></div>
-											<h1 class="title-detail-job"><?php echo $jobDetail->rec_title;?></h1>
-											<span class="employer-name-dj"><?php echo $jobDetail->employer_name;?></span>
-											<span class="employer-address-dj"><?php echo $jobDetail->employer_address;?></span>
+											<div class="row padding-tb-5">
+												<div class="col-sm-3 col-sm-push-9">
+													<img src="<?php echo base_url();?>uploads/logo/<?php echo $jobDetail->employer_id."/".$jobDetail->employer_logo_tmp;?>" class="logo-employer img-responsive padding-top-10">
+												</div>
+												<div class="col-sm-9 col-sm-pull-3">
+													<h1 class="title-detail-job"><?php echo $jobDetail->rec_title;?></h1>
+													<span class="employer-name-dj"><?php echo $jobDetail->employer_name;?></span>
+													<span class="employer-address-dj"><?php echo $jobDetail->employer_address;?></span>
+													<span><button class="btn btn-md btn-primary" data-toggle="modal" data-target="#modalContactEmployer"><i class="fa fa-paper-plane"></i> Thông tin liên hệ</button></span>
+												</div>
+
+											</div>
+
 											<div class="col-sm-12 field-job-line"></div>
 											<div class="col-sm-12 option-detail-job ">
 												<div class="row">
 													<div class="col-sm-6 item-option-detail-job"><b>Ngành nghề:</b> <?php echo $jobDetail->career_name;?></div>
-													<div class="col-sm-6 item-option-detail-job"><b>Mức lương:</b> <?php echo $jobDetail->rec_salary;?></div>
+													<div class="col-sm-6 item-option-detail-job"><b>Mức lương:</b> <?php echo $jobDetail->salary_value;?></div>
 													<div class="col-sm-6 item-option-detail-job"><b>Loại hình công việc:</b> <?php echo $jobDetail->fjob_type.'-'.$jobDetail->jcform_type;?></div>
 													<div class="col-sm-6 item-option-detail-job"><b>Trình độ:</b><?php echo $jobDetail->ljob_level?></div>
 													<div class="col-sm-12 item-option-detail-job"><b>Địa điểm làm việc:</b><label class="address-detail-job"><?php
@@ -76,7 +89,7 @@
 		</div>
 		<?php }
 	?>
-							<div class="col-sm-12 job-content-item ">
+							<div class="col-sm-12 job-content-item">
 
 									<!-- <div class="row col-sm-12 job-content-item text-center">
 										<h1 class="title-detail-job"><?php echo $jobDetail->rec_title;?></h1>
@@ -118,97 +131,13 @@
 												</div>
 											</div>
 							</div>
-
-							<div class="col-sm-12 job-content-item margin-bottom-10">
-
-									<!-- <div class="row col-sm-12 job-content-item text-center">
-										<h1 class="title-detail-job"><?php echo $jobDetail->rec_title;?></h1>
-									</div> -->
-
-
-
-											<h3 class="title-field-detail-job">Thông tin liên hệ
-
-											</h3>
-											<div class="col-sm-12 field-job-line"></div>
-											<div class="col-sm-12 option-detail-job ">
-												<div class="row">
-													<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj ">Người liên hệ</span>
-														<div class="col-sm-12 field-job-line"></div>
-													<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_name;?></div>
-													</div>
-
-													<div class="col-sm-12 item-option-detail-job"><span class="title-item-dj">Email</span>
-															<div class="col-sm-12 field-job-line"></div>
-													<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_email;?></div>
-													</div>
-
-													<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Địa chỉ</span>
-														<div class="col-sm-12 field-job-line"></div>
-													<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_address;?></div>
-													</div>
-
-													<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Điện thoại</span>
-														<div class="col-sm-12 field-job-line"></div>
-													<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_phone;?></div>
-													</div>
-
-													<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Di động</span>
-														<div class="col-sm-12 field-job-line"></div>
-													<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_mobile;?></div>
-													</div>
-													<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Hình thức liên hệ</span>
-														<div class="col-sm-12 field-job-line"></div>
-													<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->contact_form_type;?></div>
-													</div>
-												</div>
-											</div>
-							</div>
-
-
-							<!-- <div class="col-sm-12 job-content-item ">
-
-
-
-
-
-											<h3 class="title-field-detail-job">Nộp hồ sơ trong một bước
-
-											</h3>
-											<div class="col-sm-12 field-job-line"></div>
-											<div class="col-sm-12 option-detail-job ">
-												<div class="row">
-
-												</div>
-											</div>
-							</div> -->
-
-
-					</div>
-				</div>
-				<div class="col-sm-4 ">
-					<div class="job-left">
-
-							<div class="job-left-item col-sm-12">
-							<div class="row">
-								<div class="col-sm-12">
-									<label class="text-color-1 field-job">
-										<h3 class="alert-field-job">Bản đồ các công việc</h3>
-									</label>
-								</div>
-								<div class="col-sm-12 field-job-line"></div>
-								<div class="col-sm-12 map-job" id="map-job">
-								</div>
-								</div>
-							</div>
-
 	<?php if (!isset($user) || $user['role'] == 4) {
 		?>
-								<div class="job-left-item col-sm-12">
+								<div class="job-left-item col-sm-12 margin-bottom-10">
 								<div class="row" id="focus-apply">
 									<div class="col-sm-12 employer-box-header text-center background-color-3">
 										<!-- <label class="text-color-1 field-job"> -->
-											<h3 class="alert-field-job employer-tools-title text-color-2">Nộp hồ sơ trong một bước</h3>
+											<h3 class="alert-field-job employer-tools-title text-color-2">Nộp hồ sơ</h3>
 										<!-- </label> -->
 									</div>
 									<div class="col-sm-12 field-job-line"></div>
@@ -375,6 +304,17 @@
 										  </div> <?php }
 		?>
 									  <!-- <div class="hide" id="value-doc"></div> -->
+									  <div class="form-group hide captcha-box">
+									  <label class="control-label col-sm-2">Captcha</label>
+									  	<div class="col-sm-10 captcha ">
+
+									  	</div>
+									  	<div class="col-sm-offset-2 col-sm-8 margin-top-5">
+									  		<input type="text" name="captcha" class="input-captcha">
+									  		<span class="alert alert-danger hide error-captcha">Captcha không hợp lệ</span>
+									  		<input type="hidden" name="captcha-reg" >
+									  	</div>
+									  </div>
 									  <div class="form-group">
 									    <div class="col-sm-offset-2 col-sm-10">
 									    <input type="hidden" name="file-name">
@@ -400,7 +340,91 @@
 								</div>
 		<?php }
 	?>
-	<div class="job-left-item col-sm-12  margin-bottom-10">
+							<!-- <div class="col-sm-12 job-content-item margin-bottom-10">
+
+									<div class="row col-sm-12 job-content-item text-center">
+										<h1 class="title-detail-job"><?php echo $jobDetail->rec_title;?></h1>
+									</div>
+
+
+
+											<h3 class="title-field-detail-job">Thông tin liên hệ
+
+											</h3>
+											<div class="col-sm-12 field-job-line"></div>
+											<div class="col-sm-12 option-detail-job ">
+												<div class="row">
+													<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj ">Người liên hệ</span>
+														<div class="col-sm-12 field-job-line"></div>
+													<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_name;?></div>
+													</div>
+
+													<div class="col-sm-12 item-option-detail-job"><span class="title-item-dj">Email</span>
+															<div class="col-sm-12 field-job-line"></div>
+													<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_email;?></div>
+													</div>
+
+													<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Địa chỉ</span>
+														<div class="col-sm-12 field-job-line"></div>
+													<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_address;?></div>
+													</div>
+
+													<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Điện thoại</span>
+														<div class="col-sm-12 field-job-line"></div>
+													<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_phone;?></div>
+													</div>
+
+													<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Di động</span>
+														<div class="col-sm-12 field-job-line"></div>
+													<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_mobile;?></div>
+													</div>
+													<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Hình thức liên hệ</span>
+														<div class="col-sm-12 field-job-line"></div>
+													<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->contact_form_type;?></div>
+													</div>
+												</div>
+											</div>
+							</div> -->
+
+
+							<!-- <div class="col-sm-12 job-content-item ">
+
+
+
+
+
+											<h3 class="title-field-detail-job">Nộp hồ sơ trong một bước
+
+											</h3>
+											<div class="col-sm-12 field-job-line"></div>
+											<div class="col-sm-12 option-detail-job ">
+												<div class="row">
+
+												</div>
+											</div>
+							</div> -->
+
+
+					</div>
+				</div>
+				<div class="col-sm-4 ">
+					<div class="job-left margin-top-5">
+
+							<!-- <div class="job-left-item col-sm-12"> -->
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="job-province-box">
+	<?php if (isset($searchHorizontal)) {
+		echo $searchHorizontal;
+	}
+	?>
+	</div>
+									</div>
+								</div>
+							<!-- </div> -->
+
+
+							<div class="job-left-item col-sm-12  margin-bottom-10">
 							<div class="row">
 								<div class="col-sm-12 employer-box-header text-center background-color-2">
 									<!-- <label class="text-color-1 field-job"> -->
@@ -418,12 +442,21 @@
 			<?php }
 	}
 	?>
-	</div>
+								</div>
 							</div>
 
 
 
 					</div>
+				</div>
+				<!-- <div class="col-sm-12">
+					<iframe src="http://www.facebook.com/plugins/like.php?href=<?php echo $urlJob;?>&layout=standard&show_faces=false&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:60px;"></iframe>
+				</div> -->
+				<div class="col-sm-12">
+					<div class="fb-like" href="<?php echo $urlJob;?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+				</div>
+				<div class="col-sm-12">
+					<div class="fb-comments"  data-href="<?php echo $urlJob;?>" data-width="100%" data-numposts="15" data-colorscheme="light" data-mobile="false" data-order-by="reverse_time"></div>
 				</div>
 			</div>
 		</div>
@@ -482,8 +515,59 @@
 	</div>
 </div><!-- /.modal -->
 
+
+<!-- Modal -->
+<div class="modal fade margin-top-100" id="modalContactEmployer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Thông tin liên hệ</h4>
+      </div>
+      <div class="modal-body">
+       		<div class="row">
+												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj ">Người liên hệ</span>
+													<div class="col-sm-12 field-job-line"></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_name;?></div>
+												</div>
+
+												<div class="col-sm-12 item-option-detail-job"><span class="title-item-dj">Email</span>
+														<div class="col-sm-12 field-job-line"></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_email;?></div>
+												</div>
+
+												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Địa chỉ</span>
+													<div class="col-sm-12 field-job-line"></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_address;?></div>
+												</div>
+
+												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Điện thoại</span>
+													<div class="col-sm-12 field-job-line"></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_phone;?></div>
+												</div>
+
+												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Di động</span>
+													<div class="col-sm-12 field-job-line"></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_mobile;?></div>
+												</div>
+												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Hình thức liên hệ</span>
+													<div class="col-sm-12 field-job-line"></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->contact_form_type;?></div>
+												</div>
+											</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-danger" data-dismiss="modal">Đóng</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <script type="text/javascript">
 $(document).ready(function(){
+
 	$('input:radio[name="doc"]').attr('checked', false);
 	$('input:radio[name="cvuser"]').change(function(){
 		 if ($(this).val() == '-1') {
@@ -503,9 +587,13 @@ $(document).ready(function(){
 	 	$("#modalApplyJobAlert").modal("show");
 	 }
 	 else{
-	 			//alert($("#token-name").val());
-	 			//$("#btn-apply").attr("disabled",false);
-	 			 //$('input[type="submit"]').removeAttr('disabled');
+	 			if(!checkCaptcha()){
+	 				$(".error-captcha").removeClass('hide');
+	 				getCaptcha();
+	 			}
+	 			else{
+
+
 	 			var form = $(this);
 			    var formdata = false;
 			    var dataOb ={};
@@ -582,6 +670,7 @@ $(document).ready(function(){
 					//alert(thrownError);
 				}
 				});
+			}
 		}
 });
 
@@ -601,14 +690,26 @@ $(".btn-apply-job").on("click",function(e){
 },500);
 });
 function checkSelectedDoc(){
-	var resutlt = false;
-	if($("input:radio[name='doc']").is(":checked") && $("input:radio[name='docuser']").is(":checked") ){
-		resutlt = true;
+	var result = false;
+	if($("input:radio[name='doc']").is(":checked")){
+		if($("input:radio[name='doc']").val() =='doconline'){
+			if($("input:radio[name='docuser']").is(":checked")){
+				result = true;
+			}
+		}
+		else if($("input:radio[name='doc']").val() =='doccv'){
+			if($("input:radio[name='cvuser']").is(":checked")){
+				result = true;
+			}
+		}
 	}
+	// if($("input:radio[name='doc']").is(":checked") && $("input:radio[name='docuser']").is(":checked") ){
+	// 	result = true;
+	// }
 
-	if($("input:radio[name='doc']").is(":checked") && $("input:radio[name='cvuser']").is(":checked")){
-		resutlt = true;
-	}
+	// if($("input:radio[name='doc']").is(":checked") && $("input:radio[name='cvuser']").is(":checked")){
+	// 	result = true;
+	// }
 
 	var checkcv = $("input:radio[name='cvuser']:checked").val();
 	var filename = $("input:hidden[name='file-name']").val();
@@ -616,10 +717,14 @@ function checkSelectedDoc(){
 	// if(checkcv && checkcv=='-1' && filename.length > 0 && filetmp.length > 0){
 	// 	result = true;
 	// }
-	return resutlt;
+	return result;
 }
 	$('input:radio[name="doc"]').change(
     function(){
+    	$("#btn-apply").attr("disabled",true);
+    	$(".captcha-box").addClass('hide');
+    	$("input:radio[name='cvuser']").removeAttr("checked");
+    	$("input:radio[name='docuser']").removeAttr("checked");
         if ($(this).val() == 'doconline') {
             //alert("doconline");
             $("#data-doc").removeClass('hide');
@@ -711,13 +816,25 @@ function checkSelectedDoc(){
             var datacenter = <?php echo $centerMap;
 ?>;
 
+            var listCenterMap = <?php echo $listCenterMap;
+?>;
+
+
             var data = <?php echo $jobMap;
 ?>;
 
             if(datacenter){
 	      	  var mapOptions = {
 			    zoom: 6,
-			    center: new google.maps.LatLng(datacenter.province_lat, datacenter.province_long)
+			    center: new google.maps.LatLng(datacenter.province_lat, datacenter.province_long),
+			    mapTypeControl: false,
+			    mapTypeControlOptions: {
+			      style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+			      mapTypeIds: [
+			        google.maps.MapTypeId.ROADMAP,
+			        google.maps.MapTypeId.TERRAIN
+			      ]
+			    }
 			  };
   			map = new google.maps.Map(document.getElementById('map-job'),
      		 mapOptions);
@@ -725,17 +842,29 @@ function checkSelectedDoc(){
             //var bounds = new google.maps.LatLngBounds();
 
             for (var i = 0; i < data.length; i++) {
-                createMarker(map,data[i]); <!-- MARKERS! -->
+            	//if(data[i].province_lat == datacenter.province_lat && data[i].province_long == datacenter.province_long){
+            		//createMarker(map,data[i],1); <!-- MARKERS! -->
+            	//}
+                //else{
+
+                	createMarker(map,data[i],listCenterMap); <!-- MARKERS! -->
+                //}
 
             }
             }
 
         }
-      function createMarker(currentMap, data) {
+      function createMarker(currentMap, data,listCenter) {
+      			var isCenter=false;
+      			for(var i = 0; i < listCenter.length; i++){
+      				if(listCenter[i].province_lat == data.province_lat && listCenter[i].province_long == data.province_long){
+      					isCenter = true;
+      				}
+      			}
 				var marker = new MarkerWithLabel({
        			position: new google.maps.LatLng(data.province_lat, data.province_long),
      			 map: currentMap,
-                 icon: '<?php echo base_url();?>assets/main/img/map/marker5.png',
+                 icon: (isCenter) ? '<?php echo base_url();?>assets/main/img/map/marker5_center.png' : '<?php echo base_url();?>assets/main/img/map/marker5.png' ,
 
                  draggable: false,
                  raiseOnDrag: false,
@@ -765,6 +894,7 @@ function checkSelectedDoc(){
 				}
 		      $(document).ready(function(){
 		      		initialize();
+		      		getCaptcha();
 		      });
 
 
@@ -952,29 +1082,69 @@ $('#modal-create-document').on('hidden.bs.modal', function () {
      });
 
      $('input:radio[name="cvuser"]').change(function(){
+     	$(".captcha-box").removeClass('hide');
      	if($(this).val() == '-1'){
      		$('.fileupload').removeClass('hide');
+     		//$(".captcha-box").addClass('hide');
      	}
      	else{
      		$('.fileupload').addClass('hide');
      		$("#files").empty();
      		$('.error-file').empty();
+
      		$("#btn-apply").attr("disabled",false);
      	}
      });
       $('input:radio[name="docuser"]').change(function(){
      	if($(this).val() == '-1'){
      		//$('.fileupload').removeClass('hide');
-
+     		$(".captcha-box").addClass('hide');
      		$("#btn-apply").attr("disabled",true);
      	}
      	else{
      		//$('.fileupload').addClass('hide');
      		//$("#files").empty();
      		//$('.error-file').empty();
+     		$(".captcha-box").removeClass('hide');
      		$("#btn-apply").attr("disabled",false);
      	}
      });
+      function getCaptcha(){
+      	$.ajax({
+        url: '<?php echo base_url()."captcha/createCaptcha"?>',
+        type: "get",
+        dataType:'json',
+        success: function(data){
+        	//$(".captcha-box").removeClass('hide');
+        	$(".captcha").empty();
+        	$(".captcha").append('<img src="<?php echo base_url()."captcha/"?>'+data['filename']+'" >');
+        	$('input:hidden[name=captcha-reg]').val(data['word']);
+        	//console.log(data);
+        	//alert(data.hash);
+        	//$(".token").empty();
+        	//var token ='<input type="hidden" name="'+data.name+'" value="'+data.hash+'" />';
+        	//$(".token").append(token);
+           //document.write(data); just do not use document.write
+           //console.log(data);
+           //callback(data);
+           //console.log(data.name);
+        }
+      });
+      }
+      function checkCaptcha(){
+      	var result = true;
+      	var captcha = $('input[name=captcha]').val();
+      	if(captcha.length <= 0){
+      		result = false;
+      	}
+      	else{
+      		if(captcha != $('input:hidden[name=captcha-reg]').val()){
+      			result = false;
+      		}
+      	}
+      	return result;
+      }
+
 </script>
 
 

@@ -1508,3 +1508,32 @@ ERROR - 2015-10-05 10:43:49 --> $config['composer_autoload'] is set to TRUE but 
 ERROR - 2015-10-05 10:43:49 --> Severity: Notice --> Undefined variable: arr_Salary C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
 ERROR - 2015-10-05 10:43:49 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
 ERROR - 2015-10-05 10:43:50 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 16:41:02 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 16:41:03 --> Severity: Notice --> Undefined variable: arr_Salary C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
+ERROR - 2015-10-05 16:41:04 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
+ERROR - 2015-10-05 16:41:05 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 16:41:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 16:41:10 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 16:41:15 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 16:41:15 --> value 4
+ERROR - 2015-10-05 16:41:15 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC
+ERROR - 2015-10-05 16:41:16 --> select b.*,c.*,d.*,e.*,f.*
+			from recruitment b
+			left join career c on c.career_id = b.rec_job_map_career and c.career_is_delete = 0
+			left join employer d on d.employer_id = b.rec_map_employer and d.employer_is_delete = 0
+			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
+			left join (select province.*,recmp_map_rec from recruitment_map_province
+			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
+			where  b.rec_is_delete = 0 and b.rec_is_approve = 1 and b.rec_is_disabled = 0  order by b.rec_created_at DESC limit 0, 10
+ERROR - 2015-10-05 16:41:16 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 16:41:20 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.
+ERROR - 2015-10-05 16:41:20 --> Severity: Notice --> Undefined variable: arr_Salary C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
+ERROR - 2015-10-05 16:41:20 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\job\application\views\main\create_recruitment.php 41
+ERROR - 2015-10-05 16:41:20 --> $config['composer_autoload'] is set to TRUE but C:\xampp\htdocs\job\application\vendor/autoload.php was not found.

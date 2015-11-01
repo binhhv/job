@@ -1,11 +1,18 @@
-<div class="row">
+<?php $slidesPage = $this->globals->getSlidePage();?>
+<div class="row <?php if (!isset($slidesPage) && count($slidesPage) <= 0) {
+	echo 'hide';
+}
+?>">
 		<div class="col-lg-12 col-sm-12 col-md-12" style="position:relative">
 			<div class="flexslider" >
 	              <ul class="slides">
 	              	<?php
 //var_dump($slides);
-foreach ($slides as $value) {?>
-	              			<li><a href="#"><img src="<?php echo base_url() . 'assets/main/img/slide/' . $value;?>" alt="slider" /></a></li>
+
+foreach ($slidesPage as $value) {
+	$jsonValue = json_decode($value->config_data_json, true);
+	// echo $jsonValue['file_name']?>
+	              			<li><a href="#"><img src="<?php echo base_url() . 'uploads/config/slide/' . $jsonValue['file_tmp'];?>" alt="slider" /></a></li>
 	              		<?php }
 ?>
 

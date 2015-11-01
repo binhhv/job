@@ -50,18 +50,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
  */
 $route['default_controller'] = 'home';
-$route['404_override'] = '';
+$route['404_override'] = 'error_page/index';
 $route['translate_uri_dashes'] = FALSE;
 $route['loadview'] = 'welcome/loadview';
 $route['example'] = 'welcome/example';
 $route['logout'] = 'welcome/logout';
 $route['fblogin'] = 'welcome/fblogin';
-$route['404'] = 'welcome/page404';
+$route['404'] = 'error_page/index';
+//$route['error/404'] = 'error_page/index';
 $route['home'] = 'home/index';
 
 $route['test'] = 'contact/insertExample';
 $route['admin'] = 'admin/admin/index';
-$route['admin/login'] = 'admin/login';
+$route['page/login'] = 'admin/login';
 $route['admin/checkLogin'] = 'admin/login/checkLogin';
 $route['admin/logout'] = 'admin/login/logout';
 //jobseeker admin route
@@ -112,6 +113,9 @@ $route['admin/recruitment/createRecruitment'] = 'admin/admin_recruitment/createR
 $route['admin/recruitment/getListRecruitment/(:num)'] = 'admin/admin_recruitment/getListRecruitment/$1';
 $route['admin/recruitment/getRecruitmentApply/(:num)'] = 'admin/admin_recruitment/getRecruitmentApply/$1';
 $route['admin/recruitment/getListSalary'] = 'admin/admin_recruitment/getListSalary';
+$route['admin/recruitment-highlight'] = 'admin/admin_recruitment/recruitmentHighlight';
+$route['admin/recruitment/editShowRecruitment'] = 'admin/admin_recruitment/editShowRecruitment';
+$route['admin/recruitment/disabledRecruitment'] = 'admin/admin_recruitment/disabledRecruitment';
 //manager admin route
 $route['admin/manager'] = 'admin/admin_manager/index';
 $route['admin/manager/getListManager'] = 'admin/admin_manager/getListManager';
@@ -203,18 +207,42 @@ $route['admin/config/activeDeleteLogo'] = 'admin/admin_config/activeDeleteLogo';
 $route['admin/config/uploadLogo'] = 'admin/admin_config/uploadLogo';
 $route['admin/ads'] = 'admin/admin_config/ads';
 $route['admin/slide'] = 'admin/admin_config/slide';
-$route['admin/site'] = 'admin/admin_config/site';
+$route['admin/slogan-site'] = 'admin/admin_config/site';
 $route['admin/config/getListSlide/(:num)'] = 'admin/admin_config/getListSlide/$1';
 $route['admin/config/uploadSlide'] = 'admin/admin_config/uploadSlide';
 $route['admin/config/deleteSlide'] = 'admin/admin_config/deleteSlide';
 $route['admin/config/activeSlide/(:num)/(:num)'] = 'admin/admin_config/activeSlide/$1/$2';
 $route['admin/config/deactiveSlide/(:num)/(:num)'] = 'admin/admin_config/deactiveSlide/$1/$2';
-$route['admin/config/getListTitleSite'] = 'admin/admin_config/getListTitleSite';
-$route['admin/config/selectedTitleSite/(:num)/(:num)'] = 'admin/admin_config/selectedTitleSite/$1/$2';
+$route['admin/config/getListTitleSite/(:num)'] = 'admin/admin_config/getListTitleSite/$1';
+$route['admin/config/selectedTitleSite/(:num)/(:num)/(:num)'] = 'admin/admin_config/selectedTitleSite/$1/$2/$3';
 //$route['admin/config/unselectedTitleSite'] = 'admin/admin_config/unselectedTitleSite';
 $route['admin/config/deleteTitleSite'] = 'admin/admin_config/deleteTitleSite';
 $route['admin/config/createTitleSite'] = 'admin/admin_config/createTitleSite';
-
+$route['admin/adwords'] = 'admin/admin_config/adwords';
+$route['admin/title-site'] = 'admin/admin_config/title';
+$route['admin/aboutus-video'] = 'admin/admin_config/videoIntro';
+$route['admin/aboutus-management'] = 'admin/admin_config/structure';
+$route['admin/config/getListAdwords'] = 'admin/admin_config/getListAdwords';
+$route['admin/config/updateAdword'] = 'admin/admin_config/updateAdword';
+$route['admin/config/getListMember'] = 'admin/admin_config/getListMember';
+$route['admin/config/choiceMember/(:num)'] = 'admin/admin_config/choiceMember/$1';
+$route['admin/config/unchoiceMember/(:num)'] = 'admin/admin_config/unchoiceMember/$1';
+$route['admin/config/changeMember/(:num)/(:num)'] = 'admin/admin_config/changeMember/$1/$2';
+$route['admin/config/deleteMember'] = 'admin/admin_config/deleteMember';
+$route['admin/config/createMember'] = 'admin/admin_config/createMember';
+$route['admin/config/updateMember'] = 'admin/admin_config/updateMember';
+$route['admin/config/uploadVideo'] = 'admin/admin_config/uploadVideo';
+$route['admin/config/getListVideos'] = 'admin/admin_config/getListVideos';
+$route['admin/config/activeDeleteVideo'] = 'admin/admin_config/activeDeleteVideo';
+$route['admin/number-recruitment'] = 'admin/admin_config/numberRecruitment';
+$route['admin/config/getConfigNumRecruitment'] = 'admin/admin_config/getConfigNumRecruitment';
+$route['admin/config/updateConfigNumRecruitment'] = 'admin/admin_config/updateConfigNumRecruitment';
+$route['admin/image-recruitment'] = 'admin/admin_config/imageRecruitment';
+$route['admin/config/getImageRec'] = 'admin/admin_config/getImageRec';
+$route['admin/config/uploadImageRec'] = 'admin/admin_config/uploadImageRec';
+$route['admin/config/deleteImageRec'] = 'admin/admin_config/deleteImageRec';
+$route['admin/config/activeImageRec/(:num)'] = 'admin/admin_config/activeImageRec/$1';
+$route['admin/config/deactiveImageRec/(:num)'] = 'admin/admin_config/deactiveImageRec/$1';
 //mail admin
 $route['admin/mail/send-mail-jobseeker'] = 'admin/admin_mail/mailJobseeker';
 $route['admin/mail/send-mail-employer'] = 'admin/admin_mail/mailEmployer';
@@ -230,7 +258,7 @@ $route['admin/support/getListSupportChat'] = 'admin/admin_api/getListSupportChat
 $route['admin/getDataChartRecruitment'] = 'admin/admin_api/getDataChartRecruitment';
 $route['admin/getDataChartJobseekerEmployer'] = 'admin/admin_api/getDataChartJobseekerEmployer';
 //errors route
-$route['error/403'] = 'admin/admin_error/page403';
+$route['403'] = 'admin/admin_error/page403';
 $route['404_override'] = 'error_page/index';
 $route['file-not-found'] = 'error_page/filenotfound';
 //test some function
@@ -257,14 +285,16 @@ $route['admin/setup'] = 'admin/admin_comingsoon/index';
 $route['contact'] = 'contact/index';
 $route['contact/send-contact'] = 'contact/sendContact';
 $route['faq'] = 'faq/index';
-$route['about'] = 'home/about';
+$route['aboutus'] = 'home/about';
+$route['aboutus/(:any)'] = 'home/aboutTeam/$1';
 $route['about/term'] = 'home/term';
 $route['organizational-structure'] = 'home/structure';
 $route['service'] = 'home/service';
 $route['getNewsRecruitment'] = 'home/getNewsRecruitment';
+$route['adwords'] = 'home/adwords';
 
 //job manager
-$route['job/(:any)-(:num).html'] = 'job/job_detail/index/$2';
+$route['job/(:any)-(:num).html'] = 'job/job_detail/index/$2/$1';
 $route['job/getListDoconUser'] = 'job/job_detail/getListDoconUser';
 $route['job/getListCVUser'] = 'job/job_detail/getListCVUser';
 $route['job/getToken'] = 'job/job_detail/getToken';
@@ -310,3 +340,7 @@ $route['supportAPI/startChatWithSend'] = 'admin/admin_support/startChatWithSend'
 $route['supportAPI/startChatWithReply'] = 'admin/admin_support/startChatWithReply';
 $route['supportAPI/getMessageReply/(:any)/(:num)'] = 'admin/admin_support/getMessageReply/$1/$2';
 $route['supportAPI/getMessageReplyUser/(:any)/(:num)'] = 'admin/admin_support/getMessageReplyUser/$1/$2';
+
+//captchar API
+$route['captcha/createCaptcha'] = 'captcha/createCaptcha';
+$route['captcha/checkCaptcha/(:any)'] = 'captcha/checkCaptcha/$1';

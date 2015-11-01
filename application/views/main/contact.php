@@ -50,7 +50,7 @@
 					  <div class="form-group">
 					    <div class="col-sm-offset-2 col-sm-10">
 					    <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-					      <button type="submit" class="btn btn-default">Gửi</button>
+					      <button type="submit" class="btn btn-default btn-primary">Gửi</button>
 					    </div>
 					  </div>
 					</form>

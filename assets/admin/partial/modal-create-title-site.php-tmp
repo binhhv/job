@@ -1,6 +1,6 @@
 <section ng-controller="titleSiteController">
     <div class="modal-header">
-        <h3 class="modal-title">Tạo mới tiêu đề site.</h3>
+        <h3 class="modal-title">{{site.titleModal}}</h3>
     </div>
     <div class="modal-body">
             <form name="createTitleSiteForm" novalidate>
@@ -22,7 +22,7 @@
                         <div class="col-sm-12">
                             <div class="form-group text-right">
 
-                                <button class="btn btn-success" ng-click="createTitleSite(site)" ng-disabled="createTitleSiteForm.$invalid">Lưu</button>
+                                <button class="btn btn-success" ng-click="createTitleSite(site,option)" ng-disabled="createTitleSiteForm.$invalid">Lưu</button>
                                 <button class="btn btn-warning" ng-click="cancel()">Hủy</button>
                             </div>
                         </div>

@@ -1,4 +1,31 @@
+<?php $listAds = $this->globals->getAdsPage();
+$i = 1;
+$strAds = '';
+if (isset($listAds)) {
+	foreach ($listAds as $value) {
+		$adsJson = json_decode($value->config_data_json, true);
+		//print_r($adsJson['file_tmp']);
+		if ($i % 4 == 1) {
+			$strAds .= '<li><div class="row">';
+		}
+		$strAds .= '<div class="col-sm-3 col-xs-3 item-partner ">
+	              	<img src="' . base_url() . 'uploads/config/ads/' . $adsJson["file_tmp"] . '"' . '></div>';
+		if ($i % 4 == 0) {
+			$strAds .= '</div></li>';
+		}
+
+		$i++;
+	}
+}
+// $i--;
+// if ($i % 4 != 0) {
+// 	$strAds .= '</div></li>';
+// }
+//var_dump($strAds);
+?>
+<?php if (isset($listAds)) {?>
 <div class="container">
+
 	<div class="row">
 		<div class="col-sm-12 text-center">
 			<h5 class="partner-title">NHÀ TÀI TRỢ VÀ ĐỐI TÁC</h5>
@@ -7,8 +34,8 @@
 		<div class="col-sm-12 partner-box">
 			<div class="flexslider-partner" >
 	              <ul class="slides">
-
-	              			<li>
+	              			<?php echo $strAds;?>
+	              			<!-- <li>
 	              				<div class="row">
 	              					<div class="col-sm-3 col-xs-6 item-partner">
 	              						<img src="<?php echo base_url();?>assets/main/img/partner/image-partner.png" >
@@ -71,7 +98,7 @@
 	              						<img src="<?php echo base_url();?>assets/main/img/partner/image-partner.png" >
 	              					</div>
 	              				</div>
-	              			</li>
+	              			</li> -->
 
 	               <!--  <li><a href="gallery-single.htm"><img src="<?php echo base_url();?>assets/common/img/gallery/bg1.jpg" alt="slider" /></a></li>
 	                <li><a href="gallery-single.htm"><img src="<?php echo base_url();?>assets/common/img/gallery/bg2.jpg" alt="slider" /></a></li>
@@ -92,3 +119,5 @@
 		</div>
 	</div>
 	</div>
+<?php }
+?>

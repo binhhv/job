@@ -99,16 +99,35 @@
                 <li><a href="#"><img src="<?php echo base_url();?>assets/main/img/social/skype.png"></a></li>
                 <li><a href="#"><img src="<?php echo base_url();?>assets/main/img/social/youtube.png"></a></li>
             </ul>
+            <div class="">
+            <!-- <h2 class="margin-top-5" style="display: inline-block">HOTLINE</h2> -->
+             <h1 class="h1-hotline">HOTLINE : XX-XXX-XXXX-XX</h1>
+              <!-- <div class="border-bottom-title border-color-1"></div> -->
+            </div>
+
+
              <span class="copyrighttitle">Copyright 2015 JOB7VN Group | All Rights Reserved </span>
         </div>
          <div class="col-sm-6 col-md-6 col-xs-12 text-center">
+          <!-- <div class="col-sm-12 col-xs-12 text-left">
+           <h2>HOTLINE</h2>
+           <h1>XX-XXX-XXXX-XX</h1>
+           </div> -->
+           <div class="col-sm-12 col-xs-12">
+             <div class="fb-page" data-href="https://www.facebook.com/japanese.job" data-width="auto" data-height="150" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/japanese.job"><a href="https://www.facebook.com/japanese.job">Tuyển dụng nhân sự tiếng Nhật ở Việt Nam（ベトナムでの日本語関係の仕事の募集）</a></blockquote></div></div>
+           </div>
+         <!--  <div class="col-sm-12 col-xs-12">
             <div class="hotline">
-            <h2>HOTLINE</h2>
+            <h2>HOTLINE</h2>  <h1>XX-XXX-XXXX-XX</h1>
             <div class="border-bottom-title border-color-1"></div>
             </div>
             <div class="phone text-left">
             <h1>XX-XXX-XXXX-XX</h1>
             </div>
+          </div> -->
+
+
+
         </div>
 
     </div>
@@ -121,26 +140,29 @@
 
 
 <?php if (isset($popup)) {
-	echo $popup;
+	//echo $popup;
+	include 'popup.php';
 }
 ?>
 <script type="text/javascript">
 $(document).ready(function() {
  // alert("123123");
-var h = document.documentElement.clientHeight;
+ var w = document.documentElement.clientWidth;
+  var h = document.documentElement.clientHeight;
 //window.innerHeight;
 
     h = (h*80)/100;
     //alert(h+'');
-    $('<style type="text/css">#main-page,.contact-page,.job-detail {min-height:'+h+'px; }</style>').appendTo($('head'));
+    $('<style type="text/css">#main-page,.contact-page,.job-detail {min-height:'+h+'px; } footer{width:'+w+'px;}</style>').appendTo($('head'));
 
 });
 $( window ).resize(function() {
+  var w = document.documentElement.clientWidth;
   var h = document.documentElement.clientHeight;
 //window.innerHeight;
 
   h = (h*80)/100;
-  $('<style type="text/css">#main-page,.contact-page,.job-detail {min-height:'+h+'px; }</style>').appendTo($('head'));
+  $('<style type="text/css">#main-page,.contact-page,.job-detail {min-height:'+h+'px; } footer{width:'+w+'px;}</style>').appendTo($('head'));
 
 
 });

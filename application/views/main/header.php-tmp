@@ -31,22 +31,24 @@
 					</div>
 					<a href="<?php echo base_url();?>" title="Jobify Darker" rel="home" class="site-branding">
 						<h1 class="site-title">
-							<img  src="<?php if (isset($logo)) {
-	echo base_url().'assets/main/'.$logo;
+							<img class="img-logo-page"  src="<?php
+$logoJson = json_decode($this->globals->getLogoPage(), true);
+if (isset($logoJson)) {
+	echo base_url()."uploads/config/logo/".$logoJson['file_tmp'];
 }
 ?>" width="<?php if (isset($logoWidth)) {
 	echo $logoWidth;
-}
+} else {echo '170px';}
 ?>" height="<?php if (isset($logoHeight)) {
-	echo $logoHeight;
-}
+	echo '37px';
+} else {echo '37px';}
 ?>" alt="JOB7VN">
 							<span <?php if (isset($showTitle) && $showTitle) {
 	echo 'class="web-title"';
 }
-?>>Tuyển dụng nhân sự tiếng Nhật</span>
+?>><?php echo $this->globals->getSloganPage();?></span>
 						</h1>
-						<!-- <h2 class="site-description">Job Searching Just Got Easy</h2> -->
+						<!--Tuyển dụng nhân sự tiếng Nhật <h2 class="site-description">Job Searching Just Got Easy</h2> -->
 					</a>
 
 					<nav id="site-navigation" class="site-primary-navigation slide-left">
@@ -71,18 +73,26 @@
 ?>  menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-2075">
 				<a href="<?php echo base_url();?>"><img class="logo-allshigoto" src="<?php echo base_url()?>assets/main/img/header/home.png"></a>
 			</li>
-			<li id=" menu-item-2075" class="  <?php if (isset($menu) && $menu == 'aboutus') {
+				<li id="menu-item-1897" class="<?php if (isset($menu) && $menu == 'aboutus') {
+	echo 'active-menu';
+}
+?> menu-item menu-item-type-post_type menu-item-object-page menu-item-1897"><a href="<?php echo base_url('aboutus')?>">Về chúng tôi</a></li>
+			<!-- <li id=" menu-item-2075" class="  <?php if (isset($menu) && $menu == 'aboutus') {
 	echo 'active-menu';
 }
 ?> menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children  menu-item-2075"><a href="#">Về chúng tôi<i class="fa fa-chevron-down"></i></a>
 				<ul class="sub-menu">
 					<li id="menu-item-2076" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2076"><a href="<?php echo base_url('about')?>">Giới thiệu</a></li>
-					<!-- <li id="menu-item-2077" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2077"><a href="job-region/palo-alto/index.html">Tiêu chí</a></li> -->
+					<li id="menu-item-2077" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2077"><a href="job-region/palo-alto/index.html">Tiêu chí</a>
 					<li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="<?php echo base_url('service')?>">Tổng quan các gói dịch vụ</a></li>
 					<li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="<?php echo base_url('organizational-structure')?>">Cơ cấu tổ chức</a></li>
-					<!-- <li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="<?php echo base_url('contact');?>">Liên hệ</a></li> -->
+					 <li id="menu-item-2148" class="menu-item menu-item-type-taxonomy menu-item-object-job_listing_region menu-item-2148"><a href="<?php echo base_url('contact');?>">Liên hệ</a></li>
 				</ul>
-			</li>
+			</li> -->
+	<li id="menu-item-1897" class="<?php if (isset($menu) && $menu == 'service') {
+	echo 'active-menu';
+}
+?> menu-item menu-item-type-post_type menu-item-object-page menu-item-1897"><a href="<?php echo base_url('service')?>">Dịch vụ</a></li>
 	<li id="menu-item-1897" class="<?php if (isset($menu) && $menu == 'search') {
 	echo 'active-menu';
 }

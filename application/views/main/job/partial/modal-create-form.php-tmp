@@ -252,7 +252,7 @@ if (isset($listCountry)) {
                       <div class="token-create-form">
                         <input type="hidden" name="province">
                          <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" /></div>
-                          <button type="button" class="btn btn-default"
+                          <button type="button" class="btn btn-danger"
                         data-dismiss="modal">
                             Đóng
                             </button>

@@ -21,6 +21,12 @@ class UtilModel extends CI_Model {
 			$code_genaral = "ADS".$id.$randomString;
 		} else if ($type == "site") {
 			$code_genaral = "SITE".$id.$randomString;
+		} else if ($type == "member") {
+			$code_genaral = "MEMBER".$id.$randomString;
+		} else if ($type == "video") {
+			$code_genaral = "VIDEO".$id.$randomString;
+		} else if ($type == "imageRec") {
+			$code_genaral = "IMGREC".$id.$randomString;
 		}
 		return $code_genaral;
 	}

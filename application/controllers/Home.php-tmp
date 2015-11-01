@@ -105,9 +105,12 @@ class Home extends CI_Controller {
 		echo json_encode(array("status" => "true"));
 	}
 	function about() {
-		$user   = (isset($this->session->userdata['user']))?$this->session->userdata['user']:null;
-		$head   = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Contact'), TRUE);
-		$header = $this->load->view('main/header', array(
+		$user        = (isset($this->session->userdata['user']))?$this->session->userdata['user']:null;
+		$styleOption = array(
+			'assets/main/css/style-about.css', 'assets/main/owl-carousel/owl.carousel.css');
+		$scriptOption = array('assets/main/owl-carousel/owl.carousel.min.js', 'assets/main/js/about.js');
+		$head         = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Contact', 'styleOption' => $styleOption), TRUE);
+		$header       = $this->load->view('main/header', array(
 				'logo'       => 'img/header/allSHIGOTO.png',
 				'showTitle'  => true,
 				'logoWidth'  => '170px',
@@ -121,10 +124,39 @@ class Home extends CI_Controller {
 			'name' => $this->security->get_csrf_token_name(),
 			'hash' => $this->security->get_csrf_hash(),
 		);
-		$content = $this->load->view('main/about', array('csrf' => $csrf), TRUE);
-		$footer  = $this->load->view('main/footer', array(), TRUE);
-		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
+		$content = $this->load->view('main/about', array('csrf'          => $csrf), TRUE);
+		$footer  = $this->load->view('main/footer', array('scriptOption' => $scriptOption), TRUE);
+		$this->load->view('main/layout', array('head'                    => $head, 'header'                    => $header, 'content'                    => $content, 'footer'                    => $footer));
 
+	}
+	function aboutTeam($code) {
+		if ($code == "WA09423B63D") {
+			$user        = (isset($this->session->userdata['user']))?$this->session->userdata['user']:null;
+			$styleOption = array(
+				'assets/main/css/style-about.css');
+			$scriptOption = array();
+			$head         = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Contact', 'styleOption' => $styleOption), TRUE);
+			$header       = $this->load->view('main/header', array(
+					'logo'       => 'img/header/allSHIGOTO.png',
+					'showTitle'  => true,
+					'logoWidth'  => '170px',
+					'logoHeight' => '70px',
+					'menu'       => 'aboutus',
+					'user'       => $user,
+				), TRUE);
+			//$ab = m;
+
+			$csrf = array(
+				'name' => $this->security->get_csrf_token_name(),
+				'hash' => $this->security->get_csrf_hash(),
+			);
+			$content = $this->load->view('main/about-team', array('csrf'     => $csrf), TRUE);
+			$footer  = $this->load->view('main/footer', array('scriptOption' => $scriptOption), TRUE);//'scriptOption' => $scriptOption
+			$this->load->view('main/layout', array('head'                    => $head, 'header'                    => $header, 'content'                    => $content, 'footer'                    => $footer));
+
+		} else {
+			redirect(base_url('error/404'));
+		}
 	}
 	function structure() {
 		$user   = (isset($this->session->userdata['user']))?$this->session->userdata['user']:null;
@@ -149,14 +181,17 @@ class Home extends CI_Controller {
 
 	}
 	function service() {
-		$user   = (isset($this->session->userdata['user']))?$this->session->userdata['user']:null;
-		$head   = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Contact'), TRUE);
-		$header = $this->load->view('main/header', array(
+		$styleOption = array(
+			'assets/main/css/style-about.css');
+		$scriptOption = array('assets/main/js/service.js');
+		$user         = (isset($this->session->userdata['user']))?$this->session->userdata['user']:null;
+		$head         = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Contact', 'styleOption' => $styleOption), TRUE);
+		$header       = $this->load->view('main/header', array(
 				'logo'       => 'img/header/allSHIGOTO.png',
 				'showTitle'  => true,
 				'logoWidth'  => '170px',
 				'logoHeight' => '70px',
-				'menu'       => 'aboutus',
+				'menu'       => 'service',
 				'user'       => $user,
 			), TRUE);
 		//$ab = m;
@@ -165,16 +200,20 @@ class Home extends CI_Controller {
 			'name' => $this->security->get_csrf_token_name(),
 			'hash' => $this->security->get_csrf_hash(),
 		);
-		$content = $this->load->view('main/service', array('csrf' => $csrf), TRUE);
-		$footer  = $this->load->view('main/footer', array(), TRUE);
-		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
+		$content = $this->load->view('main/service', array('csrf'        => $csrf), TRUE);
+		$footer  = $this->load->view('main/footer', array('scriptOption' => $scriptOption), TRUE);
+		$this->load->view('main/layout', array('head'                    => $head, 'header'                    => $header, 'content'                    => $content, 'footer'                    => $footer));
 
 	}
 
 	function getNewsRecruitment() {
-		$email = $this->security->xss_clean($this->input->post('email-popup-user', true));
-		$data  = array(
+		$firstname = $this->security->xss_clean($this->input->post('firstname', true));
+		$lastname  = $this->security->xss_clean($this->input->post('lastname', true));
+		$email     = $this->security->xss_clean($this->input->post('email-popup-user', true));
+		$data      = array(
 			'rece_email'      => $email,
+			'rece_first_name' => $firstname,
+			'rece_last_name'  => $lastname,
 			'rece_is_reply'   => 0,
 			'rece_is_delete'  => 0,
 			'rece_created_at' => date('Y-m-d H:m'));
@@ -205,6 +244,29 @@ class Home extends CI_Controller {
 			'hash' => $this->security->get_csrf_hash(),
 		);
 		$content = $this->load->view('main/term', array('csrf' => $csrf), TRUE);
+		$footer  = $this->load->view('main/footer', array(), TRUE);
+		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
+
+	}
+	function adwords() {
+		$styleOption = array('assets/main/css/style-adwords.css');
+		$user        = (isset($this->session->userdata['user']))?$this->session->userdata['user']:null;
+		$head        = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Contact', 'styleOption' => $styleOption), TRUE);
+		$header      = $this->load->view('main/header', array(
+				'logo'       => 'img/header/allSHIGOTO.png',
+				'showTitle'  => true,
+				'logoWidth'  => '170px',
+				'logoHeight' => '70px',
+				'menu'       => '',
+				'user'       => $user,
+			), TRUE);
+		//$ab = m;
+
+		$csrf = array(
+			'name' => $this->security->get_csrf_token_name(),
+			'hash' => $this->security->get_csrf_hash(),
+		);
+		$content = $this->load->view('main/adwords', array('csrf' => $csrf), TRUE);
 		$footer  = $this->load->view('main/footer', array(), TRUE);
 		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
 

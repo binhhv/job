@@ -20,6 +20,18 @@ class Job extends CI_Controller {
 
 	}
 	function index($value1, $value2, $value3 = "", $value4 = "") {
+		$scriptJob = array(
+			"assets/main/js/map/markerwithlabel.js",
+			"assets/main/chosen/chosen.jquery.js",
+			"assets/main/chosen/prism.js",
+			"server_upload/js/vendor/jquery.ui.widget.js",
+			"server_upload/js/jquery.iframe-transport.js",
+			"server_upload/js/jquery.fileupload.js");
+		$styleJob = array(
+			// "assets/main/chosen/style.css",
+			"assets/main/chosen/prism.css",
+			"assets/main/chose/chosen.css");
+
 		$keyArr = array(array("p" => 0),
 			array("s" => 0),
 			array("x" => -1),
@@ -49,24 +61,39 @@ class Job extends CI_Controller {
 			//$keyArr = null;
 
 		}
-
+		$title = '';
 		if (isset($value1) && strlen($value1) >= 0) {
 			$routeUrl = base_url('job') . '/' . $value1 . '/';
 			switch ($value1) {
 			case 'new-jobs':
 				$province = $this->recruitment->getAllProvince();
+				$centerMap = json_encode($this->job->getCenterMap($keyArr[0]['p']));
+				$jobMap = json_encode($this->job->getAllRecruitmentForMap());
+				$title .= 'Việc làm mới nhất';
 				break;
 			case 'jobs-at-japanese':
 				$province = $this->recruitment->getAllProvinceByCountry(2);
+				$centerMap = json_encode(array('province_lat' => 35.693, 'province_long' => 139.768));
+				$jobMap = json_encode($this->job->getAllRecruitmentCountry(2));
+				$title .= 'Việc làm ở Nhật Bản';
 				break;
 			case 'jobs-at-south':
 				$province = $this->recruitment->getAllProvinceByCountryRegion(1, 1);
+				$centerMap = json_encode(array('province_lat' => 10.7761, 'province_long' => 106.696));
+				$jobMap = json_encode($this->job->getAllRecruitmentRegion(1));
+				$title .= 'Việc làm ở miền Nam';
 				break;
 			case 'jobs-at-north':
 				$province = $this->recruitment->getAllProvinceByCountryRegion(3, 1);
+				$centerMap = json_encode(array('province_lat' => 21.0314, 'province_long' => 105.853));
+				$jobMap = json_encode($this->job->getAllRecruitmentRegion(3));
+				$title .= 'Việc làm ở miền Bắc';
 				break;
 			case 'jobs-at-middle':
 				$province = $this->recruitment->getAllProvinceByCountryRegion(2, 1);
+				$centerMap = json_encode(array('province_lat' => 16.1239, 'province_long' => 108.118));
+				$jobMap = json_encode($this->job->getAllRecruitmentRegion(2));
+				$title .= 'Việc làm ở miền Trung';
 				break;
 			default:
 				redirect(base_url('search/all'));
@@ -128,7 +155,7 @@ class Job extends CI_Controller {
 
 		$user = (isset($this->session->userdata['user'])) ? $this->session->userdata['user'] : null;
 
-		$head = $this->load->view('main/head', array('user' => $user, 'titlePage' => 'JOB7VN Group|Contact'), TRUE);
+		$head = $this->load->view('main/head', array('styleJob' => $styleJob, 'scriptJob' => $scriptJob, 'user' => $user, 'title' => $title), TRUE);
 		$searchJobs = $this->load->view('main/search-jobs', array(
 			'province' => $province,
 			'jobform' => $arr_job_form,
@@ -149,10 +176,10 @@ class Job extends CI_Controller {
 			'menu' => 'jobs',
 		), TRUE);
 
-		$content = $this->load->view('main/job/jobs', array('searchJobs' => $searchJobs, 'listJob' => $jobSearchPagingnation, 'numjob' => count($jobSearch), 'pagination' => $pagination,
+		$content = $this->load->view('main/job/jobs', array('centerMap' => $centerMap, 'jobMap' => $jobMap, 'searchJobs' => $searchJobs, 'listJob' => $jobSearchPagingnation, 'numjob' => count($jobSearch), 'pagination' => $pagination,
 			'value4' => $value4, 'keyArr' => $keyArr), TRUE);
 		$scriptOption = array('assets/main/js/fix-content-list-job.js');
 		$footer = $this->load->view('main/footer', array('scriptOption' => $scriptOption), TRUE);
-		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
+		$this->load->view('main/layout', array('isGray' => true, 'head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
 	}
 }

@@ -30,6 +30,18 @@
 
 
 @media (max-width: 767px) {
+	.title-job-scroll{
+		padding-top: 0;
+	height: auto;
+}
+	.site-header{
+	width: 100%;
+	position: relative; ;
+	top:0;
+		}
+	body{
+		padding-top: 0;
+	}
 	.site-title span.web-title{
 		text-align: left;
 	}

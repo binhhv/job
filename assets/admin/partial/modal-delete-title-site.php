@@ -17,7 +17,7 @@
                         <div class="col-sm-12">
                             <div class="form-group text-right">
 
-                                <button class="btn btn-success" ng-click="deleteTitleSite(site);" ng-disabled="disabled_modal" >Xóa</button>
+                                <button class="btn btn-success" ng-click="deleteTitleSite(site,option);" ng-disabled="disabled_modal" >Xóa</button>
                                 <button class="btn btn-warning" ng-click="cancel()" ng-disabled="disabled_modal">Hủy bỏ</button>
                             </div>
                         </div>

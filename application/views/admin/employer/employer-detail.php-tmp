@@ -217,17 +217,17 @@ if (isset($employer)) {
                             <tr>
                               <th>Mã số</th>
                               <th>Tiêu đề tin</th>
-                              <th>Mức lương</th>
+                              <!-- <th>Mức lương</th> -->
                               <th class="text-center">Hình thức công việc</th>
                               <th class="text-center">Trạng thái</th>
-                              <th class="text-center">Ngày đăng tin</th>
+                              <!-- <th class="text-center">Ngày đăng tin</th> -->
                               <th class="text-center">Số lượng ứng tuyển</th>
                               <th class="text-center"></th>
                             </tr>
                             <tr ng-repeat="data in filtered = (pagedItems | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" data-id="{{data.account_id}}">
                               <td>{{data.rec_code}}</td><!--{{($index + ((currentPage -1)* entryLimit)) + 1}}-->
                               <td>{{data.rec_title | cut:true:20:' ...'}}</td>
-                              <td>{{data.salary_value}} </td>
+                              <!-- <td>{{data.salary_value}} </td> -->
                               <td class="text-center">
                                       {{data.fjob_type}} - {{data.jcform_type}}
                               </td>
@@ -238,7 +238,7 @@ if (isset($employer)) {
                               <!-- {{data.account_is_disabled}} -->
                               </td>
 
-                              <td class="text-center">{{formatDate(data.rec_created_at) | date: "dd/MM/yyyy"}}</td>
+                              <!-- <td class="text-center">{{formatDate(data.rec_created_at) | date: "dd/MM/yyyy"}}</td> -->
                               <td class="text-center">{{data.numapply}}</td>
                               <td class="text-center">
                               <!-- <label class="btn btn-xs btn-danger" ng-show="data.rec_is_approve == false" ng-click="approveRecruitment(data.rec_id)">duyệt tin</label> -->

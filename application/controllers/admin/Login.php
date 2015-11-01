@@ -34,7 +34,7 @@ class Login extends CI_Controller {
 				'name' => $this->security->get_csrf_token_name(),
 				'hash' => $this->security->get_csrf_hash(),
 			);
-			$this->load->view('admin/login/layout', array('titlePage' => 'ADMIN JOB7VN|Login', 'page' => 'job7vn', 'csrf' => $csrf));
+			$this->load->view('admin/login/layout', array('titlePage' => 'ADMIN JOB7VN|Login', 'page' => 'allSHIGOTO', 'csrf' => $csrf));
 		} else {
 			if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
 				redirect(base_url('error/403'));
@@ -95,7 +95,7 @@ class Login extends CI_Controller {
 		$this->session->sess_destroy(); // Unset session of user
 		$cookiename = "siteAuth";
 		setcookie($cookiename, 'user=' . "", time() - 3600); // Unset cookie of user
-		redirect(base_url('admin'));
+		redirect(base_url());
 	}
 
 }

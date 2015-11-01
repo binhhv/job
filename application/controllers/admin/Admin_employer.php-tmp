@@ -9,10 +9,17 @@ class Admin_employer extends CI_Controller {
 		$this->load->model('admin/Jobseeker_model', 'jobseeker');
 		$this->load->model('admin/Mail_model', 'mail');
 		$this->load->model('UtilModel', 'util');
+		// if (!$this->session->userdata['user']['isLogged']) {
+		// 	redirect(base_url() . 'admin/login'); // no session established, kick back to login page
+		// } else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
+		// 	redirect(base_url('error/403'));
+		// }
 		if (!$this->session->userdata['user']['isLogged']) {
-			redirect(base_url().'admin/login');// no session established, kick back to login page
+			redirect(base_url('404'));
+			//redirect(base_url() . 'admin/login'); // no session established, kick back to login page
 		} else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
-			redirect(base_url('error/403'));
+			//redirect(base_url('error/403'));
+			redirect(base_url('404'));
 		}
 	}
 	function index() {
@@ -311,11 +318,15 @@ class Admin_employer extends CI_Controller {
 		//echo json_encode(true);
 	}
 	function approveEmployerRecruitment() {
-		$rec    = json_decode($this->input->post('rec'), true);
-		$idrec  = $rec['rec_id'];
-		$iduser = $this->session->userdata['user']['id'];
-		$data   = array(
-			'rec_is_approve' => true,
+		$rec             = json_decode($this->input->post('rec'), true);
+		$idrec           = $rec['rec_id'];
+		$is_show_top     = $rec['is_show_top'];
+		$is_show_another = $rec['is_show_another'];
+		$iduser          = $this->session->userdata['user']['id'];
+		$data            = array(
+			'rec_is_approve'      => true,
+			'rec_is_show_top'     => $is_show_top,
+			'rec_is_show_another' => $is_show_another,
 		);
 		$output = $this->employer->approveEmployerRecruitment($data, $idrec, $iduser);
 		echo json_encode($output);

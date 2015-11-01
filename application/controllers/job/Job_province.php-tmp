@@ -19,6 +19,18 @@ class Job_province extends CI_Controller {
 	}
 
 	function index($provinceName, $id) {
+		$scriptJob = array(
+			"assets/main/js/map/markerwithlabel.js",
+			"assets/main/chosen/chosen.jquery.js",
+			"assets/main/chosen/prism.js",
+			"server_upload/js/vendor/jquery.ui.widget.js",
+			"server_upload/js/jquery.iframe-transport.js",
+			"server_upload/js/jquery.fileupload.js");
+		$styleJob = array(
+			// "assets/main/chosen/style.css",
+			"assets/main/chosen/prism.css",
+			"assets/main/chose/chosen.css");
+
 		$province                = $this->jobprovince->getProvince($id);
 		$listRecruitmentProvince = $this->jobprovince->getListRecruitmentProvince($id);
 		$url                     = 'province/'.$provinceName.'-'.$id.'.html';
@@ -61,7 +73,7 @@ class Job_province extends CI_Controller {
 
 		$user = (isset($this->session->userdata['user']))?$this->session->userdata['user']:null;
 
-		$head             = $this->load->view('main/head', array('user' => $user, 'titlePage' => 'JOB7VN Group|Contact'), TRUE);
+		$head             = $this->load->view('main/head', array('styleJob' => $styleJob, 'scriptJob' => $scriptJob, 'user' => $user, 'titlePage' => 'JOB7VN Group|Contact'), TRUE);
 		$searchHorizontal = $this->load->view('main/search-horizontal', array(), TRUE);
 		$header           = $this->load->view('main/header', array(
 				'logo'       => 'img/header/allSHIGOTO.png',
@@ -72,10 +84,13 @@ class Job_province extends CI_Controller {
 				'menu'       => '',
 			), TRUE);
 
-		$content = $this->load->view('main/job/job-province', array('searchHorizontal' => $searchHorizontal, 'province' => $province, 'listJob' => $listRecruitmentProvincePage, 'page' => $page, 'pagination' => $pagination, 'numjob' => count($listRecruitmentProvince)), TRUE);
+		$centerMap = json_encode($province);
+		$jobMap    = json_encode($this->job->getAllRecruitmentForMap());
+		//$jobSames = $this->job->getSameRecruitment($job);
+		$content = $this->load->view('main/job/job-province', array('centerMap' => $centerMap, 'jobMap' => $jobMap, 'searchHorizontal' => $searchHorizontal, 'province' => $province, 'listJob' => $listRecruitmentProvincePage, 'page' => $page, 'pagination' => $pagination, 'numjob' => count($listRecruitmentProvince)), TRUE);
 
 		$footer = $this->load->view('main/footer', array(), TRUE);
-		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
+		$this->load->view('main/layout', array('isGray' => true, 'head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
 
 	}
 }

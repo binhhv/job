@@ -37,7 +37,11 @@
               <li <?php if (isset($sub) && $sub == 'recruitmentCreate') {
 	echo "class=\"active\"";
 }
-?>><a href="<?php echo base_url('admin/recruitment');?>"><i class="fa fa-circle-o"></i>Tạo tin tuyển dụng</a></li>
+?>><a href="<?php echo base_url('admin/recruitment');?>"><i class="fa fa-circle-o"></i> Tạo tin tuyển dụng</a></li>
+<li <?php if (isset($sub) && $sub == 'recruitmentHighLight') {
+	echo "class=\"active\"";
+}
+?>><a href="<?php echo base_url('admin/recruitment-highlight');?>"><i class="fa fa-circle-o"></i> Tin tuyển dụng hiển thị</a></li>
                 <li <?php if (isset($sub) && $sub == 'recruitmentActive') {
 	echo "class=\"active\"";
 }
@@ -173,6 +177,14 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
+               <li  <?php if (isset($sub) && $sub == 'recruitmentConfig') {
+	echo "class=\"active\"";
+}
+?> ><a href="<?php echo base_url('admin/number-recruitment')?>"><i class="fa fa-circle-o"></i> Số tin tuyển dụng hiển thị</a></li>
+ <li  <?php if (isset($sub) && $sub == 'recruitmentImage') {
+	echo "class=\"active\"";
+}
+?> ><a href="<?php echo base_url('admin/image-recruitment')?>"><i class="fa fa-circle-o"></i> Hình nền tin tuyển dụng</a></li>
                 <li  <?php if (isset($sub) && $sub == 'ads') {
 	echo "class=\"active\"";
 }
@@ -188,7 +200,40 @@
                 <li  <?php if (isset($sub) && $sub == 'titleSite') {
 	echo "class=\"active\"";
 }
-?> ><a href="<?php echo base_url('admin/site')?>"><i class="fa fa-circle-o"></i> Thay đổi tiêu đề website</a></li>
+?> ><a href="<?php echo base_url('admin/title-site')?>"><i class="fa fa-circle-o"></i> Thay đổi tiêu đề website</a></li>
+<li  <?php if (isset($sub) && $sub == 'slogan') {
+	echo "class=\"active\"";
+}
+?> ><a href="<?php echo base_url('admin/slogan-site')?>"><i class="fa fa-circle-o"></i> Thay đổi slogan website</a></li>
+<li  <?php if (isset($sub) && $sub == 'aboutus') {
+	echo "class=\"active\"";
+}
+?> ><a href="#"><i class="fa fa-circle-o"></i> Quản lý trang "About us"<i class="fa fa-angle-left pull-right"></i></a>
+
+<ul class="treeview-menu">
+                    <li
+                    <?php if (isset($subChild) && $subChild == 'upvideo') {
+	echo "class=\"active\"";
+}
+?>
+                    ><a href="<?php echo base_url('admin/aboutus-video')?>"><i class="fa fa-circle-o"></i>Video giới thiệu</a></li>
+                    <li <?php if (isset($subChild) && $subChild == 'structure') {
+	echo "class=\"active\"";
+}
+?>>
+                      <a href="<?php echo base_url('admin/aboutus-management')?>"><i class="fa fa-circle-o"></i>Đại diện ban quản trị</a>
+                      <!-- <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                      </ul> -->
+                    </li>
+                  </ul>
+
+</li>
+<li  <?php if (isset($sub) && $sub == 'adwords') {
+	echo "class=\"active\"";
+}
+?> ><a href="<?php echo base_url('admin/adwords')?>"><i class="fa fa-circle-o"></i> Thay đổi nội dung quảng cáo</a></li>
                 <!-- <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Thay đổi footer</a></li>
                 <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Thay đổi trang giới thiệu</a></li> -->
               </ul>

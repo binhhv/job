@@ -14,10 +14,17 @@ class Admin_mail extends CI_Controller {
 		$this->load->model('admin/Admin_mail_model', 'mailmd');
 		$this->load->model('admin/Category_model', 'category');
 		$this->load->model('UtilModel', 'util');
+		// if (!$this->session->userdata['user']['isLogged']) {
+		// 	redirect(base_url() . 'admin/login'); // no session established, kick back to login page
+		// } else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
+		// 	redirect(base_url('error/403'));
+		// }
 		if (!$this->session->userdata['user']['isLogged']) {
-			redirect(base_url() . 'admin/login'); // no session established, kick back to login page
+			redirect(base_url('404'));
+			//redirect(base_url() . 'admin/login'); // no session established, kick back to login page
 		} else if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
-			redirect(base_url('error/403'));
+			//redirect(base_url('error/403'));
+			redirect(base_url('404'));
 		}
 	}
 	function mailJobseeker() {

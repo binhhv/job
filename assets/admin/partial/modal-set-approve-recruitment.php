@@ -8,7 +8,21 @@
                     <div class="row">
 
                         <div class="col-sm-12">
-                        Bạn có muốn duyệt tin tuyển dụng <label class="text-danger">({{recruitment.rec_title}})</label> ?
+                        Bạn có muốn duyệt tin tuyển dụng :  <label class="text-danger">({{recruitment.rec_title}})</label> ?
+                        </div>
+                        <div class="form-group col-sm-12">
+                                <label class="control-label" for="firstname">Hiển thị tin tuyển dụng</label>
+                                <div class="controls">
+                                    <label>
+                                        <input type="checkbox" ng-model="recruitment.is_show_top" >
+                                        Hiển thị trên trang top.
+                                    </label>
+                                    &nbsp;
+                                    <label>
+                                        <input type="checkbox" ng-model="recruitment.is_show_another" >
+                                        Hiển thị trên trang khác.
+                                    </label>
+                                </div>
                         </div>
                     </div>
 

@@ -10,17 +10,29 @@ class Job_detail extends CI_Controller {
 		//$this->load->helper('url');
 		$this->load->model('Contact_model', 'contact');
 		$this->load->model('job/Job_model', 'job');
+		$this->load->model('Recruitment_model', 'recruitment');
 		$this->load->helper('security');
 		$this->load->helper(array('form', 'url', 'cookie'));
 		$this->load->library(array('form_validation', 'session'));
+		// $this->load->library('../controllers/captcha');
+		//$this->load->controller('captcha', 'captcha');
+		//require_once '../captcha.php';
 
 	}
-	function index($job = null) {
+	function index($job = null, $titleJob = null) {
 // 		<script src="js/vendor/jquery.ui.widget.js"></script>
 		// <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
 		// <script src="js/jquery.iframe-transport.js"></script>
 		// <!-- The basic File Upload plugin -->
 		// <script src="js/jquery.fileupload.js"></script>
+		if (isset($job)) {
+			$this->job->updateViewRecruitment('recruitment', 'rec_view', 'rec_id', $job);}
+		$protocol = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
+		$base_url = $protocol . "://" . $_SERVER['HTTP_HOST'];
+		$complete_url = $base_url . $_SERVER["REQUEST_URI"];
+
+		//return $complete_url;
+
 		$user = (isset($this->session->userdata['user'])) ? $this->session->userdata['user'] : null;
 		$scriptJob = array(
 			"assets/main/js/map/markerwithlabel.js",
@@ -33,7 +45,24 @@ class Job_detail extends CI_Controller {
 			// "assets/main/chosen/style.css",
 			"assets/main/chosen/prism.css",
 			"assets/main/chose/chosen.css");
-		$head = $this->load->view('main/head', array('user' => $user, 'scriptJob' => $scriptJob, 'styleJob' => $styleJob, 'titlePage' => 'JOB7VN Group|Contact'), TRUE);
+		$arr_job_form = $this->recruitment->getAllJob_Form();
+		$job_form_child = $this->recruitment->getAllJob_Form_Child();
+		$job_level = $this->recruitment->getAllJob_Job_Level();
+		$salary = $this->recruitment->getAllJob_Salary();
+		$province = $this->recruitment->getAllProvince();
+		$career = $this->recruitment->getAllJob_Career();
+		//var_dump($keyArr[0]['p']);
+		$searchHorizontal = $this->load->view('main/search-horizontal', array(
+			'province' => $province,
+			'jobform' => $arr_job_form,
+			'jobformchild' => $job_form_child,
+			'salary' => $salary,
+			'level' => $job_level,
+			'career' => $career,
+			'keyArr' => null,
+			'keyWord' => ''), TRUE);
+
+		$head = $this->load->view('main/head', array('user' => $user, 'scriptJob' => $scriptJob, 'styleJob' => $styleJob, 'title' => str_replace('-', ' ', $titleJob)), TRUE);
 		$header = $this->load->view('main/header', array(
 			'logo' => 'img/header/allSHIGOTO.png',
 			'showTitle' => true,
@@ -54,6 +83,7 @@ class Job_detail extends CI_Controller {
 		if (isset($job)) {
 			$jobDetail = $this->job->getDetailRecruitment($job);
 			$centerMap = json_encode($this->job->getCenterMapFromRecruitment($job));
+			$listCenterMap = json_encode($this->job->getListCenterMapFromRecruitment($job));
 			$jobMap = json_encode($this->job->getAllRecruitmentForMap());
 			$jobSames = $this->job->getSameRecruitment($job);
 		} else {
@@ -61,6 +91,7 @@ class Job_detail extends CI_Controller {
 			$centerMap = null;
 			$jobMap = null;
 			$jobSames = null;
+			$listCenterMap = null;
 		}
 		if (isset($user)) {
 			$docs = $this->job->getListDoconUser($user['id']);
@@ -72,15 +103,18 @@ class Job_detail extends CI_Controller {
 		$content = $this->load->view('main/job/job', array('job' => $job,
 			'jobDetail' => $jobDetail,
 			'centerMap' => $centerMap,
+			'listCenterMap' => $listCenterMap,
+			'urlJob' => $complete_url,
 			'jobMap' => $jobMap,
 			'jobSames' => $jobSames,
 			'user' => $user,
 			'csrf' => $csrf,
 			'docs' => $docs,
-			'cvs' => $cvs), TRUE);
+			'cvs' => $cvs,
+			'searchHorizontal' => $searchHorizontal), TRUE);
 
 		$footer = $this->load->view('main/footer', array(), TRUE);
-		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
+		$this->load->view('main/layout', array('isGray' => true, 'head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
 
 	}
 	function getListDoconUser() {

@@ -11,7 +11,7 @@
 			<div class="col-sm-12">
 			<button class="btn-employer background-color-2 text-color-2" data-toggle="modal" data-target="#employer_registerModal"><?php echo lang('employer_register');?></button>&nbsp;
 			<button class="btn-employer background-color-4 text-color-3" data-toggle="modal" data-target="#create_recruitmentModel"><?php echo lang('employer_recruitment');?></button>&nbsp;
-			<button class="btn-employer background-color-3 text-color-2"><?php echo lang('employer_contact_advertising');?></button>
+			<button class="btn-employer background-color-3 text-color-2" onclick="location.href='<?php echo ('adwords')?>'"><?php echo lang('employer_contact_advertising');?></button>
 			</div>
 		</div>
 	</div>

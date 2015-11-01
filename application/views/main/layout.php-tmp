@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <!-- <meta property="fb:app_id" content="1672938849618450"/>
+    <meta property="fb:admins" content="100002246826429"/> -->
     <!--Load head for website-->
 <?php echo $head;?>
 </head>
 <body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+ js.id = id;
+
+  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5&appId=1672938849618450";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
       <!--Content website-->
     <ul class="share-btn-wrp">
         <li class="facebook button-wrap">Facebook</li>
@@ -13,14 +27,20 @@
     </ul>
     <a href="#" class="scrollToTop"></a>
 <?php if (isset($supportOnline)) {
-	echo $supportOnline;
+	//echo $supportOnline;
 }
+?>
+<?php
+include 'support-online.php';
 ?>
 <div id="page" class="">
        <header id="header" class="site-header">
 <?php echo $header;?>
-</header>
-       <div id="main-page">
+       </header>
+       <div id="main-page" <?php if (isset($isGray) && $isGray) {
+	echo 'class="bg-gray-page"';
+}
+?>>
 <?php if (isset($content)) {
 	echo $content;
 }

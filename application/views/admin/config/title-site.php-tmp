@@ -4,11 +4,11 @@
 
 <section class="content-header">
           <h1>
-           Tiều đề site
+           Slogan site
           </h1>
           <ol class="breadcrumb">
             <li><a href="<?php echo base_url('admin');?>"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
-            <li class="active">Site</li>
+            <li class="active">Slogan</li>
 
           </ol>
         </section>
@@ -18,7 +18,7 @@
           <div class="row">
 
             <div class="col-md-12">
-              <button class="btn btn-primary pull-right reload-province" ng-click="reloadTitleSite();" >tải lại dữ liệu</button></div>
+              <button class="btn btn-primary pull-right reload-province" ng-click="reloadTitleSite(0);" >tải lại dữ liệu</button></div>
           </div>
         </section>
 
@@ -28,7 +28,7 @@
             <div class="col-xs-12">
               <div class="box province-box">
                 <div class="box-header">
-                  <div class="col-sm-6 col-xs-12">  <button class="btn btn-sm btn-info" ng-click="openModalCreateTitleSite('md')">tạo mới tiêu đề</button></div>
+                  <div class="col-sm-6 col-xs-12">  <button class="btn btn-sm btn-info" ng-click="openModalCreateTitleSite('md',0)">tạo mới Slogan</button></div>
                    <div class="col-sm-6 col-xs-12">
 
                    <div class="box-tools">
@@ -47,17 +47,17 @@
                   <div class="text-center hide" id="div-no-data-loading" ng-show="filteredItems == 0" >Không có dữ liệu</div>
                 </div>
                 <div class="box-body table-responsive no-padding"  ng-show="filteredItems > 0">
-                  <table class="table table-hover table-striped hide" id="siteTable" ng-init="getTitleSite();">
+                  <table class="table table-hover table-striped hide" id="siteTable" ng-init="getTitleSite(0);">
                     <tr>
                       <th class="text-center">Chọn</th>
-                      <th class="text-center">Tiêu đề</th>
+                      <th class="text-center">Nội dung</th>
                       <th class="text-center">Ngày tạo</th>
                       <th class="text-center"></th>
                     </tr>
                     <tr ng-repeat="data in filtered = (pagedItems | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                       <td class="text-center">
-                          <img ng-click="activeSite(data,0)" ng-show="data.config_is_active == 1" class="icon-checked-site" src="<?php echo base_url()?>assets/admin/dist/img/icons/icon_checked.png">
-                          <img ng-click="activeSite(data,1)" ng-show="data.config_is_active == 0" class="icon-checked-site" src="<?php echo base_url()?>assets/admin/dist/img/icons/icon_unchecked.png">
+                          <img ng-click="activeSite(data,0,0)" ng-show="data.config_is_active == 1" class="icon-checked-site" src="<?php echo base_url()?>assets/admin/dist/img/icons/icon_checked.png">
+                          <img ng-click="activeSite(data,1,0)" ng-show="data.config_is_active == 0" class="icon-checked-site" src="<?php echo base_url()?>assets/admin/dist/img/icons/icon_unchecked.png">
                       </td>
 
                       <td class="text-center">{{data.config_content}}</td><!--{{($index + ((currentPage -1)* entryLimit)) + 1}}-->
@@ -66,7 +66,7 @@
 
                       <td class="text-center">
                       <!-- <button class="btn btn-xs btn-warning" ng-click="selectedTitleSite(data)" >chọn</button> -->
-                      <button class="btn btn-xs btn-danger" ng-click="openModalDeleteTitleSite('md',data)">xóa</button>
+                      <button class="btn btn-xs btn-danger" ng-click="openModalDeleteTitleSite('md',data,0)">xóa</button>
                       </td>
                     </tr>
 

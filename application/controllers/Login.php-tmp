@@ -63,7 +63,7 @@ class Login extends CI_Controller {
 		);
 		$content = $this->load->view('main/login', array('errors' => $error, 'csrf' => $csrf), TRUE);
 		$footer  = $this->load->view('main/footer', array(), TRUE);
-		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
+		$this->load->view('main/layout', array('isGray' => true, 'head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
 
 	}
 	public function checkLogin() {

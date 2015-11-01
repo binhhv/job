@@ -17,16 +17,23 @@ if (!isset($user)) {?>
       <div class="modal-body">
       	<p>Bạn muốn nhận tin tuyển dụng từ chúng tôi qua email ? <br>
       	Hãy vui lòng để lại email nhé.</p>
+      	<p class="danger alert hide popup-error">Vui lòng điền đầy đủ các trường.</p>
       	<form id="fpopup-user" method="post" >
+      		<div class="form-group">
+      			<input type="text" class="form-control" name="firstname" placeholder="Họ">
+      		</div>
+      		<div class="form-group">
+      			<input type="text" class="form-control" name="lastname" placeholder="Tên">
+      		</div>
       		<div class="form-group has-feedback ">
 			  <input type="email" name="email-popup-user" class="form-control" id="email-popup-user" aria-describedby="inputError2Status" placeholder="Email">
 			  <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
 			  <span id="inputError2Status" class="sr-only"></span>
 			</div>
 			<div class="popup-token hide">
-				<input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" />
+				<!-- <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" /> -->
 			</div>
-      	<div class="text-right"><button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Đóng</button>
+      	<div class="text-right"><button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Đóng</button>
       		<button type="submit" class="btn btn-sm btn-primary">Gửi</button></div></form>
       </div>
       <!-- <div class="modal-footer">
@@ -42,7 +49,7 @@ if (!isset($user)) {?>
 <script type="text/javascript">
 
 	$(document).ready(function(){
-
+    getToken(addTokenInput);
 		var currentdate = new Date();
 var datetime = "Last Sync: " + currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/"
@@ -67,6 +74,7 @@ var datetime = "Last Sync: " + currentdate.getDate() + "/"
 			// 	$("#myModal").modal("show");
 			// }, 3000);
 			setTimeout(function() {
+					getToken(addTokenInput);
 			       $("#myModal").modal("show");
 			 }, 120000);
 			// var timesRun = 0;
@@ -81,6 +89,7 @@ var datetime = "Last Sync: " + currentdate.getDate() + "/"
 		}
 		$("#fpopup-user").submit(function(event){
 	 event.preventDefault();
+	 if(checkValidate()){
 	$.ajax({
 		type: "POST", // HTTP method POST or GET
 		url: "<?php echo base_url('getNewsRecruitment');?>", //Where to make Ajax calls
@@ -91,13 +100,18 @@ var datetime = "Last Sync: " + currentdate.getDate() + "/"
 			$.cookie('popupUser', '1', { expires: 7 });
 			$("#myModal").attr('data-show','1');
 			//location.reload();
-			$('#myModal').remove();
+			//$('#myModal').remove();
 			console.log(response);
 		},
 		error:function (xhr, ajaxOptions, thrownError){
 			alert(thrownError);
 		}
 		});
+	}
+	else{
+		$(".popup-error").removeClass('hide');
+		getToken(addTokenInput);
+	}
 })
 
 	});
@@ -111,6 +125,7 @@ var datetime = "Last Sync: " + currentdate.getDate() + "/"
   	console.log("onetime " +onetime);
   	if(typeof onetime === "undefined"){
   		setTimeout(function() {
+  			getToken(addTokenInput);
 			       $("#myModal").modal("show");
 			       $.cookie('onetime', '1', { expires: 7 });
 			 }, 300000);
@@ -118,6 +133,7 @@ var datetime = "Last Sync: " + currentdate.getDate() + "/"
 
   	if (onetime=="1"){
   		setTimeout(function() {
+  					getToken(addTokenInput);
 			       $("#myModal").modal("show");
 			       $.cookie('onetime', '2', { expires: 7 });
 			 }, 600000);
@@ -146,5 +162,49 @@ var datetime = "Last Sync: " + currentdate.getDate() + "/"
     var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
     return pattern.test(emailAddress);
 	};
+
+
+	 var getToken = function(callback){
+    	 $.ajax({
+        url: '<?php echo base_url() . "job/getToken"?>',
+        type: "get",
+        dataType:'json',
+        success: function(data){
+        	$(".token").empty();
+        	//var token ='<input type="hidden" name="'+data.name+'" value="'+data.hash+'" />';
+        	//$(".token").append(token);
+           //document.write(data); just do not use document.write
+           //console.log(data);
+           callback(data);
+           //console.log(data.name);
+        }
+      });
+    };
+
+    function addTokenInput(data){
+    		$(".popup-token").empty();
+        	var token ='<input type="hidden" name="'+data.name+'" value="'+data.hash+'" />';
+        	$(".popup-token").append(token);
+    }
+
+    function checkValidate(){
+    	var check = true;
+    	var firstname = $("input[name=firstname]").val();
+    	var lastname = $("input[name=lastname]").val();
+    	var email = $("input[name=email-popup-user]").val();
+    	if(firstname.length <= 0){
+    		check = false;
+    	}
+    	else if(lastname.length <= 0 ){
+    		check = false;
+    	}
+    	else if(email.length <= 0){
+    		check = false;
+    	}
+    	else if(!isValidEmailAddress(email)){
+    		check = false;
+    	}
+    	return check;
+    }
 
 </script>
