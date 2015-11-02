@@ -73,9 +73,11 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group text-right">
-                                     <button type="submit" class="btn btn-primary"><?php echo lang('btn_upload');?></button>
+                                  <!--   <input type="submit" name="submit" id="uploadcv" value="Submit" class="btn btn-primary"/> -->
+                                     <button type="submit" id="uploadcv" class="btn btn-primary"><?php echo lang('btn_upload');?></button>
                                 </div>
                             </div>
+
                         </div>
                      </fieldset>
                     <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?=$csrf['hash'];?>" />

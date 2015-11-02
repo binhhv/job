@@ -23,9 +23,9 @@
                   <div class="row">
                     <div class="col-sm-6 col-xs-12">
                     <h3 class="box-title">
-                      <label class="radio-inline"><strong><input type="radio" name="optradio">Tất cả</strong></label>
-                      <label class="radio-inline"><strong><input type="radio" name="optradio">Trang top</strong></label>
-                      <label class="radio-inline"><strong><input type="radio" name="optradio">Trang khác</strong></label>
+                      <label class="radio-inline"><strong><input ng-model ="typeShow" value="0" type="radio" name="optradio">Tất cả</strong></label>
+                      <label class="radio-inline"><strong><input ng-model ="typeShow" value="1" type="radio" name="optradio">Trang top</strong></label>
+                      <label class="radio-inline"><strong><input ng-model ="typeShow" value="2" type="radio" name="optradio">Trang khác</strong></label>
                     </h3>
                     </div>
                     <div class="col-sm-6 col-xs-12">

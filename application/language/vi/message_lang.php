@@ -3,7 +3,11 @@
 #jobseeker
 $lang['jobseeker_title'] = "DÀNH CHO NGƯỜI TÌM VIỆC";
 $lang['jobseeker_register'] = "Đăng ký tài khoản";
+<<<<<<< HEAD
 $lang['jobseeker_create_cv'] = "Nộp hồ sơ"; //"Gửi CV không cần đăng ký";
+=======
+$lang['jobseeker_create_cv'] = "Nộp hồ sơ";
+>>>>>>> c0cdd6913841e356dd0ffe51346cc70f9dccbd22
 $lang['jobseeker_create_cv_online'] = "Tạo hồ sơ ứng tuyển";
 #employer
 $lang['employer_title'] = "DÀNH CHO NHÀ TUYỂN DỤNG";
@@ -13,7 +17,7 @@ $lang['employer_contact_advertising'] = "LIÊN HỆ QUẢNG CÁO";
 #
 $lang['require_info'] = "Thông tin bắt buộc nhập";
 # validate err
-$lang['email'] = "Tài khoản";
+$lang['email'] = "Email";
 $lang['password'] = "Mật khẩu";
 $lang['passconf'] = "Xác nhận Mật khẩu";
 $lang['first_name'] = "Tên";

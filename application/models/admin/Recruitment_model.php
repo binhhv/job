@@ -142,4 +142,28 @@ class Recruitment_model extends CI_Model {
 	function disabledRecruitment($data) {
 		return $this->dbutil->updateDb($data);
 	}
+	function getRecruitmentShow($type) {
+		$sql = "select a.*,IFNULL(d.numapply, 0) as numapply ,e.*,f.*,g.*,k.*
+				from recruitment a
+				left join (select c.recapp_map_recruitment, count(recapp_map_user) as numapply from recruitment_apply c where c.recapp_is_delete = 0 group by c.recapp_map_recruitment) d
+				on d.recapp_map_recruitment = a.rec_id
+				left join job_form e on e.fjob_id = a.rec_job_map_form
+				left join job_form_child f on f.jcform_id = a.rec_job_map_form_child
+				left join contact_form g on g.contact_form_id = a.rec_contact_form and g.contact_form_is_delete = 0
+				left join salary k on k.salary_id = a.rec_map_salary and k.salary_is_delete = 0
+				where a.rec_is_delete = 0 and a.rec_is_approve = 1 and a.rec_is_disabled = 0 ";
+		//get 50% view and 50% select
+		switch ($type) {
+		case 1:
+			# code...
+			$sql .= 'and a.rec_is_top = 1 and a.rec_is_show_another = 1';
+			break;
+		case 2:
+			# code...
+			break;
+		default:
+			# code...
+			break;
+		}
+	}
 }

@@ -61,6 +61,10 @@ app.factory('recruitmentService' ,function ($http,$q,$timeout){
 			$http.post(pathWebsite + 'admin/recruitment/disabledRecruitment', postData, {headers : {'Content-Type': 'application/x-www-form-urlencoded'}}).success(callback);
 		
 		}
+
+		_recruitmentService.getRecruitmenntShow = function(option,callback){
+			return $http.get(pathWebsite + 'admin/recruitment/getRecruitmentShow/'+option).success(callback);
+		}
 		
 		return _recruitmentService;
 });

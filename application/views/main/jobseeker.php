@@ -15,7 +15,14 @@
 				<button class="btn-jobseeker background-color-1 text-color-1" data-toggle="modal" data-target="#registerModal"><?php echo lang('jobseeker_register');?></button>
 			</div>
 			<div class="col-sm-12">
-				<button class="btn-jobseeker background-color-2 text-color-2" data-toggle="modal" data-target="#createcv_onlineModel"><?php echo lang('jobseeker_create_cv_online');?></button>
+			<?php if ($user != null) {?>
+<button class="btn-jobseeker background-color-2 text-color-2" data-toggle="modal" data-target="#createcv_onlineModel"><?php echo lang('jobseeker_create_cv_online');?></button>
+				<?php } else {?>
+			<button class="btn-jobseeker background-color-2 text-color-2" data-toggle="modal" data-target="#redirectLoginModal"><?php echo lang('jobseeker_create_cv_online');?></button>
+<?php }
+?>
+
+
 			</div>
 			<div class="col-sm-12">
 				<button class="btn-jobseeker background-color-3 text-color-2"  data-toggle="modal" data-target="#uploadcvModel"><?php echo lang('jobseeker_create_cv');?></button>
@@ -26,3 +33,9 @@
 	</div>
 </div>
 </div>
+
+<!-- check login -->
+<script>
+
+
+</script>

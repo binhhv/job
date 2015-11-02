@@ -244,4 +244,8 @@ class Admin_recruitment extends CI_Controller {
 		$output = $this->recruitment->disabledRecruitment($data);
 		echo json_encode($output);
 	}
+	function getRecruitmentShow($type) {
+		$output = $this->recruitment->getRecruitmentShow($type);
+		echo json_encode($output);
+	}
 }

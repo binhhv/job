@@ -920,7 +920,76 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
 
 
 app.controller('recruitmentHLController', function (recruitmentService,employerRecruitmentService,employerUserService,jobseekerService,$scope, $http, $timeout,cfpLoadingBar,$modal,$log,$window,$filter) {
+     $scope.formatDate = function(date){
+          var d = date.substring(0,10);//new Date(date);
+           d = d.split("-");
+           d.reverse();
+           return d[0]+'/'+d[1]+'/'+d[2];
+    };
+    ///0 show all
+    ///1 show top
+    ///2 show another page
+    $scope.typeShow=0;
+    $scope.base_url = config.base_url;
+    $scope.filteredItems =  [];
+    $scope.groupedItems  =  [];
+    $scope.itemsPerPage  =  5;
+    $scope.pagedItems    =  [];
+    $scope.currentPage   =  0;
+    $scope.messageProcess = true;
+    // $scope.reloadMember = function(option){
+    //     $scope.getMembers();
+    // };
+    // $scope.getIframeSrc = function (video) {
+    //     var objectJson = $.parseJSON(video.config_data_json);
+    //     return $scope.base_url + 'uploads/config/video/' + objectJson['file_tmp'];
+    // };
 
+    
+    // $scope.getRecruitmentShow = function(typeShow){
+    //     //console.log("start get datta");
+    //     //$scope.membersActive = [];
+    //     $scope.start();
+    //     recruitmentService.getRecruitmentShow(typeShow,function(data){
+    //     $scope.pagedItems = data;    
+    //     //console.log(data);
+    //     $scope.search='';
+    //     //$scope.itemsPerPage  =  5;
+    //     $scope.currentPage = 1; //current page
+    //     $scope.entryLimit = 20; //max no of items to display in a page
+    //     $scope.filteredItems = $scope.pagedItems.length; //Initially for no filter  
+    //     $scope.totalItems = $scope.pagedItems.length;
+    //     //console.log("get data finish");
+    //     if($scope.filteredItems == 0){
+    //        $("#div-no-data-loading").removeClass('hide');
+    //     }
+    //     $scope.complete();
+    //     });
+    // };
+    // $scope.setPage = function(pageNo) {
+    //     $scope.currentPage = pageNo;
+    // };
+    // $scope.filter = function() {
+    //     $timeout(function() { 
+    //         $scope.filteredItems = $scope.filtered.length;
+    //         if($scope.filteredItems == 0){
+    //            $("#div-no-data-loading").removeClass('hide');
+    //         }
+    //     }, 10);
+    // };
+    // $scope.sort_by = function(predicate) {
+    //     $scope.predicate = predicate;
+    //     $scope.reverse = !$scope.reverse;
+    // };
+    // $scope.start = function() {
+    //   cfpLoadingBar.start();
+    // };
+    //  $scope.complete = function () {
+    //   cfpLoadingBar.complete();
+    //   $("#tableShowRecruitment").removeClass('hide');
+    //   $("#div-data-loading").addClass('hide');
+    //  // $(".row-member").removeClass('hide');
+    // }
 
 });
 

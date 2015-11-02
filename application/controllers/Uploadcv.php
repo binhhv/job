@@ -114,8 +114,9 @@ class UploadCv extends CI_Controller {
 	}
 	//upload cv
 	public function upload_cv() {
-		$id_account = '100';
-		$file_img_upload = $this->do_upload($id_account);
+		$user = $this->session->userdata['user'];
+		$id_account = $user['id'];
+		$file_img_upload = $this->upload_file();
 		echo json_encode('success');
 		// if ($file_img_upload['status'] == 'success') {
 		// 	//upload images
@@ -157,7 +158,7 @@ class UploadCv extends CI_Controller {
 		// return 'abc.docx';
 
 		$config['upload_path'] = $path;
-		$config['allowed_types'] = 'gif|jpg|png|doc|txt|docx';
+		$config['allowed_types'] = 'txt|doc|docx|pdf|xlsx|xls';
 		$config['max_size'] = 1024 * 8;
 		$config['encrypt_name'] = TRUE;
 		$this->load->library("upload", $config);
@@ -202,47 +203,39 @@ class UploadCv extends CI_Controller {
 	public function upload_file() {
 		$status = "";
 		$msg = "";
-		$tit = $this->input->post("title");
-		if ($tit == NULL) {
-			$status = "error";
-			$msg = "Please enter your title";
-		}
-		if ($status != "error") {
-
-			$this->load->library('upload');
-			// Define file rules
-			$this->upload->initialize(array(
-				'upload_path' => './uploads/',
-				'allowed_types' => "doc|docx|pdf|txt",
-				'overwrite' => TRUE,
-				'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
-				// 'max_height' => "768",
-				// 'max_width' => "1024"
-			));
-			try {
-				if (!$this->upload->do_upload("ufile")) {
-					$status = "error";
-					$msg = array('error' => $this->upload->display_errors());
-					echo 'err';
-				} else {
-					// $this->load->model("mupload");
-					// $data = $this->upload->data();
-					// $info = array("file_name" => $data['file_name'],
-					// 	"title" => $_POST['title']);
-					// $fid = $this->mupload->insert_file($info);
-					// if ($fid) {
-					// 	$status = "Success";
-					// 	$msg = "File successfully uploaded";
-					// } else {
-					// 	$status = "error";
-					// 	$msg = "File uploaded fail! PLease try again!";
-					// }
-				}
-			} catch (Exception $e) {
-				$abc = $e->getMessage();
-				echo 'Caught exception: ', $e->getMessage(), "\n";
+		// $tit = $this->input->post("title");
+		$this->load->library('upload');
+		// Define file rules
+		$this->upload->initialize(array(
+			'upload_path' => './uploads/',
+			'allowed_types' => "doc|docx|pdf|txt",
+			'overwrite' => TRUE,
+			'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
+			// 'max_height' => "768",
+			// 'max_width' => "1024"
+		));
+		try {
+			if (!$this->upload->do_upload("userfile")) {
+				$status = "error";
+				$msg = array('error' => $this->upload->display_errors());
+				echo 'err';
+			} else {
+				// $this->load->model("mupload");
+				// $data = $this->upload->data();
+				// $info = array("file_name" => $data['file_name'],
+				// 	"title" => $_POST['title']);
+				// $fid = $this->mupload->insert_file($info);
+				// if ($fid) {
+				// 	$status = "Success";
+				// 	$msg = "File successfully uploaded";
+				// } else {
+				// 	$status = "error";
+				// 	$msg = "File uploaded fail! PLease try again!";
+				// }
 			}
-
+		} catch (Exception $e) {
+			$abc = $e->getMessage();
+			echo 'Caught exception: ', $e->getMessage(), "\n";
 		}
 		echo json_encode(array("status" => $status,
 			"msg" => $msg));

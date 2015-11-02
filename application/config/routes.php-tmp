@@ -116,6 +116,7 @@ $route['admin/recruitment/getListSalary']              = 'admin/admin_recruitmen
 $route['admin/recruitment-highlight']                  = 'admin/admin_recruitment/recruitmentHighlight';
 $route['admin/recruitment/editShowRecruitment']        = 'admin/admin_recruitment/editShowRecruitment';
 $route['admin/recruitment/disabledRecruitment']        = 'admin/admin_recruitment/disabledRecruitment';
+$route['admin/recruitment/getRecruitmentShow/(:num)']  = 'admin/admin_recruitment/getRecruitmentShow/$1';
 //manager admin route
 $route['admin/manager']                = 'admin/admin_manager/index';
 $route['admin/manager/getListManager'] = 'admin/admin_manager/getListManager';

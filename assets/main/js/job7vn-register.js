@@ -74,11 +74,13 @@ $(document).ready(function() {
                     var csrf_name = response.content.name;
                     var csrf_hash = response.content.hash;
                     $('#message_user').text("");
+                    $('#message_user').append(account_last_name);
+                    $('#message_user').append(account_first_name);
                     $('#message_user').append(account_email);
                     $('#message_user').append(account_password);
                     $('#message_user').append(confirm_password);
-                    $('#message_user').append(account_first_name);
-                    $('#message_user').append(account_last_name);
+                    
+                    
                     $('input[name="csrf_test_name"]').val(csrf_hash);
                 } else if (status == 'success') {
                     $('#message_user').text("");
@@ -315,23 +317,44 @@ $(document).ready(function() {
             });
         })
         //upload cv
-    $("#uploadcv-form").submit(function(event) {
+   $("#uploadcv").click(function(){
         event.preventDefault();
-        var cct = $("input[name=csrf_test_name]").val(); //alert(cct);
+        var cct = $("input[name=csrf_test_name]").val();
+        var jobseeker_first_name = $("input[name=jobseeker_first_name]").val();
+        var jobseeker_last_name = $("input[name=jobseeker_last_name]").val();
+        var jobseeker_phone = $("input[name=jobseeker_phone]").val();
+        var jobseeker_mail = $("input[name=jobseeker_mail]").val();
        //var data_send = {'file_name': img_file, 'csrf_test_name':cct};
 
        // console.log(data_send);
         if (err_ext) {
-            $.ajax({
+            $.ajaxFileUpload({
+                type: "POST",
+                 url: base_website + "uploadcv/upload_file", //Where to make Ajax cal1*-ls
+                secureuri : false,
+                fileElementId : "userfile",
+                dataType :"json",
+                data : {'jobseeker_first_name': jobseeker_first_name, 'jobseeker_last_name': jobseeker_last_name,'jobseeker_first_name': jobseeker_phone,'jobseeker_phone': jobseeker_mail,  'csrf_test_name': cct},
+                 // data: $(this).serialize(),
+                success : function(data, status){
+                    if(data.status != "error"){
+                       console.log(response);
+                    }
+                    alert(data.msg);
+                }
+            });
+            return false;
+
+            /*$.ajaxFileUpload({
                 type: "POST", // HTTP method POST or GET
-                url: base_website + "uploadcv/upload_cv", //Where to make Ajax cal1*-ls
+                url: base_website + "uploadcv/upload_file", //Where to make Ajax cal1*-ls
                 secureuri : false,
                 fileElementId : "userfile",
                 dataType: "json", // Data type, HTML, json etc.
                 data: $(this).serialize(),
                 success: function(response) {
                     console.log(response);
-                    $("#upload_cv").show();
+                    $("#upload_cv").modal('hide');
                     // var status = response.status;
                     // if (status == 'success') {
                     //     $('#message_upload_cv').text("");
@@ -349,7 +372,8 @@ $(document).ready(function() {
                     console.log(xhr.responseText);
                     alert(thrownError);
                 }
-            });
+            });*/
+        
         } else {
             $("#note_file_select").html('file dinh dang khong dung');
         }
