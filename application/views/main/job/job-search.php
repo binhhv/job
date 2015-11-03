@@ -15,7 +15,28 @@
 					<h1 class="title-job-hight-light">Việc làm nổi bật</h1>
 
 				</div>
+				<?php $listJobShow = $this->globals->getRecruitmentShow(2);
+if (isset($listJobShow) && count($listJobShow) > 0) {
+	foreach ($listJobShow as $value) {?>
 				<div class="item-job-hl">
+						<div class="row">
+							<div class="col-sm-12">
+								<label><span class="btn-warning">qc</span><a href="<?php echo base_url('job') . '/' . str_replace(' ', '-', $value->rec_title) . '-' . $value->rec_id . '.html'?>">
+								<?php echo (strlen($value->rec_title) > 30) ? substr($value->rec_title, 0, 30) . '...' : $value->rec_title;?>
+								</a></label>
+								<span><?php echo $value->employer_name;?></span>
+							</div>
+							<div class="col-sm-6 col-xs-6"><i class="fa fa-tag"></i><?php echo $value->career_name;?></div>
+							<div class="col-sm-6 col-xs-6"><i class="fa fa-calendar-o"></i><?php echo date('d/m/Y', strtotime($value->rec_job_time));?></div>
+							<div class="col-sm-6 col-xs-6"><i class="fa fa-money"></i><?php echo $value->salary_value;?></div>
+							<div class="col-sm-6 col-xs-6"><i class="fa fa-map-marker"></i><?php echo $value->province_name;?></div>
+						</div>
+				</div>
+	<?php }
+}
+?>
+
+				<!-- <div class="item-job-hl">
 						<div class="row">
 							<div class="col-sm-12">
 								<label><span class="btn-warning">qc</span>Tuyển nhân viên</label>
@@ -62,19 +83,7 @@
 							<div class="col-sm-6 col-xs-6"><i class="fa fa-money"></i></div>
 							<div class="col-sm-6 col-xs-6"><i class="fa fa-map-marker"></i></div>
 						</div>
-				</div>
-				<div class="item-job-hl">
-						<div class="row">
-							<div class="col-sm-12">
-								<label><span class="btn-warning">qc</span>Tuyển nhân viên</label>
-								<span>Công ty abx</span>
-							</div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-tag"></i></div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-calendar-o"></i></div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-money"></i></div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-map-marker"></i></div>
-						</div>
-				</div>
+				</div> -->
 				<!-- <div class="item-job-hl">
 						<div class="row">
 							<div class="col-sm-12">123123123</div>

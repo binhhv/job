@@ -34,7 +34,7 @@ class Login extends CI_Controller {
 				'name' => $this->security->get_csrf_token_name(),
 				'hash' => $this->security->get_csrf_hash(),
 			);
-			$this->load->view('admin/login/layout', array('titlePage' => 'ADMIN JOB7VN|Login', 'page' => 'allSHIGOTO', 'csrf' => $csrf));
+			$this->load->view('admin/login/layout', array('titlePage' => 'ADMIN allSHIGOTO|Login', 'page' => 'allSHIGOTO', 'csrf' => $csrf));
 		} else {
 			if ($this->session->userdata['user']['role'] != 5 && $this->session->userdata['user']['role'] != 1) {
 				redirect(base_url('error/403'));

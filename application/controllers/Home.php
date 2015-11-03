@@ -273,7 +273,7 @@ class Home extends CI_Controller {
 		$footer = $this->load->view('main/footer', array(), TRUE);
 		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
 
-
+	}
 	public function checkLogin() {
 		if ($this->session->userdata['user'] == null) {
 

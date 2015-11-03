@@ -250,7 +250,7 @@ class Config_model extends CI_Model {
 		return $this->dbutil->insertDb($data, 'config');
 	}
 	function getConfigNumRecruitment() {
-		$sql = "select * from config where config_is_delete = 0 and (config_map_attribute = 9 or config_map_attribute = 10)";
+		$sql = "select * from config where config_is_delete = 0 and (config_map_attribute = 9 or config_map_attribute = 10 or config_map_attribute = 12)";
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
 	}
 	function updateConfigNumRecruitment($data, $configid) {

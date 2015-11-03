@@ -105,6 +105,7 @@ var datetime = "Last Sync: " + currentdate.getDate() + "/"
 		},
 		error:function (xhr, ajaxOptions, thrownError){
 			alert(thrownError);
+      $("#myModal").modal("hide");
 		}
 		});
 	}

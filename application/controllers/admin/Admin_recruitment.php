@@ -248,4 +248,22 @@ class Admin_recruitment extends CI_Controller {
 		$output = $this->recruitment->getRecruitmentShow($type);
 		echo json_encode($output);
 	}
+	function getMaxViewRecruitment() {
+		$output = $this->recruitment->getNumRecruitmentView();
+		echo json_encode($output);
+	}
+	function removeAllRecruitmentShow() {
+		$recruitmentShow = json_decode($this->input->post('recruitmentShow'), true);
+		$output = $this->recruitment->removeAllRecruitmentShow($recruitmentShow);
+		echo json_encode($output);
+	}
+	function addRecruitmentShow($recid, $typeShow) {
+		$output = $this->recruitment->addRecruitmentShow($recid, $typeShow);
+		echo json_encode($output);
+	}
+	function removeRecruitmentShow() {
+		$rec = json_decode($this->input->post('rec'), true);
+		$output = $this->recruitment->removeRecruitmentShow($rec);
+		echo json_encode($output);
+	}
 }

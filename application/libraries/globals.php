@@ -64,6 +64,85 @@ class Globals {
 		$output = $this->getFromDbQueryBinding($sql, array());
 		return count($output) > 0 ? $output : null;
 	}
+	function getImageBackgroundRecruitment() {
+		$sql = "select * from config where config_is_delete = 0 and config_is_active = 1 and config_map_attribute = 11";
+		$row = $this->getOneRowQueryFromDb($sql, array());
+		return isset($row->config_data_json) ? $row->config_data_json : '';
+	}
+	function getRecruitmentShow($type) {
+		//get total recruitment config.
+		$numShowTop = $this->getNumRecruitmentShowTop();
+		$numShowAnother = $this->getNumRecruitmentShowAnother();
+		$maxView = $this->getNumRecruitmentView();
+
+		$sql = "select a.*,IFNULL(d.numapply, 0) as numapply ,e.*,f.*,g.*,k.*,m.*,n.*,l.*
+				from recruitment a
+				left join (select c.recapp_map_recruitment, count(recapp_map_user) as numapply from recruitment_apply c where c.recapp_is_delete = 0 group by c.recapp_map_recruitment) d
+				on d.recapp_map_recruitment = a.rec_id
+				left join job_form e on e.fjob_id = a.rec_job_map_form
+				left join job_form_child f on f.jcform_id = a.rec_job_map_form_child
+				left join contact_form g on g.contact_form_id = a.rec_contact_form and g.contact_form_is_delete = 0
+				left join salary k on k.salary_id = a.rec_map_salary and k.salary_is_delete = 0
+				left join (select province.*,recmp_map_rec from recruitment_map_province
+				join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) m on m.recmp_map_rec = a.rec_id
+				left join employer n on n.employer_id = a.rec_map_employer and n.employer_is_delete = 0
+				left join career l on l.career_id = a.rec_job_map_career and l.career_is_delete = 0
+				where a.rec_is_delete = 0 and a.rec_is_approve = 1 and a.rec_is_disabled = 0 ";
+		$conditionFirst = '';
+		$conditionSecond = '';
+		//get 50% view and 50% select
+		switch ($type) {
+		case 1:
+			# code...
+			$conditionFirst .= ' and a.rec_is_show_top = 1  order by a.rec_update_at desc limit ' . round($numShowTop / 2);
+			$conditionSecond .= ' and a.rec_is_show_top = 0 and a.rec_is_show_another = 0 and a.rec_view >= ' . $maxView . '  order by a.rec_view desc limit ' . round($numShowTop / 2);
+			break;
+		case 2:
+			# code...
+			$conditionFirst .= ' and a.rec_is_show_another = 1 order by a.rec_update_at desc limit ' . round($numShowAnother / 2);
+			$conditionSecond .= ' and a.rec_is_show_another = 0 and a.rec_is_show_top = 0 and a.rec_view >= ' . $maxView . ' order by a.rec_view desc limit ' . round($numShowAnother / 2);
+			break;
+		default:
+			# code...
+			$conditionFirst .= ' and a.rec_is_show_top = 1 and a.rec_is_show_another = 1 order by a.rec_update_at desc';
+			$conditionSecond .= ' and (a.rec_is_show_top = 0 or a.rec_is_show_another = 0) and a.rec_view >= ' . $maxView . ' order by a.rec_view desc  ';
+			break;
+		}
+		$sqlQuery = '(' . $sql . $conditionFirst . ') union (' . $sql . $conditionSecond . ') order by rec_view desc';
+		return $this->getFromDbQueryBinding($sqlQuery, array());
+	}
+	function getNumRecruitmentShowTop() {
+		$sql = "select * from config where config_is_delete = 0 and config_is_active = 1 and config_map_attribute = 9";
+		$row = $this->getOneRowQueryFromDb($sql, array());
+		if (isset($row->config_data_json)) {
+			$rowJson = json_decode($row->config_data_json, true);
+			return $rowJson['number'];
+		} else {
+			return 0;
+		}
+	}
+	function getNumRecruitmentShowAnother() {
+		$sql = "select * from config where config_is_delete = 0 and config_is_active = 1 and config_map_attribute = 10";
+		$row = $this->getOneRowQueryFromDb($sql, array());
+		if (isset($row->config_data_json)) {
+			$rowJson = json_decode($row->config_data_json, true);
+			return $rowJson['number'];
+		} else {
+			return 0;
+		}
+	}
+	function getNumRecruitmentView() {
+		$sql = "select * from config where config_is_delete = 0 and config_is_active = 1 and config_map_attribute = 12";
+		$row = $this->getOneRowQueryFromDb($sql, array());
+		if (isset($row->config_data_json)) {
+			$rowJson = json_decode($row->config_data_json, true);
+			return $rowJson['number'];
+		} else {
+			return 0;
+		}
+
+	}
+
 	public function getFromDb($projections) {
 
 		if ($projections != null) {

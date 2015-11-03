@@ -117,6 +117,10 @@ $route['admin/recruitment-highlight'] = 'admin/admin_recruitment/recruitmentHigh
 $route['admin/recruitment/editShowRecruitment'] = 'admin/admin_recruitment/editShowRecruitment';
 $route['admin/recruitment/disabledRecruitment'] = 'admin/admin_recruitment/disabledRecruitment';
 $route['admin/recruitment/getRecruitmentShow/(:num)'] = 'admin/admin_recruitment/getRecruitmentShow/$1';
+$route['admin/recruitment/getMaxViewRecruitment'] = 'admin/admin_recruitment/getMaxViewRecruitment';
+$route['admin/recruitment/removeAllRecruitmentShow'] = 'admin/admin_recruitment/removeAllRecruitmentShow';
+$route['admin/recruitment/addRecruitmentShow/(:num)/(:num)'] = 'admin/admin_recruitment/addRecruitmentShow/$1/$2';
+$route['admin/recruitment/removeRecruitmentShow'] = 'admin/admin_recruitment/removeRecruitmentShow';
 //manager admin route
 $route['admin/manager'] = 'admin/admin_manager/index';
 $route['admin/manager/getListManager'] = 'admin/admin_manager/getListManager';

@@ -243,8 +243,10 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
     $scope.complete = function () {
       cfpLoadingBar.complete();
       $("#recruitmentTable").removeClass('hide');
-     // $("#managerTable").removeClass('hide');
+      $("#tableShowRecruitment").removeClass('hide');
+      
       $("#div-data-loading").addClass('hide');
+      $("#recruitmentShowTable").removeClass('hide');
       console.log("addhide");
     };
     $scope.reload = function(type){
@@ -304,7 +306,7 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
 
         //$scope.listProvinces = [];
 //$scope.multipleDemo = {};
-        $scope.modalUpdateEmployerRecruitment = function (size,selectedrecruitment) {
+        $scope.modalUpdateEmployerRecruitment = function (size,selectedrecruitment,optional) {
             employerUserService.getToken(function(data){
                 var obToken = JSON.parse(angular.toJson(data));
                //$log.info(obToken['name']);
@@ -390,7 +392,13 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
                        //var employerid = $scope.jobseeker['emac_map_employer'];
                        //$scope.getEmployerUsers(employerid);
                       // $scope.getEmployerRecruitments();
-                       $scope.getRecruitments($scope.typeRecruitment);
+                       if(typeof optional === "undefined"){
+                            $scope.getRecruitments($scope.typeRecruitment);
+                        }
+                        else{
+                          $scope.getRecruitmentShow($scope.typeShow);
+                        }
+                       //$scope.getRecruitments($scope.typeRecruitment);
                     };
 
                     $scope.cancel = function () {
@@ -487,7 +495,7 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
             });
             }
         };
-        $scope.modalDeleteEmployerRecruitment = function (size,selectedrecruitment) {
+        $scope.modalDeleteEmployerRecruitment = function (size,selectedrecruitment,optional) {
             employerUserService.getToken(function(data){
                 var obToken = JSON.parse(angular.toJson(data));
                //$log.info(obToken['name']);
@@ -504,7 +512,13 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
                     //$scope.jobseeker.account_password = '';
                     $scope.ok = function () {
                         $modalInstance.close($scope.recruitment);
-                        $scope.getRecruitments($scope.typeRecruitment);
+                        if(typeof optional === "undefined"){
+                            $scope.getRecruitments($scope.typeRecruitment);
+                        }
+                        else{
+                          $scope.getRecruitmentShow($scope.typeShow);
+                        }
+                        //$scope.getRecruitments($scope.typeRecruitment);
                        //var employerid = $scope.jobseeker['emac_map_employer'];
                        //$scope.getEmployerUsers(employerid);
                     };
@@ -800,7 +814,7 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
     }
 
 
-    $scope.openModalEditShowRecruitment = function(size,recruitment){
+    $scope.openModalEditShowRecruitment = function(size,recruitment,optional){
        var modalInstance = $modal.open({
                 animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-edit-show-recruitment.php',
@@ -810,7 +824,12 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
                     //$scope.jobseeker.account_password = '';
                     $scope.ok = function () {
                         $modalInstance.close($scope.recruitment);
-                        $scope.getRecruitments($scope.typeRecruitment);
+                        if(typeof optional === "undefined"){
+                            $scope.getRecruitments($scope.typeRecruitment);
+                        }
+                        else{
+                          $scope.getRecruitmentShow($scope.typeShow);
+                        }
                        //var employerid = $scope.jobseeker['emac_map_employer'];
                        //$scope.getEmployerUsers(employerid);
                     };
@@ -856,7 +875,7 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
         });
     }
 
-    $scope.modalDisabledEmployerRecruitment = function(size,recruitment,option){
+    $scope.modalDisabledEmployerRecruitment = function(size,recruitment,option,optional){
        var modalInstance = $modal.open({
                 animation: false,//$scope.animationsEnabled,
                 templateUrl: pathWebsite + 'assets/admin/partial/modal-disabled-recruitment.php',
@@ -867,7 +886,13 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
                     //$scope.jobseeker.account_password = '';
                     $scope.ok = function () {
                         $modalInstance.close($scope.recruitment);
-                        $scope.getRecruitments($scope.typeRecruitment);
+                        if(typeof optional === "undefined"){
+                            $scope.getRecruitments($scope.typeRecruitment);//$scope.getRecruitments($scope.typeRecruitment);
+                        }
+                        else{
+                          $scope.getRecruitmentShow($scope.typeShow);
+                        }
+                        //$scope.getRecruitments($scope.typeRecruitment);
                        //var employerid = $scope.jobseeker['emac_map_employer'];
                        //$scope.getEmployerUsers(employerid);
                     };
@@ -913,13 +938,347 @@ app.controller('recruitmentController', function (recruitmentService,employerRec
                  $scope.cancel();
             }
         });
+    };
+
+    $scope.typeShow=0;
+    $scope.base_url = config.base_url;
+    $scope.filteredItemsHL =  [];
+    $scope.groupedItemsHL  =  [];
+    $scope.itemsPerPageHL  =  5;
+    $scope.pagedItemsHL    =  [];
+    $scope.currentPageHL   =  0;
+    $scope.messageProcessHL = true;
+    $scope.maxView = 0;
+    // $scope.reloadMember = function(option){
+    //     $scope.getMembers();
+    // };
+    // $scope.getIframeSrc = function (video) {
+    //     var objectJson = $.parseJSON(video.config_data_json);
+    //     return $scope.base_url + 'uploads/config/video/' + objectJson['file_tmp'];
+    // };
+
+   
+    $scope.getRecruitmentShow = function(typeShow){
+        //console.log("start get datta");
+        //$scope.membersActive = [];
+        $scope.start();
+        recruitmentService.getMaxViewRecruitment(function(data){
+          $scope.maxView =  parseInt(data.replace('"',''));
+           //console.log("sida" + parseInt($scope.maxView.replace('"','')));
+        });
+        recruitmentService.getRecruitmentShow(typeShow,function(data){
+        $scope.pagedItemsHL = data;    
+       
+        $scope.search='';
+        //$scope.itemsPerPage  =  5;
+        $scope.currentPageHL = 1; //current page
+        $scope.entryLimitHL = 20; //max no of items to display in a page
+        $scope.filteredItemsHL = $scope.pagedItemsHL.length; //Initially for no filter  
+        $scope.totalItemsHL = $scope.pagedItemsHL.length;
+        //console.log("get data finish");
+        if($scope.filteredItemsHL == 0){
+           $("#div-no-data-loading").removeClass('hide');
+        }
+        $scope.complete();
+        });
+    };
+    $scope.setPageHL = function(pageNo) {
+        $scope.currentPageHL = pageNo;
+    };
+    $scope.filterHL = function() {
+        $timeout(function() { 
+            $scope.filteredItemsHL = $scope.filteredHL.length;
+            if($scope.filteredItemsHL == 0){
+               $("#div-no-data-loading").removeClass('hide');
+            }
+        }, 10);
+    };
+    $scope.sort_byHL = function(predicate) {
+        $scope.predicate = predicate;
+        $scope.reverse = !$scope.reverse;
+    };
+    // $scope.start = function() {
+    //   cfpLoadingBar.start();
+    // };
+    //  $scope.complete = function () {
+    //   cfpLoadingBar.complete();
+    //   $("#tableShowRecruitment").removeClass('hide');
+    //   $("#div-data-loading").addClass('hide');
+    //  // $(".row-member").removeClass('hide');
+    // }
+
+    $scope.getRecruitmentTypeShow = function(typeShow){
+      $scope.typeShow = typeShow;
+      $scope.getRecruitmentShow(typeShow);
     }
+
+    $scope.openModalAddRecruitmentShow = function(size){
+      var modalInstance = $modal.open({
+                animation: false,///$scope.animationsEnabled,
+                templateUrl: pathWebsite + 'assets/admin/partial/modal-add-recruitment-show.php',
+                controller: function ($scope, $modalInstance){
+                   // $("#div-data-loading").addClass('hide');
+                    
+                    $scope.ok = function () {
+                        $modalInstance.close($scope.adword);
+                        $scope.getRecruitmentShow($scope.typeShow);
+                    };
+
+                    $scope.cancel = function () {
+                        $modalInstance.dismiss('cancel');
+                        //console.log(ddToDms($("#latitude").text(),$("#longitude").text()));
+                    };
+
+                },
+                size: size,
+                resolve: {
+                    
+                },
+                scope:$scope,
+                backdrop:'static',
+                 windowClass: "modal fade in"
+
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                $scope.selected = selectedItem;
+
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+    }
+
+    $scope.openModalRemoveAllRecruitmentShow = function(size,typeShow){
+        var modalInstance = $modal.open({
+                animation: false,///$scope.animationsEnabled,
+                templateUrl: pathWebsite + 'assets/admin/partial/modal-remove-all-recruitment-show.php',
+                controller: function ($scope, $modalInstance,typeShow,csrf){
+                    //$scope.type = {};
+                    $scope.objectRecruitmentShow = {};
+                    $scope.objectRecruitmentShow.typeShow = typeShow;
+                    $scope.objectRecruitmentShow.csrf = csrf;
+                    $scope.titleTypeShowRemove ='';
+                    if(typeShow == 1){
+
+                      $scope.titleTypeShowRemove +=' trên trang top.';
+                    }
+                    else if(typeShow == 2){
+
+                      $scope.titleTypeShowRemove +=' trên các trang khác.';
+                    }
+                    $scope.ok = function () {
+                        $modalInstance.close($scope.adword);
+                        $scope.getRecruitmentShow(typeShow);
+                    };
+
+                    $scope.cancel = function () {
+                        $modalInstance.dismiss('cancel');
+                        //console.log(ddToDms($("#latitude").text(),$("#longitude").text()));
+                    };
+
+                },
+                size: size,
+                resolve: {
+                    csrf:function(){
+                        return recruitmentService.getToken();
+                    },
+                    typeShow:function(){
+                        return typeShow;
+                    }
+                },
+                scope:$scope,
+                backdrop:'static',
+                 windowClass: "modal fade in"
+
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                $scope.selected = selectedItem;
+
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+    }
+
+    $scope.removeAllRecruitmentShow = function(objectRecruitmentShow){
+      $scope.disabled_modal = true;
+        recruitmentService.removeAllRecruitmentShow(angular.toJson(objectRecruitmentShow),function(data){
+            if(data){
+               // alertCreateSuccess();
+                $scope.ok();
+                $scope.disabled_modal = false;
+            }
+            else{
+                 alertErrors();
+                 $scope.cancel();
+            }
+        });
+    }
+
+
+
+
+    //$scope.base_url = config.base_url;
+    $scope.filteredItemsShow =  [];
+    $scope.groupedItemsShow  =  [];
+    $scope.itemsPerPageShow  =  5;
+    $scope.pagedItemsShow    =  [];
+    $scope.currentPageShow  =  0;
+    $scope.messageProcessShow = true;
+    //$scope.maxView = 0;
+    // $scope.reloadMember = function(option){
+    //     $scope.getMembers();
+    // };
+    // $scope.getIframeSrc = function (video) {
+    //     var objectJson = $.parseJSON(video.config_data_json);
+    //     return $scope.base_url + 'uploads/config/video/' + objectJson['file_tmp'];
+    // };
+
+   
+    $scope.getRecruitmentShowModal = function(){
+        //console.log("start get datta");
+        //$scope.membersActive = [];
+        $scope.start();
+       
+        recruitmentService.getListRecruitments(1,function(data){
+        $scope.pagedItemsShow = data;    
+       
+        $scope.search='';
+        //$scope.itemsPerPage  =  5;
+        $scope.currentPageShow = 1; //current page
+        $scope.entryLimitShow = 5; //max no of items to display in a page
+        $scope.filteredItemsShow = $scope.pagedItemsShow.length; //Initially for no filter  
+        $scope.totalItemsShow = $scope.pagedItemsShow.length;
+        //console.log("get data finish");
+        if($scope.filteredItemsShow == 0){
+           $("#div-no-data-loading").removeClass('hide');
+        }
+        else{
+          $("#div-data-loading-recruitment-show").addClass('hide');
+        }
+        $scope.complete();
+        });
+    };
+    $scope.setPageShow = function(pageNo) {
+        $scope.currentPageShow = pageNo;
+    };
+    $scope.filterShow = function() {
+        $timeout(function() { 
+            $scope.filteredItemsShow = $scope.filteredShow.length;
+            if($scope.filteredItemsShow == 0){
+               $("#div-no-data-loading").removeClass('hide');
+            }
+        }, 10);
+    };
+   
+
+    $scope.addRecruitmentShow = function(rec,typeShow){
+      //$scope.disabled_modal = true;
+        recruitmentService.addRecruitmentShow(rec.rec_id,typeShow,function(data){
+            if(data){
+                alertCreateSuccess();
+                switch(typeShow){
+                  case 1:
+                    rec.rec_is_show_top = 1;
+                  break;
+                  case 2:
+                  rec.rec_is_show_another = 1;
+                  break;
+                  default:
+                  rec.rec_is_show_top = 1;
+                  rec.rec_is_show_another = 1;
+                  break;
+                }
+                //$scope.ok();
+                //$scope.disabled_modal = false;
+            }
+            else{
+                 alertErrors();
+                 //$scope.cancel();
+            }
+        });
+    }
+
+
+    $scope.modalDeleteRecruitmentShow = function(size,rec,typeShow){
+      var modalInstance = $modal.open({
+                animation: false,///$scope.animationsEnabled,
+                templateUrl: pathWebsite + 'assets/admin/partial/modal-remove-recruitment-show.php',
+                controller: function ($scope, $modalInstance,rec,typeShow,csrf){
+                    //$scope.type = {};
+                    $scope.rec = rec;
+                    $scope.rec.typeShow = typeShow;
+                    $scope.rec.csrf = csrf;
+                    $scope.titleTypeShowRemove ='';
+                    if(typeShow == 1){
+
+                      $scope.titleTypeShowRemove +=' trên trang top.';
+                    }
+                    else if(typeShow == 2){
+
+                      $scope.titleTypeShowRemove +=' trên các trang khác.';
+                    }
+                    else{
+                      $scope.titleTypeShowRemove +=' trên tất cả các trang.';
+                    }
+                    $scope.ok = function () {
+                        $modalInstance.close($scope.adword);
+                        $scope.getRecruitmentShow(typeShow);
+                    };
+
+                    $scope.cancel = function () {
+                        $modalInstance.dismiss('cancel');
+                        //console.log(ddToDms($("#latitude").text(),$("#longitude").text()));
+                    };
+
+                },
+                size: size,
+                resolve: {
+                    csrf:function(){
+                        return recruitmentService.getToken();
+                    },
+                    typeShow:function(){
+                        return typeShow;
+                    },
+                    rec:function(){
+                      return rec;
+                    }
+                },
+                scope:$scope,
+                backdrop:'static',
+                 windowClass: "modal fade in"
+
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                $scope.selected = selectedItem;
+
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+    }
+
+    $scope.removeRecruitmentShow = function(rec){
+      $scope.disabled_modal = true;
+        recruitmentService.removeRecruitmentShow(angular.toJson(rec),function(data){
+            if(data){
+               // alertCreateSuccess();
+                $scope.ok();
+                $scope.disabled_modal = false;
+            }
+            else{
+                 alertErrors();
+                 $scope.cancel();
+            }
+        });
+    }
+
 
 
 });
 
 
-app.controller('recruitmentHLController', function (recruitmentService,employerRecruitmentService,employerUserService,jobseekerService,$scope, $http, $timeout,cfpLoadingBar,$modal,$log,$window,$filter) {
+/*app.controller('recruitmentHLController', function (recruitmentService,employerRecruitmentService,employerUserService,jobseekerService,$scope, $http, $timeout,cfpLoadingBar,$modal,$log,$window,$filter) {
      $scope.formatDate = function(date){
           var d = date.substring(0,10);//new Date(date);
            d = d.split("-");
@@ -946,52 +1305,52 @@ app.controller('recruitmentHLController', function (recruitmentService,employerR
     // };
 
     
-    // $scope.getRecruitmentShow = function(typeShow){
-    //     //console.log("start get datta");
-    //     //$scope.membersActive = [];
-    //     $scope.start();
-    //     recruitmentService.getRecruitmentShow(typeShow,function(data){
-    //     $scope.pagedItems = data;    
-    //     //console.log(data);
-    //     $scope.search='';
-    //     //$scope.itemsPerPage  =  5;
-    //     $scope.currentPage = 1; //current page
-    //     $scope.entryLimit = 20; //max no of items to display in a page
-    //     $scope.filteredItems = $scope.pagedItems.length; //Initially for no filter  
-    //     $scope.totalItems = $scope.pagedItems.length;
-    //     //console.log("get data finish");
-    //     if($scope.filteredItems == 0){
-    //        $("#div-no-data-loading").removeClass('hide');
-    //     }
-    //     $scope.complete();
-    //     });
-    // };
-    // $scope.setPage = function(pageNo) {
-    //     $scope.currentPage = pageNo;
-    // };
-    // $scope.filter = function() {
-    //     $timeout(function() { 
-    //         $scope.filteredItems = $scope.filtered.length;
-    //         if($scope.filteredItems == 0){
-    //            $("#div-no-data-loading").removeClass('hide');
-    //         }
-    //     }, 10);
-    // };
-    // $scope.sort_by = function(predicate) {
-    //     $scope.predicate = predicate;
-    //     $scope.reverse = !$scope.reverse;
-    // };
-    // $scope.start = function() {
-    //   cfpLoadingBar.start();
-    // };
-    //  $scope.complete = function () {
-    //   cfpLoadingBar.complete();
-    //   $("#tableShowRecruitment").removeClass('hide');
-    //   $("#div-data-loading").addClass('hide');
-    //  // $(".row-member").removeClass('hide');
-    // }
+    $scope.getRecruitmentShow = function(typeShow){
+        //console.log("start get datta");
+        //$scope.membersActive = [];
+        $scope.start();
+        recruitmentService.getRecruitmentShow(typeShow,function(data){
+        $scope.pagedItems = data;    
+        console.log(data);
+        $scope.search='';
+        //$scope.itemsPerPage  =  5;
+        $scope.currentPage = 1; //current page
+        $scope.entryLimit = 20; //max no of items to display in a page
+        $scope.filteredItems = $scope.pagedItems.length; //Initially for no filter  
+        $scope.totalItems = $scope.pagedItems.length;
+        //console.log("get data finish");
+        if($scope.filteredItems == 0){
+           $("#div-no-data-loading").removeClass('hide');
+        }
+        $scope.complete();
+        });
+    };
+    $scope.setPage = function(pageNo) {
+        $scope.currentPage = pageNo;
+    };
+    $scope.filter = function() {
+        $timeout(function() { 
+            $scope.filteredItems = $scope.filtered.length;
+            if($scope.filteredItems == 0){
+               $("#div-no-data-loading").removeClass('hide');
+            }
+        }, 10);
+    };
+    $scope.sort_by = function(predicate) {
+        $scope.predicate = predicate;
+        $scope.reverse = !$scope.reverse;
+    };
+    $scope.start = function() {
+      cfpLoadingBar.start();
+    };
+     $scope.complete = function () {
+      cfpLoadingBar.complete();
+      $("#tableShowRecruitment").removeClass('hide');
+      $("#div-data-loading").addClass('hide');
+     // $(".row-member").removeClass('hide');
+    }
 
-});
+}); */
 
 app.directive('onlyDigits', function () {
 

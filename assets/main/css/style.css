@@ -26,7 +26,7 @@ body{
 
 }
 .job-province,.job-detail,#modalContactEmployer,#modal-create-document,#modal-document,
-#modalApplyJobAlert,.support-online-box,#myModal,.about-page,.contact-page,.manager{;
+#modalApplyJobAlert,.support-online-box,#myModal,.about-page,.contact-page,.manager,.slide-new-job{;
 	font:400 13px/normal 'Open Sans',sans-serif;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
@@ -791,7 +791,24 @@ footer span.copyrighttitle{
 	border:5px solid #fff;
 	margin: 0 auto;
 	/*max-width: 200px;*/
+	position: relative;
 	
+}
+.dp-inline-block{
+	display: inline-block;
+}
+.item-new-job span.title-new-job{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding:10px 20px;
+	width: 100%;
+    background-color: #000;
+    opacity: 0.5;
+    color: #fff;
+}
+span.title-new-job label{
+	display: block;
 }
 .item-new-job img{
 	max-width: 100%;

@@ -140,13 +140,15 @@ $(window).load(function() {
 var h = window.innerHeight;//$(window).height();
     h = (h*75)/100;// (h > 300) ? h-100 : h;
        // $( "<style>.modal-body {height:'"+h+"px'; overflow:auto;}</style>" ).appendTo( "head" )
-    $('<style type="text/css">.modal-body {max-height:'+h+'px; overflow:auto;}</style>').appendTo($('head'));
+    //resize modal
+    //$('<style type="text/css">.modal-body {max-height:'+h+'px; overflow:auto;}</style>').appendTo($('head'));
 });
 $( window ).resize(function() {
   var h = window.innerHeight;//$(window).height();
   h = (h*75)/100;//(h > 300) ? h-100 : h;
        // $( "<style>.modal-body {height:'"+h+"px'; overflow:auto;}</style>" ).appendTo( "head" )
-  $('<style type="text/css">.modal-body {max-height:'+h+'px; overflow:auto;}</style>').appendTo($('head'));
+  //resize modal
+  //$('<style type="text/css">.modal-body {max-height:'+h+'px; overflow:auto;}</style>').appendTo($('head'));
 
 });
 

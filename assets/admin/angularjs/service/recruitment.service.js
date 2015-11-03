@@ -62,9 +62,35 @@ app.factory('recruitmentService' ,function ($http,$q,$timeout){
 		
 		}
 
-		_recruitmentService.getRecruitmenntShow = function(option,callback){
+		_recruitmentService.getRecruitmentShow = function(option,callback){
 			return $http.get(pathWebsite + 'admin/recruitment/getRecruitmentShow/'+option).success(callback);
 		}
+		_recruitmentService.getMaxViewRecruitment = function(callback){
+			return $http.get(pathWebsite + 'admin/recruitment/getMaxViewRecruitment').success(callback);
+		}
+
+		_recruitmentService.removeAllRecruitmentShow = function(rec,callback){
+			var objectRecruitment = JSON.parse(rec);
+			
+			var csrf_name = objectRecruitment['csrf']['name'];
+			var csrf_hash = objectRecruitment['csrf']['hash'];
+			var postData = $.param({'csrf_test_name': csrf_hash,'recruitmentShow':rec});
+			$http.post(pathWebsite + 'admin/recruitment/removeAllRecruitmentShow', postData, {headers : {'Content-Type': 'application/x-www-form-urlencoded'}}).success(callback);
 		
+		}
+		_recruitmentService.removeRecruitmentShow = function(rec,callback){
+			var objectRecruitment = JSON.parse(rec);
+			var csrf_name = objectRecruitment['csrf']['name'];
+			var csrf_hash = objectRecruitment['csrf']['hash'];
+			var postData = $.param({'csrf_test_name': csrf_hash,'rec':rec});
+			$http.post(pathWebsite + 'admin/recruitment/removeRecruitmentShow', postData, {headers : {'Content-Type': 'application/x-www-form-urlencoded'}}).success(callback);
+		
+		}
+
+		_recruitmentService.addRecruitmentShow = function(recid,typeShow,callback){
+			return $http.get(pathWebsite + 'admin/recruitment/addRecruitmentShow/'+recid+'/'+typeShow).success(callback);
+		}
+
+
 		return _recruitmentService;
 });

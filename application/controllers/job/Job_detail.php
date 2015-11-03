@@ -62,7 +62,7 @@ class Job_detail extends CI_Controller {
 			'keyArr' => null,
 			'keyWord' => ''), TRUE);
 
-		$head = $this->load->view('main/head', array('user' => $user, 'scriptJob' => $scriptJob, 'styleJob' => $styleJob, 'title' => str_replace('-', ' ', $titleJob)), TRUE);
+		$head = $this->load->view('main/head', array('user' => $user, 'scriptJob' => $scriptJob, 'styleJob' => $styleJob, 'title' => str_replace('-', ' ', urldecode($titleJob))), TRUE);
 		$header = $this->load->view('main/header', array(
 			'logo' => 'img/header/allSHIGOTO.png',
 			'showTitle' => true,
