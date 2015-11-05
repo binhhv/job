@@ -349,3 +349,6 @@ $route['supportAPI/getMessageReplyUser/(:any)/(:num)'] = 'admin/admin_support/ge
 //captchar API
 $route['captcha/createCaptcha'] = 'captcha/createCaptcha';
 $route['captcha/checkCaptcha/(:any)'] = 'captcha/checkCaptcha/$1';
+
+//JOBSEEKER ROUTE
+$route['register_uv'] = 'jobseeker/jobseeker_register/index';

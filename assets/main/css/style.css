@@ -26,7 +26,7 @@ body{
 
 }
 .job-province,.job-detail,#modalContactEmployer,#modal-create-document,#modal-document,
-#modalApplyJobAlert,.support-online-box,#myModal,.about-page,.contact-page,.manager,.slide-new-job{;
+#modalApplyJobAlert,.support-online-box,#myModal,.about-page,.contact-page,.manager,.slide-new-job,.modal,.employer-page{;
 	font:400 13px/normal 'Open Sans',sans-serif;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
@@ -498,6 +498,9 @@ background: #31b0d5;
 .border-top-10{
 	border-top: 10px solid #f1f1f1;
 }
+.border-row{
+	border-top:2px solid #f1f1f1;
+}
 .employer-box .title-employer-box a{
 	color: #fff;
 	font-weight: bold;
@@ -662,6 +665,7 @@ footer span.copyrighttitle{
 .h1-hotline{
 	border-left: 5px solid #cc3333;
 	padding-left: 10px;
+	color: #fff;
 }
 #map{
 	height: 200px;
@@ -2622,4 +2626,46 @@ label.description-menu-job{
 }
 #modal-document .modal-dialog{
 	padding-top: 10px;
+}
+
+.icon-register-jobseeker i{
+	font-size: 90px;
+	color: #003366;
+	width: 90px;
+}
+.icon-register-employer i {
+	font-size: 90px;
+	width: 90px;
+	color: #cc3333;
+}
+.hotline-modal{
+	color: #000;
+	font-weight: bold;
+	display: block;
+}
+.no-padding-res{
+	padding: 0 !important;
+}
+.no-padding-left-res{
+	padding-left: 0 !important;
+}
+.item-job-hl{
+	font-size: 12px;
+}
+.item-job-hl a{
+	font-size: 15px !important;
+}
+.title-jobseeker-register{
+	font-size: 18px;
+	text-transform: uppercase;
+}
+.title-exits-account{
+	color: #000;
+}
+.title-exits-account a{
+	color: #000;
+	text-decoration: underline;
+}
+.margin-5{
+	margin: 5px;
 }

@@ -14,13 +14,13 @@ class Register extends CI_Controller {
 	}
 
 	public function index() {
-		$head = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|user register'), TRUE);
+		$head   = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|user register'), TRUE);
 		$header = $this->load->view('main/header', array(
-			'logo' => 'img/header/logo.jpg',
-			'showTitle' => true,
-			'logoWidth' => '70px',
-			'logoHeight' => '70px',
-		), TRUE);
+				'logo'       => 'img/header/logo.jpg',
+				'showTitle'  => true,
+				'logoWidth'  => '70px',
+				'logoHeight' => '70px',
+			), TRUE);
 
 		$csrf = array(
 			'name' => $this->security->get_csrf_token_name(),
@@ -30,7 +30,7 @@ class Register extends CI_Controller {
 		$provinceData = $this->account->getAllProvinceByCountry();
 
 		$content = $this->load->view('main/employer_register', array('csrf' => $csrf, 'province' => $provinceData), TRUE);
-		$footer = $this->load->view('main/footer', array(), TRUE);
+		$footer  = $this->load->view('main/footer', array(), TRUE);
 		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
 	}
 	//deployer
@@ -59,81 +59,85 @@ class Register extends CI_Controller {
 		$this->form_validation->set_rules('employer_contact_mobile', $this->lang->line('employer_contact_mobile_re_depl'), 'trim|required|regex_match[/^[0-9]{10}$/]|xss_clean');
 
 		if ($this->form_validation->run()) {
-			$account_email = $this->security->xss_clean($this->input->post('account_email'));
-			$account_password = $this->security->xss_clean($this->input->post('account_password'));
+			$account_email       = $this->security->xss_clean($this->input->post('account_email'));
+			$account_password    = $this->security->xss_clean($this->input->post('account_password'));
 			$account_is_get_news = '0';
-			$account_map_role = '2';
-			$account_is_delete = '0';
+			$account_map_role    = '2';
+			$account_is_delete   = '0';
 			$account_is_disabled = '0';
 			// $account_updated_at = new date('Y-m-d')
 			// $account_created_at = new date('Y-m-d')
 			$data = array(
-				'account_email' => $account_email,
-				'account_password' => md5($account_password),
+				'account_email'       => $account_email,
+				'account_password'    => md5($account_password),
 				'account_is_get_news' => $account_is_get_news,
-				'account_is_delete' => $account_is_delete,
+				'account_is_delete'   => $account_is_delete,
 				'account_is_disabled' => $account_is_disabled,
-				'account_map_role' => $account_map_role,
-				'account_created_at' => date('Y-m-d'),
+				'account_map_role'    => $account_map_role,
+				'account_created_at'  => date('Y-m-d'),
 			);
 			$id_account = 0;
 			try {
 				$id_account = $this->account->insertAccount($data);
 				if ($id_account > 0) {
 					//deployer
-					$employer_name = $this->security->xss_clean($this->input->post('employer_name'));
-					$employer_address = $this->security->xss_clean($this->input->post('employer_address'));
-					$employer_phone = $this->security->xss_clean($this->input->post('employer_phone'));
-					$employer_map_province = $this->security->xss_clean($this->input->post('employer_map_province'));
-					$employer_size = $this->security->xss_clean($this->input->post('employer_size'));
-					$employer_about = $this->security->xss_clean($this->input->post('employer_about'));
-					$employer_fax = $this->security->xss_clean($this->input->post('employer_fax'));
-					$employer_website = $this->security->xss_clean($this->input->post('employer_website'));
-					$employer_contact_name = $this->security->xss_clean($this->input->post('employer_contact_name'));
-					$employer_contact_email = $this->security->xss_clean($this->input->post('employer_contact_email'));
-					$employer_contact_phone = $this->security->xss_clean($this->input->post('employer_contact_phone'));
+					$employer_name           = $this->security->xss_clean($this->input->post('employer_name'));
+					$employer_address        = $this->security->xss_clean($this->input->post('employer_address'));
+					$employer_phone          = $this->security->xss_clean($this->input->post('employer_phone'));
+					$employer_map_province   = $this->security->xss_clean($this->input->post('employer_map_province'));
+					$employer_size           = $this->security->xss_clean($this->input->post('employer_size'));
+					$employer_about          = $this->security->xss_clean($this->input->post('employer_about'));
+					$employer_fax            = $this->security->xss_clean($this->input->post('employer_fax'));
+					$employer_website        = $this->security->xss_clean($this->input->post('employer_website'));
+					$employer_contact_name   = $this->security->xss_clean($this->input->post('employer_contact_name'));
+					$employer_contact_email  = $this->security->xss_clean($this->input->post('employer_contact_email'));
+					$employer_contact_phone  = $this->security->xss_clean($this->input->post('employer_contact_phone'));
 					$employer_contact_mobile = $this->security->xss_clean($this->input->post('employer_contact_mobile'));
 
 					$file_img_upload = $this->do_upload($id_account);
 					if ($file_img_upload > 0) {
 						//upload images
-						$employer_logo = $file_img_upload['name_new']; //$this->uploadImages($file_img_upload, $id_account);
-						$employer_logo_tmp = $file_img_upload['name_old']; //$_FILES["image"]["name"];
+						$employer_logo = $file_img_upload['name_new'];
+						//$this->uploadImages($file_img_upload, $id_account);
+
+						$employer_logo_tmp = $file_img_upload['name_old'];
+						//$_FILES["image"]["name"];
+
 					} else {
-						$employer_logo = '';
+						$employer_logo     = '';
 						$employer_logo_tmp = '';
 					}
 					$employer_is_approve = '0';
-					$employer_is_delete = '0';
+					$employer_is_delete  = '0';
 
 					$datadeploy = array(
-						'employer_map_account' => $id_account,
-						'employer_name' => $employer_name,
-						'employer_address' => $employer_address,
-						'employer_phone' => $employer_phone,
-						'employer_map_province' => $employer_map_province,
-						'employer_size' => $employer_size,
-						'employer_about' => $employer_about,
-						'employer_fax' => $employer_fax,
-						'employer_website' => $employer_website,
-						'employer_contact_name' => $employer_contact_name,
-						'employer_contact_email' => $employer_contact_email,
-						'employer_contact_phone' => $employer_contact_phone,
+						'employer_map_account'    => $id_account,
+						'employer_name'           => $employer_name,
+						'employer_address'        => $employer_address,
+						'employer_phone'          => $employer_phone,
+						'employer_map_province'   => $employer_map_province,
+						'employer_size'           => $employer_size,
+						'employer_about'          => $employer_about,
+						'employer_fax'            => $employer_fax,
+						'employer_website'        => $employer_website,
+						'employer_contact_name'   => $employer_contact_name,
+						'employer_contact_email'  => $employer_contact_email,
+						'employer_contact_phone'  => $employer_contact_phone,
 						'employer_contact_mobile' => $employer_contact_mobile,
-						'employer_logo' => $employer_logo,
-						'employer_logo_tmp' => $employer_logo_tmp,
-						'employer_is_approve' => $employer_is_approve,
-						'employer_is_delete' => $employer_is_delete,
-						'employer_created_at' => date('Y-m-d'),
-						'employer_update_at' => date('Y-m-d'),
+						'employer_logo'           => $employer_logo,
+						'employer_logo_tmp'       => $employer_logo_tmp,
+						'employer_is_approve'     => $employer_is_approve,
+						'employer_is_delete'      => $employer_is_delete,
+						'employer_created_at'     => date('Y-m-d'),
+						'employer_update_at'      => date('Y-m-d'),
 					);
 					$id_employer = $this->account->insertEmployer($datadeploy);
 					if ($id_employer > 0) {
 						$datamap = array(
-							'emac_map_account' => $id_account,
+							'emac_map_account'  => $id_account,
 							'emac_map_employer' => $id_employer,
-							'emac_is_delete' => '0',
-							'emac_created_at' => date('Y-m-d'),
+							'emac_is_delete'    => '0',
+							'emac_created_at'   => date('Y-m-d'),
 						);
 						$id_map_employer = $this->account->insertMapEmployer($datamap);
 					}
@@ -146,22 +150,22 @@ class Register extends CI_Controller {
 
 		} else {
 			$dataerr = array(
-				'account_email' => form_error('account_email'),
-				'account_password' => form_error('account_password'),
-				'confirm_password' => form_error('confirm_password'),
-				'employer_name' => form_error('employer_name'),
-				'employer_size' => form_error('employer_size'),
-				'employer_phone' => form_error('employer_phone'),
-				'employer_fax' => form_error('employer_fax'),
-				'employer_about' => form_error('employer_about'),
-				'employer_address' => form_error('employer_address'),
-				'employer_map_province' => form_error('employer_map_province'),
-				'employer_contact' => form_error('employer_contact'),
-				'employer_contact_email' => form_error('employer_contact_email'),
-				'employer_contact_phone' => form_error('employer_contact_phone'),
+				'account_email'           => form_error('account_email'),
+				'account_password'        => form_error('account_password'),
+				'confirm_password'        => form_error('confirm_password'),
+				'employer_name'           => form_error('employer_name'),
+				'employer_size'           => form_error('employer_size'),
+				'employer_phone'          => form_error('employer_phone'),
+				'employer_fax'            => form_error('employer_fax'),
+				'employer_about'          => form_error('employer_about'),
+				'employer_address'        => form_error('employer_address'),
+				'employer_map_province'   => form_error('employer_map_province'),
+				'employer_contact'        => form_error('employer_contact'),
+				'employer_contact_email'  => form_error('employer_contact_email'),
+				'employer_contact_phone'  => form_error('employer_contact_phone'),
 				'employer_contact_mobile' => form_error('employer_contact_mobile'),
-				'name' => $this->security->get_csrf_token_name(),
-				'hash' => $this->security->get_csrf_hash(),
+				'name'                    => $this->security->get_csrf_token_name(),
+				'hash'                    => $this->security->get_csrf_hash(),
 			);
 			echo json_encode(array('status' => 'errvalid', 'content' => $dataerr));
 
@@ -170,7 +174,7 @@ class Register extends CI_Controller {
 	}
 
 	function check_default($post_string) {
-		return $post_string == '0' ? FALSE : TRUE;
+		return $post_string == '0'?FALSE:TRUE;
 	}
 
 	//check phonenumber
@@ -178,7 +182,7 @@ class Register extends CI_Controller {
 		if (preg_match('/^([0-9]( |-)?)?((?[0-9]{3})?|[0-9]{3})( |-)?([0-9]{3}( |-)?[0-9]{4}|[a-zA-Z0-9]{7})$/', $phone)) {
 			return true;
 		} else {
-			$this->form_validation->set_message('_check_phone', '%s ' . $phone . ' is invalid format');
+			$this->form_validation->set_message('_check_phone', '%s '.$phone.' is invalid format');
 			return false;
 		}
 	}
@@ -210,34 +214,34 @@ class Register extends CI_Controller {
 		$this->form_validation->set_rules('account_first_name', 'lang:first_name', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('account_last_name', 'lang:last_name', 'trim|required|xss_clean');
 		//$this->form_validation->set_rules('account_captcha', 'lang:captcha', 'trim|invalid-captcha');
-		$captcha = $this->input->post('captcha-reg');
-		$word = $this->session->userdata('captchaWord');
+		$captcha      = $this->input->post('captcha-reg');
+		$word         = $this->session->userdata('captchaWord');
 		$checkCaptcha = false;
 		if (strcmp(strtoupper($captcha), strtoupper($word)) == 0) {
 			//return true;
 			$checkCaptcha = true;
 		}
 		if ($this->form_validation->run() && $checkCaptcha) {
-			$account_email = $this->security->xss_clean($this->input->post('account_email'));
-			$account_password = $this->security->xss_clean($this->input->post('account_password'));
-			$account_first_name = $this->security->xss_clean($this->input->post('account_first_name'));
-			$account_last_name = $this->security->xss_clean($this->input->post('account_last_name'));
+			$account_email       = $this->security->xss_clean($this->input->post('account_email'));
+			$account_password    = $this->security->xss_clean($this->input->post('account_password'));
+			$account_first_name  = $this->security->xss_clean($this->input->post('account_first_name'));
+			$account_last_name   = $this->security->xss_clean($this->input->post('account_last_name'));
 			$account_is_get_news = '0';
-			$account_map_role = '4';
-			$account_is_delete = '0';
+			$account_map_role    = '4';
+			$account_is_delete   = '0';
 			$account_is_disabled = '0';
 			// $account_updated_at = new date('Y-m-d')
 			// $account_created_at = new date('Y-m-d')
 			$data = array(
-				'account_email' => $account_email,
-				'account_password' => md5($account_password),
-				'account_first_name' => $account_first_name,
-				'account_last_name' => $account_last_name,
+				'account_email'       => $account_email,
+				'account_password'    => md5($account_password),
+				'account_first_name'  => $account_first_name,
+				'account_last_name'   => $account_last_name,
 				'account_is_get_news' => $account_is_get_news,
-				'account_is_delete' => $account_is_delete,
+				'account_is_delete'   => $account_is_delete,
 				'account_is_disabled' => $account_is_disabled,
-				'account_map_role' => $account_map_role,
-				'account_created_at' => date('Y-m-d'),
+				'account_map_role'    => $account_map_role,
+				'account_created_at'  => date('Y-m-d'),
 			);
 			$id_account = 0;
 			try {
@@ -250,14 +254,14 @@ class Register extends CI_Controller {
 		} else {
 			$data = array(
 				// 'roll' => form_error('roll'),
-				'account_email' => form_error('account_email'),
-				'account_password' => form_error('account_password'),
-				'confirm_password' => form_error('confirm_password'),
+				'account_email'      => form_error('account_email'),
+				'account_password'   => form_error('account_password'),
+				'confirm_password'   => form_error('confirm_password'),
 				'account_first_name' => form_error('account_first_name'),
-				'account_last_name' => form_error('account_last_name'),
-				'name' => $this->security->get_csrf_token_name(),
-				'hash' => $this->security->get_csrf_hash(),
-				'captcha' => 'invalid-captcha',
+				'account_last_name'  => form_error('account_last_name'),
+				'name'               => $this->security->get_csrf_token_name(),
+				'hash'               => $this->security->get_csrf_hash(),
+				'captcha'            => 'invalid-captcha',
 			);
 
 			echo json_encode(array('status' => 'errvalid', 'content' => $data));
@@ -279,15 +283,15 @@ class Register extends CI_Controller {
 	public function uploadImages($file, $id_account) {
 		$check = $file;
 		if ($check > 0) {
-			$target_dir = "uploads/logodeployer/" . $id_account . "/";
-			if (!file_exists('uploads/logodeployer/' . $id_account . "/")) {
+			$target_dir = "uploads/logodeployer/".$id_account."/";
+			if (!file_exists('uploads/logodeployer/'.$id_account."/")) {
 				mkdir('path/to/directory', 0777, true);
 			}
-			$picId = rand(10000, 500000);
-			$image_path = $picId . basename($_FILES["image"]["name"]);
+			$picId      = rand(10000, 500000);
+			$image_path = $picId.basename($_FILES["image"]["name"]);
 
-			$target_file = $target_dir . $image_path;
-			$uploadOk = 1;
+			$target_file   = $target_dir.$image_path;
+			$uploadOk      = 1;
 			$imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 			// Check if file already exists
 			if (file_exists($target_file)) {
@@ -297,13 +301,13 @@ class Register extends CI_Controller {
 			// Check file size
 			if ($_FILES["image"]["size"] > 500000) {
 				$message_error = "Sorry, your file is too large.";
-				$uploadOk = 0;
+				$uploadOk      = 0;
 			}
 			// Allow certain file formats
 			if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-				&& $imageFileType != "gif") {
+				 && $imageFileType != "gif") {
 				$message_error = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-				$uploadOk = 0;
+				$uploadOk      = 0;
 			}
 			// Check if $uploadOk is set to 0 by an error
 			if ($uploadOk == 0) {
@@ -332,7 +336,7 @@ class Register extends CI_Controller {
 
 	public function do_upload($id_account) {
 		$arr_upload;
-		$path = './uploads/logo_empoyer/' . $id_account . "/";
+		$path = './uploads/logo_empoyer/'.$id_account."/";
 		if (!file_exists($path)) {
 			mkdir($path, 0777, true);
 		}
@@ -340,25 +344,25 @@ class Register extends CI_Controller {
 
 		// Define file rules
 		$this->upload->initialize(array(
-			'upload_path' => $path,
-			'allowed_types' => "gif|jpg|png|jpeg|pdf",
-			'overwrite' => TRUE,
-			'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
-			// 'max_height' => "768",
-			// 'max_width' => "1024"
-		));
+				'upload_path'   => $path,
+				'allowed_types' => "gif|jpg|png|jpeg|pdf",
+				'overwrite'     => TRUE,
+				'max_size'      => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
+				// 'max_height' => "768",
+				// 'max_width' => "1024"
+			));
 		$file_upload = 'userfile';
 
 		if ($this->upload->do_upload($file_upload)) {
-			$your_file_new_name = 'hinh_new';
-			$data = $this->upload->data();
+			$your_file_new_name     = 'hinh_new';
+			$data                   = $this->upload->data();
 			$arr_upload['name_old'] = $data['file_name'];
-			$file_path = $data['file_path'];
-			$file = $data['full_path'];
-			$file_ext = $data['file_ext'];
-			$final_file_name = md5($file_upload . "_" . time()) . $file_ext;
+			$file_path              = $data['file_path'];
+			$file                   = $data['full_path'];
+			$file_ext               = $data['file_ext'];
+			$final_file_name        = md5($file_upload."_".time()).$file_ext;
 			// here is the renaming functon
-			rename($file, $file_path . $final_file_name);
+			rename($file, $file_path.$final_file_name);
 			$arr_upload['name_new'] = $final_file_name;
 			return $arr_upload;
 			// echo json_encode(array('status' => 'ss', 'content' => 'success'));

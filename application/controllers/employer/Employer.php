@@ -62,7 +62,7 @@ class Employer extends CI_Controller {
 
 		$content = $this->load->view('main/employer/index', array('employer_menu' => $employer_menu, 'employerInfo' => $employerInfo, 'csrf' => $csrf, 'update_contact_employer' => $update_contact_employer, 'update_imfomation_employer' => $update_imfomation_employer, 'update_account_employer' => $update_account_employer, 'recruitment' => $recruitment), TRUE);
 		$footer = $this->load->view('main/footer', array(), TRUE);
-		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
+		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer, 'isGray' => true));
 
 	}
 	function recruitment_active() {

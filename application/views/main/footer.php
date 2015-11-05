@@ -101,12 +101,12 @@
             </ul>
             <div class="">
             <!-- <h2 class="margin-top-5" style="display: inline-block">HOTLINE</h2> -->
-             <h1 class="h1-hotline">HOTLINE : XX-XXX-XXXX-XX</h1>
+             <h1 class="h1-hotline">HOTLINE : 01212 049 149</h1>
               <!-- <div class="border-bottom-title border-color-1"></div> -->
             </div>
 
 
-             <span class="copyrighttitle">Copyright 2015 JOB7VN Group | All Rights Reserved </span>
+             <span class="copyrighttitle">Copyright 2015 allSHIGOTO Group | All Rights Reserved </span>
         </div>
          <div class="col-sm-6 col-md-6 col-xs-12 text-center">
           <!-- <div class="col-sm-12 col-xs-12 text-left">

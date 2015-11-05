@@ -36,4 +36,8 @@
 17. phần người tìm việc:
 	-home
 	-menu
+18. fix show new job responsie. (done)
+19. faq chua lay du lieu tu db len.
+20. check neu ton tai slogan thi - header px di.
+
 100002246826429

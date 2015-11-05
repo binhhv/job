@@ -20,10 +20,12 @@ $lang['password'] = "Mật khẩu";
 $lang['passconf'] = "Xác nhận Mật khẩu";
 $lang['first_name'] = "Tên";
 $lang['last_name'] = "Họ";
+//$lang['captcha'] = 'Captcha';
 $lang['matches'] = "Trường '%s' không khớp với trường '%s'.";
 $lang['required'] = "Trường '%s' là bắt buộc.";
 $lang['invalid-email'] = "'%s' này không hợp lệ.";
 $lang['regex_match'] = "'%s' này không hợp lệ.";
+$lang['invalid-captcha'] = "Captcha không hợp lệ";
 
 #user register
 $lang['title_re_user'] = "NGƯỜI TÌM VIỆC ĐĂNG KÝ";

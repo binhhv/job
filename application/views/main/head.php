@@ -118,6 +118,7 @@ if (isset($styleOption)) {
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
 <script src="<?php echo base_url()?>/assets/main/bootstrap/dist/js/bootstrap-select.js"></script>
 <script src="<?php echo base_url()?>/assets/main/js/upload/ajaxfileupload.js"></script>
+<script src="<?php echo base_url()?>/assets/main/js/fix-modal-show.js"></script>
  <!-- <script src="<?php echo base_url()?>/assets/main/js/map/markerwithlabel.js"></script>-->
  <?php
 if (isset($scriptJob)) {

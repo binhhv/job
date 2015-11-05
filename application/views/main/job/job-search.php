@@ -1,7 +1,7 @@
 	<div class="container job-province">
 
 		<div class="row">
-		<div class="col-sm-4 ">
+		<div class="col-sm-4 no-padding-res">
 			<!-- <div class="col-sm-12 "> -->
 				<div class="job-province-box">
 				<?php if (isset($searchHorizontal)) {
@@ -209,7 +209,7 @@ if (isset($listJobShow) && count($listJobShow) > 0) {
 
 		</div>
 		<div class="row">
-			<div class="col-sm-12 margin-top-5">
+			<div class="col-sm-12 margin-top-5 no-padding-left-res">
 				<div  style="background:url(<?php echo base_url() . "assets/main/img/about/parallax-bg-3.jpg"?>) 50% 0px no-repeat ;">
 					<div class="ads-search-job">
 						<div class="row">

@@ -4,14 +4,21 @@ $objectImgRecruitment = json_decode($imageRecruitment, true);
 if (isset($listJobShow) && count($listJobShow) > 0) {
 
 	$strSlideJob = '';
-	$i = 1;foreach ($listJobShow as $value) {
+	$strSlideJobsm = '';
+	$strSlideJobxs = '';
+	$i = 1;
+	$j = 1;
+	$k = 1;foreach ($listJobShow as $value) {
+
+		/*----------------------------------------------*/
+		//get job to slide new job to screen md
 		if ($i % 3 == 1) {
 			$strSlideJob .= '<li><div class="row  list-item-new-job">';
 		}
-		$strSlideJob .= '<div class="col-sm-4 col-xs-12 text-center ';
-		if ($i % 3 == 1 || $i % 3 == 0) {
-			$strSlideJob .= 'hide-job-responsive-760';
-		}
+		$strSlideJob .= '<div class="col-md-4 text-center ';
+		// if ($i % 3 == 1 || $i % 3 == 0) {
+		// 	$strSlideJob .= 'hide-job-responsive-760';
+		// }
 		$strSlideJob .= '">';
 		$strSlideJob .= '<a href="' . base_url('job') . '/' . str_replace(' ', '-', $value->rec_title) . '-' . $value->rec_id . '.html' . '" class=" item-new-job dp-inline-block">';
 		$strSlideJob .= '<span class="title-new-job text-left">';
@@ -24,7 +31,46 @@ if (isset($listJobShow) && count($listJobShow) > 0) {
 			$strSlideJob .= '</div></li>';
 		}
 
+		/*------------------------------------------------*/
+
+		/*------------------------------------------------*/
+		//get job to slide new job to screen sm
+		if ($j % 2 == 1) {
+			$strSlideJobsm .= '<li><div class="row list-item-new-job">';
+		}
+		$strSlideJobsm .= '<div class="col-sm-6 text-center';
+		// if ($i % 3 == 1 || $i % 3 == 0) {
+		// 	$strSlideJobsm .= 'hide-job-responsive-760';
+		// }
+		$strSlideJobsm .= '">';
+		$strSlideJobsm .= '<a href="' . base_url('job') . '/' . str_replace(' ', '-', $value->rec_title) . '-' . $value->rec_id . '.html' . '" class=" item-new-job dp-inline-block">';
+		$strSlideJobsm .= '<span class="title-new-job text-left">';
+		$strSlideJobsm .= '<label>' . $value->rec_title . '</label>';
+		$strSlideJobsm .= '<small>' . $value->employer_name . '</small>';
+		$strSlideJobsm .= '</span>';
+		$strSlideJobsm .= '<img src="' . base_url() . "uploads/config/imgRecruitment/" . $objectImgRecruitment["file_tmp"] . '">';
+		$strSlideJobsm .= '</a></div>';
+		if ($j % 2 == 0) {
+			$strSlideJobsm .= '</div></li>';
+		}
+		/*-------------------------------------------------*/
+
+		/*------------------------------------------------*/
+		//get job to slide new job to screen xs
+		$strSlideJobxs .= '<li><div class="row  list-item-new-job">';
+		$strSlideJobxs .= '<div class="col-xs-12 text-center ';
+		$strSlideJobxs .= '">';
+		$strSlideJobxs .= '<a href="' . base_url('job') . '/' . str_replace(' ', '-', $value->rec_title) . '-' . $value->rec_id . '.html' . '" class=" item-new-job dp-inline-block">';
+		$strSlideJobxs .= '<span class="title-new-job text-left">';
+		$strSlideJobxs .= '<label>' . $value->rec_title . '</label>';
+		$strSlideJobxs .= '<small>' . $value->employer_name . '</small>';
+		$strSlideJobxs .= '</span>';
+		$strSlideJobxs .= '<img src="' . base_url() . "uploads/config/imgRecruitment/" . $objectImgRecruitment["file_tmp"] . '">';
+		$strSlideJobxs .= '</a></div></div></li>';
+		/*-------------------------------------------------*/
 		$i++;
+		$j++;
+		$k++;
 	}
 
 	?>
@@ -39,88 +85,49 @@ if (isset($listJobShow) && count($listJobShow) > 0) {
 
 <div class="row slide-new-job">
 		<div class="col-lg-12 col-sm-12 col-md-12" style="position:relative">
-			<div class="flexslider-job" >
-	              <ul class="slides">
+			<!--md-->
+			<div class="flexslider-job slide-job-md" >
+	            <ul class="slides">
 
 	              <?php echo $strSlideJob;?>
-	              			<!-- <li>
-	              				<div class="row  list-item-new-job">
-	              					<div class="col-sm-4 col-xs-12 text-center">
-	              					<a href="#" class=" item-new-job dp-inline-block">
-	              					<span class="title-new-job text-left">
-	              						<label>ádasd</label>
-	              						<small>ádasdsd</small>
-	              					</span>
-	              					<img src="<?php echo base_url() . 'uploads/config/imgRecruitment/' . $objectImgRecruitment['file_tmp'];?>">
-	              					</a></div>
 
-
-	              					<div class="col-sm-4 col-xs-6 hide-job-responsive-760">
-	              					<div class=" item-new-job">
-	              					<img src="<?php echo base_url();?>assets/main/img/job/new-job-item.png">
-	              					</div></div>
-	              					<div class="col-sm-4 col-xs-6 hide-job-responsive-760">
-	              					<div class=" item-new-job">
-	              					<img src="<?php echo base_url();?>assets/main/img/job/new-job-item.png">
-	              					</div></div>
-	              				</div>
-	              			</li> -->
-	              			<!-- <li>
-	              				<div class="row  list-item-new-job">
-	              					<div class="col-sm-4 col-xs-12">
-	              					<div class=" item-new-job">
-	              					<img src="<?php echo base_url();?>assets/main/img/job/new-job-item.png">
-	              					</div></div>
-	              					<div class="col-sm-4 col-xs-6 hide-job-responsive-760">
-	              					<div class=" item-new-job">
-	              					<img src="<?php echo base_url();?>assets/main/img/job/new-job-item.png">
-	              					</div></div>
-	              					<div class="col-sm-4 col-xs-6 hide-job-responsive-760">
-	              					<div class=" item-new-job">
-	              					<img src="<?php echo base_url();?>assets/main/img/job/new-job-item.png">
-	              					</div></div>
-	              				</div>
-	              			</li>
-	              			<li>
-	              				   <div class="row  list-item-new-job">
-	              					<div class="col-sm-4 col-xs-12">
-	              					<div class=" item-new-job">
-	              					<img src="<?php echo base_url();?>assets/main/img/job/new-job-item.png">
-	              					</div></div>
-	              					<div class="col-sm-4 col-xs-6 hide-job-responsive-760">
-	              					<div class=" item-new-job">
-	              					<img src="<?php echo base_url();?>assets/main/img/job/new-job-item.png">
-	              					</div></div>
-	              					<div class="col-sm-4 col-xs-6 hide-job-responsive-760">
-	              					<div class=" item-new-job">
-	              					<img src="<?php echo base_url();?>assets/main/img/job/new-job-item.png">
-	              					</div></div>
-	              				</div>
-	              			</li>
-	              			<li>
-	              				      <div class="row  list-item-new-job">
-	              					<div class="col-sm-4 col-xs-12">
-	              					<div class=" item-new-job">
-	              					<img src="<?php echo base_url();?>assets/main/img/job/new-job-item.png">
-	              					</div></div>
-	              					<div class="col-sm-4 col-xs-6 hide-job-responsive-760">
-	              					<div class=" item-new-job">
-	              					<img src="<?php echo base_url();?>assets/main/img/job/new-job-item.png">
-	              					</div></div>
-	              					<div class="col-sm-4 col-xs-6 hide-job-responsive-760">
-	              					<div class=" item-new-job">
-	              					<img src="<?php echo base_url();?>assets/main/img/job/new-job-item.png">
-	              					</div></div>
-	              				</div>
-	              			</li> -->
-
-	               <!--  <li><a href="gallery-single.htm"><img src="<?php echo base_url();?>assets/common/img/gallery/bg1.jpg" alt="slider" /></a></li>
-	                <li><a href="gallery-single.htm"><img src="<?php echo base_url();?>assets/common/img/gallery/bg2.jpg" alt="slider" /></a></li>
-	                <li><a href="gallery-single.htm"><img src="<?php echo base_url();?>assets/common/img/gallery/bg3.jpg" alt="slider" /></a></li>
-	                <li><a href="gallery-single.htm"><img src="<?php echo base_url();?>assets/common/img/gallery/bg4.jpg" alt="slider" /></a></li>
-	                <li><a href="gallery-single.htm"><img src="<?php echo base_url();?>assets/common/img/gallery/bg5.jpg" alt="slider" /></a></li> -->
-	              </ul>
+	          	</ul>
+	          	<!-- <ul class="slides slide-job-sm">
+	          	<?php echo $strSlideJobsm;?>
+	          	</ul>
+	          	<ul class="slides slide-job-xs">
+	          	<?php echo $strSlideJobxs;?>
+	            </ul> -->
 	        </div>
+	        <!--sm-->
+	        <div class="flexslider-job slide-job-sm" >
+	            <!-- <ul class="slides slide-job-md">
+
+	              <?php echo $strSlideJob;?>
+
+	          	</ul> -->
+	          	<ul class="slides">
+	          		<?php echo $strSlideJobsm;?>
+	          	</ul>
+	          	<!-- <ul class="slides slide-job-xs">
+	          	<?php echo $strSlideJobxs;?>
+	            </ul> -->
+	        </div>
+	        <!--xs-->
+	        <div class="flexslider-job slide-job-xs" >
+	            <!-- <ul class="slides slide-job-md">
+
+	              <?php echo $strSlideJob;?>
+
+	          	</ul>
+	          	<ul class="slides slide-job-sm">
+	          	<?php echo $strSlideJobsm;?>
+	          	</ul> -->
+	          	<ul class="slides">
+	          		<?php echo $strSlideJobxs;?>
+	            </ul>
+	        </div>
+
 	        <div class="custom-navigation">
 		          <a href="#" class="flex-prev">
 		          	<img src="<?php echo base_url()?>assets/main/img/job/arrow-left.png">

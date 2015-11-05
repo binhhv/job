@@ -3,7 +3,7 @@
 					<div class="row top-header">
 					<?php if (!isset($user)) {?>
 						<div class="col-sm-6 text-center">
-							<a href="">Đăng ký</a> |
+							<a href="#" data-toggle="modal" data-target="#modalTypeRegister">Đăng ký</a> |
 							<a href="<?php echo base_url('login');?>?url=<?php echo urlencode(current_url());?>">Đăng nhập</a>
 						</div>
 						<?php } else {
@@ -141,7 +141,7 @@ if (isset($logoJson)) {
 ?> register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="<?php echo base_url('contact');?>">Liên hệ</a></li>
 <?php if (!isset($user)) {?>
 
-							<li  id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Đăng ký</a></li>
+							<li  id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="#" data-toggle="modal" data-target="#modalTypeRegister">Đăng ký</a></li>
 	<li id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="sign-up/index.html">Đăng nhập</a></li>
 
 						<?php } else {
@@ -178,3 +178,4 @@ if (isset($logoJson)) {
 
 									<a href="#" class="primary-menu-toggle in-header toggle-menu" id="toggle-menu-open"><i class="fa fa-bars"></i></a>
 								</div>
+
