@@ -36,8 +36,10 @@
 17. phần người tìm việc:
 	-home
 	-menu
+	-dang ky (done)
 18. fix show new job responsie. (done)
 19. faq chua lay du lieu tu db len.
-20. check neu ton tai slogan thi - header px di.
-
+20. check neu ton tai slogan thi - header px di. (k can thiet)
+21. fix modal show scroll y - admin (done)
+22. fix facebook fan page full and responsie (done not work with resize)
 100002246826429

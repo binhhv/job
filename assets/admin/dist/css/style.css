@@ -716,3 +716,7 @@ video{
 .edit-show-rec{
 	cursor: pointer;
 }
+
+.modal-open{
+	overflow-y:scroll !important;
+}

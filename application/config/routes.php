@@ -352,3 +352,4 @@ $route['captcha/checkCaptcha/(:any)'] = 'captcha/checkCaptcha/$1';
 
 //JOBSEEKER ROUTE
 $route['register_uv'] = 'jobseeker/jobseeker_register/index';
+$route['jobseeker'] = 'jobseeker/jobseeker/index';

@@ -142,7 +142,14 @@ class Globals {
 		}
 
 	}
-
+	function getTagJob() {
+		$sql = "select a.career_id,a.career_name,IFNULL(b.numJob,0) as numJob
+			   from career a
+			   left join (select rec_job_map_career,count(rec_id) as numJob from recruitment where rec_is_delete = 0 and rec_is_disabled = 0 group by rec_job_map_career) as b
+			   on a.career_id = b.rec_job_map_career
+			   where a.career_is_delete = 0";
+		return $this->getFromDbQueryBinding($sql, array());
+	}
 	public function getFromDb($projections) {
 
 		if ($projections != null) {

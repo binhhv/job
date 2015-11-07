@@ -35,64 +35,7 @@ if (isset($listJobShow) && count($listJobShow) > 0) {
 		<?php }
 }
 ?>
-<!-- <div class="item-job-hl">
-						<div class="row">
-							<div class="col-sm-12">
-								<label><span class="btn-warning">qc</span>Tuyển nhân viên</label>
-								<span>Công ty abx</span>
-							</div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-tag"></i></div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-calendar-o"></i></div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-money"></i></div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-map-marker"></i></div>
-						</div>
-				</div>
-				<div class="item-job-hl">
-						<div class="row">
-							<div class="col-sm-12">
-								<label><span class="btn-warning">qc</span>Tuyển nhân viên</label>
-								<span>Công ty abx</span>
-							</div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-tag"></i></div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-calendar-o"></i></div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-money"></i></div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-map-marker"></i></div>
-						</div>
-				</div>
-				<div class="item-job-hl">
-						<div class="row">
-							<div class="col-sm-12">
-								<label><span class="btn-warning">qc</span>Tuyển nhân viên</label>
-								<span>Công ty abx</span>
-							</div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-tag"></i></div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-calendar-o"></i></div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-money"></i></div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-map-marker"></i></div>
-						</div>
-				</div>
-				<div class="item-job-hl">
-						<div class="row">
-							<div class="col-sm-12">
-								<label><span class="btn-warning">qc</span>Tuyển nhân viên</label>
-								<span>Công ty abx</span>
-							</div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-tag"></i></div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-calendar-o"></i></div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-money"></i></div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-map-marker"></i></div>
-						</div>
-				</div> -->
-				<!-- <div class="item-job-hl">
-						<div class="row">
-							<div class="col-sm-12">123123123</div>
-							<div class="col-sm-6 col-xs-6">123</div>
-							<div class="col-sm-6 col-xs-6">123</div>
-							<div class="col-sm-6 col-xs-6">123</div>
-							<div class="col-sm-6 col-xs-6">123123</div>
-						</div>
-				</div> -->
-			</div>
+</div>
 		</div>
 		<div class="col-sm-8 ">
 

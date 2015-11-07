@@ -208,11 +208,18 @@
 		 }
 		 //alert(query + '_'+parameter);
 
-		 link = link.replace(/ /g,"-");
+		 link = link.replace(/ /g,"-").replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'-');
 		 //alert(link);
 		 window.open('<?php echo base_url("search");?>'+'/'+link,'_self');
 
 
 		 //alert(keyWord);
 	});
+	function replaceReg(strReg){
+		var reg = [' ','*', '?', '(', ')', '+', '\'', "\"", '_', "=",'/'];
+		for (var i = reg.length - 1; i >= 0; i--) {
+			strReg = strReg.replace(reg[i],'-');
+		};
+		return strReg;
+	}
 	</script>

@@ -90,7 +90,7 @@
                  <li>|</li>
                 <li><a href="<?php echo base_url('contact')?>">Liên hệ</a></li>
                 <li>|</li>
-                <li><a href="<?php echo base_url()?>">Giúp đỡ</a></li>
+                <li><a href="<?php echo base_url()?>">Hỗ trợ</a></li>
             </ul>
             <ul class="social">
                 <li><a href="#"><img src="<?php echo base_url();?>assets/main/img/social/facebook.png"></a></li>
@@ -113,9 +113,15 @@
            <h2>HOTLINE</h2>
            <h1>XX-XXX-XXXX-XX</h1>
            </div> -->
-           <div class="col-sm-12 col-xs-12">
-             <div class="fb-page" data-href="https://www.facebook.com/japanese.job" data-width="auto" data-height="150" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/japanese.job"><a href="https://www.facebook.com/japanese.job">Tuyển dụng nhân sự tiếng Nhật ở Việt Nam（ベトナムでの日本語関係の仕事の募集）</a></blockquote></div></div>
+           <div class="col-sm-12 col-xs-12 fb-load no-padding">
+             <!-- <div class="fb-page" data-href="https://www.facebook.com/japanese.job" data-width="250" data-height="150" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/japanese.job"><a href="https://www.facebook.com/japanese.job">Tuyển dụng nhân sự tiếng Nhật ở Việt Nam（ベトナムでの日本語関係の仕事の募集）</a></blockquote></div></div> -->
            </div>
+            <!-- <div class="col-sm-12 col-xs-12 fb-md">
+             <div class="fb-page" data-href="https://www.facebook.com/japanese.job" data-width="350" data-height="150" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/japanese.job"><a href="https://www.facebook.com/japanese.job">Tuyển dụng nhân sự tiếng Nhật ở Việt Nam（ベトナムでの日本語関係の仕事の募集）</a></blockquote></div></div>
+           </div>
+            <div class="col-sm-12 col-xs-12 fb-lg text-right">
+             <div class="fb-page" data-href="https://www.facebook.com/japanese.job" data-width="500" data-height="150" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/japanese.job"><a href="https://www.facebook.com/japanese.job">Tuyển dụng nhân sự tiếng Nhật ở Việt Nam（ベトナムでの日本語関係の仕事の募集）</a></blockquote></div></div>
+           </div> -->
          <!--  <div class="col-sm-12 col-xs-12">
             <div class="hotline">
             <h2>HOTLINE</h2>  <h1>XX-XXX-XXXX-XX</h1>

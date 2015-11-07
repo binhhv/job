@@ -42,13 +42,50 @@
 .slide-job-xs{
 	display: none;
 }
+.fb-lg{
+	display: none;
+}
+.fb-xs{
+	display: none;
+}
+.fb-md{
+	display: block;
+}
+
 }
 @media (min-width: 1200px) {
-
+	.fb-lg{
+	display: block;
+}
+.fb-md{
+	display: none;
+}
+.fb-xs{
+	display: none;
+}
+}
+@media (min-width: 768px){
+	.fb-lg{
+	display: none;
+}
+.fb-xs{
+	display: block;
+}
+.fb-md{
+	display: none;
+}
 }
 
-
 @media (max-width: 767px) {
+	.fb-lg{
+	display: none;
+}
+.fb-md{
+	display: none;
+}
+.fb-xs{
+	display: block;
+}
 	.title-job-scroll{
 		padding-top: 0;
 	height: auto;

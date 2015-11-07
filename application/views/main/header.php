@@ -14,7 +14,7 @@
 									<a href="<?php echo base_url('employer');?>">Trang nhà tuyển dụng</a> |
 									<a href="<?php echo base_url('logout');?>">Đăng xuất</a>
 									<?php } else if ($user['role'] == 4) {?>
-									<a href="">Trang của tôi</a> |
+									<a href="<?php echo base_url('jobseeker')?>">Trang của tôi</a> |
 									<a href="<?php echo base_url('logout');?>">Đăng xuất</a>
 	<?php } else if ($user['role'] == 1 || $user['role'] == 5) {?>
 									<a href="<?php echo base_url('admin')?>">Trang admin</a> |

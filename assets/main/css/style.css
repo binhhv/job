@@ -517,6 +517,9 @@ background: #31b0d5;
 .margin-top--10{
 	margin-top: -10px;
 }
+.margin-bottom-10{
+	margin-bottom: 10px;
+}
 /*contact css*/
 .contact-content{
 	background: #fff;
@@ -801,6 +804,7 @@ footer span.copyrighttitle{
 .dp-inline-block{
 	display: inline-block;
 }
+.dp-block{display: block;}
 .item-new-job span.title-new-job{
 	position: absolute;
 	bottom: 0;
@@ -2668,4 +2672,61 @@ label.description-menu-job{
 }
 .margin-5{
 	margin: 5px;
+}
+.border-vertical{
+	border-left: 5px solid #003366;
+	margin-right: 10px;
+}
+.account-box{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.avartar-default-account{
+	margin: 0 10px;
+	display: inline-block;
+}
+.username-account{
+	display: inline-block;
+}
+.account-box span{
+	display: block;
+}
+.lh-20{
+	line-height: 20px;
+}
+.valign-bottom{
+	vertical-align: bottom;
+}
+.no-margin-bottom{
+	margin-bottom: 0 !important;
+}
+.border-row-1{
+	border-bottom: 1px solid #ededed;
+}
+/*.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+  width: 100% !important;
+  min-width: 300px !important;
+}*/
+
+/*.fb-page, 
+.fb-page span, 
+.fb-page span iframe[style] { 
+    width: 100% !important; 
+}*/
+
+
+.item-tag-job a,.item-tag-job a:hover{
+	color: #000;
+	
+	padding: 5px 10px;
+	display: block;
+}
+.item-tag-job a:hover{
+	text-decoration: underline !important;
+}
+.list-tag-job{
+	max-height: 500px;
+	height: 500px;
+	margin-right: 10px !important;
+	overflow: auto;
 }

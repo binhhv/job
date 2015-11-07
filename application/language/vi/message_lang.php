@@ -108,3 +108,9 @@ $lang['rec_contact_phone'] = "Điện thoại";
 $lang['rec_contact_mobile'] = "Di động";
 $lang['rec_contact_form'] = "Hình thức liên hệ";
 $lang['rec_job_require_sex'] = "Giới tính";
+
+#form change password
+$lang['old_password'] = 'Mật khẩu cũ';
+$lang['new_password'] = 'Mật khẩu mới';
+$lang['confirm_password'] = 'Nhập lại mật khẩu mới';
+$lang['btn_change_password'] = 'Thay đổi mật khẩu';

@@ -205,7 +205,7 @@
 		 }
 		 //alert(query + '_'+parameter);
 
-		 link = link.replace(/ /g,"-");
+		 link = link.replace(/ /g,"-").replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'-');
 		 //alert(link);
 		 var route = "<?php echo $routeUrl;?>";
 		 window.open(route +link,'_self');
