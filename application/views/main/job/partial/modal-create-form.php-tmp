@@ -249,8 +249,9 @@ if (isset($listCountry)) {
                   </div>
                   <div class="form-group">
                       <div class="col-sm-12 text-center">
+                      <input type="hidden" name="province">
                       <div class="token-create-form">
-                        <input type="hidden" name="province">
+
                          <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" /></div>
                           <button type="button" class="btn btn-danger"
                         data-dismiss="modal">
@@ -352,12 +353,31 @@ $('input:radio[name="country"]').change(function(){
 $("#form-create-form-apply").submit(function(event){
     event.preventDefault();
     var province =[];
-    $('.select-province-vn ul.chosen-choices li.search-choice').each(function () {
-        var li = $(this).find('a');
-       province.push(li.data('option-array-index'));
-        //alert("123123");
+    // $('.select-province-vn ul.chosen-choices li.search-choice').each(function () {
+    //     var li = $(this).find('a');
+    //    province.push(li.data('option-array-index'));
+    //     //alert("123123");
 
-    });
+    // });
+    var countrySelect = $('input:radio[name="country"]:checked').val();
+        if(countrySelect == '1'){
+        $('.select-province-vn .chosen-container ul.chosen-choices li.search-choice').each(function () {
+            var li = $(this).find('a');
+            var indexProvince = li.data('option-array-index');
+           province.push($('select.province-vn option').eq(indexProvince).val());
+            //alert("123123");
+
+        });
+      }else{
+        $('.select-province-jp .chosen-container ul.chosen-choices li.search-choice').each(function () {
+            var li = $(this).find('a');
+           //province.push(li.data('option-array-index'));
+           var indexProvince = li.data('option-array-index');
+           province.push($('select.province-jp option').eq(indexProvince).val());
+            //alert("123123");
+
+        });
+      }
     //alert(province);
     ///var formData = new FormData(this);
     //alert("123123");

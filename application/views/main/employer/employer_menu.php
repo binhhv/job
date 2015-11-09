@@ -48,7 +48,33 @@ echo base_url('logout')?>"><i class="fa fa-sign-out"></i>Đăng xuất</a>
 								</div>
 
 							</div>
+							<!-- <div class="row-employer row employer-tools"> -->
+								<!--thông tin tài khoản-->
+								<div class="row-employer row">
+									<div class="col-sm-12">
+										<label class="alert-recruitment text-color-1">
+											<h3 class="alert-field-employer" >Thông tin tài khoản</h3>
+										</label>
 
+									</div>
+									<div class="col-sm-12 employer-line"></div>
+									<div class="col-sm-12 item-field-employer">
+										<div class="title-field-employer text-muted">Email</div>
+										<div class="detail-field-employer "><?php echo $employerInfo->account_email;?></div>
+									</div>
+									<div class="col-sm-12 employer-line"></div>
+									<div class="col-sm-12 item-field-employer">
+										<div class="title-field-employer text-muted">Mật khẩu</div>
+										<div class="detail-field-employer ">**********</div>
+									</div>
+									<div class="col-sm-12 employer-line"></div>
+									<div class="col-sm-12 item-field-employer text-left">
+										<button class="btn btn-primary" data-toggle="modal" data-target="#employer_account_updateModal"><i class="fa fa-pencil-square-o"></i> &nbsp; Chỉnh sửa</button>
+									</div>
+									<div class="col-sm-12 employer-line"></div>
+
+								</div>
+							<!-- </div> -->
 							<div class="row-employer row employer-tools">
 
 
@@ -126,7 +152,11 @@ echo base_url('logout')?>"><i class="fa fa-sign-out"></i>Đăng xuất</a>
 								</div>
 								<div class="col-sm-12 employer-line"></div>
 								<div class="col-sm-12 employer-tools-item text-center">
-									<h5><i class="fa fa-phone"></i>&nbsp;XXXXXXXXXXXX</h5>
+									<!-- <div class="col-sm-12 text-center margin-top-10"> -->
+										<button class="btn btn-danger btn-lg" onclick="location.href='<?php echo base_url('adwords');?>'">Liên hệ</button>
+										<h5 class="margin-top-10"><i class="fa fa-phone"></i>&nbsp;Hotline: 01212 049 149</h5>
+									<!-- </div> -->
+
 								</div>
 								<div class="col-sm-12 employer-line"></div>
 

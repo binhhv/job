@@ -12,20 +12,22 @@
 				<div class="border-bottom-title border-color-1"></div>
 			</div>
 			<div class="col-sm-12">
-				<button class="btn-jobseeker background-color-1 text-color-1" data-toggle="modal" data-target="#registerModal"><?php echo lang('jobseeker_register');?></button>
+				<button class="btn-jobseeker background-color-1 text-color-1 <?php if (!isset($user)) {echo 'btn-register-jobseeker-top';} else if ($user['role'] == 4) {
+	echo 'btn-profile-jobseeker-top';
+}
+?>" ><?php echo lang('jobseeker_register');?></button><!--data-toggle="modal" data-target="#registerModal"-->
 			</div>
 			<div class="col-sm-12">
-			<?php if ($user != null) {?>
-<button class="btn-jobseeker background-color-2 text-color-2" data-toggle="modal" data-target="#createcv_onlineModel"><?php echo lang('jobseeker_create_cv_online');?></button>
-				<?php } else {?>
-			<button class="btn-jobseeker background-color-2 text-color-2" data-toggle="modal" data-target="#redirectLoginModal"><?php echo lang('jobseeker_create_cv_online');?></button>
-<?php }
-?>
+
+<button class="btn-jobseeker background-color-2 text-color-2 <?php if (!isset($user)) {echo 'btn-create-resume-not-login-top';} else if ($user['role'] == 4) {echo 'btn-create-resume-login-top';}
+?>"><?php echo lang('jobseeker_create_cv_online');?></button> <!-- data-toggle="modal" data-target="#createcv_onlineModel"-->
+
 
 
 			</div>
 			<div class="col-sm-12">
-				<button class="btn-jobseeker background-color-3 text-color-2"  data-toggle="modal" data-target="#uploadcvModel"><?php echo lang('jobseeker_create_cv');?></button>
+				<button class="btn-jobseeker background-color-3 text-color-2 <?php if (!isset($user)) {echo 'btn-apply-recruit-not-login-top';} else if ($user['role'] == 4) {echo 'btn-apply-recruit-login-top';}
+?>"  ><?php echo lang('jobseeker_create_cv');?></button> <!--data-toggle="modal" data-target="#uploadcvModel"-->
 			</div>
 			</div>
 		</div>

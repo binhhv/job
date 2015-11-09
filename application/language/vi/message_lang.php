@@ -18,6 +18,7 @@ $lang['require_info'] = "Thông tin bắt buộc nhập";
 $lang['email'] = "Email";
 $lang['password'] = "Mật khẩu";
 $lang['passconf'] = "Xác nhận Mật khẩu";
+$lang['passold'] = 'Mật khẩu cũ';
 $lang['first_name'] = "Tên";
 $lang['last_name'] = "Họ";
 //$lang['captcha'] = 'Captcha';
@@ -26,7 +27,7 @@ $lang['required'] = "Trường '%s' là bắt buộc.";
 $lang['invalid-email'] = "'%s' này không hợp lệ.";
 $lang['regex_match'] = "'%s' này không hợp lệ.";
 $lang['invalid-captcha'] = "Captcha không hợp lệ";
-
+$lang['invalid-old-password'] = 'Mật khẩu không đúng';
 #user register
 $lang['title_re_user'] = "NGƯỜI TÌM VIỆC ĐĂNG KÝ";
 $lang['email_re_user'] = "Email";

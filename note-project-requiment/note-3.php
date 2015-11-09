@@ -34,12 +34,27 @@
 15. convert utf 8 title. (done)
 16. hide modal popup get news mail. (done)
 17. phần người tìm việc:
-	-home
-	-menu
+	-home (done)
+	-menu (done)
 	-dang ky (done)
+	-doi mat khau (done)
+	-tao ho so (done)
+	-tai ho so (done)
+	-quan ly ho so
+		+ xem (done)
+		+ sua (done)
+		+ xoa (done)
+	-xoa ho so tai len (done)
+	-xoa lich su tin tuyen dung ung tuyen (done)
+	-
 18. fix show new job responsie. (done)
 19. faq chua lay du lieu tu db len.
 20. check neu ton tai slogan thi - header px di. (k can thiet)
 21. fix modal show scroll y - admin (done)
 22. fix facebook fan page full and responsie (done not work with resize)
-100002246826429
+23. check if apply recruitment without button apply recruitment (done)
+24. chon tinh thnah chua chinh xac lam. (done)
+25. check ho sơ tối đa là 3. (done)
+26. dk tai khoan roi login. về trang profile. ứng vieenc (done).
+27. dang ky nha tuyen dung. rồi về profile nhà tuyển dụng (done)
+28. tao tin tuyen dụng

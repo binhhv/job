@@ -88,7 +88,7 @@ class Login extends CI_Controller {
 			$a_UserInfo['email'] = $this->security->xss_clean($this->input->post('email', true));
 			$a_UserInfo['password'] = md5($this->security->xss_clean($this->input->post('password', true)));
 			$autologin = ($this->input->post('remember_me') == 'on') ? 1 : 0;
-			$projection = array('from' => 'account', 'where' => "account_email = " . $this->DBUtil->escape($a_UserInfo['email']) . " AND account_password = " . $this->DBUtil->escape($a_UserInfo['password']) . "");
+			$projection = array('from' => 'account', 'where' => "account_email = " . $this->DBUtil->escape($a_UserInfo['email']) . " AND account_password = " . $this->DBUtil->escape($a_UserInfo['password']) . " AND account_is_delete = 0 AND account_is_disabled = 0" . "");
 			$a_UserChecking = $this->DBUtil->getFromDb($projection);
 
 			if ($a_UserChecking) {

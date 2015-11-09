@@ -49,6 +49,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
  */
+//bao tri website
+// $route['default_controller'] = 'error_page/index';
+// $route['(:any)'] = 'error_page/index';
+//
 $route['default_controller']   = 'home';
 $route['404_override']         = 'error_page/index';
 $route['translate_uri_dashes'] = FALSE;
@@ -351,5 +355,21 @@ $route['captcha/createCaptcha']       = 'captcha/createCaptcha';
 $route['captcha/checkCaptcha/(:any)'] = 'captcha/checkCaptcha/$1';
 
 //JOBSEEKER ROUTE
-$route['register_uv'] = 'jobseeker/jobseeker_register/index';
-$route['jobseeker']   = 'jobseeker/jobseeker/index';
+$route['register_uv']                           = 'jobseeker/jobseeker_register/index';
+$route['jobseeker']                             = 'jobseeker/jobseeker/index';
+$route['change-password']                       = 'jobseeker/jobseeker/changePassword';
+$route['jobseeker/gerFormCreateResume']         = 'jobseeker/jobseeker/getFormCreateResume';
+$route['create-resume']                         = 'jobseeker/jobseeker/createResumeForm';
+$route['jobseeker/create-resume']               = 'jobseeker/jobseeker/createResume';
+$route['upload-resume']                         = 'jobseeker/jobseeker/uploadResumeForm';
+$route['jobseeker/upload-resume']               = 'jobseeker/jobseeker/uploadResume';
+$route['jobseeker/delete-recruitment/(:num)']   = 'jobseeker/jobseeker/deleteRecruitmentApply/$1';
+$route['jobseeker/delete-resume-upload/(:num)'] = 'jobseeker/jobseeker/deleteResumeUpload/$1';
+$route['jobseeker/delete-resume-online/(:num)'] = 'jobseeker/jobseeker/deleteResumeOnline/$1';
+$route['jobseeker/detail-resume/(:num)']        = 'jobseeker/jobseeker/getDetailForm/$1';
+$route['jobseeker/edit-resume/(:num)']          = 'jobseeker/jobseeker/getEditlForm/$1';
+$route['jobseeker/edit-resume-post']            = 'jobseeker/jobseeker/editResume';
+
+//EMPLOYER ROUTE
+$route['register_ntd']               = 'employer/employer_register/index';
+$route['employer/register-employer'] = 'employer/employer_register/insertEmployer';

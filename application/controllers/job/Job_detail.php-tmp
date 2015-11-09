@@ -94,11 +94,13 @@ class Job_detail extends CI_Controller {
 			$listCenterMap = null;
 		}
 		if (isset($user)) {
-			$docs = $this->job->getListDoconUser($user['id']);
-			$cvs  = $this->job->getListCVUser($user['id']);
+			$docs       = $this->job->getListDoconUser($user['id']);
+			$cvs        = $this->job->getListCVUser($user['id']);
+			$checkApply = $this->job->checkUserApplyRecruitment($job, $user['id']);
 		} else {
-			$docs = null;
-			$cvs  = null;
+			$docs       = null;
+			$cvs        = null;
+			$checkApply = false;
 		}
 		$content = $this->load->view('main/job/job', array('job' => $job,
 				'jobDetail'                                            => $jobDetail,
@@ -111,6 +113,7 @@ class Job_detail extends CI_Controller {
 				'csrf'                                                 => $csrf,
 				'docs'                                                 => $docs,
 				'cvs'                                                  => $cvs,
+				'checkApply'                                           => $checkApply,
 				'searchHorizontal'                                     => $searchHorizontal), TRUE);
 
 		$footer = $this->load->view('main/footer', array(), TRUE);
@@ -265,6 +268,10 @@ class Job_detail extends CI_Controller {
 					'doccv_created_at'    => date('Y-m-d H:m'));
 				$cv       = $this->job->insertCV($dataCV);
 				$tmp_name = 'files/'.$file_name_upload;
+				$path     = 'uploads/cv/'.$idjobseeker;
+				if (!file_exists($path)) {
+					mkdir($path, 0777, true);
+				}
 				copy($tmp_name, 'uploads/cv/'.$idjobseeker.'/'.$file_name_upload);
 				$data = array(
 					'recapp_map_recruitment' => $idjob,
@@ -295,6 +302,7 @@ class Job_detail extends CI_Controller {
 		} else {
 			$doc = $this->input->post('docuser');
 			if ($doc != -1) {
+				log_message('error', 'recruitmentid'.$idjob);
 				$data = array(
 					'recapp_map_recruitment' => $idjob,
 					'recapp_map_user'        => $idjobseeker,
@@ -462,6 +470,7 @@ class Job_detail extends CI_Controller {
 
 			$provinceSelected = explode(",", $this->input->post('province'));
 			$result           = $this->job->insertDocument($paramater, $provinceSelected);
+			log_message('error', 'idrecruitment'.$idjob);
 			if ($result) {
 				$dataApply = array(
 					'recapp_map_recruitment' => $idjob,

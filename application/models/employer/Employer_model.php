@@ -154,6 +154,30 @@ class Employer_model extends CI_Model {
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
 	}
 
+	public function getListRecruitmentEmployer($type, $idEmployer) {
+		$condition = '';
+		switch ($type) {
+		case 1:
+			$condition = ' a.rec_is_delete = 0 and a.rec_is_approve = 1 and a.rec_is_disabled = 0 and a.rec_map_employer = ' . $idEmployer;
+			break;
+		case 2:
+			$condition = ' a.rec_is_delete = 0 and a.rec_is_approve = 0 and a.rec_is_disabled = 0 and a.rec_map_employer = ' . $idEmployer;
+			break;
+		default:
+			$condition = ' a.rec_is_delete = 0 and a.rec_is_approve = 1 and a.rec_is_disabled = 1 and a.rec_map_employer = ' . $idEmployer;
+			break;
+		}
+		$sql = "select a.*,IFNULL(d.numapply, 0) as numapply ,e.*,f.*,g.*
+				from recruitment a
+				left join (select c.recapp_map_recruitment, count(recapp_map_user) as numapply from recruitment_apply c where c.recapp_is_delete = 0 group by c.recapp_map_recruitment) d
+				on d.recapp_map_recruitment = a.rec_id
+				left join job_form e on e.fjob_id = a.rec_job_map_form
+				left join job_form_child f on f.jcform_id = a.rec_job_map_form_child
+				left join contact_form g on g.contact_form_id = a.rec_contact_form and g.contact_form_is_delete = 0
+				where " . $condition;
+		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
+
 	public function getRecruitmentApply($idrecruitment) {
 		$sql = "select a.*,b.*,c.doccv_id,c.doccv_map_user ,c.doccv_map_jobseeker,c.doccv_type,c.doccv_file_name,c.doccv_file_tmp,d.docon_id,d.docon_map_user
 				from recruitment_apply a

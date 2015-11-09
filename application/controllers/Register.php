@@ -210,7 +210,7 @@ class Register extends CI_Controller {
 		$this->form_validation->set_rules('account_first_name', 'lang:first_name', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('account_last_name', 'lang:last_name', 'trim|required|xss_clean');
 		//$this->form_validation->set_rules('account_captcha', 'lang:captcha', 'trim|invalid-captcha');
-		$captcha = $this->input->post('captcha-reg');
+		$captcha = $this->input->post('captcha');
 		$word = $this->session->userdata('captchaWord');
 		$checkCaptcha = false;
 		if (strcmp(strtoupper($captcha), strtoupper($word)) == 0) {
@@ -242,6 +242,12 @@ class Register extends CI_Controller {
 			$id_account = 0;
 			try {
 				$id_account = $this->account->insertAccount($data);
+				$this->session->set_userdata('user', array('id' => $id_account,
+					'email' => $account_email,
+					'role' => 4,
+					'isLogged' => true,
+					'firstname' => $account_first_name,
+					'lastname' => $account_last_name));
 			} catch (Exception $e) {
 
 			}
@@ -257,8 +263,11 @@ class Register extends CI_Controller {
 				'account_last_name' => form_error('account_last_name'),
 				'name' => $this->security->get_csrf_token_name(),
 				'hash' => $this->security->get_csrf_hash(),
-				'captcha' => 'invalid-captcha',
+				'captcha' => $checkCaptcha,
 			);
+			// if (!$checkCaptcha) {
+			// 	$data['captcha'] = 'invalid-captcha';
+			// }
 
 			echo json_encode(array('status' => 'errvalid', 'content' => $data));
 		}

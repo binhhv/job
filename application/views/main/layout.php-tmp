@@ -81,7 +81,7 @@ include 'support-online.php';
                        <i class="fa fa-briefcase"></i>
                     </div>
                     <div class="col-sm-12 text-center">
-                      <button class="btn-employer background-color-2 text-color-2">Nhà tuyển dụng đăng ký</button>
+                      <button class="btn-employer background-color-2 text-color-2" onclick="location.href='<?php echo base_url('register_ntd');?>'">Nhà tuyển dụng đăng ký</button>
                     </div>
                   </div>
                 </div>

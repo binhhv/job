@@ -1,26 +1,21 @@
+<div class="card">
 
-	<div class="container employer-page">
-		<div class="row">
-			<div class="col-sm-4 col-sm-push-8 no-padding-res">
-				<div class="row">
-					<div class="col-sm-12">
-						<?php echo $employer_menu;?>
-
-					</div>
-				</div>
-			</div>
-
-
-			<div class="col-sm-8 col-sm-pull-4 no-padding-res">
-			<div class="card">
+<?php if (isset($numRecruitmentActive)) {
+	?>
 				<div class="row-employer row">
 					<div class="col-sm-12">
+					<?php if ($numRecruitmentActive > 0) {?>
 						<label class="alert-recruitment text-color-3">
-							<h3 >211</h3>
+							<h3 ><?php echo $numRecruitmentActive;?></h3>
 						</label>
 						<label class="alert-recruitment">tin tuyển dụng đã được đăng .</label>
+						<?php } else {?>
+						<label class="alert-recruitment">Chưa có tin tuyển dụng đã được đăng . &nbsp;<a class="btn btn-xs btn-primary" href="">Đăng tin ngay</a></label>
+							<?php }
+	?>
 					</div>
-				</div>
+				</div> <?php }
+?>
 				<div class="row-employer row">
 					<div class="col-sm-12">
 						<label class="alert-recruitment text-color-1">
@@ -109,38 +104,5 @@
 				</div>
 				<!--thông tin tài khoản-->
 
-				<!--thông tin liên hệ-->
-				<div class="row-employer row">
-					<div class="col-sm-12">
-						<label class="alert-recruitment text-color-1">
-							<h3 class="alert-field-employer" >Thông tin tài khoản</h3>
-						</label>
-
-					</div>
-					<div class="col-sm-12 employer-line"></div>
-					<div class="col-sm-12 item-field-employer">
-						<div class="title-field-employer text-muted">Email</div>
-						<div class="detail-field-employer "><?php echo $employerInfo->account_email;?></div>
-					</div>
-					<div class="col-sm-12 employer-line"></div>
-					<div class="col-sm-12 item-field-employer">
-						<div class="title-field-employer text-muted">Mật khẩu</div>
-						<div class="detail-field-employer ">**********</div>
-					</div>
-					<div class="col-sm-12 employer-line"></div>
-					<div class="col-sm-12 item-field-employer text-left">
-						<button class="btn btn-primary" data-toggle="modal" data-target="#employer_account_updateModal"><i class="fa fa-pencil-square-o"></i> &nbsp; Chỉnh sửa</button>
-					</div>
-					<div class="col-sm-12 employer-line"></div>
-
-				</div>
-			</div>
 
 			</div>
-
-		</div>
-	</div>
-		<?php echo $update_imfomation_employer?>
-	<?php echo $update_contact_employer?>
-	<?php echo $update_account_employer?>
-	<?php echo $recruitment?>

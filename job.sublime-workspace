@@ -4,158 +4,678 @@
 		"selected_items":
 		[
 			[
-				"else",
-				"else〔keyword〕"
+				"employer_map",
+				"employer_map_country"
 			],
 			[
-				"json",
-				"json_encode"
-			],
-			[
-				"jso",
-				"json_encode〔function〕"
-			],
-			[
-				"w",
-				"width	Attr"
-			],
-			[
-				"max",
-				"max-width"
-			],
-			[
-				"back",
-				"background-color: 〔property〕"
-			],
-			[
-				"em",
-				"employer"
-			],
-			[
-				"sty",
-				"$style_create〔variable〕"
-			],
-			[
-				"fun",
-				"function"
-			],
-			[
-				"va",
-				"value	Attr"
+				"employer_map_o",
+				"employer_map_province"
 			],
 			[
 				"fu",
 				"function"
 			],
 			[
-				"for",
-				"foreach	<?php foreach (…) … <?php endforeach ?>"
+				"check",
+				"checked	Attr"
 			],
 			[
-				"nam",
-				"name_res"
+				"pro",
+				"$provinceJP〔variable〕"
 			],
 			[
-				"do",
-				"dobyear"
+				"province",
+				"provinceVN"
+			],
+			[
+				"type",
+				"typeof〔keyword〕"
+			],
+			[
+				"employer_contact",
+				"employer_contact_mobile"
+			],
+			[
+				"employer",
+				"employer_about"
+			],
+			[
+				"emplo",
+				"employer_about"
+			],
+			[
+				"emp",
+				"employer_name"
+			],
+			[
+				"chekc",
+				"checkCaptcha"
+			],
+			[
+				"em",
+				"employer_register"
+			],
+			[
+				"in",
+				"inline-block〔value〕"
+			],
+			[
+				"dis",
+				"display: 〔property〕"
+			],
+			[
+				"num",
+				"$numRecruitmentActive〔variable〕"
 			],
 			[
 				"ba",
 				"base_url"
 			],
 			[
+				"conte",
+				"$contentEmployer〔variable〕"
+			],
+			[
+				"recapp_is",
+				"recapp_is_delete_apply"
+			],
+			[
+				"res",
+				"response〔argument〕"
+			],
+			[
+				"file",
+				"filename〔variable〕"
+			],
+			[
+				"getFromDb",
+				"getFromDbQueryBinding"
+			],
+			[
+				"document",
+				"document_online"
+			],
+			[
+				"index",
+				"indexProvince"
+			],
+			[
+				"capt",
+				"$captcha〔variable〕"
+			],
+			[
+				"bas",
+				"base_website"
+			],
+			[
+				"ad",
+				"addTokenInput"
+			],
+			[
+				"strrep",
+				"str_replace〔function〕"
+			],
+			[
 				"ma",
 				"margin-right"
 			],
 			[
-				"csrf",
-				"csrf_hash"
+				"scr",
+				"scriptOption"
 			],
 			[
-				"csr",
-				"csrf_name"
+				"he",
+				"height〔function〕"
 			],
 			[
-				"hr",
-				"href	Attr"
+				"min-",
+				"min-width"
 			],
 			[
-				"var",
+				"min",
+				"min-width"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"va",
 				"var_dump"
 			],
 			[
-				"survey",
-				"survey_id"
+				"job",
+				"jobseeker"
 			],
 			[
-				"surve",
-				"surveyModel"
+				"str",
+				"strSlideJobxs"
+			],
+			[
+				"strSlide",
+				"strSlideJobsm"
+			],
+			[
+				"arr",
+				"arrSkillSelected〔variable〕"
+			],
+			[
+				"chec",
+				"checkExitsValueArr"
+			],
+			[
+				"skil",
+				"skillValue"
+			],
+			[
+				"ar",
+				"arrSkillSelected"
+			],
+			[
+				"paddi",
+				"padding-right"
+			],
+			[
+				"arrSki",
+				"arrSkillSelected〔variable〕"
+			],
+			[
+				"ex",
+				"exprienceValue"
+			],
+			[
+				"lan",
+				"languageSelect〔variable〕"
+			],
+			[
+				"cu",
+				"cursor: 〔property〕"
+			],
+			[
+				"arrSkil",
+				"arrSkillNetworkSelected"
+			],
+			[
+				"add",
+				"addClass〔function〕"
+			],
+			[
+				"jsone",
+				"json_encode〔function〕"
+			],
+			[
+				"call",
+				"callback"
+			],
+			[
+				"js",
+				"json_decode"
+			],
+			[
+				"recrui",
+				"recruitmentService〔argument〕"
+			],
+			[
+				"sc",
+				"scope"
+			],
+			[
+				"par",
+				"parseInt〔function〕"
+			],
+			[
+				"parse",
+				"parseInt〔function〕"
+			],
+			[
+				"json",
+				"json_encode〔function〕"
+			],
+			[
+				"typ",
+				"typeShow"
+			],
+			[
+				"condio",
+				"$conditionSecond〔variable〕"
+			],
+			[
+				"condi",
+				"conditionFirst"
+			],
+			[
+				"nums",
+				"$numShowTop〔variable〕"
+			],
+			[
+				"getNum",
+				"getNumRecruitmentShowAnother"
+			],
+			[
+				"getNumRee",
+				"getNumRecruitmentShowTop"
+			],
+			[
+				"conf",
+				"config_data_json"
+			],
+			[
+				"getRec",
+				"getRecruitmentShow"
+			],
+			[
+				"recri",
+				"recruitmentService〔argument〕"
+			],
+			[
+				"is_s",
+				"is_show_top"
+			],
+			[
+				"deact",
+				"deactiveImageRec"
+			],
+			[
+				"imageREc",
+				"imageRecruitmentService〔argument〕"
+			],
+			[
+				"imageRec",
+				"imageRec"
+			],
+			[
+				"imageRecur",
+				"imageRecruitmentService〔argument〕"
+			],
+			[
+				"config",
+				"configid"
+			],
+			[
+				"config_data",
+				"config_data_json_update"
+			],
+			[
+				"confi",
+				"configRecruitment"
+			],
+			[
+				"number",
+				"numberRecruitmentService〔argument〕"
+			],
+			[
+				"rec",
+				"recruitmentHighlight"
+			],
+			[
+				"non",
+				"none〔value〕"
+			],
+			[
+				"object",
+				"objectAdword"
+			],
+			[
+				"objec",
+				"$objectAdword〔variable〕"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"ouput",
+				"$output〔variable〕"
+			],
+			[
+				"ta",
+				"target	Attr"
+			],
+			[
+				"encode",
+				"encodeFile〔variable〕"
+			],
+			[
+				"arrFile",
+				"arrFileTmp〔variable〕"
+			],
+			[
+				"arrfile",
+				"arrFileTmp〔variable〕"
+			],
+			[
+				"config_co",
+				"config_content"
+			],
+			[
+				"file_tmp",
+				"$file_tmp〔variable〕"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"te",
+				"text-decoration"
+			],
+			[
+				"style",
+				"$styles〔variable〕"
+			],
+			[
+				"log_ne",
+				"log_message〔function〕"
+			],
+			[
+				"ava",
+				"$avatar_file_name〔variable〕"
+			],
+			[
+				"member_p",
+				"member_position"
+			],
+			[
+				"config_is",
+				"config_is_delete"
+			],
+			[
+				"jso",
+				"json_decode〔function〕"
+			],
+			[
+				"result",
+				"$resultMemberNew〔variable〕"
+			],
+			[
+				"resultme",
+				"resultMemberOld"
+			],
+			[
+				"data",
+				"$data〔variable〕"
+			],
+			[
+				"val",
+				"$valueContent〔variable〕"
+			],
+			[
+				"membe",
+				"memberService〔argument〕"
+			],
+			[
+				"mem",
+				"member"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"members",
+				"members〔argument〕"
+			],
+			[
+				"config_ac",
+				"config_is_active"
+			],
+			[
+				"remove",
+				"removeClass〔function〕"
+			],
+			[
+				"h",
+				"hi-20"
+			],
+			[
+				"hi",
+				"highest"
+			],
+			[
+				"adword",
+				"$adword〔variable〕"
+			],
+			[
+				"update",
+				"updateAdword"
+			],
+			[
+				"ale",
+				"alertEditSuccess"
+			],
+			[
+				"jos",
+				"$jsonValue〔variable〕"
+			],
+			[
+				"adw",
+				"$adwords〔variable〕"
+			],
+			[
+				"is",
+				"isValidEmailAddress"
+			],
+			[
+				"ge",
+				"getToken"
+			],
+			[
+				"slide",
+				"$slidesPage〔variable〕"
+			],
+			[
+				"op",
+				"$option〔variable〕"
+			],
+			[
+				"optio",
+				"optrion"
+			],
+			[
+				"at",
+				"$attribute〔variable〕"
+			],
+			[
+				"admin_co",
+				"admin_config"
+			],
+			[
+				"country",
+				"$country〔variable〕"
+			],
+			[
+				"scrip",
+				"$scriptJob〔variable〕"
+			],
+			[
+				"fot",
+				"font-size"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"fn",
+				"font-size"
+			],
+			[
+				"c",
+				"cursor"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"key",
+				"$keyArr〔variable〕"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "application/views/main/employer/modal_create_recruitment.php",
+			"file": "assets/main/css/style.css",
 			"settings":
 			{
-				"buffer_size": 17826,
+				"buffer_size": 52063,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/views/main/create_recruitment.php",
+			"file": "application/views/main/jobseeker.php",
 			"settings":
 			{
-				"buffer_size": 18142,
+				"buffer_size": 1665,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/views/main/user_register.php",
+			"file": "assets/main/js/common.js",
 			"settings":
 			{
-				"buffer_size": 5166,
+				"buffer_size": 735,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/controllers/CreateRecruitment.php",
+			"file": "application/config/routes.php",
 			"settings":
 			{
-				"buffer_size": 11439,
+				"buffer_size": 22300,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/controllers/Uploadcv.php",
+			"file": "application/controllers/Register.php",
 			"settings":
 			{
-				"buffer_size": 10193,
+				"buffer_size": 16498,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/views/main/upload_cv.php",
+			"file": "application/models/Register_model.php",
 			"settings":
 			{
-				"buffer_size": 5139,
+				"buffer_size": 1434,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "assets/main/js/job7vn-register.js",
+			"file": "application/controllers/employer/Employer_register.php",
 			"settings":
 			{
-				"buffer_size": 18794,
+				"buffer_size": 13052,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "assets/main/css/style4189.css",
+			"file": "job.sublime-project",
 			"settings":
 			{
-				"buffer_size": 231480,
+				"buffer_size": 118,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/main/js/ntd_upload.js",
+			"settings":
+			{
+				"buffer_size": 4333,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/config/config.php",
+			"settings":
+			{
+				"buffer_size": 17579,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/views/main/employer/register_recruit.php",
+			"settings":
+			{
+				"buffer_size": 25552,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/views/main/employer/register.php",
+			"settings":
+			{
+				"buffer_size": 31873,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/logs/log-2015-11-09.php",
+			"settings":
+			{
+				"buffer_size": 197645,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/views/main/jobseeker/upload-resume.php",
+			"settings":
+			{
+				"buffer_size": 4154,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/views/main/employer/form_backup.php",
+			"settings":
+			{
+				"buffer_size": 5995,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/views/main/jobseeker/layout.php",
+			"settings":
+			{
+				"buffer_size": 5124,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/config/hooks.php",
+			"settings":
+			{
+				"buffer_size": 576,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/views/main/employer/layout.php",
+			"settings":
+			{
+				"buffer_size": 539,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/views/main/employer/employer_menu.php",
+			"settings":
+			{
+				"buffer_size": 7277,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/views/main/employer/index.php",
+			"settings":
+			{
+				"buffer_size": 4611,
 				"line_ending": "Windows"
 			}
 		},
@@ -163,15 +683,23 @@
 			"file": "application/controllers/employer/Employer.php",
 			"settings":
 			{
-				"buffer_size": 32177,
+				"buffer_size": 32434,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/models/Recruitment_model.php",
+			"file": "application/views/main/head.php",
 			"settings":
 			{
-				"buffer_size": 3521,
+				"buffer_size": 10566,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "note-project-requiment/note-3.php",
+			"settings":
+			{
+				"buffer_size": 2225,
 				"line_ending": "Windows"
 			}
 		}
@@ -183,57 +711,59 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 150.0,
-		"last_filter": "Package Control: ins",
+		"height": 219.0,
+		"last_filter": "removepa",
 		"selected_items":
 		[
 			[
-				"Package Control: ins",
-				"Package Control: Install Package"
-			],
-			[
-				"xdebug",
-				"Xdebug: Session - Execute"
-			],
-			[
-				"Package Control: ",
+				"removepa",
 				"Package Control: Remove Package"
 			],
 			[
-				"html",
-				"HTMLPrettify"
+				"remove",
+				"Package Control: Remove Package"
 			],
 			[
-				"Package Control: insta",
-				"Package Control: Install Package"
-			],
-			[
-				"Package Control: inst",
-				"Package Control: Install Package"
-			],
-			[
-				"Package Contro",
-				"Package Control: Install Package"
+				"php",
+				"phpfmt: format now"
 			],
 			[
 				"install",
 				"Package Control: Install Package"
 			],
 			[
+				"Package Control: remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"packae",
+				"Package Control: Install Package"
+			],
+			[
 				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"installpa",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
 				"Package Control: Install Package"
 			]
 		],
-		"width": 528.0
+		"width": 817.0
 	},
 	"console":
 	{
 		"height": 126.0,
 		"history":
 		[
-			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
-			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
-			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
 	},
 	"distraction_free":
@@ -251,153 +781,170 @@
 		"/C/xampp/htdocs/job/application",
 		"/C/xampp/htdocs/job/application/controllers",
 		"/C/xampp/htdocs/job/application/controllers/employer",
+		"/C/xampp/htdocs/job/application/controllers/jobseeker",
+		"/C/xampp/htdocs/job/application/models",
+		"/C/xampp/htdocs/job/application/models/account",
+		"/C/xampp/htdocs/job/application/models/admin",
+		"/C/xampp/htdocs/job/application/models/employer",
+		"/C/xampp/htdocs/job/application/models/jobseeker",
 		"/C/xampp/htdocs/job/application/views",
 		"/C/xampp/htdocs/job/application/views/main",
+		"/C/xampp/htdocs/job/application/views/main/employer",
+		"/C/xampp/htdocs/job/application/views/main/jobseeker",
 		"/C/xampp/htdocs/job/assets",
 		"/C/xampp/htdocs/job/assets/main",
 		"/C/xampp/htdocs/job/assets/main/css",
-		"/C/xampp/htdocs/job/assets/main/js"
+		"/C/xampp/htdocs/job/assets/main/js",
+		"/C/xampp/htdocs/job/note-project-requiment",
+		"/C/xampp/htdocs/job/uploads",
+		"/C/xampp/htdocs/job/uploads/logo",
+		"/C/xampp/htdocs/job/uploads/logo/4",
+		"/C/xampp/htdocs/job/uploads/logo/7",
+		"/C/xampp/htdocs/job/uploads/logo/8",
+		"/C/xampp/htdocs/job/uploads/logo_empoyer"
 	],
 	"file_history":
 	[
-		"/C/xampp/htdocs/job/application/views/main/upload_cv.php",
-		"/C/xampp/htdocs/job/application/controllers/Home.php",
-		"/C/xampp/htdocs/job/application/controllers/Uploads.php",
-		"/C/xampp/htdocs/job/application/views/main/employer/modal_recruitment_active.php",
-		"/C/xampp/htdocs/job/application/views/main/employer/manager_recruitment.php",
-		"/C/xampp/htdocs/job/application/views/main/create_recruitment.php",
-		"/C/xampp/htdocs/job/application/models/Recruitment_model.php",
-		"/C/xampp/htdocs/job/application/views/main/jobseeker.php",
-		"/C/xampp/htdocs/job/application/views/main/popup.php",
-		"/C/xampp/htdocs/job/application/views/main/popup_redirect_login.php",
-		"/C/xampp/htdocs/job/application/views/main/user_register.php",
-		"/C/xampp/htdocs/job/assets/main/js/job7vn-register.js",
-		"/C/xampp/htdocs/job/assets/main/css/style4189.css",
-		"/C/xampp/htdocs/job/application/views/main/header.php",
-		"/C/xampp/htdocs/job/application/language/vi/message_lang.php",
-		"/C/xampp/htdocs/job/application/views/main/content.php",
+		"/C/xampp/htdocs/job/application/views/main/jobseeker/register.php",
+		"/C/xampp/htdocs/job/assets/main/js/jquery_ntd.js",
+		"/C/xampp/htdocs/job/application/hooks/site_offline_hook.php",
 		"/C/xampp/htdocs/job/application/views/main/layout.php",
-		"/C/xampp/htdocs/job/application/views/main/login.php",
-		"/C/xampp/htdocs/job/application/views/main/employer.php",
-		"/C/xampp/htdocs/job/application/views/main/footer.php",
-		"/C/xampp/htdocs/job/application/views/main/head.php",
-		"/C/xampp/htdocs/job/application/logs/log-2015-09-08.php",
-		"/C/xampp/htdocs/job/assets/main/js/job7vn.js",
-		"/C/xampp/htdocs/job/application/views/admin/head.php",
-		"/C/xampp/htdocs/job/application/logs/log-2015-09-05.php",
-		"/C/xampp/htdocs/job/application/logs/log-2015-09-06.php",
-		"/C/xampp/htdocs/job/application/logs/log-2015-09-07.php",
-		"/C/xampp/htdocs/job/assets/main/js/upload/ajaxfileupload.js",
-		"/C/xampp/htdocs/job/application/views/main/upload_view.php",
-		"/C/xampp/htdocs/job/application/views/main/upload_cv_online.php",
-		"/C/xampp/htdocs/job/application/controllers/Uploadcv.php",
-		"/C/xampp/htdocs/job/application/logs/log-2015-09-17.php",
-		"/C/xampp/htdocs/job/application/controllers/admin/Admin_document.php",
-		"/C/xampp/htdocs/job/system/core/CodeIgniter.php",
-		"/C/xampp/htdocs/job/system/core/Common.php",
-		"/C/xampp/htdocs/job/application/views/main/employer/modal_update_recruitment.php",
-		"/C/xampp/htdocs/job/application/models/employer/Employer_model.php",
-		"/C/xampp/htdocs/job/application/views/main/employer/modal_detail_recruitment.php",
-		"/C/xampp/htdocs/job/application/controllers/employer/Employer.php",
-		"/C/xampp/htdocs/job/application/models/admin/Recruitment_model.php",
-		"/C/xampp/htdocs/job/application/models/admin/Manager_model.php",
-		"/C/xampp/htdocs/job/application/controllers/admin/Admin_recruitment.php",
-		"/C/xampp/htdocs/job/application/logs/log-2015-09-15.php",
-		"/C/xampp/htdocs/job/application/views/admin/recruitment/recruitment-active.php-tmp",
-		"/C/xampp/htdocs/job/application/views/admin/recruitment/recruitment.php",
-		"/C/xampp/htdocs/job/application/views/admin/recruitment/recruitment-approve.php",
-		"/C/xampp/htdocs/job/application/logs/log-2015-09-14.php",
-		"/C/xampp/htdocs/job/application/controllers/admin/Admin_manager.php",
-		"/C/xampp/htdocs/job/application/models/admin/Employer_model.php",
-		"/C/xampp/htdocs/job/application/views/main/employer/modal_update_contact_info_employer.php",
-		"/C/xampp/htdocs/job/assets/main/js/employer/job7vn_employer.js",
-		"/C/xampp/htdocs/job/application/logs/log-2015-09-13.php",
-		"/C/xampp/htdocs/job/application/views/admin/employer/employer.php",
-		"/C/xampp/htdocs/job/application/views/main/employer/modal_create_recruitment.php",
-		"/C/xampp/htdocs/job/application/views/main/employer/employer_menu.php",
-		"/C/xampp/htdocs/job/application/views/main/employer/index.php",
-		"/C/xampp/htdocs/job/application/views/main/employer/modal_manager_recruitment_bk.php",
-		"/C/xampp/htdocs/job/application/views/main/employer/modal_delete_recruitment.php",
-		"/C/xampp/htdocs/job/application/controllers/CreateRecruitment.php",
-		"/C/xampp/htdocs/job/assets/main/js/dobPicker.js",
-		"/C/xampp/htdocs/job/application/views/main/employer.php-tmp",
-		"/C/xampp/htdocs/job/application/views/main/employer_register.php",
-		"/C/xampp/htdocs/job/application/views/main/employer/modal_update_account_employer.php",
-		"/C/xampp/htdocs/job/application/views/main/employer/modal_update_information_employer.php",
-		"/C/xampp/htdocs/job/application/models/Utilmodel.php-tmp",
-		"/C/xampp/htdocs/job/application/controllers/Register.php",
-		"/C/xampp/htdocs/job/application/models/Utilmodel.php",
-		"/C/xampp/htdocs/job/application/controllers/admin/Admin_employer.php",
-		"/C/xampp/htdocs/job/application/views/main/employer/modal_update_account_empoyer.php",
-		"/C/xampp/htdocs/job/assets/main/js/job7vn_employer.js",
-		"/C/xampp/htdocs/job/application/logs/log-2015-09-03.php",
-		"/C/xampp/htdocs/job/application/models/Register_model.php",
-		"/C/xampp/htdocs/job/application/models/Uploadcv_model.php",
+		"/C/xampp/htdocs/job/.htaccess",
+		"/C/xampp/htdocs/job/assets/main/js/ntv_upload.js",
+		"/C/xampp/htdocs/job/application/libraries/globals.php",
+		"/C/xampp/htdocs/job/application/controllers/job/Job_detail.php",
+		"/C/xampp/htdocs/job/application/views/main/job/job.php",
+		"/C/xampp/htdocs/job/assets/main/css/style.css",
 		"/C/xampp/htdocs/job/application/config/routes.php",
-		"/C/xampp/htdocs/job/assets/main/datetimepicker/css/bootstrap-datetimepicker.min.css",
-		"/C/xampp/htdocs/job/assets/main/datetimepicker/js/bootstrap-datetimepicker.min.js",
-		"/C/xampp/htdocs/job/assets/main/datetimepicker/js/bootstrap-datetimepicker.js",
-		"/C/xampp/htdocs/job/assets/main/js/demo.js",
-		"/C/xampp/htdocs/job/assets/main/css/Selectivity/selectivity-full.min.js",
-		"/C/xampp/htdocs/job/application/models/Create_recruitment_model.php",
-		"/C/xampp/htdocs/job/application/logs/log-2015-08-31.php",
-		"/C/xampp/htdocs/job/application/logs/log-2015-08-30.php",
-		"/C/xampp/htdocs/job/job.sublime-project",
-		"/C/xampp/htdocs/job/application/controllers/Create_recruitment.php",
-		"/C/xampp/htdocs/http___bright-and-bold-demo.mybigcommerce.com_/bright-and-bold-demo.mybigcommerce.com/rssdcab.php",
-		"/C/xampp/htdocs/job/assets/main/js/dobPicker.min.js",
-		"/C/xampp/htdocs/job/assets/main/js/jquery-birthday-picker.min.js",
-		"/C/xampp/htdocs/job/application/controllers/Contact.php",
-		"/C/xampp/htdocs/job/system/libraries/Upload.php",
-		"/C/xampp/htdocs/job/system/core/Loader.php",
-		"/C/xampp/htdocs/job/application/logs/log-2015-08-23.php",
-		"/C/Users/maxmalla006/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
-		"/C/Users/maxmalla006/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/xampp/htdocs/job/application/logs/log-2015-11-08.php",
+		"/C/xampp/htdocs/job/application/models/account/Account_model.php",
+		"/C/xampp/htdocs/job/assets/main/css/style_ntv.css",
+		"/C/xampp/htdocs/job/application/views/main/job/job-search.php",
+		"/C/xampp/htdocs/job/application/views/main/jobseeker/index.php",
 		"/C/xampp/htdocs/job/assets/main/css/responsive-style.css",
-		"/C/xampp/htdocs/job/application/controllers/Sendmail.php",
-		"/C/xampp/htdocs/job/application/language/vietnamese/vi_lang.php",
-		"/C/xampp/htdocs/job/application/models/Dbutil.php",
-		"/C/xampp/htdocs/job/application/models/Ultils",
-		"/C/xampp/htdocs/job/application/models/Contact_model.php",
-		"/C/xampp/htdocs/job/application/models/User_model",
-		"/C/xampp/htdocs/job/application/controllers/User_controller",
-		"/C/xampp/htdocs/surveymaxmalla/assets/css/style.css",
-		"/C/xampp/htdocs/chuupamobile/application/config/database.php",
-		"/C/xampp/htdocs/chuupamobile/chuupamobile.sublime-project",
-		"/C/xampp/htdocs/dwe/dwe.sublime-project",
-		"/C/Users/maxmalla006/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
-		"/C/xampp/htdocs/surveymaxmalla/application/config/facebook.php",
-		"/C/xampp/htdocs/surveymaxmalla/application/config/config.php",
-		"/C/xampp/htdocs/surveymaxmalla/application/views/admintration.php",
-		"/C/xampp/htdocs/surveymaxmalla/application/config/database.php",
-		"/C/xampp/htdocs/surveymaxmalla/application/controllers/Welcome.php",
-		"/C/xampp/htdocs/surveymaxmalla/application/config/autoload.php-tmp",
-		"/C/xampp/htdocs/surveymaxmalla/application/config/autoload.php",
-		"/C/xampp/htdocs/surveymaxmalla/application/controllers/Defaultpage.php",
-		"/C/xampp/htdocs/surveymaxmalla/application/config/config_1.php",
-		"/C/xampp/htdocs/surveymaxmalla/application/config/routes.php",
-		"/C/xampp/htdocs/surveymaxmalla/system/core/CodeIgniter.php",
-		"/C/xampp/htdocs/surveymaxmalla/application/views/login.php",
-		"/C/xampp/htdocs/surveymaxmalla/system/core/Common.php",
-		"/C/xampp/htdocs/surveymaxmalla/application/controllers/welcome.php",
-		"/C/xampp/htdocs/surveymaxmalla/surveymaxmalla.sublime-project",
-		"/C/xampp/htdocs/surveymaxmalla/application/libraries/lib_login.php",
-		"/C/xampp/htdocs/surveymaxmalla/application/vendor/facebook/php-sdk-v4/autoload.php",
-		"/C/xampp/htdocs/surveymaxmalla/controllers/login.php",
-		"/C/xampp/htdocs/surveymaxmalla/application/views/example.php",
-		"/C/xampp/htdocs/surveymaxmalla/application/models/Surveymodel.php",
-		"/C/xampp/htdocs/surveymaxmalla/application/views/createquestion.php",
-		"/C/xampp/htdocs/surveymaxmalla/application/views/admintration.php-tmp"
+		"/C/xampp/htdocs/job/application/views/main/job/partial/modal-create-form.php",
+		"/C/xampp/htdocs/job/application/views/main/jobseeker/index_07102015.php",
+		"/C/xampp/htdocs/job/application/views/main/jobseeker/layout.php",
+		"/C/xampp/htdocs/job/application/controllers/Register.php",
+		"/C/xampp/htdocs/job/application/views/main/search-jobs.php",
+		"/C/xampp/htdocs/job/application/views/main/search-horizontal.php",
+		"/C/xampp/htdocs/job/application/language/vi/message_lang.php",
+		"/C/xampp/htdocs/job/application/logs/log-2015-11-07.php",
+		"/C/xampp/htdocs/job/application/views/main/jobseeker/partial/modal-create-resume.php",
+		"/C/xampp/htdocs/job/application/controllers/Login.php",
+		"/C/xampp/htdocs/job/application/views/main/header.php",
+		"/C/xampp/htdocs/job/application/views/main/head.php",
+		"/C/xampp/htdocs/job/assets/main/js/facebook-load.js",
+		"/C/xampp/htdocs/job/application/views/main/footer.php",
+		"/C/xampp/htdocs/job/assets/admin/dist/css/style.css",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-remove-all-recruitment-show.php",
+		"/C/xampp/htdocs/job/application/controllers/Home.php",
+		"/C/xampp/htdocs/job/application/views/main/popup.php",
+		"/C/xampp/htdocs/job/application/views/admin/recruitment/recruitment-highlight.php",
+		"/C/xampp/htdocs/job/assets/admin/angularjs/service/recruitment.service.js",
+		"/C/xampp/htdocs/job/assets/admin/angularjs/controller/recruitment.controller.js",
+		"/C/xampp/htdocs/job/application/controllers/admin/Login.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-upload-image-rec.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-config-number-recruitment.php",
+		"/C/xampp/htdocs/job/application/views/admin/config/number-recruitment.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-active-delete-video.php",
+		"/C/Users/Binh/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Binh/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Binh/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-update-adwords.php",
+		"/C/xampp/htdocs/job/application/logs/log-2015-10-21.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-delete-member.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-create-member.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-choice-member.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-update-member.php",
+		"/C/xampp/htdocs/job/application/logs/log-2015-10-20.php",
+		"/C/xampp/htdocs/job/application/views/admin/sidemenu.php",
+		"/C/xampp/htdocs/job/application/views/main/about.php",
+		"/C/xampp/htdocs/job/application/views/admin/config/logo.php",
+		"/C/xampp/htdocs/job/assets/admin/dist/js/admin-resize.js",
+		"/C/xampp/htdocs/job/assets/main/js/jquery.min.js",
+		"/C/xampp/htdocs/job/application/views/main/job/jobs_20151012.php",
+		"/C/xampp/htdocs/job/application/controllers/job/Job.php",
+		"/C/xampp/htdocs/job/application/views/main/job/jobs.php",
+		"/C/xampp/htdocs/job/assets/main/css/style-about.css",
+		"/C/xampp/htdocs/job/assets/main/css/style4189.css",
+		"/C/xampp/htdocs/job/application/models/job/Job_model.php",
+		"/C/xampp/htdocs/job/application/views/main/about-team.php",
+		"/C/xampp/htdocs/job/application/controllers/job/Job_search.php",
+		"/C/xampp/htdocs/job/application/views/main/employer.php",
+		"/C/xampp/htdocs/job/assets/main/js/about.js",
+		"/C/xampp/htdocs/job/assets/main/css/style-adwords.css",
+		"/C/xampp/htdocs/job/application/views/main/service.php",
+		"/C/xampp/htdocs/job/application/views/main/adwords.php",
+		"/C/xampp/htdocs/job/assets/main/js/job7vn.js",
+		"/C/xampp/htdocs/job/application/controllers/admin/Admin.php",
+		"/C/xampp/htdocs/job/application/controllers/admin/Admin_api.php",
+		"/C/xampp/htdocs/job/application/controllers/admin/Admin_category.php",
+		"/C/xampp/htdocs/job/application/controllers/admin/Admin_comingsoon.php",
+		"/C/xampp/htdocs/job/application/controllers/admin/Admin_config.php",
+		"/C/xampp/htdocs/job/application/controllers/admin/Admin_contact.php",
+		"/C/xampp/htdocs/job/application/controllers/admin/Admin_document.php",
+		"/C/xampp/htdocs/job/application/controllers/admin/Admin_employer.php",
+		"/C/xampp/htdocs/job/application/controllers/admin/Admin_mail.php",
+		"/C/xampp/htdocs/job/application/controllers/admin/Admin_manager.php",
+		"/C/xampp/htdocs/job/application/controllers/admin/Admin_recruitment.php",
+		"/C/xampp/htdocs/job/application/views/main/support-online.php",
+		"/C/xampp/htdocs/job/application/controllers/admin/Test_db.php",
+		"/C/xampp/htdocs/job/application/models/admin/Admin_mail_model.php",
+		"/C/xampp/htdocs/job/application/models/admin/Config_model.php",
+		"/C/xampp/htdocs/text2/demo.html",
+		"/C/xampp/htdocs/job/application/views/admin/config/title-site.php",
+		"/C/xampp/htdocs/job/application/logs/log-2015-09-30.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-create-title-site.php",
+		"/C/xampp/htdocs/job/application/models/Utilmodel.php",
+		"/C/xampp/htdocs/job/application/views/admin/config/ads.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-delete-title-site.php",
+		"/C/xampp/htdocs/job/application/views/admin/config/slides.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-delete-slide.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-upload-image-slide.php",
+		"/C/xampp/htdocs/job/application/logs/log-2015-09-29.php",
+		"/C/xampp/htdocs/job/assets/admin/angularjs/service/config.service.js",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-upload-logo.php",
+		"/C/xampp/htdocs/job/application/logs/log-2015-09-28.php",
+		"/C/xampp/htdocs/job/assets/admin/angularjs/controller/category.controller.js",
+		"/C/xampp/htdocs/job/assets/admin/angularjs/service/category.service.js",
+		"/C/xampp/htdocs/job/application/views/admin/category/job-welfare.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-update-welfare.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-create-welfare.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-delete-welfare.php",
+		"/C/xampp/htdocs/job/application/models/admin/Category_model.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-create-contact-form.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-update-contact-form.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-delete-career.php",
+		"/C/xampp/htdocs/job/application/logs/log-2015-09-25.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-delete-contact-form.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-delete-salary.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-create-salary.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-update-career.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-create-career.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-update-salary.php",
+		"/C/xampp/htdocs/job/application/views/admin/category/faq.php",
+		"/C/xampp/htdocs/job/application/views/admin/category/contact-form.php",
+		"/C/xampp/htdocs/job/application/views/admin/category/salary.php",
+		"/C/xampp/htdocs/job/application/views/admin/category/career.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-delete-faq.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-create-faq.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-update-faq.php",
+		"/C/xampp/htdocs/job/assets/admin/partial/modal-create-job-level.php",
+		"/C/xampp/htdocs/job/application/views/admin/category/job-form.php",
+		"/C/xampp/htdocs/job/application/views/admin/category/job-level.php"
 	],
 	"find":
 	{
-		"height": 36.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
 		"height": 90.0,
 		"where_history":
 		[
+			"C:\\xampp\\htdocs\\admin_master\\public",
+			"C:\\xampp\\htdocs\\admin_master\\app\\views"
 		]
 	},
 	"find_state":
@@ -405,134 +952,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"upload_cv",
-			"upload_file",
-			"arr_Salary",
-			"salary",
-			"registerModal",
-			"=\"#\"",
-			"getAllCareer",
-			"ufile",
-			"do_upload",
-			"img_file",
-			"do_upload",
-			"img_file",
-			"userfile",
-			"do_upload",
-			"img_file",
-			"do_upload",
-			"detail_recruitmnet",
-			"create_recruitment-form",
-			"var",
-			"detail_recruitment",
-			"detail_recruitmnet",
-			"DateTimePicker.js",
-			"arr_career",
-			"modal_update_recruitment",
-			"create_recruitment-form",
-			"create_recruitmentModel",
-			"nopading",
-			"addEventListener",
-			"salary",
-			"do_upload",
-			"768px",
-			"modal-dialog",
-			"jquery.form.js",
-			"job_day1",
-			"minimumAge",
-			"getFullYear",
-			"dobPicker",
-			"dobday",
-			"dobPicker",
-			"rec_job_map_career",
-			"selectpicker",
-			"getAllProvince",
-			"career",
-			"carre",
-			"carrer",
-			"care",
-			"incrementalHash",
-			"update_contact_info_employer",
-			"employer_updateModal",
-			"message_recruitment",
-			"11",
-			"employer-register-form",
-			"employer_registerModal",
-			"create_recruitmentModel",
-			"message_upload_cv_online",
-			"rec_job_time",
-			"regimen",
-			"province_name",
-			"user_upload_cv_online",
-			"userprofile",
-			"_default",
-			"check_default",
-			"uploadcv-form",
-			"		\n",
-			"error",
+			"insertEmployer",
+			"error-employer-contact",
+			"employer_contact_name",
+			"file-name",
+			"province",
+			"captcha-reg",
+			"token-create-form",
+			"csrf",
+			"docuser",
+			"token",
+			"color-text-2",
+			"プロフィール画像",
+			"氏名",
+			"言語能力",
+			"@media",
+			"$scope.complete",
+			"complete",
+			"configService",
+			"modalDeleteEmployerRecruitment",
+			"modalUpdateEmployerRecruitment",
+			"modalDisabledEmployerRecruitment",
+			"getRecruitmentShow",
+			"rec_update_at",
+			"approveRecruitment",
+			"approve",
+			"slide",
+			"uploadLogoImage",
+			"slide",
+			"disabledButton",
+			"slideController",
+			"urlJob",
+			"complete_url",
+			"$autoload['helper']",
+			"footer",
+			"ascent_home_slider",
+			"csrf_test_name",
+			"uploadVideo",
+			"activeDeleteVideo",
+			"activeDeleteLogo",
+			"ctrl+d",
+			"ctrl+K",
+			"hide",
+			"banner",
+			"baner",
+			"banner",
+			"add_action",
+			"register_setting",
+			"option",
+			"ascent_socialmedia_navs",
+			"site-branding",
+			"updateemployer",
+			"uploadLogoImage",
+			"only-digits",
+			"onlyDigits",
+			"0000000000",
+			"uploadLogoImage",
+			"logoController",
+			"slideController",
+			"margin-top-5",
+			"margin-bottom-5",
+			"member-avatar",
+			"aboutus",
+			"}\n",
+			"config",
+			"term",
+			"email-popup-user",
+			"getToken",
+			"footer",
+			"getListTitleSite",
+			"TitleSite",
+			"padding-top-10",
+			"fa-check",
+			"padding-lr-5",
+			"MarkerWithLabel",
+			"centerMap",
+			"-webkit-box-shadow",
+			"font",
+			"font-family",
+			"align",
+			".pricing-tables",
+			"pricing-tables",
+			"adwords-img-header",
+			"about",
+			"align",
+			"//$(\".",
+			".timeline>li>.fa",
+			"base_url('error/404')",
+			"404",
+			"403",
+			"error/404",
+			"getNewsRecruitment",
+			"static",
+			"panel-body",
+			"margin-top-5",
+			"union",
+			"slideService",
+			"activeSlide",
+			"uploadSlide",
+			"logo",
+			"uploadLogo",
+			"uploadLogoImage",
+			"health",
+			"admin/form",
+			"realoadHealth",
+			"updateprovinceForm",
+			"map_region",
+			"maps.google",
+			"jobseeker",
+			"ng-controller",
+			"scrollChatBox",
 			"alert",
-			"alert-danger",
-			"message",
-			"mesage",
-			"mesages",
-			"mesage",
-			"-->\n",
-			"                                \n",
-			"float-left",
-			"bootstrap-datetimepicker.min",
-			"datetimepicker1",
-			"rec_job_map_country",
-			"rec_job_map_form_child",
-			"console",
-			"fn",
-			"example-getting-started",
-			"Multiselect",
-			"province_name",
-			"multiple",
-			"multiple_id",
-			"browsers",
-			"province_name",
-			"arr_welfare",
-			"rec_job_map_country",
-			"id_make",
-			"rec_job_map_country",
-			"  <select class=\"form-control\" name=\"rec_job_map_country\" id=\"rec_job_map_country\">\n                                                <option value=\"0\">Chọn mức lương mong muốn</option>\n                                                <option value=\"1\">từ 2 đến 5 triệu</option>\n                                                <option value=\"1\">Từ 5 đến 10 triệu</option>\n\n                                            </select>",
-			"rec_job_map_country",
-			"console_log",
-			"createcv_online",
-			"email_check",
-			"callback_email_check",
-			"uploadcv",
-			"docon_birthday",
-			"mb_20",
-			"December",
-			"tabs-2",
-			"tabs-1",
-			"tabs-2",
-			"open-",
-			"update_status",
-			"tabs-2",
-			"tabs-1",
-			"tabs-2",
-			"tabs-1",
-			"http://surveymaxmalla-surveymax.rhcloud.com1",
-			"http://surveymaxmalla-surveymax.rhcloud.com",
-			"tabs-1",
-			"tabs-2",
-			"upload_path",
-			"constants",
-			"upload ",
-			"do_upload",
-			"image",
-			"uploadImages",
-			"session_data",
-			"mci_current",
-			"$data['sess_data'] = $this->lang->mci_current();",
-			"checkEmailExits",
-			"message",
-			"update_status",
-			"bootstrap",
-			">"
+			"alert//",
+			"alert",
+			"listSalaries",
+			"getListRecruitment",
+			"getToken",
+			"addTokenInput",
+			"restructureChatBoxes",
+			"getFromDb",
+			"form",
+			"addTokenInput",
+			"getListRecruitmentProvince",
+			"key",
+			" }",
+			"job-province-item",
+			"overflow",
+			"-9999",
+			"json"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -540,16 +1087,31 @@
 		"regex": false,
 		"replace_history":
 		[
-			"update_recruitment-form",
-			"update_recruitmentModel",
-			"detail_recruitmentModel",
-			"employer-contact-update-form",
-			"employer-update-form",
-			"employer_updateModal",
-			"create_recruitment",
-			"createcv_online",
-			"mb_10",
-			"site_lang"
+			"TitlePage",
+			"base_url('404')",
+			"Form",
+			"createprovinceForm",
+			"province",
+			"",
+			"; ?>",
+			"<?php echo $doc->",
+			"province",
+			"'2015-09-02 00:00:00'",
+			"'",
+			"VALUES",
+			"INTO `jobdb`.`province`",
+			"province",
+			"flexslider-job",
+			"recruitmentCreateForm",
+			"",
+			"employerCreateForm",
+			"rows=\"5\"",
+			"rec",
+			"createEmployerUserForm",
+			"employer",
+			"'",
+			"../lib/",
+			""
 		],
 		"reverse": false,
 		"show_context": true,
@@ -560,110 +1122,1121 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 7,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "application/views/main/employer/modal_create_recruitment.php",
+					"file": "assets/main/css/style.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 17826,
+						"buffer_size": 52063,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6124,
-								4437
+								1166,
+								1166
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 38,
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2100.0,
+						"translation.y": 507.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "application/views/main/jobseeker.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1665,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1410,
+								1410
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 28,
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "assets/main/js/common.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 735,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								723,
+								723
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 18,
+							"open_with_edit": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "application/config/routes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 22300,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								22284,
+								22298
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 374,
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4510.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "application/controllers/Register.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16498,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11977,
+								12197
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 244,
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2666.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "application/views/main/create_recruitment.php",
+					"buffer": 5,
+					"file": "application/models/Register_model.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 18142,
+						"buffer_size": 1434,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								306,
-								328
+								1223,
+								1241
 							]
 						],
 						"settings":
 						{
+							"BracketHighlighterBusy": false,
 							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 34,
+							"is_xml": false,
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 22.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "application/views/main/user_register.php",
+					"buffer": 6,
+					"file": "application/controllers/employer/Employer_register.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5166,
+						"buffer_size": 13052,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								951,
-								951
+								3833,
+								3833
 							]
 						],
 						"settings":
 						{
+							"BracketHighlighterBusy": false,
 							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 73,
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 752.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "job.sublime-project",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 118,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								118,
+								118
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": -1,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "assets/main/js/ntd_upload.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4333,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3404,
+								3404
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 80,
+							"open_with_edit": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 817.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "application/config/config.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17579,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17577,
+								17577
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 499,
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6095.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "application/views/main/employer/register_recruit.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25552,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								25552
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 0,
+							"is_xml": false,
+							"open_with_edit": true,
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 26.0,
-						"translation.y": 240.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "application/controllers/CreateRecruitment.php",
+					"buffer": 11,
+					"file": "application/views/main/employer/register.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11439,
+						"buffer_size": 31873,
 						"regions":
 						{
+						},
+						"selection":
+						[
+							[
+								13950,
+								13950
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 197,
+							"is_xml": false,
+							"open_with_edit": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3029.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "application/logs/log-2015-11-09.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 197645,
+						"regions":
+						{
+							"TagLint":
+							{
+								"flags": 2356,
+								"icon": "dot",
+								"regions":
+								[
+									[
+										181644,
+										181647
+									]
+								],
+								"scope": "variable.parameter"
+							}
 						},
 						"selection":
 						[
@@ -674,215 +2247,1004 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1380.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "application/controllers/Uploadcv.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10193,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7434,
-								7256
-							]
-						],
-						"settings":
-						{
+							"BracketHighlighterBusy": false,
 							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 0,
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2837.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "application/views/main/upload_cv.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5139,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3659,
-								3667
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 488.0,
-						"translation.y": 900.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "assets/main/js/job7vn-register.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 18794,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								16747,
-								16755
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 6437.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "assets/main/css/style4189.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 231480,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								229339,
-								229339
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 217340.0,
+						"translation.y": 11400.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "application/controllers/employer/Employer.php",
+					"buffer": 13,
+					"file": "application/views/main/jobseeker/upload-resume.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 32177,
+						"buffer_size": 4154,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3507,
-								3496
+								2429,
+								2429
 							]
 						],
 						"settings":
 						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 48,
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 195.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "application/views/main/employer/form_backup.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5995,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5995,
+								5995
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 109,
+							"is_xml": false,
+							"open_with_edit": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1025.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "application/views/main/jobseeker/layout.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5124,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								98,
+								99
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 4,
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "application/config/hooks.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 576,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								576,
+								576
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 18,
+							"is_xml": false,
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1260.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "application/models/Recruitment_model.php",
+					"buffer": 17,
+					"file": "application/views/main/employer/layout.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3521,
+						"buffer_size": 539,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2891,
-								2897
+								98,
+								98
 							]
 						],
 						"settings":
 						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 4,
+							"is_xml": false,
+							"open_with_edit": true,
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": -0.0,
-						"translation.y": 1197.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "application/views/main/employer/employer_menu.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7277,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2526,
+								2526
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 76,
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 429.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "application/views/main/employer/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4611,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								225,
+								225
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 5,
+							"is_xml": false,
+							"open_with_edit": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "application/controllers/employer/Employer.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 32434,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								259,
+								201
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 10,
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 390.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "application/views/main/head.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10566,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7438,
+								7438
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 123,
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 1170.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "note-project-requiment/note-3.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2225,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2201,
+								2201
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 58,
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 234.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
 					"type": "text"
 				}
-			]
-		},
-		{
-			"sheets":
-			[
-			]
-		},
-		{
-			"sheets":
-			[
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 21.0
 	},
 	"input":
 	{
-		"height": 82.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -891,49 +3253,39 @@
 			[
 				0,
 				0,
-				2,
+				1,
 				1
-			],
-			[
-				0,
-				1,
-				1,
-				2
-			],
-			[
-				1,
-				1,
-				2,
-				2
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
-			0.687730829421,
 			1.0
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 94.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
 	},
 	"output.xdebug":
 	{
-		"height": 142.0
+		"height": 0.0
 	},
 	"pinned_build_system": "",
 	"project": "job.sublime-project",
 	"replace":
 	{
-		"height": 66.0
+		"height": 38.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -966,115 +3318,12 @@
 	"selected_group": 0,
 	"settings":
 	{
-		"xdebug":
-		{
-			"hide_conflict": false,
-			"restore_index":
-			{
-				"24":
-				{
-					"group": 0,
-					"index": 0
-				},
-				"30":
-				{
-					"group": 0,
-					"index": 7
-				},
-				"32":
-				{
-					"group": 0,
-					"index": 5
-				},
-				"33":
-				{
-					"group": 0,
-					"index": 1
-				},
-				"49":
-				{
-					"group": 0,
-					"index": 6
-				},
-				"60":
-				{
-					"group": 0,
-					"index": 4
-				},
-				"79":
-				{
-					"group": 2,
-					"index": 1
-				},
-				"80":
-				{
-					"group": 1,
-					"index": 0
-				},
-				"81":
-				{
-					"group": 2,
-					"index": 0
-				},
-				"82":
-				{
-					"group": 1,
-					"index": 1
-				},
-				"83":
-				{
-					"group": 0,
-					"index": 3
-				},
-				"84":
-				{
-					"group": 0,
-					"index": 2
-				}
-			},
-			"restore_layout":
-			{
-				"cells":
-				[
-					[
-						0,
-						0,
-						2,
-						1
-					],
-					[
-						0,
-						1,
-						1,
-						2
-					],
-					[
-						1,
-						1,
-						2,
-						2
-					]
-				],
-				"cols":
-				[
-					0.0,
-					0.5,
-					1.0
-				],
-				"rows":
-				[
-					0.0,
-					0.695555555556,
-					1.0
-				]
-			}
-		}
 	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 326.0,
+	"side_bar_width": 320.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

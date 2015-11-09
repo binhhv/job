@@ -2,10 +2,17 @@
 <?php if (isset($jobDetail)) {
 	?>
 
-	<?php if (!isset($user) || $user['role'] == 4) {?>
+	<?php if (!isset($user) || $user['role'] == 4) {
+		?>
 	<div class=" title-job-scroll hide">
 		<div class="col-sm-8 text-center"><label class="lb-title-job-scroll"><?php echo $jobDetail->rec_title;?></label></div>
-		<div class="col-sm-4 text-center"><button class="btn btn-lg btn-danger btn-scroll-apply-job">NỘP HỒ SƠ</button></div>
+		<div class="col-sm-4 text-center">
+		<?php if (isset($checkApply) && !$checkApply) {?>
+		<button class="btn btn-lg btn-danger btn-scroll-apply-job">NỘP HỒ SƠ</button> <?php } else {?>
+		<button class="btn btn-lg btn-danger btn-scroll-apply-job" disabled="true">ĐÃ ỨNG TUYỂN</button>
+		<?php }
+		?>
+		</div>
 	</div>
 	<?php }
 	?>
@@ -26,8 +33,14 @@
 
 
 										<h3 class="title-field-detail-job">Chi tiết công việc
-										<?php if (!isset($user) || $user['role'] == 4) {?>
+										<?php if (!isset($user) || $user['role'] == 4) {
+		?>
+										<?php if (isset($checkApply) && !$checkApply) {?>
 										<button class="btn btn-danger btn-md pull-right btn-apply-job">Nộp hồ sơ</button>
+										<?php } else {?>
+										<button class="btn btn-danger btn-md pull-right btn-apply-job" disabled="true">Đã ứng tuyển</button>
+										<?php }
+		?>
 										<?php }
 	?>
 										</h3>
@@ -139,6 +152,8 @@ foreach ($welfares as $value) {
 								<!-- </label> -->
 							</div>
 							<div class="col-sm-12 field-job-line"></div>
+							<?php if (isset($checkApply) && !$checkApply) {
+			?>
 							<div class="col-sm-12 margin-top-10" >
 							<form class="form-horizontal" role="form" name="form-apply" id="form-apply" method="post" enctype="multipart/form-data">
 							  	<div class="form-group">
@@ -147,14 +162,14 @@ foreach ($welfares as $value) {
 							    <input type="hidden" name="idjob" value="<?php echo $jobDetail->rec_id;?>">
 							    <input type="hidden" name="idjobseeker" value="<?php
 if (isset($user)) {
-			echo $user['id'];
-		}
-		?>">
+				echo $user['id'];
+			}
+			?>">
 							      <input type="text" class="form-control" id="firstname" placeholder="Họ" <?php
 if (isset($user)) {
-			echo 'value = "' . $user['firstname'] . '" disabled';
-		}
-		?>>
+				echo 'value = "' . $user['firstname'] . '" disabled';
+			}
+			?>>
 							    </div>
 							  </div>
 							  <div class="form-group">
@@ -162,9 +177,9 @@ if (isset($user)) {
 							    <div class="col-sm-10">
 							      <input type="text" class="form-control" id="lastname" placeholder="Tên" <?php
 if (isset($user)) {
-			echo 'value = "' . $user['lastname'] . '" disabled';
-		}
-		?>>
+				echo 'value = "' . $user['lastname'] . '" disabled';
+			}
+			?>>
 							    </div>
 							  </div>
 							  <div class="form-group">
@@ -172,9 +187,9 @@ if (isset($user)) {
 							    <div class="col-sm-10">
 							      <input type="email" class="form-control" id="email" placeholder="Email" <?php
 if (isset($user)) {
-			echo 'value = "' . $user['email'] . '" disabled';
-		}
-		?>>
+				echo 'value = "' . $user['email'] . '" disabled';
+			}
+			?>>
 							    </div>
 							  </div>
 							  <div class="form-group">
@@ -191,13 +206,13 @@ if (isset($user)) {
 												</div>
 							  </div>
 							   <?php if (isset($user) && $user['role'] == 4) {
-			?>
+				?>
 							  <div class="form-group hide" id="data-doc">
 							    <label class="control-label col-sm-2"></label>
 							    <div class="col-sm-10 data-doc-user hide">
 							    	<?php
 if (isset($docs) && count($docs) > 0) {
-				foreach ($docs as $value) {?>
+					foreach ($docs as $value) {?>
 												<div class="col-sm-12">
 													<label>
 														<input type="radio" name="docuser" value="<?php echo $value->docon_id?>">
@@ -208,11 +223,11 @@ if (isset($docs) && count($docs) > 0) {
 												</div>
 												<?php }
 
-				if (count($docs) < 3) {
-					?>
+					if (count($docs) < 3) {
+						?>
 												<div class="col-sm-12">
 												<label>
-													<input type="radio" name="docuser" value="-1" data-id="<?php echo $value->docon_id?>">Tạo hồ sơ mới
+													<input type="radio" name="docuser" value="-1" data-id="<?php echo $jobDetail->rec_id;?>">Tạo hồ sơ mới
 
 												</label>
 												<!-- <a class="create-doc-user" href="#" onclick="openModalCreateDocon" >Tạo hồ sơ mới</a> -->
@@ -223,21 +238,21 @@ if (isset($docs) && count($docs) > 0) {
 													<div id="token-hash"></div>
 												</div> -->
 										<?php }
-				?>
+					?>
 										<?php } else {?>
 										<label >Bạn chưa có hồ sơ nào.</label><br>
 											<label>
-													<input  type="radio" name="docuser" value="-1" data-id="0">Tạo hồ sơ mới
+													<input  type="radio" name="docuser" value="-1" data-id="<?php echo $jobDetail->rec_id;?>">Tạo hồ sơ mới
 
 												</label>
 		<?php }
-			?>
+				?>
 							    	<!-- <div class="col-sm-12"></div> -->
 							    </div>
 							    <div class="col-sm-10 data-cv-user hide">
 							    		<?php
 if (isset($cvs) && count($cvs) > 0) {
-				foreach ($cvs as $value) {?>
+					foreach ($cvs as $value) {?>
 												<div class="col-sm-12">
 													<label>
 														<input type="radio" name="cvuser" value="<?php echo $value->doccv_id?>">
@@ -248,8 +263,8 @@ if (isset($cvs) && count($cvs) > 0) {
 												</div>
 												<?php }
 
-				if (count($cvs) < 3) {
-					?>
+					if (count($cvs) < 3) {
+						?>
 												<div class="col-sm-12">
 												<label><input type="radio" name="cvuser" value="-1">upload cv</label><label class="text-danger">(doc|docx|pdf)</label>
 												<div class="fileupload hide">
@@ -272,7 +287,7 @@ if (isset($cvs) && count($cvs) > 0) {
 												<label class="text-danger error-file hide"></label>
 												</div>
 										<?php }
-				?>
+					?>
 										<?php } else {?>
 										<label>Bạn chưa có cv nào.</label><br>
 											<label>
@@ -297,10 +312,10 @@ if (isset($cvs) && count($cvs) > 0) {
 											<!-- <input type="file" class="form-control hide file-cv" name="cv" id="cv"> -->
 											<label class="text-danger error-file hide"></label>
 		<?php }
-			?>
+				?>
 							    </div>
 							  </div> <?php }
-		?>
+			?>
 							  <!-- <div class="hide" id="value-doc"></div> -->
 							  <div class="form-group hide captcha-box">
 							  <label class="control-label col-sm-2">Captcha</label>
@@ -324,7 +339,7 @@ if (isset($cvs) && count($cvs) > 0) {
 							    <?php } else {?>
 							    	<a href="<?php echo base_url('login');?>?url=<?php echo urlencode(current_url());?>" class="btn btn-primary">Đăng nhập để nộp hồ sơ</a>
 							    	<?php	}
-		?>
+			?>
 
 							    </div>
 							  </div>
@@ -334,6 +349,12 @@ if (isset($cvs) && count($cvs) > 0) {
 							<div class="col-sm-12 text-center">
 								*Nhấp chọn "Nộp đơn", tôi đã đọc và đồng ý với các <a class="a-term" href="<?php echo base_url('about/term');?>">Thỏa thuận sử dụng</a>.
 							</div>
+							<?php } else {?>
+							<div class="col-sm-12 text-center">
+								Bạn đã ứng tuyển việc làm này rồi.
+							</div>
+							<?php }
+		?>
 							</div>
 						</div>
 						<?php }
@@ -690,12 +711,12 @@ $(".btn-apply-job").on("click",function(e){
 function checkSelectedDoc(){
 	var result = false;
 	if($("input:radio[name='doc']").is(":checked")){
-		if($("input:radio[name='doc']").val() =='doconline'){
+		if($("input:radio[name='doc']:checked").val() =='doconline'){
 			if($("input:radio[name='docuser']").is(":checked")){
 				result = true;
 			}
 		}
-		else if($("input:radio[name='doc']").val() =='doccv'){
+		else if($("input:radio[name='doc']:checked").val() =='doccv'){
 			if($("input:radio[name='cvuser']").is(":checked")){
 				result = true;
 			}
@@ -715,6 +736,7 @@ function checkSelectedDoc(){
 	// if(checkcv && checkcv=='-1' && filename.length > 0 && filetmp.length > 0){
 	// 	result = true;
 	// }
+	console.log(result);
 	return result;
 }
 	$('input:radio[name="doc"]').change(

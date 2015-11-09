@@ -55,12 +55,15 @@ class Employer extends CI_Controller {
 		$contact_form = $this->employer->getAllJob_Contact_Form();
 		$arr_career = $this->employer->getAllCareer();
 		$arr_Salary = $this->employer->getAllSalary();
+
 		$recruitment = $this->load->view('main/employer/modal_create_recruitment', array('csrf' => $csrf, 'arr_country' => $arr_country,
 			'arr_welfare' => $arr_welfare, 'arr_job_form' => $arr_job_form, 'job_form_child' => $job_form_child, 'job_level' => $job_level,
 			'contact_form' => $contact_form, 'arr_career' => $arr_career, 'arr_Salary' => $arr_Salary), TRUE);
 		$employer_menu = $this->load->view('main/employer/employer_menu', array('employerInfo' => $employerInfo), TRUE);
+		$numRecruitmentActive = count($this->employer->getListRecruitmentEmployer(1, $employerInfo->employer_id));
+		$contentEmployer = $this->load->view('main/employer/index', array('employerInfo' => $employerInfo, 'numRecruitmentActive' => $numRecruitmentActive), TRUE);
 
-		$content = $this->load->view('main/employer/index', array('employer_menu' => $employer_menu, 'employerInfo' => $employerInfo, 'csrf' => $csrf, 'update_contact_employer' => $update_contact_employer, 'update_imfomation_employer' => $update_imfomation_employer, 'update_account_employer' => $update_account_employer, 'recruitment' => $recruitment), TRUE);
+		$content = $this->load->view('main/employer/layout', array('employer_menu' => $employer_menu, 'contentEmployer' => $contentEmployer, 'csrf' => $csrf, 'update_contact_employer' => $update_contact_employer, 'update_imfomation_employer' => $update_imfomation_employer, 'update_account_employer' => $update_account_employer, 'recruitment' => $recruitment), TRUE);
 		$footer = $this->load->view('main/footer', array(), TRUE);
 		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer, 'isGray' => true));
 

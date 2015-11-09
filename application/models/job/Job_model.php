@@ -146,13 +146,13 @@ class Job_model extends CI_Model {
 	function getListDoconUser($id) {
 		$sql = "select *
 				from document_online
-				where docon_is_delete = 0 and docon_type = 1 and docon_map_user = " . $id;
+				where docon_is_delete = 0 and docon_type = 1 and docon_is_delete_user = 0 and docon_map_user = " . $id;
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
 	}
 	function getListCVUser($id) {
 		$sql = "select *
 				from document_cv
-				where doccv_is_delete = 0 and doccv_type = 1 and doccv_map_user = " . $id;
+				where doccv_is_delete = 0 and doccv_type = 1 and doccv_is_delete_user = 0 and doccv_map_user = " . $id;
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
 	}
 	function getDetailForm($id, $doctype = 1) {
@@ -221,6 +221,14 @@ class Job_model extends CI_Model {
 		from province
 		where province_is_delete = 0 and province_map_country = " . $id;
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
+	}
+	function getListProvinceCountryWithResume($id, $idResume) {
+		$sql = "select a.*,IFNULL(b.numProvince,0) as numProvince
+		from province a
+		left join (select b.doconmp_map_province, count(*) as numProvince from document_online_map_province b
+			where b.doconmp_is_delete = 0 and b.doconmp_map_docon = ? group by b.doconmp_map_province) as b on a.province_id = b.doconmp_map_province
+		where a.province_is_delete = 0 and a.province_map_country = " . $id;
+		return $this->dbutil->getFromDbQueryBinding($sql, array($idResume));
 	}
 	function insertDocument($data, $provinceSelected) {
 		$result = $this->dbutil->insertDb($data, 'document_online');
@@ -465,5 +473,15 @@ class Job_model extends CI_Model {
 
 	function updateViewRecruitment($table, $field, $fieldCondition, $valueFieldCondition) {
 		$this->dbutil->updateIncrementField($table, $field, $fieldCondition, $valueFieldCondition);
+	}
+	function checkUserApplyRecruitment($idRec, $idUser) {
+		$sql = "select * from recruitment_apply where recapp_map_recruitment = ? and recapp_map_user = ? and recapp_is_delete = 0";
+		$row = $this->dbutil->getFromDbQueryBinding($sql, array($idRec, $idUser));
+		if (count($row) > 0) {
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 }

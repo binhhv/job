@@ -2,10 +2,17 @@
 <?php if (isset($jobDetail)) {
 	?>
 
-	<?php if (!isset($user) || $user['role'] == 4) {?>
+	<?php if (!isset($user) || $user['role'] == 4) {
+		?>
 			<div class=" title-job-scroll hide">
 				<div class="col-sm-8 text-center"><label class="lb-title-job-scroll"><?php echo $jobDetail->rec_title;?></label></div>
-				<div class="col-sm-4 text-center"><button class="btn btn-lg btn-danger btn-scroll-apply-job">NỘP HỒ SƠ</button></div>
+				<div class="col-sm-4 text-center">
+		<?php if (isset($checkApply) && !$checkApply) {?>
+					<button class="btn btn-lg btn-danger btn-scroll-apply-job">NỘP HỒ SƠ</button> <?php } else {?>
+			<button class="btn btn-lg btn-danger btn-scroll-apply-job" disabled="true">ĐÃ ỨNG TUYỂN</button>
+			<?php }
+		?>
+		</div>
 			</div>
 		<?php }
 	?>
@@ -26,9 +33,15 @@
 
 
 											<h3 class="title-field-detail-job">Chi tiết công việc
-	<?php if (!isset($user) || $user['role'] == 4) {?>
-		<button class="btn btn-danger btn-md pull-right btn-apply-job">Nộp hồ sơ</button>
-		<?php }
+	<?php if (!isset($user) || $user['role'] == 4) {
+		?>
+												<?php if (isset($checkApply) && !$checkApply) {?>
+			<button class="btn btn-danger btn-md pull-right btn-apply-job">Nộp hồ sơ</button>
+			<?php } else {?>
+			<button class="btn btn-danger btn-md pull-right btn-apply-job" disabled="true">Đã ứng tuyển</button>
+			<?php }
+		?>
+												<?php }
 	?>
 											</h3>
 											<div class="col-sm-12 field-job-line"></div>
@@ -133,7 +146,7 @@
 							</div>
 	<?php if (!isset($user) || $user['role'] == 4) {
 		?>
-								<div class="job-left-item col-sm-12 margin-bottom-10">
+		<div class="job-left-item col-sm-12 margin-bottom-10">
 								<div class="row" id="focus-apply">
 									<div class="col-sm-12 employer-box-header text-center background-color-3">
 										<!-- <label class="text-color-1 field-job"> -->
@@ -141,202 +154,210 @@
 										<!-- </label> -->
 									</div>
 									<div class="col-sm-12 field-job-line"></div>
-									<div class="col-sm-12 margin-top-10" >
-									<form class="form-horizontal" role="form" name="form-apply" id="form-apply" method="post" enctype="multipart/form-data">
-									  	<div class="form-group">
-									    <label class="control-label col-sm-2" for="firstname">Họ</label>
-									    <div class="col-sm-10">
-									    <input type="hidden" name="idjob" value="<?php echo $jobDetail->rec_id;?>">
-									    <input type="hidden" name="idjobseeker" value="<?php
-		if (isset($user)) {
-			echo $user['id'];
-		}
-		?>">
-									      <input type="text" class="form-control" id="firstname" placeholder="Họ" <?php
-		if (isset($user)) {
-			echo 'value = "'.$user['firstname'].'" disabled';
-		}
-		?>>
-									    </div>
-									  </div>
-									  <div class="form-group">
-									    <label class="control-label col-sm-2" for="lastname">Tên</label>
-									    <div class="col-sm-10">
-									      <input type="text" class="form-control" id="lastname" placeholder="Tên" <?php
-		if (isset($user)) {
-			echo 'value = "'.$user['lastname'].'" disabled';
-		}
-		?>>
-									    </div>
-									  </div>
-									  <div class="form-group">
-									    <label class="control-label col-sm-2" for="email">Email</label>
-									    <div class="col-sm-10">
-									      <input type="email" class="form-control" id="email" placeholder="Email" <?php
-		if (isset($user)) {
-			echo 'value = "'.$user['email'].'" disabled';
-		}
-		?>>
-									    </div>
-									  </div>
-									  <div class="form-group">
-									    <label class="control-label col-sm-2">Resume</label>
-									    <div class="col-sm-10">
-									    	<label><input type="radio" name="doc" value="doconline">Hồ sơ trực tuyến </label>&nbsp;
-									    	<label><input type="radio" name="doc" value="doccv">Hồ sơ đính kèm</label>
-									    </div>
-									  </div>
-									  <div class="form-group hide">
-
-									    <div class="col-sm-10 token hide">
-															<input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" />
-														</div>
-									  </div>
-		<?php if (isset($user) && $user['role'] == 4) {
+		<?php if (isset($checkApply) && !$checkApply) {
 			?>
-			<div class="form-group hide" id="data-doc">
-										    <label class="control-label col-sm-2"></label>
-										    <div class="col-sm-10 data-doc-user hide">
-			<?php
-			if (isset($docs) && count($docs) > 0) {
-				foreach ($docs as $value) {?>
-																	<div class="col-sm-12">
+										<div class="col-sm-12 margin-top-10" >
+										<form class="form-horizontal" role="form" name="form-apply" id="form-apply" method="post" enctype="multipart/form-data">
+										  	<div class="form-group">
+										    <label class="control-label col-sm-2" for="firstname">Họ</label>
+										    <div class="col-sm-10">
+										    <input type="hidden" name="idjob" value="<?php echo $jobDetail->rec_id;?>">
+										    <input type="hidden" name="idjobseeker" value="<?php
+			if (isset($user)) {
+				echo $user['id'];
+			}
+			?>">
+										      <input type="text" class="form-control" id="firstname" placeholder="Họ" <?php
+			if (isset($user)) {
+				echo 'value = "'.$user['firstname'].'" disabled';
+			}
+			?>>
+										    </div>
+										  </div>
+										  <div class="form-group">
+										    <label class="control-label col-sm-2" for="lastname">Tên</label>
+										    <div class="col-sm-10">
+										      <input type="text" class="form-control" id="lastname" placeholder="Tên" <?php
+			if (isset($user)) {
+				echo 'value = "'.$user['lastname'].'" disabled';
+			}
+			?>>
+										    </div>
+										  </div>
+										  <div class="form-group">
+										    <label class="control-label col-sm-2" for="email">Email</label>
+										    <div class="col-sm-10">
+										      <input type="email" class="form-control" id="email" placeholder="Email" <?php
+			if (isset($user)) {
+				echo 'value = "'.$user['email'].'" disabled';
+			}
+			?>>
+										    </div>
+										  </div>
+										  <div class="form-group">
+										    <label class="control-label col-sm-2">Resume</label>
+										    <div class="col-sm-10">
+										    	<label><input type="radio" name="doc" value="doconline">Hồ sơ trực tuyến </label>&nbsp;
+										    	<label><input type="radio" name="doc" value="doccv">Hồ sơ đính kèm</label>
+										    </div>
+										  </div>
+										  <div class="form-group hide">
+
+										    <div class="col-sm-10 token hide">
+																<input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" />
+															</div>
+										  </div>
+			<?php if (isset($user) && $user['role'] == 4) {
+				?>
+				<div class="form-group hide" id="data-doc">
+											    <label class="control-label col-sm-2"></label>
+											    <div class="col-sm-10 data-doc-user hide">
+				<?php
+				if (isset($docs) && count($docs) > 0) {
+					foreach ($docs as $value) {?>
+																		<div class="col-sm-12">
+																			<label>
+																				<input type="radio" name="docuser" value="<?php echo $value->docon_id?>">
+						<?php echo $value->docon_code?>
+
+																			</label>
+																			&nbsp;(<span class="view-doc" data-id="<?php echo $value->docon_id?>">xem</span>)
+																		</div>
+						<?php }
+
+					if (count($docs) < 3) {
+						?>
+																		<div class="col-sm-12">
 																		<label>
-																			<input type="radio" name="docuser" value="<?php echo $value->docon_id?>">
-					<?php echo $value->docon_code?>
+																			<input type="radio" name="docuser" value="-1" data-id="<?php echo $jobDetail->rec_id;?>">Tạo hồ sơ mới
 
 																		</label>
-																		&nbsp;(<span class="view-doc" data-id="<?php echo $value->docon_id?>">xem</span>)
-																	</div>
-					<?php }
+																		<!-- <a class="create-doc-user" href="#" onclick="openModalCreateDocon" >Tạo hồ sơ mới</a> -->
+																		</div>
 
-				if (count($docs) < 3) {
+																		<!-- <div class="col-sm-12 hide">
+																			<div id="token-name"></div>
+																			<div id="token-hash"></div>
+																		</div> -->
+						<?php }
 					?>
-																	<div class="col-sm-12">
-																	<label>
-																		<input type="radio" name="docuser" value="-1" data-id="<?php echo $value->docon_id?>">Tạo hồ sơ mới
+															<?php } else {?>
+															<label >Bạn chưa có hồ sơ nào.</label><br>
+																<label>
+																		<input  type="radio" name="docuser" value="-1" data-id="<?php echo $jobDetail->rec_id;?>">Tạo hồ sơ mới
 
 																	</label>
-																	<!-- <a class="create-doc-user" href="#" onclick="openModalCreateDocon" >Tạo hồ sơ mới</a> -->
-																	</div>
-
-																	<!-- <div class="col-sm-12 hide">
-																		<div id="token-name"></div>
-																		<div id="token-hash"></div>
-																	</div> -->
 					<?php }
 				?>
-														<?php } else {?>
-				<label >Bạn chưa có hồ sơ nào.</label><br>
-															<label>
-																	<input  type="radio" name="docuser" value="-1" data-id="0">Tạo hồ sơ mới
+				<!-- <div class="col-sm-12"></div> -->
+											    </div>
+											    <div class="col-sm-10 data-cv-user hide">
+				<?php
+				if (isset($cvs) && count($cvs) > 0) {
+					foreach ($cvs as $value) {?>
+																		<div class="col-sm-12">
+																			<label>
+																				<input type="radio" name="cvuser" value="<?php echo $value->doccv_id?>">
+						<?php echo $value->doccv_code?>
 
-																</label>
-				<?php }
-			?>
-			<!-- <div class="col-sm-12"></div> -->
-										    </div>
-										    <div class="col-sm-10 data-cv-user hide">
-			<?php
-			if (isset($cvs) && count($cvs) > 0) {
-				foreach ($cvs as $value) {?>
-																	<div class="col-sm-12">
-																		<label>
-																			<input type="radio" name="cvuser" value="<?php echo $value->doccv_id?>">
-					<?php echo $value->doccv_code?>
+																			</label>
+																			&nbsp;(<a class="download-cv" href="<?php echo base_url().'downloadcv/'.$value->doccv_map_user.'/'.$value->doccv_file_tmp.'/'.$value->doccv_file_name.'/1'?>">tải xuống</a>)
+																		</div>
+						<?php }
 
-																		</label>
-																		&nbsp;(<a class="download-cv" href="<?php echo base_url().'downloadcv/'.$value->doccv_map_user.'/'.$value->doccv_file_tmp.'/'.$value->doccv_file_name.'/1'?>">tải xuống</a>)
-																	</div>
-					<?php }
-
-				if (count($cvs) < 3) {
+					if (count($cvs) < 3) {
+						?>
+						<div class="col-sm-12">
+																		<label><input type="radio" name="cvuser" value="-1">upload cv</label><label class="text-danger">(doc|docx|pdf)</label>
+																		<div class="fileupload hide">
+																		<!-- <input type="file" class="form-control hide file-cv" name="cv" id="cv"> -->
+																		<!-- <span class="btn btn-success fileinput-button">
+																	        <i class="glyphicon glyphicon-plus"></i>
+																	        <span>Select files...</span> -->
+																	        <!-- The file input field used as target for the file upload widget -->
+																	        <input id="fileupload" type="file" name="files" >
+																	    <!-- </span>
+																	    <br> -->
+																	    <br>
+																	    <!-- The global progress bar -->
+																	    <div id="progress" class="progress">
+																	        <div class="progress-bar progress-bar-success"></div>
+																	    </div>
+																	    <!-- The container for the uploaded files -->
+																	    <div id="files" class="files"></div>
+																		</div>
+																		<label class="text-danger error-file hide"></label>
+																		</div>
+						<?php }
 					?>
-					<div class="col-sm-12">
-																	<label><input type="radio" name="cvuser" value="-1">upload cv</label><label class="text-danger">(doc|docx|pdf)</label>
-																	<div class="fileupload hide">
-																	<!-- <input type="file" class="form-control hide file-cv" name="cv" id="cv"> -->
-																	<!-- <span class="btn btn-success fileinput-button">
-																        <i class="glyphicon glyphicon-plus"></i>
-																        <span>Select files...</span> -->
-																        <!-- The file input field used as target for the file upload widget -->
-																        <input id="fileupload" type="file" name="files" >
-																    <!-- </span>
-																    <br> -->
-																    <br>
-																    <!-- The global progress bar -->
-																    <div id="progress" class="progress">
-																        <div class="progress-bar progress-bar-success"></div>
-																    </div>
-																    <!-- The container for the uploaded files -->
-																    <div id="files" class="files"></div>
-																	</div>
-																	<label class="text-danger error-file hide"></label>
-																	</div>
+															<?php } else {?>
+					<label>Bạn chưa có cv nào.</label><br>
+																<label>
+																<input type="radio" name="cvuser" value="-1" >upload cv
+																</label><label class="text-danger">(doc|docx|pdf)</label>
+																<div class="fileupload hide">
+																<!-- <span class="btn btn-success fileinput-button">
+															        <i class="glyphicon glyphicon-plus"></i> -->
+															        <!-- <span>Select files...</span> -->
+															        <!-- The file input field used as target for the file upload widget -->
+															        <input id="fileupload" type="file" name="files" >
+															    <!-- </span> -->
+															    <!-- <br> -->
+															    <br>
+															    <!-- The global progress bar -->
+															    <div id="progress" class="progress">
+															        <div class="progress-bar progress-bar-success"></div>
+															    </div>
+															    <!-- The container for the uploaded files -->
+															    <div id="files" class="files"></div>
+																</div>
+																<!-- <input type="file" class="form-control hide file-cv" name="cv" id="cv"> -->
+																<label class="text-danger error-file hide"></label>
 					<?php }
 				?>
-														<?php } else {?>
-				<label>Bạn chưa có cv nào.</label><br>
-															<label>
-															<input type="radio" name="cvuser" value="-1" >upload cv
-															</label><label class="text-danger">(doc|docx|pdf)</label>
-															<div class="fileupload hide">
-															<!-- <span class="btn btn-success fileinput-button">
-														        <i class="glyphicon glyphicon-plus"></i> -->
-														        <!-- <span>Select files...</span> -->
-														        <!-- The file input field used as target for the file upload widget -->
-														        <input id="fileupload" type="file" name="files" >
-														    <!-- </span> -->
-														    <!-- <br> -->
-														    <br>
-														    <!-- The global progress bar -->
-														    <div id="progress" class="progress">
-														        <div class="progress-bar progress-bar-success"></div>
-														    </div>
-														    <!-- The container for the uploaded files -->
-														    <div id="files" class="files"></div>
-															</div>
-															<!-- <input type="file" class="form-control hide file-cv" name="cv" id="cv"> -->
-															<label class="text-danger error-file hide"></label>
-				<?php }
+											    </div>
+											  </div> <?php }
 			?>
+										  <!-- <div class="hide" id="value-doc"></div> -->
+										  <div class="form-group hide captcha-box">
+										  <label class="control-label col-sm-2">Captcha</label>
+										  	<div class="col-sm-10 captcha ">
+
+										  	</div>
+										  	<div class="col-sm-offset-2 col-sm-8 margin-top-5">
+										  		<input type="text" name="captcha" class="input-captcha">
+										  		<span class="alert alert-danger hide error-captcha">Captcha không hợp lệ</span>
+										  		<input type="hidden" name="captcha-reg" >
+										  	</div>
+										  </div>
+										  <div class="form-group">
+										    <div class="col-sm-offset-2 col-sm-10">
+										    <input type="hidden" name="file-name">
+										    <input type="hidden" name="file-tmp">
+										     <!-- <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" /> -->
+										    <!-- <input type="file" class="form-control file-cv" name="cv1"> -->
+			<?php if (isset($user) && $user['role'] == 4) {?>
+				<button type="submit" class="btn btn-danger" disabled="true" id="btn-apply">Nộp đơn</button>
+				<?php } else {?>
+											    	<a href="<?php echo base_url('login');?>?url=<?php echo urlencode(current_url());?>" class="btn btn-primary">Đăng nhập để nộp hồ sơ</a>
+				<?php	}
+			?>
+
 										    </div>
-										  </div> <?php }
-		?>
-									  <!-- <div class="hide" id="value-doc"></div> -->
-									  <div class="form-group hide captcha-box">
-									  <label class="control-label col-sm-2">Captcha</label>
-									  	<div class="col-sm-10 captcha ">
-
-									  	</div>
-									  	<div class="col-sm-offset-2 col-sm-8 margin-top-5">
-									  		<input type="text" name="captcha" class="input-captcha">
-									  		<span class="alert alert-danger hide error-captcha">Captcha không hợp lệ</span>
-									  		<input type="hidden" name="captcha-reg" >
-									  	</div>
-									  </div>
-									  <div class="form-group">
-									    <div class="col-sm-offset-2 col-sm-10">
-									    <input type="hidden" name="file-name">
-									    <input type="hidden" name="file-tmp">
-									     <!-- <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" /> -->
-									    <!-- <input type="file" class="form-control file-cv" name="cv1"> -->
-		<?php if (isset($user) && $user['role'] == 4) {?>
-			<button type="submit" class="btn btn-danger" disabled="true" id="btn-apply">Nộp đơn</button>
+										  </div>
+										</form>
+										<div  class="col-sm-12 text-center msg-apply hide"></div>
+										</div>
+										<div class="col-sm-12 text-center">
+											*Nhấp chọn "Nộp đơn", tôi đã đọc và đồng ý với các <a class="a-term" href="<?php echo base_url('about/term');?>">Thỏa thuận sử dụng</a>.
+										</div>
 			<?php } else {?>
-										    	<a href="<?php echo base_url('login');?>?url=<?php echo urlencode(current_url());?>" class="btn btn-primary">Đăng nhập để nộp hồ sơ</a>
-			<?php	}
+			<div class="col-sm-12 text-center">
+											Bạn đã ứng tuyển việc làm này rồi.
+										</div>
+			<?php }
 		?>
-
-									    </div>
-									  </div>
-									</form>
-									<div  class="col-sm-12 text-center msg-apply hide"></div>
-									</div>
-									<div class="col-sm-12 text-center">
-										*Nhấp chọn "Nộp đơn", tôi đã đọc và đồng ý với các <a class="a-term" href="<?php echo base_url('about/term');?>">Thỏa thuận sử dụng</a>.
-									</div>
-									</div>
+		</div>
 								</div>
 		<?php }
 	?>
@@ -692,12 +713,12 @@ $(".btn-apply-job").on("click",function(e){
 function checkSelectedDoc(){
 	var result = false;
 	if($("input:radio[name='doc']").is(":checked")){
-		if($("input:radio[name='doc']").val() =='doconline'){
+		if($("input:radio[name='doc']:checked").val() =='doconline'){
 			if($("input:radio[name='docuser']").is(":checked")){
 				result = true;
 			}
 		}
-		else if($("input:radio[name='doc']").val() =='doccv'){
+		else if($("input:radio[name='doc']:checked").val() =='doccv'){
 			if($("input:radio[name='cvuser']").is(":checked")){
 				result = true;
 			}
@@ -717,6 +738,7 @@ function checkSelectedDoc(){
 	// if(checkcv && checkcv=='-1' && filename.length > 0 && filetmp.length > 0){
 	// 	result = true;
 	// }
+	console.log(result);
 	return result;
 }
 	$('input:radio[name="doc"]').change(

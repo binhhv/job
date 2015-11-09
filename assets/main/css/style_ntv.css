@@ -213,3 +213,7 @@ border-radius:10px;
 body, body.modal {
     padding-right: 0 !important;
 }
+a.download-cv,a.download-cv:hover,a.view-recruitment,a.view-recruitment:hover{
+  color: blue;
+  font-weight: bold;
+}

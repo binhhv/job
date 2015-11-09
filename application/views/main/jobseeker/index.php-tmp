@@ -1,11 +1,4 @@
-	<div class="container job-province">
-
-		<div class="row">
-		<!--register-->
-		<div class="col-sm-9 col-sm-push-3">
-
-
-			<div class="col-sm-12 job-province-box no-padding">
+<div class="col-sm-12 job-province-box no-padding">
             <div class="row">
                         <div class="col-sm-12">
                             <div class="col-sm-12">
@@ -54,7 +47,7 @@
                 <ul class="nav nav-tabs">
                   <li class="active"><a href="#tab_1" data-toggle="tab"><b>Resume</b></a></li>
                   <li><a href="#tab_2" data-toggle="tab"><b>Hồ sơ online</b></a></li>
-                  <li><a href="#tab_3" data-toggle="tab"><b>Tin tuyển dụng đã ứng tuyển</b></a></li>
+                  <li><a href="#tab_3" data-toggle="tab"><b>Lịch sử tin tuyển dụng đã ứng tuyển</b></a></li>
                   <!-- <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li> -->
                 </ul>
                 <div class="tab-content">
@@ -67,23 +60,39 @@
 	?>
 	<div class="item-cv">
 	                        <div class="row ">
-	                        <div class="col-md-4 col-xs-4 "><b>Mã số</b></div>
-	                          <div class="col-md-4 col-xs-4"><b>Tên file</b></div>
-	                          <div class="col-md-4 col-xs-4 "><b>Ngày tạo</b></div>
+	                        <div class="col-sm-12 table-responsive">
+	                            <table class="table table-striped">
+	                                <thead>
+	                                  <tr>
+	                                    <th>Mã số</th>
+	                                    <th>Tên file</th>
+	                                    <th>Ngày upload</th>
+	                                    <th></th>
+	                                  </tr>
+	                                </thead>
+	                                <tbody>
+	<?php $index = 1;
+	//var_dump($cvJobseeker);
+	foreach ($cvJobseeker as $cv) {?>
+		                      <tr>
+		                          <td ><?php echo $cv->doccv_code;?></td>
+		                          <td ><a href="<?php echo base_url().'downloadcv/'.$user["id"].'/'.$cv->doccv_file_tmp.'/'.$cv->doccv_file_name.'/'.$cv->doccv_type;?>" class="download-cv"><?php echo $cv->doccv_file_name;
+		?></a></td>
+		                          <td ><?php echo date('d/m/Y', strtotime($cv->doccv_created_at));?></td>
+		                          <td><button data-href="<?php echo base_url('jobseeker').'/delete-resume-upload/'.$cv->doccv_id;?>" data-toggle="modal" data-target="#confirm-delete-resume-upload" class="btn btn-xs btn-danger" >Xóa</button></td>
+		                       </tr>
+		<?php $index++;}
+	?>
+	</tbody>
+	                            </table>
+	                        </div>
+
+	                        <!-- <div class="col-md-4 col-xs-4 "><b>Mã số</b></div>
+	                          <div class="col-md-4 col-xs-6"><b>Tên file</b></div>
+	                          <div class="col-md-4 col-xs-2 "><b>Ngày tạo</b></div> -->
 	                        </div>
 	                    </div>
-	<?php $index = 1;
-	foreach ($cvJobseeker as $cv) {?>
-		                      <div class="item-cv">
-		                        <div class="row">
-		                          <div class="col-md-4 col-xs-4 "><?php echo $cv->doccv_code;?></div>
-		                          <div class="col-md-4 col-xs-4"><a href=""><?php echo $cv->doccv_file_name;?></a></div>
-		                          <div class="col-md-4 col-xs-4 "><?php echo date('d/m/Y', strtotime($cv->doccv_created_at));?></div>
-
-		                        </div>
-		                    </div>
-		<?php $index++;}
-}
+	<?php }
 ?>
 </div><!-- /.tab-pane -->
                   <div class="tab-pane" id="tab_2">
@@ -95,24 +104,43 @@
 	?>
 	<div class="item-doc">
 	                        <div class="row ">
-	                        <div class="col-md-3 col-xs-6 "><b>Mã số</b></div>
+	                          <div class="col-sm-12 table-responsive">
+	                            <table class="table table-striped">
+	                              <thead>
+	                                <tr>
+	                                  <th>Mã số</th>
+	                                  <th>Ngày tạo</th>
+	                                  <th>Ngày chỉnh sửa</th>
+	                                  <th></th>
+	                                </tr>
+	                              </thead>
+	                              <tbody>
+	<?php $index = 1;
+	foreach ($docJobseeker as $doc) {?>
+		                      <tr>
+		                          <td><?php echo $doc->docon_code;?></td>
+		                          <td><?php echo date('d/m/Y', strtotime($doc->docon_created_at));?></td>
+		                          <td><?php echo date('d/m/Y', strtotime($doc->docon_update_at));?></td>
+		                          <td><button class="btn btn-primary btn-xs" onclick="viewResume(<?php echo $doc->docon_id?>)">xem chi tiết</button>
+		                          &nbsp;
+		<button class="btn btn-xs btn-info" onclick="editResume(<?php echo $doc->docon_id?>)">sửa</button>&nbsp;
+
+		                          <button class="btn btn-xs btn-danger" data-href="<?php echo base_url('jobseeker').'/delete-resume-online/'.$doc->docon_id;?>" data-toggle="modal" data-target="#confirm-delete-resume-online">Xóa</button></td>
+		                        </tr>
+		<?php $index++;}
+	?>
+	</tbody>
+	                            </table>
+	                          </div>
+	                        <!-- <div class="col-md-3 col-xs-6 "><b>Mã số</b></div>
 	                          <div class="col-md-3 col-xs-6 "><b>Ngày tạo</b></div>
 	                          <div class="col-md-3 col-xs-6 "><b>Ngày chỉnh sửa</b></div>
 	                          <div class="col-md-3 col-xs-6"><b></b></div>
-	                        </div>
-	                    </div>
-	<?php $index = 1;
-	foreach ($docJobseeker as $doc) {?>
-		                      <div class="item-doc">
-		                        <div class="row">
-		                          <div class="col-md-3 col-xs-6 "><?php echo $doc->docon_code;?></div>
-		                          <div class="col-md-3 col-xs-6 "><?php echo date('d/m/Y', strtotime($doc->docon_created_at));?></div>
-		                          <div class="col-md-3 col-xs-6 "><?php echo date('d/m/Y', strtotime($doc->docon_update_at));?></div>
-		                          <div class="col-md-3 col-xs-6 "><button class="btn btn-primary btn-xs" ng-click="modalDocument('lg','<?php echo $doc->docon_id;?>')">xem chi tiết</button></div>
-		                        </div>
-		                    </div>
-		<?php $index++;}
-}
+	                        </div> -->
+	                    <!-- </div> -->
+	                  </div>
+	                </div>
+	<?php }
 ?>
 </div><!-- /.tab-pane -->
                   <div class="tab-pane" id="tab_3">
@@ -124,24 +152,39 @@
 	?>
 	<div class="item-doc">
 	                        <div class="row ">
-	                        <div class="col-md-1 col-xs-6 "><b>Mã số</b></div>
-	                          <div class="col-md-4 col-xs-6 "><b>Tin tuyển dụng</b></div>
-	                          <div class="col-md-4 col-xs-6 "><b>Nhà tuyển dụng</b></div>
-	                          <div class="col-md-3 col-xs-6 "><b>Ngày ứng tuyển</b></div>
-	                        </div>
-	                    </div>
+	                          <div class="col-sm-12 table-responsive">
+	                          <table class="table table-striped">
+	                            <thead>
+	                              <tr>
+	                                <th>Mã số</th>
+	                                <th>Tin tuyển dụng</th>
+	                                <th>Ngày ứng tuyển</th>
+	                                <th></th>
+	                              </tr>
+	                            </thead>
+	                            <tbody>
 	<?php $index = 1;
 	foreach ($recApp as $rec) {?>
-		                      <div class="item-doc">
-		                        <div class="row">
-		                          <div class="col-md-1 col-xs-6 "><?php echo $rec->rec_code;?></div>
-		                          <div class="col-md-4 col-xs-6 "><?php echo $rec->rec_title?></div>
-		                          <div class="col-md-4 col-xs-6 "><?php echo '<b>'.$rec->name.'</b>'.'<br>'.$rec->address;?></div>
-		                          <div class="col-md-3 col-xs-6 "><?php echo date('d/m/Y', strtotime($rec->recapp_created_at));?></div>
-		                        </div>
-		                    </div>
+		                     <tr>
+		                          <td><?php echo $rec->rec_code;?></td>
+		                          <td><a class="view-recruitment" href="<?php echo base_url('job').'/'.str_replace(' ', '-', $rec->rec_title).'-'.$rec->rec_id.'.html'?>">
+		<?php echo (strlen($rec->rec_title) > 30)?substr($rec->rec_title, 0, 30).'...':$rec->rec_title;?>
+		                </a></td>
+		                          <td><?php echo date('d/m/Y', strtotime($rec->recapp_created_at));?></td>
+		                          <td><button data-href="<?php echo base_url('jobseeker').'/delete-recruitment/'.$rec->rec_id;?>" data-toggle="modal" data-target="#confirm-delete-recruitment" class="btn btn-xs btn-danger" >Xóa</button></td>
+		                        </tr>
 		<?php $index++;}
-}
+	?>
+	</tbody>
+	                          </table>
+	                          </div>
+	                        <!-- <div class="col-md-1 col-xs-6 "><b>Mã số</b></div>
+	                          <div class="col-md-4 col-xs-6 "><b>Tin tuyển dụng</b></div>
+	                          <div class="col-md-4 col-xs-6 "><b>Nhà tuyển dụng</b></div>
+	                          <div class="col-md-3 col-xs-6 "><b>Ngày ứng tuyển</b></div> -->
+	                        </div>
+	                    </div>
+	<?php }
 ?>
 </div><!-- /.tab-pane -->
                 </div><!-- /.tab-content -->
@@ -188,99 +231,7 @@ if (isset($listJobShow) && count($listJobShow) > 0) {
             </div>
 
 
-		</div>
-		<!--search and recruitment highlight-->
-		<div class="col-sm-3 no-padding-res col-sm-pull-9">
-			<!-- <div class="col-sm-12 "> -->
-				<div class="job-province-box">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="col-sm-12">
-                            <span class="border-vertical text-color-1"></span>
-                            <span class="text-color-1 title-jobseeker-register"><strong>Tài khoản</strong></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="row "><div class="col-sm-12"><div class="border-row"></div></div></div> -->
-                    <div class="row">
-                        <div class="col-sm-12 account-box">
-                            <table class="no-margin-bottom">
-                                <tr>
-                                    <td width="70"><img class="avartar-default-account" src="<?php echo base_url();?>assets/main/img/default/avatar.png"></td>
-                                    <td class="valign-bottom"> <span class="lh-20 dp-block"><?php if (isset($user)) {
-	echo $user['firstname'].' '.$user['lastname'];
-}
-?></span> <span class="lh-20 dp-block text-right"><a class="btn btn-xs btn-danger" href="<?php echo base_url('logout')?>">Đăng xuất</a></span></td>
-                                </tr>
-                            </table>
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="col-sm-12">
-                            <span class="border-vertical text-color-1"></span>
-                            <span class="text-color-1 title-jobseeker-register"><strong>Resume</strong></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 margin-bottom-10">
-                        <div class="col-sm-12 "><button class="btn btn-sm btn-primary btn-resume"><i class="fa fa-pencil-square-o"></i>Tạo hồ sơ mới</button></div>
-                            <div class="col-sm-12"><button class="btn btn-sm btn-primary btn-resume"><i class="fa fa-cloud-upload"></i>Tải lên hồ sơ</button></div>
-                        </div>
-                    </div>
-                    <!--  <div class="row">
-                        <div class="col-sm-12">
-                            <div class="col-sm-12">
-                            <span class="border-vertical text-color-1"></span>
-                            <span class="text-color-1 title-jobseeker-register"><strong>Quản lý</strong></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row "><div class="col-sm-12"><div class="border-row-1"></div></div></div> -->
-
-			    </div>
-<?php $listCareer = $this->globals->getTagJob();
-if (isset($listCareer) && count($listCareer) > 0) {
-	?>
-	<div class="job-province-box margin-top-10">
-	                    <div class="row">
-	                        <div class="col-sm-12">
-	                            <div class="col-sm-12">
-	                            <span class="border-vertical text-color-1"></span>
-	                            <span class="text-color-1 title-jobseeker-register"><strong>Việc làm theo ngành</strong></span>
-	                            </div>
-	                        </div>
-	                    </div>
-	                    <!-- <div class="row "><div class="col-sm-12"><div class="border-row"></div></div></div> getTagJob-->
-	                    <div class="row list-tag-job" >
-	<?php foreach ($listCareer as $value) {
-		$keyRegex  = array('*', '?', '(', ')', '/', '+', '\'', "\"", '_', "=", ' ');
-		$careerReg = str_replace($keyRegex, "-", trim($value->career_name));
-		?>
-		                        <div class="col-sm-12 item-tag-job">
-		                        <a href="<?php echo base_url('search').'/'.'all_'.$careerReg.'_c'.$value->career_id;?>"><?php echo $value->career_name?><span class="text-color-3">
-		<?php if ($value->numJob > 0) {?>(<?php echo $value->numJob;?>) <?php }
-		?>
-		</span></a>
-		                        </div>
-		<?php	}
-	?>
-	</div>
-
-	                </div>
-	<?php }
-?>
-
-		</div>
-
-		<!--adwords-->
-		</div>
-
-	</div>
-
-    <!--modal change password-->
+             <!--modal change password-->
     <div id="modalChangePassword" class="modal fade" role="dialog">
           <div class="modal-dialog ">
 
@@ -309,7 +260,7 @@ if (isset($listCareer) && count($listCareer) > 0) {
                                      <div class="col-sm-7">
                                          <input type="password" class="form-control" name="old-password" />
                                      </div>
-                                     <div class="col-sm-8 col-sm-offset-4 hide text-right margin-top-5 error-old-password">
+                                     <div class="col-sm-7 col-sm-offset-5 hide text-right margin-top-5 error-old-password">
 
                                      </div>
 
@@ -322,7 +273,7 @@ if (isset($listCareer) && count($listCareer) > 0) {
                                      <div class="col-sm-7">
                                          <input type="password" class="form-control" name="new-password" />
                                      </div>
-                                      <div class="col-sm-8 col-sm-offset-4 hide text-right margin-top-5 error-new-password">
+                                      <div class="col-sm-7 col-sm-offset-5 hide text-right margin-top-5 error-new-password">
 
                                      </div>
                                 </div>
@@ -336,7 +287,7 @@ if (isset($listCareer) && count($listCareer) > 0) {
                                      <div class="col-sm-7">
                                          <input type="password" class="form-control" name="confirm-password" />
                                      </div>
-                                      <div class="col-sm-8 col-sm-offset-4 hide text-right margin-top-5 error-confirm-password">
+                                      <div class="col-sm-7 col-sm-offset-5 hide text-right margin-top-5 error-confirm-password">
 
                                      </div>
 
@@ -351,8 +302,11 @@ if (isset($listCareer) && count($listCareer) > 0) {
                                     </div>
                                     <div class="col-sm-offset-5 col-sm-7 margin-top-5">
                                         <input type="text" name="captcha" class="input-captcha">
-                                        <span class="alert alert-danger hide error-captcha"><?php echo lang('invalid-captcha')?></span>
+
                                         <input type="hidden" name="captcha-reg" >
+                                    </div>
+                                    <div class="col-sm-7 col-sm-offset-5 margin-top-5">
+                                      <span class="alert alert-danger hide error-captcha"><?php echo lang('invalid-captcha')?></span>
                                     </div>
                               </div>
                              <!-- </div> -->
@@ -400,3 +354,83 @@ if (isset($listCareer) && count($listCareer) > 0) {
           </div>
         </div>
 
+
+        <!--modal confirm delete recruitment -->
+        <div class="modal fade" id="confirm-delete-recruitment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body">
+               Bạn có muốn xóa tin tuyển dụng này khỏi lịch sử ứng tuyển không ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+                <a class="btn btn-primary btn-ok">Xóa</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!--modal confirm delete resume upload -->
+        <div class="modal fade" id="confirm-delete-resume-upload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body">
+               Bạn có muốn xóa file này không ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+                <a class="btn btn-primary btn-ok">Xóa</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--modal confirm delete resume online -->
+        <div class="modal fade" id="confirm-delete-resume-online" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body">
+               Bạn có muốn xóa hồ sơ này không ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+                <a class="btn btn-primary btn-ok">Xóa</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!--modal view resume  -->
+        <div class="modal fade" id="modal-view-resume" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content content-view-resume">
+
+           <!--  <div class="modal-body">
+               Bạn có muốn xóa file này không ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+                <a class="btn btn-primary btn-ok">Xóa</a>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+<!--modal edit resume  -->
+        <div class="modal fade" id="modal-edit-resume" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content content-edit-resume">
+
+           <!--  <div class="modal-body">
+               Bạn có muốn xóa file này không ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+                <a class="btn btn-primary btn-ok">Xóa</a>
+            </div> -->
+        </div>
+    </div>
+</div>

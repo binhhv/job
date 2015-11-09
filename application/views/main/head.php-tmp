@@ -121,6 +121,7 @@ if (isset($styleOption)) {
 <script src="<?php echo base_url()?>/assets/main/js/fix-modal-show.js"></script>
 <script src="<?php echo base_url()?>/assets/main/js/facebook-load.js"></script>
  <!-- <script src="<?php echo base_url()?>/assets/main/js/map/markerwithlabel.js"></script>-->
+ <script type="text/javascript" src="<?php echo base_url()?>/assets/main/js/common.js"></script>
 <?php
 if (isset($scriptJob)) {
 	foreach ($scriptJob as $script) {?>

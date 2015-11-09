@@ -12,7 +12,8 @@
 					</div>
 					<div class="col-sm-12 col-md-6 margin-5">
 						<span class="title-exits-account"> Bạn đã có tài khoản ?
-							<a href="<?php echo base_url('login')?>">Đăng nhập</a> &nbsp;  <button class="btn-employer background-color-2 text-color-2">Nhà tuyển dụng đăng ký</button>
+							<a href="<?php echo base_url('login')?>">Đăng nhập</a> &nbsp;
+  <button class="btn-employer background-color-2 text-color-2" onclick="location.href='<?php echo base_url('register_ntd');?>'">Nhà tuyển dụng đăng ký</button>
 						</span>
 					</div>
 				</div>
@@ -244,7 +245,8 @@ $(function(){
                     (account_email.length  > 0) ? $(".error-account-email").removeClass('hide').append(account_email) : null;
                     (account_password.length  > 0) ? $(".error-account-password").removeClass('hide').append(account_password) : null;
                     (confirm_password.length  > 0) ? $(".error-account-confirm-password").removeClass('hide').append(confirm_password) : null;
-                    (captcha.length > 0) ? $(".error-captcha").removeClass('hide') : null;
+                     console.log(captcha);
+                    (captcha == 0 ) ? $(".error-captcha").removeClass('hide') : null;
                     // $('#message_user').text("");
                     // $('#message_user').append(account_last_name);
                     // $('#message_user').append(account_first_name);
@@ -258,7 +260,7 @@ $(function(){
                 } else if (status == 'success') {
                     //$('#message_user').text("");
                     //$('#registerModal').modal('hide')
-                    window.location.href = '<?php echo base_url();?>';
+                    window.location.href = '<?php echo base_url("jobseeker");?>';
  //redirec to home page jobseeker
                 }
             },
