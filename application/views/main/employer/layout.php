@@ -22,7 +22,5 @@
 
 		</div>
 	</div>
-		<?php echo $update_imfomation_employer?>
-	<?php echo $update_contact_employer?>
 	<?php echo $update_account_employer?>
-	<?php echo $recruitment?>
+

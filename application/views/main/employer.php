@@ -9,8 +9,14 @@
 			</div>
 			</div>
 			<div class="col-sm-12">
-			<button class="btn-employer background-color-2 text-color-2" data-toggle="modal" data-target="#employer_registerModal"><?php echo lang('employer_register');?></button>&nbsp;
-			<button class="btn-employer background-color-4 text-color-3" data-toggle="modal" data-target="#create_recruitmentModel"><?php echo lang('employer_recruitment');?></button>&nbsp;
+			<button class="btn-employer background-color-2 text-color-2
+			<?php if (!isset($user)) {echo 'btn-employer-register-top';} else if ($user['role'] == 2 || $user['role'] == 3) {echo 'btn-employer-profile-top';}
+?>
+			"><?php echo lang('employer_register');?></button>&nbsp; <!-- data-toggle="modal" data-target="#employer_registerModal"-->
+			<button class="btn-employer background-color-4 text-color-3 <?php if (!isset($user)) {
+	echo 'btn-create-recruit-not-login';
+} else if ($user['role'] == 2 || $user['role'] == 3) {echo 'btn-create-recruit-login';}
+?>" ><?php echo lang('employer_recruitment');?></button>&nbsp; <!--data-toggle="modal" data-target="#create_recruitmentModel"-->
 			<button class="btn-employer background-color-3 text-color-2" onclick="location.href='<?php echo ('adwords')?>'"><?php echo lang('employer_contact_advertising');?></button>
 			</div>
 		</div>

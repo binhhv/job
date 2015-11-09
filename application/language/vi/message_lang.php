@@ -28,6 +28,7 @@ $lang['invalid-email'] = "'%s' này không hợp lệ.";
 $lang['regex_match'] = "'%s' này không hợp lệ.";
 $lang['invalid-captcha'] = "Captcha không hợp lệ";
 $lang['invalid-old-password'] = 'Mật khẩu không đúng';
+$lang['min_length'] = "'%s' tối thiểu '%s' ký tự";
 #user register
 $lang['title_re_user'] = "NGƯỜI TÌM VIỆC ĐĂNG KÝ";
 $lang['email_re_user'] = "Email";
@@ -41,6 +42,7 @@ $lang['btn_register_re_user'] = "ĐĂNG KÝ";
 $lang['title_re_depl'] = "CÔNG TY ĐĂNG KÝ";
 $lang['title_register_re_depl'] = "Thông tin đăng nhập";
 $lang['title_depoyer_re_depl'] = "Thông tin công ty";
+$lang['title_em_change_password'] = 'Thay đổi mật khẩu';
 $lang['title_user_re_depl'] = "Thông tin chủ tài khoản";
 $lang['employer_name_re_depl'] = "Tên công ty";
 $lang['employer_size_re_depl'] = "Quy mô";
@@ -55,9 +57,10 @@ $lang['employer_contact_name_re_depl'] = "Tên người liên hệ";
 $lang['employer_contact_email_re_depl'] = "Email liên hệ";
 $lang['employer_contact_phone_re_depl'] = "số điện thoại liên hệ";
 $lang['employer_contact_mobile_re_depl'] = "Số di động";
-
+$lang['btn_change'] = 'Thay đổi';
 #Deployer update imformation
 $lang['title_re_depl_update'] = "CẬP NHẬT THÔNG TIN CÔNG TY";
+$lang['title_re_depl_update_contact'] = 'CẬP NHẬT THÔNG TIN LIÊN HỆ';
 $lang['btn_update_employer'] = "CẬP NHẬT";
 #upload cv
 $lang['title_upload_cv'] = "GỬI HỒ SƠ CHO NHÀ TUYỂN DỤNG";

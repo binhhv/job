@@ -129,7 +129,7 @@ class Login extends CI_Controller {
 				//$url = $this->session->userdata['redirect'];
 				//unset($_SESSION['redicrect']);
 				$this->session->unset_userdata('redirect');
-				if (strpos($url, "login") > 0 || strpos($url, "register_uv")) {
+				if (strpos($url, "login") > 0 || strpos($url, "register_uv") || strpos($url, "register_ntd")) {
 					$url = base_url('/');
 				}
 				redirect($url);

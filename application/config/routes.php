@@ -373,3 +373,6 @@ $route['jobseeker/edit-resume-post'] = 'jobseeker/jobseeker/editResume';
 //EMPLOYER ROUTE
 $route['register_ntd'] = 'employer/employer_register/index';
 $route['employer/register-employer'] = 'employer/employer_register/insertEmployer';
+$route['employer/getEditContactEmployer'] = 'employer/employer/getEditContactEmployer';
+$route['employer/getEditInfoEmployer'] = 'employer/employer/getEditInfoEmployer';
+$route['employer/edit'] = 'employer/employer/editInfo';

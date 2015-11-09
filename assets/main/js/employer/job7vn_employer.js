@@ -68,6 +68,8 @@ $(document).ready(function() {
         });
     });
     //employer update imfomation
+    
+    //$('#employer_updateModal').on('show.bs.modal', function(e) {
     $("#employer-update-form").submit(function(event) {
             event.preventDefault();
             var form = $(this);
@@ -88,6 +90,7 @@ $(document).ready(function() {
                     // var objs = $.parseJSON(response);
                     var status = response.status;
                     if (status == 'errvalid') {
+                        $(".error-em-info").removeClass('hide');
                         var employer_name = response.content.employer_name;
                         var employer_size = response.content.employer_size;
                         var employer_phone = response.content.employer_phone;
@@ -99,15 +102,21 @@ $(document).ready(function() {
                         $('#message_update_empoyer').text("");
                         $('#message_update_empoyer').append(employer_name);
                         $('#message_update_empoyer').append(employer_address);
-                        $('#message_update_empoyer').append(employer_map_province);
+                       // $('#message_update_empoyer').append(employer_map_province);
                         $('#message_update_empoyer').append(employer_phone);
                         $('#message_update_empoyer').append(employer_size);
                         $('#message_update_empoyer').append(employer_about);
+                        //(employer_name.length > 0)?$(".error-employer-name").removeClass('hide').append(employer_name) :null ;
+                        
                         $('input[name="csrf_test_name"]').val(csrf_hash);
                     } else if (status == 'success') {
                         $('#message_update_empoyer').text("");
-                        $('#employer_updateModal').modal('hide');
-                        window.location.reload();
+                        //$('#employer_updateModal').modal('hide');
+                        // window.setTimeout(function(){
+                        //     window.location.hr
+                        // },300);  
+                        window.location.href =base_website + 'employer';
+                        
                     }
                 },
                 error: function(xhr, ajaxOptions, thrownError) {
@@ -115,8 +124,10 @@ $(document).ready(function() {
                 }
             });
         })
+//});
         //employer update imfomation
-    $("#employer-contact-update-form").submit(function(event) {
+        $('#employer_contact_updateModal').on('show.bs.modal', function(e) {
+        $("#employer-contact-update-form").submit(function(event) {
             event.preventDefault();
             var form = $(this);
             var formdata = false;
@@ -136,6 +147,7 @@ $(document).ready(function() {
                     // var objs = $.parseJSON(response);
                     var status = response.status;
                     if (status == 'errvalid') {
+                        $(".error-em-contact").removeClass('hide');
                         var employer_contact_name = response.content.employer_contact_name;
                         var employer_contact_phone = response.content.employer_contact_phone;
                         var employer_contact_mobile = response.content.employer_contact_mobile;
@@ -151,7 +163,10 @@ $(document).ready(function() {
                     } else if (status == 'success') {
                         $('#message_update_contact_empoyer').text("");
                         $('#employer_contact_updateModal').modal('hide');
+                       window.setTimeout(function(){
                         window.location.reload();
+                       },300);
+                        
                     }
                 },
                 error: function(xhr, ajaxOptions, thrownError) {
@@ -159,6 +174,7 @@ $(document).ready(function() {
                 }
             });
         })
+    });
         //employer update account
     $("#employer-account-update-form").submit(function(event) {
         event.preventDefault();
@@ -179,11 +195,13 @@ $(document).ready(function() {
             success: function(response) {
                 // var objs = $.parseJSON(response);
                 var status = response.status;
+                console.log(response.content);
                 if (status == 'errvalid') {
                     var account_password = response.content.account_password;
                     var confirm_password = response.content.confirm_password;
                     var csrf_name = response.content.name;
                     var csrf_hash = response.content.hash;
+                    $(".error-em-change-password").removeClass('hide');
                     $('#message_update_account_empoyer').text("");
                     $('#message_update_account_empoyer').append(account_password);
                     $('#message_update_account_empoyer').append(confirm_password);
@@ -191,7 +209,8 @@ $(document).ready(function() {
                 } else if (status == 'success') {
                     $('#message_update_account_empoyer').text("");
                     $('#employer_account_updateModal').modal('hide');
-                    window.location.reload();
+                    //window.location.reload();
+                   // $("#employer_account_updateModal").modal('hide');
                 }
             },
             error: function(xhr, ajaxOptions, thrownError) {
@@ -199,4 +218,52 @@ $(document).ready(function() {
             }
         });
     })
+
+    //get content edit contact
+    $(".btn-edit-contact-employer").on('click',function(){
+        $.ajax({
+            url: base_website + 'employer/getEditContactEmployer',
+            type: "get",
+            dataType:'html',
+            success: function(data){
+               //document.write(data); just do not use document.write
+               //console.log(data);
+               $(".content_employer_contact_updateModal").empty();
+               $(".content_employer_contact_updateModal").append(data);
+            //     var h = document.documentElement.clientHeight;//window.innerHeight;
+            // h = (h*70)/100;
+            // var top = $(".title-job-scroll").height();
+            // $(".modal-content").css({"height":h,"overflow":"auto","margin-top":top + 20});
+               $('#employer_contact_updateModal').modal('show');
+               //console.log(data.name);
+               //alert(data);
+            }
+          });
+    });
+
+    //get content edit info
+
+    $(".btn-edit-info-employer").on('click',function(){
+        window.location.href = base_website + 'employer/edit';
+        /* $.ajax({
+            url: base_website + 'employer/getEditInfoEmployer',
+            type: "get",
+            dataType:'html',
+            success: function(data){
+               //document.write(data); just do not use document.write
+               //console.log(data);
+               $(".content_employer_updateModal").empty();
+               $(".content_employer_updateModal").append(data);
+            //     var h = document.documentElement.clientHeight;//window.innerHeight;
+            // h = (h*70)/100;
+            // var top = $(".title-job-scroll").height();
+            // $(".modal-content").css({"height":h,"overflow":"auto","margin-top":top + 20});
+               $('#employer_updateModal').modal('show');
+               //console.log(data.name);
+               //alert(data);
+            }
+          });*/
+    });
+
+
 });

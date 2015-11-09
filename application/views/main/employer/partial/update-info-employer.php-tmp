@@ -1,7 +1,4 @@
-<div class="modal fade" id="employer_updateModal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
+<div class="modal-header">
                 <button type="button" class="close" onclick="closeModal_update()" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -26,7 +23,7 @@
                             <!-- <div class="col-sm-12 clear mb_20">
                                 <label class="alert-recruitment text-color-1">
                                     <h3 class="alert-field-employer">
-                                        <?php echo lang('title_depoyer_re_depl');?>
+<?php echo lang('title_depoyer_re_depl');?>
                                     </h3>
                                 </label>
                                 <!-- <span class="fwb fs20 txt-color-363636"><?php echo lang('title_depoyer_re_depl');?></span>
@@ -44,7 +41,8 @@
                                  <div class="form-group col-sm-12">
                                     <label class="control-label"><?php echo lang('employer_address_re_depl');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                          <textarea type="text" class="form-control" name="employer_address"  rows="3" value="<?php echo $employerInfo->employer_address;?>"> <?php echo $employerInfo->employer_address;?></textarea>
+                                          <textarea type="text" class="form-control" name="employer_address"  rows="3" value="<?php echo $employerInfo->employer_address;?>"> <?php echo $employerInfo->employer_address;
+?></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -55,12 +53,12 @@
                                     <div class="controls">
                                         <select class="form-control" name="employer_map_province" id="employer_map_province">
 
-                                            <?php foreach ($province as $row): ?>
+<?php foreach ($province as $row):?>
                                                 <?php if ($row->province_id == $employerInfo->employer_map_province) {?>
-                                                    <option  value="<?php echo $employerInfo->employer_map_province?>" selected><?php echo $row->province_name?></option>
-                                                <?php } else {?>
-                                                    <option  value="<?php echo $row->province_id?>"><?php echo $row->province_name?></option>
-                                                <?php }
+	                                                    <option  value="<?php echo $employerInfo->employer_map_province?>" selected><?php echo $row->province_name?></option>
+	<?php } else {?>
+	                                                    <option  value="<?php echo $row->province_id?>"><?php echo $row->province_name?></option>
+	<?php }
 ?>
                                             <?php endforeach?>
 
@@ -99,7 +97,8 @@
                                 <div class="form-group col-sm-12">
                                     <label class="control-label"><?php echo lang('employer_about_re_depl');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <textarea type="text" class="form-control" name="employer_about" rows="3" value="<?php echo $employerInfo->employer_about;?>"><?php echo $employerInfo->employer_about;?> </textarea>
+                                        <textarea type="text" class="form-control" name="employer_about" rows="3" value="<?php echo $employerInfo->employer_about;?>"><?php echo $employerInfo->employer_about;
+?> </textarea>
                                     </div>
                                 </div>
 
@@ -120,6 +119,3 @@
                     <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                 </form>
             </div>
-        </div>
-    </div>
-</div>

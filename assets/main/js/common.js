@@ -19,4 +19,17 @@ $(function(){
 		window.location.href = base_website + 'job/search/all';
 	});
 
+	
+	$(".btn-employer-register-top").on('click',function(){
+		window.location.href = base_website + 'register_ntd';
+	});
+	$(".btn-employer-profile-top").on('click',function(){
+		window.location.href = base_website + 'employer';
+	});
+	$(".btn-create-recruit-not-login").on('click',function(){
+		//window.location.href = base_website + 'job/search/all';
+	});
+	$(".btn-create-recruit-login").on('click',function(){
+		//window.location.href = base_website + 'job/search/all';
+	});
 });

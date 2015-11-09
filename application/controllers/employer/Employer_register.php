@@ -67,6 +67,7 @@ class Employer_register extends CI_Controller {
 			'provinceVN' => $provinceVN, 'provinceJP' => $provinceJP), TRUE);
 		$footer = $this->load->view('main/footer', array(), TRUE);
 		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer, 'isGray' => true));
+
 	}
 	public function insertEmployer() {
 		// log_message('error', $file_element_name);
@@ -75,7 +76,7 @@ class Employer_register extends CI_Controller {
 		$this->form_validation->set_message('valid_email', $this->lang->line('invalid-email'));
 		$this->form_validation->set_message('matches', $this->lang->line('matches'));
 		$this->form_validation->set_message('regex_match', $this->lang->line('regex_match'));
-
+		$this->form_validation->set_message('min_length', $this->lang->line('min_length'));
 		//$this->form_validation->set_error_delimiters('<label class="error alert-danger">', '</label>');
 		$this->form_validation->set_rules('account_email', $this->lang->line('email'), 'callback_email_check|trim|required|valid_email|xss_clean');
 		$this->form_validation->set_rules('account_password', $this->lang->line('password'), 'trim|required|min_length[6]|matches[confirm_password]|xss_clean|md5');

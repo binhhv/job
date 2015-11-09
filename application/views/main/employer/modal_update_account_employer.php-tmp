@@ -27,7 +27,7 @@
                            <!--  <div class="col-sm-12 clear mb_20">
                                 <label class="alert-recruitment text-color-1">
                                     <h3 class="alert-field-employer">
-                                        <?php echo lang('title_depoyer_re_depl');?>
+<?php echo lang('title_depoyer_re_depl');?>
                                     </h3>
                                 </label>
                                 <!-- <span class="fwb fs20 txt-color-363636"><?php echo lang('title_depoyer_re_depl');?></span>

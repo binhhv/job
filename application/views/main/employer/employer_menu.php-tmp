@@ -30,7 +30,7 @@ if (isset($employerInfo->employer_logo) && isset($employerInfo->employer_logo_tm
 echo $employerInfo->employer_name;?></label>
 									<span class="employer-detail-info"><strong>
 <?php
-switch ($employerInfo->account_map_role) {
+switch ($user['role']) {
 	case 2:
 		// code...
 		echo 'Quản trị';
@@ -60,7 +60,7 @@ echo base_url('logout')?>"><i class="fa fa-sign-out"></i>Đăng xuất</a>
 									<div class="col-sm-12 employer-line"></div>
 									<div class="col-sm-12 item-field-employer">
 										<div class="title-field-employer text-muted">Email</div>
-										<div class="detail-field-employer "><?php echo $employerInfo->account_email;?></div>
+										<div class="detail-field-employer "><?php echo $user['email'];?></div>
 									</div>
 									<div class="col-sm-12 employer-line"></div>
 									<div class="col-sm-12 item-field-employer">
@@ -69,7 +69,7 @@ echo base_url('logout')?>"><i class="fa fa-sign-out"></i>Đăng xuất</a>
 									</div>
 									<div class="col-sm-12 employer-line"></div>
 									<div class="col-sm-12 item-field-employer text-left">
-										<button class="btn btn-primary" data-toggle="modal" data-target="#employer_account_updateModal"><i class="fa fa-pencil-square-o"></i> &nbsp; Chỉnh sửa</button>
+										<button class="btn btn-primary" data-toggle="modal" data-target="#employer_account_updateModal"><i class="fa fa-pencil-square-o"></i> &nbsp; Đổi mật khẩu</button>
 									</div>
 									<div class="col-sm-12 employer-line"></div>
 

@@ -59,9 +59,9 @@
 						<div class="detail-field-employer "><?php echo $employerInfo->employer_about;?></div>
 					</div>
 					<div class="col-sm-12 employer-line"></div>
-					<?php if ($employerInfo->account_map_role == 2) {?>
+					<?php if ($user['role'] == 2) {?>
 					<div class="col-sm-12 item-field-employer text-left">
-						<button class="btn btn-primary" data-toggle="modal" data-target="#employer_updateModal"><i class="fa fa-pencil-square-o"></i> &nbsp; Chỉnh sửa</button>
+						<button class="btn btn-primary btn-edit-info-employer" ><i class="fa fa-pencil-square-o"></i> &nbsp; Chỉnh sửa</button> <!--data-toggle="modal" data-target="#employer_updateModal"-->
 					</div>
 					<div class="col-sm-12 employer-line"></div>
 					<?php }
@@ -97,12 +97,31 @@
 						<div class="detail-field-employer "><?php echo $employerInfo->employer_contact_email;?></div>
 					</div>
 					<div class="col-sm-12 employer-line"></div>
+					<?php if ($user['role'] == 2) {?>
 					<div class="col-sm-12 item-field-employer text-left">
-						<button class="btn btn-primary" data-toggle="modal" data-target="#employer_contact_updateModal"><i class="fa fa-pencil-square-o"></i> &nbsp; Chỉnh sửa</button>
+						<button class="btn btn-primary btn-edit-contact-employer"><i class="fa fa-pencil-square-o"></i> &nbsp; Chỉnh sửa</button><!-- data-toggle="modal" data-target="#employer_contact_updateModal"-->
 					</div>
+					<?php }
+?>
 					<div class="col-sm-12 employer-line"></div>
 				</div>
 				<!--thông tin tài khoản-->
 
 
 			</div>
+
+
+<!--modal edit contact employer-->
+<div class="modal fade" id="employer_contact_updateModal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content content_employer_contact_updateModal">
+        </div>
+    </div>
+</div>
+<!--modal edit info employer-->
+<div class="modal fade" id="employer_updateModal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content content_employer_updateModal">
+        </div>
+    </div>
+</div>

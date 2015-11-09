@@ -1,7 +1,4 @@
-<div class="modal fade" id="employer_updateModal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
+<div class="modal-header">
                 <button type="button" class="close" onclick="closeModal_update()" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -120,6 +117,3 @@
                     <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                 </form>
             </div>
-        </div>
-    </div>
-</div>
