@@ -28,5 +28,5 @@ class Test_model extends CI_Model {
 		return $this->dbutil->updateDb($data);
 
 	}
-	public function getEmployer
+
 }

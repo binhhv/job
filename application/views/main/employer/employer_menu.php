@@ -9,7 +9,7 @@ span.nav-toggle-icon{font-size:7px !important;top:-2px !important;color:#888 !im
 
 
 							<div class="info-employer row">
-								<div class="col-sm-3 col-xs-3">
+								<div class="col-sm-3 col-xs-3 no-padding">
 
 
 
@@ -26,11 +26,12 @@ echo base_url()?>uploads/common/logo.png" class="logo-employer">
 ?>
 								</div>
 								<div class="col-sm-9 col-xs-9">
+
 									<label class="employer-name"><?php
 echo $employerInfo->employer_name;?></label>
 									<span class="employer-detail-info"><strong>
 									<?php
-switch ($user['role']) {
+switch ($employerInfo->user['role']) {
 case 2:
 	// code...
 	echo 'Quản trị';
@@ -60,7 +61,7 @@ echo base_url('logout')?>"><i class="fa fa-sign-out"></i>Đăng xuất</a>
 									<div class="col-sm-12 employer-line"></div>
 									<div class="col-sm-12 item-field-employer">
 										<div class="title-field-employer text-muted">Email</div>
-										<div class="detail-field-employer "><?php echo $user['email'];?></div>
+										<div class="detail-field-employer "><?php echo $employerInfo->user['email'];?></div>
 									</div>
 									<div class="col-sm-12 employer-line"></div>
 									<div class="col-sm-12 item-field-employer">
@@ -85,17 +86,19 @@ echo base_url('logout')?>"><i class="fa fa-sign-out"></i>Đăng xuất</a>
 								</div>
 								<div class="col-sm-12 employer-line"></div>
 								<div class="col-sm-12 employer-tools-item">
-									<a href="<?php echo site_url('employer');?>"><i class="fa fa-pencil-square-o"></i>&nbsp;Quản lý tài khoản</a>
+									<!-- <button class="btn btn-primary"><i class="fa fa-pencil-square-o"></i>Đăng tin tuyển dụng</button> -->
+									<a href="<?php echo base_url('employer/create-recruitment');?>"  class="style-menu-epmployer"><i class="fa fa-paper-plane"></i>&nbsp;Đăng tin tuyển dụng</a>
+									<!-- <a href="<?php echo site_url('employer');?>"><i class="fa fa-pencil-square-o"></i>&nbsp;Quản lý tài khoản</a> -->
 								</div>
 
 								<div class="col-sm-12 employer-line"></div>
 								<?php if ($employerInfo->account_map_role == 2) {?>
 								<div class="col-sm-12">
 									<ul class="nav nav-list-main">
-								        <label class="nav-toggle nav-header"><span><i class="fa fa-users"></i>&nbsp;Quản lý nhân viên</span></label>
+								        <label class="nav-toggle nav-header style-pointer"><span><i class="fa fa-users"></i>&nbsp;Quản lý tài khoản</span></label>
 								            <ul class="nav nav-list nav-left-ml menu_left">
 								                <li><a href="#"><i class="fa fa-circle-o"></i>Danh sách nhân viên</a></li>
-								                <li><a href="#"><i class="fa fa-circle-o"></i>Link</a></li>
+								                <li><a href="#"><i class="fa fa-circle-o"></i>Tài khoản cá nhân</a></li>
 								            </ul>
 								        </li>
 									</ul>
@@ -108,7 +111,7 @@ echo base_url('logout')?>"><i class="fa fa-sign-out"></i>Đăng xuất</a>
 
 								<div class="col-sm-12">
 									<ul class="nav nav-list-main">
-								        <label class="nav-toggle nav-header"><span><i class="fa fa-user"></i>&nbsp;Quản lý tin tuyển dụng</span></label>
+								        <label class="nav-toggle nav-header style-pointer"><span><i class="fa fa-user"></i>&nbsp;Quản lý tin tuyển dụng</span></label>
 								            <ul class="nav nav-list nav-left-ml menu_left">
 								            	<li><a href="#create_recruitmentModel"  data-toggle="modal"><i class="fa fa-circle-o"></i>Tạo tin tuyển dụng</a></li>
 								                <li><a href="<?php echo site_url('employer/employer/recruitment_active');?>"><i class="fa fa-circle-o"></i>Tin tuyển dụng đã đăng</a></li>
@@ -119,21 +122,37 @@ echo base_url('logout')?>"><i class="fa fa-sign-out"></i>Đăng xuất</a>
 								</div>
 								<div class="col-sm-12 employer-line"></div>
 								<div class="col-sm-12 employer-tools-item">
-									<a href="#create_recruitmentModel"  data-toggle="modal"><i class="fa fa-pencil-square-o"></i>&nbsp;Đăng tin tuyển dụng</a>
+									<a href=""  class="style-menu-epmployer"><i class="fa fa-search"></i>&nbsp;Tìm kiếm hồ sơ</a>
 								</div>
 								<div class="col-sm-12 employer-line"></div>
+								<div class="col-sm-12 employer-tools-item">
+									<a href=""  class="style-menu-epmployer"><i class="fa fa-download"></i>&nbsp;Hồ sơ đã lưu</a>
+								</div>
+
+								<div class="col-sm-12 employer-line"></div>
+								<div class="col-sm-12">
+									<ul class="nav nav-list-main">
+								        <label class="nav-toggle nav-header style-pointer"><span><i class="fa fa-file-text-o"></i>&nbsp;Hồ sơ theo phân loại</span></label>
+								            <ul class="nav nav-list nav-left-ml menu_left">
+								            	<li><a href="#create_recruitmentModel"  data-toggle="modal"><i class="fa fa-bars"></i>&nbsp;Hồ sơ theo ngành nghề</a></li>
+								                <li><a href="<?php echo site_url('employer/employer/recruitment_active');?>"><i class="fa fa-map-marker"></i>&nbsp;Hồ sơ theo tỉnh thành</a></li>
+
+								            </ul>
+									</ul>
+								</div>
+								<!--
 								<div class="col-sm-12 employer-tools-item">
 									<a href=""><i class="fa fa-file-text-o"></i>&nbsp;Tìm kiếm hồ sơ ứng viên</a>
-								</div>
-								<div class="col-sm-12 employer-line"></div>
-								<div class="col-sm-12 employer-tools-item">
+								</div> -->
+								<!-- <div class="col-sm-12 employer-line"></div> -->
+								<!-- <div class="col-sm-12 employer-tools-item">
 									<a href=""><i class="fa fa-pencil-square-o"></i>&nbsp;Đăng tin tuyển dụng</a>
-								</div>
-								<div class="col-sm-12 employer-line"></div>
+								</div> -->
+								<!-- <div class="col-sm-12 employer-line"></div> -->
 
 							</div>
 
-							<div class="row-employer row employer-tools">
+							<!-- <div class="row-employer row employer-tools">
 								<div class="col-sm-12 employer-tools-item">
 									<a href=""><i class="fa fa-bars"></i>&nbsp;Hồ sơ theo ngành nghề</a>
 								</div>
@@ -143,7 +162,7 @@ echo base_url('logout')?>"><i class="fa fa-sign-out"></i>Đăng xuất</a>
 								</div>
 								<div class="col-sm-12 employer-line"></div>
 
-							</div>
+							</div> -->
 
 							<div class="row-employer row employer-tools">
 								<div class="col-sm-12 employer-box-header background-color-2 text-center">

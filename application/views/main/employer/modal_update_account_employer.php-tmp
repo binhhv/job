@@ -37,7 +37,7 @@
                                 <div class="form-group col-sm-12">
                                     <label class="control-label"><?php echo lang('email_re_user');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <input type="text" class="form-control" name="account_email" value="<?php echo $user['email']?>" disabled/>
+                                        <input type="text" class="form-control" name="account_email" value="<?php echo $employerInfo->user['email']?>" disabled/>
                                     </div>
                                 </div>
                             </div>

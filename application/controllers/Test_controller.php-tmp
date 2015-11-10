@@ -30,5 +30,8 @@ class Test_controller extends CI_Controller {
 	function getLongLatFromAddress() {
 
 	}
+	function index() {
+		$this->load->view('test/index', array());
+	}
 
 }

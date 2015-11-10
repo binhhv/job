@@ -23,7 +23,7 @@ class Employer extends CI_Controller {
 	function index() {
 		$user = $this->session->userdata['user'];
 		$employerInfo = $this->employer->getInfoEmployer($user['id']);
-
+		$employerInfo->user = $user;
 		$head = $this->load->view('main/head', array('user' => $user, 'titlePage' => 'JOB7VN Group|Contact'), TRUE);
 
 		$province = $this->employer->getAllProvince();
@@ -635,7 +635,7 @@ class Employer extends CI_Controller {
 	function editInfo() {
 		$user = $this->session->userdata['user'];
 		$employerInfo = $this->employer->getInfoEmployer($user['id']);
-
+		$employerInfo->user = $user;
 		// $head = $this->load->view('main/head', array('user' => $user, 'titlePage' => 'JOB7VN Group|Contact'), TRUE);
 
 		// $province = $this->employer->getAllProvince();

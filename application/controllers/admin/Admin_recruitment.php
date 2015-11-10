@@ -138,6 +138,7 @@ class Admin_recruitment extends CI_Controller {
 	}
 	function createRecruitment() {
 		$rec = json_decode($this->input->post('rec'), true);
+		log_message('error', json_encode($rec));
 		$welfareSelected = $rec['welfareSelected'];
 		$employer = $rec['object_employer'];
 		$idmapcountry = $rec['rec_job_map_country'];
@@ -148,7 +149,7 @@ class Admin_recruitment extends CI_Controller {
 		$object_level = $rec['object_level'];
 		$object_salary = $rec['object_salary'];
 		$iduser = $this->session->userdata['user']['id'];
-		$idemployer = $rec['idemployer'];
+		$idemployer = $employer['employer_id'];
 		log_message('error', $iduser);
 		$data = array(
 			'rec_title' => $rec['rec_title'],
@@ -163,12 +164,12 @@ class Admin_recruitment extends CI_Controller {
 			'rec_job_map_form_child' => $object_form_child['jcform_id'], //$rec['rec_job_map_form_child'],
 			'rec_job_map_level' => $object_level['ljob_id'], //$rec['rec_job_map_level'],
 			'rec_job_map_country' => $rec['rec_job_map_country'],
-			'rec_job_map_country' => $rec['object_career']['career_id'],
+			'rec_job_map_career' => $rec['object_career']['career_id'],
 			'rec_contact_name' => $rec['rec_contact_name'],
 			'rec_contact_email' => $rec['rec_contact_email'],
 			'rec_contact_address' => $rec['rec_contact_address'],
 			'rec_contact_phone' => $rec['rec_contact_phone'],
-			'rec_contact_mobile' => $rec['rec_contact_mobile'],
+			'rec_contact_mobile' => (isset($rec['rec_contact_mobile'])) ? $rec['rec_contact_mobile'] : '',
 			'rec_contact_form' => $object_contact_form['contact_form_id'], //$rec['rec_contact_form'],
 			'rec_map_employer' => $employer['employer_id'],
 			'rec_is_approve' => true,

@@ -329,7 +329,7 @@ $route['search/(:any)_(:any)_(:any)/(:num)'] = 'job/job_search/index/$1/$2/$3';
 $route['search/(:any)']                      = 'job/job_search/index/$1';
 $route['search/(:any)/(:num)']               = 'job/job_search/index/$1';
 //test simple
-$route['test1'] = 'test_controller/updateProvince';
+$route['test1'] = 'test_controller/index';
 
 //login
 $route['login']      = 'login/index';
@@ -376,3 +376,6 @@ $route['employer/register-employer']      = 'employer/employer_register/insertEm
 $route['employer/getEditContactEmployer'] = 'employer/employer/getEditContactEmployer';
 $route['employer/getEditInfoEmployer']    = 'employer/employer/getEditInfoEmployer';
 $route['employer/edit']                   = 'employer/employer/editInfo';
+$route['employer/accounts']               = 'employer/employer_account/index';
+$route['employer/recruitments']           = 'employer/employer_recruitment/index';
+$route['employer/create-recruitment']     = 'employer/employer_recruitment/getCreateRecruitment';

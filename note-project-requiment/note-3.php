@@ -57,9 +57,13 @@
 25. check ho sơ tối đa là 3. (done)
 26. dk tai khoan roi login. về trang profile. ứng vieenc (done).
 27. dang ky nha tuyen dung. rồi về profile nhà tuyển dụng (done)
-28. tao tin tuyen dụng
+//28. tao tin tuyen dụng
 29. đăng nhập nhà tuyển dụng nhảy loạn xạ. (tam on done).
 30. thay doi mat khau nguoi dung dang nhap. thay doi thong tin lien he. thay doi thong tin ntd (done).
 31. quản lý người dùng
 32. quản lý tin tuyển dụng
 32. đăng tin
+33. trả về email nếu login thât bại (done)
+35. sửa menu nhà tuyển dụng chưa hợp lý
+36. PHUC HOI DU LIEU ----
+37. bị lỗi tạo tin tuyển dụn admin

@@ -4,6 +4,7 @@ app.factory('recruitmentService' ,function ($http,$q,$timeout){
 			return $http.get(pathWebsite + 'admin/recruitment/getListEmployer');
 		};
 		_recruitmentService.createRecruitment = function(rec,callback){
+			console.log(rec);
 			var objectrec = JSON.parse(rec);
 			//var csrf = JSON.parse(objectrec.csrf);
 			var csrf_hash = (objectrec.csrf)['hash'];

@@ -21,10 +21,10 @@ class Employer extends CI_Controller {
 		$this->load->model('Register_model', 'account');
 	}
 	function index() {
-		$user         = $this->session->userdata['user'];
-		$employerInfo = $this->employer->getInfoEmployer($user['id']);
-
-		$head = $this->load->view('main/head', array('user' => $user, 'titlePage' => 'JOB7VN Group|Contact'), TRUE);
+		$user               = $this->session->userdata['user'];
+		$employerInfo       = $this->employer->getInfoEmployer($user['id']);
+		$employerInfo->user = $user;
+		$head               = $this->load->view('main/head', array('user' => $user, 'titlePage' => 'JOB7VN Group|Contact'), TRUE);
 
 		$province = $this->employer->getAllProvince();
 		//$head = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Contact'), TRUE);
@@ -633,9 +633,9 @@ class Employer extends CI_Controller {
 	}
 
 	function editInfo() {
-		$user         = $this->session->userdata['user'];
-		$employerInfo = $this->employer->getInfoEmployer($user['id']);
-
+		$user               = $this->session->userdata['user'];
+		$employerInfo       = $this->employer->getInfoEmployer($user['id']);
+		$employerInfo->user = $user;
 		// $head = $this->load->view('main/head', array('user' => $user, 'titlePage' => 'JOB7VN Group|Contact'), TRUE);
 
 		// $province = $this->employer->getAllProvince();

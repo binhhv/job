@@ -1106,7 +1106,7 @@ a.toggle-menu:hover{
 	background: #fff;
 }
 .login-box{
-	width: 360px;
+	/*width: 360px;*/
     margin: 7% auto;
     /*border-radius: 0px;
     -moz-border-radius: 5px;
@@ -1165,8 +1165,8 @@ a.toggle-menu:hover{
 .card .info-employer img.logo-employer{
 	max-height: 100%;
 	max-width: 100%;
-	height: 40px;
-	width: 40px;
+	height: auto;/*40px;*/
+	width: auto;/*40px;*/
 }
 .card .info-employer{
 	padding: 10px;
@@ -2732,4 +2732,16 @@ label.description-menu-job{
 	height: 500px;
 	margin-right: 10px !important;
 	overflow: auto;
+}
+
+/**/
+.style-pointer{
+	cursor: pointer;
+}
+.padding-2{
+	padding: 2px;
+}
+.style-menu-epmployer{
+	color: #000;
+	font-weight: 700 !important;
 }

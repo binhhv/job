@@ -54,7 +54,7 @@ class Recruitment_model extends CI_Model {
 			$result = $this->dbutil->insert_batch('recruitment_map_welfare', $dataInsertMap);
 			return $result;
 		} else {
-			return $resultMap;
+			return false;
 		}
 
 	}

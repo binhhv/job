@@ -84,6 +84,7 @@ class Login extends CI_Controller {
 		$this->form_validation->set_rules('password', 'Password', 'required');
 		#Kiểm tra điều kiện validate
 		$check = true;
+		$email = $this->security->xss_clean($this->input->post('email', true));
 		if ($this->form_validation->run() == TRUE) {
 			$a_UserInfo['email']    = $this->security->xss_clean($this->input->post('email', true));
 			$a_UserInfo['password'] = md5($this->security->xss_clean($this->input->post('password', true)));
@@ -117,7 +118,7 @@ class Login extends CI_Controller {
 		}
 		if (!$check) {
 
-			$errorsMessage = 'Email hoặc mật khẩu không đúng.';
+			$errorsMessage = array('msg' => 'Email hoặc mật khẩu không đúng.', 'email' => $email);
 			$this->loadViewLogin($errorsMessage);
 		} else {
 			//$current_url = $this->session->userdata['last_page'];

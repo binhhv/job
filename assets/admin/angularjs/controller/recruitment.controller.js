@@ -120,7 +120,7 @@ app.controller('recruitmentCreateController', function (recruitmentService,emplo
         recruitmentCreate.object_career = (recruitmentCreate.listCareers.length > 0) ? recruitmentCreate.listCareers[0] : {};
         console.log(recruitmentCreate.object_contact_form);
         $scope.rec =recruitmentCreate;
-        console.log($scope.listCareers);
+        //console.log($scope.listCareers);
         
           $("#message-load-data").addClass('hide');
           $("#recruitmentCreateForm").removeClass('hide');
@@ -147,6 +147,7 @@ app.controller('recruitmentCreateController', function (recruitmentService,emplo
        };
 
        $scope.createRecruitment = function(rec){
+        console.log('object recruitment'+rec);
           if(rec){
             recruitmentService.createRecruitment(angular.toJson(rec),function(data){
                 if(data){
@@ -184,6 +185,22 @@ app.controller('recruitmentCreateController', function (recruitmentService,emplo
         }
 
        };
+
+
+       $scope.toggleSelection = function (welfareid) {
+             var idx = $scope.rec.welfareSelected.indexOf(welfareid);
+
+             // is currently selected
+             if (idx > -1) {
+               $scope.rec.welfareSelected.splice(idx, 1);
+             }
+
+             // is newly selected
+             else {
+               $scope.rec.welfareSelected.push(welfareid);
+             }
+             console.log($scope.rec.welfareSelected);
+           };
 
 });
 

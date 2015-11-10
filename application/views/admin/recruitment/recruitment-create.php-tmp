@@ -26,7 +26,7 @@
 
           <div class="row" id="message-load-data">
             <div class="col-sm-12 text-center">
-              Đang tải dữ liệu.
+              <img class="img-responsive" style="margin:0 auto;" src="<?php echo base_url();?>assets/admin/dist/img/loading.gif">
             </div>
           </div>
 
@@ -42,7 +42,7 @@
             Đã xảy ra lỗi trong quá trình tạo tin tuyển dụng. Vui lòng nhấn vào <a href="<?php echo base_url('admin/recruitment');?>">ĐÂY</a> để thử lại. Xin cám ơn.
             </div>
           </div>
-            <form name="recruitmentCreateForm" class="hide" id="recruitmentCreateForm" novalidate ng-show="show_form">
+            <form style="background-color: #fff;" name="recruitmentCreateForm" class="hide" id="recruitmentCreateForm" novalidate ng-show="show_form">
             <fieldset>
                 <div class="row">
                   <div class="col-sm-12">

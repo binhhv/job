@@ -10861,7 +10861,7 @@ select.input-lg {
 
 .alert-danger {
     width: 100%;
-    margin: 0 15px;
+    /*margin: 0 15px;*/
         padding: 3px 15px 3px 15px;
 }
 .alert-danger, .alert-error, .label-danger, .modal-danger .modal-body {

@@ -8,6 +8,11 @@ class DBUtil extends CI_Model {
 	function __construct() {
 		parent::__construct();
 		$this->load->database();
+		// if ($this->db->_error_message()) {
+		// 	$msg = $this->db->_error_message();
+
+		// 	echo $msg;
+		// }
 
 	}
 	public function escape($value) {

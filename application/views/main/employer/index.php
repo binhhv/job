@@ -3,7 +3,7 @@
 <?php if (isset($numRecruitmentActive)) {
 	?>
 				<div class="row-employer row">
-					<div class="col-sm-12">
+					<div class="col-sm-12 padding-2">
 					<?php if ($numRecruitmentActive > 0) {?>
 						<label class="alert-recruitment text-color-3">
 							<h3 ><?php echo $numRecruitmentActive;?></h3>
@@ -13,6 +13,7 @@
 						<label class="alert-recruitment">Chưa có tin tuyển dụng đã được đăng . &nbsp;<a class="btn btn-xs btn-primary" href="">Đăng tin ngay</a></label>
 							<?php }
 	?>
+	<button class="btn btn-primary pull-right" onclick="location.href='<?php echo base_url('employer/create-recruitment');?>'"><i class="fa fa-paper-plane"></i>Đăng tin tuyển dụng</button>
 					</div>
 				</div> <?php }
 ?>
