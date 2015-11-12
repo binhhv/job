@@ -195,7 +195,7 @@ $(document).ready(function() {
             success: function(response) {
                 // var objs = $.parseJSON(response);
                 var status = response.status;
-                console.log(response.content);
+               // console.log(response.content);
                 if (status == 'errvalid') {
                     var account_password = response.content.account_password;
                     var confirm_password = response.content.confirm_password;
@@ -211,6 +211,7 @@ $(document).ready(function() {
                     $('#employer_account_updateModal').modal('hide');
                     //window.location.reload();
                    // $("#employer_account_updateModal").modal('hide');
+                   $("body").find($("input:hidden[name=csrf_test_name]")).val(response.content.hash);
                 }
             },
             error: function(xhr, ajaxOptions, thrownError) {

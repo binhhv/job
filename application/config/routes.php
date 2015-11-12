@@ -376,6 +376,14 @@ $route['employer/register-employer'] = 'employer/employer_register/insertEmploye
 $route['employer/getEditContactEmployer'] = 'employer/employer/getEditContactEmployer';
 $route['employer/getEditInfoEmployer'] = 'employer/employer/getEditInfoEmployer';
 $route['employer/edit'] = 'employer/employer/editInfo';
+#manager account
 $route['employer/accounts'] = 'employer/employer_account/index';
+#recruitment
 $route['employer/recruitments'] = 'employer/employer_recruitment/index';
+#get form recruitment
 $route['employer/create-recruitment'] = 'employer/employer_recruitment/getCreateRecruitment';
+#post recruitment
+$route['employer/recruitment/create'] = 'employer/employer_recruitment/createRecruitment';
+#change name account
+$route['employer/change-account-name'] = 'employer/employer_account/changeNameAccount';
+$route['employer/get-content-profile'] = 'employer/employer_account/getProfileAccount';

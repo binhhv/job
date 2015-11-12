@@ -6,7 +6,7 @@
                                  <span class="border-vertical text-color-1"></span>
                                 <span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('title_create_recruitment_em');?></strong></span>
                             </div>
-                             <form enctype="multipart/form-data" role="form" name="employer-update-form" id="employer-update-form" method="post">
+                             <form enctype="multipart/form-data" role="form" name="femployer-create-recruitment" id="femployer-create-recruitment" method="post">
 			<div class="col-sm-12">
 			<div class="form-group col-sm-12 error-em-info hide">
                                  <div class="error text-center">
@@ -18,49 +18,104 @@
                                 <div class="form-group col-sm-12">
                                     <label class="control-label"><?php echo lang('f_title_recruitment_em');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <input type="text" class="form-control" name="employer_name" value="<?php echo $employerInfo->employer_name;?>" />
+                                        <input type="text" class="form-control" name="title_recruitment" />
                                     </div>
-                                    <div class="col-sm-12 text-danger error-employer-name"></div>
+                                    <div class="col-sm-12 text-danger error-title-recruitment"></div>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="control-label"><?php echo lang('f_work_at_country_em');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <input type="text" class="form-control" name="employer_name" value="<?php echo $employerInfo->employer_name;?>" />
+                                        <!-- <label><input type="radio" value="1" checked="true" name="country">Việt Nam</label> &nbsp;
+                                        <label><input type="radio" value="2" name="country">Nhật Bản</label> -->
+                                        <div class="row">
+                                            <label class="col-sm-6"><input type="radio" value="1" checked="true" name="country">Việt Nam</label>
+                                            <label class="col-sm-6"><input type="radio" value="2" name="country">Nhật Bản</label>
+                                        </div>
                                     </div>
                                     <div class="col-sm-12 text-danger error-employer-name"></div>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="control-label"><?php echo lang('f_province_em');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <input type="text" class="form-control" name="employer_name" value="<?php echo $employerInfo->employer_name;?>" />
+                                        <div class="select-province-vn hide">
+                                <select data-placeholder="chọn tỉnh thành"  multiple class="chosen-select-vn form-control province-vn " tabindex="11" >
+                                        <option value=""></option>
+                                        <?php if (isset($provinceVN)) {
+	foreach ($provinceVN as $value) {?>
+                                                <option value="<?php echo $value->province_id?>"><?php echo $value->province_name;?></option>
+                                            <?php }
+}
+?>
+                                      </select>
+                                      <!-- <label class="text-danger">(tối thiểu 1 tỉnh thành và tối đa là 5 tỉnh thành)</label> -->
+                                  </div>
+                                  <div class="select-province-jp hide">
+                                    <select data-placeholder="chọn tỉnh thành"  multiple class="chosen-select-jp form-control province-jp hide" tabindex="11" >
+                                        <option value=""></option>
+                                        <?php if (isset($provinceJP)) {
+	foreach ($provinceJP as $value) {?>
+                                                <option value="<?php echo $value->province_id?>"><?php echo $value->province_name;?></option>
+                                            <?php }
+}
+?>
+                                      </select>
+                                      <!-- <label class="text-danger">(tối thiểu 1 tỉnh thành và tối đa là 5 tỉnh thành)</label> -->
+                            </div>
                                     </div>
                                     <div class="col-sm-12 text-danger">(tối thiểu 1 tỉnh thành và tối đa là 5)</div>
-                                    <div class="col-sm-12 text-danger error-employer-name"></div>
+                                    <div class="col-sm-12 text-danger error-province"></div>
                                 </div>
                                  <div class="form-group col-sm-6">
                                     <label class="control-label"><?php echo lang('f_career_em');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <input type="text" class="form-control" name="employer_name" value="<?php echo $employerInfo->employer_name;?>" />
+                                        <select name="career" class="form-control">
+
+                                            <?php if (isset($listCareer) && count($listCareer) > 0) {
+	foreach ($listCareer as $key => $value) {?>
+
+
+                                                <option value="<?php echo $value->career_id;?>"><?php echo $value->career_name;?></option>
+                                            <?php }}
+?>
+                                        </select>
                                     </div>
 
-                                    <div class="col-sm-12 text-danger error-employer-name"></div>
+                                    <div class="col-sm-12 text-danger error-career"></div>
                                 </div>
                                  <div class="form-group col-sm-6">
                                     <label class="control-label"><?php echo lang('f_salary_em');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <input type="text" class="form-control" name="employer_name" value="<?php echo $employerInfo->employer_name;?>" />
+                                        <select name="salary" class="form-control">
+                                            <?php if (isset($listSalary) && count($listSalary) > 0) {
+	foreach ($listSalary as $key => $value) {?>
+
+
+                                                <option value="<?php echo $value->salary_id;?>"><?php echo $value->salary_value;?></option>
+                                            <?php }}
+?>
+                                        </select>
                                     </div>
 
-                                    <div class="col-sm-12 text-danger error-employer-name"></div>
+                                    <div class="col-sm-12 text-danger error-salary"></div>
                                 </div>
 
                                 <div class="form-group col-sm-12">
                                     <label class="control-label"><?php echo lang('f_welfare_em');?><span class="colorRed">*</span></label>
-                                    <div class="controls">
-                                        <input type="text" class="form-control" name="employer_name" value="<?php echo $employerInfo->employer_name;?>" />
+                                    <div class="controls"  style="background-color: #f2f9f2;">
+                                        <?php if (isset($listWelfare) && count($listWelfare) > 0) {
+	foreach ($listWelfare as $key => $value) {?>
+                                            <span class="welfare-detail-job">
+                                                <label>
+                                                    <input type="checkbox" value="<?php echo $value->welfare_id?>" name="welfare[]">
+                                                    <i class="<?php echo $value->welfare_icon;?>"></i><?php echo $value->welfare_title;?>
+                                                </label>
+                                            </span>
+                                             <?php }
+}
+?>
                                     </div>
 
-                                    <div class="col-sm-12 text-danger error-employer-name"></div>
+                                    <div class="col-sm-12 text-danger error-welfare"></div>
                                 </div>
                                 <div class="form-group col-sm-12">
                                     <span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('title_description_recruitment_em');?></strong></span>
@@ -68,68 +123,105 @@
                                 <div class="form-group col-sm-6">
                                     <label class="control-label"><?php echo lang('f_time_work_em');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <input type="text" class="form-control" name="employer_name" value="<?php echo $employerInfo->employer_name;?>" />
+                                        <input type="text" class="form-control" name="time_work" id="time_work" />
                                     </div>
 
-                                    <div class="col-sm-12 text-danger error-employer-name"></div>
+                                    <div class="col-sm-12 text-danger error-time-work"></div>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="control-label"><?php echo lang('f_level_jp_em');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <input type="text" class="form-control" name="employer_name" value="<?php echo $employerInfo->employer_name;?>" />
+                                        <select class="form-control" name="levelJP">
+                                            <?php if (isset($listLevelJP) && count($listLevelJP) > 0) {
+	foreach ($listLevelJP as $key => $value) {?>
+    <option value="<?php echo $value->ljob_id;?>"><?php echo $value->ljob_level;?></option>
+                                               <?php }
+}
+?>
+                                        </select>
                                     </div>
 
-                                    <div class="col-sm-12 text-danger error-employer-name"></div>
+                                    <div class="col-sm-12 text-danger error-levelJP"></div>
                                 </div>
                                 <div class="form-group col-sm-12">
                                     <label class="control-label"><?php echo lang('f_recruitment_type_em');?><span class="colorRed">*</span></label>
                                     <div class="controls row">
                                         <div class="col-sm-6 margin-top-5">
-                                             <input type="text" class="form-control" name="employer_name" value="<?php echo $employerInfo->employer_name;?>" />
+                                             <select class="form-control" name="jobForm">
+                                                 <?php if (isset($listJobForm) && count($listJobForm) > 0) {
+	foreach ($listJobForm as $key => $value) {?>
+    <option value="<?php echo $value->fjob_id;?>"><?php echo $value->fjob_type;?></option>
+                                                     <?php }
+}
+?>
+                                             </select>
                                         </div>
                                         <div class="col-sm-6 margin-top-5">
-                                             <input type="text" class="form-control" name="employer_name" value="<?php echo $employerInfo->employer_name;?>" />
+                                            <select class="form-control" name="jobFormChild">
+                                                 <?php if (isset($listJobFormChild) && count($listJobFormChild) > 0) {
+	foreach ($listJobFormChild as $key => $value) {?>
+    <option value="<?php echo $value->jcform_id;?>"><?php echo $value->jcform_type;?></option>
+                                                     <?php }
+}
+?>
+                                             </select>
                                         </div>
 
                                     </div>
 
-                                    <div class="col-sm-12 text-danger error-employer-name"></div>
+                                    <div class="col-sm-12 text-danger error-jobForm"></div>
                                 </div>
                                  <div class="form-group col-sm-12">
                                     <label class="control-label"><?php echo lang('f_content_recruitment_em');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                         <textarea type="text" class="form-control" name="employer_address" value="<?php echo $employerInfo->employer_address;?>" rows="3"><?php echo nl2br($employerInfo->employer_address)?></textarea>
+                                         <textarea type="text" class="form-control" name="content_recruitment"  rows="3"></textarea>
                                     </div>
 
-                                    <div class="col-sm-12 text-danger error-employer-name"></div>
+                                    <div class="col-sm-12 text-danger error-content-recruitment"></div>
                                 </div>
                                 <div class="form-group col-sm-12">
                                     <label class="control-label"><?php echo lang('f_regimen_em');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                         <textarea type="text" class="form-control" name="employer_address" value="<?php echo $employerInfo->employer_address;?>" rows="3"><?php echo nl2br($employerInfo->employer_address)?></textarea>
+                                         <textarea type="text" class="form-control" name="regimen_recruitment"  rows="3"></textarea>
                                     </div>
 
-                                    <div class="col-sm-12 text-danger error-employer-name"></div>
+                                    <div class="col-sm-12 text-danger error-regimen-recruitment"></div>
                                 </div>
 
                                 <div class="form-group col-sm-12">
                                     <span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('title_require_recruitment_em');?></strong></span>
                                 </div>
                                 <div class="form-group col-sm-12">
-                                    <label class="control-label"><?php echo lang('f_require_em');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('f_sex_em');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                         <textarea type="text" class="form-control" name="employer_address" value="<?php echo $employerInfo->employer_address;?>" rows="3"><?php echo nl2br($employerInfo->employer_address)?></textarea>
+                                       <div class="row">
+                                         <div class="col-sm-6">
+                                             <select name="sex-recruitment">
+                                                <option value="-1">Không yêu cầu</option>
+                                                <option value="0">Nữ</option>
+                                                <option value="1">Nam</option>
+                                             </select>
+                                         </div>
+                                       </div>
                                     </div>
 
-                                    <div class="col-sm-12 text-danger error-employer-name"></div>
+                                    <div class="col-sm-12 text-danger error-require-recruitment"></div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="control-label"><?php echo lang('f_require_em');?><span class="colorRed">*</span></label>
+                                    <div class="controls">
+                                         <textarea type="text" class="form-control" name="require_recruitment"  rows="3"></textarea>
+                                    </div>
+
+                                    <div class="col-sm-12 text-danger error-require-recruitment"></div>
                                 </div>
                                 <div class="form-group col-sm-12">
                                     <label class="control-label"><?php echo lang('f_priority_em');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                         <textarea type="text" class="form-control" name="employer_address" value="<?php echo $employerInfo->employer_address;?>" rows="3"><?php echo nl2br($employerInfo->employer_address)?></textarea>
+                                         <textarea type="text" class="form-control" name="priority_recruitment"  rows="3"></textarea>
                                     </div>
 
-                                    <div class="col-sm-12 text-danger error-employer-name"></div>
+                                    <div class="col-sm-12 text-danger error-priority-recruitment"></div>
                                 </div>
                                  <div class="form-group col-sm-12">
                                     <span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('title_contact_em');?></strong></span>
@@ -137,47 +229,54 @@
                                 <div class="form-group col-sm-6">
                                     <label class="control-label"><?php echo lang('f_contact_name_em');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <input type="text" class="form-control" name="employer_name" value="<?php echo $employerInfo->employer_name;?>" />
+                                        <input type="text" class="form-control" name="contact_name"  />
                                     </div>
 
-                                    <div class="col-sm-12 text-danger error-employer-name"></div>
+                                    <div class="col-sm-12 text-danger error-contact-name"></div>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="control-label"><?php echo lang('f_contact_email_em');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <input type="text" class="form-control" name="employer_name" value="<?php echo $employerInfo->employer_name;?>" />
+                                        <input type="text" class="form-control" name="contact_email"  />
                                     </div>
 
-                                    <div class="col-sm-12 text-danger error-employer-name"></div>
+                                    <div class="col-sm-12 text-danger error-contact-email"></div>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="control-label"><?php echo lang('f_contact_address_em');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <input type="text" class="form-control" name="employer_name" value="<?php echo $employerInfo->employer_name;?>" />
+                                        <input type="text" class="form-control" name="contact_address" />
                                     </div>
 
-                                    <div class="col-sm-12 text-danger error-employer-name"></div>
+                                    <div class="col-sm-12 text-danger error-contact-address"></div>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="control-label"><?php echo lang('f_contact_phone_em');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <input type="text" class="form-control" name="employer_name" value="<?php echo $employerInfo->employer_name;?>" />
+                                        <input type="text" class="form-control" name="contact_phone"  />
                                     </div>
 
-                                    <div class="col-sm-12 text-danger error-employer-name"></div>
+                                    <div class="col-sm-12 text-danger error-contact-phone"></div>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="control-label"><?php echo lang('f_contact_mobile_em');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <input type="text" class="form-control" name="employer_name" value="<?php echo $employerInfo->employer_name;?>" />
+                                        <input type="text" class="form-control" name="contact_mobile"  />
                                     </div>
 
-                                    <div class="col-sm-12 text-danger error-employer-name"></div>
+                                    <div class="col-sm-12 text-danger error-contact-mobile"></div>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="control-label"><?php echo lang('f_contact_type_em');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <input type="text" class="form-control" name="employer_name" value="<?php echo $employerInfo->employer_name;?>" />
+                                        <select class="form-control" name="contact_form">
+                                            <?php if (isset($listContactForm) && count($listContactForm) > 0) {
+	foreach ($listContactForm as $key => $value) {?>
+    <option value="<?php echo $value->contact_form_id;?>"><?php echo $value->contact_form_type;?></option>
+                                                 <?php }
+}
+?>
+                                        </select>
                                     </div>
 
                                     <div class="col-sm-12 text-danger error-employer-name"></div>
@@ -187,7 +286,7 @@
                             <div class="col-sm-12 text-right">
                                 <div class="form-group col-sm-12">
                                     <button class="btn btn-primary margin-top-5">Đăng tin tuyển dụng</button>
-                                    <button class="btn btn-danger margin-top-5">Trở lại trang nhà tuyển dụng</button>
+                                    <a class="btn btn-danger margin-top-5" href="<?php echo base_url('employer');?>">Trở lại trang nhà tuyển dụng</a>
 
                                 </div>
                             </div>
@@ -195,9 +294,9 @@
                             <div class="col-sm-12">
                                 <span class="colorRed">*</span> Nhấp chọn "Đăng Ký"đồng nghĩa với việc tôi đã đọc và đồng ý với các <a class="a-term" href="<?php echo base_url('about/term');?>">Thỏa thuận sử dụng</a>.
                             </div>
-
+                            <input type="hidden" name="province">
                             <input type="hidden" name="employer_id" value="<?php echo $employerInfo->employer_id;?>" />
-                    <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" />
+                            <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" />
                         </form>
 		</div>
 	</div>
@@ -205,137 +304,43 @@
 <script type="text/javascript">
 	$("input:radio[name=country]").change(function(){
             if($(this).val() == 1){
-                $(".province_vn").removeClass('hide');
-                $(".province_jp").addClass('hide');
+                $(".select-province-vn").removeClass('hide');
+                $(".select-province-jp").addClass('hide');
             }
             else if($(this).val() == 2){
-                $(".province_vn").addClass('hide');
-                $(".province_jp").removeClass('hide');
+                $(".select-province-vn").addClass('hide');
+                $(".select-province-jp").removeClass('hide');
             }
       });
 
 	$(function(){
-		if($("input:radio[name=country]:selected").val() == 1){
-			 $(".province_vn").removeClass('hide');
-                $(".province_jp").addClass('hide');
+        $("#time_work").datepicker().datepicker("setDate", new Date());
+        $(".chosen-select-vn").chosen({max_selected_options: 5,no_results_text: "<?php echo lang('msg_no_result_province_em')?>"});
+        $(".chosen-select-jp").chosen({max_selected_options: 5,no_results_text: "<?php echo lang('msg_no_result_province_em')?>"});
+		if($("input:radio[name=country]:checked").val() == 1){
+			 $(".select-province-vn").removeClass('hide');
+                $(".select-province-jp").addClass('hide');
 		}
 		else{
-			$(".province_vn").addClass('hide');
-                $(".province_jp").removeClass('hide');
+			$(".select-province-vn").addClass('hide');
+                $(".select-province-jp").removeClass('hide');
 		}
-	var url = base_website +'uploads/do_upload';
-        $('#fileuploadEdit').fileupload({
-           add: function(e, data) {
-                var uploadErrors = [];
-                var acceptFileTypes = /(\.|\/)(gif|jpe?g|png)$/i;
-                console.log(JSON.stringify(data));
-                //var filename = $('#fileupload').val();
-                console.log('filename'+data.originalFiles[0]['name']);
-                $(".files-name").empty().append(data.originalFiles[0]['name']);
-                $("input[name=file-name]:hidden").val(data.originalFiles[0]['name']);
-                var ext = data.originalFiles[0]['name'].split('.').pop().toLowerCase();
-          // if($.inArray(ext, ['doc','docx','pdf']) == -1) {
-          //     alert('invalid extension!');
-          // }
-                if($.inArray(ext, ['gif','jpg','jpeg','png']) == -1) {
-                    uploadErrors.push('File không đúng định dạng.');
-                }
-                // if(data.originalFiles[0]['size'].length && data.originalFiles[0]['size'] > 5000000) {
-                //     uploadErrors.push('Kích thước file quá lớn.');
-                // }
-                if(uploadErrors.length > 0) {
-                    var errormsg = uploadErrors.join("\n");
-                    $('.error-file').empty();
-                    $('.error-file').removeClass('hide');
-                    $('.error-file').append(errormsg);
-                } else {
-                    data.submit();
-                }
-          },
-            url: url,
-            dataType: 'json',
-            done: function (e, data) {
-                $.each(data.result.files, function (index, file) {
-                  $("#files").empty();
-                  $('.error-file').empty();
-                    $('<p/>').text(file.name).appendTo('#files');
-                    $("input[name=file-tmp]:hidden").val(file.name);
-                    getTokenEditInfo(addTokenInputEditInfo);
-                    //$("#btn-apply").attr("disabled",false);
-                });
-                //$(".files-name").append(filename);
-            },
 
-            progressall: function (e, data) {
-                var progress = parseInt(data.loaded / data.total * 100, 10);
-                $('#progress .progress-bar').css(
-                    'width',
-                    progress + '%'
-                );
-            }
-        }).prop('disabled', !$.support.fileInput)
-            .parent().addClass($.support.fileInput ? undefined : 'disabled');
-    //});
-  $('#fileuploadEdit').change(function() {
-      var filename = $('#fileuploadEdit').val();
-      ///console.log('filename'+filename);
-      //$(".files-name").append(filename);
-  //       var ext = $('#fileupload').val().split('.').pop().toLowerCase();
-    // if($.inArray(ext, ['gif','png','jpg','jpeg']) == -1) {
-    //     alert('invalid extension!');
-    // }
-    // else{
-
-    // }
-   // $("input[name=file-name]:hidden").val(filename);
-       //alert(filename);
-    });
-    $('#fileuploadEdit').on("click", function(){
-      //alert("123123");
-       //var filename = $(this).val();
-       //alert(filename);
-      $.ajax({
-        url: base_website+'job/getToken',
-        type: "get",
-        dataType:'json',
-        success: function(data){
-        	console.log(data);
-        	$('input:hidden[name="csrf_test_name"]').val(data.hash);
-          //alert(data.hash);
-          //$(".token").empty();
-         // var token ='<input type="hidden" name="'+data.name+'" value="'+data.hash+'" />';
-          //$(".token").append(token);
-           //document.write(data); just do not use document.write
-           //console.log(data);
-           //callback(data);
-           //console.log(data.name);
-        }
-      });
-     });
 })
 
-var getTokenEditInfo = function(callback){
-    	 $.ajax({
-        url: base_website +'job/getToken',
-        type: "get",
-        dataType:'json',
-        success: function(data){
-        	//$(".token").empty();
-        	//var token ='<input type="hidden" name="'+data.name+'" value="'+data.hash+'" />';
-        	//$(".token").append(token);
-           //document.write(data); just do not use document.write
-           //console.log(data);
-           callback(data);
-           //console.log(data.name);
-        }
-      });
-    };
 
-    function addTokenInputEditInfo(data){
-    	console.log('token' +data);
-    	$('input:hidden[name="csrf_test_name"]').val(data.hash);
-    		//$(".token").empty();
-        	//var token ='<input type="hidden" name="'+data.name+'" value="'+data.hash+'" />';
-        	//$(".token").append(token);
-    }
+/*{
+//showOn: both - datepicker will appear clicking the input box as well as the calendar icon
+//showOn: button - datepicker will appear only on clicking the calendar icon
+showOn: 'button',
+//you can use your local path also eg. buttonImage: 'images/x_office_calendar.png'
+buttonImage: 'http://theonlytutorials.com/demo/x_office_calendar.png',
+buttonImageOnly: true,
+changeMonth: true,
+changeYear: true,
+showAnim: 'slideDown',
+duration: 'fast',
+dateFormat: 'dd-mm-yy'
+}
+*/
 </script>

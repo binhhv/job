@@ -22,8 +22,8 @@ $lang['passold'] = 'Mật khẩu cũ';
 $lang['first_name'] = "Tên";
 $lang['last_name'] = "Họ";
 //$lang['captcha'] = 'Captcha';
-$lang['matches'] = "Trường '%s' không khớp với trường '%s'.";
-$lang['required'] = "Trường '%s' là bắt buộc.";
+$lang['matches'] = "'%s' không khớp với trường '%s'.";
+$lang['required'] = "'%s' là bắt buộc.";
 $lang['invalid-email'] = "'%s' này không hợp lệ.";
 $lang['regex_match'] = "'%s' này không hợp lệ.";
 $lang['invalid-captcha'] = "Captcha không hợp lệ";
@@ -143,3 +143,23 @@ $lang['f_contact_address_em'] = 'Địa chỉ';
 $lang['f_contact_phone_em'] = 'Điện thoại';
 $lang['f_contact_mobile_em'] = 'Di động';
 $lang['f_contact_type_em'] = 'Hình thức liên hệ';
+$lang['f_sex_em'] = 'Giới tính';
+$lang['msg_no_result_province_em'] = 'Không tìm thấy tỉnh thành nào';
+
+#recruitment employer
+$lang['title_recruitment_rec'] = 'Tiêu đề';
+$lang['province_rec'] = 'Tỉnh/Thành phố';
+$lang['time_work_rec'] = 'Thời gian làm việc';
+$lang['content_recruitment_rec'] = 'Nội dung công việc';
+$lang['regimen_recruitment_rec'] = 'Chế độ hậu đãi';
+$lang['require_recruitment_rec'] = 'Yêu cầu công việc';
+$lang['priority_recruitment_rec'] = 'Điều kiện/Ưu tiên';
+$lang['contact_name_rec'] = 'Người liên hệ';
+$lang['contact_email_rec'] = 'Email';
+$lang['contact_address_rec'] = 'Địa chỉ';
+$lang['contact_mobile_rec'] = 'Di động';
+$lang['contact_phone_rec'] = 'Điện thoại';
+# manager accounts empoyer
+$lang['title_manager_accounts_em'] = 'DANH SÁCH TÀI KHOẢN NHÀ TUYỂN DỤNG';
+$lang['title_profile_account_em'] = 'TÀI KHOẢN CÁ NHÂN';
+$lang['title_modal_change_profile_account_em'] = 'Thay đổi thông tin cá nhân';

@@ -27,8 +27,8 @@ echo base_url()?>uploads/common/logo.png" class="logo-employer">
 								</div>
 								<div class="col-sm-9 col-xs-9">
 
-									<label class="employer-name"><?php
-echo $employerInfo->employer_name;?></label>
+									<label class="employer-name"><a href="<?php echo base_url('employer');?>"><?php
+echo $employerInfo->employer_name;?></a></label>
 									<span class="employer-detail-info"><strong>
 									<?php
 switch ($employerInfo->user['role']) {
@@ -70,9 +70,9 @@ echo base_url('logout')?>"><i class="fa fa-sign-out"></i>Đăng xuất</a>
 									</div>
 									<div class="col-sm-12 employer-line"></div>
 									<div class="col-sm-12 item-field-employer text-left">
-										<button class="btn btn-primary" data-toggle="modal" data-target="#employer_account_updateModal"><i class="fa fa-pencil-square-o"></i> &nbsp; Đổi mật khẩu</button>
+										<button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#employer_account_updateModal"><i class="fa fa-pencil-square-o"></i> &nbsp; Đổi mật khẩu</button>
 									</div>
-									<div class="col-sm-12 employer-line"></div>
+									<!-- <div class="col-sm-12 employer-line"></div> -->
 
 								</div>
 							<!-- </div> -->
@@ -92,25 +92,32 @@ echo base_url('logout')?>"><i class="fa fa-sign-out"></i>Đăng xuất</a>
 								</div>
 
 								<div class="col-sm-12 employer-line"></div>
-								<?php if ($employerInfo->account_map_role == 2) {?>
-								<div class="col-sm-12">
-									<ul class="nav nav-list-main">
-								        <label class="nav-toggle nav-header style-pointer"><span><i class="fa fa-users"></i>&nbsp;Quản lý tài khoản</span></label>
-								            <ul class="nav nav-list nav-left-ml menu_left">
-								                <li><a href="#"><i class="fa fa-circle-o"></i>Danh sách nhân viên</a></li>
-								                <li><a href="#"><i class="fa fa-circle-o"></i>Tài khoản cá nhân</a></li>
-								            </ul>
-								        </li>
-									</ul>
-								</div>
 
-																<?php
-}
-?>
+								<!--<div class="col-sm-12">
+									<ul class="nav nav-list-main <?php if (isset($menu) && $menu == 'accounts') {echo 'active';}
+?>">
+								        <label class="nav-toggle nav-header style-pointer"><span><i class="fa fa-users"></i>&nbsp;Quản lý tài khoản</span></label>
+								            <ul class="nav nav-list nav-left-ml menu_left" >
+								                <li class="active"><a class="<?php if (isset($sub) && $sub == 'managerAccount') {echo 'active-accounts';}
+?>" href="<?php echo base_url('employer/accounts');?>"><i class="fa fa-circle-o"></i>Danh sách tài khoản</a></li>
+								                <li><a href="#" class="<?php if (isset($sub) && $sub == 'profileAccount') {echo 'active-accounts';}
+?>"><i class="fa fa-circle-o"></i>Tài khoản cá nhân</a></li>
+								            </ul>
+
+									</ul>
+
+								</div>-->
+
+								<div class="col-sm-12 employer-tools-item">
+									<!-- <button class="btn btn-primary"><i class="fa fa-pencil-square-o"></i>Đăng tin tuyển dụng</button> -->
+									<a href="<?php echo base_url('employer/accounts');?>"  class="style-menu-epmployer"><i class="fa fa-users"></i>&nbsp;Quản lý tài khoản</a>
+									<!-- <a href="<?php echo site_url('employer');?>"><i class="fa fa-pencil-square-o"></i>&nbsp;Quản lý tài khoản</a> -->
+								</div>
 								<div class="col-sm-12 employer-line"></div>
 
-								<div class="col-sm-12">
-									<ul class="nav nav-list-main">
+								<div class="col-sm-12 employer-tools-item">
+									<a href=""  class="style-menu-epmployer"><i class="fa fa-user"></i>&nbsp;Quản lý tin tuyển dụng</a>
+									<!-- <ul class="nav nav-list-main">
 								        <label class="nav-toggle nav-header style-pointer"><span><i class="fa fa-user"></i>&nbsp;Quản lý tin tuyển dụng</span></label>
 								            <ul class="nav nav-list nav-left-ml menu_left">
 								            	<li><a href="#create_recruitmentModel"  data-toggle="modal"><i class="fa fa-circle-o"></i>Tạo tin tuyển dụng</a></li>
@@ -118,7 +125,7 @@ echo base_url('logout')?>"><i class="fa fa-sign-out"></i>Đăng xuất</a>
 								                <li><a href="<?php echo site_url('employer/employer/recruitment_active');?>"><i class="fa fa-circle-o"></i>Tin tuyển dụng chờ duyệt</a></li>
 								                <li><a href="<?php echo site_url('employer/employer/recruitment_active');?>"><i class="fa fa-circle-o"></i>Tin tuyển dụng hết hạn</a></li>
 								            </ul>
-									</ul>
+									</ul> -->
 								</div>
 								<div class="col-sm-12 employer-line"></div>
 								<div class="col-sm-12 employer-tools-item">
@@ -177,7 +184,7 @@ echo base_url('logout')?>"><i class="fa fa-sign-out"></i>Đăng xuất</a>
 									<!-- </div> -->
 
 								</div>
-								<div class="col-sm-12 employer-line"></div>
+								<!-- <div class="col-sm-12 employer-line"></div> -->
 
 
 							</div>
@@ -189,9 +196,18 @@ echo base_url('logout')?>"><i class="fa fa-sign-out"></i>Đăng xuất</a>
 
 
 <script>
-	$('ul.nav-left-ml').toggle();
+	/*$('ul.nav-left-ml').toggle();
 $('label.nav-toggle span').click(function () {
-  $(this).parent().parent().children('ul.nav-left-ml').toggle(300);
+  var menu = $(this).parent().parent();
+  if(menu.hasClass('active')){
+  	console.log('active');
+  	menu.removeClass('active').children('ul.nav-left-ml').css('display','block').slideToggle(300);
+  }
+  else{
+  	menu.children('ul.nav-left-ml').toggle(300);
+  	console.log('deactive');
+  }
+
   var cs = $(this).attr("class");
   if(cs == 'nav-toggle-icon glyphicon glyphicon-chevron-right') {
     $(this).removeClass('glyphicon-chevron-right').addClass('glyphicon-chevron-down');
@@ -200,4 +216,8 @@ $('label.nav-toggle span').click(function () {
     $(this).removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-right');
   }
 });
+$(function(){
+
+})*/
+
 </script>

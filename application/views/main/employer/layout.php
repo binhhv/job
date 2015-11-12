@@ -3,6 +3,10 @@
 		<div class="row">
 
 			<div class="col-sm-8 col-sm-push-4 no-padding-res">
+			<?php if (isset($breadcrumb)) {
+	echo $breadcrumb;
+}
+?>
 			<?php if (isset($contentEmployer)) {
 	echo $contentEmployer;
 }

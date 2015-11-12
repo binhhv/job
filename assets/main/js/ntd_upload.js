@@ -4,7 +4,7 @@ $(function(){
            add: function(e, data) {
                 var uploadErrors = [];
                 var acceptFileTypes = /(\.|\/)(gif|jpe?g|png)$/i;
-                console.log(JSON.stringify(data));
+               // console.log(JSON.stringify(data));
                 //var filename = $('#fileupload').val();
                 console.log('filename'+data.originalFiles[0]['name']);
                 $(".files-name").empty().append(data.originalFiles[0]['name']);

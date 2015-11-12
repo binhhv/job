@@ -189,4 +189,21 @@ class Employer_model extends CI_Model {
 		$data = array($idrecruitment);
 		return $this->dbutil->getFromDbQueryBinding($sql, $data);
 	}
+
+	function getListAccount($idEmployer) {
+		$sql = "select a.* from employer_map_account b
+		inner join account a on a.account_id = b.emac_map_account and a.account_is_delete = 0
+		where b.emac_map_employer = ? and b.emac_is_delete = 0";
+		return $this->dbutil->getFromDbQueryBinding($sql, array($idEmployer));
+	}
+	function getNumRecruitmentAccout($idEmployer, $idUser) {
+		$sql = "select * from recruitment where rec_is_delete = 0 and rec_map_employer = ? and rec_map_user_employer = ?";
+		$output = $this->dbutil->getFromDbQueryBinding($sql, array($idEmployer, $idUser));
+		return count($output) > 0 ? count($output) : 0;
+
+	}
+	function changeNameAccount($data, $user) {
+		$dataUpdate = array('from' => 'account', 'where' => 'account_id = ' . $user['id'], 'data' => $data);
+		return $this->dbutil->updateDb($dataUpdate);
+	}
 }

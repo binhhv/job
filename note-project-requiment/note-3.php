@@ -67,3 +67,4 @@
 35. sửa menu nhà tuyển dụng chưa hợp lý
 36. PHUC HOI DU LIEU ----
 37. bị lỗi tạo tin tuyển dụn admin
+38 . thêm breadcrumb trang ứng viên

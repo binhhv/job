@@ -62,9 +62,19 @@ class Employer extends CI_Controller {
 			'contact_form' => $contact_form, 'arr_career' => $arr_career, 'arr_Salary' => $arr_Salary), TRUE);
 		$employer_menu = $this->load->view('main/employer/employer_menu', array('employerInfo' => $employerInfo), TRUE);
 		$numRecruitmentActive = count($this->employer->getListRecruitmentEmployer(1, $employerInfo->employer_id));
-		$contentEmployer = $this->load->view('main/employer/index', array('employerInfo' => $employerInfo, 'numRecruitmentActive' => $numRecruitmentActive), TRUE);
-
-		$content = $this->load->view('main/employer/layout', array('employer_menu' => $employer_menu, 'contentEmployer' => $contentEmployer, 'csrf' => $csrf, 'update_contact_employer' => $update_contact_employer, 'update_imfomation_employer' => $update_imfomation_employer, 'update_account_employer' => $update_account_employer, 'recruitment' => $recruitment), TRUE);
+		$breadcrumbs = array(
+			array('isLink' => true,
+				'title' => 'Trang chủ',
+				'link' => base_url()),
+			array('isLink' => false,
+				'title' => 'Trang nhà tuyển dụng',
+				'link' => base_url('employer')));
+		$contentEmployer = $this->load->view('main/employer/index', array('employerInfo' => $employerInfo, 'numRecruitmentActive' => $numRecruitmentActive, 'isBreadcrumb' => true, 'breadcrumbs' => $breadcrumbs), TRUE);
+		$breadcrumb = $this->load->view('main/employer/breadcrumb', array('breadcrumbs' => $breadcrumbs), TRUE);
+		$content = $this->load->view('main/employer/layout', array('employer_menu' => $employer_menu, 'contentEmployer' => $contentEmployer, 'csrf' => $csrf,
+			'update_contact_employer' => $update_contact_employer, 'update_imfomation_employer' => $update_imfomation_employer,
+			'update_account_employer' => $update_account_employer, 'recruitment' => $recruitment,
+			'breadcrumb' => $breadcrumb), TRUE);
 		$footer = $this->load->view('main/footer', array(), TRUE);
 		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer, 'isGray' => true));
 
@@ -291,7 +301,9 @@ class Employer extends CI_Controller {
 			} catch (Exception $e) {
 
 			}
-			echo json_encode(array('status' => 'success', 'content' => $datadeploy));
+			echo json_encode(array('status' => 'success', 'content' => array(
+				'name' => $this->security->get_csrf_token_name(),
+				'hash' => $this->security->get_csrf_hash())));
 
 		} else {
 			$dataerr = array(
@@ -636,20 +648,6 @@ class Employer extends CI_Controller {
 		$user = $this->session->userdata['user'];
 		$employerInfo = $this->employer->getInfoEmployer($user['id']);
 		$employerInfo->user = $user;
-		// $head = $this->load->view('main/head', array('user' => $user, 'titlePage' => 'JOB7VN Group|Contact'), TRUE);
-
-		// $province = $this->employer->getAllProvince();
-		// //$head = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Contact'), TRUE);
-
-		// $header = $this->load->view('main/header', array(
-		// 	'logo' => 'img/header/allSHIGOTO.png',
-		// 	'showTitle' => true,
-		// 	'logoWidth' => '170px',
-		// 	'logoHeight' => '70px',
-		// 	'menu' => '',
-		// 	'user' => $user,
-		// ), TRUE);
-		//$ab = m;
 
 		$csrf = array(
 			'name' => $this->security->get_csrf_token_name(),
@@ -659,85 +657,36 @@ class Employer extends CI_Controller {
 		//$update_contact_employer = $this->load->view('main/employer/modal_update_contact_info_employer', array('employerInfo' => $employerInfo, 'csrf' => $csrf), TRUE);
 		$update_account_employer = $this->load->view('main/employer/modal_update_account_employer', array('employerInfo' => $employerInfo, 'csrf' => $csrf), TRUE);
 
-		//create recruitment
-		//$arr_country = $this->employer->getAllCountry();
-		//$arr_welfare = $this->employer->getAllWelfare();
-		//$arr_job_form = $this->employer->getAllJob_Form();
-		//$job_form_child = $this->employer->getAllJob_Form_Child();
-		//$job_level = $this->employer->getAllJob_Job_Level();
-		//$contact_form = $this->employer->getAllJob_Contact_Form();
-
-		//$arr_career = $this->employer->getAllCareer();
-		//$arr_Salary = $this->employer->getAllSalary();
-		// $recruitment = $this->load->view('main/employer/modal_create_recruitment', array('csrf' => $csrf, 'arr_country' => $arr_country,
-		// 	'arr_welfare' => $arr_welfare, 'arr_job_form' => $arr_job_form, 'job_form_child' => $job_form_child, 'job_level' => $job_level,
-		// 	'contact_form' => $contact_form, 'arr_career' => $arr_career, 'arr_Salary' => $arr_Salary), TRUE);
-
-		// $employer_menu = $this->load->view('main/employer/employer_menu', array('employerInfo' => $employerInfo), TRUE);
-
-		// $detail_recruitmnet = $this->load->view('main/employer/modal_detail_recruitment', array('csrf' => $csrf), TRUE);
-		//create recruitment
-		// $arr_rec = $this->employer->getListRecruitment(1);
-		// $recruitmnet_active = $this->load->view('main/employer/modal_recruitment_active', array('arr_rec' => $arr_rec, 'csrf' => $csrf), TRUE);
-
 		$employer_menu = $this->load->view('main/employer/employer_menu', array('employerInfo' => $employerInfo), TRUE);
-		//$content = $this->load->view('main/employer/manager_recruitment', array('employer_menu' => $employer_menu, 'employerInfo' => $employerInfo, 'csrf' => $csrf, 'update_contact_employer' => $update_contact_employer, 'update_imfomation_employer' => $update_imfomation_employer, 'update_account_employer' => $update_account_employer, 'recruitment' => $recruitment, 'recruitmnet_active' => $recruitmnet_active, 'detail_recruitmnet' => $detail_recruitmnet), TRUE);
-		//$footer = $this->load->view('main/footer', array(), TRUE);
-		//$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
 
-		//$styleOption = array('assets/main/css/style_ntv.css', 'assets/main/chosen/chosen.css', 'assets/main/chosen/prism.css');
 		$scriptOption = array("server_upload/js/vendor/jquery.ui.widget.js",
 			"server_upload/js/jquery.iframe-transport.js",
 			"server_upload/js/jquery.fileupload.js", 'assets/main/scroll/jquery.nicescroll.min.js', 'assets/main/js/jquery_ntd.js', 'assets/main/js/ntd_upload.js');
-		// $arr_country = $this->employer->getAllCountry();
-		// $arr_welfare = $this->employer->getAllWelfare();
-		// $arr_job_form = $this->employer->getAllJob_Form();
-		// $job_form_child = $this->employer->getAllJob_Form_Child();
-		// $job_level = $this->employer->getAllJob_Job_Level();
-		// $contact_form = $this->employer->getAllJob_Contact_Form();
-		// $arr_career = $this->employer->getAllCareer();
-		// $arr_Salary = $this->employer->getAllSalary();
+
 		$provinceData = $this->account->getAllProvinceByCountry();
 		$provinceVN = $this->account->getProvinceCountry(1);
 		$provinceJP = $this->account->getProvinceCountry(2);
-		// $recruitment = $this->load->view('main/employer/modal_create_recruitment', array('csrf' => $csrf, 'arr_country' => $arr_country,
-		// 	'arr_welfare' => $arr_welfare, 'arr_job_form' => $arr_job_form, 'job_form_child' => $job_form_child, 'job_level' => $job_level,
-		// 	'contact_form' => $contact_form, 'arr_career' => $arr_career, 'arr_Salary' => $arr_Salary), TRUE);
 
-		//$user = (isset($this->session->userdata['user'])) ? $this->session->userdata['user'] : null;
 		$head = $this->load->view('main/head', array('title' => 'Thay đổi thông tin nhà tuyển dụng', 'scriptOption' => $scriptOption), TRUE);
 		$header = $this->load->view('main/header', array('user' => $user, 'showTitle' => true,
 		), TRUE);
 
-		// $csrf = array(
-		// 	'name' => $this->security->get_csrf_token_name(),
-		// 	'hash' => $this->security->get_csrf_hash(),
-		// );
-		// $arr_job_form = $this->recruitment->getAllJob_Form();
-		// $job_form_child = $this->recruitment->getAllJob_Form_Child();
-		// $job_level = $this->recruitment->getAllJob_Job_Level();
-		// $salary = $this->recruitment->getAllJob_Salary();
-		// $province = $this->recruitment->getAllProvince();
-		// $career = $this->recruitment->getAllJob_Career();
-
-		// $searchHorizontal = $this->load->view('main/search-horizontal', array(
-		// 	'province' => $province,
-		// 	'jobform' => $arr_job_form,
-		// 	'jobformchild' => $job_form_child,
-		// 	'salary' => $salary,
-		// 	'level' => $job_level,
-		// 	'career' => $career,
-		// 	'keyArr' => null,
-		// 	'keyWord' => ''), TRUE);
 		$contentEmployer = $this->load->view('main/employer/edit-info', array('csrf' => $csrf, 'employerInfo' => $employerInfo,
 			'provinceData' => $provinceData,
 			'provinceVN' => $provinceVN, 'provinceJP' => $provinceJP), TRUE);
-		//$popup = $this->load->view('main/popup', array('csrf' => $csrf), TRUE);
-		/*'arr_country' => $arr_country,
-		'arr_welfare' => $arr_welfare, 'arr_job_form' => $arr_job_form, 'job_form_child' => $job_form_child, 'job_level' => $job_level,
-		'contact_form' => $contact_form, 'arr_career' => $arr_career, 'arr_Salary' => $arr_Salary*/
+		$breadcrumbs = array(
+			array('isLink' => true,
+				'title' => 'Trang chủ',
+				'link' => base_url()),
+			array('isLink' => true,
+				'title' => 'Trang nhà tuyển dụng',
+				'link' => base_url('employer')),
+			array('isLink' => false,
+				'title' => 'Cập nhật thông tin',
+				'link' => ''));
+		$breadcrumb = $this->load->view('main/employer/breadcrumb', array('breadcrumbs' => $breadcrumbs), TRUE);
 		$content = $this->load->view('main/employer/layout', array('contentEmployer' => $contentEmployer, 'update_account_employer' => $update_account_employer,
-			'employer_menu' => $employer_menu), TRUE);
+			'employer_menu' => $employer_menu, 'breadcrumb' => $breadcrumb), TRUE);
 		$footer = $this->load->view('main/footer', array(), TRUE);
 		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer, 'isGray' => true));
 

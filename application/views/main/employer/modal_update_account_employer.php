@@ -72,9 +72,25 @@
                             </div>
                         </div>
                     </fieldset>
-                    <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+                    <input type="hidden" name="csrf_test_name" value="" />
                 </form>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $('#employer_account_updateModal').on('show.bs.modal', function(e) {
+
+        $.ajax({
+        url: base_website +'job/getToken',
+        type: "get",
+        dataType:'json',
+        success: function(data){
+
+            $("input:hidden[name=csrf_test_name]").val(data.hash);
+             // console.log(data.hash);
+
+        }
+      });
+    });
+</script>

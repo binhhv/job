@@ -128,8 +128,10 @@
                                 <div class="form-group col-sm-6">
                                     <label class="control-label"><?php echo lang('employer_map_province_re_depl');?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                    <label><input type="radio" value="1" checked="true" name="country">Việt Nam</label> &nbsp;
-                                    <label><input type="radio" value="2" name="country">Nhật Bản</label>
+                                        <div class="row">
+                                            <label class="col-sm-6"><input type="radio" value="1" checked="true" name="country">Việt Nam</label>
+                                            <label class="col-sm-6"><input type="radio" value="2" name="country">Nhật Bản</label>
+                                        </div>
                                     </div>
                                     <div class="controls">
                                         <select class="form-control province_vn" name="employer_map_province_vn" id="employer_map_province_vn">
@@ -161,11 +163,11 @@
                                 <div class="form-group col-sm-12">
                                     <label class="control-label"><?php echo lang('employer_logo_re_depl');?></label>
                                     <div class="controls">
-                                        <div class="display_block btn-big pos_relactive w170 floatLeft">
-                                            <input id="fileupload" type="file" name="files"  class="bt_input pos_absolute">
-                                            <span class="icon_upload_file"></span>Chọn file đính kèm
-                                        </div>
-                                        <div id="progress" class="progress">
+                                        <!-- <div class="display_block btn-big pos_relactive w170 floatLeft"> -->
+                                            <input id="fileupload" type="file" name="files"  >
+                                            <!-- Chọn file đính kèm <span class="icon_upload_file"></span> -->
+                                        <!-- </div> -->
+                                        <div id="progress" class="progress margin-top-5">
                                                     <div class="progress-bar progress-bar-success"></div>
                                                 </div>
                                                 <!-- The container for the uploaded files -->
@@ -236,7 +238,7 @@
                                     <!-- <div class="controls"> -->
                                     <div class="col-sm-6">
                                         <div class="captcha " style="display: inline-block;padding-top: 5px;"></div> &nbsp;
-                                        <input type="text" name="captcha" class="input-captcha form-control " style="display: inline-block;height: 32px;">
+                                        <input type="text" name="captcha" class="input-captcha form-control margin-top-5" style="display: inline-block;height: 32px;">
                                     </div>
                                     <div class="col-sm-6 controls">
                                         <!-- <input type="text" name="captcha" class="input-captcha form-control"> -->

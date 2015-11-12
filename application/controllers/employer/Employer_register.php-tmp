@@ -14,55 +14,22 @@ class Employer_register extends CI_Controller {
 
 	}
 	function index() {
-		//$styleOption = array('assets/main/css/style_ntv.css', 'assets/main/chosen/chosen.css', 'assets/main/chosen/prism.css');
+
 		$scriptOption = array("server_upload/js/vendor/jquery.ui.widget.js",
 			"server_upload/js/jquery.iframe-transport.js",
 			"server_upload/js/jquery.fileupload.js", 'assets/main/scroll/jquery.nicescroll.min.js', 'assets/main/js/jquery_ntd.js', 'assets/main/js/ntd_upload.js');
-		// $arr_country = $this->employer->getAllCountry();
-		// $arr_welfare = $this->employer->getAllWelfare();
-		// $arr_job_form = $this->employer->getAllJob_Form();
-		// $job_form_child = $this->employer->getAllJob_Form_Child();
-		// $job_level = $this->employer->getAllJob_Job_Level();
-		// $contact_form = $this->employer->getAllJob_Contact_Form();
-		// $arr_career = $this->employer->getAllCareer();
-		// $arr_Salary = $this->employer->getAllSalary();
 		$provinceData = $this->account->getAllProvinceByCountry();
 		$provinceVN   = $this->account->getProvinceCountry(1);
 		$provinceJP   = $this->account->getProvinceCountry(2);
-		// $recruitment = $this->load->view('main/employer/modal_create_recruitment', array('csrf' => $csrf, 'arr_country' => $arr_country,
-		// 	'arr_welfare' => $arr_welfare, 'arr_job_form' => $arr_job_form, 'job_form_child' => $job_form_child, 'job_level' => $job_level,
-		// 	'contact_form' => $contact_form, 'arr_career' => $arr_career, 'arr_Salary' => $arr_Salary), TRUE);
-
-		$user   = (isset($this->session->userdata['user']))?$this->session->userdata['user']:null;
-		$head   = $this->load->view('main/head', array('title'  => 'Đăng ký tài khoản', 'scriptOption'  => $scriptOption), TRUE);
-		$header = $this->load->view('main/header', array('user' => $user, 'showTitle' => true,
+		$user         = (isset($this->session->userdata['user']))?$this->session->userdata['user']:null;
+		$head         = $this->load->view('main/head', array('title'  => 'Đăng ký tài khoản', 'scriptOption'  => $scriptOption), TRUE);
+		$header       = $this->load->view('main/header', array('user' => $user, 'showTitle' => true,
 			), TRUE);
 
 		$csrf = array(
 			'name' => $this->security->get_csrf_token_name(),
 			'hash' => $this->security->get_csrf_hash(),
 		);
-		// $arr_job_form = $this->recruitment->getAllJob_Form();
-		// $job_form_child = $this->recruitment->getAllJob_Form_Child();
-		// $job_level = $this->recruitment->getAllJob_Job_Level();
-		// $salary = $this->recruitment->getAllJob_Salary();
-		// $province = $this->recruitment->getAllProvince();
-		// $career = $this->recruitment->getAllJob_Career();
-
-		// $searchHorizontal = $this->load->view('main/search-horizontal', array(
-		// 	'province' => $province,
-		// 	'jobform' => $arr_job_form,
-		// 	'jobformchild' => $job_form_child,
-		// 	'salary' => $salary,
-		// 	'level' => $job_level,
-		// 	'career' => $career,
-		// 	'keyArr' => null,
-		// 	'keyWord' => ''), TRUE);
-
-		//$popup = $this->load->view('main/popup', array('csrf' => $csrf), TRUE);
-		/*'arr_country' => $arr_country,
-		'arr_welfare' => $arr_welfare, 'arr_job_form' => $arr_job_form, 'job_form_child' => $job_form_child, 'job_level' => $job_level,
-		'contact_form' => $contact_form, 'arr_career' => $arr_career, 'arr_Salary' => $arr_Salary*/
 		$content = $this->load->view('main/employer/register', array('csrf' => $csrf, 'provinceData' => $provinceData,
 				'provinceVN'                                                      => $provinceVN, 'provinceJP'                                                      => $provinceJP), TRUE);
 		$footer = $this->load->view('main/footer', array(), TRUE);
@@ -146,21 +113,7 @@ class Employer_register extends CI_Controller {
 
 					$employer_logo_file_name = $this->input->post('file-name');
 					$employer_logo_file_tmp  = $this->input->post('file-tmp');
-					//$file_img_upload = $this->do_upload($id_account);
-					//$employer_logo = '';
-					//$employer_logo_tmp = '';
-					// if ($file_img_upload > 0) {
-					// 	//upload images
-					// 	$employer_logo = $file_img_upload['name_new'];
-					//$this->uploadImages($file_img_upload, $id_account);
 
-					// 	$employer_logo_tmp = $file_img_upload['name_old'];
-					//$_FILES["image"]["name"];
-
-					// } else {
-					// 	$employer_logo = '';
-					// 	$employer_logo_tmp = '';
-					// }
 					$employer_is_approve = '0';
 					$employer_is_delete  = '0';
 
