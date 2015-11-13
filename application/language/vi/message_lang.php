@@ -29,6 +29,7 @@ $lang['regex_match'] = "'%s' này không hợp lệ.";
 $lang['invalid-captcha'] = "Captcha không hợp lệ";
 $lang['invalid-old-password'] = 'Mật khẩu không đúng';
 $lang['min_length'] = "'%s' tối thiểu '%s' ký tự";
+$lang['email_exist'] = "'%s' này đã tồn tại vui lòng kiểm tra lại.";
 #user register
 $lang['title_re_user'] = "NGƯỜI TÌM VIỆC ĐĂNG KÝ";
 $lang['email_re_user'] = "Email";
@@ -163,3 +164,5 @@ $lang['contact_phone_rec'] = 'Điện thoại';
 $lang['title_manager_accounts_em'] = 'DANH SÁCH TÀI KHOẢN NHÀ TUYỂN DỤNG';
 $lang['title_profile_account_em'] = 'TÀI KHOẢN CÁ NHÂN';
 $lang['title_modal_change_profile_account_em'] = 'Thay đổi thông tin cá nhân';
+$lang['title_create_account_em'] = 'Tạo tài khoản';
+$lang['title_update_account_em'] = 'Cập nhật tài khoản';

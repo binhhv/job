@@ -1,94 +1,75 @@
-<div class="col-sm-12 content-accounts-em ">
-		<div class="col-sm-12 clear mb_20 margin-top-10">
-             <span class="border-vertical text-color-1"></span>
-            <span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('title_manager_accounts_em');?></strong></span>
-        </div>
-        <?php if (isset($listAccount) && count($listAccount) > 0) {
-	?>
-        <div class="col-sm-12">
-        <div class="box-body table-responsive no-padding no-border">
-    <table id="example" class="display" cellspacing="0" width="100%" class="table table-hover table-striped">
-        <thead>
-            <tr>
-                <th>Mã số</th>
-                <th>Họ tên</th>
-                <th>Email</th>
-                <th></th>
-            </tr>
-        </thead>
-
-        <tbody>
-           <?php foreach ($listAccount as $key => $value) {?>
-           <tr>
-           	<td class="min-w-100"><strong><?php echo $value->account_code;?></strong></td>
-	           	<td class="min-w-150"><?php echo $value->account_first_name . ' ' . $value->account_last_name;?></td>
-	           	<td class="min-w-150"><?php echo $value->account_email;?></td>
-	           	<td class="min-w-150">
-                <button class="btn btn-xs btn-primary">Sửa</button>
-                <button class="btn btn-xs btn-danger">Xóa</button>
-	           		<button class="btn btn-xs btn-warning">Ngừng hoạt động</button>
-	           	</td>
-           </tr>
-          <?php }
-	?>
-        </tbody>
-    </table>
+ <div class="col-sm-12 loading-accounts-em">
+    <img class="img-responsive" style="margin: 0 auto;" src="<?php echo base_url();?>assets/main/img/default/load.gif">
   </div>
+<div class="col-sm-12 content-accounts-em hide">
+    <?php $this->load->view('main/employer/partial/accounts', array('employerInfo' => $employerInfo));?>
+</div>
+
+ <!--modal confirm delete account employer -->
+  <div class="modal fade" id="modal-delete-account-em" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+           <form method="post" id="fdelete-account-em" role="form">
+            <div class="modal-body">
+
+                <input type="hidden" name="idUser" value="">
+                <div class="token hide">
+                </div>
+               Bạn có muốn xóa tài khoản đã chọn không ?
+            </div>
+            <div class="modal-footer">
+                <a  class="btn btn-danger" data-dismiss="modal">Hủy</a>
+                <button type="submit" class="btn btn-primary btn-ok">Xóa</button>
+            </div>
+            </form>
         </div>
-        <?php	} else {?>
-        <div class="col-sm-12 text-center">
-        	<h3>ĐÃ CÓ LỖI XẢY RA. !!!</h3>
+    </div>
+</div>
+
+<!--modal confirm block account employer -->
+  <div class="modal fade" id="modal-disable-account-em" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" id="fdisable-account-em" role="form">
+            <div class="modal-body">
+                <input type="hidden" name="idUser" value="">
+                <div class="token hide">
+                </div>
+               Bạn có muốn khóa tài khoản đã chọn không ?
+            </div>
+            <div class="modal-footer">
+                <a type="submit" class="btn btn-danger" data-dismiss="modal">Hủy</a>
+                <button type="submit" class="btn btn-primary btn-ok">Khóa</button>
+            </div>
+          </form>
         </div>
-        	<?php	}
-?>
+    </div>
+</div>
+
+<!--modal confirm unblock account employer -->
+  <div class="modal fade" id="modal-enable-account-em" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+             <form method="post" id="fenable-account-em" role="form">
+            <div class="modal-body">
+              <input type="hidden" name="idUser" value="">
+                <div class="token hide">
+                </div>
+               Bạn có muốn mở khóa tài khoản đã chọn không ?
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-danger" data-dismiss="modal">Hủy</a>
+                <button type="submit" class="btn btn-primary btn-ok">Mở khóa</button>
+            </div>
+          </form>
         </div>
+    </div>
+</div>
+<!--modal create account employer-->
+ <div class="modal fade" id="modal-account-em" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content content-modal-account-em">
+        </div>
+    </div>
+</div>
 
-<script type="text/javascript">
-  function filterGlobal () {
-    $('#example').DataTable().search(
-        $('#global_filter').val(),
-        $('#global_regex').prop('checked'),
-        $('#global_smart').prop('checked')
-    ).draw();
-}
-
-function filterColumn ( i ) {
-    $('#example').DataTable().column( i ).search(
-        $('#col'+i+'_filter').val(),
-        $('#col'+i+'_regex').prop('checked'),
-        $('#col'+i+'_smart').prop('checked')
-    ).draw();
-}
-
-$(document).ready(function() {
-    $('#example').DataTable({
-        "language": {
-              "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Vietnamese.json"
-          },
-          "dom":'<"pull-left"f><"top"l>rt<"bottom"p><"clear">',
-         "paging": true,
-          "lengthChange": false,
-          "searching": true,
-          "ordering": false,
-          "info": false,
-          "autoWidth": true
-    });
-
-        //    "dom": '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
-        //    "oLanguage": {
-        //     "oPaginate": {
-        //         "sFirst": "First page", // This is the link to the first page
-        //         "sPrevious": "前ページ", // This is the link to the previous page
-        //         "sNext": "次ページ", // This is the link to the next page
-        //         "sLast": "Last page" // This is the link to the last page
-        //     }
-        // }
-    $('input.global_filter').on( 'keyup click', function () {
-        filterGlobal();
-    } );
-
-    $('input.column_filter').on( 'keyup click', function () {
-        filterColumn( $(this).parents('tr').attr('data-column') );
-    } );
-} );
-</script>

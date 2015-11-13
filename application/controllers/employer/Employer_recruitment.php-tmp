@@ -20,6 +20,9 @@ class Employer_recruitment extends CI_Controller {
 		$this->lang->load('message', 'vi');
 		$this->load->model('UtilModel', 'util');
 		$this->load->model('Register_model', 'account');
+		if (!$this->session->userdata['user']['isLogged'] || !($this->session->userdata['user']['role'] == 2 || $this->session->userdata['user']['role'] == 3)) {
+			redirect(base_url('404'), 'refresh');
+		}
 	}
 
 	function getCreateRecruitment() {

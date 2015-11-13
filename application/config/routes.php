@@ -387,3 +387,11 @@ $route['employer/recruitment/create'] = 'employer/employer_recruitment/createRec
 #change name account
 $route['employer/change-account-name'] = 'employer/employer_account/changeNameAccount';
 $route['employer/get-content-profile'] = 'employer/employer_account/getProfileAccount';
+#get view accounts
+$route['employer/get-list-account'] = 'employer/employer_account/getAccountsEmployer';
+$route['employer/delete-account'] = 'employer/employer_account/deleteAccount';
+$route['employer/disable-account'] = 'employer/employer_account/disableAccount';
+$route['employer/enable-account'] = 'employer/employer_account/enableAccount';
+$route['employer/create-account'] = 'employer/employer_account/createAccount';
+$route['employer/update-account'] = 'employer/employer_account/updateAccount';
+$route['employer/get-view-account-em/(:num)'] = 'employer/employer_account/getViewAccountEmployer/$1';

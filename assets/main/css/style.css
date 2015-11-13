@@ -3246,3 +3246,7 @@ a.active-accounts {
 .min-w-100 {
   min-width: 100px;
 }
+
+.modal-content {
+  border-radius: 0 !important;
+}

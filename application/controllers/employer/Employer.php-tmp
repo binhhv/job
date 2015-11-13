@@ -9,9 +9,9 @@ class Employer extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library(array('form_validation', 'session'));
 		$this->load->model('employer/Employer_model', 'employer');
-		if (!$this->session->userdata['user']['isLogged']) {
-			redirect(base_url().'login');// no session established, kick back to login page
-		}
+		// if (!$this->session->userdata['user']['isLogged']) {
+		// 	redirect(base_url() . 'login'); // no session established, kick back to login page
+		// }
 		$this->load->helper('security');
 		$this->load->helper('language');
 		$this->load->helper('form');
@@ -19,6 +19,9 @@ class Employer extends CI_Controller {
 		$this->lang->load('message', 'vi');
 		$this->load->model('UtilModel', 'util');
 		$this->load->model('Register_model', 'account');
+		if (!$this->session->userdata['user']['isLogged'] || !($this->session->userdata['user']['role'] == 2 || $this->session->userdata['user']['role'] == 3)) {
+			redirect(base_url('404'), 'refresh');
+		}
 	}
 	function index() {
 		$user               = $this->session->userdata['user'];

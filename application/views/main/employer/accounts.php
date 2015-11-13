@@ -1,5 +1,6 @@
 
 <div class="card">
+
 	<div class="row-employer row ">
 		<?php $this->load->view('main/employer/content-profile', array('employerInfo' => $employerInfo));?>
     </div>
