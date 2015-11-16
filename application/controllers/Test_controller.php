@@ -33,5 +33,14 @@ class Test_controller extends CI_Controller {
 	function index() {
 		$this->load->view('test/index', array());
 	}
+	function getDataJson() {
+		$x = time() * 1000;
+// The y value is a random number
+		$y = rand(0, 100);
+
+// Create a PHP array and echo it as JSON
+		$ret = array($x, $y);
+		echo json_encode($ret);
+	}
 
 }

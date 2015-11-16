@@ -9,6 +9,7 @@ class Employer extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library(array('form_validation', 'session'));
 		$this->load->model('employer/Employer_model', 'employer');
+		$this->load->model('employer/Recruitment_model', 'recruitment');
 		// if (!$this->session->userdata['user']['isLogged']) {
 		// 	redirect(base_url() . 'login'); // no session established, kick back to login page
 		// }
@@ -27,7 +28,9 @@ class Employer extends CI_Controller {
 		$user = $this->session->userdata['user'];
 		$employerInfo = $this->employer->getInfoEmployer($user['id']);
 		$employerInfo->user = $user;
-		$head = $this->load->view('main/head', array('user' => $user, 'titlePage' => 'JOB7VN Group|Contact'), TRUE);
+		$scriptOption = array(
+			'assets/main/highcharts/highcharts.js', 'assets/main/highcharts/data.js', 'assets/main/highcharts/drilldown.js');
+		$head = $this->load->view('main/head', array('user' => $user, 'titlePage' => 'JOB7VN Group|Contact', 'scriptOption' => $scriptOption), TRUE);
 
 		$province = $this->employer->getAllProvince();
 		//$head = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Contact'), TRUE);
@@ -72,7 +75,8 @@ class Employer extends CI_Controller {
 			array('isLink' => false,
 				'title' => 'Trang nhà tuyển dụng',
 				'link' => base_url('employer')));
-		$contentEmployer = $this->load->view('main/employer/index', array('employerInfo' => $employerInfo, 'numRecruitmentActive' => $numRecruitmentActive, 'isBreadcrumb' => true, 'breadcrumbs' => $breadcrumbs), TRUE);
+		$arrReportRecruitment = $this->recruitment->getReportRecruitment($employerInfo->employer_id);
+		$contentEmployer = $this->load->view('main/employer/index', array('employerInfo' => $employerInfo, 'numRecruitmentActive' => $numRecruitmentActive, 'isBreadcrumb' => true, 'breadcrumbs' => $breadcrumbs, 'arrReportRecruitment' => $arrReportRecruitment), TRUE);
 		$breadcrumb = $this->load->view('main/employer/breadcrumb', array('breadcrumbs' => $breadcrumbs), TRUE);
 		$content = $this->load->view('main/employer/layout', array('employer_menu' => $employer_menu, 'contentEmployer' => $contentEmployer, 'csrf' => $csrf,
 			'update_contact_employer' => $update_contact_employer, 'update_imfomation_employer' => $update_imfomation_employer,

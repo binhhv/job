@@ -174,6 +174,7 @@ if (isset($scriptJob)) {
     $('.flexslider').flexslider({
         animation: "slide",
         slideshow: true,
+          slideshowSpeed:5000,
         start: function(slider){
           $('body').removeClass('loading');
            $('.sologan').show();
@@ -186,6 +187,7 @@ if (isset($scriptJob)) {
     $('.flexslider-job').flexslider({
         animation: "slide",
         slideshow: true,
+        slideshowSpeed:10000,
         start: function(slider){
 
         },
@@ -197,6 +199,7 @@ if (isset($scriptJob)) {
     $('.flexslider-partner').flexslider({
         animation: "slide",
         slideshow: true,
+          slideshowSpeed:5000,
         start: function(slider){
 
         },

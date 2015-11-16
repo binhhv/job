@@ -330,6 +330,7 @@ $route['search/(:any)'] = 'job/job_search/index/$1';
 $route['search/(:any)/(:num)'] = 'job/job_search/index/$1';
 //test simple
 $route['test1'] = 'test_controller/index';
+$route['test-get-datajson'] = 'test_controller/getDataJson';
 
 //login
 $route['login'] = 'login/index';
@@ -378,12 +379,19 @@ $route['employer/getEditInfoEmployer'] = 'employer/employer/getEditInfoEmployer'
 $route['employer/edit'] = 'employer/employer/editInfo';
 #manager account
 $route['employer/accounts'] = 'employer/employer_account/index';
-#recruitment
+#manager recruitment
 $route['employer/recruitments'] = 'employer/employer_recruitment/index';
+$route['employer/recruitment/(:any)-(:num).html'] = 'employer/employer_recruitment/detailRecruitment/$2';
+$route['employer/recruitment/edit/(:any)-(:num).html'] = 'employer/employer_recruitment/getViewEditRecruitment/$2';
+$route['employer/recruitment/get-view-recruitment-em'] = 'employer/employer_recruitment/getViewRecruitment';
 #get form recruitment
 $route['employer/create-recruitment'] = 'employer/employer_recruitment/getCreateRecruitment';
 #post recruitment
 $route['employer/recruitment/create'] = 'employer/employer_recruitment/createRecruitment';
+$route['employer/recruitment/draft'] = 'employer/employer_recruitment/draftRecruitment';
+$route['employer/recruitment/update'] = 'employer/employer_recruitment/updateRecruitment';
+$route['employer/recruitment/update-draft'] = 'employer/employer_recruitment/draftUpdateRecruitment';
+$route['employer/recruitment/delete'] = 'employer/employer_recruitment/deleteRecruitment';
 #change name account
 $route['employer/change-account-name'] = 'employer/employer_account/changeNameAccount';
 $route['employer/get-content-profile'] = 'employer/employer_account/getProfileAccount';
@@ -395,3 +403,6 @@ $route['employer/enable-account'] = 'employer/employer_account/enableAccount';
 $route['employer/create-account'] = 'employer/employer_account/createAccount';
 $route['employer/update-account'] = 'employer/employer_account/updateAccount';
 $route['employer/get-view-account-em/(:num)'] = 'employer/employer_account/getViewAccountEmployer/$1';
+#manager resume (search and store)
+$route['employer/resume/search'] = 'employer/employer_resume/index';
+$route['employer/resume/store'] = 'employer/employer_resume/storeResume';

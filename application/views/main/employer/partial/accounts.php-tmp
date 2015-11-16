@@ -52,7 +52,7 @@
 	        </div>
 	<?php	} else {?>
 	<div class="col-sm-12 text-center">
-	        	<h3>ĐÃ CÓ LỖI XẢY RA. !!!</h3>
+	        	<h3>CHƯA CÓ TÀI KHOẢN NÀO.</h3>
 	        </div>
 	<?php	}
 ?>

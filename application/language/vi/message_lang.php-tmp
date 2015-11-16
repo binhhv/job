@@ -120,7 +120,7 @@ $lang['new_password']        = 'Mật khẩu mới';
 $lang['confirm_password']    = 'Nhập lại mật khẩu mới';
 $lang['btn_change_password'] = 'Thay đổi mật khẩu';
 
-#employer
+#employer recruitment
 $lang['title_create_recruitment_em']      = 'ĐĂNG TIN TUYỂN DỤNG';
 $lang['f_title_recruitment_em']           = 'Tiêu đề';
 $lang['f_work_at_country_em']             = 'Việc làm tại';
@@ -146,7 +146,7 @@ $lang['f_contact_mobile_em']              = 'Di động';
 $lang['f_contact_type_em']                = 'Hình thức liên hệ';
 $lang['f_sex_em']                         = 'Giới tính';
 $lang['msg_no_result_province_em']        = 'Không tìm thấy tỉnh thành nào';
-
+$lang['title_edit_recruitment_em']        = 'SỬA ĐỔI TIN TUYỂN DỤNG';
 #recruitment employer
 $lang['title_recruitment_rec']    = 'Tiêu đề';
 $lang['province_rec']             = 'Tỉnh/Thành phố';
@@ -160,9 +160,13 @@ $lang['contact_email_rec']        = 'Email';
 $lang['contact_address_rec']      = 'Địa chỉ';
 $lang['contact_mobile_rec']       = 'Di động';
 $lang['contact_phone_rec']        = 'Điện thoại';
-# manager accounts empoyer
+# manager accounts employer
 $lang['title_manager_accounts_em']             = 'DANH SÁCH TÀI KHOẢN NHÀ TUYỂN DỤNG';
 $lang['title_profile_account_em']              = 'TÀI KHOẢN CÁ NHÂN';
 $lang['title_modal_change_profile_account_em'] = 'Thay đổi thông tin cá nhân';
 $lang['title_create_account_em']               = 'Tạo tài khoản';
 $lang['title_update_account_em']               = 'Cập nhật tài khoản';
+#manager recruitment employer
+$lang['title_manager_recruitments_em'] = 'QUẢN LÝ TIN TUYỂN DỤNG';
+#searc resume employer
+$lang['title_search_resume_em'] = 'TÌM KIẾM HỒ SƠ ỨNG VIÊN';

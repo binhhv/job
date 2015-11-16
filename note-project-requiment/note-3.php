@@ -60,11 +60,24 @@
 //28. tao tin tuyen dụng
 29. đăng nhập nhà tuyển dụng nhảy loạn xạ. (tam on done).
 30. thay doi mat khau nguoi dung dang nhap. thay doi thong tin lien he. thay doi thong tin ntd (done).
-31. quản lý người dùng
+31. quản lý người dùng (done)
 32. quản lý tin tuyển dụng
-32. đăng tin
+32. đăng tin (done)
 33. trả về email nếu login thât bại (done)
-35. sửa menu nhà tuyển dụng chưa hợp lý
+35. sửa menu nhà tuyển dụng chưa hợp lý (done)
 36. PHUC HOI DU LIEU ----
-37. bị lỗi tạo tin tuyển dụn admin
-38 . thêm breadcrumb trang ứng viên
+37. bị lỗi tạo tin tuyển dụn admin (done)
+38 . thêm breadcrumb trang ứng viên (done)
+39. lỗi hiển thị tin tuyển dụng tren trang top (done)
+40. chinh slide cham lai (done)
+41. luu nhap tin tuyen dung (done)
+42. log xoa tin tuyen dung.
+43. user dang xoa sua dc tin chinh no. (done)
+44. sua tin -> duyet lai tu dau (done)
+45. sua css dp-display-inline (done)
+46. sua css item-new-job (done)
+47. fix tin tuyen dung top tren ie 8 (done)
+48. phan quyen cho user tim kiem ho so. (thoi gian)
+49. trang thai xoa cv va ho so tren trang admin.
+50.xoa tin tyen dung (done chua log).
+

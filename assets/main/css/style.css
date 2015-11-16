@@ -954,34 +954,49 @@ footer span.copyrighttitle {
   position: relative;
 }
 
-.item-new-job {
-  border: 5px solid #fff;
+.item-new-job {/*border: 5px solid #fff;*/
   margin: 0 auto;
-  /*max-width: 200px;*/
-  position: relative;
+  /*max-width: 200px;*//*position: relative;*/
 }
 
-.dp-inline-block {
-  display: inline-block;
+.dp-inline-block {/*display: inline-block;zoom: 1;*display: inline;
+*/
+}
+
+.p-relative {
+  position: relative;
 }
 
 .dp-block {
   display: block;
 }
 
-.item-new-job span.title-new-job {
+.item-title-new-job {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.item-new-job .title-new-job {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 10px 20px;
+  padding: 10px  15px 0 15px;
   width: 100%;
+  margin-bottom: 0;
+}
+
+.bg-title-new-job {
   background-color: #000;
   opacity: 0.5;
   color: #fff;
+  padding: 5px;
+  margin-bottom: 0 !important;
 }
 
-span.title-new-job label {
+.title-new-job label {
   display: block;
+  width: 100%;
+  float: left;
 }
 
 .item-new-job img {

@@ -15,16 +15,16 @@ if (isset($listJobShow) && count($listJobShow) > 0) {
 		if ($i%3 == 1) {
 			$strSlideJob .= '<li><div class="row  list-item-new-job">';
 		}
-		$strSlideJob .= '<div class="col-md-4 text-center ';
+		$strSlideJob .= '<div class="col-md-4 text-center p-relative';
 		// if ($i % 3 == 1 || $i % 3 == 0) {
 		// 	$strSlideJob .= 'hide-job-responsive-760';
 		// }
 		$strSlideJob .= '">';
-		$strSlideJob .= '<a href="'.base_url('job').'/'.str_replace(' ', '-', $value->rec_title).'-'.$value->rec_id.'.html'.'" class=" item-new-job dp-inline-block">';
-		$strSlideJob .= '<span class="title-new-job text-left">';
-		$strSlideJob .= '<label>'.$value->rec_title.'</label>';
+		$strSlideJob .= '<a href="'.base_url('job').'/'.str_replace(' ', '-', $value->rec_title).'-'.$value->rec_id.'.html'.'" class="item-new-job ">';//dp-inline-block
+		$strSlideJob .= '<div class="title-new-job text-left">';
+		$strSlideJob .= '<p class="bg-title-new-job"><label>'.$value->rec_title.'</label>';
 		$strSlideJob .= '<small>'.$value->employer_name.'</small>';
-		$strSlideJob .= '</span>';
+		$strSlideJob .= '</p></div>';
 		$strSlideJob .= '<img src="'.base_url()."uploads/config/imgRecruitment/".$objectImgRecruitment["file_tmp"].'">';
 		$strSlideJob .= '</a></div>';
 		if ($i%3 == 0) {
@@ -38,16 +38,16 @@ if (isset($listJobShow) && count($listJobShow) > 0) {
 		if ($j%2 == 1) {
 			$strSlideJobsm .= '<li><div class="row list-item-new-job">';
 		}
-		$strSlideJobsm .= '<div class="col-sm-6 text-center';
+		$strSlideJobsm .= '<div class="col-sm-6 text-center p-relative';
 		// if ($i % 3 == 1 || $i % 3 == 0) {
 		// 	$strSlideJobsm .= 'hide-job-responsive-760';
 		// }
 		$strSlideJobsm .= '">';
-		$strSlideJobsm .= '<a href="'.base_url('job').'/'.str_replace(' ', '-', $value->rec_title).'-'.$value->rec_id.'.html'.'" class=" item-new-job dp-inline-block">';
-		$strSlideJobsm .= '<span class="title-new-job text-left">';
-		$strSlideJobsm .= '<label>'.$value->rec_title.'</label>';
+		$strSlideJobsm .= '<a href="'.base_url('job').'/'.str_replace(' ', '-', $value->rec_title).'-'.$value->rec_id.'.html'.'" class=" item-new-job">';
+		$strSlideJobsm .= '<div class="title-new-job text-left">';
+		$strSlideJobsm .= '<p class="bg-title-new-job"><label>'.$value->rec_title.'</label>';
 		$strSlideJobsm .= '<small>'.$value->employer_name.'</small>';
-		$strSlideJobsm .= '</span>';
+		$strSlideJobsm .= '</p></div>';
 		$strSlideJobsm .= '<img src="'.base_url()."uploads/config/imgRecruitment/".$objectImgRecruitment["file_tmp"].'">';
 		$strSlideJobsm .= '</a></div>';
 		if ($j%2 == 0) {
@@ -58,13 +58,13 @@ if (isset($listJobShow) && count($listJobShow) > 0) {
 		/*------------------------------------------------*/
 		//get job to slide new job to screen xs
 		$strSlideJobxs .= '<li><div class="row  list-item-new-job">';
-		$strSlideJobxs .= '<div class="col-xs-12 text-center ';
+		$strSlideJobxs .= '<div class="col-xs-12 text-center p-relative';
 		$strSlideJobxs .= '">';
-		$strSlideJobxs .= '<a href="'.base_url('job').'/'.str_replace(' ', '-', $value->rec_title).'-'.$value->rec_id.'.html'.'" class=" item-new-job dp-inline-block">';
-		$strSlideJobxs .= '<span class="title-new-job text-left">';
-		$strSlideJobxs .= '<label>'.$value->rec_title.'</label>';
+		$strSlideJobxs .= '<a href="'.base_url('job').'/'.str_replace(' ', '-', $value->rec_title).'-'.$value->rec_id.'.html'.'" class=" item-new-job ">';
+		$strSlideJobxs .= '<div class="title-new-job text-left">';
+		$strSlideJobxs .= '<p class="bg-title-new-job"><label>'.$value->rec_title.'</label>';
 		$strSlideJobxs .= '<small>'.$value->employer_name.'</small>';
-		$strSlideJobxs .= '</span>';
+		$strSlideJobxs .= '</p></div>';
 		$strSlideJobxs .= '<img src="'.base_url()."uploads/config/imgRecruitment/".$objectImgRecruitment["file_tmp"].'">';
 		$strSlideJobxs .= '</a></div></div></li>';
 		/*-------------------------------------------------*/

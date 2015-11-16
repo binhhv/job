@@ -89,13 +89,13 @@ class Recruitment_model extends CI_Model {
 		$condition = '';
 		switch ($type) {
 			case 1:
-				$condition = ' a.rec_is_delete = 0 and a.rec_is_approve = 1 and a.rec_is_disabled = 0';
+				$condition = ' a.rec_is_delete = 0 and a.rec_is_approve = 1 and a.rec_is_disabled = 0 and a.rec_is_drafts = 0';
 				break;
 			case 2:
-				$condition = ' a.rec_is_delete = 0 and a.rec_is_approve = 0 and a.rec_is_disabled = 0';
+				$condition = ' a.rec_is_delete = 0 and a.rec_is_approve = 0 and a.rec_is_disabled = 0 and a.rec_is_drafts = 0';
 				break;
 			default:
-				$condition = ' a.rec_is_delete = 0 and a.rec_is_approve = 1 and a.rec_is_disabled = 1';
+				$condition = ' a.rec_is_delete = 0 and a.rec_is_approve = 1 and a.rec_is_disabled = 1 and a.rec_is_drafts = 0';
 				break;
 		}
 		$sql = "select a.*,IFNULL(d.numapply, 0) as numapply ,e.*,f.*,g.*,k.*,i.employer_name
@@ -157,7 +157,7 @@ class Recruitment_model extends CI_Model {
 				left join job_form_child f on f.jcform_id = a.rec_job_map_form_child
 				left join contact_form g on g.contact_form_id = a.rec_contact_form and g.contact_form_is_delete = 0
 				left join salary k on k.salary_id = a.rec_map_salary and k.salary_is_delete = 0
-				where a.rec_is_delete = 0 and a.rec_is_approve = 1 and a.rec_is_disabled = 0 ";
+				where a.rec_is_delete = 0 and a.rec_is_approve = 1 and a.rec_is_disabled = 0 and rec_is_drafts = 0";
 		$conditionFirst  = '';
 		$conditionSecond = '';
 		//get 50% view and 50% select

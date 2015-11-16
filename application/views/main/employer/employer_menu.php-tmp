@@ -120,7 +120,7 @@ Quản lý tài khoản</a> -->
 								<div class="col-sm-12 employer-line"></div>
 
 								<div class="col-sm-12 employer-tools-item">
-									<a href=""  class="style-menu-epmployer"><i class="fa fa-user"></i>&nbsp;Quản lý tin tuyển dụng</a>
+									<a href="<?php echo base_url('employer/recruitments')?>"  class="style-menu-epmployer"><i class="fa fa-list-alt"></i>&nbsp;Quản lý tin tuyển dụng</a>
 									<!-- <ul class="nav nav-list-main">
 								        <label class="nav-toggle nav-header style-pointer"><span><i class="fa fa-user"></i>&nbsp;Quản lý tin tuyển dụng</span></label>
 								            <ul class="nav nav-list nav-left-ml menu_left">
@@ -133,7 +133,8 @@ Quản lý tài khoản</a> -->
 								</div>
 								<div class="col-sm-12 employer-line"></div>
 								<div class="col-sm-12 employer-tools-item">
-									<a href=""  class="style-menu-epmployer"><i class="fa fa-search"></i>&nbsp;Tìm kiếm hồ sơ</a>
+									<a href="<?php echo base_url('employer/resume/search');?>"  class="style-menu-epmployer"><i class="fa fa-search"></i>&nbsp;
+Tìm kiếm hồ sơ</a>
 								</div>
 								<div class="col-sm-12 employer-line"></div>
 								<div class="col-sm-12 employer-tools-item">
