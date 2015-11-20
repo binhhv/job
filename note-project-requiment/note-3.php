@@ -71,13 +71,14 @@
 39. lỗi hiển thị tin tuyển dụng tren trang top (done)
 40. chinh slide cham lai (done)
 41. luu nhap tin tuyen dung (done)
-42. log xoa tin tuyen dung.
+42. log xoa tin tuyen dung. (chua làm)
 43. user dang xoa sua dc tin chinh no. (done)
 44. sua tin -> duyet lai tu dau (done)
 45. sua css dp-display-inline (done)
 46. sua css item-new-job (done)
 47. fix tin tuyen dung top tren ie 8 (done)
-48. phan quyen cho user tim kiem ho so. (thoi gian)
+48. phan quyen cho user tim kiem ho so. (done)
 49. trang thai xoa cv va ho so tren trang admin.
 50.xoa tin tyen dung (done chua log).
-
+<?php echo base_url('language'); ?>/vi?url=<?php echo urlencode(current_url()); ?>
+51. thay doi ngon ngu trong breadcrumb

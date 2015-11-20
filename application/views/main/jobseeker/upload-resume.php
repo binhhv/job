@@ -8,8 +8,8 @@
                        <span class="sr-only">Close</span>
                 </button> -->
                 <h4 class="modal-title" id="myModalLabel">
-                  Upload hồ sơ
-                   <button class="btn btn-primary pull-right" onclick="location.href='<?php echo base_url('jobseeker');?>'"><i class="fa fa-reply"></i> Trang ứng viên</button>
+                  <?php echo lang('js_rs_upload'); ?>
+                   <button class="btn btn-primary pull-right" onclick="location.href='<?php echo base_url('jobseeker'); ?>'"><i class="fa fa-reply"></i> <?php echo lang('js_title_my_page'); ?></button>
                 </h4>
                 <!-- <label >Các trường</label><label class="text-danger">(*)</label> là bắt buộc. -->
             </div>
@@ -21,7 +21,7 @@
                 	</div>
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Chọn file</label>
+                              for="inputEmail3"><?php echo lang('js_rs_chose_file'); ?></label>
                     <div class="col-sm-8">
                        <div class="fileupload">
 												<!-- <input type="file" class="form-control hide file-cv" name="cv" id="cv"> -->
@@ -52,16 +52,16 @@
                 </div>
                  <div class="form-group">
                   	  <div class="col-sm-12 text-left">
-								*Nhấp chọn "Upload hồ sơ", tôi đã đọc và đồng ý với các <a class="a-term" href="<?php echo base_url('about/term');?>">Thỏa thuận sử dụng</a>.
+								<?php echo lang('m_terms_upload_resume') ?>
 							</div>
                       <div class="col-sm-12 text-right">
                       <input type="hidden" name="province">
                       <div class="token">
 
-                         <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" /></div>
+                         <input type="hidden" name="<?php echo $csrf['name']; ?>" value="<?php echo $csrf['hash']; ?>" /></div>
 
                             <button type="submit" class="btn btn-primary btn-create-form-apply">
-                                Upload hồ sơ.
+                                <?php echo lang('js_rs_upload') ?>
                             </button>
                       </div>
                   </div>
@@ -74,9 +74,9 @@
                        <span aria-hidden="true">&times;</span>
                        <span class="sr-only">Close</span>
                 </button> -->
-                <div class="col-sm-12 text-center margin-top-10"><span class="text-center"><strong>Bạn đã upload tối đa 3 hồ sơ trên website. Vui lòng xóa bớt hồ sơ hiện có.</strong></span></div>
+                <div class="col-sm-12 text-center margin-top-10"><span class="text-center"><strong><?php echo lang('js_ms_more_resume') ?></strong></span></div>
                 <div class="col-sm-12 text-left margin-top-10">
-                	<button class="btn btn-primary " onclick="location.href='<?php echo base_url('jobseeker');?>'"><i class="fa fa-reply"></i> Trang ứng viên</button>
+                	<button class="btn btn-primary " onclick="location.href='<?php echo base_url('jobseeker'); ?>'"><i class="fa fa-reply"></i> <?php echo lang('js_title_my_page') ?></button>
                 </div>
             </div>
         <?php }

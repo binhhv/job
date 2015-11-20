@@ -277,6 +277,10 @@
   .no-padding-left-res {
     padding-left: 15px !important;
   }
+
+  .no-border-bottom {
+    border-bottom: 1px solid #f1f1f1;
+  }
 }
 
 /*end media queries*/

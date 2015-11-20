@@ -5,11 +5,11 @@
 	<?php if (!isset($user) || $user['role'] == 4) {
 		?>
 	<div class=" title-job-scroll hide">
-		<div class="col-sm-8 text-center"><label class="lb-title-job-scroll"><?php echo $jobDetail->rec_title;?></label></div>
+		<div class="col-sm-8 text-center"><label class="lb-title-job-scroll"><?php echo $jobDetail->rec_title; ?></label></div>
 		<div class="col-sm-4 text-center">
 		<?php if (isset($checkApply) && !$checkApply) {?>
-		<button class="btn btn-lg btn-danger btn-scroll-apply-job">NỘP HỒ SƠ</button> <?php } else {?>
-		<button class="btn btn-lg btn-danger btn-scroll-apply-job" disabled="true">ĐÃ ỨNG TUYỂN</button>
+		<button class="btn btn-lg btn-danger btn-scroll-apply-job"><?php echo lang('job_btn_apply_up'); ?></button> <?php } else {?>
+		<button class="btn btn-lg btn-danger btn-scroll-apply-job" disabled="true"><?php echo lang('job_btn_applied_up'); ?></button>
 		<?php }
 		?>
 		</div>
@@ -27,18 +27,18 @@
 						<div class="col-sm-12 job-content-item ">
 
 								<!-- <div class="row col-sm-12 job-content-item text-center">
-									<h1 class="title-detail-job"><?php echo $jobDetail->rec_title;?></h1>
+									<h1 class="title-detail-job"><?php echo $jobDetail->rec_title; ?></h1>
 								</div> -->
 
 
 
-										<h3 class="title-field-detail-job">Chi tiết công việc
+										<h3 class="title-field-detail-job"><?php echo lang('job_title_detail'); ?>
 										<?php if (!isset($user) || $user['role'] == 4) {
 		?>
 										<?php if (isset($checkApply) && !$checkApply) {?>
-										<button class="btn btn-danger btn-md pull-right btn-apply-job">Nộp hồ sơ</button>
+										<button class="btn btn-danger btn-md pull-right btn-apply-job"><?php echo lang('job_btn_apply'); ?></button>
 										<?php } else {?>
-										<button class="btn btn-danger btn-md pull-right btn-apply-job" disabled="true">Đã ứng tuyển</button>
+										<button class="btn btn-danger btn-md pull-right btn-apply-job" disabled="true"><?php echo lang('job_btn_applied'); ?></button>
 										<?php }
 		?>
 										<?php }
@@ -47,13 +47,13 @@
 										<div class="col-sm-12 field-job-line"></div>
 										<div class="row padding-tb-5">
 											<div class="col-sm-3 col-sm-push-9">
-												<img src="<?php echo base_url();?>uploads/logo/<?php echo $jobDetail->employer_id . "/" . $jobDetail->employer_logo_tmp;?>" class="logo-employer img-responsive padding-top-10">
+												<img src="<?php echo base_url(); ?>uploads/logo/<?php echo $jobDetail->employer_id . "/" . $jobDetail->employer_logo_tmp; ?>" class="logo-employer img-responsive padding-top-10">
 											</div>
 											<div class="col-sm-9 col-sm-pull-3">
-												<h1 class="title-detail-job"><?php echo $jobDetail->rec_title;?></h1>
-												<span class="employer-name-dj"><?php echo $jobDetail->employer_name;?></span>
-												<span class="employer-address-dj"><?php echo $jobDetail->employer_address;?></span>
-												<span><button class="btn btn-md btn-primary" data-toggle="modal" data-target="#modalContactEmployer"><i class="fa fa-paper-plane"></i> Thông tin liên hệ</button></span>
+												<h1 class="title-detail-job"><?php echo $jobDetail->rec_title; ?></h1>
+												<span class="employer-name-dj"><?php echo $jobDetail->employer_name; ?></span>
+												<span class="employer-address-dj"><?php echo $jobDetail->employer_address; ?></span>
+												<span><button class="btn btn-md btn-primary" data-toggle="modal" data-target="#modalContactEmployer"><i class="fa fa-paper-plane"></i> <?php echo lang('job_title_contact_employer'); ?></button></span>
 											</div>
 
 										</div>
@@ -61,11 +61,11 @@
 										<div class="col-sm-12 field-job-line"></div>
 										<div class="col-sm-12 option-detail-job ">
 											<div class="row">
-												<div class="col-sm-6 item-option-detail-job"><b>Ngành nghề:</b> <?php echo $jobDetail->career_name;?></div>
-												<div class="col-sm-6 item-option-detail-job"><b>Mức lương:</b> <?php echo $jobDetail->salary_value;?></div>
-												<div class="col-sm-6 item-option-detail-job"><b>Loại hình công việc:</b> <?php echo $jobDetail->fjob_type . '-' . $jobDetail->jcform_type;?></div>
-												<div class="col-sm-6 item-option-detail-job"><b>Trình độ:</b><?php echo $jobDetail->ljob_level?></div>
-												<div class="col-sm-12 item-option-detail-job"><b>Địa điểm làm việc:</b><label class="address-detail-job"><?php
+												<div class="col-sm-6 item-option-detail-job"><b><?php echo lang('s_title_career'); ?>:</b> <?php echo $jobDetail->career_name; ?></div>
+												<div class="col-sm-6 item-option-detail-job"><b><?php echo lang('s_title_salary'); ?>:</b> <?php echo $jobDetail->salary_value; ?></div>
+												<div class="col-sm-6 item-option-detail-job"><b><?php echo lang('s_title_type_job'); ?>:</b> <?php echo $jobDetail->fjob_type . '-' . $jobDetail->jcform_type; ?></div>
+												<div class="col-sm-6 item-option-detail-job"><b><?php echo lang('s_title_level'); ?>:</b><?php echo $jobDetail->ljob_level ?></div>
+												<div class="col-sm-12 item-option-detail-job"><b><?php echo lang('job_form_work_at'); ?>:</b><label class="address-detail-job"><?php
 $provinces = json_decode($jobDetail->provinces);
 	if (count($provinces) > 0) {
 		foreach ($provinces as $value) {
@@ -83,12 +83,12 @@ $provinces = json_decode($jobDetail->provinces);
 						<div class="col-sm-12 job-content-item ">
 
 								<!-- <div class="row col-sm-12 job-content-item text-center">
-									<h1 class="title-detail-job"><?php echo $jobDetail->rec_title;?></h1>
+									<h1 class="title-detail-job"><?php echo $jobDetail->rec_title; ?></h1>
 								</div> -->
 
 
 
-										<h3 class="title-field-detail-job">Phúc lợi
+										<h3 class="title-field-detail-job"><?php echo lang('job_title_welfare'); ?>
 
 										</h3>
 										<div class="col-sm-12 field-job-line"></div>
@@ -103,40 +103,40 @@ foreach ($welfares as $value) {
 						<div class="col-sm-12 job-content-item">
 
 								<!-- <div class="row col-sm-12 job-content-item text-center">
-									<h1 class="title-detail-job"><?php echo $jobDetail->rec_title;?></h1>
+									<h1 class="title-detail-job"><?php echo $jobDetail->rec_title; ?></h1>
 								</div> -->
 
 
 
-										<h3 class="title-field-detail-job">Mô tả và yêu cầu công việc
+										<h3 class="title-field-detail-job"><?php echo lang('job_title_introduce'); ?>
 
 										</h3>
 										<div class="col-sm-12 field-job-line"></div>
 										<div class="col-sm-12 option-detail-job ">
 											<div class="row">
-												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj ">Nội dung công việc</span>
+												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj "><?php echo lang('job_title_content'); ?></span>
 													<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo nl2br($jobDetail->rec_job_content);?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo nl2br($jobDetail->rec_job_content); ?></div>
 												</div>
 
-												<div class="col-sm-12 item-option-detail-job"><span class="title-item-dj">Chế độ hậu đãi</span>
+												<div class="col-sm-12 item-option-detail-job"><span class="title-item-dj"><?php echo lang('job_title_regimen'); ?></span>
 														<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo nl2br($jobDetail->rec_job_regimen);?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo nl2br($jobDetail->rec_job_regimen); ?></div>
 												</div>
 
-												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Thời gian làm việc</span>
+												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj"><?php echo lang('job_title_work_time'); ?></span>
 													<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo date('d/m/Y', strtotime($jobDetail->rec_job_time));?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo date('d/m/Y', strtotime($jobDetail->rec_job_time)); ?></div>
 												</div>
 
-												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Yêu cầu bắt buộc</span>
+												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj"><?php echo lang('job_title_require'); ?></span>
 													<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo nl2br($jobDetail->rec_job_require);?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo nl2br($jobDetail->rec_job_require); ?></div>
 												</div>
 
-												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Điều kiện/Ưu tiên</span>
+												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj"><?php echo lang('job_title_priority'); ?></span>
 													<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo nl2br($jobDetail->rec_job_priority);?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo nl2br($jobDetail->rec_job_priority); ?></div>
 												</div>
 
 											</div>
@@ -148,7 +148,7 @@ foreach ($welfares as $value) {
 						<div class="row" id="focus-apply">
 							<div class="col-sm-12 employer-box-header text-center background-color-3">
 								<!-- <label class="text-color-1 field-job"> -->
-									<h3 class="alert-field-job employer-tools-title text-color-2">Nộp hồ sơ</h3>
+									<h3 class="alert-field-job employer-tools-title text-color-2"><?php echo lang('job_btn_apply'); ?></h3>
 								<!-- </label> -->
 							</div>
 							<div class="col-sm-12 field-job-line"></div>
@@ -157,15 +157,15 @@ foreach ($welfares as $value) {
 							<div class="col-sm-12 margin-top-10" >
 							<form class="form-horizontal" role="form" name="form-apply" id="form-apply" method="post" enctype="multipart/form-data">
 							  	<div class="form-group">
-							    <label class="control-label col-sm-2" for="firstname">Họ</label>
+							    <label class="control-label col-sm-2" for="firstname"><?php echo lang('m_last_name'); ?></label>
 							    <div class="col-sm-10">
-							    <input type="hidden" name="idjob" value="<?php echo $jobDetail->rec_id;?>">
+							    <input type="hidden" name="idjob" value="<?php echo $jobDetail->rec_id; ?>">
 							    <input type="hidden" name="idjobseeker" value="<?php
 if (isset($user)) {
 				echo $user['id'];
 			}
 			?>">
-							      <input type="text" class="form-control" id="firstname" placeholder="Họ" <?php
+							      <input type="text" class="form-control" id="firstname" placeholder="<?php echo lang('m_last_name'); ?>" <?php
 if (isset($user)) {
 				echo 'value = "' . $user['firstname'] . '" disabled';
 			}
@@ -173,9 +173,9 @@ if (isset($user)) {
 							    </div>
 							  </div>
 							  <div class="form-group">
-							    <label class="control-label col-sm-2" for="lastname">Tên</label>
+							    <label class="control-label col-sm-2" for="lastname"><?php echo lang('m_first_name'); ?></label>
 							    <div class="col-sm-10">
-							      <input type="text" class="form-control" id="lastname" placeholder="Tên" <?php
+							      <input type="text" class="form-control" id="lastname" placeholder="<?php echo lang('m_first_name'); ?>" <?php
 if (isset($user)) {
 				echo 'value = "' . $user['lastname'] . '" disabled';
 			}
@@ -183,9 +183,9 @@ if (isset($user)) {
 							    </div>
 							  </div>
 							  <div class="form-group">
-							    <label class="control-label col-sm-2" for="email">Email</label>
+							    <label class="control-label col-sm-2" for="email"><?php echo lang('m_email'); ?></label>
 							    <div class="col-sm-10">
-							      <input type="email" class="form-control" id="email" placeholder="Email" <?php
+							      <input type="email" class="form-control" id="email" placeholder="<?php echo lang('m_email'); ?>" <?php
 if (isset($user)) {
 				echo 'value = "' . $user['email'] . '" disabled';
 			}
@@ -193,16 +193,16 @@ if (isset($user)) {
 							    </div>
 							  </div>
 							  <div class="form-group">
-							    <label class="control-label col-sm-2">Resume</label>
+							    <label class="control-label col-sm-2"><?php echo lang('m_resume'); ?></label>
 							    <div class="col-sm-10">
-							    	<label><input type="radio" name="doc" value="doconline">Hồ sơ trực tuyến </label>&nbsp;
-							    	<label><input type="radio" name="doc" value="doccv">Hồ sơ đính kèm</label>
+							    	<label><input type="radio" name="doc" value="doconline"><?php echo lang('m_resume_online'); ?> </label>&nbsp;
+							    	<label><input type="radio" name="doc" value="doccv"><?php echo lang('m_cv'); ?></label>
 							    </div>
 							  </div>
 							  <div class="form-group hide">
 
 							    <div class="col-sm-10 token hide">
-													<input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" />
+													<input type="hidden" name="<?php echo $csrf['name']; ?>" value="<?php echo $csrf['hash']; ?>" />
 												</div>
 							  </div>
 							   <?php if (isset($user) && $user['role'] == 4) {
@@ -215,11 +215,11 @@ if (isset($docs) && count($docs) > 0) {
 					foreach ($docs as $value) {?>
 												<div class="col-sm-12">
 													<label>
-														<input type="radio" name="docuser" value="<?php echo $value->docon_id?>">
-														<?php echo $value->docon_code?>
+														<input type="radio" name="docuser" value="<?php echo $value->docon_id ?>">
+														<?php echo $value->docon_code ?>
 
 													</label>
-													&nbsp;(<span class="view-doc" data-id="<?php echo $value->docon_id?>">xem</span>)
+													&nbsp;(<span class="view-doc" data-id="<?php echo $value->docon_id ?>"><?php echo lang('job_view_resume_online'); ?></span>)
 												</div>
 												<?php }
 
@@ -227,7 +227,7 @@ if (isset($docs) && count($docs) > 0) {
 						?>
 												<div class="col-sm-12">
 												<label>
-													<input type="radio" name="docuser" value="-1" data-id="<?php echo $jobDetail->rec_id;?>">Tạo hồ sơ mới
+													<input type="radio" name="docuser" value="-1" data-id="<?php echo $jobDetail->rec_id; ?>"><?php echo lang('job_create_resume_online'); ?>
 
 												</label>
 												<!-- <a class="create-doc-user" href="#" onclick="openModalCreateDocon" >Tạo hồ sơ mới</a> -->
@@ -240,9 +240,9 @@ if (isset($docs) && count($docs) > 0) {
 										<?php }
 					?>
 										<?php } else {?>
-										<label >Bạn chưa có hồ sơ nào.</label><br>
+										<label ><?php echo lang('job_ns_no_resume'); ?></label><br>
 											<label>
-													<input  type="radio" name="docuser" value="-1" data-id="<?php echo $jobDetail->rec_id;?>">Tạo hồ sơ mới
+													<input  type="radio" name="docuser" value="-1" data-id="<?php echo $jobDetail->rec_id; ?>"><?php echo lang('job_create_resume_online'); ?>
 
 												</label>
 		<?php }
@@ -255,18 +255,18 @@ if (isset($cvs) && count($cvs) > 0) {
 					foreach ($cvs as $value) {?>
 												<div class="col-sm-12">
 													<label>
-														<input type="radio" name="cvuser" value="<?php echo $value->doccv_id?>">
-														<?php echo $value->doccv_code?>
+														<input type="radio" name="cvuser" value="<?php echo $value->doccv_id ?>">
+														<?php echo $value->doccv_code ?>
 
 													</label>
-													&nbsp;(<a class="download-cv" href="<?php echo base_url() . 'downloadcv/' . $value->doccv_map_user . '/' . $value->doccv_file_tmp . '/' . $value->doccv_file_name . '/1'?>">tải xuống</a>)
+													&nbsp;(<a class="download-cv" href="<?php echo base_url() . 'downloadcv/' . $value->doccv_map_user . '/' . $value->doccv_file_tmp . '/' . $value->doccv_file_name . '/1' ?>">tải xuống</a>)
 												</div>
 												<?php }
 
 					if (count($cvs) < 3) {
 						?>
 												<div class="col-sm-12">
-												<label><input type="radio" name="cvuser" value="-1">upload cv</label><label class="text-danger">(doc|docx|pdf)</label>
+												<label><input type="radio" name="cvuser" value="-1"><?php echo lang('job_upload_cv'); ?></label><label class="text-danger">(doc|docx|pdf)</label>
 												<div class="fileupload hide">
 												<!-- <input type="file" class="form-control hide file-cv" name="cv" id="cv"> -->
 												<!-- <span class="btn btn-success fileinput-button">
@@ -289,9 +289,9 @@ if (isset($cvs) && count($cvs) > 0) {
 										<?php }
 					?>
 										<?php } else {?>
-										<label>Bạn chưa có cv nào.</label><br>
+										<label><?php echo lang('job_ms_no_cv'); ?></label><br>
 											<label>
-											<input type="radio" name="cvuser" value="-1" >upload cv
+											<input type="radio" name="cvuser" value="-1" ><?php echo lang('job_upload_cv'); ?>
 											</label><label class="text-danger">(doc|docx|pdf)</label>
 											<div class="fileupload hide">
 											<!-- <span class="btn btn-success fileinput-button">
@@ -318,13 +318,13 @@ if (isset($cvs) && count($cvs) > 0) {
 			?>
 							  <!-- <div class="hide" id="value-doc"></div> -->
 							  <div class="form-group hide captcha-box">
-							  <label class="control-label col-sm-2">Captcha</label>
+							  <label class="control-label col-sm-2"><?php echo lang('m_captcha'); ?></label>
 							  	<div class="col-sm-10 captcha ">
 
 							  	</div>
 							  	<div class="col-sm-offset-2 col-sm-8 margin-top-5">
 							  		<input type="text" name="captcha" class="input-captcha">
-							  		<span class="alert alert-danger hide error-captcha">Captcha không hợp lệ</span>
+							  		<span class="alert alert-danger hide error-captcha"><?php echo lang('m_captcha_invalid'); ?></span>
 							  		<input type="hidden" name="captcha-reg" >
 							  	</div>
 							  </div>
@@ -332,12 +332,12 @@ if (isset($cvs) && count($cvs) > 0) {
 							    <div class="col-sm-offset-2 col-sm-10">
 							    <input type="hidden" name="file-name">
 							    <input type="hidden" name="file-tmp">
-							     <!-- <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" /> -->
+							     <!-- <input type="hidden" name="<?php echo $csrf['name']; ?>" value="<?php echo $csrf['hash']; ?>" /> -->
 							    <!-- <input type="file" class="form-control file-cv" name="cv1"> -->
 							    <?php if (isset($user) && $user['role'] == 4) {?>
 							    	<button type="submit" class="btn btn-danger" disabled="true" id="btn-apply">Nộp đơn</button>
 							    <?php } else {?>
-							    	<a href="<?php echo base_url('login');?>?url=<?php echo urlencode(current_url());?>" class="btn btn-primary">Đăng nhập để nộp hồ sơ</a>
+							    	<a href="<?php echo base_url('login'); ?>?url=<?php echo urlencode(current_url()); ?>" class="btn btn-primary">Đăng nhập để nộp hồ sơ</a>
 							    	<?php	}
 			?>
 
@@ -347,11 +347,11 @@ if (isset($cvs) && count($cvs) > 0) {
 							<div  class="col-sm-12 text-center msg-apply hide"></div>
 							</div>
 							<div class="col-sm-12 text-center">
-								*Nhấp chọn "Nộp đơn", tôi đã đọc và đồng ý với các <a class="a-term" href="<?php echo base_url('about/term');?>">Thỏa thuận sử dụng</a>.
+								<?php echo lang('m_terms'); ?>
 							</div>
 							<?php } else {?>
 							<div class="col-sm-12 text-center">
-								Bạn đã ứng tuyển việc làm này rồi.
+								<?php echo lang('job_ms_applied'); ?>
 							</div>
 							<?php }
 		?>
@@ -362,7 +362,7 @@ if (isset($cvs) && count($cvs) > 0) {
 						<!-- <div class="col-sm-12 job-content-item margin-bottom-10">
 
 								<div class="row col-sm-12 job-content-item text-center">
-									<h1 class="title-detail-job"><?php echo $jobDetail->rec_title;?></h1>
+									<h1 class="title-detail-job"><?php echo $jobDetail->rec_title; ?></h1>
 								</div>
 
 
@@ -375,31 +375,31 @@ if (isset($cvs) && count($cvs) > 0) {
 											<div class="row">
 												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj ">Người liên hệ</span>
 													<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_name;?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_name; ?></div>
 												</div>
 
 												<div class="col-sm-12 item-option-detail-job"><span class="title-item-dj">Email</span>
 														<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_email;?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_email; ?></div>
 												</div>
 
 												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Địa chỉ</span>
 													<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_address;?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_address; ?></div>
 												</div>
 
 												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Điện thoại</span>
 													<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_phone;?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_phone; ?></div>
 												</div>
 
 												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Di động</span>
 													<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_mobile;?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_mobile; ?></div>
 												</div>
 												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Hình thức liên hệ</span>
 													<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->contact_form_type;?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->contact_form_type; ?></div>
 												</div>
 											</div>
 										</div>
@@ -454,8 +454,8 @@ if (isset($cvs) && count($cvs) > 0) {
 							<?php if (isset($jobSames)) {
 		foreach ($jobSames as $value) {?>
 										<div class="col-sm-12  item-job-advance" >
-											<a href="<?php echo base_url('job') . '/' . str_replace(' ', '-', $value->rec_title) . '-' . $value->recmp_map_rec . '.html'?>"><?php echo (strlen($value->rec_title) > 30) ? substr($value->rec_title, 0, 30) . '...' : $value->rec_title;?></a>
-											<small><?php echo $value->employer_name;?></small>
+											<a href="<?php echo base_url('job') . '/' . str_replace(' ', '-', $value->rec_title) . '-' . $value->recmp_map_rec . '.html' ?>"><?php echo (strlen($value->rec_title) > 30) ? substr($value->rec_title, 0, 30) . '...' : $value->rec_title; ?></a>
+											<small><?php echo $value->employer_name; ?></small>
 										</div>
 										<div class="col-sm-12 field-job-line "></div>
 								<?php }
@@ -469,13 +469,13 @@ if (isset($cvs) && count($cvs) > 0) {
 				</div>
 			</div>
 			<!-- <div class="col-sm-12">
-				<iframe src="http://www.facebook.com/plugins/like.php?href=<?php echo $urlJob;?>&layout=standard&show_faces=false&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:60px;"></iframe>
+				<iframe src="http://www.facebook.com/plugins/like.php?href=<?php echo $urlJob; ?>&layout=standard&show_faces=false&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:60px;"></iframe>
 			</div> -->
 			<div class="col-sm-12">
-				<div class="fb-like" href="<?php echo $urlJob;?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+				<div class="fb-like" href="<?php echo $urlJob; ?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
 			</div>
 			<div class="col-sm-12">
-				<div class="fb-comments"  data-href="<?php echo $urlJob;?>" data-width="100%" data-numposts="15" data-colorscheme="light" data-mobile="false" data-order-by="reverse_time"></div>
+				<div class="fb-comments"  data-href="<?php echo $urlJob; ?>" data-width="100%" data-numposts="15" data-colorscheme="light" data-mobile="false" data-order-by="reverse_time"></div>
 			</div>
 		</div>
 	</div>
@@ -483,7 +483,7 @@ if (isset($cvs) && count($cvs) > 0) {
 	<div class="container">
 		<div class="row not-find-job">
 			<div class="col-sm-12 text-center">
-				Không tìm thấy công việc này. Vui lòng thử lại sau hoặc nhấn vào <a href="<?php echo base_url();?>"><strong>ĐÂY</strong></a> để về trang chủ.
+				<?php echo lang('job_title_not_found'); ?>
 			</div>
 		</div>
 	</div>
@@ -513,16 +513,16 @@ if (isset($cvs) && count($cvs) > 0) {
       <div class="modal-header background-color-3">
       	<div class="modal-popup-box">
       		<!-- <span>Modal title</span> -->
-      		<img src="<?php echo base_url();?>assets/main/img/header/allSHIGOTO.png" >
+      		<img src="<?php echo base_url(); ?>assets/main/img/header/allSHIGOTO.png" >
       		 <button type="button" class="close pull-right" data-dismiss="modal" aria-hidden="true">×</button>
       	</div>
 
         <!-- <h4 class="modal-title">Modal title</h4> -->
       </div>
       <div class="modal-body">
-      	<p class="text-danger">Bạn chưa chọn hồ sơ hoặc cv để nộp hồ sơ.</p>
+      	<p class="text-danger"><?php echo lang('job_ms_no_select_rs'); ?></p>
 
-		<div class="text-right"><button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Đóng</button></div>
+		<div class="text-right"><button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><?php echo lang('m_close'); ?></button></div>
 
       </div>
       <!-- <div class="modal-footer">
@@ -541,42 +541,42 @@ if (isset($cvs) && count($cvs) > 0) {
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Thông tin liên hệ</h4>
+        <h4 class="modal-title" id="myModalLabel"><?php echo lang('job_title_contact_employer'); ?></h4>
       </div>
       <div class="modal-body">
        		<div class="row">
-												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj ">Người liên hệ</span>
+												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj "><?php echo lang('job_title_contact_name'); ?></span>
 													<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_name;?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_name; ?></div>
 												</div>
 
-												<div class="col-sm-12 item-option-detail-job"><span class="title-item-dj">Email</span>
+												<div class="col-sm-12 item-option-detail-job"><span class="title-item-dj"><?php echo lang('m_email'); ?></span>
 														<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_email;?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_email; ?></div>
 												</div>
 
-												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Địa chỉ</span>
+												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj"><?php echo lang('job_title_contact_address'); ?></span>
 													<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_address;?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_address; ?></div>
 												</div>
 
-												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Điện thoại</span>
+												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj"><?php echo lang('job_title_contact_phone'); ?></span>
 													<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_phone;?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_phone; ?></div>
 												</div>
 
-												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Di động</span>
+												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj"><?php echo lang('job_title_contact_mobile'); ?></span>
 													<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_mobile;?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->rec_contact_mobile; ?></div>
 												</div>
-												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj">Hình thức liên hệ</span>
+												<div class="col-sm-12 item-option-detail-job "><span class="title-item-dj"><?php echo lang('job_title_contact_type'); ?></span>
 													<div class="col-sm-12 field-job-line"></div>
-												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->contact_form_type;?></div>
+												<div class="col-sm-12 item-option-detail-job text-muted"><?php echo $jobDetail->contact_form_type; ?></div>
 												</div>
 											</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default btn-danger" data-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-default btn-danger" data-dismiss="modal"><?php echo lang('m_close'); ?></button>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div>
@@ -651,7 +651,7 @@ $(document).ready(function(){
 
 				$.ajax({
 				type: "POST", // HTTP method POST or GET
-				url: "<?php echo base_url('job/apply-job');?>", //Where to make Ajax calls
+				url: "<?php echo base_url('job/apply-job'); ?>", //Where to make Ajax calls
 				dataType:"json", // Data type, HTML, json etc.
 				data:  formdata ? $(this).serialize() : dataOb,//new FormData(this),
 	            // mimeType:"multipart/form-data",
@@ -750,7 +750,7 @@ function checkSelectedDoc(){
             $("#data-doc").removeClass('hide');
             $(".data-doc-user").removeClass('hide');
             	$(".data-cv-user").addClass('hide');
-           // getToken(getDoconline(data,<?php echo $user['id'];?>));
+           // getToken(getDoconline(data,<?php echo $user['id']; ?>));
            //getToken(getDoconline);
         }
         else if($(this).val() == 'doccv') {
@@ -770,7 +770,7 @@ function checkSelectedDoc(){
     	var dataOb = {'csrf_test_name':hash,'id':id};
     	//console.log(hash);
     	   $.ajax({
-        url: '<?php echo base_url() . "job/getListDoconUser"?>',
+        url: '<?php echo base_url() . "job/getListDoconUser" ?>',
         data: dataOb, // change this to send js object
         type: "post",
         dataType:'html',
@@ -791,7 +791,7 @@ function checkSelectedDoc(){
     	var dataOb = {'csrf_test_name':hash,'id':id};
     	//console.log(hash);
     	   $.ajax({
-        url: '<?php echo base_url() . "job/getListCVUser"?>',
+        url: '<?php echo base_url() . "job/getListCVUser" ?>',
         data: dataOb, // change this to send js object
         type: "post",
         dataType:'html',
@@ -807,7 +807,7 @@ function checkSelectedDoc(){
     };
     var getToken = function(callback){
     	 $.ajax({
-        url: '<?php echo base_url() . "job/getToken"?>',
+        url: '<?php echo base_url() . "job/getToken" ?>',
         type: "get",
         dataType:'json',
         success: function(data){
@@ -832,10 +832,10 @@ function checkSelectedDoc(){
 
 
 
-            var datacenter = <?php echo $centerMap;?>;
-            var listCenterMap = <?php echo $listCenterMap;?>;
+            var datacenter = <?php echo $centerMap; ?>;
+            var listCenterMap = <?php echo $listCenterMap; ?>;
 
-            var data = <?php echo $jobMap;?>;
+            var data = <?php echo $jobMap; ?>;
             if(datacenter){
 	      	  var mapOptions = {
 			    zoom: 6,
@@ -859,8 +859,9 @@ function checkSelectedDoc(){
             		//createMarker(map,data[i],1); <!-- MARKERS! -->
             	//}
                 //else{
-
+                	if(data[i].province_name && data[i].province_id){
                 	createMarker(map,data[i],listCenterMap); <!-- MARKERS! -->
+                }
                 //}
 
             }
@@ -877,7 +878,7 @@ function checkSelectedDoc(){
 				var marker = new MarkerWithLabel({
        			position: new google.maps.LatLng(data.province_lat, data.province_long),
      			 map: currentMap,
-                 icon: (isCenter) ? '<?php echo base_url();?>assets/main/img/map/marker5_center.png' : '<?php echo base_url();?>assets/main/img/map/marker5.png' ,
+                 icon: (isCenter) ? '<?php echo base_url(); ?>assets/main/img/map/marker5_center.png' : '<?php echo base_url(); ?>assets/main/img/map/marker5.png' ,
 
                  draggable: false,
                  raiseOnDrag: false,
@@ -885,7 +886,7 @@ function checkSelectedDoc(){
                  labelAnchor: new google.maps.Point((data.numjob.length >= 3)? 10 : ((data.numjob.length >= 2) ? 7 : 4), 25),
                  labelClass: "mapIconLabel", // the CSS class for the label
                  labelInBackground: false,
-                  url: "<?php echo base_url('province') . '/'?>"+  data.province_name.replace(' ', '-')  + '-'  + data.province_id + '.html',
+                  url: "<?php echo base_url('province') . '/' ?>"+  data.province_name.replace(' ', '-')  + '-'  + data.province_id + '.html',
 				});
 				 var infowindow = new google.maps.InfoWindow({
 				                     content: data.province_name + "<br>" + data.numjob +" việc làm. "
@@ -920,7 +921,7 @@ function checkSelectedDoc(){
     	//alert("123123");
     	var id = $(this).data('id');
     	 $.ajax({
-        url: '<?php echo base_url() . "job/getDetailDoc/"?>'+id,
+        url: '<?php echo base_url() . "job/getDetailDoc/" ?>'+id,
         type: "get",
         dataType:'html',
         success: function(data){
@@ -942,7 +943,7 @@ function checkSelectedDoc(){
 	 $('input:radio[name="docuser"]').change(function(){
 	 	//alert("123123");
 			$.ajax({
-		        url: '<?php echo base_url() . "job/getToken"?>',
+		        url: '<?php echo base_url() . "job/getToken" ?>',
 		        type: "get",
 		        dataType:'json',
 		        success: function(data){
@@ -967,7 +968,7 @@ function checkSelectedDoc(){
 		 if ($(this).val() == '-1') {
 		 	var id = $(this).data('id');
 		    	 $.ajax({
-		        url: '<?php echo base_url() . "job/getCreateForm/"?>'+id,
+		        url: '<?php echo base_url() . "job/getCreateForm/" ?>'+id,
 		        type: "get",
 		        dataType:'html',
 		        success: function(data){
@@ -1000,7 +1001,7 @@ $('#modal-create-document').on('hidden.bs.modal', function () {
 
     $(function () {
         'use strict';
-        var url = "<?php echo base_url()?>uploads/do_upload";
+        var url = "<?php echo base_url() ?>uploads/do_upload";
         $('#fileupload').fileupload({
         	 add: function(e, data) {
                 var uploadErrors = [];
@@ -1071,7 +1072,7 @@ $('#modal-create-document').on('hidden.bs.modal', function () {
     	 //var filename = $(this).val();
     	 //alert(filename);
     	$.ajax({
-        url: '<?php echo base_url() . "job/getToken"?>',
+        url: '<?php echo base_url() . "job/getToken" ?>',
         type: "get",
         dataType:'json',
         success: function(data){
@@ -1117,13 +1118,13 @@ $('#modal-create-document').on('hidden.bs.modal', function () {
      });
       function getCaptcha(){
       	$.ajax({
-        url: '<?php echo base_url() . "captcha/createCaptcha"?>',
+        url: '<?php echo base_url() . "captcha/createCaptcha" ?>',
         type: "get",
         dataType:'json',
         success: function(data){
         	//$(".captcha-box").removeClass('hide');
         	$(".captcha").empty();
-        	$(".captcha").append('<img src="<?php echo base_url() . "captcha/"?>'+data['filename']+'" >');
+        	$(".captcha").append('<img src="<?php echo base_url() . "captcha/" ?>'+data['filename']+'" >');
         	$('input:hidden[name=captcha-reg]').val(data['word']);
         	//console.log(data);
         	//alert(data.hash);

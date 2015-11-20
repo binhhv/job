@@ -8,11 +8,11 @@
 			<div class="col-sm-12 job-province-box">
 				<div class="row">
 					<div class="col-sm-12 col-md-6 margin-5">
-						<span class="text-color-1 title-jobseeker-register"><strong>Người tìm việc đăng ký tài khoản</strong></span>
+						<span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('m_title_jobseeker_register'); ?></strong></span>
 					</div>
 					<div class="col-sm-12 col-md-6 margin-5">
-						<span class="title-exits-account"> Bạn đã có tài khoản ?
-							<a href="<?php echo base_url('login')?>">Đăng nhập</a> &nbsp;  <button class="btn-employer background-color-2 text-color-2" onclick="location.href='<?php echo base_url('register_ntd');?>'">Nhà tuyển dụng đăng ký</button>
+						<span class="title-exits-account"> <?php echo lang('js_rg_exist_account'); ?>
+							<a href="<?php echo base_url('login') ?>"><?php echo lang('m_login'); ?></a> &nbsp;  <button class="btn-employer background-color-2 text-color-2" onclick="location.href='<?php echo base_url('register_ntd'); ?>'">Nhà tuyển dụng đăng ký</button>
 						</span>
 					</div>
 				</div>
@@ -32,7 +32,7 @@
 
                             <!-- <div class="col-sm-12"> -->
                                 <div class="form-group">
-                                     <label class="control-label col-sm-4"><?php echo lang('last_name_re_user');?> <span class="colorRed">*</span></label>
+                                     <label class="control-label col-sm-4"><?php echo lang('last_name_re_user'); ?> <span class="colorRed">*</span></label>
                                      <div class="col-sm-8">
                                          <input type="text" class="form-control" name="account_last_name" />
                                      </div>
@@ -45,7 +45,7 @@
 
                             <!-- <div class="col-sm-12"> -->
                                 <div class="form-group">
-                                     <label class="control-label col-sm-4"><?php echo lang('first_name_re_user');?> <span class="colorRed">*</span></label>
+                                     <label class="control-label col-sm-4"><?php echo lang('first_name_re_user'); ?> <span class="colorRed">*</span></label>
                                      <div class="col-sm-8">
                                          <input type="text" class="form-control" name="account_first_name" />
                                      </div>
@@ -59,7 +59,7 @@
 
                              <!-- <div class="col-sm-12"> -->
                                 <div class="form-group">
-                                     <label class="control-label col-sm-4"><?php echo lang('email_re_user');?> <span class="colorRed">*</span></label>
+                                     <label class="control-label col-sm-4"><?php echo lang('email_re_user'); ?> <span class="colorRed">*</span></label>
                                      <div class="col-sm-8">
                                          <input type="text" class="form-control" name="account_email" />
                                      </div>
@@ -72,7 +72,7 @@
 
                              <!-- <div class="col-sm-12"> -->
                                 <div class="form-group ">
-                                     <label class="control-label col-sm-4"><?php echo lang('password_re_user');?> <span class="colorRed">*</span></label>
+                                     <label class="control-label col-sm-4"><?php echo lang('password_re_user'); ?> <span class="colorRed">*</span></label>
                                      <div class="col-sm-8">
                                          <input type="password" class="form-control" name="account_password" />
                                      </div>
@@ -85,7 +85,7 @@
 
                             <!-- <div class="col-sm-12"> -->
                                 <div class="form-group">
-                                     <label class="control-label col-sm-4"><?php echo lang('passconf_re_user');?> <span class="colorRed">*</span></label>
+                                     <label class="control-label col-sm-4"><?php echo lang('passconf_re_user'); ?> <span class="colorRed">*</span></label>
                                      <div class="col-sm-8">
                                          <input type="password" class="form-control" name="confirm_password" />
                                      </div>
@@ -95,13 +95,13 @@
 
                                 </div>
                                 <div class="form-group  captcha-box">
-								  <label class="control-label col-sm-4">Captcha<span class="colorRed">*</span></label>
+								  <label class="control-label col-sm-4"><?php echo lang('m_captcha'); ?><span class="colorRed">*</span></label>
 								  	<div class="col-sm-8 captcha ">
 
 								  	</div>
 								  	<div class="col-sm-offset-4 col-sm-8 margin-top-5">
 								  		<input type="text" name="captcha" class="input-captcha">
-								  		<span class="alert alert-danger hide error-captcha"><?php echo lang('invalid-captcha')?></span>
+								  		<span class="alert alert-danger hide error-captcha"><?php echo lang('m_captcha_invalid') ?></span>
 								  		<input type="hidden" name="captcha-reg" >
 								  	</div>
 							  </div>
@@ -113,21 +113,21 @@
                              <div class="col-sm-12">
                               <div class="col-sm-11">
                                 <div class="form-group text-right">
-                                    <button type="submit" class="btn btn-primary"><?php echo lang('btn_register_re_user');?></button>
+                                    <button type="submit" class="btn btn-primary"><?php echo lang('btn_register_re_user'); ?></button>
                                 </div>
                               </div>
 
 
                                 <div class="col-sm-12">
                                     <div class="form-group ">
-                                        *Nhấp chọn "ĐăngTin"đồng nghĩa với việc tôi đã đọc và đồng ý với các <a class="a-term" href="<?php echo base_url('about/term');?>">Thỏa thuận sử dụng</a>.
+                                        <?php echo lang('m_terms_register'); ?>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
                      </fieldset>
-                    <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+                    <input type="hidden" name="<?php echo $csrf['name']; ?>" value="<?=$csrf['hash'];?>" />
                 </form>
 					</div>
 					<!-- <div class="col-sm-12 margin-top-5"> -->
@@ -143,15 +143,15 @@ if (isset($listJobShow) && count($listJobShow) > 0) {
 				<div class="item-job-hl">
 						<div class="row">
 							<div class="col-sm-12">
-								<label><span class="btn-warning">qc</span><a href="<?php echo base_url('job') . '/' . str_replace(' ', '-', $value->rec_title) . '-' . $value->rec_id . '.html'?>">
-								<?php echo (strlen($value->rec_title) > 30) ? substr($value->rec_title, 0, 30) . '...' : $value->rec_title;?>
+								<label><span class="btn-warning">qc</span><a href="<?php echo base_url('job') . '/' . str_replace(' ', '-', $value->rec_title) . '-' . $value->rec_id . '.html' ?>">
+								<?php echo (strlen($value->rec_title) > 30) ? substr($value->rec_title, 0, 30) . '...' : $value->rec_title; ?>
 								</a></label>
-								<span><?php echo $value->employer_name;?></span>
+								<span><?php echo $value->employer_name; ?></span>
 							</div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-tag"></i><?php echo $value->career_name;?></div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-calendar-o"></i><?php echo date('d/m/Y', strtotime($value->rec_job_time));?></div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-money"></i><?php echo $value->salary_value;?></div>
-							<div class="col-sm-6 col-xs-6"><i class="fa fa-map-marker"></i><?php echo $value->province_name;?></div>
+							<div class="col-sm-6 col-xs-6"><i class="fa fa-tag"></i><?php echo $value->career_name; ?></div>
+							<div class="col-sm-6 col-xs-6"><i class="fa fa-calendar-o"></i><?php echo date('d/m/Y', strtotime($value->rec_job_time)); ?></div>
+							<div class="col-sm-6 col-xs-6"><i class="fa fa-money"></i><?php echo $value->salary_value; ?></div>
+							<div class="col-sm-6 col-xs-6"><i class="fa fa-map-marker"></i><?php echo $value->province_name; ?></div>
 						</div>
 				</div>
 	<?php }
@@ -165,7 +165,7 @@ if (isset($listJobShow) && count($listJobShow) > 0) {
 					<!--ADWORDS-->
 					<div class="row margin-top-20">
 						<div class="col-sm-12 ">
-							<div  style="background:url(<?php echo base_url() . "assets/main/img/about/parallax-bg-3.jpg"?>) 50% 0px no-repeat ;">
+							<div  style="background:url(<?php echo base_url() . "assets/main/img/about/parallax-bg-3.jpg" ?>) 50% 0px no-repeat ;">
 								<div class="ads-search-job">
 									<div class="row">
 												<div class="col-md-8">
@@ -259,7 +259,7 @@ $(function(){
                 } else if (status == 'success') {
                     //$('#message_user').text("");
                     //$('#registerModal').modal('hide')
-                    window.location.href = '<?php echo base_url("jobseeker");?>'; //redirec to home page jobseeker
+                    window.location.href = '<?php echo base_url("jobseeker"); ?>'; //redirec to home page jobseeker
                 }
             },
             error: function(xhr, ajaxOptions, thrownError) {
@@ -272,13 +272,13 @@ $(function(){
 
 	function getCaptcha(){
       	$.ajax({
-        url: '<?php echo base_url() . "captcha/createCaptcha"?>',
+        url: '<?php echo base_url() . "captcha/createCaptcha" ?>',
         type: "get",
         dataType:'json',
         success: function(data){
         	//$(".captcha-box").removeClass('hide');
         	$(".captcha").empty();
-        	$(".captcha").append('<img src="<?php echo base_url() . "captcha/"?>'+data['filename']+'" >');
+        	$(".captcha").append('<img src="<?php echo base_url() . "captcha/" ?>'+data['filename']+'" >');
         	$('input:hidden[name=captcha-reg]').val(data['word']);
         	//console.log(data);
         	//alert(data.hash);

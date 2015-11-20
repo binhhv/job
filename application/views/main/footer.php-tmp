@@ -80,17 +80,19 @@
             <span>Số điện thoại: xxxxxxx</span>
             <span>Địa chỉSố 5, Lê quang định, phường Thắng nhất , TP Vũng Tàu</span> -->
             <ul>
-                <li><a href="<?php echo base_url('about');?>">Giới thiệu</a></li>
+                <li><a href="<?php echo base_url('about');?>"><?php echo lang('m_introduce');
+?></a></li>
 
                 <li>|</li>
 
-                 <li><a href="<?php echo base_url('faq');?>">FAQ</a></li>
+                 <li><a href="<?php echo base_url('faq');?>"><?php echo lang('ft_faq');
+?></a></li>
                    <li>|</li>
-                 <li><a href="<?php echo base_url('about/term')?>">Điều khoản sử dụng</a></li>
+                 <li><a href="<?php echo base_url('about/term')?>"><?php echo lang('ft_terms');?></a></li>
                  <li>|</li>
-                <li><a href="<?php echo base_url('contact')?>">Liên hệ</a></li>
+                <li><a href="<?php echo base_url('contact')?>"><?php echo lang('m_contact');?></a></li>
                 <li>|</li>
-                <li><a href="<?php echo base_url()?>">Hỗ trợ</a></li>
+                <li><a href="<?php echo base_url()?>"><?php echo lang('ft_support');?></a></li>
             </ul>
             <ul class="social">
                 <li><a href="#"><img src="<?php echo base_url();?>assets/main/img/social/facebook.png"></a></li>
@@ -101,7 +103,7 @@
             </ul>
             <div class="">
             <!-- <h2 class="margin-top-5" style="display: inline-block">HOTLINE</h2> -->
-             <h1 class="h1-hotline">HOTLINE : 01212 049 149</h1>
+             <h1 class="h1-hotline"><?php echo lang('ft_hotline');?>: 01212 049 149</h1>
               <!-- <div class="border-bottom-title border-color-1"></div> -->
             </div>
 
@@ -151,6 +153,27 @@
 }
 ?>
 <script type="text/javascript">
+
+$(".change-language").on('click',function(){
+  var lang = $(this).data("language");
+  var currentURL = '<?php echo urlencode(current_url());?>';
+
+  var url ='<?php echo base_url("language")?>'+'/'+lang;
+  //window.location.href='<?php echo base_url("language")?>'+'/lang?url='+currentURL;
+  console.log(url);
+      $.ajax({
+        url: url,
+        type: "get",
+        data:{'currentURL':currentURL},
+        dataType:'json',
+        success: function(data){
+            location.reload();
+        },
+         error: function(xhr, ajaxOptions, thrownError) {
+                alert(thrownError);
+            }
+      });
+});
 $(document).ready(function() {
  // alert("123123");
  var w = document.documentElement.clientWidth;

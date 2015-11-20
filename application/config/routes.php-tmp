@@ -331,7 +331,7 @@ $route['search/(:any)/(:num)']               = 'job/job_search/index/$1';
 //test simple
 $route['test1']             = 'test_controller/index';
 $route['test-get-datajson'] = 'test_controller/getDataJson';
-
+$route['test-language']     = 'test_controller/changeLanguage';
 //login
 $route['login']      = 'login/index';
 $route['logout']     = 'login/logout';
@@ -404,5 +404,15 @@ $route['employer/create-account']             = 'employer/employer_account/creat
 $route['employer/update-account']             = 'employer/employer_account/updateAccount';
 $route['employer/get-view-account-em/(:num)'] = 'employer/employer_account/getViewAccountEmployer/$1';
 #manager resume (search and store)
-$route['employer/resume/search'] = 'employer/employer_resume/index';
-$route['employer/resume/store']  = 'employer/employer_resume/storeResume';
+$route['employer/resume/search']                             = 'employer/employer_resume/index';
+$route['employer/resume/store']                              = 'employer/employer_resume/store';
+$route['employer/resume/search/(:any)_(:any)_(:any)']        = 'employer/employer_resume/search/$1/$2/$3';
+$route['employer/resume/search/(:any)_(:any)_(:any)/(:num)'] = 'employer/employer_resume/search/$1/$2/$3';
+$route['employer/resume/search/(:any)']                      = 'employer/employer_resume/search/$1';
+$route['employer/resume/search/(:any)/(:num)']               = 'employer/employer_resume/search/$1';
+$route['employer/resume/detail/(:any)-(:num)']               = 'employer/employer_resume/detail/$2';
+$route['employer/resume/store-resume/(:num)']                = 'employer/employer_resume/storeResume/$1';
+$route['employer/resume/delete-store/(:num)']                = 'employer/employer_resume/deleteStoreResume/$1';
+
+#change language
+$route['language/(:any)'] = 'language_switch/switchLanguage/$1';

@@ -2,7 +2,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="about-title-box text-center">
-					<h1>Thỏa thuận sử dụng</h1>
+					<h1><?php echo lang('tp_title'); ?></h1>
 					<div class="border-bottom-title border-color-1"></div>
 				</div>
 			</div>

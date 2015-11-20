@@ -20,7 +20,7 @@
                         <div class="col-sm-12">
                             <div class="col-sm-12">
                             <span class="border-vertical text-color-1"></span>
-                            <span class="text-color-1 title-jobseeker-register"><strong>Tài khoản</strong></span>
+                            <span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('m_account'); ?></strong></span>
                             </div>
                         </div>
                     </div>
@@ -29,11 +29,11 @@
                         <div class="col-sm-12 account-box">
                             <table class="no-margin-bottom">
                                 <tr>
-                                    <td width="70"><img class="avartar-default-account" src="<?php echo base_url();?>assets/main/img/default/avatar.png"></td>
+                                    <td width="70"><img class="avartar-default-account" src="<?php echo base_url(); ?>assets/main/img/default/avatar.png"></td>
                                     <td class="valign-bottom"> <span class="lh-20 dp-block"><?php if (isset($user)) {
 	echo $user['firstname'] . ' ' . $user['lastname'];
 }
-?></span> <span class="lh-20 dp-block text-right"><a class="btn btn-xs btn-danger" href="<?php echo base_url('logout')?>">Đăng xuất</a></span></td>
+?></span> <span class="lh-20 dp-block text-right"><a class="btn btn-xs btn-danger" href="<?php echo base_url('logout') ?>"><?php echo lang('hd_logout'); ?></a></span></td>
                                 </tr>
                             </table>
 
@@ -43,14 +43,14 @@
                         <div class="col-sm-12">
                             <div class="col-sm-12">
                             <span class="border-vertical text-color-1"></span>
-                            <span class="text-color-1 title-jobseeker-register"><strong>Resume</strong></span>
+                            <span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('m_resume'); ?></strong></span>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 margin-bottom-10">
-                        <div class="col-sm-12 "><button class="btn btn-sm btn-primary btn-resume btn-create-resume"><i class="fa fa-pencil-square-o"></i>Tạo hồ sơ mới</button></div>
-                            <div class="col-sm-12"><button class="btn btn-sm btn-primary btn-resume btn-upload-resume"><i class="fa fa-cloud-upload"></i>Tải lên hồ sơ</button></div>
+                        <div class="col-sm-12 "><button class="btn btn-sm btn-primary btn-resume btn-create-resume"><i class="fa fa-pencil-square-o"></i><?php echo lang('job_create_resume_online'); ?></button></div>
+                            <div class="col-sm-12"><button class="btn btn-sm btn-primary btn-resume btn-upload-resume"><i class="fa fa-cloud-upload"></i><?php echo lang('job_create_resume_upload'); ?></button></div>
                         </div>
                     </div>
                     <!--  <div class="row">
@@ -72,7 +72,7 @@ if (isset($listCareer) && count($listCareer) > 0) {
                         <div class="col-sm-12">
                             <div class="col-sm-12">
                             <span class="border-vertical text-color-1"></span>
-                            <span class="text-color-1 title-jobseeker-register"><strong>Việc làm theo ngành</strong></span>
+                            <span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('job_title_tag_job'); ?></strong></span>
                             </div>
                         </div>
                     </div>
@@ -83,8 +83,8 @@ if (isset($listCareer) && count($listCareer) > 0) {
 		$careerReg = str_replace($keyRegex, "-", trim($value->career_name));
 		?>
                         <div class="col-sm-12 item-tag-job">
-                        <a href="<?php echo base_url('search') . '/' . 'all_' . $careerReg . '_c' . $value->career_id;?>"><?php echo $value->career_name?> <span class="text-color-3">
-                        <?php if ($value->numJob > 0) {?>(<?php echo $value->numJob;?>) <?php }
+                        <a href="<?php echo base_url('search') . '/' . 'all_' . $careerReg . '_c' . $value->career_id; ?>"><?php echo $value->career_name ?> <span class="text-color-3">
+                        <?php if ($value->numJob > 0) {?>(<?php echo $value->numJob; ?>) <?php }
 		?>
                         </span></a>
                         </div>

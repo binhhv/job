@@ -17,3 +17,8 @@ $hook['pre_system'][] = array(
 	'filename' => 'site_offline_hook.php',
 	'filepath' => 'hooks',
 );
+$hook['post_controller_constructor'] = array(
+	'class'    => 'LanguageLoader',
+	'function' => 'initialize',
+	'filename' => 'LanguageLoader.php',
+	'filepath' => 'hooks');

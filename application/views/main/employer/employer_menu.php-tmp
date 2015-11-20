@@ -138,10 +138,10 @@ Tìm kiếm hồ sơ</a>
 								</div>
 								<div class="col-sm-12 employer-line"></div>
 								<div class="col-sm-12 employer-tools-item">
-									<a href=""  class="style-menu-epmployer"><i class="fa fa-download"></i>&nbsp;Hồ sơ đã lưu</a>
+									<a href="<?php echo base_url('employer/resume/store')?>"  class="style-menu-epmployer"><i class="fa fa-download"></i>&nbsp;Hồ sơ đã lưu</a>
 								</div>
 
-								<div class="col-sm-12 employer-line"></div>
+								<!-- <div class="col-sm-12 employer-line"></div>
 								<div class="col-sm-12">
 									<ul class="nav nav-list-main">
 								        <label class="nav-toggle nav-header style-pointer"><span><i class="fa fa-file-text-o"></i>&nbsp;Hồ sơ theo phân loại</span></label>
@@ -152,7 +152,7 @@ Hồ sơ theo tỉnh thành</a></li>
 
 								            </ul>
 									</ul>
-								</div>
+								</div> -->
 								<!--
 								<div class="col-sm-12 employer-tools-item">
 									<a href=""><i class="fa fa-file-text-o"></i>&nbsp;Tìm kiếm hồ sơ ứng viên</a>

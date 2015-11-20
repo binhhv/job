@@ -147,7 +147,7 @@ $lang['f_contact_type_em']                = 'Hình thức liên hệ';
 $lang['f_sex_em']                         = 'Giới tính';
 $lang['msg_no_result_province_em']        = 'Không tìm thấy tỉnh thành nào';
 $lang['title_edit_recruitment_em']        = 'SỬA ĐỔI TIN TUYỂN DỤNG';
-#recruitment employer
+#recruitment of employer
 $lang['title_recruitment_rec']    = 'Tiêu đề';
 $lang['province_rec']             = 'Tỉnh/Thành phố';
 $lang['time_work_rec']            = 'Thời gian làm việc';
@@ -168,5 +168,12 @@ $lang['title_create_account_em']               = 'Tạo tài khoản';
 $lang['title_update_account_em']               = 'Cập nhật tài khoản';
 #manager recruitment employer
 $lang['title_manager_recruitments_em'] = 'QUẢN LÝ TIN TUYỂN DỤNG';
-#searc resume employer
-$lang['title_search_resume_em'] = 'TÌM KIẾM HỒ SƠ ỨNG VIÊN';
+#search resume employer
+$lang['title_search_resume_em']        = 'TÌM KIẾM HỒ SƠ ỨNG VIÊN';
+$lang['title_result_search_resume_em'] = 'KẾT QUẢ TÌM KIẾM';
+$lang['title_detail_resume_em']        = 'CHI TIẾT HỒ SƠ ỨNG VIÊN';
+#store resume employer
+$lang['title_store_resume_em'] = 'DANH SÁCH HỒ SƠ ỨNG VIÊN ĐÃ LƯU';
+
+#TEST
+$lang['test'] = "kiemtra";

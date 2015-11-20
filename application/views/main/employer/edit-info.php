@@ -2,9 +2,9 @@
 	<div class="row-employer row">
 		<div class="col-sm-12">
 		<div class="col-sm-12 clear mb_20 margin-top-10">
-                                <!-- <span class="fwb fs20 txt-color-363636"><?php echo lang('title_depoyer_re_depl');?></span> -->
+                                <!-- <span class="fwb fs20 txt-color-363636"><?php echo lang('title_depoyer_re_depl'); ?></span> -->
                                  <span class="border-vertical text-color-1"></span>
-                                <span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('title_re_depl_update');?></strong></span>
+                                <span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('title_re_depl_update'); ?></strong></span>
                             </div>
                              <form enctype="multipart/form-data" role="form" name="employer-update-form" id="employer-update-form" method="post">
 			<div class="col-sm-12">
@@ -16,14 +16,14 @@
 
                             </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_name_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_name_re_depl'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <input type="text" class="form-control" name="employer_name" value="<?php echo $employerInfo->employer_name;?>" />
+                                        <input type="text" class="form-control" name="employer_name" value="<?php echo $employerInfo->employer_name; ?>" />
                                     </div>
                                     <div class="col-sm-12 text-danger error-employer-name"></div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_size_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_size_re_depl'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
                                         <!-- <select class="form-control" name="employer_size" id="employer_size">
                                             <option value="0">Chọn quy mô doanh nghiệp</option>
@@ -31,7 +31,7 @@
                                             <option value="2">Từ 10 đến 24 nhân viên</option>
                                             <option value="3">Từ 25 đến 50 nhân viên</option>
                                         </select> -->
-                                         <input type="text" class="form-control" name="employer_size" value="<?php echo $employerInfo->employer_size;?>"/>
+                                         <input type="text" class="form-control" name="employer_size" value="<?php echo $employerInfo->employer_size; ?>"/>
                                     </div>
                                     <div class="col-sm-12 text-danger error-employer-size"></div>
                                 </div>
@@ -39,16 +39,16 @@
 
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_phone_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_phone_re_depl'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <input type="text" class="form-control" name="employer_phone" value="<?php echo $employerInfo->employer_phone;?>"/>
+                                        <input type="text" class="form-control" name="employer_phone" value="<?php echo $employerInfo->employer_phone; ?>"/>
                                     </div>
                                     <div class="col-sm-12 text-danger error-employer-phone"></div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_fax_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_fax_re_depl'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                         <input type="text" class="form-control" name="employer_fax" value="<?php echo $employerInfo->employer_fax;?>"/>
+                                         <input type="text" class="form-control" name="employer_fax" value="<?php echo $employerInfo->employer_fax; ?>"/>
                                     </div>
                                     <div class="col-sm-12 text-danger error-employer-fax"></div>
                                 </div>
@@ -56,16 +56,16 @@
 
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_about_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_about_re_depl'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                        <textarea type="text" class="form-control" name="employer_about" value="<?php echo $employerInfo->employer_about;?>"  rows="3"><?php echo nl2br($employerInfo->employer_about)?> </textarea>
+                                        <textarea type="text" class="form-control" name="employer_about" value="<?php echo $employerInfo->employer_about; ?>"  rows="3"><?php echo nl2br($employerInfo->employer_about) ?> </textarea>
                                     </div>
                                     <div class="col-sm-12 text-danger error-employer-about"></div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_address_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_address_re_depl'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
-                                          <textarea type="text" class="form-control" name="employer_address" value="<?php echo $employerInfo->employer_address;?>" rows="3"><?php echo nl2br($employerInfo->employer_address)?></textarea>
+                                          <textarea type="text" class="form-control" name="employer_address" value="<?php echo $employerInfo->employer_address; ?>" rows="3"><?php echo nl2br($employerInfo->employer_address) ?></textarea>
                                     </div>
                                     <div class="col-sm-12 text-danger error-employer-address"></div>
                                 </div>
@@ -73,7 +73,7 @@
 
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_map_province_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_map_province_re_depl'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
                                     <label><input type="radio" value="1" <?php if ($employerInfo->employer_map_country == 1) {echo 'checked="true"';}
 ?>  name="country">Việt Nam</label> &nbsp;
@@ -88,7 +88,7 @@
                                                 <option <?php if ($rows->province_id == $employerInfo->employer_map_province) {
 		echo 'selected';
 	}
-	?> value="<?php echo $rows->province_id?>"><?php echo $rows->province_name?></option>
+	?> value="<?php echo $rows->province_id ?>"><?php echo $rows->province_name ?></option>
                                             <?php endforeach?> <?php }
 ?>
                                         </select>
@@ -99,28 +99,28 @@
                                                 <option <?php if ($rows->province_id == $employerInfo->employer_map_province) {
 		echo 'selected';
 	}
-	?> value="<?php echo $rows->province_id?>"><?php echo $rows->province_name?></option>
+	?> value="<?php echo $rows->province_id ?>"><?php echo $rows->province_name ?></option>
                                             <?php endforeach?> <?php }
 ?>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_website_re_depl');?></label>
+                                    <label class="control-label"><?php echo lang('employer_website_re_depl'); ?></label>
                                     <div class="controls"><label>&nbsp;</label></div>
                                     <div class="controls">
-                                         <input type="text" class="form-control" name="employer_website" value="<?php echo $employerInfo->employer_website;?>" />
+                                         <input type="text" class="form-control" name="employer_website" value="<?php echo $employerInfo->employer_website; ?>" />
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-12">
-                                    <label class="control-label"><?php echo lang('employer_logo_re_depl');?></label>
+                                    <label class="control-label"><?php echo lang('employer_logo_re_depl'); ?></label>
                                     <div class="controls">
                                         <div class="display_block btn-big pos_relactive w170 floatLeft">
                                             <input id="fileuploadEdit" type="file" name="files"  class="bt_input pos_absolute">
-                                            <span class="icon_upload_file"></span>Chọn file đính kèm
+                                            <span class="icon_upload_file"></span><?php echo lang('label_choose_file'); ?>
                                         </div>
                                         <div id="progress" class="progress">
                                                     <div class="progress-bar progress-bar-success"></div>
@@ -138,13 +138,13 @@
                                     <div class="col-sm-12 text-danger error-employer-logo"></div>
 
                                 </div>
-                                <div class="col-sm-12 note_size_photo clearfix font12 italic" id="error_giayphepkinhdoanh">(Dạng file .jpg .gif .png, dung lượng &lt;<=2MB)</div>
+                                <div class="col-sm-12 note_size_photo clearfix font12 italic" id="error_giayphepkinhdoanh">(<?php echo lang('m_file_type'); ?> .jpg .gif .png, <?php echo lang('m_file_size'); ?> &lt;<=2MB)</div>
                             </div>
                             <div class="col-sm-12 text-right">
-                            	<div class="form-group col-sm-12"><button class="btn btn-primary">Thay đổi thông tin</button></div>
+                            	<div class="form-group col-sm-12"><button class="btn btn-primary"><?php echo lang('em_change_info'); ?></button></div>
                             </div>
-                            <input type="hidden" name="employer_id" value="<?php echo $employerInfo->employer_id;?>" />
-                    <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" />
+                            <input type="hidden" name="employer_id" value="<?php echo $employerInfo->employer_id; ?>" />
+                    <input type="hidden" name="<?php echo $csrf['name']; ?>" value="<?php echo $csrf['hash']; ?>" />
                         </form>
 		</div>
 	</div>

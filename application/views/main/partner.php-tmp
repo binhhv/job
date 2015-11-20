@@ -28,7 +28,7 @@ if (isset($listAds)) {
 
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<h5 class="partner-title">NHÀ TÀI TRỢ VÀ ĐỐI TÁC</h5>
+				<h5 class="partner-title"><?php echo lang('pn_title');?></h5>
 				<div class="border-bottom-title border-color-1"></div>
 			</div>
 			<div class="col-sm-12 partner-box">

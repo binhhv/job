@@ -25,7 +25,7 @@ if (isset($video)) {
 							<div class="separator-2"></div> -->
 							<!-- <div class="space"></div> -->
 							<div class="space"></div>
-							<h1 class="h1-about-us ">Giới thiệu</h1>
+							<h1 class="h1-about-us "><?php echo lang('m_introduce'); ?></h1>
 							<div class="border-bottom-title-left border-color-1"></div>
 							<!-- page-title end -->
 
@@ -46,12 +46,12 @@ if (isset($video)) {
 								<aside class="sidebar col-md-6">
 									<div class="side vertical-divider-left">
 										<div class="block clearfix">
-											<h3 class="title margin-top-clear">Intro Video</h3>
+											<h3 class="title margin-top-clear"><?php echo lang('abt_video'); ?></h3>
 											<div class="embed-responsive embed-responsive-16by9">
 												<video controls="controls">
-													<source src="<?php echo base_url() . 'uploads/config/video/' . $videoName?>" type="video/<?php echo $extension;?>">
+													<source src="<?php echo base_url() . 'uploads/config/video/' . $videoName ?>" type="video/<?php echo $extension; ?>">
 													<!-- <source src=”movie.mp4″ type=”video/mp4″> -->
-													Your browser does not support the video tag.
+													<?php echo lang('abt_error_video'); ?>
 												</video>
 												<!-- <iframe class="embed-responsive-item" src="//player.vimeo.com/video/29198414?byline=0&amp;portrait=0"></iframe>
 												<p><a href="http://vimeo.com/29198414">Introducing Vimeo Music Store</a> from <a href="http://vimeo.com/staff">Vimeo Staff</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
@@ -76,7 +76,7 @@ if (isset($video)) {
 <div class="section gray-bg clearfix">
 				<div class="container manager">
 					<!-- <div class="space"></div> -->
-					<h1 class="h1-about-us ">Đại diện ban quản trị</h1>
+					<h1 class="h1-about-us "><?php echo lang('abt_title_regent'); ?></h1>
 					<div class="border-bottom-title-left border-color-1"></div>
 					<!-- <p class="lead">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus.</p> -->
 					<div class="row grid-space-20 margin-top-10">
@@ -85,10 +85,10 @@ if (isset($video)) {
 		<div class="col-md-3 col-sm-6">
 							<div class="box-style-1 white-bg team-member">
 								<div class="overlay-container">
-									<img src="<?php echo base_url()?>uploads/config/member/<?php echo $objectMember['file_tmp']?>" alt="" class="img-margin-auto avatar-member">
+									<img src="<?php echo base_url() ?>uploads/config/member/<?php echo $objectMember['file_tmp'] ?>" alt="" class="img-margin-auto avatar-member">
 									<br>
-									<span class="member-name"><?php echo $objectMember['name'];?></span>
-									<span class="member-position"><?php echo $objectMember['position'];?></span>
+									<span class="member-name"><?php echo $objectMember['name']; ?></span>
+									<span class="member-position"><?php echo $objectMember['position']; ?></span>
 									<div class="overlay">
 										<ul class="social-links clearfix">
 											<li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
@@ -106,7 +106,7 @@ if (isset($video)) {
 						<!-- <div class="col-md-3 col-sm-6">
 							<div class="box-style-1 white-bg team-member">
 								<div class="overlay-container">
-									<img src="<?php echo base_url()?>assets/main/img/about/about-team-1.png" alt="" class="img-margin-auto">
+									<img src="<?php echo base_url() ?>assets/main/img/about/about-team-1.png" alt="" class="img-margin-auto">
 									<div class="overlay">
 										<ul class="social-links clearfix">
 											<li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
@@ -121,7 +121,7 @@ if (isset($video)) {
 						<div class="col-md-3 col-sm-6">
 							<div class="box-style-1 white-bg team-member">
 								<div class="overlay-container">
-									<img src="<?php echo base_url()?>assets/main/img/about/about-team-3.png" alt="" class="img-margin-auto">
+									<img src="<?php echo base_url() ?>assets/main/img/about/about-team-3.png" alt="" class="img-margin-auto">
 									<div class="overlay">
 										<ul class="social-links clearfix">
 											<li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
@@ -136,7 +136,7 @@ if (isset($video)) {
 						<div class="col-md-3 col-sm-6">
 							<div class="box-style-1 white-bg team-member">
 								<div class="overlay-container">
-									<img src="<?php echo base_url()?>assets/main/img/about/about-team-2.png" alt="" class="img-margin-auto">
+									<img src="<?php echo base_url() ?>assets/main/img/about/about-team-2.png" alt="" class="img-margin-auto">
 									<div class="overlay">
 										<ul class="social-links clearfix">
 											<li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
@@ -151,7 +151,7 @@ if (isset($video)) {
 						<div class="col-md-3 col-sm-6">
 							<div class="box-style-1 white-bg team-member">
 								<div class="overlay-container">
-									<img src="<?php echo base_url()?>assets/main/img/about/about-team-4.png" alt="" class="img-margin-auto">
+									<img src="<?php echo base_url() ?>assets/main/img/about/about-team-4.png" alt="" class="img-margin-auto">
 									<div class="overlay">
 										<ul class="social-links clearfix">
 											<li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>

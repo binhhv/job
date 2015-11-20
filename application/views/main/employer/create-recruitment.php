@@ -38,7 +38,7 @@
                                     <label class="control-label"><?php echo lang('f_province_em'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
                                         <div class="select-province-vn hide">
-                                <select data-placeholder="chọn tỉnh thành"  multiple class="chosen-select-vn form-control province-vn " tabindex="11" >
+                                <select data-placeholder="<?php echo lang('s_chose_province'); ?>"  multiple class="chosen-select-vn form-control province-vn " tabindex="11" >
                                         <option value=""></option>
                                         <?php if (isset($provinceVN)) {
 	foreach ($provinceVN as $value) {?>
@@ -50,7 +50,7 @@
                                       <!-- <label class="text-danger">(tối thiểu 1 tỉnh thành và tối đa là 5 tỉnh thành)</label> -->
                                   </div>
                                   <div class="select-province-jp hide">
-                                    <select data-placeholder="chọn tỉnh thành"  multiple class="chosen-select-jp form-control province-jp hide" tabindex="11" >
+                                    <select data-placeholder="<?php echo lang('s_chose_province'); ?>"  multiple class="chosen-select-jp form-control province-jp hide" tabindex="11" >
                                         <option value=""></option>
                                         <?php if (isset($provinceJP)) {
 	foreach ($provinceJP as $value) {?>
@@ -62,7 +62,7 @@
                                       <!-- <label class="text-danger">(tối thiểu 1 tỉnh thành và tối đa là 5 tỉnh thành)</label> -->
                             </div>
                                     </div>
-                                    <div class="col-sm-12 text-danger">(tối thiểu 1 tỉnh thành và tối đa là 5)</div>
+                                    <div class="col-sm-12 text-danger">(<?php echo lang('job_form_province_require'); ?>)</div>
                                     <div class="col-sm-12 text-danger error-province"></div>
                                 </div>
                                  <div class="form-group col-sm-6">
@@ -197,9 +197,9 @@
                                        <div class="row">
                                          <div class="col-sm-6">
                                              <select name="sex-recruitment">
-                                                <option value="-1">Không yêu cầu</option>
-                                                <option value="0">Nữ</option>
-                                                <option value="1">Nam</option>
+                                                <option value="-1"><?php echo lang('m_not_require'); ?></option>
+                                                <option value="0"><?php echo lang('m_male'); ?></option>
+                                                <option value="1"><?php echo lang('m_female'); ?></option>
                                              </select>
                                          </div>
                                        </div>
@@ -285,15 +285,15 @@
                             </div>
                             <div class="col-sm-12 text-right">
                                 <div class="form-group col-sm-12">
-                                    <a href="javascript:draftRecruiment()" class="btn btn-warning margin-top-5 btn-drafts">Lưu</a>
-                                    <button class="btn btn-primary margin-top-5">Đăng tin tuyển dụng</button>
-                                    <a class="btn btn-danger margin-top-5" href="<?php echo base_url('employer'); ?>">Trở lại trang nhà tuyển dụng</a>
+                                    <a href="javascript:draftRecruiment()" class="btn btn-warning margin-top-5 btn-drafts"><?php echo lang('m_save'); ?></a>
+                                    <button class="btn btn-primary margin-top-5"><?php echo lang('em_rec_post'); ?></button>
+                                    <a class="btn btn-danger margin-top-5" href="<?php echo base_url('employer'); ?>"><?php echo lang('em_back_employer_page'); ?></a>
 
                                 </div>
                             </div>
 
                             <div class="col-sm-12">
-                                <span class="colorRed">*</span> Nhấp chọn "Đăng Ký"đồng nghĩa với việc tôi đã đọc và đồng ý với các <a class="a-term" href="<?php echo base_url('about/term'); ?>">Thỏa thuận sử dụng</a>.
+                                <?php echo lang('m_terms_post_recruitment'); ?>
                             </div>
                             <input type="hidden" name="province">
                             <input type="hidden" name="employer_id" value="<?php echo $employerInfo->employer_id; ?>" />

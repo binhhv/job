@@ -3265,3 +3265,62 @@ a.active-accounts {
 .modal-content {
   border-radius: 0 !important;
 }
+
+.line-h-25 {
+  line-height: 25px;
+}
+
+/*search resume employer css*/
+
+.bg-search-rs {
+  background: #9ac7bf;
+}
+
+.search-rs-box {
+  padding: 20px 0;
+}
+
+.padding-lr-20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.item-search-rs {
+  border: 1px solid #f1f1f1;
+}
+
+.no-border-bottom {
+  border-bottom: none;
+}
+
+.bg-odd-search-rs {
+  background-color: #f1f1f1;
+}
+
+.no-padding-top {
+  padding-top: 0 !important;
+}
+
+.no-margin-tb {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.border-lr {
+  border-left: 1px solid #f1f1f1;
+  border-right: 1px solid #f1f1f1;
+}
+
+table#tableStoreResume td {
+  padding: 5px 10px;
+}
+
+table#tableStoreResume tr.bg-even {
+  background: #f1f1f1;
+}
+
+/*edit change language*/
+
+.lang-active {
+  text-decoration: underline !important;
+}

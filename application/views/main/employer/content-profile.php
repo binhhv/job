@@ -13,24 +13,24 @@
       <div class="modal-content">
           <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h3 class="modal-title"><?php echo lang('title_modal_change_profile_account_em');?></h3>
-                 <div class="require_info clearfix italic">(<span class="colorRed">*</span>) <?php echo lang('require_info');?></div>
+                <h3 class="modal-title"><?php echo lang('title_modal_change_profile_account_em'); ?></h3>
+                 <div class="require_info clearfix italic">(<span class="colorRed">*</span>) <?php echo lang('require_info'); ?></div>
           </div>
         <div class="modal-body">
          <form class="form-horizontal" role="form" id="fprofile-account" method="post">
           <div class="form-group">
-            <label class="control-label col-sm-2" for="firstname"><?php echo lang('last_name')?></label>
+            <label class="control-label col-sm-2" for="firstname"><?php echo lang('last_name') ?></label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="lastname" value="<?php echo $employerInfo->account_last_name;?>" >
+              <input type="text" class="form-control" name="lastname" value="<?php echo $employerInfo->account_last_name; ?>" >
             </div>
             <div class="col-sm-10 col-sm-offset-2 hide error-firstname text-danger">
 
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-sm-2" for="lastname"><?php echo lang('first_name')?></label>
+            <label class="control-label col-sm-2" for="lastname"><?php echo lang('first_name') ?></label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="firstname" value="<?php echo $employerInfo->account_first_name?>">
+              <input type="text" class="form-control" name="firstname" value="<?php echo $employerInfo->account_first_name ?>">
                 <input type="hidden" name="csrf_test_name" value="" />
             </div>
             <div class="col-sm-10 col-sm-offset-2 hide error-lastname text-danger">
@@ -42,7 +42,7 @@
           <div class="form-group">
             <div class="col-sm-12 text-right">
 
-               <button type="submit" class="btn btn-default btn-primary" >Thay đổi</button>
+               <button type="submit" class="btn btn-default btn-primary" ><?php echo lang('m_change'); ?></button>
             </div>
           </div>
         </form>

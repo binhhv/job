@@ -17,6 +17,9 @@ class Globals {
 	// }
 	function __construct() {
 		$this->ci = &get_instance();
+		$this->ci->load->library('session');
+		//$ci->session->unset_userdata('lang');
+
 		//1: logo page
 		//2: slide page
 		//3: ads page
@@ -149,6 +152,14 @@ class Globals {
 			   on a.career_id = b.rec_job_map_career
 			   where a.career_is_delete = 0";
 		return $this->getFromDbQueryBinding($sql, array());
+	}
+	function getCurrentLang() {
+		$site_lang = $this->ci->session->userdata('lang');
+		if ($site_lang) {
+			return $this->ci->session->userdata('lang');
+		} else {
+			return 'vi';
+		}
 	}
 	public function getFromDb($projections) {
 

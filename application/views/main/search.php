@@ -2,7 +2,7 @@
 		<div class="col-sm-12 col-md-12 col-xs-12">
 			<div class="search-box-2">
 			<div class=" text-center title-search-box-2">
-					<h1 class="">Tìm kiếm việc làm</h1>
+					<h1 class=""><?php echo lang('s_title'); ?></h1>
 					<div class="border-bottom-title border-color-1"></div>
 				</div>
 				<div class="row search-box-content">
@@ -38,10 +38,10 @@
 					  </div>
 					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
 					   	<select class="fomr-control" name="province" id="province">
-					   		<option value="-1">Chọn tỉnh thành</option>
+					   		<option value="-1"><?php echo lang('s_chose_province'); ?></option>
 					   		<?php if (isset($province)) {
 	foreach ($province as $value) {?>
-					   				<option value="<?php echo $value->province_id;?>"><?php echo $value->province_name;?></option>
+					   				<option value="<?php echo $value->province_id; ?>"><?php echo $value->province_name; ?></option>
 					   			<?php }
 }
 ?>
@@ -49,10 +49,10 @@
 					  </div>
 					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
 					   	<select class="fomr-control" name="salary" id="salary">
-					   		<option value="-1">Chọn mức lương</option>
+					   		<option value="-1"><?php echo lang('s_chose_salary'); ?></option>
 					   		<?php if (isset($salary)) {
 	foreach ($salary as $value) {?>
-					   				<option value="<?php echo $value->salary_id;?>"><?php echo $value->salary_value;?></option>
+					   				<option value="<?php echo $value->salary_id; ?>"><?php echo $value->salary_value; ?></option>
 					   			<?php }
 }
 ?>
@@ -60,17 +60,17 @@
 					  </div>
 					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
 					   	<select class="fomr-control" name="sex" id="sex">
-					   		<option value="-1">Chọn giới tính</option>
-					   		<option value="1">Nam</option>
-					   		<option value="0">Nữ</option>
+					   		<option value="-1"><?php echo lang('s_chose_sex'); ?></option>
+					   		<option value="1"><?php echo lang('s_male'); ?></option>
+					   		<option value="0"><?php echo lang('s_female'); ?></option>
 					   	</select>
 					  </div>
 					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
 					   	<select class="fomr-control" name="level" id="level">
-					   		<option value="-1">Chọn trình độ</option>
+					   		<option value="-1"><?php echo lang('s_chose_level'); ?></option>
 					   		<?php if (isset($level)) {
 	foreach ($level as $value) {?>
-					   				<option value="<?php echo $value->ljob_id;?>"><?php echo $value->ljob_level;?></option>
+					   				<option value="<?php echo $value->ljob_id; ?>"><?php echo $value->ljob_level; ?></option>
 					   			<?php }
 }
 ?>
@@ -78,11 +78,11 @@
 					  </div>
 					  <div class="form-group col-sm-6 col-md-6 col-xs-12" >
 					   	<select class="fomr-control" id="type-job" name="type-job">
-					   		<option value="-1">Chọn loại hình công việc</option>
+					   		<option value="-1"><?php echo lang('s_chose_type_job'); ?></option>
 					   		<?php if (isset($jobform) && isset($jobformchild)) {
 	foreach ($jobform as $valueForm) {
 		foreach ($jobformchild as $valueFromChild) {?>
-										<option value="<?php echo $valueForm->fjob_id . '-' . $valueFromChild->jcform_id;?>"><?php echo $valueForm->fjob_type . '-' . $valueFromChild->jcform_type;?></option>
+										<option value="<?php echo $valueForm->fjob_id . '-' . $valueFromChild->jcform_id; ?>"><?php echo $valueForm->fjob_type . '-' . $valueFromChild->jcform_type; ?></option>
 					   			<?php }}
 }
 ?>
@@ -93,7 +93,7 @@
 
 				</div>
 				<div class="footer-search-detail-box text-center">
-					<button type="submit" class="button-custom-search" id="btnSearch"><strong>Tìm kiếm</strong></button>
+					<button type="submit" class="button-custom-search" id="btnSearch"><strong><?php echo lang('s_button'); ?></strong></button>
 				</div>
 				</form>
 
@@ -161,7 +161,7 @@
 		 }
 
 		 link = link.replace(/ /g,"-");
-		 window.open('<?php echo base_url("search");?>'+'/'+link,'_self');
+		 window.open('<?php echo base_url("search"); ?>'+'/'+link,'_self');
 
 		 //alert(keyWord);
 	});

@@ -3,18 +3,18 @@ if (isset($cvs)) {
 	foreach ($cvs as $value) {?>
 		<div class="col-sm-12">
 			<label>
-				<input type="radio" name="cvuser" value="<?php echo $value->doccv_id?>">
-				<?php echo $value->doccv_code?>
+				<input type="radio" name="cvuser" value="<?php echo $value->doccv_id ?>">
+				<?php echo $value->doccv_code ?>
 
 			</label>
-			&nbsp;(<a class="download-cv" href="<?php echo base_url() . 'downloadcv/' . $value->doccv_map_user . '/' . $value->doccv_file_tmp . '/' . $value->doccv_file_name . '/1'?>">tải xuống</a>)
+			&nbsp;(<a class="download-cv" href="<?php echo base_url() . 'downloadcv/' . $value->doccv_map_user . '/' . $value->doccv_file_tmp . '/' . $value->doccv_file_name . '/1' ?>"><?php echo lang('job_download_cv'); ?></a>)
 		</div>
 		<?php }
 
 	if (count($cvs) < 3) {
 		?>
 		<div class="col-sm-12">
-		<label><input type="radio" name="cvuser" value="-1">upload cv</label><label class="text-danger">(doc|docx|pdf)</label>
+		<label><input type="radio" name="cvuser" value="-1"><?php echo lang('job_upload_cv'); ?></label><label class="text-danger">(doc|docx|pdf)</label>
 
 		<input type="file" class="form-control hide file-cv" name="cv" id="cv">
 		<label class="text-danger error-file hide"></label>
@@ -22,13 +22,13 @@ if (isset($cvs)) {
 <?php }
 	?>
 <?php } else {
-	echo 'Bạn chưa có cv nào. <a href="#" onclick="openModalCreateDocon" >upload cv</a>';
+	echo lang('job_ms_no_cv') . '<a href="#" onclick="openModalCreateDocon" >' . lang('job_upload_cv') . '</a>';
 }
 ?>
 <script type="text/javascript">
 	$('input:radio[name="cvuser"]').change(function(){
 			$.ajax({
-		        url: '<?php echo base_url() . "job/getToken"?>',
+		        url: '<?php echo base_url() . "job/getToken" ?>',
 		        type: "get",
 		        dataType:'json',
 		        success: function(data){

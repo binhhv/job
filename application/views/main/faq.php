@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-sm-12 text-center ">
 		<div class="contact-title">
-			<h1 class="">Các câu hỏi thường gặp</h1>
+			<h1 class=""><?php echo lang('faq_title'); ?></h1>
 					<div class="border-bottom-title border-color-1"></div>
 				</div>
 		</div>

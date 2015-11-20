@@ -12,7 +12,8 @@ if (isset($video)) {
 }
 //var_dump($video)
 ?>
-<div class="container-fluid about-page-box">
+
+	<div class="container-fluid about-page-box">
 		<div class="container">
 					<div class="row">
 
@@ -26,7 +27,7 @@ if (isset($video)) {
 							<div class="separator-2"></div> -->
 							<!-- <div class="space"></div> -->
 							<div class="space"></div>
-							<h1 class="h1-about-us ">Giới thiệu</h1>
+							<h1 class="h1-about-us "><?php echo lang('m_introduce');?></h1>
 							<div class="border-bottom-title-left border-color-1"></div>
 							<!-- page-title end -->
 
@@ -47,13 +48,13 @@ if (isset($video)) {
 									<aside class="sidebar col-md-6">
 										<div class="side vertical-divider-left">
 											<div class="block clearfix">
-												<h3 class="title margin-top-clear">Intro Video</h3>
+												<h3 class="title margin-top-clear"><?php echo lang('abt_video');?></h3>
 												<div class="embed-responsive embed-responsive-16by9">
 													<video controls="controls">
 														<source src="<?php echo base_url().'uploads/config/video/'.$videoName?>" type="video/<?php echo $extension;?>">
 														<!-- <source src=”movie.mp4″ type=”video/mp4″> -->
-														Your browser does not support the video tag.
-													</video>
+	<?php echo lang('abt_error_video');?>
+	</video>
 													<!-- <iframe class="embed-responsive-item" src="//player.vimeo.com/video/29198414?byline=0&amp;portrait=0"></iframe>
 													<p><a href="http://vimeo.com/29198414">Introducing Vimeo Music Store</a> from <a href="http://vimeo.com/staff">Vimeo Staff</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 												 -->
@@ -77,7 +78,7 @@ if (isset($video)) {
 	<div class="section gray-bg clearfix">
 					<div class="container manager">
 						<!-- <div class="space"></div> -->
-						<h1 class="h1-about-us ">Đại diện ban quản trị</h1>
+						<h1 class="h1-about-us "><?php echo lang('abt_title_regent');?></h1>
 						<div class="border-bottom-title-left border-color-1"></div>
 						<!-- <p class="lead">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus.</p> -->
 						<div class="row grid-space-20 margin-top-10">

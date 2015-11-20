@@ -7,7 +7,8 @@ if (isset($docs)) {
 		<?php echo $value->docon_code?>
 
 					</label>
-					&nbsp;(<span class="view-doc" data-id="<?php echo $value->docon_id?>">xem</span>)
+					&nbsp;
+		(<span class="view-doc" data-id="<?php echo $value->docon_id?>"><?php echo lang('job_view_resume_online');?></span>)
 				</div>
 		<?php }
 
@@ -15,9 +16,8 @@ if (isset($docs)) {
 		?>
 				<div class="col-sm-12">
 				<label>
-					<input type="radio" name="docuser" value="-1" data-id="<?php echo $value->docon_id?>">Tạo hồ sơ mới
-
-				</label>
+					<input type="radio" name="docuser" value="-1" data-id="<?php echo $value->docon_id?>"><?php echo lang('job_create_resume_online');?>
+		</label>
 				<!-- <a class="create-doc-user" href="#" onclick="openModalCreateDocon" >Tạo hồ sơ mới</a> -->
 				</div>
 				<div class="col-sm-10 token hide"></div>
@@ -28,7 +28,7 @@ if (isset($docs)) {
 		<?php }
 	?>
 	<?php } else {
-	echo 'Bạn chưa có hồ sơ nào. <a href="#" onclick="openModalCreateDocon" >Tạo hồ sơ ngay</a>';
+	echo lang('job_ms_no_resume').'<a href="#" onclick="openModalCreateDocon" >'.lang('job_create_resume_online').'</a>';
 }
 ?>
 <div class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="modal-document" aria-hidden="true">

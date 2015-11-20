@@ -44,7 +44,7 @@ class Job_model extends CI_Model {
 				left join employer i on i.employer_id = a.rec_map_employer and i.employer_is_delete = 0
 				left join career j on j.career_id = a.rec_job_map_career and j.career_is_delete = 0
 				left join salary on salary_id = a.rec_map_salary and salary_is_delete = 0
-				where a.rec_id = " . $idrecruitment;
+				where a.rec_id = " . $idrecruitment . " and a.rec_is_drafts = 0";
 		return $this->dbutil->getOneRowQueryFromDb($sql, array());
 
 	}
@@ -78,7 +78,7 @@ class Job_model extends CI_Model {
 		$sql = "select a.*,b.*,count(a.recmp_id) as numjob
 				from recruitment_map_province a
 				left join province b on b.province_id = a.recmp_map_province  and b.province_is_delete = 0
-                left join recruitment c on c.rec_id = a.recmp_map_rec and c.rec_is_delete = 0 and c.rec_is_disabled = 0
+                left join recruitment c on c.rec_id = a.recmp_map_rec and c.rec_is_delete = 0 and c.rec_is_disabled = 0 and c.rec_is_drafts = 0
 				where a.recmp_is_delete = 0
                 group by a.recmp_map_province";
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
@@ -321,7 +321,7 @@ class Job_model extends CI_Model {
 			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
 			left join (select province.*,recmp_map_rec from recruitment_map_province
 			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
-			where  " . $query . " order by b.rec_created_at DESC" . $queryLimit;
+			where  b.rec_is_drafts = 0 and " . $query . " order by b.rec_created_at DESC" . $queryLimit;
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
 	}
 	public function searchJobs($route, $keySearch, $option = null, $perpage = 0, $page = 0) {
@@ -417,7 +417,7 @@ class Job_model extends CI_Model {
 			left join salary e on e.salary_id = b.rec_map_salary and e.salary_is_delete = 0
 			left join (select province.*,recmp_map_rec from recruitment_map_province
 			join province on province_id = recmp_map_province and recmp_is_delete = 0 group by recmp_map_rec) f on f.recmp_map_rec = b.rec_id
-			where  " . $query . $optionQuery . " order by b.rec_created_at DESC" . $queryLimit;
+			where  b.rec_is_drafts = 0 and " . $query . $optionQuery . " order by b.rec_created_at DESC" . $queryLimit;
 		log_message('error', $sql);
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
 	}
@@ -456,7 +456,7 @@ class Job_model extends CI_Model {
 		$sql = "select a.*,b.*,count(a.recmp_id) as numjob
 				from recruitment_map_province a
 				left join province b on b.province_id = a.recmp_map_province  and b.province_is_delete = 0
-                left join recruitment c on c.rec_id = a.recmp_map_rec and c.rec_is_delete = 0 and c.rec_is_disabled = 0
+                left join recruitment c on c.rec_id = a.recmp_map_rec and c.rec_is_delete = 0 and c.rec_is_disabled = 0 and c.rec_is_drafts = 0
 				where a.recmp_is_delete = 0 and b.province_map_region = " . $region . "
                 group by a.recmp_map_province";
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
@@ -465,7 +465,7 @@ class Job_model extends CI_Model {
 		$sql = "select a.*,b.*,count(a.recmp_id) as numjob
 				from recruitment_map_province a
 				left join province b on b.province_id = a.recmp_map_province  and b.province_is_delete = 0
-                left join recruitment c on c.rec_id = a.recmp_map_rec and c.rec_is_delete = 0 and c.rec_is_disabled = 0
+                left join recruitment c on c.rec_id = a.recmp_map_rec and c.rec_is_delete = 0 and c.rec_is_disabled = 0 and c.rec_is_drafts = 0
 				where a.recmp_is_delete = 0 and b.province_map_country = " . $country . "
                 group by a.recmp_map_province";
 		return $this->dbutil->getFromDbQueryBinding($sql, array());

@@ -5,9 +5,11 @@
                        <span class="sr-only">Close</span>
                 </button>
                 <h4 class="modal-title" id="myModalLabel">
-                   Tạo hồ sơ
+<?php echo lang('job_form_title');?>
                 </h4>
-                <label >Các trường</label><label class="text-danger">(*)</label> là bắt buộc.
+                <label ><?php echo lang('m_title_field');
+?></label><label class="text-danger">(*)</label> <?php echo lang('m_title_field_require');
+?>.
             </div>
 
             <!-- Modal Body -->
@@ -16,7 +18,7 @@
                 <form class="form-horizontal" role="form" method="post" id="form-create-form-apply">
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Họ tên<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_name');?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control"
                         id="name" placeholder="họ tên" name="name" disabled="true" value="<?php echo $user['firstname'].$user['lastname'];?>" />
@@ -26,7 +28,7 @@
                   </div>
                   <div class="form-group">
                     <label class="col-sm-4 control-label"
-                          for="inputPassword3" >Ngày sinh<span class="text-danger">*</span></label>
+                          for="inputPassword3" ><?php echo lang('job_form_birthday');?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <div class="row">
                         <div class="col-sm-3">
@@ -58,10 +60,10 @@
                   </div>
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Số điện thoại<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_phone');?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control phone-number"
-                        id="phone" placeholder="số điện thoại" name="phone" />
+                        id="phone" placeholder="<?php echo lang('job_form_phone');?>" name="phone" />
                     </div>
                     <div class="col-sm-offset-4 col-sm-8 text-danger error-phone"></div>
                   </div>
@@ -69,16 +71,16 @@
 
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Email<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('m_email');?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <input type="email" class="form-control"
-                        id="email" placeholder="email" name="email" disabled="true" value="<?php echo $user['email'];?>" />
+                        id="email" placeholder="<?php echo lang('m_email');?>" name="email" disabled="true" value="<?php echo $user['email'];?>" />
                     </div>
                   </div>
 
                 <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Trình độ năng lực<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_level');?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <select class="form-control" name="level">
 <?php if (isset($listLevel)) {
@@ -87,13 +89,13 @@
 		<?php }
 }
 ?>
-</select>
+                        </select>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Địa điểm làm việc<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_work_at');?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <div class="row">
                             <div class="col-sm-12">
@@ -104,9 +106,9 @@ if (isset($listCountry)) {
 		<?php }
 }
 ?>
-</div>
+                            </div>
                             <div class="col-sm-12 select-province-vn hide">
-                                <select data-placeholder="chọn tỉnh thành"  multiple class="chosen-select-vn form-control province-vn " tabindex="11" >
+                                <select data-placeholder="<?php echo lang('s_chose_province');?>"  multiple class="chosen-select-vn form-control province-vn " tabindex="11" >
                                         <option value=""></option>
 <?php if (isset($listProvinceVN)) {
 	foreach ($listProvinceVN as $value) {?>
@@ -114,8 +116,8 @@ if (isset($listCountry)) {
 		<?php }
 }
 ?>
-</select>
-                                      <label class="text-danger">(tối thiểu 1 tỉnh thành và tối đa là 5 tỉnh thành)</label>
+                                      </select>
+                                      <label class="text-danger">(<?php echo lang('job_form_province_require');?>)</label>
                                   </div>
                                   <div class="col-sm-12 select-province-jp hide">
                                     <select data-placeholder="chọn tỉnh thành"  multiple class="chosen-select-jp form-control province-jp hide" tabindex="11" >
@@ -126,8 +128,8 @@ if (isset($listCountry)) {
 		<?php }
 }
 ?>
-</select>
-                                      <label class="text-danger">(tối thiểu 1 tỉnh thành và tối đa là 5 tỉnh thành)</label>
+                                      </select>
+                                      <label class="text-danger">(<?php echo lang('job_form_province_require');?>)</label>
                             </div>
                         </div>
 
@@ -137,7 +139,7 @@ if (isset($listCountry)) {
 
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Nghề nghiệp<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('s_tite_career');?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <select class="form-control" name="career">
 <?php if (isset($listCareer)) {
@@ -146,13 +148,13 @@ if (isset($listCountry)) {
 		<?php }
 }
 ?>
-</select>
+                        </select>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Bằng cấp/Giấy chứng nhận<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_degree');?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control"
                         id="email" placeholder="bằng cấp/giấy chứng nhận" name="degree" />
@@ -163,7 +165,7 @@ if (isset($listCountry)) {
 
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Học vấn<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_education');?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control"
                         id="email" placeholder="học vấn" name="education" />
@@ -172,7 +174,7 @@ if (isset($listCountry)) {
                   </div>
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Nơi ở hiện tại<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_current_address');?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control"
                         id="email" placeholder="nơi ở" name="address" />
@@ -182,7 +184,7 @@ if (isset($listCountry)) {
 
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Kinh nghiệm<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_experience');?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control"
                         id="email" placeholder="kinh nghiệm" name="experience" />
@@ -191,7 +193,7 @@ if (isset($listCountry)) {
                   </div>
                    <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Sở thích/Kỹ năng đặc biệt<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_skill');?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <textarea placeholder="sở thích/kỹ năng" name="skill"  id="skill" class="form-control" tabindex="3" rows="3" cols="50" ></textarea>
                     </div>
@@ -200,7 +202,7 @@ if (isset($listCountry)) {
 
                    <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Tình trạng sức khỏe<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_healthy');?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <select class="form-control" name="healthy">
 <?php if (isset($listHealthy)) {
@@ -215,7 +217,7 @@ if (isset($listCountry)) {
 
                    <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Lý do ứng tuyển<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_reason_apply');?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                          <textarea placeholder="lý do ứng tuyển" name="reason-apply"  id="reason-apply" class="form-control" tabindex="3" rows="3" cols="50" ></textarea>
                     </div>
@@ -224,7 +226,7 @@ if (isset($listCountry)) {
 
                    <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Mức lương<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('s_title_salary');?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control"
                         id="email" placeholder="mức lương" name="salary" />
@@ -234,7 +236,7 @@ if (isset($listCountry)) {
 
                    <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Vấn đề khác</label>
+                              for="inputEmail3"><?php echo lang('job_form_advance');?></label>
                     <div class="col-sm-8">
                            <textarea placeholder="vấn đề khác" name="advance"  id="advance" class="form-control" tabindex="3" rows="3" cols="50" ></textarea>
                     </div>
@@ -242,7 +244,7 @@ if (isset($listCountry)) {
 
                    <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Nguyện vọng</label>
+                              for="inputEmail3"><?php echo lang('job_form_wish');?></label>
                     <div class="col-sm-8">
                          <textarea  name="wish"  placeholder="nguyện vọng" id="wish" class="form-control" tabindex="3" rows="3" cols="50" ></textarea>
                     </div>
@@ -255,10 +257,10 @@ if (isset($listCountry)) {
                          <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" /></div>
                           <button type="button" class="btn btn-danger"
                         data-dismiss="modal">
-                            Đóng
-                            </button>
+<?php echo lang('m_close');?>
+</button>
                             <button type="submit" class="btn btn-primary btn-create-form-apply">
-                                Tạo và apply.
+<?php echo lang('job_form_apply');?>
                             </button>
                       </div>
                   </div>

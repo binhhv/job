@@ -1,12 +1,12 @@
 <div class="container contact-page">
 	<div class="row">
 		<div class="col-sm-12 text-center contact-title">
-			<h1 class="">Liên hệ</h1>
+			<h1 class=""><?php echo lang('m_contact'); ?></h1>
 					<div class="border-bottom-title border-color-1"></div>
 		</div>
 	</div>
 	<div class="row contact-error hide">
-		<div class="col-sm-12 text-center text-danger hide" id="alert-error-contact">Đã có lỗi xảy ra. Vui lòng thử lại sau.</div>
+		<div class="col-sm-12 text-center text-danger hide" id="alert-error-contact"><?php echo lang('ct_error_message'); ?></div>
 	</div>
 	<div class="row ">
 	 <div class="col-md-8 col-md-push-4   col-xs-12">
@@ -17,7 +17,7 @@
 	 		<div class="contact-form-box">
 	 			<form class="form-horizontal" role="form" method="post" name="fcontact" id="fcontact">
 					  <div class="form-group">
-					    <label class="control-label col-sm-2" for="name">Họ tên:</label>
+					    <label class="control-label col-sm-2" for="name"><?php echo lang('ct_name'); ?>:</label>
 					    <div class="col-sm-10">
 					      <input type="text" class="form-control" id="name" name="name">
 					    </div>
@@ -26,21 +26,21 @@
 					    </div>
 					  </div>
 					  <div class="form-group">
-					    <label class="control-label col-sm-2" for="email">Email:</label>
+					    <label class="control-label col-sm-2" for="email"><?php echo lang('m_email'); ?>:</label>
 					    <div class="col-sm-10">
 					      <input type="email" class="form-control" id="email" name="email" >
 					    </div>
 					    <div class="col-sm-offset-2 col-sm-10 text-danger error-email"></div>
 					  </div>
 					  <div class="form-group">
-					    <label class="control-label col-sm-2" for="subject">Tiêu đề:</label>
+					    <label class="control-label col-sm-2" for="subject"><?php echo lang('ct_subject'); ?>:</label>
 					    <div class="col-sm-10">
 					      <input type="text" class="form-control" id="subject" name="subject">
 					    </div>
 					    <div class="col-sm-offset-2 col-sm-10 text-danger error-subject" ></div>
 					  </div>
 					  <div class="form-group">
-					    <label class="control-label col-sm-2" for="message">Nội dung:</label>
+					    <label class="control-label col-sm-2" for="message"><?php echo lang('ct_content'); ?>:</label>
 					    <div class="col-sm-10">
 					      <textarea name="message" id="message" class="form-control" tabindex="3" rows="10" cols="50"></textarea>
 					    </div>
@@ -50,7 +50,7 @@
 					  <div class="form-group">
 					    <div class="col-sm-offset-2 col-sm-10">
 					    <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-					      <button type="submit" class="btn btn-default btn-primary">Gửi</button>
+					      <button type="submit" class="btn btn-default btn-primary"><?php echo lang('m_send'); ?></button>
 					    </div>
 					  </div>
 					</form>
@@ -87,7 +87,7 @@
 				<div class="row contact-map">
 
 						<div class="col-sm-12"><strong>allSHIGOTO</strong></div>
-						<div class="col-sm-12"><i class="fa fa-home"></i>&nbsp;Địa chỉ : Số 5, Lê quang định, phường Thắng nhất , TP Vũng Tàu</div>
+						<div class="col-sm-12"><i class="fa fa-home"></i>&nbsp;<?php echo lang('ct_address'); ?> : Số 5, Lê quang định, phường Thắng nhất , TP Vũng Tàu</div>
 						<div class="col-sm-12"><i class="fa fa-phone"></i>&nbsp;xxxxxxx</div>
 						<div class="col-sm-12"><i class="fa fa-envelope"></i> &nbsp;contact@allshigoto.com</div>
 						<div class="col-sm-12 map-box">
@@ -172,7 +172,7 @@ $("#fcontact").submit(function(event){
 	 event.preventDefault();
 $.ajax({
 		type: "POST", // HTTP method POST or GET
-		url: "<?php echo base_url('contact/send-contact');?>", //Where to make Ajax calls
+		url: "<?php echo base_url('contact/send-contact'); ?>", //Where to make Ajax calls
 		dataType:"json", // Data type, HTML, json etc.
 		data:$(this).serialize(), //Form variables
 		success:function(response){

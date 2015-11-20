@@ -8,16 +8,16 @@ if (!isset($user)) {?>
       <div class="modal-header background-color-3">
       	<div class="modal-popup-box">
       		<!-- <span>Modal title</span> -->
-      		<img src="<?php echo base_url();?>assets/main/img/header/allSHIGOTO.png" >
+      		<img src="<?php echo base_url(); ?>assets/main/img/header/allSHIGOTO.png" >
       		 <button type="button" class="close pull-right" data-dismiss="modal" aria-hidden="true">×</button>
       	</div>
 
         <!-- <h4 class="modal-title">Modal title</h4> -->
       </div>
       <div class="modal-body">
-      	<p>Bạn muốn nhận tin tuyển dụng từ chúng tôi qua email ? <br>
-      	Hãy vui lòng để lại email nhé.</p>
-      	<p class="danger alert hide popup-error">Vui lòng điền đầy đủ các trường.</p>
+      	<p><?php echo lang('pnew_title_1'); ?> <br>
+      	<?php echo lang('pnew_title_2'); ?></p>
+      	<p class="danger alert hide popup-error"><?php echo lang('pnew_require'); ?></p>
       	<form id="fpopup-user" method="post" >
       		<div class="form-group">
       			<input type="text" class="form-control" name="firstname" placeholder="Họ">
@@ -31,10 +31,10 @@ if (!isset($user)) {?>
 			  <span id="inputError2Status" class="sr-only"></span>
 			</div>
 			<div class="popup-token hide">
-				<!-- <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" /> -->
+				<!-- <input type="hidden" name="<?php echo $csrf['name']; ?>" value="<?php echo $csrf['hash']; ?>" /> -->
 			</div>
-      	<div class="text-right"><button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Đóng</button>
-      		<button type="submit" class="btn btn-sm btn-primary">Gửi</button></div></form>
+      	<div class="text-right"><button type="button" class="btn btn-sm btn-danger" data-dismiss="modal"><?php echo lang('m_close'); ?></button>
+      		<button type="submit" class="btn btn-sm btn-primary"><?php echo lang('m_send'); ?></button></div></form>
       </div>
       <!-- <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -92,7 +92,7 @@ var datetime = "Last Sync: " + currentdate.getDate() + "/"
 	 if(checkValidate()){
 	$.ajax({
 		type: "POST", // HTTP method POST or GET
-		url: "<?php echo base_url('getNewsRecruitment');?>", //Where to make Ajax calls
+		url: "<?php echo base_url('getNewsRecruitment'); ?>", //Where to make Ajax calls
 		dataType:"json", // Data type, HTML, json etc.
 		data:$(this).serialize(), //Form variables
 		success:function(response){
@@ -167,7 +167,7 @@ var datetime = "Last Sync: " + currentdate.getDate() + "/"
 
 	 var getToken = function(callback){
     	 $.ajax({
-        url: '<?php echo base_url() . "job/getToken"?>',
+        url: '<?php echo base_url() . "job/getToken" ?>',
         type: "get",
         dataType:'json',
         success: function(data){

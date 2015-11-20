@@ -3,11 +3,11 @@ if (isset($docs)) {
 	foreach ($docs as $value) {?>
 		<div class="col-sm-12">
 			<label>
-				<input type="radio" name="docuser" value="<?php echo $value->docon_id?>">
-				<?php echo $value->docon_code?>
+				<input type="radio" name="docuser" value="<?php echo $value->docon_id ?>">
+				<?php echo $value->docon_code ?>
 
 			</label>
-			&nbsp;(<span class="view-doc" data-id="<?php echo $value->docon_id?>">xem</span>)
+			&nbsp;(<span class="view-doc" data-id="<?php echo $value->docon_id ?>"><?php echo lang('job_view_resume_online'); ?></span>)
 		</div>
 		<?php }
 
@@ -15,7 +15,7 @@ if (isset($docs)) {
 		?>
 		<div class="col-sm-12">
 		<label>
-			<input type="radio" name="docuser" value="-1" data-id="<?php echo $value->docon_id?>">Tạo hồ sơ mới
+			<input type="radio" name="docuser" value="-1" data-id="<?php echo $value->docon_id ?>"><?php echo lang('job_create_resume_online'); ?>
 
 		</label>
 		<!-- <a class="create-doc-user" href="#" onclick="openModalCreateDocon" >Tạo hồ sơ mới</a> -->
@@ -28,7 +28,7 @@ if (isset($docs)) {
 <?php }
 	?>
 <?php } else {
-	echo 'Bạn chưa có hồ sơ nào. <a href="#" onclick="openModalCreateDocon" >Tạo hồ sơ ngay</a>';
+	echo lang('job_ms_no_resume') . '<a href="#" onclick="openModalCreateDocon" >' . lang('job_create_resume_online') . '</a>';
 }
 ?>
 <div class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="modal-document" aria-hidden="true">
@@ -43,7 +43,7 @@ if (isset($docs)) {
     	//alert("123123");
     	var id = $(this).data('id');
     	 $.ajax({
-        url: '<?php echo base_url() . "job/getDetailDoc/"?>'+id,
+        url: '<?php echo base_url() . "job/getDetailDoc/" ?>'+id,
         type: "get",
         dataType:'html',
         success: function(data){
@@ -65,7 +65,7 @@ if (isset($docs)) {
 	 $('input:radio[name="docuser"]').change(function(){
 	 	//alert("123123");
 			$.ajax({
-		        url: '<?php echo base_url() . "job/getToken"?>',
+		        url: '<?php echo base_url() . "job/getToken" ?>',
 		        type: "get",
 		        dataType:'json',
 		        success: function(data){
@@ -90,7 +90,7 @@ if (isset($docs)) {
 		 if ($(this).val() == '-1') {
 		 	var id = $(this).data('id');
 		    	 $.ajax({
-		        url: '<?php echo base_url() . "job/getCreateForm/"?>'+id,
+		        url: '<?php echo base_url() . "job/getCreateForm/" ?>'+id,
 		        type: "get",
 		        dataType:'html',
 		        success: function(data){

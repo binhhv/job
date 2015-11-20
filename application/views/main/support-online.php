@@ -3,7 +3,7 @@
 			<div class="col-md-2 col-md-offset-10 col-xs-6 col-xs-offset-6 open-support-online-box">
 				  <div class="panel panel-primary">
 	                <div class="panel-heading" id="open-support-online-box">
-	                    <span class="glyphicon glyphicon-comment"></span> Hỗ trợ online
+	                    <span class="glyphicon glyphicon-comment"></span> <?php echo lang('sp_title'); ?>
 	                    <!-- <div class="btn-group pull-right"> -->
 	                    	<span class="open-support-online " style="float: right"><i class="fa fa-angle-up"></i></span>
 	                    <!-- </div> -->
@@ -25,7 +25,7 @@
 	        <div class="col-md-3 col-md-offset-9 col-xs-8 col-xs-offset-4 close-support-online-box hide">
 	         <div class="panel panel-primary">
                 <div class="panel-heading" id="close-support-online-box">
-                    <span class="glyphicon glyphicon-comment"></span> Hỗ trợ online
+                    <span class="glyphicon glyphicon-comment"></span> <?php echo lang('sp_title'); ?>
                     <!-- <div class="btn-group pull-right"> -->
                     	<span class="close-support-online " style="float: right"><i class="fa fa-angle-down"></i></span>
                     <!-- </div> -->
@@ -33,16 +33,16 @@
                 <div class="panel-body support-online-box-body">
                 	<div class="support-online-box-header">
                 		<div class="item-left">
-                			<img src="<?php echo base_url();?>assets/main/img/header/icon_black.png">
+                			<img src="<?php echo base_url(); ?>assets/main/img/header/icon_black.png">
                 		</div>
                 		<div class="item-right">
-                			<img src="<?php echo base_url();?>assets/main/img/header/allSHIGOTO_B.png">
-                			<small>Tuyển dụng nhân sự tiếng nhật.</small>
+                			<img src="<?php echo base_url(); ?>assets/main/img/header/allSHIGOTO_B.png">
+                			<small><?php echo lang('m_default_title_page'); ?></small>
                 		</div>
                 	</div>
                     <ul class="chat">
                         <!-- <li class="left clearfix"><span class="chat-img pull-left">
-                            <img width="35" src="<?php echo base_url()?>assets/main/img/supportonline/icon_user_support.png" alt="User Avatar" class="icon-support-online " />
+                            <img width="35" src="<?php echo base_url() ?>assets/main/img/supportonline/icon_user_support.png" alt="User Avatar" class="icon-support-online " />
                         </span>
                             <div class="chat-body clearfix">
                                 <div class="header">
@@ -56,12 +56,12 @@
                             </div>
                         </li>-->
                         <li class="right clearfix"><span class="chat-img pull-right-chat">
-                            <img width="35"src="<?php echo base_url()?>assets/main/img/header/icon_black.png" alt="User Avatar" class="icon-support-online " />
+                            <img width="35"src="<?php echo base_url() ?>assets/main/img/header/icon_black.png" alt="User Avatar" class="icon-support-online " />
                         </span>
                             <div class="chat-body clearfix">
 
                                 <p>
-                                    <small>Chào bạn, bạn cần hỗ trợ gì không?</small>
+                                    <small><?php echo lang('sp_intro'); ?></small>
 									<!-- Hi, you. May I help you?
 									こんにちは。何かありましたら、ご連絡下さい。 -->
                                 </p>
@@ -157,7 +157,7 @@
 					  'cookie_user':cookie_user};
 		$.ajax({
 		type: "POST", // HTTP method POST or GET
-		url: "<?php echo base_url() . 'supportAPI/startChatWithSend'?>", //Where to make Ajax calls
+		url: "<?php echo base_url() . 'supportAPI/startChatWithSend' ?>", //Where to make Ajax calls
 		dataType:"json", // Data type, HTML, json etc.
 		data:obData,//{'data':$("#form-sp-online").serialize(),'cookie_id':cookie_id}, //Form variables
 		success:function(response){
@@ -184,7 +184,7 @@
 	}
 	function getTokenSP(callback){
     	 $.ajax({
-        url: '<?php echo base_url() . "job/getToken"?>',
+        url: '<?php echo base_url() . "job/getToken" ?>',
         type: "get",
         dataType:'json',
         success: function(data){
@@ -209,7 +209,7 @@
     	console.log(cookie_id);
     	if(typeof cookie_id !== "undefined"){
     			$.ajax({
-			        url: '<?php echo base_url() . "supportAPI/getMessage/"?>'+cookie_id,
+			        url: '<?php echo base_url() . "supportAPI/getMessage/" ?>'+cookie_id,
 			        type: "get",
 			        dataType:'json',
 			        success: function(data){
@@ -243,7 +243,7 @@
     }
     function getMessageReply(cookie_id,schat_id){
     	$.ajax({
-			        url: '<?php echo base_url() . "supportAPI/getMessageReply/"?>'+cookie_id+'/'+schat_id,
+			        url: '<?php echo base_url() . "supportAPI/getMessageReply/" ?>'+cookie_id+'/'+schat_id,
 			        type: "get",
 			        dataType:'json',
 			        success: function(data){
@@ -266,7 +266,7 @@
     function appendMessage(data,scroll){
     	if(data.schat_type == 0){
     		var html ='<li class="left clearfix"><span class="chat-img pull-left">';
-                html+='<img width="35" src="<?php echo base_url()?>assets/main/img/supportonline/icon_user_support.png" alt="User Avatar" class="icon-support-online " />';
+                html+='<img width="35" src="<?php echo base_url() ?>assets/main/img/supportonline/icon_user_support.png" alt="User Avatar" class="icon-support-online " />';
                 html+='</span>';
                 html+='<div class="chat-body clearfix">';
                 html+='<p>';
@@ -278,7 +278,7 @@
     	}
     	else{
     		var html ='<li class="right clearfix"><span class="chat-img pull-right-chat">';
-                html+='<img width="35"src="<?php echo base_url()?>assets/main/img/header/icon_black.png" alt="User Avatar" class="icon-support-online " />';
+                html+='<img width="35"src="<?php echo base_url() ?>assets/main/img/header/icon_black.png" alt="User Avatar" class="icon-support-online " />';
                 html+='</span>';
                 html+='<div class="chat-body clearfix">';
                 html+='<p>';

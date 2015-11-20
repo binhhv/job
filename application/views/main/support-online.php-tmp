@@ -3,7 +3,7 @@
 			<div class="col-md-2 col-md-offset-10 col-xs-6 col-xs-offset-6 open-support-online-box">
 				  <div class="panel panel-primary">
 	                <div class="panel-heading" id="open-support-online-box">
-	                    <span class="glyphicon glyphicon-comment"></span> Hỗ trợ online
+	                    <span class="glyphicon glyphicon-comment"></span> <?php echo lang('sp_title');?>
 	                    <!-- <div class="btn-group pull-right"> -->
 	                    	<span class="open-support-online " style="float: right"><i class="fa fa-angle-up"></i></span>
 	                    <!-- </div> -->
@@ -25,7 +25,7 @@
 	        <div class="col-md-3 col-md-offset-9 col-xs-8 col-xs-offset-4 close-support-online-box hide">
 	         <div class="panel panel-primary">
                 <div class="panel-heading" id="close-support-online-box">
-                    <span class="glyphicon glyphicon-comment"></span> Hỗ trợ online
+                    <span class="glyphicon glyphicon-comment"></span> <?php echo lang('sp_title');?>
                     <!-- <div class="btn-group pull-right"> -->
                     	<span class="close-support-online " style="float: right"><i class="fa fa-angle-down"></i></span>
                     <!-- </div> -->
@@ -37,7 +37,7 @@
                 		</div>
                 		<div class="item-right">
                 			<img src="<?php echo base_url();?>assets/main/img/header/allSHIGOTO_B.png">
-                			<small>Tuyển dụng nhân sự tiếng nhật.</small>
+                			<small><?php echo lang('m_default_title_page');?></small>
                 		</div>
                 	</div>
                     <ul class="chat">
@@ -61,7 +61,7 @@
                             <div class="chat-body clearfix">
 
                                 <p>
-                                    <small>Chào bạn, bạn cần hỗ trợ gì không?</small>
+                                    <small><?php echo lang('sp_intro');?></small>
 									<!-- Hi, you. May I help you?
 									こんにちは。何かありましたら、ご連絡下さい。 -->
                                 </p>

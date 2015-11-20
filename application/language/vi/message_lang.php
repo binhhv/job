@@ -87,6 +87,7 @@ $lang['docon_reason_apply'] = "Lý do ứng tuyển";
 $lang['docon_salary'] = "Mức lương mong muốn";
 $lang['docon_advance'] = "Mục tiêu nghề nghiệp";
 
+#BINHHV EDIT
 #recruitment
 $lang['title_recruitment'] = "ĐĂNG TIN TUYỂN DỤNG";
 $lang['title_job_description'] = "Mô tả công việc";
@@ -147,7 +148,7 @@ $lang['f_contact_type_em'] = 'Hình thức liên hệ';
 $lang['f_sex_em'] = 'Giới tính';
 $lang['msg_no_result_province_em'] = 'Không tìm thấy tỉnh thành nào';
 $lang['title_edit_recruitment_em'] = 'SỬA ĐỔI TIN TUYỂN DỤNG';
-#recruitment employer
+#recruitment of employer
 $lang['title_recruitment_rec'] = 'Tiêu đề';
 $lang['province_rec'] = 'Tỉnh/Thành phố';
 $lang['time_work_rec'] = 'Thời gian làm việc';
@@ -168,5 +169,255 @@ $lang['title_create_account_em'] = 'Tạo tài khoản';
 $lang['title_update_account_em'] = 'Cập nhật tài khoản';
 #manager recruitment employer
 $lang['title_manager_recruitments_em'] = 'QUẢN LÝ TIN TUYỂN DỤNG';
-#searc resume employer
+#search resume employer
 $lang['title_search_resume_em'] = 'TÌM KIẾM HỒ SƠ ỨNG VIÊN';
+$lang['title_result_search_resume_em'] = 'KẾT QUẢ TÌM KIẾM';
+$lang['title_detail_resume_em'] = 'CHI TIẾT HỒ SƠ ỨNG VIÊN';
+#store resume employer
+$lang['title_store_resume_em'] = 'DANH SÁCH HỒ SƠ ỨNG VIÊN ĐÃ LƯU';
+
+#TEST
+$lang['test'] = "kiemtra";
+#===================LANG NEW============================
+#HEADER
+$lang['hd_register'] = 'Đăng ký';
+$lang['hd_logout'] = 'Đăng xuất';
+$lang['hd_employer_page'] = 'Trang nhà tuyển dụng';
+$lang['hd_jobseeker_page'] = 'Trang người tìm việc';
+$lang['hd_admin_page'] = 'Trang quản trị';
+$lang['hd_aboutus'] = 'Về chúng tôi';
+$lang['hd_service'] = 'Dịch vụ';
+$lang['hd_search'] = 'Tìm kiếm';
+$lang['hd_job'] = 'Việc làm';
+$lang['hd_new_job'] = 'Việc làm mới nhất';
+$lang['hd_japan_job'] = 'Việc làm ở Nhật';
+$lang['hd_north_job'] = 'Việc làm miền Bắc';
+$lang['hd_middle_job'] = 'Việc làm miền Trung';
+$lang['hd_south_job'] = 'Việc làm miền Nam';
+$lang['hd_language'] = 'Ngôn ngữ';
+#FOOTER
+$lang['ft_faq'] = 'FAQ';
+$lang['ft_terms'] = 'Điều khoản sử dụng';
+$lang['ft_support'] = 'Hỗ trợ';
+#POPUP REGISTER
+$lang['p_register'] = 'Đăng ký tài khoản';
+$lang['p_register_jobseeker'] = 'Người tìm việc đăng ký';
+$lang['p_register_employer'] = 'Nhà tuyển dụng đăng ký';
+#SUPPORT ONLINE
+$lang['sp_title'] = 'Hỗ trợ online';
+$lang['sp_intro'] = 'Chào bạn, bạn cần hỗ trợ gì không ?';
+#SEARCH
+$lang['s_title'] = 'Tìm kiếm việc làm';
+$lang['s_chose_province'] = 'Chọn tỉnh thành';
+$lang['s_chose_salary'] = 'Chọn mức lương';
+$lang['s_chose_sex'] = 'Chọn giới tính';
+$lang['s_male'] = 'Nam';
+$lang['s_female'] = 'Nữ';
+$lang['s_chose_level'] = 'Chọn trình độ';
+$lang['s_chose_type_job'] = 'Chọn loại hình công việc';
+$lang['s_chose_career'] = 'Chọn ngành nghề';
+$lang['s_keyword'] = 'Từ khóa';
+$lang['s_title_province'] = 'Tỉnh thành';
+$lang['s_title_career'] = 'Ngành nghề';
+$lang['s_title_salary'] = 'Mức lương';
+$lang['s_title_sex'] = 'Giới tính';
+$lang['s_title_level'] = 'Trình độ/Năng lực';
+$lang['s_title_type_job'] = 'Loại hình công việc';
+$lang['s_button'] = 'Tìm kiếm';
+#NEW JOB HOME
+$lang['nj_title'] = 'VIỆC LÀM HOT';
+#JOBSEEKER BOX HOME
+$lang['jobseeker_title'] = "DÀNH CHO NGƯỜI TÌM VIỆC";
+$lang['jobseeker_register'] = "Đăng ký tài khoản";
+$lang['jobseeker_create_cv'] = "Nộp hồ sơ";
+$lang['jobseeker_create_cv_online'] = "Tạo hồ sơ ứng tuyển";
+#EMPLOYER BOX HOME
+$lang['employer_title'] = "DÀNH CHO NHÀ TUYỂN DỤNG";
+$lang['employer_register'] = "Đăng ký";
+$lang['employer_recruitment'] = "Đăng tin";
+$lang['employer_contact_advertising'] = "LIÊN HỆ QUẢNG CÁO";
+#PARTNER BOX
+$lang['pn_title'] = 'NHÀ TÀI TRỢ VÀ ĐỐI TÁC';
+#CONTACT PAGE
+$lang['ct_address'] = 'Address';
+$lang['ct_error_message'] = 'Đã có lỗi xảy ra. Vui lòng thử lại sau.';
+$lang['ct_name'] = 'Họ tên';
+$lang['ct_subject'] = 'Tiêu đề';
+$lang['ct_content'] = 'Nội dung';
+#ABOUTUS TERM
+$lang['abt_video'] = 'Video giới thiệu';
+$lang['abt_error_video'] = 'Trình duyệt không hỗ trợ để phát video này.';
+$lang['abt_title_regent'] = 'Đại diện ban quản trị';
+#FAQ
+$lang['faq_title'] = 'Các câu hỏi thường gặp';
+#LOGIN PAGE
+$lang['lg_remember'] = 'Ghi nhớ tài khoản';
+#POPUP GET NEWS
+$lang['pnew_title_1'] = 'Bạn muốn nhận tin tuyển dụng từ chúng tôi qua email ?';
+$lang['pnew_title_2'] = 'Hãy vui lòng để lại email nhé.';
+$lang['pnew_require'] = 'Vui lòng điền đầy đủ các trường.';
+#TERM PAGe
+$lang['tp_title'] = 'Thỏa thuận sử dụng';
+#JOB CONTENT
+#=========CV
+$lang['job_download_cv'] = 'Tải xuống';
+$lang['job_upload_cv'] = 'Upload cv';
+$lang['job_ms_no_cv'] = 'Bạn chưa có cv nào.';
+#=========CREATE RESUME
+$lang['job_view_resum_online'] = 'Xem';
+$lang['job_create_resume_online'] = 'Tạo hồ sơ mới';
+$lang['job_create_resume_upload'] = 'Tải lên hồ sơ';
+$lang['job_ms_no_resume'] = 'Bạn chưa có hồ sơ nào.';
+$lang['job_form_title'] = 'Tạo hồ sơ';
+$lang['job_form_name'] = 'Họ tên';
+$lang['job_form_birthday'] = 'Ngày sinh';
+$lang['job_form_phone'] = 'Số điện thoại';
+$lang['job_form_level'] = 'Trình độ năng lực';
+$lang['job_form_work_at'] = 'Địa điểm làm việc';
+$lang['job_form_province_require'] = 'tối thiểu 1 tỉnh thành và tối đa là 5 tỉnh thành';
+$lang['job_form_degree'] = 'Bằng cấp/Giấy chứng nhận';
+$lang['job_form_education'] = 'Học vấn';
+$lang['job_form_current_address'] = 'Nơi ở hiện tại';
+$lang['job_form_experience'] = 'Kinh nghiệm';
+$lang['job_form_skill'] = 'Sở thích/Kỹ năng đặc biệt';
+$lang['job_form_healthy'] = 'Tình trạng sức khỏe';
+$lang['job_form_reason_apply'] = 'Lý do ứng tuyển';
+$lang['job_form_advance'] = 'Vấn đề khác';
+$lang['job_form_wish'] = 'Nguyện vọng';
+$lang['job_form_apply'] = 'Tạo và apply';
+#========VIEW RESUME
+$lang['job_vform_title'] = 'Thông tin hồ sơ';
+#========JOB PROVINCE
+$lang['job_title_highlight'] = 'Việc làm nổi bật';
+#========JOB NAVIGATION
+$lang['job_nv_description_1'] = 'Cách nhanh nhất để được mời phỏng vấn';
+$lang['job_nv_description_2'] = 'Nhanh chóng tiếp cận hàng trăm người tìm việc';
+#========SHOW NUM JOB FOUND
+$lang['job_result_find'] = 'Tìm thấy %s việc làm';
+$lang['job_no_result'] = 'Không tìm thấy việc làm nào.';
+#========DETAIL JOB
+$lang['job_btn_apply_up'] = 'NỘP HỒ SƠ';
+$lang['job_btn_apply'] = 'Nộp hồ sơ';
+$lang['job_btn_applied_up'] = 'ĐÃ ỨNG TUYỂN';
+$lang['job_btn_applied'] = 'Đã ứng tuyển';
+$lang['job_title_detail'] = 'Chi tiết công việc';
+$lang['job_title_contact_employer'] = 'Thông tin liên hệ';
+$lang['job_title_introduce'] = 'Mô tả và yêu cầu công việc';
+$lang['job_title_content'] = 'Nội dung công việc';
+$lang['job_title_regimen'] = 'Chế độ hậu đãi';
+$lang['job_title_work_time'] = 'Thời gian làm việc';
+$lang['job_title_welfare'] = 'Phúc lợi';
+$lang['job_title_require'] = 'Yêu cầu bắt buộc';
+$lang['job_title_priority'] = 'Điều kiện/Ưu tiên';
+$lang['job_ms_applied'] = 'Bạn đã ứng tuyển việc này rồi.';
+$lang['job_title_not_found'] = 'Không tìm thấy công việc này. Vui lòng thử lại sau hoặc nhấn vào <a href="<?php echo base_url(); ?>"><strong>ĐÂY</strong></a> để về trang chủ.';
+$lang['job_ms_no_select_rs'] = 'Bạn chưa chọn hồ sơ hoặc cv để nộp hồ sơ.';
+$lang['job_title_contact_name'] = 'Người liên hệ';
+$lang['job_title_contact_address'] = 'Địa chỉ';
+$lang['job_title_contact_phone'] = 'Điện thoại';
+$lang['job_title_contact_mobile'] = 'Di động';
+$lang['job_title_contact_type'] = 'Hình thức liên hệ';
+#=========JOB TITLE
+$lang['job_title_tag_job'] = 'Việc làm theo ngành';
+#JOBSEEKER
+$lang['js_ms_more_resume'] = 'Bạn đã tạo tối đa 3 hồ sơ trên website. Vui lòng chỉnh sửa hoặc xóa bớt hồ sơ hiện có.';
+$lang['js_title_my_page'] = 'Trang ứng viên';
+#========JOBSEEKER INDEX.
+$lang['js_title_my_info'] = 'Thông tin cá nhân';
+$lang['js_num_cv'] = 'Số lượng cv';
+$lang['js_num_resume'] = 'Số lượng hồ sơ';
+$lang['js_num_job_apply'] = 'Số lượng tin tuyển dụng đã ứng tuyển';
+$lang['js_history_apply'] = 'Lịch sử tin tuyển dụng đã ứng tuyển';
+$lang['js_no_cv'] = 'Không có cv nào';
+$lang['js_cv_col_file'] = 'Tên file';
+$lang['js_cv_col_upload'] = 'Ngày upload';
+$lang['js_no_resume'] = 'Không có hồ sơ nào được tạo';
+$lang['js_rs_col_create'] = 'Ngày tạo';
+$lang['js_rs_col_edit'] = 'Ngày chỉnh sửa';
+$lang['js_no_job_apply'] = 'Chưa có danh sách tin tuyển dụng ứng tuyển';
+$lang['js_job_col_date_apply'] = 'Ngày ứng tuyển';
+$lang['js_title_change_password'] = 'Thay đổi mật khẩu';
+$lang['js_ms_confirm_delete_rec'] = 'Bạn có muốn xóa tin tuyển dụng này khỏi lịch sử ứng tuyển không';
+$lang['js_ms_confirm_delte_cv'] = 'Bạn có muốn xóa file này không ?';
+$lang['js_ms_confirm_delete_rs'] = 'Bạn có muốn xóa hồ sơ này không ?';
+#========JOBSEEKER UPLOAD RESUM
+$lang['js_rs_upload'] = 'Upload hồ sơ';
+$lang['js_rs_chose_file'] = 'Chọn file';
+#========JOBSEEKER REGISTER
+$lang['js_rg_exist_account'] = 'Bạn đã có tài khoản';
+#========EMPLOYER PAGE
+#EMPLOYER ACCOUNT
+$lang['em_confirm_delete_account'] = 'Bạn có muốn xóa tài khoản đã chọn không ?';
+$lang['em_confirm_block_account'] = 'Bạn có muốn khóa tài khoản đã chọn không ?';
+$lang['em_confirm_unblock_account'] = 'Bạn có muốn mở khóa tài khoản đã chọn không ?';
+$lang['em_rec_post'] = 'Đăng tin tuyển dụng';
+$lang['em_back_employer_page'] = 'Trở lại trang nhà tuyển dụng';
+$lang['em_edit_rec'] = 'Sửa tin';
+#========EMPLOYER DETAIL RESUME
+$lang['em_no_service_search_resume'] = '<h5 class="line-h-25">ĐỂ SỬ DỤNG DỊCH VỤ NÀY CỦA CHÚNG TÔI XIN VUI LÒNG LIÊN HỆ VỚI ADMIN CỦA PAGE QUA EMAIL <a href=\'mailto:contact@allshigoto.com\'>contact@allshigoto.com</a> HOẶC NHẤN VÀO <a href=\'<?php echo base_url("contact") ?>\'>ĐÂY</a> ĐỂ LIÊN HỆ VỚI CHÚNG TÔI. </h5>';
+$lang['em_resume_not_found'] = 'HỒ SƠ NÀY KHÔNG TỒN TẠI.';
+$lang['em_save_resume'] = 'Lưu hồ sơ';
+$lang['em_confirm_save_resume'] = 'Bạn có muốn lưu hồ sơ này không ?';
+$lang['em_change_info'] = 'Thay đổi thông tin';
+$lang['em_edit_post_recruitment'] = 'Sửa và đăng tin tuyển dụng';
+#=========EMPLOYER MENU
+$lang['em_admin'] = 'Quản trị';
+$lang['em_staff'] = 'Nhân viên';
+$lang['em_title_account'] = 'Thông tin tài khoản';
+$lang['em_manager_account'] = 'Quản lý tài khoản';
+$lang['em_manager_recruitment'] = 'Quản lý tin tuyển dụng';
+$lang['em_search_resume'] = 'Tìm kiếm hồ sơ';
+$lang['em_resume_saved'] = 'Hồ sơ đã lưu';
+#COMMON
+$lang['m_close'] = 'Đóng';
+$lang['m_default_title_page'] = 'Tuyển dụng nhân sự tiếng Nhật';
+$lang['m_send'] = 'Gửi';
+$lang['m_save'] = 'Lưu';
+$lang['m_delete'] = 'Xóa';
+$lang['m_cancel'] = 'Hủy';
+$lang['m_edit'] = 'Sửa';
+$lang['m_change'] = 'Thay đổi';
+$lang['m_block'] = 'Khóa';
+$lang['m_unblock'] = 'Mở khóa';
+$lang['m_view_detail'] = 'Xem chi tiết';
+$lang['m_contact'] = 'Liên hệ';
+$lang['m_hotline'] = 'Hotline';
+$lang['m_hotline_up'] = 'HOTLINE';
+$lang['m_email'] = 'Email';
+$lang['m_password'] = 'Mật khẩu';
+$lang['m_introduce'] = 'Giới thiệu';
+$lang['m_login'] = 'Đăng nhập';
+$lang['m_title_field'] = 'Các trường';
+$lang['m_title_field_require'] = 'là bắt buộc';
+$lang['m_title_create_resume'] = 'Tạo hồ sơ';
+$lang['m_title_post_recruitment'] = 'Đăng tin';
+$lang['m_title_contact_adwords'] = 'Liên hệ quảng cáo';
+$lang['m_button_contact_adwords'] = 'Liên hệ';
+$lang['m_first_name'] = 'Tên';
+$lang['m_last_name'] = 'Họ';
+$lang['m_resume'] = 'Resume';
+$lang['m_resume_vn'] = 'Hồ sơ';
+$lang['m_resume_online'] = 'Hồ sơ trực tuyến';
+$lang['m_resume_upload'] = 'Hồ sơ tải lên';
+$lang['m_cv'] = 'Hồ sơ đính kèm';
+$lang['m_captcha'] = 'Captcha';
+$lang['m_captcha_invalid'] = 'Captcha không hợp lệ';
+$lang['m_terms'] = '*Nhấp chọn "Nộp đơn", tôi đã đọc và đồng ý với các <a class="a-term" href=\'<?php echo base_url("about/term"); ?>\'>Thỏa thuận sử dụng</a>.';
+$lang['m_terms_create_resume'] = '*Nhấp chọn "Tạo hồ sơ", tôi đã đọc và đồng ý với các <a class="a-term" href=\'<?php echo base_url("about/term"); ?>\'>Thỏa thuận sử dụng</a>.';
+$lang['m_terms_upload_resume'] = '*Nhấp chọn "Upload hồ sơ", tôi đã đọc và đồng ý với các <a class="a-term" href=\'<?php echo base_url("about/term"); ?>\' >Thỏa thuận sử dụng</a>.';
+$lang['m_terms_register'] = '*Nhấp chọn "Đăng ký", tôi đã đọc và đồng ý với các <a class="a-term" href=\'<?php echo base_url("about/term"); ?>\'>Thỏa thuận sử dụng</a>.';
+$lang['m_terms_post_recruitment'] = '*Nhấp chọn "Đăng tin", tôi đã đọc và đồng ý với các <a class="a-term" href=\'<?php echo base_url("about/term"); ?>\'>Thỏa thuận sử dụng</a>.';
+$lang['m_day'] = 'Ngày';
+$lang['m_year'] = 'Năm';
+$lang['m_password'] = 'Mật khẩu';
+$lang['m_code'] = 'Mã số';
+$lang['m_recruitment'] = 'Tin tuyển dụng';
+$lang['m_old_password'] = 'Mật khẩu cũ';
+$lang['m_new_password'] = 'Mật khẩu mới';
+$lang['m_confirm_password'] = 'Nhập lại mật khẩu';
+$lang['m_account'] = 'Tài khoản';
+$lang['m_title_jobseeker_register'] = 'Người tìm việc đăng ký tài khoản';
+$lang['m_not_require'] = 'Không yêu cầu';
+$lang['m_file_size'] = 'Dung lượng';
+$lang['m_file_type'] = 'Dạng file';
+$lang['m_employer'] = 'Nhà tuyển dụng';

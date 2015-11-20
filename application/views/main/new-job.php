@@ -77,7 +77,7 @@ if (isset($listJobShow) && count($listJobShow) > 0) {
 
 	<div class="row">
 		<div class="col-sm-12 text-center">
-			<h1 class="title-new-job">VIỆC LÀM HOT</h1>
+			<h1 class="title-new-job"><?php echo lang('nj_title'); ?></h1>
 			<div class="border-bottom-title border-color-2"></div>
 		</div>
 	</div>
@@ -89,52 +89,52 @@ if (isset($listJobShow) && count($listJobShow) > 0) {
 			<div class="flexslider-job slide-job-md" >
 	            <ul class="slides">
 
-	              <?php echo $strSlideJob;?>
+	              <?php echo $strSlideJob; ?>
 
 	          	</ul>
 	          	<!-- <ul class="slides slide-job-sm">
-	          	<?php echo $strSlideJobsm;?>
+	          	<?php echo $strSlideJobsm; ?>
 	          	</ul>
 	          	<ul class="slides slide-job-xs">
-	          	<?php echo $strSlideJobxs;?>
+	          	<?php echo $strSlideJobxs; ?>
 	            </ul> -->
 	        </div>
 	        <!--sm-->
 	        <div class="flexslider-job slide-job-sm" >
 	            <!-- <ul class="slides slide-job-md">
 
-	              <?php echo $strSlideJob;?>
+	              <?php echo $strSlideJob; ?>
 
 	          	</ul> -->
 	          	<ul class="slides">
-	          		<?php echo $strSlideJobsm;?>
+	          		<?php echo $strSlideJobsm; ?>
 	          	</ul>
 	          	<!-- <ul class="slides slide-job-xs">
-	          	<?php echo $strSlideJobxs;?>
+	          	<?php echo $strSlideJobxs; ?>
 	            </ul> -->
 	        </div>
 	        <!--xs-->
 	        <div class="flexslider-job slide-job-xs" >
 	            <!-- <ul class="slides slide-job-md">
 
-	              <?php echo $strSlideJob;?>
+	              <?php echo $strSlideJob; ?>
 
 	          	</ul>
 	          	<ul class="slides slide-job-sm">
-	          	<?php echo $strSlideJobsm;?>
+	          	<?php echo $strSlideJobsm; ?>
 	          	</ul> -->
 	          	<ul class="slides">
-	          		<?php echo $strSlideJobxs;?>
+	          		<?php echo $strSlideJobxs; ?>
 	            </ul>
 	        </div>
 
 	        <div class="custom-navigation">
 		          <a href="#" class="flex-prev">
-		          	<img src="<?php echo base_url()?>assets/main/img/job/arrow-left.png">
+		          	<img src="<?php echo base_url() ?>assets/main/img/job/arrow-left.png">
 		          </a>
 
 		          <a href="#" class="flex-next">
-		          <img src="<?php echo base_url()?>assets/main/img/job/arrow-right.png">
+		          <img src="<?php echo base_url() ?>assets/main/img/job/arrow-right.png">
 		          </a>
 		        </div>
 

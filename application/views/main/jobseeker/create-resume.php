@@ -8,10 +8,10 @@
                        <span class="sr-only">Close</span>
                 </button> -->
                 <h4 class="modal-title" id="myModalLabel">
-                   Tạo hồ sơ
-                   <button class="btn btn-primary pull-right" onclick="location.href='<?php echo base_url('jobseeker');?>'"><i class="fa fa-reply"></i> Trang ứng viên</button>
+                   <?php echo lang('job_form_title'); ?>
+                   <button class="btn btn-primary pull-right" onclick="location.href='<?php echo base_url('jobseeker'); ?>'"><i class="fa fa-reply"></i> <?php echo lang('js_title_my_page'); ?></button>
                 </h4>
-                <label >Các trường</label><label class="text-danger">(*)</label> là bắt buộc.
+                <label ><?php echo lang('m_title_field') ?></label><label class="text-danger">(*)</label> <?php echo lang('m_title_field_require'); ?>
             </div>
 
             <!-- Modal Body -->
@@ -20,21 +20,21 @@
                 <form class="form-horizontal" role="form" method="post" id="form-create-form-apply">
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Họ tên<span class="text-danger">*</span></label>
+                              for="inputEmail3"<?php echo lang('job_form_name'); ?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control"
-                        id="name" placeholder="họ tên" name="name" disabled="true" value="<?php echo $user['firstname'] . $user['lastname'];?>" />
-                        <input type="hidden" name="idjobseeker" value="<?php echo $user['id'];?>">
+                        id="name" placeholder="<?php echo lang('job_form_name'); ?>" name="name" disabled="true" value="<?php echo $user['firstname'] . $user['lastname']; ?>" />
+                        <input type="hidden" name="idjobseeker" value="<?php echo $user['id']; ?>">
 
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-4 control-label"
-                          for="inputPassword3" >Ngày sinh<span class="text-danger">*</span></label>
+                          for="inputPassword3" ><?php echo lang('job_form_birthday'); ?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <div class="row">
                         <div class="col-sm-3">
-                            <input type="text" name="date" placeholder="ngày" class="form-control margin-top-5 date" value="1">
+                            <input type="text" name="date" placeholder="<?php echo lang('m_day'); ?>" class="form-control margin-top-5 date" value="1">
                         </div>
                          <div class="col-sm-3">
                              <select name="month" class="form-control margin-top-5">
@@ -54,7 +54,7 @@
                              </select>
                          </div>
                           <div class="col-sm-4">
-                              <input class="form-control margin-top-5 year" type="text" name="year" placeholder="năm sinh" value="1980">
+                              <input class="form-control margin-top-5 year" type="text" name="year" placeholder="<?php echo lang('m_year'); ?>" value="1980">
                           </div>
                       </div>
                     </div>
@@ -62,10 +62,10 @@
                   </div>
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Số điện thoại<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_phone'); ?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control phone-number"
-                        id="phone" placeholder="số điện thoại" name="phone" />
+                        id="phone" placeholder="<?php echo lang('job_form_phone'); ?>" name="phone" />
                     </div>
                     <div class="col-sm-offset-4 col-sm-8 text-danger error-phone"></div>
                   </div>
@@ -73,21 +73,21 @@
 
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Email<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('m_email'); ?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <input type="email" class="form-control"
-                        id="email" placeholder="email" name="email" disabled="true" value="<?php echo $user['email'];?>" />
+                        id="email" placeholder="<?php echo lang('m_email'); ?>" name="email" disabled="true" value="<?php echo $user['email']; ?>" />
                     </div>
                   </div>
 
                 <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Trình độ năng lực<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_level'); ?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <select class="form-control" name="level">
                             <?php if (isset($listLevel)) {
 		foreach ($listLevel as $value) {?>
-    <option value="<?php echo $value->ljob_id?>"><?php echo $value->ljob_level;?></option>
+    <option value="<?php echo $value->ljob_id ?>"><?php echo $value->ljob_level; ?></option>
                                 <?php }
 	}
 	?>
@@ -97,7 +97,7 @@
 
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Địa điểm làm việc<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_work_at'); ?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <div class="row">
                             <div class="col-sm-12">
@@ -106,34 +106,34 @@ if (isset($listCountry)) {
 
 		foreach ($listCountry as $key => $value) {
 			//$index = current($listCountry);?>
-    <label><input type="radio" name="country" value="<?php echo $value->country_id?>"><?php echo $value->country_name;?></label>
+    <label><input type="radio" name="country" value="<?php echo $value->country_id ?>"><?php echo $value->country_name; ?></label>
                                     <?php }
 	}
 	?>
                             </div>
                             <div class="col-sm-12 select-province-vn hide">
-                                <select data-placeholder="chọn tỉnh thành"  multiple class="chosen-select-vn form-control province-vn " tabindex="11" >
+                                <select data-placeholder="<?php echo lang('s_chose_province'); ?>"  multiple class="chosen-select-vn form-control province-vn " tabindex="11" >
                                         <option value=""></option>
                                         <?php if (isset($listProvinceVN)) {
 		foreach ($listProvinceVN as $value) {?>
-                                                <option value="<?php echo $value->province_id?>"><?php echo $value->province_name;?></option>
+                                                <option value="<?php echo $value->province_id ?>"><?php echo $value->province_name; ?></option>
                                             <?php }
 	}
 	?>
                                       </select>
-                                      <label class="text-danger">(tối thiểu 1 tỉnh thành và tối đa là 5 tỉnh thành)</label>
+                                      <label class="text-danger">(<?php echo lang('job_form_province_require'); ?>)</label>
                                   </div>
                                   <div class="col-sm-12 select-province-jp hide">
-                                    <select data-placeholder="chọn tỉnh thành"  multiple class="chosen-select-jp form-control province-jp hide" tabindex="11" >
+                                    <select data-placeholder="<?php echo lang('s_chose_province'); ?>"  multiple class="chosen-select-jp form-control province-jp hide" tabindex="11" >
                                         <option value=""></option>
                                         <?php if (isset($listProvinceJP)) {
 		foreach ($listProvinceJP as $value) {?>
-                                                <option value="<?php echo $value->province_id?>"><?php echo $value->province_name;?></option>
+                                                <option value="<?php echo $value->province_id ?>"><?php echo $value->province_name; ?></option>
                                             <?php }
 	}
 	?>
                                       </select>
-                                      <label class="text-danger">(tối thiểu 1 tỉnh thành và tối đa là 5 tỉnh thành)</label>
+                                      <label class="text-danger">(<?php echo lang('job_form_province_require'); ?>)</label>
                             </div>
                         </div>
 
@@ -143,12 +143,12 @@ if (isset($listCountry)) {
 
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Nghề nghiệp<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('s_tite_career'); ?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <select class="form-control" name="career">
                             <?php if (isset($listCareer)) {
 		foreach ($listCareer as $value) {?>
-    <option value="<?php echo $value->career_id?>"><?php echo $value->career_name;?></option>
+    <option value="<?php echo $value->career_id ?>"><?php echo $value->career_name; ?></option>
                                 <?php }
 	}
 	?>
@@ -158,10 +158,10 @@ if (isset($listCountry)) {
 
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Bằng cấp/Giấy chứng nhận<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_degree'); ?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control"
-                        id="email" placeholder="bằng cấp/giấy chứng nhận" name="degree" />
+                        id="email" placeholder="<?php echo lang('job_form_degree'); ?>" name="degree" />
                     </div>
                     <div class="col-sm-offset-4 col-sm-8 text-danger error-degree"></div>
                   </div>
@@ -169,49 +169,49 @@ if (isset($listCountry)) {
 
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Học vấn<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_education'); ?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control"
-                        id="email" placeholder="học vấn" name="education" />
+                        id="email" placeholder="<?php echo lang('job_form_education'); ?>" name="education" />
                     </div>
                     <div class="col-sm-offset-4 col-sm-8 text-danger error-education"></div>
                   </div>
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Nơi ở hiện tại<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_current_address'); ?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control"
-                        id="email" placeholder="nơi ở" name="address" />
+                        id="email" placeholder="<?php echo lang('job_form_current_address'); ?>" name="address" />
                     </div>
                     <div class="col-sm-offset-4 col-sm-8 text-danger error-address"></div>
                   </div>
 
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Kinh nghiệm<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_experience'); ?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control"
-                        id="email" placeholder="kinh nghiệm" name="experience" />
+                        id="email" placeholder="<?php echo lang('job_form_experience'); ?>" name="experience" />
                     </div>
                     <div class="col-sm-offset-4 col-sm-8 text-danger error-experience"></div>
                   </div>
                    <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Sở thích/Kỹ năng đặc biệt<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_skill'); ?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
-                        <textarea placeholder="sở thích/kỹ năng" name="skill"  id="skill" class="form-control" tabindex="3" rows="3" cols="50" ></textarea>
+                        <textarea placeholder="<?php echo lang('job_form_skill'); ?>" name="skill"  id="skill" class="form-control" tabindex="3" rows="3" cols="50" ></textarea>
                     </div>
                     <div class="col-sm-offset-4 col-sm-8 text-danger error-skill"></div>
                   </div>
 
                    <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Tình trạng sức khỏe<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_healthy'); ?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <select class="form-control" name="healthy">
                             <?php if (isset($listHealthy)) {
 		foreach ($listHealthy as $value) {?>
-    <option value="<?php echo $value->healthy_id?>"><?php echo $value->healthy_type;?></option>
+    <option value="<?php echo $value->healthy_id ?>"><?php echo $value->healthy_type; ?></option>
                                 <?php }
 	}
 	?>
@@ -221,61 +221,61 @@ if (isset($listCountry)) {
 
                    <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Lý do ứng tuyển<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('job_form_reason_apply'); ?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
-                         <textarea placeholder="lý do ứng tuyển" name="reason-apply"  id="reason-apply" class="form-control" tabindex="3" rows="3" cols="50" ></textarea>
+                         <textarea placeholder="<?php echo lang('job_form_reason_apply'); ?>" name="reason-apply"  id="reason-apply" class="form-control" tabindex="3" rows="3" cols="50" ></textarea>
                     </div>
                     <div class="col-sm-offset-4 col-sm-8 text-danger error-reason-apply"></div>
                   </div>
 
                    <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Mức lương<span class="text-danger">*</span></label>
+                              for="inputEmail3"><?php echo lang('s_title_salary'); ?><span class="text-danger">*</span></label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control"
-                        id="email" placeholder="mức lương" name="salary" />
+                        id="email" placeholder="<?php echo lang('s_title_salary'); ?>" name="salary" />
                     </div>
                     <div class="col-sm-offset-4 col-sm-8 text-danger error-salary"></div>
                   </div>
 
                    <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Vấn đề khác</label>
+                              for="inputEmail3"><?php echo lang('job_form_advance'); ?></label>
                     <div class="col-sm-8">
-                           <textarea placeholder="vấn đề khác" name="advance"  id="advance" class="form-control" tabindex="3" rows="3" cols="50" ></textarea>
+                           <textarea placeholder="<?php echo lang('job_form_advance'); ?>" name="advance"  id="advance" class="form-control" tabindex="3" rows="3" cols="50" ></textarea>
                     </div>
                   </div>
 
                    <div class="form-group">
                     <label  class="col-sm-4 control-label"
-                              for="inputEmail3">Nguyện vọng</label>
+                              for="inputEmail3"><?php echo lang('job_form_wish'); ?></label>
                     <div class="col-sm-8">
-                         <textarea  name="wish"  placeholder="nguyện vọng" id="wish" class="form-control" tabindex="3" rows="3" cols="50" ></textarea>
+                         <textarea  name="wish"  placeholder="<?php echo lang('job_form_wish'); ?>" id="wish" class="form-control" tabindex="3" rows="3" cols="50" ></textarea>
                     </div>
                   </div>
                   <div class="form-group  captcha-box">
-								  <label class="control-label col-sm-4">Captcha<span class="colorRed">*</span></label>
+								  <label class="control-label col-sm-4"><?php echo lang('m_captcha') ?><span class="colorRed">*</span></label>
 								  	<div class="col-sm-8 captcha ">
 
 								  	</div>
 								  	<div class="col-sm-offset-4 col-sm-8 margin-top-5">
 								  		<input type="text" name="captcha" class="input-captcha">
-								  		<span class="alert alert-danger hide error-captcha"><?php echo lang('invalid-captcha')?></span>
+								  		<span class="alert alert-danger hide error-captcha"><?php echo lang('m_captcha_invalid') ?></span>
 								  		<input type="hidden" name="captcha-reg" >
 								  	</div>
 							  </div>
                   <div class="form-group">
                   	  <div class="col-sm-12 text-left">
-								*Nhấp chọn "Tạo hồ sơ", tôi đã đọc và đồng ý với các <a class="a-term" href="<?php echo base_url('about/term');?>">Thỏa thuận sử dụng</a>.
+								<?php echo lang('m_terms_create_resume'); ?>
 							</div>
                       <div class="col-sm-12 text-right">
                       <input type="hidden" name="province">
                       <div class="token-create-form">
 
-                         <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>" /></div>
+                         <input type="hidden" name="<?php echo $csrf['name']; ?>" value="<?php echo $csrf['hash']; ?>" /></div>
 
                             <button type="submit" class="btn btn-primary btn-create-form-apply">
-                                Tạo hồ sơ.
+                                <?php echo lang('job_form_title'); ?>
                             </button>
                       </div>
                   </div>
@@ -297,9 +297,9 @@ if (isset($listCountry)) {
                        <span aria-hidden="true">&times;</span>
                        <span class="sr-only">Close</span>
                 </button> -->
-                <div class="col-sm-12 text-center margin-top-10"><span class="text-center"><strong>Bạn đã tạo tối đa 3 hồ sơ trên website. Vui lòng chỉnh sửa hoặc xóa bớt hồ sơ hiện có.</strong></span></div>
+                <div class="col-sm-12 text-center margin-top-10"><span class="text-center"><strong><?php echo lang('js_ms_more_resume'); ?></strong></span></div>
                 <div class="col-sm-12 text-left margin-top-10">
-                	<button class="btn btn-primary " onclick="location.href='<?php echo base_url('jobseeker');?>'"><i class="fa fa-reply"></i> Trang ứng viên</button>
+                	<button class="btn btn-primary " onclick="location.href='<?php echo base_url('jobseeker'); ?>'"><i class="fa fa-reply"></i> <?php echo lang('js_title_my_page'); ?></button>
                 </div>
             </div>
 <?php }
@@ -412,7 +412,7 @@ $("#form-create-form-apply").submit(function(event){
     $("input[name=province]:hidden").val(province);
     $.ajax({
                 type: "POST", // HTTP method POST or GET
-                url: "<?php echo base_url() . 'jobseeker/create-resume';?>", //Where to make Ajax calls
+                url: "<?php echo base_url() . 'jobseeker/create-resume'; ?>", //Where to make Ajax calls
                 dataType:"json", // Data type, HTML, json etc.
                 data:$(this).serialize(),
                 // mimeType:"multipart/form-data",
@@ -427,7 +427,7 @@ $("#form-create-form-apply").submit(function(event){
                         $(".msg-apply").removeClass('hide');
                         $(".msg-apply").append(response.msg);
                        // $("#modal-create-document").modal('hide');
-                       window.location.href='<?php echo base_url("jobseeker")?>';
+                       window.location.href='<?php echo base_url("jobseeker") ?>';
                     }
                     else{
 
