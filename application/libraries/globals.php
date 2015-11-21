@@ -161,6 +161,10 @@ class Globals {
 			return 'vi';
 		}
 	}
+	function getFAQ() {
+		$sql = "select * from faq where faq_is_delete = 0";
+		return $this->getFromDbQueryBinding($sql, array());
+	}
 	public function getFromDb($projections) {
 
 		if ($projections != null) {

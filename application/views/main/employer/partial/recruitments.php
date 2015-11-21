@@ -4,9 +4,9 @@
     <table id="example" class="display" cellspacing="0" width="100%" class="table table-hover table-striped">
         <thead>
             <tr>
-                <th>Mã số</th>
-                <th>Tiêu đề</th>
-                <th>Trạng thái</th>
+                <th><?php echo lang('m_code'); ?></th>
+                <th><?php echo lang('rec_title'); ?></th>
+                <th><?php echo lang('m_status'); ?></th>
                 <th></th>
             </tr>
         </thead>
@@ -32,11 +32,11 @@
               </td>
 	           	<td class="min-w-150">
 
-                <button data-href="<?php echo base_url('employer/recruitment/') . '/' . $value->rec_code . '-' . $value->rec_id . '.html'; ?>"  class="btn btn-xs btn-primary btn-detail-recruitment" >Chi tiết</button>
+                <button data-href="<?php echo base_url('employer/recruitment/') . '/' . $value->rec_code . '-' . $value->rec_id . '.html'; ?>"  class="btn btn-xs btn-primary btn-detail-recruitment" ><?php echo lang('m_view_detail'); ?></button>
 
 	           		<?php if ($value->rec_map_user_employer == $employerInfo->user['id']) {?>
-                <button data-href="<?php echo base_url('employer/recruitment/edit') . '/' . $value->rec_code . '-' . $value->rec_id . '.html' ?>"  class="btn btn-xs btn-warning btn-edit-recruitment-em">Sửa</button>
-                <button data-href="<?php echo $value->rec_id; ?>" data-toggle="modal" data-target="#modal-delete-recruitment-em"  class="btn btn-xs btn-danger">Xóa</button>
+                <button data-href="<?php echo base_url('employer/recruitment/edit') . '/' . $value->rec_code . '-' . $value->rec_id . '.html' ?>"  class="btn btn-xs btn-warning btn-edit-recruitment-em"><?php echo lang('m_edit'); ?></button>
+                <button data-href="<?php echo $value->rec_id; ?>" data-toggle="modal" data-target="#modal-delete-recruitment-em"  class="btn btn-xs btn-danger"><?php echo lang('m_delete'); ?></button>
                 <?php }
 		?>
 
@@ -51,7 +51,7 @@
   </div>
   <?php } else {?>
   <div class="box-body table-responsive no-padding no-border text-center">
-    <h3>KHÔNG CÓ TIN TUYỂN DỤNG NÀO.</h3>
+    <h3><?php echo lang('em_no_rec_manager'); ?>.</h3>
   </div>
   <?php }
 ?>

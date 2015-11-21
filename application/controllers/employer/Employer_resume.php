@@ -46,13 +46,13 @@ class Employer_resume extends CI_Controller {
 		//$listAccount = $this->employer->getListAccount($employerInfo->employer_id);
 		$breadcrumbs = array(
 			array('isLink' => true,
-				'title' => 'Trang chủ',
+				'title' => $this->lang->line('breadcrumbs_home'),
 				'link' => base_url()),
 			array('isLink' => true,
-				'title' => 'Trang nhà tuyển dụng',
+				'title' => $this->lang->line('breadcrumbs_employer'),
 				'link' => base_url('employer')),
 			array('isLink' => false,
-				'title' => 'Tìm kiếm hồ sơ ứng viên',
+				'title' => $this->lang->line('breadcrumbs_search_resume'),
 				'link' => ''));
 		$breadcrumb = $this->load->view('main/employer/breadcrumb', array('breadcrumbs' => $breadcrumbs), TRUE);
 		$listProvince = $this->recruitment->getAllProvince();
@@ -187,13 +187,13 @@ class Employer_resume extends CI_Controller {
 		//$listAccount = $this->employer->getListAccount($employerInfo->employer_id);
 		$breadcrumbs = array(
 			array('isLink' => true,
-				'title' => 'Trang chủ',
+				'title' => $this->lang->line('breadcrumbs_home'),
 				'link' => base_url()),
 			array('isLink' => true,
-				'title' => 'Trang nhà tuyển dụng',
+				'title' => $this->lang->line('breadcrumbs_employer'),
 				'link' => base_url('employer')),
 			array('isLink' => false,
-				'title' => 'Tìm kiếm hồ sơ ứng viên',
+				'title' => $this->lang->line('breadcrumbs_search_resume'),
 				'link' => ''));
 		$breadcrumb = $this->load->view('main/employer/breadcrumb', array('breadcrumbs' => $breadcrumbs), TRUE);
 		$listProvince = $this->recruitment->getAllProvince();
@@ -237,10 +237,10 @@ class Employer_resume extends CI_Controller {
 			//$listAccount = $this->employer->getListAccount($employerInfo->employer_id);
 			$breadcrumbs = array(
 				array('isLink' => true,
-					'title' => 'Trang chủ',
+					'title' => $this->lang->line('breadcrumbs_home'),
 					'link' => base_url()),
 				array('isLink' => true,
-					'title' => 'Trang nhà tuyển dụng',
+					'title' => $this->lang->line('breadcrumbs_employer'),
 					'link' => base_url('employer')),
 				array('isLink' => false,
 					'title' => $resume->docon_code,
@@ -314,10 +314,10 @@ class Employer_resume extends CI_Controller {
 		//$listAccount = $this->employer->getListAccount($employerInfo->employer_id);
 		$breadcrumbs = array(
 			array('isLink' => true,
-				'title' => 'Trang chủ',
+				'title' => $this->lang->line('breadcrumbs_home'),
 				'link' => base_url()),
 			array('isLink' => true,
-				'title' => 'Trang nhà tuyển dụng',
+				'title' => $this->lang->line('breadcrumbs_employer'),
 				'link' => base_url('employer')),
 			array('isLink' => false,
 				'title' => 'Hồ sơ đã lưu',

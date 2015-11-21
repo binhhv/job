@@ -70,10 +70,10 @@ class Employer extends CI_Controller {
 		$numRecruitmentActive = count($this->employer->getListRecruitmentEmployer(1, $employerInfo->employer_id));
 		$breadcrumbs = array(
 			array('isLink' => true,
-				'title' => 'Trang chủ',
+				'title' => $this->lang->line('breadcrumbs_home'),
 				'link' => base_url()),
 			array('isLink' => false,
-				'title' => 'Trang nhà tuyển dụng',
+				'title' => $this->lang->line('breadcrumbs_employer'),
 				'link' => base_url('employer')));
 		$arrReportRecruitment = $this->recruitment->getReportRecruitment($employerInfo->employer_id);
 		$contentEmployer = $this->load->view('main/employer/index', array('employerInfo' => $employerInfo, 'numRecruitmentActive' => $numRecruitmentActive, 'isBreadcrumb' => true, 'breadcrumbs' => $breadcrumbs, 'arrReportRecruitment' => $arrReportRecruitment), TRUE);
@@ -683,13 +683,13 @@ class Employer extends CI_Controller {
 			'provinceVN' => $provinceVN, 'provinceJP' => $provinceJP), TRUE);
 		$breadcrumbs = array(
 			array('isLink' => true,
-				'title' => 'Trang chủ',
+				'title' => $this->lang->line('breadcrumbs_home'),
 				'link' => base_url()),
 			array('isLink' => true,
-				'title' => 'Trang nhà tuyển dụng',
+				'title' => $this->lang->line('breadcrumbs_employer'),
 				'link' => base_url('employer')),
 			array('isLink' => false,
-				'title' => 'Cập nhật thông tin',
+				'title' => $this->lang->line('breadcrumbs_update_info'),
 				'link' => ''));
 		$breadcrumb = $this->load->view('main/employer/breadcrumb', array('breadcrumbs' => $breadcrumbs), TRUE);
 		$content = $this->load->view('main/employer/layout', array('contentEmployer' => $contentEmployer, 'update_account_employer' => $update_account_employer,

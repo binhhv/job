@@ -1,7 +1,7 @@
 <div class="col-sm-12 clear mb_20 margin-top-10">
             <p><span class="border-vertical text-color-1"></span>
-            <span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('title_manager_accounts_em');?></strong></span>
-            <?php if ($employerInfo->account_map_role == 2) {?><button data-href="0" data-toggle="modal" data-target="#modal-account-em" class="btn btn-sm btn-primary pull-right">Tạo tài khoản</button> <?php }
+            <span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('title_manager_accounts_em'); ?></strong></span>
+            <?php if ($employerInfo->account_map_role == 2) {?><button data-href="0" data-toggle="modal" data-target="#modal-account-em" class="btn btn-sm btn-primary pull-right"><?php echo lang('title_create_account_em'); ?></button> <?php }
 ?></p>
         </div>
         <?php if (isset($listAccount) && count($listAccount) > 0) {
@@ -11,9 +11,9 @@
     <table id="example" class="display" cellspacing="0" width="100%" class="table table-hover table-striped">
         <thead>
             <tr>
-                <th>Mã số</th>
-                <th>Họ tên</th>
-                <th>Email</th>
+                <th><?php echo lang('m_code'); ?></th>
+                <th><?php echo lang('job_form_name'); ?></th>
+                <th><?php echo lang('m_email'); ?></th>
                 <th></th>
             </tr>
         </thead>
@@ -24,18 +24,18 @@
         <?php if ($value->account_id != $employerInfo->account_id) {
 			?>
            <tr>
-           	<td class="min-w-100"><strong><?php echo $value->account_code;?></strong></td>
-	           	<td class="min-w-150"><?php echo $value->account_first_name . ' ' . $value->account_last_name;?></td>
-	           	<td class="min-w-150"><?php echo $value->account_email;?></td>
+           	<td class="min-w-100"><strong><?php echo $value->account_code; ?></strong></td>
+	           	<td class="min-w-150"><?php echo $value->account_first_name . ' ' . $value->account_last_name; ?></td>
+	           	<td class="min-w-150"><?php echo $value->account_email; ?></td>
 	           	<td class="min-w-150">
                 <?php if ($value->account_map_role != 2) {
 				?>
-                <button data-href="<?php echo $value->account_id;?>" data-toggle="modal" data-target="#modal-account-em" class="btn btn-xs btn-primary" >Sửa</button>
-                <button data-href="<?php echo $value->account_id;?>" data-toggle="modal" data-target="#modal-delete-account-em" class="btn btn-xs btn-danger">Xóa</button>
+                <button data-href="<?php echo $value->account_id; ?>" data-toggle="modal" data-target="#modal-account-em" class="btn btn-xs btn-primary" ><?php echo lang('m_edit'); ?></button>
+                <button data-href="<?php echo $value->account_id; ?>" data-toggle="modal" data-target="#modal-delete-account-em" class="btn btn-xs btn-danger"><?php echo lang('m_delete'); ?></button>
 	           		<?php if ($value->account_is_disabled) {?>
-                <button data-href="<?php echo $value->account_id;?>" data-toggle="modal" data-target="#modal-enable-account-em" class="btn btn-xs btn-warning">Mở khóa</button>
+                <button data-href="<?php echo $value->account_id; ?>" data-toggle="modal" data-target="#modal-enable-account-em" class="btn btn-xs btn-warning"><?php echo lang('m_unblock'); ?></button>
                 <?php } else {?>
-                <button data-href="<?php echo $value->account_id;?>" data-toggle="modal" data-target="#modal-disable-account-em" class="btn btn-xs btn-warning">Khóa</button>
+                <button data-href="<?php echo $value->account_id; ?>" data-toggle="modal" data-target="#modal-disable-account-em" class="btn btn-xs btn-warning"><?php echo lang('m_block'); ?></button>
                 <?php }
 				?>
 
@@ -54,7 +54,7 @@
         </div>
         <?php	} else {?>
         <div class="col-sm-12 text-center">
-        	<h3>CHƯA CÓ TÀI KHOẢN NÀO.</h3>
+        	<h3><?php echo lang('em_no_accounts'); ?>.</h3>
         </div>
         	<?php	}
 ?>

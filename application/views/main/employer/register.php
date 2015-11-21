@@ -9,11 +9,11 @@
 
 				<div class="row">
 					<div class="col-sm-12 col-md-12 margin-5">
-						<span class="text-color-1 title-jobseeker-register"><strong>Nhà tuyển dụng đăng ký tài khoản</strong></span>
+						<span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('em_title_register'); ?></strong></span>
 					</div>
 					<div class="col-sm-12 col-md-12 margin-5">
-						<span class="title-exits-account"> Bạn đã có tài khoản ?
-							<a href="<?php echo base_url('login')?>">Đăng nhập</a> &nbsp;  <button class="btn-employer background-color-2 text-color-2" onclick="location.href='<?php echo base_url('register_uv');?>'">Người tìm việc đăng ký</button>
+						<span class="title-exits-account"> <?php echo lang('js_rg_exist_account'); ?>
+							<a href="<?php echo base_url('login') ?>"><?php echo lang('hd_login') ?></a> &nbsp;  <button class="btn-employer background-color-2 text-color-2" onclick="location.href='<?php echo base_url('register_uv'); ?>'"><?php echo lang('m_title_jobseeker_register'); ?></button>
 						</span>
 					</div>
 				</div>
@@ -33,12 +33,12 @@
                             </div> -->
                             <div class="col-sm-12 clear mb_20">
                                 <span class="border-vertical text-color-1"></span>
-                                <span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('title_register_re_depl');?></strong></span>
-                                <!-- <span class="fwb fs20 txt-color-363636"><?php echo lang('title_register_re_depl');?></span> -->
+                                <span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('title_register_re_depl'); ?></strong></span>
+                                <!-- <span class="fwb fs20 txt-color-363636"><?php echo lang('title_register_re_depl'); ?></span> -->
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-12">
-                                    <label class="control-label"><?php echo lang('email_re_user');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('email_re_user'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
                                         <input type="text" class="form-control" name="account_email" />
                                     </div>
@@ -47,14 +47,14 @@
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('password_re_user');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('password_re_user'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
                                         <input type="password" class="form-control" name="account_password" />
                                     </div>
                                     <div class="col-sm-12 text-danger error-account-password"></div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('passconf_re_user');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('passconf_re_user'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
                                         <input type="password" class="form-control" name="confirm_password" />
                                     </div>
@@ -62,21 +62,21 @@
                                 </div>
                             </div>
                             <div class="col-sm-12 clear mb_20">
-                                <!-- <span class="fwb fs20 txt-color-363636"><?php echo lang('title_depoyer_re_depl');?></span> -->
+                                <!-- <span class="fwb fs20 txt-color-363636"><?php echo lang('title_depoyer_re_depl'); ?></span> -->
                                  <span class="border-vertical text-color-1"></span>
-                                <span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('title_depoyer_re_depl');?></strong></span>
+                                <span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('title_depoyer_re_depl'); ?></strong></span>
                             </div>
 
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_name_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_name_re_depl'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
                                         <input type="text" class="form-control" name="employer_name" />
                                     </div>
                                     <div class="col-sm-12 text-danger error-employer-name"></div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_size_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_size_re_depl'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
                                         <!-- <select class="form-control" name="employer_size" id="employer_size">
                                             <option value="0">Chọn quy mô doanh nghiệp</option>
@@ -92,14 +92,14 @@
 
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_phone_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_phone_re_depl'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
                                         <input type="text" class="form-control" name="employer_phone" />
                                     </div>
                                     <div class="col-sm-12 text-danger error-employer-phone"></div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_fax_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_fax_re_depl'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
                                          <input type="text" class="form-control" name="employer_fax" />
                                     </div>
@@ -109,14 +109,14 @@
 
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_about_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_about_re_depl'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
                                         <textarea type="text" class="form-control" name="employer_about" rows="3"> </textarea>
                                     </div>
                                     <div class="col-sm-12 text-danger error-employer-about"></div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_address_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_address_re_depl'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
                                           <textarea type="text" class="form-control" name="employer_address"  rows="3"> </textarea>
                                     </div>
@@ -126,7 +126,7 @@
 
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_map_province_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_map_province_re_depl'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
                                         <div class="row">
                                             <label class="col-sm-6"><input type="radio" value="1" checked="true" name="country">Việt Nam</label>
@@ -137,21 +137,21 @@
                                         <select class="form-control province_vn" name="employer_map_province_vn" id="employer_map_province_vn">
                                             <!-- <option value="0">Chọn quy tỉnh thành</option> -->
                                             <?php if (isset($provinceVN)) {foreach ($provinceVN as $rows): ?>
-                                                <option value="<?php echo $rows->province_id?>"><?php echo $rows->province_name?></option>
+                                                <option value="<?php echo $rows->province_id ?>"><?php echo $rows->province_name ?></option>
                                             <?php endforeach?> <?php }
 ?>
                                         </select>
                                         <select class="form-control province_jp hide" name="employer_map_province_jp" id="employer_map_province_jp">
                                             <!-- <option value="0">Chọn quy tỉnh thành</option> -->
                                             <?php if (isset($provinceJP)) {foreach ($provinceJP as $rows): ?>
-                                                <option value="<?php echo $rows->province_id?>"><?php echo $rows->province_name?></option>
+                                                <option value="<?php echo $rows->province_id ?>"><?php echo $rows->province_name ?></option>
                                             <?php endforeach?> <?php }
 ?>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_website_re_depl');?></label>
+                                    <label class="control-label"><?php echo lang('employer_website_re_depl'); ?></label>
                                     <div class="controls"><label>&nbsp;</label></div>
                                     <div class="controls">
                                          <input type="text" class="form-control" name="employer_website" />
@@ -161,7 +161,7 @@
 
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-12">
-                                    <label class="control-label"><?php echo lang('employer_logo_re_depl');?></label>
+                                    <label class="control-label"><?php echo lang('employer_logo_re_depl'); ?></label>
                                     <div class="controls">
                                         <!-- <div class="display_block btn-big pos_relactive w170 floatLeft"> -->
                                             <input id="fileupload" type="file" name="files"  >
@@ -183,26 +183,26 @@
                                     <div class="col-sm-12 text-danger error-employer-logo"></div>
 
                                 </div>
-                                <div class="col-sm-12 note_size_photo clearfix font12 italic" id="error_giayphepkinhdoanh">(Dạng file .jpg .gif .png, dung lượng &lt;<=2MB)</div>
+                                <div class="col-sm-12 note_size_photo clearfix font12 italic" id="error_giayphepkinhdoanh">(<?php echo lang('m_file_tyoe') ?> .jpg .gif .png, <?php echo lang('m_file_size'); ?> &lt;<=2MB)</div>
                             </div>
 
 
                             <div class="col-sm-12 clear mb_20">
-                                <!-- <span class="fwb fs20 txt-color-363636"><?php echo lang('title_user_re_depl');?></span> -->
+                                <!-- <span class="fwb fs20 txt-color-363636"><?php echo lang('title_user_re_depl'); ?></span> -->
                                  <span class="border-vertical text-color-1"></span>
-                                <span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('title_user_re_depl');?></strong></span>
+                                <span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('title_user_re_depl'); ?></strong></span>
                             </div>
 
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_contact_name_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_contact_name_re_depl'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
                                         <input type="text" class="form-control" name="employer_contact" />
                                     </div>
                                     <div class="col-sm-12 text-danger error-employer-contact"></div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_contact_email_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_contact_email_re_depl'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
                                          <input type="text" class="form-control" name="employer_contact_email" />
                                     </div>
@@ -212,14 +212,14 @@
 
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_contact_phone_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_contact_phone_re_depl'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
                                         <input type="text" class="form-control" name="employer_contact_phone" />
                                     </div>
                                     <div class="col-sm-12 text-danger error-employer-contact-phone"></div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <label class="control-label"><?php echo lang('employer_contact_mobile_re_depl');?><span class="colorRed">*</span></label>
+                                    <label class="control-label"><?php echo lang('employer_contact_mobile_re_depl'); ?><span class="colorRed">*</span></label>
                                     <div class="controls">
                                          <input type="text" class="form-control" name="employer_contact_mobile" />
                                     </div>
@@ -230,11 +230,11 @@
                             <div class="col-sm-12 clear mb_20">
                                 <span class="border-vertical text-color-1"></span>
                                 <span class="text-color-1 title-jobseeker-register"><strong>Captcha</strong></span>
-                                <!-- <span class="fwb fs20 txt-color-363636"><?php echo lang('title_register_re_depl');?></span> -->
+                                <!-- <span class="fwb fs20 txt-color-363636"><?php echo lang('title_register_re_depl'); ?></span> -->
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group col-sm-12">
-                                    <!-- <label class="control-label"><?php echo lang('email_re_user');?><span class="colorRed">*</span></label> -->
+                                    <!-- <label class="control-label"><?php echo lang('email_re_user'); ?><span class="colorRed">*</span></label> -->
                                     <!-- <div class="controls"> -->
                                     <div class="col-sm-6">
                                         <div class="captcha " style="display: inline-block;padding-top: 5px;"></div> &nbsp;
@@ -242,7 +242,7 @@
                                     </div>
                                     <div class="col-sm-6 controls">
                                         <!-- <input type="text" name="captcha" class="input-captcha form-control"> -->
-                                        <span class="hide error-captcha text-danger"><?php echo lang('invalid-captcha')?></span>
+                                        <span class="hide error-captcha text-danger"><?php echo lang('invalid-captcha') ?></span>
                                         <input type="hidden" name="captcha-reg" >
                                     </div>
 
@@ -255,15 +255,15 @@
                           <div class="row">
                              <div class="col-sm-12">
                                 <div class="form-group text-right">
-                                     <button type="submit" class="btn btn-primary"><?php echo lang('btn_register_re_user');?></button>
+                                     <button type="submit" class="btn btn-primary"><?php echo lang('btn_register_re_user'); ?></button>
                                 </div>
                             </div>
                             <div class="col-sm-12">
-                                <span class="colorRed">*</span> Nhấp chọn "Đăng Ký"đồng nghĩa với việc tôi đã đọc và đồng ý với các <a class="a-term" href="<?php echo base_url('about/term');?>">Thỏa thuận sử dụng</a>.
+                                <?php echo lang('m_terms_register'); ?>
                             </div>
                         </div>
                     </fieldset>
-                    <div class="token hide"><input type="hidden" name="<?php echo $csrf['name'];?>" value="<?=$csrf['hash'];?>" /></div>
+                    <div class="token hide"><input type="hidden" name="<?php echo $csrf['name']; ?>" value="<?=$csrf['hash'];?>" /></div>
 
                 </form>
 					</div>
@@ -295,8 +295,8 @@ if (isset($listCareer) && count($listCareer) > 0) {
 		$careerReg = str_replace($keyRegex, "-", trim($value->career_name));
 		?>
                         <div class="col-sm-12 item-tag-job">
-                        <a href="<?php echo base_url('search') . '/' . 'all_' . $careerReg . '_c' . $value->career_id;?>"><?php echo $value->career_name?> <span class="text-color-3">
-                        <?php if ($value->numJob > 0) {?>(<?php echo $value->numJob;?>) <?php }
+                        <a href="<?php echo base_url('search') . '/' . 'all_' . $careerReg . '_c' . $value->career_id; ?>"><?php echo $value->career_name ?> <span class="text-color-3">
+                        <?php if ($value->numJob > 0) {?>(<?php echo $value->numJob; ?>) <?php }
 		?>
                         </span></a>
                         </div>
@@ -314,16 +314,16 @@ if (isset($listCareer) && count($listCareer) > 0) {
         <!--ADWORDS-->
                     <div class="col-sm-12 margin-top-10 no-padding-left-res">
                         <div class="col-sm-12 no-padding">
-                            <div  style="background:url(<?php echo base_url() . "assets/main/img/about/parallax-bg-3.jpg"?>) 50% 0px no-repeat ;">
+                            <div  style="background:url(<?php echo base_url() . "assets/main/img/about/parallax-bg-3.jpg" ?>) 50% 0px no-repeat ;">
                                 <div class="ads-search-job">
                                     <div class="row">
                                                 <div class="col-md-8">
-                                                    <h1 class="title text-center">Liên hệ quảng cáo</h1>
+                                                    <h1 class="title text-center"><?php echo lang('m_title_contact_adwords') ?></h1>
                                                     <!-- <p class="text-center">&nbsp;</p> -->
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="text-center">
-                                                        <a href="http://localhost/job/adwords" class="btn btn-default btn-lg">Liên hệ</a>
+                                                        <a href="http://localhost/job/adwords" class="btn btn-default btn-lg"><?php echo lang('m_button_contact_adwords') ?></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -430,7 +430,7 @@ $(function(){
                 } else if (status == 'success') {
                     //$('#message_user').text("");
                     //$('#registerModal').modal('hide')
-                    window.location.href = '<?php echo base_url("employer");?>'; //redirec to home page jobseeker
+                    window.location.href = '<?php echo base_url("employer"); ?>'; //redirec to home page jobseeker
                 }
             },
             error: function(xhr, ajaxOptions, thrownError) {
@@ -443,13 +443,13 @@ $(function(){
 
 	function getCaptcha(){
       	$.ajax({
-        url: '<?php echo base_url() . "captcha/createCaptcha"?>',
+        url: '<?php echo base_url() . "captcha/createCaptcha" ?>',
         type: "get",
         dataType:'json',
         success: function(data){
         	//$(".captcha-box").removeClass('hide');
         	$(".captcha").empty();
-        	$(".captcha").append('<img src="<?php echo base_url() . "captcha/"?>'+data['filename']+'" >');
+        	$(".captcha").append('<img src="<?php echo base_url() . "captcha/" ?>'+data['filename']+'" >');
         	$('input:hidden[name=captcha-reg]').val(data['word']);
         	//console.log(data);
         	//alert(data.hash);

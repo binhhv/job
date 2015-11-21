@@ -82,12 +82,12 @@ if (isset($userEdit->account_password)) {
                     <input type="hidden" name="<?php echo $csrf['name'];?>" value="<?php echo $csrf['hash'];?>">
                   </div>
                   <div class="col-sm-12 text-right">
-                     <a type="button" class="btn btn-danger" data-dismiss="modal">Hủy</a>
+                     <a type="button" class="btn btn-danger" data-dismiss="modal"><?php echo lang('m_cancel'); ?></a>
                      <button type="submit" class="btn btn-primary btn-ok"><?php
 if ($idUser != 0) {
-	echo 'Thay đổi';
+	echo <?php echo lang('m_change'); ?>;
 } else {
-	echo 'Tạo tài khoản';
+	echo <?php echo lang('title_create_account_em'); ?>;
 }
 ?></button>
                   </div>

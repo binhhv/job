@@ -20,12 +20,12 @@ $expire_time = strtotime($expire);
 		  <form>
 
 			  	<div class="col-sm-6 margin-top-10">
-			  		<input type="text" name="key-word" class="form-control w-100" placeholder="Từ khóa" value="<?php if (isset($keyWord) && $keyWord != "all") {echo $keyWord;}
+			  		<input type="text" name="key-word" class="form-control w-100" placeholder="<?php echo lang('s_keyword'); ?>" value="<?php if (isset($keyWord) && $keyWord != "all") {echo $keyWord;}
 	?>">
 			  	</div>
 			  	<div class="col-sm-6 margin-top-10">
 			  		<select class="form-control" name="career" id="career">
-			  			<option value="-1">Chọn ngành nghề</option>
+			  			<option value="-1"><?php echo lang('s_chose_career'); ?></option>
 			  			<?php if (isset($listCareer)) {
 		foreach ($listCareer as $key => $value) {
 			?>
@@ -40,7 +40,7 @@ $expire_time = strtotime($expire);
 			  	</div>
 			  	<div class="col-sm-6 margin-top-10">
 			  		<select class="form-control" name="level" id="level">
-			  			<option value="-1">Chọn trình độ</option>
+			  			<option value="-1"><?php echo lang('s_chose_level'); ?></option>
 			  			<?php if (isset($listLevel)) {
 		foreach ($listLevel as $key => $value) {
 			?>
@@ -55,7 +55,7 @@ $expire_time = strtotime($expire);
 			  	</div>
 			  	<div class="col-sm-6 margin-top-10">
 			  		<select class="form-control" name="province" id="province">
-			  			<option value="-1">Chọn tinh thành</option>
+			  			<option value="-1"><?php echo lang('s_chose_province'); ?></option>
 			  				<?php if (isset($listProvince)) {
 		foreach ($listProvince as $key => $value) {
 			?>
@@ -69,13 +69,13 @@ $expire_time = strtotime($expire);
 			  		</select>
 			  	</div>
 			  	<div class="col-sm-12 text-right margin-top-10">
-			  		<button class="btn btn-primary padding-lr-20" id="btnSearch">Tìm kiếm</button>
+			  		<button class="btn btn-primary padding-lr-20" id="btnSearch"><?php echo lang('s_button'); ?></button>
 			  	</div>
 
 		  </form>
 <?php } else {?>
 	<div class="col-sm-12 text-center">
-		<h5 class="line-h-25">ĐỂ SỬ DỤNG DỊCH VỤ NÀY CỦA CHÚNG TÔI XIN VUI LÒNG LIÊN HỆ VỚI ADMIN CỦA PAGE QUA EMAIL <a href="mailto:contact@allshigoto.com">contact@allshigoto.com</a> HOẶC NHẤN VÀO <a href="<?php echo base_url('contact') ?>">ĐÂY</a> ĐỂ LIÊN HỆ VỚI CHÚNG TÔI. </h5>
+		<?php echo lang('em_no_service_search_resume'); ?>
 	</div>
 <?php }
 ?>
@@ -94,27 +94,27 @@ $expire_time = strtotime($expire);
          <div class="col-sm-12 search-rs-box no-padding-top">
          <?php if (count($listResume) > 0) {
 	?>
-	<div class="col-sm-12 text-center margin-bottom-10"><h3 class="no-margin-tb ">Có <?php echo $numResume; ?> resume đc tìm thấy</h3></div>
+	<div class="col-sm-12 text-center margin-bottom-10"><h3 class="no-margin-tb "><?php echo str_replace('%s', $numResume, lang('em_num_rs_search_found')); ?></h3></div>
          	<?php foreach ($listResume as $key => $value) {
 		?>
          	<div class="col-sm-12 item-search-rs  <?php if ($key < count($listResume) - 1) {echo 'no-border-bottom';}
 		?> <?php if ($key % 2 != 0) {echo 'bg-odd-search-rs';}
 		?>">
-         		<div class="col-sm-6 margin-top-5"><b>Mã hồ sơ : </b> <span class="text-danger"><?php echo $value->docon_code; ?></span> </div>
-         		<div class="col-sm-6 margin-top-5"><b>Ngành nghề : </b> <?php echo $value->career_name; ?> </div>
-         		<div class="col-sm-6 margin-top-5"><b>Họ tên :</b> <?php echo $value->account_first_name . '&nbsp' . $value->account_last_name; ?></div>
-         		<div class="col-sm-6 margin-top-5"><b>Email : </b> <?php echo $value->account_email; ?></div>
-         		<div class="col-sm-6 margin-top-5"><b>Số điện thoại :</b><?php echo $value->docon_phone; ?></div>
-         		<div class="col-sm-6 margin-top-5"><b>Địa điểm làm việc :</b><?php echo $value->province_name; ?></div>
+         		<div class="col-sm-6 margin-top-5"><b><?php echo lang('m_code_rs'); ?> : </b> <span class="text-danger"><?php echo $value->docon_code; ?></span> </div>
+         		<div class="col-sm-6 margin-top-5"><b><?php echo lang('s_title_career'); ?> : </b> <?php echo $value->career_name; ?> </div>
+         		<div class="col-sm-6 margin-top-5"><b><?php echo lang('job_form_name'); ?> :</b> <?php echo $value->account_first_name . '&nbsp' . $value->account_last_name; ?></div>
+         		<div class="col-sm-6 margin-top-5"><b><?php echo lang('m_email'); ?> : </b> <?php echo $value->account_email; ?></div>
+         		<div class="col-sm-6 margin-top-5"><b><?php echo lang('job_form_phone'); ?> :</b><?php echo $value->docon_phone; ?></div>
+         		<div class="col-sm-6 margin-top-5"><b><?php echo lang('job_form_work_at'); ?> :</b><?php echo $value->province_name; ?></div>
          		<div class="col-sm-12 text-right margin-top-5 margin-bottom-10">
          			<?php if ($value->existStore != 0) {?>
-         			<button class="btn btn-xs btn-danger">Đã lưu hồ sơ</button>
+         			<button class="btn btn-xs btn-danger"><?php echo lang('em_saved_resume'); ?></button>
 		<?php } else {?>
-         				<button data-href="<?php echo base_url('employer/resume') . '/store-resume/' . $value->docon_id; ?>" data-toggle="modal" data-target="#confirm-store-resume" class="btn btn-xs btn-warning">Lưu hồ sơ</button>
+         				<button data-href="<?php echo base_url('employer/resume') . '/store-resume/' . $value->docon_id; ?>" data-toggle="modal" data-target="#confirm-store-resume" class="btn btn-xs btn-warning"><?php echo lang('em_saved_resume'); ?></button>
          				<?php	}
 		?>
 
-         			<a class="btn btn-xs btn-primary" href="<?php echo base_url('employer/resume/detail/') . '/' . $value->docon_code . '-' . $value->docon_id; ?>">Chi tiết</a>
+         			<a class="btn btn-xs btn-primary" href="<?php echo base_url('employer/resume/detail/') . '/' . $value->docon_code . '-' . $value->docon_id; ?>"><?php echo lang('m_view_detail'); ?></a>
          		</div>
          	</div>
          	<?php }
@@ -127,7 +127,7 @@ $expire_time = strtotime($expire);
 	?>
 				</div>
 <?php } else {?>
-	<div class="col-sm-12 text-center margin-bottom-10"><h3 class="no-margin-tb ">Không tìm thấy resume nào.</h3></div>
+	<div class="col-sm-12 text-center margin-bottom-10"><h3 class="no-margin-tb "><?php echo lang('em_no_search_rs'); ?></h3></div>
 <?php }
 ?>
 
@@ -141,11 +141,11 @@ $expire_time = strtotime($expire);
         <div class="modal-content">
 
             <div class="modal-body">
-               Bạn có muốn lưu hồ sơ ứng viên này không ?
+               <?php echo lang('em_confirm_save_resume'); ?>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
-                <a class="btn btn-primary btn-ok">Lưu</a>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><?php echo lang('m_cancel'); ?></button>
+                <a class="btn btn-primary btn-ok"><?php echo lang('m_save'); ?></a>
             </div>
         </div>
     </div>

@@ -47,13 +47,13 @@ class Employer_account extends CI_Controller {
 		$listAccount = $this->employer->getListAccount($employerInfo->employer_id);
 		$breadcrumbs = array(
 			array('isLink' => true,
-				'title' => 'Trang chủ',
+				'title' => $this->lang->line('breadcrumbs_home'),
 				'link' => base_url()),
 			array('isLink' => true,
-				'title' => 'Trang nhà tuyển dụng',
+				'title' => $this->lang->line('breadcrumbs_employer'),
 				'link' => base_url('employer')),
 			array('isLink' => false,
-				'title' => 'Quản lý tài khoản',
+				'title' => $this->lang->line('breadcrumbs_manager_account'),
 				'link' => ''));
 		$breadcrumb = $this->load->view('main/employer/breadcrumb', array('breadcrumbs' => $breadcrumbs), TRUE);
 		$contentEmployer = $this->load->view('main/employer/accounts', array('csrf' => $csrf, 'employerInfo' => $employerInfo, 'listAccount' => $listAccount), TRUE);

@@ -9,8 +9,8 @@
     <table id="tableStoreResume" class="display" cellspacing="0" width="100%" class="table table-hover table-striped">
         <thead>
             <tr>
-                <th class="text-center hide">Mã số</th>
-                <th class="text-center hide">Thông tin</th>
+                <th class="text-center hide"><?php echo lang('m_code'); ?></th>
+                <th class="text-center hide"><?php echo lang('m_info'); ?></th>
                 <th class="hide"></th>
             </tr>
         </thead>
@@ -25,19 +25,19 @@
 			</td>
 			<td >
 				<div class="row">
-					<div class="col-sm-12"><b>Họ tên :</b><?php echo $value->account_first_name . '&nbsp' . $value->account_last_name; ?></div>
-					<div class="col-sm-12"><b>Email : </b><?php echo $value->account_email; ?></div>
-					<div class="col-sm-12"><b>Số điện thoại :</b><?php echo $value->docon_phone; ?></div>
+					<div class="col-sm-12"><b><?php echo lang('job_form_name'); ?> :</b><?php echo $value->account_first_name . '&nbsp' . $value->account_last_name; ?></div>
+					<div class="col-sm-12"><b><?php echo lang('m_email'); ?> : </b><?php echo $value->account_email; ?></div>
+					<div class="col-sm-12"><b><?php echo lang('job_form_phone'); ?> :</b><?php echo $value->docon_phone; ?></div>
 					<!-- <div class="col-sm-12"><b>Ngành nghề : </b><?php echo $value->career_name; ?></div>
 					<div class="col-sm-12"><b>Năng lực tiếng nhật : </b><?php echo $value->ljob_level; ?></div> -->
 				</div>
 			</td>
 			<td class="min-w-100">
 			<?php if ($employerInfo->user['id'] == $value->emstore_map_user_employer) {?>
-			<button data-href="<?php echo $value->emstore_id; ?>" data-toggle="modal" data-target="#modal-delete-resume-store-em" class="btn btn-xs btn-danger">xóa</button>
+			<button data-href="<?php echo $value->emstore_id; ?>" data-toggle="modal" data-target="#modal-delete-resume-store-em" class="btn btn-xs btn-danger"><?php echo lang('m_delete'); ?></button>
 			<?php	}
 		?>
-			<a class="btn btn-xs btn-primary" href="<?php echo base_url('employer/resume/detail/') . '/' . $value->docon_code . '-' . $value->docon_id; ?>">Chi tiết</a>
+			<a class="btn btn-xs btn-primary" href="<?php echo base_url('employer/resume/detail/') . '/' . $value->docon_code . '-' . $value->docon_id; ?>"><?php echo lang('m_view_detail'); ?></a>
 			</td>
 		</tr>
           <?php }
@@ -47,7 +47,7 @@
   </div>
         <?php	} else {?>
          <div class="box-body table-responsive no-padding no-border">
-        	<h3>CHƯA CÓ HỒ SƠ NÀO ĐƯỢC LƯU.</h3>
+        	<h3><?php echo lang('em_ms_no_save_resume'); ?>.</h3>
         </div>
         	<?php	}
 ?>

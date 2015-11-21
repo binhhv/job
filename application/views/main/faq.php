@@ -1,3 +1,7 @@
+<?php
+$listFAQ = $this->globals->getFAQ();
+
+?>
 <div class="container contact-page">
 	<div class="row">
 		<div class="col-sm-12 text-center ">
@@ -11,76 +15,23 @@
 	 <div class="col-sm-12">
 
 	 	<div class="panel-group" id="accordion">
-		  <div class="panel panel-default">
-		    <div class="panel-heading">
-		      <h4 class="panel-title">
-		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-		        Câu hỏi 1</a>
-		      </h4>
-		    </div>
-		    <div id="collapse1" class="panel-collapse collapse in">
-		      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-		      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-		      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-		      commodo consequat.</div>
-		    </div>
-		  </div>
-		  <div class="panel panel-default">
-		    <div class="panel-heading">
-		      <h4 class="panel-title">
-		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-		        Câu hỏi 2</a>
-		      </h4>
-		    </div>
-		    <div id="collapse2" class="panel-collapse collapse">
-		      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-		      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-		      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-		      commodo consequat.</div>
-		    </div>
-		  </div>
-		  <div class="panel panel-default">
-		    <div class="panel-heading">
-		      <h4 class="panel-title">
-		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-		        Câu hỏi 3</a>
-		      </h4>
-		    </div>
-		    <div id="collapse3" class="panel-collapse collapse">
-		      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-		      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-		      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-		      commodo consequat.</div>
-		    </div>
-		  </div>
-		  <div class="panel panel-default">
-		    <div class="panel-heading">
-		      <h4 class="panel-title">
-		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-		        Câu hỏi 4</a>
-		      </h4>
-		    </div>
-		    <div id="collapse4" class="panel-collapse collapse">
-		      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-		      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-		      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-		      commodo consequat.</div>
-		    </div>
-		  </div>
-		  <div class="panel panel-default">
-		    <div class="panel-heading">
-		      <h4 class="panel-title">
-		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
-		        Câu hỏi 5</a>
-		      </h4>
-		    </div>
-		    <div id="collapse5" class="panel-collapse collapse">
-		      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-		      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-		      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-		      commodo consequat.</div>
-		    </div>
-		  </div>
+	 	 <?php
+if (isset($listFAQ) && count($listFAQ) > 0) {
+	foreach ($listFAQ as $key => $value) {?>
+	 	 			 <div class="panel panel-default">
+					    <div class="panel-heading">
+					      <h4 class="panel-title">
+					        <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $key; ?>">
+					        <?php echo $value->faq_question; ?></a>
+					      </h4>
+					    </div>
+					    <div id="collapse<?php echo $key; ?>" class="panel-collapse collapse in">
+					      <div class="panel-body"><?php echo nl2br($value->faq_answer); ?></div>
+					    </div>
+					  </div>
+	 	 		<?php }
+}
+?>
 </div>
 	 </div>
 	</div>

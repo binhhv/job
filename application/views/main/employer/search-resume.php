@@ -20,11 +20,11 @@ $expire_time = strtotime($expire);
 		  <form>
 
 			  	<div class="col-sm-6 margin-top-10">
-			  		<input type="text" name="key-word" class="form-control w-100" placeholder="Từ khóa">
+			  		<input type="text" name="key-word" class="form-control w-100" placeholder="<?php echo lang('s_keyword'); ?>">
 			  	</div>
 			  	<div class="col-sm-6 margin-top-10">
 			  		<select class="form-control" name="career" id="career">
-			  			<option value="-1">Chọn ngành nghề</option>
+			  			<option value="-1"><?php echo lang('s_chose_career'); ?></option>
 			  			<?php if (isset($listCareer)) {
 		foreach ($listCareer as $key => $value) {?>
 		<option value="<?php echo $value->career_id; ?>"><?php echo $value->career_name; ?></option>
@@ -35,7 +35,7 @@ $expire_time = strtotime($expire);
 			  	</div>
 			  	<div class="col-sm-6 margin-top-10">
 			  		<select class="form-control" name="level" id="level">
-			  			<option value="-1">Chọn trình độ</option>
+			  			<option value="-1"><?php echo lang('s_chose_level'); ?></option>
 			  			<?php if (isset($listLevel)) {
 		foreach ($listLevel as $key => $value) {?>
 		<option value="<?php echo $value->ljob_id; ?>"><?php echo $value->ljob_level; ?></option>
@@ -46,7 +46,7 @@ $expire_time = strtotime($expire);
 			  	</div>
 			  	<div class="col-sm-6 margin-top-10">
 			  		<select class="form-control" name="province" id="province">
-			  			<option value="-1">Chọn tinh thành</option>
+			  			<option value="-1"><?php echo lang('s_chose_province'); ?></option>
 			  				<?php if (isset($listProvince)) {
 		foreach ($listProvince as $key => $value) {?>
 		<option value="<?php echo $value->province_id; ?>"><?php echo $value->province_name; ?></option>
@@ -56,13 +56,13 @@ $expire_time = strtotime($expire);
 			  		</select>
 			  	</div>
 			  	<div class="col-sm-12 text-right margin-top-10">
-			  		<button class="btn btn-primary padding-lr-20" id="btnSearch">Tìm kiếm</button>
+			  		<button class="btn btn-primary padding-lr-20" id="btnSearch"><?php echo lang('s_button'); ?></button>
 			  	</div>
 
 		  </form>
 <?php } else {?>
 	<div class="col-sm-12 text-center">
-		<h5 class="line-h-25">ĐỂ SỬ DỤNG DỊCH VỤ NÀY CỦA CHÚNG TÔI XIN VUI LÒNG LIÊN HỆ VỚI ADMIN CỦA PAGE QUA EMAIL <a href="mailto:contact@allshigoto.com">contact@allshigoto.com</a> HOẶC NHẤN VÀO <a href="<?php echo base_url('contact') ?>">ĐÂY</a> ĐỂ LIÊN HỆ VỚI CHÚNG TÔI. </h5>
+		<?php echo lang('em_no_service_search_resume'); ?>
 	</div>
 <?php }
 ?>

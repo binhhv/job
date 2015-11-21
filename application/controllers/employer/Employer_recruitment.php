@@ -59,13 +59,13 @@ class Employer_recruitment extends CI_Controller {
 			'listJobFormChild' => $listJobFormChild, 'listLevelJP' => $listLevelJP, 'listContactForm' => $listContactForm), TRUE);
 		$breadcrumbs = array(
 			array('isLink' => true,
-				'title' => 'Trang chủ',
+				'title' => $this->lang->line('breadcrumbs_home'),
 				'link' => base_url()),
 			array('isLink' => true,
-				'title' => 'Trang nhà tuyển dụng',
+				'title' => $this->lang->line('breadcrumbs_employer'),
 				'link' => base_url('employer')),
 			array('isLink' => false,
-				'title' => 'Đăng tin tuyển dụng',
+				'title' => $this->lang->line('breadcrumbs_post_recruitment'),
 				'link' => ''));
 		$breadcrumb = $this->load->view('main/employer/breadcrumb', array('breadcrumbs' => $breadcrumbs), TRUE);
 		$content = $this->load->view('main/employer/layout', array('contentEmployer' => $contentEmployer, 'update_account_employer' => $update_account_employer,
@@ -485,13 +485,13 @@ class Employer_recruitment extends CI_Controller {
 		//$listAccount = $this->employer->getListAccount($employerInfo->employer_id);
 		$breadcrumbs = array(
 			array('isLink' => true,
-				'title' => 'Trang chủ',
+				'title' => $this->lang->line('breadcrumbs_home'),
 				'link' => base_url()),
 			array('isLink' => true,
-				'title' => 'Trang nhà tuyển dụng',
+				'title' => $this->lang->line('breadcrumbs_employer'),
 				'link' => base_url('employer')),
 			array('isLink' => false,
-				'title' => 'Quản lý tin tuyển dụng',
+				'title' => $this->lang->line('breadcrumbs_manager_recruitment'),
 				'link' => ''));
 		$listRecruitment = $this->recruitment->getListRecruitmentEmployer($employerInfo->employer_id);
 		$breadcrumb = $this->load->view('main/employer/breadcrumb', array('breadcrumbs' => $breadcrumbs), TRUE);
@@ -532,13 +532,13 @@ class Employer_recruitment extends CI_Controller {
 
 		$breadcrumbs = array(
 			array('isLink' => true,
-				'title' => 'Trang chủ',
+				'title' => $this->lang->line('breadcrumbs_home'),
 				'link' => base_url()),
 			array('isLink' => true,
-				'title' => 'Trang nhà tuyển dụng',
+				'title' => $this->lang->line('breadcrumbs_employer'),
 				'link' => base_url('employer')),
 			array('isLink' => true,
-				'title' => 'Quản lý tin tuyển dụng',
+				'title' => $this->lang->line('breadcrumbs_manager_recruitment'),
 				'link' => base_url('employer/recruitments')),
 			array('isLink' => false,
 				'title' => (isset($recruitment->rec_code)) ? $recruitment->rec_code : '',
@@ -599,13 +599,13 @@ class Employer_recruitment extends CI_Controller {
 			'welfareRecruitment' => $welfareRecruitment, 'provinceRecruitment' => $provinceRecruitment), TRUE);
 		$breadcrumbs = array(
 			array('isLink' => true,
-				'title' => 'Trang chủ',
+				'title' => $this->lang->line('breadcrumbs_home'),
 				'link' => base_url()),
 			array('isLink' => true,
-				'title' => 'Trang nhà tuyển dụng',
+				'title' => $this->lang->line('breadcrumbs_employer'),
 				'link' => base_url('employer')),
 			array('isLink' => false,
-				'title' => 'Sửa đổi tin tuyển dụng',
+				'title' => $this->lang->line('breadcrumbs_edit_recruitment'),
 				'link' => ''));
 		$breadcrumb = $this->load->view('main/employer/breadcrumb', array('breadcrumbs' => $breadcrumbs), TRUE);
 		$content = $this->load->view('main/employer/layout', array('contentEmployer' => $contentEmployer, 'update_account_employer' => $update_account_employer,

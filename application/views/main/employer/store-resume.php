@@ -19,11 +19,11 @@
 
             <div class="modal-body">
 
-               Bạn có muốn xóa hồ sơ ứng viên này trong hồ sơ đã lưu không ?
+               <?php echo lang('em_confirm_delete_resume'); ?>
             </div>
             <div class="modal-footer">
-                <a type="submit" class="btn btn-danger" data-dismiss="modal">Hủy</a>
-                <button type="submit" class="btn btn-primary btn-ok">Xóa</button>
+                <a type="submit" class="btn btn-danger" data-dismiss="modal"><?php echo lang('m_cancel'); ?></a>
+                <button type="submit" class="btn btn-primary btn-ok"><?php echo lang('m_delete'); ?></button>
             </div>
 
         </div>
