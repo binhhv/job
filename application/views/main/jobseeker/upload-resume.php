@@ -52,7 +52,7 @@
                 </div>
                  <div class="form-group">
                   	  <div class="col-sm-12 text-left">
-								<?php echo lang('m_terms_upload_resume') ?>
+								<?php echo str_replace('"%s"', base_url(), lang('m_terms_upload_resume')); ?>
 							</div>
                       <div class="col-sm-12 text-right">
                       <input type="hidden" name="province">

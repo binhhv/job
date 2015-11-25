@@ -4,12 +4,12 @@
 
 <section class="content-header">
           <h1>
-            <a href="<?php echo base_url('admin/employer');?>" class="btn btn-primary">Quay về trang quản lý nhà tuyển dụng</a>
+            <a href="<?php echo base_url('admin/employer'); ?>" class="btn btn-primary">Quay về trang quản lý nhà tuyển dụng</a>
           </h1>
           <ol class="breadcrumb">
-            <li><a href="<?php echo base_url('admin');?>"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li><a href="<?php echo base_url('admin'); ?>"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
             <li>Quản lý người dùng</li>
-            <li class=""><a href="<?php echo base_url('admin/employer')?>">Nhà tuyển dụng</a></li>
+            <li class=""><a href="<?php echo base_url('admin/employer') ?>">Nhà tuyển dụng</a></li>
             <li class="active"><?php
 if (isset($employer)) {
 	echo $employer->employer_name;
@@ -31,7 +31,7 @@ if (isset($employer)) {
 	;
 }
 ?>
-                <small class="pull-right">Ngày đăng ký: <?php echo date('d/m/Y', strtotime($employer->employer_created_at));?></small>
+                <small class="pull-right">Ngày đăng ký: <?php echo date('d/m/Y', strtotime($employer->employer_created_at)); ?></small>
               </h2>
             </div><!-- /.col -->
           </div>
@@ -40,9 +40,9 @@ if (isset($employer)) {
             <div class="col-sm-3 invoice-col">
               <div class="col-sm-12 p-relative">
                 <?php if (isset($employer->employer_logo) && file_exists('uploads/logo/' . $employer->employer_id . '/' . $employer->employer_logo_tmp)) {?>
-                  <img class="img-responsive" src="<?php echo base_url() . 'uploads/logo/' . $employer->employer_id . '/' . $employer->employer_logo_tmp?>" alt="<?php echo $employer->employer_name?>" />
+                  <img class="img-responsive" src="<?php echo base_url() . 'uploads/logo/' . $employer->employer_id . '/' . $employer->employer_logo_tmp ?>" alt="<?php echo $employer->employer_name ?>" />
                   <?php } else {?>
-                  <img class="img-responsive" src="<?php echo base_url();?>uploads/common/logo.png" alt="<?php echo $employer->employer_name?>" />
+                  <img class="img-responsive" src="<?php echo base_url(); ?>uploads/common/logo.png" alt="<?php echo $employer->employer_name ?>" />
                  <?php }
 ?>
               </div>
@@ -50,22 +50,28 @@ if (isset($employer)) {
             <div class="col-sm-9 invoice-col">
               <div class="col-md-6 col-sm-6 col-xs-12">
 
-                 <b>Địa chỉ :</b> <?php echo $employer->employer_address;?><br>
-                 <b>Tỉnh/Thành phố :</b> <?php echo $employer->province_name?><br>
-                 <b>Số điện thoại :</b> <?php echo $employer->employer_phone?><br>
-                 <b>Quy mô :</b> <?php echo $employer->employer_size?><br>
+                 <b>Địa chỉ :</b> <?php echo $employer->employer_address; ?><br>
+                 <b>Tỉnh/Thành phố :</b> <?php echo $employer->province_name ?><br>
+                 <b>Số điện thoại :</b> <?php echo $employer->employer_phone ?><br>
+                 <b>Quy mô :</b> <?php echo $employer->employer_size ?><br>
 
-                 <b>Website :</b> <?php echo $employer->employer_website?><br>
+                 <b>Website :</b> <?php echo $employer->employer_website ?><br>
                </div>
                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <b>Quản trị nhà tuyển dụng : </b> <?php echo $employer->account_email;?><br>
-                 <b>Người liên hệ :</b> <?php echo $employer->employer_contact_name?><br>
-                 <b>Email gười liên hệ :</b> <?php echo $employer->employer_contact_email?><br>
-                 <b>Điện thoại liên hệ:</b> <?php echo $employer->employer_contact_phone?><br>
-                 <b>Di động liên hệ:</b> <?php echo $employer->employer_contact_mobile?><br>
+                  <b>Quản trị nhà tuyển dụng : </b> <?php echo $employer->account_email; ?><br>
+                 <b>Người liên hệ :</b> <?php echo $employer->employer_contact_name ?><br>
+                 <b>Email gười liên hệ :</b> <?php echo $employer->employer_contact_email ?><br>
+                 <b>Điện thoại liên hệ:</b> <?php echo $employer->employer_contact_phone ?><br>
+                 <b>Di động liên hệ:</b> <?php echo $employer->employer_contact_mobile ?><br>
+               </div>
+               <div class="col-sm-6 col-xs-12 border-top-1">
+                  <b>Số lượng người dùng : </b> <?php echo $employer->numuser; ?>
+               </div>
+                <div class="col-sm-6 col-xs-12 border-top-1">
+                  <b>Số lượng tin tuyển dụng : </b> <?php echo $employer->numrecs; ?>
                </div>
                <div class="col-sm-12 col-xs-12 border-top-1">
-                  <b>Giới thiệu :</b> <?php echo $employer->employer_about?><br>
+                  <b>Giới thiệu :</b> <?php echo $employer->employer_about ?><br>
                </div>
             </div><!-- /.col -->
 
@@ -95,8 +101,8 @@ if (isset($employer)) {
                       <div class="box no-box-shadow">
                         <div class="box-header">
                          <div class="col-sm-6 col-xs-12">
-                           <button class="btn btn-success" ng-click="modalCreateEmployerUser('lg','<?php echo $employer->employer_id?>','<?php echo $employer->employer_name;?>');">tạo người dùng</button>&nbsp;
-                           <button class="btn btn-info" ng-click="reloadEmployerUser('<?php echo $employer->employer_id?>')">tải lại dữ liệu</button>
+                           <button class="btn btn-success" ng-click="modalCreateEmployerUser('lg','<?php echo $employer->employer_id ?>','<?php echo $employer->employer_name; ?>');">tạo người dùng</button>&nbsp;
+                           <button class="btn btn-info" ng-click="reloadEmployerUser('<?php echo $employer->employer_id ?>')">tải lại dữ liệu</button>
                          </div>
                            <div class="col-sm-6 col-xs-12"><div class="box-tools">
                             <div class="input-group search-box" style="width: 150px;">
@@ -114,7 +120,7 @@ if (isset($employer)) {
                           <div class="text-center hide" id="div-no-data-loading" ng-show="filteredItems == 0" >Không có dữ liệu</div>
                         </div>
                         <div class="box-body table-responsive no-padding"  ng-show="filteredItems > 0">
-                          <table class="table table-hover table-striped hide" id="employerUserTable" ng-init="getEmployerUsers('<?php echo $employer->employer_id?>')">
+                          <table class="table table-hover table-striped hide" id="employerUserTable" ng-init="getEmployerUsers('<?php echo $employer->employer_id ?>')">
                             <tr>
                               <th>Mã số</th>
                               <th>Email</th>
@@ -140,7 +146,7 @@ if (isset($employer)) {
                               <!-- {{data.account_is_disabled}} -->
                               </td>
                               <td class="text-center">
-                                  <button class="btn btn-warning btn-xs"  ng-disabled ="exitsAdmin" ng-click = "setRoleAdminEmployer('<?php echo $employer->employer_id?>',data)">chuyển quyền quản trị</button>
+                                  <button class="btn btn-warning btn-xs"  ng-disabled ="exitsAdmin" ng-click = "setRoleAdminEmployer('<?php echo $employer->employer_id ?>',data)">chuyển quyền quản trị</button>
                               </td>
                               <td class="text-center">{{formatDate(data.account_created_at) | date: "dd/MM/yyyy"}}</td>
 
@@ -191,8 +197,8 @@ if (isset($employer)) {
                       <div class="box no-box-shadow">
                         <div class="box-header">
                           <div class="col-sm-6 col-xs-12">
-                           <button class="btn btn-success" ng-click="modalCreateEmployerRecruitment('lg','<?php echo $employer->employer_id?>','<?php echo $country->country_id;?>')">tạo tin tuyển dụng</button>&nbsp;
-                           <button class="btn btn-info" ng-click="reloadEmployerRecruitment('<?php echo $employer->employer_id?>')">tải lại dữ liệu</button>
+                           <button class="btn btn-success" ng-click="modalCreateEmployerRecruitment('lg','<?php echo $employer->employer_id ?>','<?php echo $country->country_id; ?>')">tạo tin tuyển dụng</button>&nbsp;
+                           <button class="btn btn-info" ng-click="reloadEmployerRecruitment('<?php echo $employer->employer_id ?>')">tải lại dữ liệu</button>
                          </div>
                            <div class="col-sm-6 col-xs-12"><div class="box-tools">
                             <div class="input-group search-box" style="width: 150px;">
@@ -211,7 +217,7 @@ if (isset($employer)) {
                           <div class="text-center hide" id="div-no-data-loading-rec" ng-show="filteredItems == 0" >Không có dữ liệu</div>
                         </div>
                         <div class="box-body table-responsive no-padding"  ng-show="filteredItems > 0">
-                          <table class="table table-hover table-striped hide" id="employerRecruitmentTable" ng-init="getEmployerRecruitments('<?php echo $employer->employer_id?>')">
+                          <table class="table table-hover table-striped hide" id="employerRecruitmentTable" ng-init="getEmployerRecruitments('<?php echo $employer->employer_id ?>')">
                             <tr>
                               <th>Mã số</th>
                               <th>Tiêu đề tin</th>

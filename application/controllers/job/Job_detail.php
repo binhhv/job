@@ -209,6 +209,7 @@ class Job_detail extends CI_Controller {
 					'recapp_is_delete' => false,
 					'recapp_created_at' => date('Y-m-d H:m'));
 				$result = $this->job->applyJob($data);
+				$this->util->insertLog('recruitment_apply', $result, '', '', 6, $idjobseeker);
 				if ($result) {
 					$resultArr = array(
 						'status' => 'success',
@@ -311,6 +312,7 @@ class Job_detail extends CI_Controller {
 					'recapp_is_delete' => false,
 					'recapp_created_at' => date('Y-m-d H:m'));
 				$result = $this->job->applyJob($data);
+				$this->util->insertLog('recruitment_apply', $result, '', '', 6, $idjobseeker);
 				if ($result) {
 					$resultArr = array(
 						'status' => 'success',

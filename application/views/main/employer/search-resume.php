@@ -62,7 +62,7 @@ $expire_time = strtotime($expire);
 		  </form>
 <?php } else {?>
 	<div class="col-sm-12 text-center">
-		<?php echo lang('em_no_service_search_resume'); ?>
+		<?php echo str_replace('"%s"', base_url(), ('em_no_service_search_resume')); ?>
 	</div>
 <?php }
 ?>

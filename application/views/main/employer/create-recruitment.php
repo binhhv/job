@@ -293,7 +293,7 @@
                             </div>
 
                             <div class="col-sm-12">
-                                <?php echo lang('m_terms_post_recruitment'); ?>
+                                <?php echo str_replace('"%s"', base_url(), lang('m_terms_post_recruitment')); ?>
                             </div>
                             <input type="hidden" name="province">
                             <input type="hidden" name="employer_id" value="<?php echo $employerInfo->employer_id; ?>" />

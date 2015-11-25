@@ -147,7 +147,7 @@ class Employer_recruitment extends CI_Controller {
 				'rec_created_at' => date('Y-m-d H:m'));
 
 			$result = $this->recruitment->createRecruitment($data, $welfare, $province, $user['id']);
-
+			$this->util->insertLog('recruitment', $result, '', '', 5, $user['id']);
 			if ($result) {
 				echo json_encode(array('status' => 'success', 'content' => 'Complete'));
 			} else {
@@ -337,7 +337,7 @@ class Employer_recruitment extends CI_Controller {
 				'rec_update_at' => date('Y-m-d H:m'));
 
 			$result = $this->recruitment->updateRecruitment($idRec, $data, $welfare, $province, $user['id']);
-
+			$this->util->insertLog('recruitment', $idRec, '', '', 2, $user['id']);
 			if ($result) {
 				echo json_encode(array('status' => 'success', 'content' => 'Complete'));
 			} else {
@@ -432,6 +432,7 @@ class Employer_recruitment extends CI_Controller {
 		$idUser = $this->input->post('idUser');
 		if (is_numeric($idRec)) {
 			$result = $this->recruitment->deleteRecruitment($idRec);
+			$this->util->insertLog('recruitment', $idRec, '', '', 3, $idUser);
 			$csrf = array(
 				'name' => $this->security->get_csrf_token_name(),
 				'hash' => $this->security->get_csrf_hash(),

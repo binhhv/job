@@ -1,5 +1,10 @@
 @media (max-width: 767px) {
-	.margin-top-res-10{
-		margin-top: 10px;
-	}
+  .margin-top-res-10 {
+    margin-top: 10px;
+  }
+
+ /*img.ad-profile-avatar {
+  height: 200px;
+}
+*/
 }

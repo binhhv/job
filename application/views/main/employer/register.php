@@ -259,7 +259,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-12">
-                                <?php echo lang('m_terms_register'); ?>
+                                <?php echo str_replace('"%s"', base_url(), lang('m_terms_register')); ?>
                             </div>
                         </div>
                     </fieldset>

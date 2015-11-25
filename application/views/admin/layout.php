@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <?php echo $head;?>
+    <?php echo $head; ?>
   </head>
   <body class="hold-transition skin-blue-light sidebar-mini">
 
@@ -11,17 +11,17 @@
     <div class="alert alert-success alert-send-mail hide" role="alert">
          Gủi mail thành công!!!!
     </div>
-      <?php echo $header;?>
+      <?php echo $header; ?>
       <!-- Left side column. contains the logo and sidebar -->
-      <?php echo $sidemenu;?>
+      <?php echo $sidemenu; ?>
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-      <?php echo $content;?>
+      <?php echo $content; ?>
       </div><!-- /.content-wrapper -->
 
-      <?php echo $footer;?>
+      <?php echo $footer; ?>
          <div class="row">
    <div class="col-md-12">
       <div class="alert alert-success alert-dismissable alert-message hide">
@@ -70,70 +70,71 @@
 
 
   <!-- jQuery 2.1.4 -->
-    <script src="<?php echo base_url();?>assets/admin/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-    <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular.min.js"></script>
-     <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-animate.min.js"></script>
-     <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-sanitize.min.js"></script>
-      <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-strap.min.js"></script>
-       <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-strap.tpl.min.js"></script>
-       <script src="<?php echo base_url();?>assets/admin/angularjs/lib/angular-nl2br.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+      <script src="//code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <script src="<?php echo base_url(); ?>assets/admin/angularjs/lib/angular.min.js"></script>
+     <script src="<?php echo base_url(); ?>assets/admin/angularjs/lib/angular-animate.min.js"></script>
+     <script src="<?php echo base_url(); ?>assets/admin/angularjs/lib/angular-sanitize.min.js"></script>
+      <script src="<?php echo base_url(); ?>assets/admin/angularjs/lib/angular-strap.min.js"></script>
+       <script src="<?php echo base_url(); ?>assets/admin/angularjs/lib/angular-strap.tpl.min.js"></script>
+       <script src="<?php echo base_url(); ?>assets/admin/angularjs/lib/angular-nl2br.min.js"></script>
        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
        <!--lib advance angularjs-->
        <!--<script src="http://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js"></script>
-        <script src="<?php echo base_url();?>assets/admin/angularjs/lib/oi/select.min.js"></script>
-        <script src="<?php echo base_url();?>assets/admin/angularjs/lib/oi/select-tpls.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/admin/angularjs/lib/oi/select.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/admin/angularjs/lib/oi/select-tpls.min.js"></script>
 
-        <script src="<?php echo base_url();?>assets/admin/angularjs/lib/src/module.js"></script>
-        <script src="<?php echo base_url();?>assets/admin/angularjs/lib/src/directives.js"></script>
-        <script src="<?php echo base_url();?>assets/admin/angularjs/lib/src/filters.js"></script>
-        <script src="<?php echo base_url();?>assets/admin/angularjs/lib/src/services.js"></script>-->
+        <script src="<?php echo base_url(); ?>assets/admin/angularjs/lib/src/module.js"></script>
+        <script src="<?php echo base_url(); ?>assets/admin/angularjs/lib/src/directives.js"></script>
+        <script src="<?php echo base_url(); ?>assets/admin/angularjs/lib/src/filters.js"></script>
+        <script src="<?php echo base_url(); ?>assets/admin/angularjs/lib/src/services.js"></script>-->
         <!--lib select-->
-         <script src="<?php echo base_url();?>assets/admin/angularjs/lib/select/dist/select.js"></script>
-    <script src="<?php echo base_url();?>assets/admin/angularjs/lib/ui-bootstrap-tpls-0.13.3.min.js"></script>
-     <!--<script src="<?php echo base_url();?>assets/admin/angularjs/lib/ui-bootstrap-tpls-0.10.0.min.js"></script>-->
+         <script src="<?php echo base_url(); ?>assets/admin/angularjs/lib/select/dist/select.js"></script>
+    <script src="<?php echo base_url(); ?>assets/admin/angularjs/lib/ui-bootstrap-tpls-0.13.3.min.js"></script>
+     <!--<script src="<?php echo base_url(); ?>assets/admin/angularjs/lib/ui-bootstrap-tpls-0.10.0.min.js"></script>-->
     <!-- Bootstrap 3.3.5 -->
-    <script src="<?php echo base_url();?>assets/admin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/admin/bootstrap/js/bootstrap.min.js"></script>
     <!-- FastClick -->
-    <script src="<?php echo base_url();?>assets/admin/plugins/fastclick/fastclick.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/fastclick/fastclick.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="<?php echo base_url();?>assets/admin/dist/js/app.min.js"></script>
-    <!-- Sparkline -->
-    <script src="<?php echo base_url();?>assets/admin/plugins/sparkline/jquery.sparkline.min.js"></script>
-    <!-- jvectormap -->
-    <script src="<?php echo base_url();?>assets/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="<?php echo base_url();?>assets/admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <!-- SlimScroll 1.3.0 -->
-    <script src="<?php echo base_url();?>assets/admin/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-    <!-- ChartJS 1.0.1 -->
-    <script src="<?php echo base_url();?>assets/admin/plugins/chartjs/Chart.min.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <!--<script src="<?php echo base_url();?>assets/admin/dist/js/pages/dashboard2.js"></script>-->
-    <!-- AdminLTE for demo purposes -->
-    <script src="<?php echo base_url();?>assets/admin/dist/js/demo.js"></script>
-     <script src="<?php echo base_url();?>assets/admin/angularjs/lib/loading-bar.js"></script>
-      <script src="<?php echo base_url();?>assets/admin/angularjs/app.js"></script>
 
+    <!-- Sparkline -->
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <!-- jvectormap -->
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- SlimScroll 1.3.0 -->
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- ChartJS 1.0.1 -->
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/chartjs/Chart.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <!--<script src="<?php echo base_url(); ?>assets/admin/dist/js/pages/dashboard2.js"></script>-->
+    <!-- AdminLTE for demo purposes -->
+    <script src="<?php echo base_url(); ?>assets/admin/dist/js/demo.js"></script>
+     <script src="<?php echo base_url(); ?>assets/admin/angularjs/lib/loading-bar.js"></script>
+      <script src="<?php echo base_url(); ?>assets/admin/angularjs/app.js"></script>
+    <script src="<?php echo base_url(); ?>assets/admin/dist/js/app.min.js"></script>
 
 
       <script type="text/javascript">
   var config ={
-    base_url:'<?php echo base_url();?>'
+    base_url:'<?php echo base_url(); ?>'
   }
 </script>
-<script src="<?php echo base_url();?>assets/admin/dist/js/admin.js"></script>
-<script src="<?php echo base_url();?>assets/admin/dist/js/admin-map-region.js"></script>
+<script src="<?php echo base_url(); ?>assets/admin/dist/js/admin.js"></script>
+<script src="<?php echo base_url(); ?>assets/admin/dist/js/admin-map-region.js"></script>
 
 
 
      <?php
 if (isset($scripts)) {
 	foreach ($scripts as $script) {?>
-    <script src="<?php echo base_url() . $script;?>"></script>
+    <script src="<?php echo base_url() . $script; ?>"></script>
 	<?php }
 }
 ?>
-     <!--<script src="<?php echo base_url();?>assets/admin/angularjs/app.js"></script>
-     <script src="<?php echo base_url();?>assets/admin/angularjs/service/appservice.js"></script>-->
+     <!--<script src="<?php echo base_url(); ?>assets/admin/angularjs/app.js"></script>
+     <script src="<?php echo base_url(); ?>assets/admin/angularjs/service/appservice.js"></script>-->
 <script>
 $(window).load(function() {
 /** this is come when complete page is fully loaded, including all frames, objects and images **/

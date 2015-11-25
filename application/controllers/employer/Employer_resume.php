@@ -320,7 +320,7 @@ class Employer_resume extends CI_Controller {
 				'title' => $this->lang->line('breadcrumbs_employer'),
 				'link' => base_url('employer')),
 			array('isLink' => false,
-				'title' => 'Hồ sơ đã lưu',
+				'title' => $this->lang->line('breadcrumbs_save_resume'),
 				'link' => base_url('employer/resume/search')));
 		$listResume = $this->resume->getListResumeStore($employerInfo->employer_id);
 

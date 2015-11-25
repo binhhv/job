@@ -354,7 +354,7 @@
                             </div>
 
                             <div class="col-sm-12">
-                                <?php echo lang('m_terms_post_recruitment'); ?>
+                                <?php echo str_replace('"%s"', base_url(), lang('m_terms_post_recruitment')); ?>
                             </div>
                             <div class="hide draft-rec">
                                 <input type="hidden" name="isDraft" value="0">

@@ -347,7 +347,7 @@ if (isset($cvs) && count($cvs) > 0) {
 							<div  class="col-sm-12 text-center msg-apply hide"></div>
 							</div>
 							<div class="col-sm-12 text-center">
-								<?php echo lang('m_terms'); ?>
+								<?php echo str_replace('"%s"', base_url(), lang('m_terms')); ?>
 							</div>
 							<?php } else {?>
 							<div class="col-sm-12 text-center">
@@ -483,7 +483,7 @@ if (isset($cvs) && count($cvs) > 0) {
 	<div class="container">
 		<div class="row not-find-job">
 			<div class="col-sm-12 text-center">
-				<?php echo lang('job_title_not_found'); ?>
+				<?php echo str_replace('"%s"', base_url(), lang('job_title_not_found')); ?>
 			</div>
 		</div>
 	</div>

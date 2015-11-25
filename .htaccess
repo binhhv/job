@@ -1,11 +1,10 @@
-
 AuthType Basic
 AuthName "restricted area"
-AuthUserFile /var/lib/openshift/55e3d0f72d5271045500020e/app-root/runtime/repo.htpasswd
+AuthUserFile C:/xampp/htdocs/job/.htpasswd
 require valid-user
 
 RewriteEngine on
-RewriteBase /
+RewriteBase /job
 RewriteCond $1 !^(index\.php|resources|robots\.txt)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

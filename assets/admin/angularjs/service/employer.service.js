@@ -33,6 +33,7 @@ app.factory('employerService' ,function ($http,$q,$timeout){
 			var csrf_hash = objectemployer['csrf_hash'];
 			var postData = $.param({'csrf_test_name': csrf_hash,'employer':employer});
 			$http.post(pathWebsite + 'admin/employer/deleteemployer', postData, {headers : {'Content-Type': 'application/x-www-form-urlencoded'}}).success(callback);
+		
 		};
 		_employerService.getDetailDocument = function(id){
 			var temp = {};
@@ -72,6 +73,13 @@ app.factory('employerService' ,function ($http,$q,$timeout){
 			    });
 			    return defer.promise;
 		};
+		_employerService.changeSwitchSearch = function(employer,callback){
+			var objectemployer = JSON.parse(employer);
+			var csrf_name = objectemployer['csrf']['name'];;
+			var csrf_hash = objectemployer['csrf']['hash'];;
+			var postData = $.param({'csrf_test_name': csrf_hash,'employer':employer});
+			$http.post(pathWebsite + 'admin/employer/changeSwitchSearch', postData, {headers : {'Content-Type': 'application/x-www-form-urlencoded'}}).success(callback);
+		}
 		return _employerService;
 });
 

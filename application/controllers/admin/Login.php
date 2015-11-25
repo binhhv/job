@@ -25,6 +25,7 @@ class Login extends CI_Controller {
 		$this->load->helper(array('form', 'url', 'cookie'));
 		$this->load->library(array('form_validation', 'session'));
 		$this->load->model('DBUtil');
+		$this->load->model('Utilmodel', 'util');
 
 	}
 
@@ -68,7 +69,10 @@ class Login extends CI_Controller {
 				$this->session->set_userdata('user', array('id' => $a_UserChecking[0]->account_id,
 					'email' => $a_UserChecking[0]->account_email,
 					'role' => $a_UserChecking[0]->account_map_role,
-					'isLogged' => true));
+					'isLogged' => true,
+					'firstname' => $a_UserChecking[0]->account_first_name,
+					'lastname' => $a_UserChecking[0]->account_last_name));
+				$this->util->insertLog('account', $a_UserChecking[0]->account_id, '', '', 1, $a_UserChecking[0]->account_id);
 				//var_dump($a_UserChecking[0]);
 				redirect(base_url('admin'));
 			} else {

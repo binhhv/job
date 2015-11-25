@@ -155,6 +155,7 @@ class Admin_employer extends CI_Controller {
 		echo json_encode($output);
 	}
 	function deleteEmployerRecruitment() {
+		$user = $this->session->userdata['user'];
 		$recruitment = json_decode($this->input->post('recruitment'), true);
 		$recruitmentid = $recruitment['rec_id'];
 		$recruitmenttitle = $recruitment['rec_title'];
@@ -163,6 +164,7 @@ class Admin_employer extends CI_Controller {
 			'rec_is_delete' => true,
 		);
 		$output = $this->employer->deleteEmployerRecruitment($parameter, $recruitmentid);
+		$this->util->insertLog('recruitment', $recruitmentid, '', '', 3, $user['id']);
 		if ($output) {
 			$listmail = $this->employer->getListEmployerUser($employerid);
 			$employerInfo = $this->employer->detailEmployer($employerid);
@@ -233,6 +235,7 @@ class Admin_employer extends CI_Controller {
 		echo json_encode($output);
 	}
 	function updateEmployerRecruitment() {
+		$user = $this->session->userdata['user'];
 		$rec = json_decode($this->input->post('rec'), true);
 		$welfareSelected = $rec['welfareSelected'];
 		$idrec = $rec['rec_id'];
@@ -266,11 +269,13 @@ class Admin_employer extends CI_Controller {
 			'rec_is_approve' => $rec['rec_is_approve'],
 			'rec_update_at' => date('Y-m-d H:m'));
 		$result = $this->employer->updateEmployerRecruitment($data, $idrec, $welfareSelected, $provinceSelected, $idmapcountry);
+		$this->util->insertLog('recruitment', $idrec, '', '', 2, $user['id']);
 		//$result = $this->employer->updateEmployerRecruitmentWelfare($rec['welfareSelected'], $rec['rec_id']);
 		log_message('error', $result);
 		echo json_encode($result);
 	}
 	function createEmployerRecruitment() {
+		$user = $this->session->userdata['user'];
 		$rec = json_decode($this->input->post('rec'), true);
 		$welfareSelected = $rec['welfareSelected'];
 		//$idrec = $rec['rec_id'];
@@ -311,6 +316,7 @@ class Admin_employer extends CI_Controller {
 			'rec_update_at' => date('Y-m-d H:m'),
 			'rec_created_at' => date('Y-m-d H:m'));
 		$result = $this->employer->createEmployerRecruitment($data, $welfareSelected, $provinceSelected, $idmapcountry, $iduser);
+		$this->util->insertLog('recruitment', $result, '', '', 5, $user['id']);
 		//$result = $this->employer->updateEmployerRecruitmentWelfare($rec['welfareSelected'], $rec['rec_id']);
 		log_message('error', $result);
 		echo json_encode($result);
@@ -328,6 +334,7 @@ class Admin_employer extends CI_Controller {
 			'rec_is_show_another' => $is_show_another,
 		);
 		$output = $this->employer->approveEmployerRecruitment($data, $idrec, $iduser);
+		$this->util->insertLog('recruitment_approve', $idrec, '', '', 4, $iduser);
 		echo json_encode($output);
 	}
 	function updateEmployer() {
@@ -550,6 +557,15 @@ class Admin_employer extends CI_Controller {
 			$now /= $base;
 		}
 		return substr($result, -5);
+	}
+	function changeSwitchSearch() {
+		$employer = json_decode($this->input->post('employer'), true);
+		log_message('error', 'date' . $employer['employer_exp_search_rs']);
+		$data = array('from' => 'employer',
+			'where' => 'employer_id  = ' . $employer['employer_id'],
+			'data' => array('employer_is_search_rs' => $employer['employer_is_search_rs'], 'employer_exp_search_rs' => date("Y-m-d H:i:s", strtotime($employer['employer_exp_search_rs']))));
+		$result = $this->employer->changeSwitchSearch($data);
+		echo json_encode($result);
 	}
 
 }

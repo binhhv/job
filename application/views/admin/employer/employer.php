@@ -6,7 +6,7 @@
            Quản lý nhà tuyển dụng
           </h1>
           <ol class="breadcrumb">
-            <li><a href="<?php echo base_url('admin');?>"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li><a href="<?php echo base_url('admin'); ?>"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
             <li>Quản lý người dùng</li>
             <li class="active">Nhà tuyển dụng</li>
           </ol>
@@ -16,7 +16,7 @@
         <section class="content-header">
           <div class="row">
 
-            <div class="col-md-12"><button class="btn btn-primary" ng-click="modalCreateEmployer('lg','<?php echo $country->country_id;?>')">Tạo nhà tuyển dụng</button> &nbsp;
+            <div class="col-md-12"><button class="btn btn-primary" ng-click="modalCreateEmployer('lg','<?php echo $country->country_id; ?>')">Tạo nhà tuyển dụng</button> &nbsp;
               <button class="btn btn-success" ng-click="reload();" >tải lại dữ liệu</button></div>
           </div>
         </section>
@@ -48,13 +48,13 @@
                       <th class="text-center">Tên nhà tuyển dụng</th>
                       <th class="text-center">Số điện thoại</th>
                       <th class="text-center">Người liên hệ</th>
-                      <th class="text-center">Số người dùng </th>
-                      <th class="text-center">Số tin tuyển dụng</th>
+                      <th class="text-center">Tìm kiếm hồ sơ </th>
+                      <!-- <th class="text-center">Số tin tuyển dụng</th> -->
                       <th class="text-center"></th>
                     </tr>
                     <tr ng-repeat="data in filtered = (pagedItems | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" data-id="{{data.account_id}}">
                       <td class="text-center">{{data.employer_code}}</td><!--{{$index + 1}}-->
-                      <td class="text-center"><img class="logo-small" ng-src ="<?php echo base_url();?>uploads/logo/{{data.employer_id}}/{{data.employer_logo_tmp}}" alt="logo employer"></td>
+                      <td class="text-center"><img class="logo-small" ng-src ="<?php echo base_url(); ?>uploads/logo/{{data.employer_id}}/{{data.employer_logo_tmp}}" alt="logo employer"></td>
                       <td class="text-center">
                       <label><b>{{data.employer_name}}</b></label>
                       <label class="text-muted">{{data.employer_address}}</label>
@@ -63,10 +63,13 @@
   							{{data.employer_phone}}
                       </td>
                       <td class="text-center">{{data.employer_contact_name}}</td>
-                      <td class="text-center">{{data.numuser}}</td>
-                      <td class="text-center">{{data.numrecs}}</td>
                       <td class="text-center">
-                      <button class="btn btn-xs btn-primary" ng-click="openDetailEmployer(data,'<?php echo base_url("admin/employer/detail/");?>')">chi tiêt</button>
+                          <img class="pointer" ng-click="modalSwitchSearch('md',data)" src="<?php echo base_url() ?>assets/admin/dist/img/icons/switch_on.png" ng-show="data.employer_is_search_rs == 1 && checkCompareDate(data.employer_exp_search_rs) == 1 ">
+                          <img class ="pointer" ng-click="modalSwitchSearch('md',data);" src="<?php echo base_url() ?>assets/admin/dist/img/icons/switch_off.png" ng-show="data.employer_is_search_rs == 0 || checkCompareDate(data.employer_exp_search_rs) == 0 ">
+                      </td>
+                      <!-- <td class="text-center">{{data.numrecs}}</td> -->
+                      <td class="text-center">
+                      <button class="btn btn-xs btn-primary" ng-click="openDetailEmployer(data,'<?php echo base_url("admin/employer/detail/"); ?>')">chi tiêt</button>
                       <button class="btn btn-xs btn-warning" ng-click="modalUpdateEmployer('lg',data)" >sửa</button>
                       <button class="btn btn-xs btn-danger" ng-click="modalDelete('md',data)">xóa</button>
                       </td>

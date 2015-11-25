@@ -81,4 +81,74 @@ class UtilModel extends CI_Model {
 		//log_message('')
 		return $this->dbutil->updateDb($data);
 	}
+	function insertLog($table, $idRecord = 0, $dataChange, $dataMap, $type, $account) {
+		//type 1: login
+		//type 2: edit
+		//type 3: delete
+		//type 4: approve recruitment
+		//type 5: create recruitment
+		//type 6: apply job
+
+		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$charactersLength = strlen($characters);
+		$code_genaral = "";
+		$randomString = '';
+		for ($i = 0; $i < 6; $i++) {
+			$randomString .= $characters[rand(0, $charactersLength - 1)];
+		}
+		switch ($type) {
+		case 1:
+			$code_genaral .= "LOGIN" . $randomString;
+			break;
+		case 2:
+			$code_genaral .= "EDIT" . $randomString;
+			break;
+		case 3:
+			$code_genaral .= "DEL" . $randomString;
+			break;
+		case 4:
+			$code_genaral .= "ACP" . $randomString;
+			break;
+		case 5:
+			$code_genaral .= "CR" . $randomString;
+			break;
+		default:
+			# code...
+			$code_genaral .= "APP" . $randomString;
+			break;
+		}
+		$log_content = '';
+		switch ($table) {
+		case 'recruitment':
+			//$title = 'Tin tuyển dụng :';
+			$content = $this->getRowDataLog('recruitment', 'rec_id', $idRecord);
+			$log_content .= "Tin tuyển dụng : " . $content->rec_title; //.= '{"title":"' . $title . '","content":"' . $content->rec_title . '"}';
+			# code...
+			break;
+		case 'account':
+			$log_content .= "Đăng nhập website";
+		default:
+			$content = $this->getRowDataLog('recruitment', 'rec_id', $idRecord);
+			$log_content .= "Tin tuyển dụng : " . $content->rec_title; //.= '{"title":"' . $title . '","content":"' . $content->rec_title . '"}';
+			# code...
+			break;
+		}
+		$data = array(
+			'log_code' => $code_genaral,
+			'log_content' => $log_content,
+			'log_table' => $table,
+			'log_record' => $idRecord,
+			'log_data_change' => $dataChange,
+			'log_data_map' => $dataMap,
+			'log_type' => $type,
+			'log_map_account' => $account,
+			'log_create_at' => date('Y-m-d H:m:s'));
+		return $this->dbutil->insertDb($data, 'log');
+	}
+
+	function getRowDataLog($table, $idCondition, $id) {
+		$sql = 'select * from ' . $table . ' where ' . $idCondition . ' = ' . $id;
+		log_message('error', 'sql ' . $sql);
+		return $this->dbutil->getOneRowQueryFromDb($sql, array());
+	}
 }

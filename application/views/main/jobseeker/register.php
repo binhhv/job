@@ -120,7 +120,7 @@
 
                                 <div class="col-sm-12">
                                     <div class="form-group ">
-                                        <?php echo lang('m_terms_register'); ?>
+                                        <?php echo str_replace('"%s"', base_url(), lang('m_terms_register')); ?>
                                     </div>
                                 </div>
 

@@ -6,7 +6,7 @@
            Quản lý hồ sơ ứng viên
           </h1>
           <ol class="breadcrumb">
-            <li><a href="<?php echo base_url('admin');?>"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li><a href="<?php echo base_url('admin'); ?>"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
             <li>Quản lý hồ sơ ứng viên</li>
             <li class="active">Hồ sơ ứng viên</li>
           </ol>
@@ -17,7 +17,7 @@
           <div class="row">
 
             <div class="col-md-12">
-              <button class="btn btn-primary" ng-click="openModalCreateForm('lg','<?php echo $country->country_id;?>')">tạo hồ sơ mới</button> &nbsp;
+              <button class="btn btn-primary" ng-click="openModalCreateForm('lg','<?php echo $country->country_id; ?>')">tạo hồ sơ mới</button> &nbsp;
               <button class="btn btn-success" ng-click="reloadForm();" >tải lại dữ liệu</button></div>
           </div>
         </section>
@@ -71,6 +71,7 @@
                   <table class="table table-hover table-striped hide" id="managerTable" ng-init="getForms()">
                     <tr>
                       <th class="text-center">Mã số</th>
+                      <th class="text-center">Trạng thái</th>
                       <th class="text-center">Họ tên</th>
                       <th class="text-center">Email</th>
                       <th class="text-center">Số điện thoại</th>
@@ -82,6 +83,10 @@
                     </tr>
                     <tr ng-repeat="data in filtered = (pagedItems | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" data-id="{{data.account_id}}">
                       <td class="text-center">{{data.docon_code}}</td><!--{{($index + ((currentPage -1)* entryLimit)) + 1}}-->
+                      <td class="text-center">
+                        <img src="<?php echo base_url() ?>assets/admin/dist/img/icons/switch_on.png" ng-show="data.docon_is_delete_user == 0">
+                            <img src="<?php echo base_url() ?>assets/admin/dist/img/icons/switch_off.png" ng-show="data.docon_is_delete_user == 1">
+                      </td>
                       <td class="text-center">
                         {{data.jobseeker_name}}</td>
                       <td class="text-center">
@@ -99,7 +104,7 @@
 
                       <td class="text-center">
                       <button class="btn btn-xs btn-success" ng-click="modalDetailForm('lg',data.docon_id,data.docon_type)" >xem</button>
-                      <button class="btn btn-xs btn-warning" ng-click="modalUpdateForm('lg',data,'<?php echo $country->country_id;?>')" >sửa</button>
+                      <button class="btn btn-xs btn-warning" ng-click="modalUpdateForm('lg',data,'<?php echo $country->country_id; ?>')" >sửa</button>
                       <button class="btn btn-xs btn-warning" ng-click="modalDeleteForm('md',data)" >xóa</button>
                       </td>
                     </tr>

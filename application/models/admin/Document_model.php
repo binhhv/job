@@ -11,7 +11,7 @@ class Document_model extends CI_Model {
 		$sql = "select a.doccv_map_user as userid, a.*,b.account_email as jobseeker_email, CONCAT(b.account_first_name, ' ', b.account_last_name) as jobseeker_name
 				from document_cv a
 				left join account b on b.account_id = a.doccv_map_user
-				where a.doccv_is_delete = 0 and a.doccv_type = 1
+				where (a.doccv_is_delete = 0 or a.doccv_is_delete_user = 1) and a.doccv_type = 1
 				union
 				select a.doccv_map_jobseeker as userid, a.*,b.jobseeker_mail as jobseeker_email, CONCAT(b.jobseeker_first_name, ' ', b.jobseeker_last_name) as jobseeker_name
 				from document_cv a

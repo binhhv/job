@@ -94,8 +94,137 @@ app.controller('employerController', function (employerService,employerRecruitme
     $scope.complete = function () {
       cfpLoadingBar.complete();
       $("#employerTable").removeClass('hide');
+     
     }
+    $scope.checkCompareDate = function(dateCompare){
+        var dateNow = new Date(Date.now());
+        var dNow = dateNow.getDate();
+        var mNow = (dateNow.getMonth()) +1;
+        var yNow = dateNow.getFullYear();
 
+        var d = dateCompare.substring(0,10);//new Date(date);
+        d = d.split("-");
+       if(d[0].length < 4){
+            var temp = d[0];
+            d[0] = d[2];
+            d[2] = temp;
+       }
+       var result = true;
+        //d.reverse();
+          //console.log(d[2]);
+        if(parseInt(d[0].trim()) < parseInt(yNow)){
+            result = false;
+            // console.log('y');
+        }
+        else if(d[1] < mNow){
+            result =  false;
+             //console.log('m');
+        }
+        else if(d[2] < dNow){
+            result =  false;
+             //console.log('d');
+        }
+       
+        return result;
+        //return d[0]+'/'+d[1]+'/'+d[2]; d[0]: ngày d[1]:tháng d[2]:năm
+
+    }
+    $scope.modalSwitchSearch = function(size,employer){
+        var modalInstance = $modal.open({
+                animation: false,//$scope.animationsEnabled,
+                templateUrl: pathWebsite + 'assets/admin/partial/modal-switch-search-employer.php',
+                controller: function ($scope, $modalInstance, employer,csrf){
+                    $scope.employer = employer;
+                    $scope.employer.csrf =  csrf;
+                    if($scope.checkCompareDate(employer.employer_exp_search_rs) == 0 ){
+                        $scope.employer.employer_is_search_rs = 0;
+                    }
+                    $scope.employer.employer_exp_search_rs = $scope.formatDateSearch(employer.employer_exp_search_rs);
+                    $scope.ok = function () {
+                        $modalInstance.close($scope.employer);
+
+                        //$scope.getEmployers();
+                    };
+
+                    $scope.cancel = function () {
+                        $modalInstance.dismiss('cancel');
+                    };
+
+                },
+                size: size,
+                resolve: {
+                    employer: function () {
+                        return employer;
+                    },
+                    csrf: function () {
+                      return employerService.getTokenReturn();
+                    }
+                },
+                scope:$scope,
+                backdrop:'static',
+                 windowClass: "modal fade in"
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                $scope.selected = selectedItem;
+            }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+            });
+    }
+    $scope.getSwitchImage = function(data){
+        if(data){
+            return base_url + 'assets/admin/dist/img/icons/switch_on.png';
+        }
+        else{
+            return base_url + 'assets/admin/dist/img/icons/switch_off.png';
+        }
+    };
+    $scope.switchSearch = function(employer){
+        //employer.employer_is_search_rs == !employer.employer_is_search_rs;
+        console.log(employer.employer_exp_search_rs);
+        employer.employer_is_search_rs =  (employer.employer_is_search_rs == 1) ?  0 : 1;
+        //console.log("click" + employer.employer_is_search_rs);
+    }
+    $scope.formatDateSearch = function(value){
+         var d = value.substring(0,10);//new Date(date);
+         //d = d.split("-");
+         //d.reverse();
+         //var newD = new Date(d[2],d[1],d[0]);
+         //return newD;
+        var dateParts = d.split("-");
+        console.log(dateParts);
+        if(dateParts[0].length >= 4){
+             var jsDate = dateParts[2] + "-" +(dateParts[1])+ "-"+dateParts[0];
+        }
+        else{
+             var jsDate = dateParts[0]+ "-" +(dateParts[1])+ "-"+ dateParts[2];
+        }
+       
+        
+        return jsDate;
+    }
+    $scope.setDateExpSearch = function(employer){
+        console.log(employer.employer_exp_search_rs);
+        if($scope.checkCompareDate(employer.employer_exp_search_rs) == 0 ){
+                        $scope.employer.employer_is_search_rs = 0;
+        }
+        //console.log(employer.employer_exp_search_rs);
+    }
+    $scope.changeSwitchSearch = function(employer){
+        if(employer){
+            employerService.changeSwitchSearch(angular.toJson(employer),function(data){
+                 if(data){
+                    alertEditSuccess();
+                     //$scope.disabled_modal = false;
+                    $scope.ok();
+                }
+                else{
+                    alertErrors();
+                     $scope.cancel();
+                }
+            });
+        }
+    }
     $scope.modalUpdateEmployer = function (size,selectedemployer) {
             employerService.getToken(function(data){
                 var obToken = JSON.parse(angular.toJson(data));
@@ -404,6 +533,13 @@ app.controller('employerController', function (employerService,employerRecruitme
         //$scope.employer.logoExtension = files[0].type;
     }; 
 
+
+      $scope.openCalendar = function($event) {
+      $event.preventDefault();
+      $event.stopPropagation();
+
+      $scope.opened = true;
+    };
 
 });
 
@@ -1493,3 +1629,78 @@ app.directive("fileread", [function () {
         }
     }
 }]);
+
+/*app.directive('datepicker', function() {
+    return {
+        restrict: 'A',
+        require : 'ngModel',
+        link : function (scope, element, attrs, ngModelCtrl) {
+            $(function(){
+                element.datepicker({
+                    dateFormat:'dd/mm/yy',
+                    onSelect:function (date) {
+                        scope.$apply(function () {
+                            ngModelCtrl.$setViewValue(date);
+                        });
+                    }
+                });
+            });
+        }
+    }
+});*/
+
+
+// app.directive("datepicker", function () {
+//   return {
+//     restrict: "A",
+//     require: "ngModel",
+//     link: function (scope, elem, attrs, ngModelCtrl) {
+//       var updateModel = function (dateText) {
+//         scope.$apply(function () {
+//           ngModelCtrl.$setViewValue(dateText);
+//         });
+//       };
+//       var options = {
+//         dateFormat: "dd/mm/yy",
+//         onSelect: function (dateText) {
+//           updateModel(dateText);
+//         }
+//       };
+//       elem.datepicker(options);
+//     }
+//   }
+// });
+// app.directive('jqdatepicker', function () {
+//     return {
+//         restrict: 'A',
+//         require: 'ngModel',
+//          link: function (scope, element, attrs, ngModelCtrl) {
+//             element.datepicker({
+//                 dateFormat: 'dd/mm/yy',
+//                 onSelect: function (date) {   
+//                     var ar=date.split("/");
+//                     date=new Date(ar[2]+"-"+ar[1]+"-"+ar[0]);
+//                     ngModelCtrl.$setViewValue(date.getTime());
+//                 //    scope.course.launchDate = date;
+//                     scope.$apply();
+//                 }
+//             });
+
+//         }
+//     };
+// });
+
+app.directive('bDatepicker', function () {
+    return {
+        restrict: 'A',
+        link: function (scope, el, attr) {
+            el.datepicker({ dateFormat: 'dd-mm-yy' });
+            var component = el.siblings('[data-toggle="datepicker"]');
+            if (component.length) {
+                component.on('click', function () {
+                    el.trigger('focus');
+                });
+            }
+        }
+    };
+});

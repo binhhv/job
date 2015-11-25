@@ -106,7 +106,7 @@ $route['admin/employer/createEmployerRecruitment'] = 'admin/admin_employer/creat
 $route['admin/employer/approveEmployerRecruitment'] = 'admin/admin_employer/approveEmployerRecruitment';
 $route['admin/employer/updateemployer'] = 'admin/admin_employer/updateEmployer';
 $route['admin/employer/createemployer'] = 'admin/admin_employer/createEmployer';
-
+$route['admin/employer/changeSwitchSearch'] = 'admin/admin_employer/changeSwitchSearch';
 //recruitment admin manager
 $route['admin/recruitment/recruitment-active'] = 'admin/admin_recruitment/recruitmentActive';
 $route['admin/recruitment/recruitment-approve'] = 'admin/admin_recruitment/recruitmentApprove';
@@ -266,6 +266,12 @@ $route['admin/getNotifySupport'] = 'admin/admin_api/getNotifySupport';
 $route['admin/support/getListSupportChat'] = 'admin/admin_api/getListSupportChat';
 $route['admin/getDataChartRecruitment'] = 'admin/admin_api/getDataChartRecruitment';
 $route['admin/getDataChartJobseekerEmployer'] = 'admin/admin_api/getDataChartJobseekerEmployer';
+//admin profile
+$route['admin/profile'] = 'admin/admin_profile/index';
+$route['admin/profile/changePassword'] = 'admin/admin_profile/changePassword';
+//log history admin
+$route['admin/log'] = 'admin/admin_log/index';
+$route['admin/log/getLogs'] = 'admin/admin_log/getLogs';
 //errors route
 $route['403'] = 'admin/admin_error/page403';
 $route['404_override'] = 'error_page/index';

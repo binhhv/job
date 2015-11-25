@@ -6,7 +6,7 @@
            Quản lý CV ứng viên
           </h1>
           <ol class="breadcrumb">
-            <li><a href="<?php echo base_url('admin');?>"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+            <li><a href="<?php echo base_url('admin'); ?>"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
             <li>Quản lý hồ sơ ứng viên</li>
             <li class="active">CV ứng viên</li>
           </ol>
@@ -17,7 +17,7 @@
           <div class="row">
 
             <div class="col-md-12">
-              <a class="btn btn-primary" href="<?php echo base_url('admin/document/uploadCV')?>">upload cv mới</a> &nbsp;
+              <a class="btn btn-primary" href="<?php echo base_url('admin/document/uploadCV') ?>">upload cv mới</a> &nbsp;
               <button class="btn btn-success" ng-click="reloadCV();" >tải lại dữ liệu</button></div>
           </div>
         </section>
@@ -48,6 +48,7 @@
                     <tr>
                       <th class="text-center">Mã số</th>
                       <th class="text-center">Tên file</th>
+                      <th class="text-center">Trạng thái</th>
                       <th class="text-center">Ứng viên</th>
                       <th class="text-center">Email</th>
                       <th class="text-center">Ngày tạo</th>
@@ -56,7 +57,11 @@
                     <tr ng-repeat="data in filtered = (pagedItems | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit" data-id="{{data.account_id}}">
                       <td class="text-center">{{data.doccv_code}}</td><!--{{($index + ((currentPage -1)* entryLimit)) + 1}}-->
                       <td class="text-center">
-                        <a href="<?php echo base_url() . 'downloadcv/';?>{{data.userid}}/{{data.doccv_file_tmp}}/{{data.doccv_file_name}}/{{data.doccv_type}}">{{data.doccv_file_name}}</a></td>
+                        <a href="<?php echo base_url() . 'downloadcv/'; ?>{{data.userid}}/{{data.doccv_file_tmp}}/{{data.doccv_file_name}}/{{data.doccv_type}}">{{data.doccv_file_name}}</a></td>
+                        <td class="text-center">
+                            <img src="<?php echo base_url() ?>assets/admin/dist/img/icons/switch_on.png" ng-show="data.doccv_is_delete_user == 0">
+                            <img src="<?php echo base_url() ?>assets/admin/dist/img/icons/switch_off.png" ng-show="data.doccv_is_delete_user == 1">
+                        </td>
                       <td class="text-center">
                           <label><b>{{data.jobseeker_name}}</b></label>
 
@@ -66,7 +71,7 @@
 
                       <td class="text-center">
 
-                      <button class="btn btn-xs btn-warning" ng-click="downloadCV(data,'<?php echo base_url() . 'downloadcv/';?>')" >tải xuống</button>
+                      <button class="btn btn-xs btn-warning" ng-click="downloadCV(data,'<?php echo base_url() . 'downloadcv/'; ?>')" >tải xuống</button>
                       <button class="btn btn-xs btn-danger" ng-click="modalDeleteCV('sm',data)" >xóa</button>
                       </td>
                     </tr>

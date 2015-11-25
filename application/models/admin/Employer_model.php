@@ -21,10 +21,12 @@ class Employer_model extends CI_Model {
 		return $this->dbutil->getFromDbQueryBinding($sql, array());
 	}
 	public function detailEmployer($id) {
-		$sql = "select a.*,b.*,c.*
+		$sql = "select a.*,b.*,c.*,IFNULL(d.numrecs, 0) as numrecs, IFNULL(e.numuser, 0)  as numuser
 				from employer a
 				left join account b on b.account_id = a.employer_map_account
 				left join province c on c.province_id = a.employer_map_province
+				left join (select rec_map_employer,count(rec_id) as numrecs from recruitment where rec_is_delete = 0 group by rec_map_employer ) as d on d.rec_map_employer = a.employer_id
+				left join (select emac_map_employer,count(emac_id) as numuser from employer_map_account where emac_is_delete = 0 group by emac_map_employer ) as e on e.emac_map_employer = a.employer_id
 				where a.employer_is_delete = 0 and a.employer_id = " . $id;
 		return $this->dbutil->getOneRowQueryFromDb($sql, array());
 	}
@@ -396,6 +398,9 @@ class Employer_model extends CI_Model {
 		} else {
 			return false;
 		}
+	}
+	function changeSwitchSearch($data) {
+		return $this->dbutil->updateDb($data);
 	}
 
 }

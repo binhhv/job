@@ -78,7 +78,36 @@
 46. sua css item-new-job (done)
 47. fix tin tuyen dung top tren ie 8 (done)
 48. phan quyen cho user tim kiem ho so. (done)
-49. trang thai xoa cv va ho so tren trang admin.
+49. trang thai xoa cv va ho so tren trang admin. (done)
 50.xoa tin tyen dung (done chua log).
-<?php echo base_url('language'); ?>/vi?url=<?php echo urlencode(current_url()); ?>
-51. thay doi ngon ngu trong breadcrumb
+51. thay doi ngon ngu trong breadcrumb (done)
+52. thêm chức năng log delte.
+53. thay đổi trạng thai delete cV và hồ sơ online của ứng viên (done)
+54. thêm chức năng cho phép tìm kiếm hồ sơ (done)
+55. bỏ scroll trên modal trang admin thay bằng scrolll khác .
+56. sua lai like va commen trne chi tiet tin tyen dujng.
+57. thay doi mat khau admin . mat khau log delete.
+
+
+
+
+
+
+
+
+
+
+path :/var/lib/openshift/55e3d0f72d5271045500020e/app-root/runtime/repo
+path old:
+
+AuthType Basic
+AuthName "restricted area"
+AuthUserFile C:/xampp/htdocs/job/.htpasswd
+require valid-user
+
+RewriteEngine on
+RewriteBase /job
+RewriteCond $1 !^(index\.php|resources|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L,QSA]

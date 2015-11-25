@@ -13,6 +13,7 @@ class Login extends CI_Controller {
 		$this->load->helper(array('form', 'url', 'cookie'));
 		$this->load->library(array('form_validation', 'session'));
 		$this->load->model('DBUtil');
+		$this->load->model('Utilmodel', 'util');
 		// if (!isset($this->session->userdata['user'])) {
 		// 	$this->session->set_userdata('last_page', current_url());
 		// }
@@ -106,7 +107,7 @@ class Login extends CI_Controller {
 					'isLogged' => true,
 					'firstname' => $a_UserChecking[0]->account_first_name,
 					'lastname' => $a_UserChecking[0]->account_last_name));
-
+				$this->util->insertLog('account', $a_UserChecking[0]->account_id, '', '', 1, $a_UserChecking[0]->account_id);
 				//redirect(base_url('admin'));
 			} else {
 				$check = false;

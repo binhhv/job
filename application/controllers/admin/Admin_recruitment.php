@@ -178,6 +178,7 @@ class Admin_recruitment extends CI_Controller {
 			'rec_update_at' => date('Y-m-d H:m'),
 			'rec_created_at' => date('Y-m-d H:m'));
 		$result = $this->recruitment->createRecruitment($data, $welfareSelected, $provinceSelected, $iduser);
+		$this->util->insertLog('recruitment', $result, '', '', 5, $iduser);
 		//$result = $this->employer->updateEmployerRecruitmentWelfare($rec['welfareSelected'], $rec['rec_id']);
 		log_message('error', $result);
 		echo json_encode($result);
