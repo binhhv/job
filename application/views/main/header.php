@@ -138,6 +138,11 @@ if (isset($logoJson)) {
 		<li id="menu-item-1954" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1954"><a href="contact/index.html">Contact</a></li>
 	</ul>
 	</li> -->
+	<li  id="register-modal" class="<?php if (isset($menu) && $menu == 'blog') {
+	echo 'active-menu';
+}
+?> register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="<?php echo base_url('blog'); ?>"><?php echo lang('m_blog'); ?></a></li>
+
 	<li  id="register-modal" class="<?php if (isset($menu) && $menu == 'contact') {
 	echo 'active-menu';
 }

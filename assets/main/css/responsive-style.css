@@ -281,6 +281,10 @@
   .no-border-bottom {
     border-bottom: 1px solid #f1f1f1;
   }
+
+  .blog-image {
+    margin: 0 auto;
+  }
 }
 
 /*end media queries*/

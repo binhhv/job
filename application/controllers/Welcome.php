@@ -73,8 +73,8 @@ class Welcome extends CI_Controller {
 
 	public function acceptLogin() {
 		$facebook = new Facebook(array(
-			'appId' => '1494342414191651',
-			'secret' => '775288a56787896f92da0f2096c6de7c',
+			'appId' => '1090634494280675',
+			'secret' => '0007b52d7e40ed5e30827aa119f994b0',
 		));
 
 		if (!is_null($this->session->userdata('fb'))) {

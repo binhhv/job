@@ -76,7 +76,7 @@ class Home extends CI_Controller {
 		$partner = $this->load->view('main/partner', array(), TRUE);
 		$popup = $this->load->view('main/popup', array('csrf' => $csrf), TRUE);
 		$slide = $this->load->view('main/slide', array('slides' => $slideOb), TRUE);
-
+		//$fb = $this->session->userdata['fb'];
 		//$sidebar = $this->load->view('main/sidebar', array(), TRUE);
 		$content = $this->load->view('main/content', array(
 			'slide' => $slide,
@@ -91,6 +91,7 @@ class Home extends CI_Controller {
 			'user_upload_cv_online' => $user_upload_cv_online,
 			'empoyer_register' => $empoyer_register,
 			'empoyer_create_recruitment' => $empoyer_create_recruitment,
+
 		), TRUE);
 		$footer = $this->load->view('main/footer', array('popup' => $popup), TRUE);
 		$supportOnline = $this->load->view('main/support-online', array(), TRUE);

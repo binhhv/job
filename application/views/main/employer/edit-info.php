@@ -118,10 +118,10 @@
                                 <div class="form-group col-sm-12">
                                     <label class="control-label"><?php echo lang('employer_logo_re_depl'); ?></label>
                                     <div class="controls">
-                                        <div class="display_block btn-big pos_relactive w170 floatLeft">
-                                            <input id="fileuploadEdit" type="file" name="files"  class="bt_input pos_absolute">
-                                            <span class="icon_upload_file"></span><?php echo lang('label_choose_file'); ?>
-                                        </div>
+                                        <!-- <div class="display_block btn-big pos_relactive w170 floatLeft"> -->
+                                            <input id="fileuploadEdit" type="file" name="files" >
+                                            <!-- <span class="icon_upload_file"></span><?php echo lang('label_choose_file'); ?> -->
+                                        <!-- </div> -->
                                         <div id="progress" class="progress">
                                                     <div class="progress-bar progress-bar-success"></div>
                                                 </div>

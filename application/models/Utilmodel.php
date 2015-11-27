@@ -69,6 +69,8 @@ class UtilModel extends CI_Model {
 			$code_genaral = "EMP" . $id_create . $randomString;
 		} else if ($table_create == "jobseeker") {
 			$code_genaral = "JBS" . $id_create . $randomString;
+		} else if ($table_create == "blog") {
+			$code_genaral = "BLOG" . $id_create . $randomString;
 		}
 		return $code_genaral;
 	}
@@ -127,6 +129,7 @@ class UtilModel extends CI_Model {
 			break;
 		case 'account':
 			$log_content .= "Đăng nhập website";
+			break;
 		default:
 			$content = $this->getRowDataLog('recruitment', 'rec_id', $idRecord);
 			$log_content .= "Tin tuyển dụng : " . $content->rec_title; //.= '{"title":"' . $title . '","content":"' . $content->rec_title . '"}';

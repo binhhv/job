@@ -2,6 +2,7 @@
 /**
  *
  */
+require FCPATH . '/facebook/autoload.php';
 class Jobseeker_register extends CI_Controller {
 
 	function __construct() {
@@ -15,6 +16,17 @@ class Jobseeker_register extends CI_Controller {
 	}
 
 	function index() {
+		$fb = new Facebook\Facebook([
+			'app_id' => APP_ID,
+			'app_secret' => SECRET_KEY,
+			'default_graph_version' => 'v2.5',
+			//'default_access_token' => '{access-token}', // optional
+		]);
+
+		$helper = $fb->getRedirectLoginHelper();
+		$permissions = ['email', 'user_likes']; // optional
+		$loginUrl = $helper->getLoginUrl(base_url('login-callback'), $permissions);
+
 		$user = (isset($this->session->userdata['user'])) ? $this->session->userdata['user'] : null;
 		$head = $this->load->view('main/head', array('title' => 'Đăng ký tài khoản'), TRUE);
 		$header = $this->load->view('main/header', array('user' => $user, 'showTitle' => true,
@@ -42,7 +54,7 @@ class Jobseeker_register extends CI_Controller {
 			'keyWord' => ''), TRUE);
 
 		//$popup = $this->load->view('main/popup', array('csrf' => $csrf), TRUE);
-		$content = $this->load->view('main/jobseeker/register', array('csrf' => $csrf, 'searchHorizontal' => $searchHorizontal), TRUE);
+		$content = $this->load->view('main/jobseeker/register', array('csrf' => $csrf, 'searchHorizontal' => $searchHorizontal, 'loginUrl' => $loginUrl), TRUE);
 		$footer = $this->load->view('main/footer', array(), TRUE);
 		$this->load->view('main/layout', array('head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer, 'isGray' => true));
 	}

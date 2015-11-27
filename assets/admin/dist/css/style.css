@@ -899,3 +899,10 @@ img.ad-profile-avatar {
 .w-wrap {
   word-wrap: break-word;
 }
+
+/*blog manager*/
+
+.img-blog {
+  width: 50px;
+  margin: 0 auto;
+}

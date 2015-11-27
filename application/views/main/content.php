@@ -40,11 +40,11 @@ if (isset($newjob)) {
 ?>
        </div>
 
-       <?php echo $user_register;?>
-       <?php echo $user_upload_cv;?>
-       <?php echo $user_upload_cv_online;?>
-       <?php echo $empoyer_register;?>
-       <?php echo $empoyer_create_recruitment;?>
-       <?php echo $popup_redirect_login;?>
+       <?php echo $user_register; ?>
+       <?php echo $user_upload_cv; ?>
+       <?php echo $user_upload_cv_online; ?>
+       <?php echo $empoyer_register; ?>
+       <?php echo $empoyer_create_recruitment; ?>
+       <?php echo $popup_redirect_login; ?>
 
 

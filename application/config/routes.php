@@ -272,6 +272,21 @@ $route['admin/profile/changePassword'] = 'admin/admin_profile/changePassword';
 //log history admin
 $route['admin/log'] = 'admin/admin_log/index';
 $route['admin/log/getLogs'] = 'admin/admin_log/getLogs';
+//admin blog
+$route['admin/blog'] = 'admin/admin_blog/getBlog';
+$route['admin/blog-category'] = 'admin/admin_blog/getBlogCategory';
+$route['admin/blog/create'] = 'admin/admin_blog/getCreateBlog';
+$route['admin/blog/get-blog-category'] = 'admin/admin_blog/getListBlogCategory';
+$route['admin/blog/updateBlogCategory'] = 'admin/admin_blog/updateBlogCategory';
+$route['admin/blog/deleteBlogCategory'] = 'admin/admin_blog/deleteBlogCategory';
+$route['admin/blog/createBlogCategory'] = 'admin/admin_blog/createBlogCategory';
+$route['admin/blog/get-blog'] = 'admin/admin_blog/getListBlog';
+$route['admin/blog/deleteBlog'] = 'admin/admin_blog/deleteBlog';
+$route['admin/blog/disabledBlog'] = 'admin/admin_blog/disabledBlog';
+$route['admin/blog/post-draft'] = 'admin/admin_blog/draftBlog';
+$route['admin/blog/post-create'] = 'admin/admin_blog/createBlog';
+$route['admin/blog/post-update-draft'] = 'admin/admin_blog/updateDraftBlog';
+$route['admin/blog/post-update'] = 'admin/admin_blog/updateBlog';
 //errors route
 $route['403'] = 'admin/admin_error/page403';
 $route['404_override'] = 'error_page/index';
@@ -340,9 +355,15 @@ $route['test-get-datajson'] = 'test_controller/getDataJson';
 $route['test-language'] = 'test_controller/changeLanguage';
 //login
 $route['login'] = 'login/index';
+$route['login-fb'] = 'login/loginFacebook';
+$route['login-callback'] = 'login/loginCallback';
 $route['logout'] = 'login/logout';
 $route['checkLogin'] = 'login/checkLogin';
-
+$route['forgot-password'] = 'login/getForgotPassword';
+$route['post-forgot-password'] = 'login/forgotPassword';
+$route['get-password/token-(:any)'] = 'login/getChangeForgotPassword/$1';
+$route['post-change-forgot-password'] = 'login/changeForgotPassword';
+$route['sync-account/(:any)-(:any)'] = 'login/syncAccount/$1/$2';
 //employer page
 $route['employer'] = 'employer/employer/index';
 
@@ -422,3 +443,7 @@ $route['employer/resume/delete-store/(:num)'] = 'employer/employer_resume/delete
 
 #change language
 $route['language/(:any)'] = 'language_switch/switchLanguage/$1';
+
+#BLOG ROUTE
+$route['blog'] = 'blog/blog/index';
+$route['blog/(:any)-(:any)'] = 'blog/blog/detail/$2';

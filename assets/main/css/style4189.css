@@ -10849,11 +10849,8 @@ select.input-lg {
     font-family: 'Source Sans Pro',sans-serif;
 }*/
 .form-control {
-    border-radius: 0 !important;
-    box-shadow: none;
-    border-color: #d2d6de;
-    height: 40px;
-    vertical-align: middle;
+   /*border-radius: 0 !important;box-shadow: none;border-color: #d2d6de;height: 40px;vertical-align: middle;
+*/
 }
 .error-createcv_online {
     color: red;

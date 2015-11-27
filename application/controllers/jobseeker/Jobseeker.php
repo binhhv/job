@@ -73,7 +73,7 @@ class Jobseeker extends CI_Controller {
 
 		$this->form_validation->set_error_delimiters('<label class="error alert-danger">', '</label>');
 		//$this->form_validation->set_rules('account_email', 'lang:email', 'callback_email_check|trim|required|valid_email|xss_clean');
-		$this->form_validation->set_rules('old-password', 'lang:passold', 'callback_password_check|trim|required|xss_clean|md5');
+		//$this->form_validation->set_rules('old-password', 'lang:passold', 'callback_password_check|trim|required|xss_clean|md5');
 		$this->form_validation->set_rules('new-password', 'lang:password', 'trim|required|min_length[6]|xss_clean|matches[confirm-password]|md5');
 		$this->form_validation->set_rules('confirm-password', 'lang:passconf', 'trim|required|min_length[6]|xss_clean|md5');
 		//$this->form_validation->set_rules('new-password', 'lang:first_name', 'trim|required|xss_clean');
@@ -87,7 +87,7 @@ class Jobseeker extends CI_Controller {
 			$checkCaptcha = true;
 		}
 		if ($this->form_validation->run() && $checkCaptcha) {
-			$password_old = $this->security->xss_clean($this->input->post('old-password'));
+			//$password_old = $this->security->xss_clean($this->input->post('old-password'));
 			$password_new = $this->security->xss_clean($this->input->post('new-password'));
 			$password_confirm = $this->security->xss_clean($this->input->post('confirm-password'));
 			// log_message('error', $password_old);
@@ -108,7 +108,7 @@ class Jobseeker extends CI_Controller {
 		} else {
 			$data = array(
 				// 'roll' => form_error('roll'),
-				'password_old' => form_error('old-password'),
+				//'password_old' => form_error('old-password'),
 				'password_new' => form_error('password_new'),
 				'password_confirm' => form_error('confirm_password'),
 				'name' => $this->security->get_csrf_token_name(),

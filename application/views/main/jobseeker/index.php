@@ -261,7 +261,7 @@ if (isset($listJobShow) && count($listJobShow) > 0) {
                             </div> -->
 
                             <!-- <div class="col-sm-12"> -->
-                                <div class="form-group">
+                               <!--  <div class="form-group">
                                      <label class="control-label col-sm-5"><?php echo lang('m_old_password'); ?> <span class="colorRed">*</span></label>
                                      <div class="col-sm-7">
                                          <input type="password" class="form-control" name="old-password" />
@@ -270,7 +270,7 @@ if (isset($listJobShow) && count($listJobShow) > 0) {
 
                                      </div>
 
-                                </div>
+                                </div> -->
                              <!-- </div> -->
 
                             <!-- <div class="col-sm-12"> -->

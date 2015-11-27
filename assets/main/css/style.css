@@ -1334,9 +1334,7 @@ a.toggle-menu:hover {
   margin: 7% auto;
   /*border-radius: 0px;
     -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;*/
-  border: 1px solid #fff;
-  /* -webkit-box-shadow: 0 0px 2px rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 5px;*//*border: 1px solid #fff;*//* -webkit-box-shadow: 0 0px 2px rgba(0, 0, 0, 0.2);
      -moz-box-shadow: 0 0px 2px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0px 2px rgba(0, 0, 0, 0.2);*/
 }
@@ -3323,4 +3321,122 @@ table#tableStoreResume tr.bg-even {
 
 .lang-active {
   text-decoration: underline !important;
+}
+
+/*blog css*/
+
+.blog-box {
+  padding: 20px;
+}
+
+.blog-title {
+  font-size: 20px !important;
+  margin: 10px 0;
+}
+
+.blog-created {
+  font-size: 12px !important;
+  margin: 5px 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.blog-image {
+  width: 180px;
+  height: 120px;
+}
+
+.blog-category {
+  border-bottom: 1px solid #f1f1f1;
+  padding: 10px 0;
+}
+
+.fix-blog-category {
+  margin: -5px -1px 0 -1px !important;
+}
+
+.blog-category-image {
+  width: 100px;
+  height: 75px;
+  float: left;
+  margin-left: 10px;
+}
+
+.title-blog-category {
+  font-weight: bold;
+  color: #000;
+}
+
+.content-blog-category {
+  text-align: justify;
+}
+
+/*tag*/
+
+.tags {/*margin-top: 15px;*/
+  margin: 0;
+  padding: 0;
+  /*position: absolute;
+  right: 24px;
+  bottom: -12px;*/
+  list-style: none;
+  display: inline-block;
+}
+
+.tags li {
+  margin-top: 5px;
+}
+
+.tags li, .tags a {
+  float: left;
+  height: 24px;
+  line-height: 24px;
+  position: relative;
+  font-size: 11px;
+}
+
+.tags a {
+  margin-left: 20px;
+  padding: 0 10px 0 12px;
+  background: #0089e0;
+  color: #fff;
+  text-decoration: none;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+          border-top-right-radius: 4px;
+}
+
+.tags a:before {
+  content: "";
+  float: left;
+  position: absolute;
+  top: 0;
+  left: -12px;
+  width: 0;
+  height: 0;
+  border-color: transparent #0089e0 transparent transparent;
+  border-style: solid;
+  border-width: 12px 12px 12px 0;
+}
+
+.tags a:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  float: left;
+  width: 4px;
+  height: 4px;
+     -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  background: #fff;
+     -moz-box-shadow: -1px -1px 2px #004977;
+  -webkit-box-shadow: -1px -1px 2px #004977;
+          box-shadow: -1px -1px 2px #004977;
 }

@@ -164,7 +164,7 @@
                                     <label class="control-label"><?php echo lang('employer_logo_re_depl'); ?></label>
                                     <div class="controls">
                                         <!-- <div class="display_block btn-big pos_relactive w170 floatLeft"> -->
-                                            <input id="fileupload" type="file" name="files"  >
+                                        <input id="fileupload" type="file" name="files"  >
                                             <!-- Chọn file đính kèm <span class="icon_upload_file"></span> -->
                                         <!-- </div> -->
                                         <div id="progress" class="progress margin-top-5">

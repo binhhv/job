@@ -2,48 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31d40f2e-f3dd-4fb8-b123-a25cd6981aed" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin.php-tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_api.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_api.php-tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_api.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_api.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_category.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_category.php-tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_category.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_comingsoon.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_comingsoon.php-tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_comingsoon.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_comingsoon.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_config.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_config.php-tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_config.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_contact.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_contact.php-tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_contact.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_contact.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_document.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_document.php-tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_document.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_document.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_employer.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_employer.php-tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_employer.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_employer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_mail.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_mail.php-tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_mail.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_mail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_manager.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_manager.php-tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_manager.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_manager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_recruitment.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_recruitment.php-tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_recruitment.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_recruitment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Home.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/Home.php-tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Home.php" afterPath="$PROJECT_DIR$/application/controllers/Home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Login.php-tmp" afterPath="$PROJECT_DIR$/application/controllers/admin/Login.php-tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Login.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/about.php-tmp" afterPath="$PROJECT_DIR$/application/views/main/about.php-tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/about.php" afterPath="$PROJECT_DIR$/application/views/main/about.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/head.php-tmp" afterPath="$PROJECT_DIR$/application/views/main/head.php-tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/head.php" afterPath="$PROJECT_DIR$/application/views/main/head.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/header.php-tmp" afterPath="$PROJECT_DIR$/application/views/main/header.php-tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/header.php" afterPath="$PROJECT_DIR$/application/views/main/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/logs/log-2015-10-05.php" afterPath="$PROJECT_DIR$/application/logs/log-2015-10-05.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/language/vi/message_lang.php-tmp" afterPath="$PROJECT_DIR$/application/language/vi/message_lang.php-tmp" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\job\captcha\1448258502.0879.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\job\captcha\1448260378.9082.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/language/vi/message_lang.php" afterPath="$PROJECT_DIR$/application/language/vi/message_lang.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/popup.php-tmp" afterPath="$PROJECT_DIR$/application/views/main/popup.php-tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/popup.php" afterPath="$PROJECT_DIR$/application/views/main/popup.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php-tmp" afterPath="$PROJECT_DIR$/application/config/routes.php-tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/account/Account_model.php" afterPath="$PROJECT_DIR$/application/models/account/Account_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Home.php" afterPath="$PROJECT_DIR$/application/controllers/Home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/jobseeker/Jobseeker.php" afterPath="$PROJECT_DIR$/application/controllers/jobseeker/Jobseeker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/jobseeker/Jobseeker_register.php" afterPath="$PROJECT_DIR$/application/controllers/jobseeker/Jobseeker_register.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Login.php" afterPath="$PROJECT_DIR$/application/controllers/Login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/admin/Mail_model.php" afterPath="$PROJECT_DIR$/application/models/admin/Mail_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Utilmodel.php" afterPath="$PROJECT_DIR$/application/models/Utilmodel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Welcome.php" afterPath="$PROJECT_DIR$/application/controllers/Welcome.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/constants.php" afterPath="$PROJECT_DIR$/application/config/constants.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/content.php" afterPath="$PROJECT_DIR$/application/views/main/content.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/head.php" afterPath="$PROJECT_DIR$/application/views/main/head.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/header.php" afterPath="$PROJECT_DIR$/application/views/main/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/jobseeker/index.php" afterPath="$PROJECT_DIR$/application/views/main/jobseeker/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/logs/log-2015-11-25.php" afterPath="$PROJECT_DIR$/application/logs/log-2015-11-25.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/login.php" afterPath="$PROJECT_DIR$/application/views/main/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/note-project-requiment/note-3.php" afterPath="$PROJECT_DIR$/note-project-requiment/note-3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/jobseeker/register.php" afterPath="$PROJECT_DIR$/application/views/main/jobseeker/register.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php" afterPath="$PROJECT_DIR$/application/config/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/main/css/style.css" afterPath="$PROJECT_DIR$/assets/main/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/main/css/style4189.css" afterPath="$PROJECT_DIR$/assets/main/css/style4189.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/support-online.php-tmp" afterPath="$PROJECT_DIR$/application/views/main/support-online.php-tmp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/main/support-online.php" afterPath="$PROJECT_DIR$/application/views/main/support-online.php" />
     </list>
     <ignored path="job.iws" />
@@ -65,11 +46,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="style-adwords.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/main/css/style-adwords.css">
+      <file leaf-file-name="layout.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/main/blog/layout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22118959">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="2" selection-end-line="2195" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.4265233">
+              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -84,6 +65,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/assets/main/css/style-adwords.css" />
+        <option value="$PROJECT_DIR$/application/views/main/blog/layout.php" />
       </list>
     </option>
   </component>
@@ -95,10 +77,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-7" />
     <option name="width" value="1370" />
-    <option name="height" value="754" />
+    <option name="height" value="745" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -151,7 +132,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -165,7 +146,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -183,7 +186,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -191,14 +198,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="blog" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -221,28 +228,31 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1370" height="754" extended-state="0" />
+    <frame x="-7" y="0" width="1370" height="745" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24961832" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.php" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -262,8 +272,24 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/assets/main/css/style-adwords.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22118959">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="2" selection-end-line="2195" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/main/css/style-adwords.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="176.06314">
+          <caret line="6076" column="0" selection-start-line="7" selection-start-column="2" selection-end-line="2195" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/main/blog/layout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4265233">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
           <folding />
         </state>
       </provider>

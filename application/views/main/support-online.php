@@ -100,6 +100,7 @@
 			$(".open-support-online-box").addClass('hide');
 			$(".close-support-online-box").removeClass('hide');
 			console.log("open");
+			$("ul.chat").empty();
 			getTokenSP(addTokenInput);
 			getAllMessage();
 			getMessage();
@@ -142,6 +143,7 @@
 		//$(".support-online-box-body").prop("scrollHeight")
 	}
 	function startChat(){
+		console.log("start");
 		var cookie_id = $.cookie('schat_cookie_id');
 		var cookie_user = $.cookie('schat_cookie_user');
 		if(typeof cookie_id === "undefined"){

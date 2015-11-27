@@ -29,6 +29,29 @@
 ?>"><a  href="<?php echo base_url('admin/profile') ?>"><i class="fa fa-user"></i><span>Quản lý tài khoản</span></a></li>
 <li class="treeview <?php if (isset($selected) && $selected == 'log') {echo 'active';}
 ?>"><a  href="<?php echo base_url('admin/log') ?>"><i class="fa fa-history"></i><span>Lịch sử thao tác</span></a></li>
+            <li class="<?php if (isset($selected) && $selected == 'blogManager') {echo 'active';}
+?> treeview">
+              <a href="#">
+                <i class="fa fa-calendar-o"></i>
+                <span>Quản lý Blog</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                <!-- <span class="label label-primary pull-right">4</span> -->
+              </a>
+              <ul class="treeview-menu">
+                  <li <?php if (isset($sub) && $sub == 'blogs') {
+	echo "class=\"active\"";
+}
+?>><a href="<?php echo base_url('admin/blog'); ?>"><i class="fa fa-circle-o"></i> Danh sách blog</a></li>
+<li <?php if (isset($sub) && $sub == 'blogCategory') {
+	echo "class=\"active\"";
+}
+?>><a href="<?php echo base_url('admin/blog-category'); ?>"><i class="fa fa-circle-o"></i> Danh mục blog</a></li>
+              <li <?php if (isset($sub) && $sub == 'createBlog') {
+	echo "class=\"active\"";
+}
+?>><a href="<?php echo base_url('admin/blog/create'); ?>"><i class="fa fa-circle-o"></i> Tạo blog</a></li>
+  </ul>
+  </li>
             <li class="<?php if (isset($selected) && $selected == 'recruitmentManager') {echo 'active';}
 ?> treeview">
               <a href="#">

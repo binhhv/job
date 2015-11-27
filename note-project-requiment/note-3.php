@@ -87,6 +87,10 @@
 55. bỏ scroll trên modal trang admin thay bằng scrolll khác .
 56. sua lai like va commen trne chi tiet tin tyen dujng.
 57. thay doi mat khau admin . mat khau log delete.
+58. chuc nang quen mat khau.
+59. login facebook (done)
+60. tao blog.
+61. double chat trong suport chat.
 
 
 

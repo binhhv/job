@@ -10,13 +10,22 @@
 					<div class="col-sm-12 col-md-6 margin-5">
 						<span class="text-color-1 title-jobseeker-register"><strong><?php echo lang('m_title_jobseeker_register'); ?></strong></span>
 					</div>
-					<div class="col-sm-12 col-md-6 margin-5">
+					<div class="col-sm-12 col-md-12 margin-5">
 						<span class="title-exits-account"> <?php echo lang('js_rg_exist_account'); ?>
-							<a href="<?php echo base_url('login') ?>"><?php echo lang('m_login'); ?></a> &nbsp;  <button class="btn-employer background-color-2 text-color-2" onclick="location.href='<?php echo base_url('register_ntd'); ?>'">Nhà tuyển dụng đăng ký</button>
-						</span>
+							<a href="<?php echo base_url('login') ?>"><?php echo lang('m_login'); ?></a> &nbsp;
+                        </span>
 					</div>
+                    <div class="col-sm-6">
+                        <button class=" margin-top-5 btn-employer background-color-2 text-color-2" onclick="location.href='<?php echo base_url('register_ntd'); ?>'">Nhà tuyển dụng đăng ký</button>
+
+                    </div>
+                    <div class="col-sm-6 margin-top-5 text-center">
+                         <a class=" btn btn-social btn-facebook" href="<?php echo $loginUrl; ?>">
+                                  <span class="fa fa-facebook"></span> <?php echo lang('register_facebook'); ?>
+                            </a>
+                    </div>
 				</div>
-				<div class="row border-row"></div>
+				<div class="row border-row margin-top-5"></div>
 				<div class="row">
 					<div class="col-sm-12 margin-top-20">
 						 <form role="form" name="uv-register-form" id="uv-register-form" method="post" class="form-horizontal">

@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | user, PHP under CGI with Apache suEXEC, etc.).  Octal values should
 | always be used to set the mode correctly.
 |
-*/
+ */
 define('FILE_READ_MODE', 0644);
 define('FILE_WRITE_MODE', 0666);
 define('DIR_READ_MODE', 0755);
@@ -26,7 +26,7 @@ define('DIR_WRITE_MODE', 0755);
 |
 | These modes are used when working with fopen()/popen()
 |
-*/
+ */
 
 define('FOPEN_READ', 'rb');
 define('FOPEN_READ_WRITE', 'r+b');
@@ -36,7 +36,8 @@ define('FOPEN_WRITE_CREATE', 'ab');
 define('FOPEN_READ_WRITE_CREATE', 'a+b');
 define('FOPEN_WRITE_CREATE_STRICT', 'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT', 'x+b');
-
+define("APP_ID", "1090634494280675");
+define("SECRET_KEY", "0007b52d7e40ed5e30827aa119f994b0");
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace
@@ -46,7 +47,7 @@ define('FOPEN_READ_WRITE_CREATE_STRICT', 'x+b');
 | error_reporting is disabled, the backtrace will not display, regardless
 | of this setting
 |
-*/
+ */
 define('SHOW_DEBUG_BACKTRACE', TRUE);
 
 /*
@@ -73,7 +74,7 @@ define('SHOW_DEBUG_BACKTRACE', TRUE);
 |    Bash scripting:
 |       http://tldp.org/LDP/abs/html/exitcodes.html
 |
-*/
+ */
 define('EXIT_SUCCESS', 0); // no errors
 define('EXIT_ERROR', 1); // generic error
 define('EXIT_CONFIG', 3); // configuration error
