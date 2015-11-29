@@ -3,7 +3,7 @@ if (!isset($user)) {?>
 
 <div class="modal fade" id="myModal" data-show="0">
  <div class="vertical-alignment-helper">
-  <div class="modal-dialog modal-sm vertical-align-center">
+  <div class="modal-dialog modal-md vertical-align-center">
     <div class="modal-content">
       <div class="modal-header background-color-3">
       	<div class="modal-popup-box">
@@ -17,7 +17,7 @@ if (!isset($user)) {?>
       <div class="modal-body">
       	<p><?php echo lang('pnew_title_1'); ?> <br>
       	<?php echo lang('pnew_title_2'); ?></p>
-      	<p class="danger alert hide popup-error"><?php echo lang('pnew_require'); ?></p>
+      	<p class="text-danger danger alert hide popup-error"><?php echo lang('pnew_require'); ?></p>
       	<form id="fpopup-user" method="post" >
       		<div class="form-group">
       			<input type="text" class="form-control" name="firstname" placeholder="Họ">

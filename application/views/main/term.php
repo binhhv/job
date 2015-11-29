@@ -76,6 +76,9 @@
 							<p>
 								<?php echo lang('term_end'); ?>
 							</p>
+							<p class="text-right">
+								<label class="pull-right"><b><?php echo lang('m_sign_term') ?></b></label>
+							</p>
 						</div>
 
 

@@ -1,4 +1,5 @@
-	<div class="container-fluid login-page">
+	<?php $loginUrl = $this->globals->getLoginUrl();?>
+  <div class="container-fluid login-page">
 		<div class="container">
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3  col-xs-12">
@@ -44,7 +45,7 @@ if (isset($errors)) {?>
               <button type="submit" class="btn btn-primary btn-block btn-flat"><?php echo lang('m_login'); ?></button>
             </div><!-- /.col -->
             <div class="col-xs-12 text-right">
-              <a href="<?php echo base_url('forgot-password'); ?>" style="text-decoration: underline;">Quên mật khẩu</a>
+              <a href="<?php echo base_url('forgot-password'); ?>" style="text-decoration: underline;"><?php echo lang('m_title_forgot_password_lower'); ?></a>
             </div>
           </div>
         </form>

@@ -1,3 +1,4 @@
+    <?php $loginUrl = $this->globals->getLoginUrl();?>
 	<div class="container job-province">
 
 		<div class="row">
@@ -19,8 +20,8 @@
                         <button class=" margin-top-5 btn-employer background-color-2 text-color-2" onclick="location.href='<?php echo base_url('register_ntd'); ?>'">Nhà tuyển dụng đăng ký</button>
 
                     </div>
-                    <div class="col-sm-6 margin-top-5 text-center">
-                         <a class=" btn btn-social btn-facebook" href="<?php echo $loginUrl; ?>">
+                    <div class="col-sm-6 margin-top-5 ">
+                         <a class="fix-link-facebook btn btn-social btn-facebook" href="<?php echo $loginUrl; ?>">
                                   <span class="fa fa-facebook"></span> <?php echo lang('register_facebook'); ?>
                             </a>
                     </div>

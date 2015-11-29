@@ -9,7 +9,7 @@
 
 ?> -->
           <div class="col-sm-12 forgot-success hide" style="padding:20px;">
-            Vui lòng kiểm tra email để lấy lại mât khẩu. Nhấn vào <a href="<?php echo base_url() ?>">ĐÂY</a> để về trang chủ.
+            <?php echo str_replace('"%s"', base_url(), lang('m_title_check_email_cpass')); ?>
         </div>
           <form id="fForgotPassword" action="<?php echo base_url() . 'forgot-password' ?>" method="post" class="form-horizontal" role="form">
             <div class="form-group">

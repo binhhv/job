@@ -80,7 +80,7 @@
             <span>Số điện thoại: xxxxxxx</span>
             <span>Địa chỉSố 5, Lê quang định, phường Thắng nhất , TP Vũng Tàu</span> -->
             <ul>
-                <li><a href="<?php echo base_url('about'); ?>"><?php echo lang('m_introduce'); ?></a></li>
+                <li><a href="<?php echo base_url('aboutus'); ?>"><?php echo lang('m_introduce'); ?></a></li>
 
                 <li>|</li>
 
@@ -89,8 +89,8 @@
                  <li><a href="<?php echo base_url('about/term') ?>"><?php echo lang('ft_terms'); ?></a></li>
                  <li>|</li>
                 <li><a href="<?php echo base_url('contact') ?>"><?php echo lang('m_contact'); ?></a></li>
-                <li>|</li>
-                <li><a href="<?php echo base_url() ?>"><?php echo lang('ft_support'); ?></a></li>
+                <!-- <li>|</li> -->
+                <!-- <li><a href="<?php echo base_url() ?>"><?php echo lang('ft_support'); ?></a></li> -->
             </ul>
             <ul class="social">
                 <li><a href="#"><img src="<?php echo base_url(); ?>assets/main/img/social/facebook.png"></a></li>

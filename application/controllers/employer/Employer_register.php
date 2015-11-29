@@ -22,7 +22,7 @@ class Employer_register extends CI_Controller {
 		$provinceVN = $this->account->getProvinceCountry(1);
 		$provinceJP = $this->account->getProvinceCountry(2);
 		$user = (isset($this->session->userdata['user'])) ? $this->session->userdata['user'] : null;
-		$head = $this->load->view('main/head', array('title' => 'Đăng ký tài khoản', 'scriptOption' => $scriptOption), TRUE);
+		$head = $this->load->view('main/head', array('title' => $this->lang->line('em_title_register'), 'scriptOption' => $scriptOption), TRUE);
 		$header = $this->load->view('main/header', array('user' => $user, 'showTitle' => true,
 		), TRUE);
 

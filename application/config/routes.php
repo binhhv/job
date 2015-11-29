@@ -287,6 +287,9 @@ $route['admin/blog/post-draft'] = 'admin/admin_blog/draftBlog';
 $route['admin/blog/post-create'] = 'admin/admin_blog/createBlog';
 $route['admin/blog/post-update-draft'] = 'admin/admin_blog/updateDraftBlog';
 $route['admin/blog/post-update'] = 'admin/admin_blog/updateBlog';
+$route['admin/blog/edit/(:num)'] = 'admin/admin_blog/getEditBlog/$1';
+$route['admin/blog/getContentBlog/(:num)'] = 'admin/admin_blog/getContentBlog/$1';
+$route['admin/blog/detail/(:num)'] = 'admin/admin_blog/detailBlog/$1';
 //errors route
 $route['403'] = 'admin/admin_error/page403';
 $route['404_override'] = 'error_page/index';
@@ -446,4 +449,7 @@ $route['language/(:any)'] = 'language_switch/switchLanguage/$1';
 
 #BLOG ROUTE
 $route['blog'] = 'blog/blog/index';
-$route['blog/(:any)-(:any)'] = 'blog/blog/detail/$2';
+$route['blog/(:num)'] = 'blog/blog/index';
+$route['blog/(:any)-(:num)'] = 'blog/blog/detail/$2';
+$route['blog/category/(:any)-(:num)'] = 'blog/blog/blogCategory/$2';
+$route['blog/category/(:any)-(:num)/(:num)'] = 'blog/blog/blogCategory/$2';

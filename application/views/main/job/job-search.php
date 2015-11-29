@@ -21,7 +21,7 @@ if (isset($listJobShow) && count($listJobShow) > 0) {
 				<div class="item-job-hl">
 						<div class="row">
 							<div class="col-sm-12">
-								<label><span class="btn-warning">qc</span><a href="<?php echo base_url('job') . '/' . str_replace(' ', '-', $value->rec_title) . '-' . $value->rec_id . '.html' ?>">
+								<label><span class="text-primary f-20"><i class="fa fa-star"></i></span><a href="<?php echo base_url('job') . '/' . str_replace(' ', '-', $value->rec_title) . '-' . $value->rec_id . '.html' ?>">
 								<?php echo (strlen($value->rec_title) > 30) ? substr($value->rec_title, 0, 30) . '...' : $value->rec_title; ?>
 								</a></label>
 								<span><?php echo $value->employer_name; ?></span>

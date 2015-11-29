@@ -16,7 +16,8 @@
 if (isset($title) && strlen($title) > 0) {
 	echo $title;
 } else {
-	echo $this->globals->getTitlePage();
+	//echo $this->globals->getTitlePage();
+	echo lang('m_title_default_page');
 }
 
 ?></title>

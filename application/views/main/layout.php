@@ -18,11 +18,20 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
       <!--Content website-->
-    <ul class="share-btn-wrp">
-        <li class="facebook button-wrap">Facebook</li>
+   <!--  <ul class="share-btn-wrp">
+        <li class="facebook button-wrap"></li>
         <li class="youtube button-wrap">Youtube</li>
+        <li class="button-wrap">
+          <span class="sp-facebook"><i class="fa fa-facebook"></i></span>
+        </li>
 
-    </ul>
+    </ul> -->
+    <a href="#" class="social-position ">
+      <span class="sp-facebook"><i class="fa fa-facebook"></i></span>
+    </a>
+    <a href="#" class="social-position ">
+      <span class="sp-youtube"><i class="fa fa-youtube-play"></i></span>
+    </a>
     <a href="#" class="scrollToTop"></a>
     <?php if (isset($supportOnline)) {
 	//echo $supportOnline;
@@ -87,7 +96,7 @@ include 'support-online.php';
               <div class="modal-footer">
               <div class="row">
                 <div class="col-sm-8 text-left">
-                  <span class="hotline-modal">allSHIGOTO Group</span>
+                  <span class="hotline-modal">allSHIGOTO - 日本語を理解出来るコミユニテイ</span>
                   <small class="hotline-modal"><?php echo lang('m_hotline'); ?>: 01212 049 149</small>
                 </div>
                 <div class="col-sm-4 text-right">

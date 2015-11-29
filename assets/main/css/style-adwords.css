@@ -4991,11 +4991,8 @@ html {
     height: 100%;
 }
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 15px;
-    line-height: 1.50;
-    color: #666666;
-    background-color: #ffffff;
+    /*font-family: 'Open Sans', sans-serif;font-size: 15px;line-height: 1.50;color: #666666;background-color: #ffffff;
+*/
 }
 body.full-height, body.full-height .page-wrapper {
     background-color: #fafafa;
@@ -6889,19 +6886,8 @@ tbody {
 /* Buttons
 ---------------------------------- */
 .btn {
-    padding: 10px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    min-width: 160px;
-    text-align: center;
-    border-radius: 0;
-    text-transform: uppercase;
-    margin: 10px 0;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+   /*padding: 10px 12px;font-size: 14px;line-height: 1.42857143;min-width: 160px;text-align: center;border-radius: 0;text-transform: uppercase;margin: 10px 0;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-ms-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;
+*/
 }
 .btn:focus,
 .btn:active {

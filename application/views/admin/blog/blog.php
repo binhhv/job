@@ -53,13 +53,14 @@
                       <th class="text-center">Tiêu đề</th>
                       <th class="text-center">Hình</th>
                       <th class="text-center">Trạng thái</th>
+                      <th class="text-center">Người đăng</th>
                       <th class="text-center">Ngày tạo</th>
 
                       <th class="text-center"></th>
                     </tr>
                     <tr ng-repeat="data in filtered = (pagedItems | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
                       <td class="text-center"><b>{{data.blog_code}}</b></td><!--{{($index + ((currentPage -1)* entryLimit)) + 1}}-->
-                      <td class="text-center"><a href="#">{{data.blog_title | cut:true:50:' ...'}}</a></td>
+                      <td class="text-center"><a href="<?php echo base_url('admin/blog/detail/') . '/' ?>{{data.blog_id}}">{{data.blog_title | cut:true:50:' ...'}}</a></td>
                       <td class="text-center">
                           <img ng-src="{{getImageBlogSrc(data)}}" class="img-responsive img-blog">
                       </td>
@@ -67,14 +68,15 @@
                         <label class="btn btn-xs btn-primary" ng-show="data.blog_is_active == 1">Đang đăng</label>
                         <label class="btn btn-xs btn-warning" ng-show="data.blog_is_active == 0 && data.blog_is_draft == 1">Lưu</label>
                       </td>
+                      <td class="text-center"><a><b>{{data.account_email}}</b></a></td>
                       <td class="text-center">{{formatDate(data.blog_created_at)}}</td>
 
 
                       <td class="text-center">
-                      <button class="btn btn-xs btn-info" ng-click="openModalDisabledBlog('md',data)" ng-show="data.blog_is_active == 1">Gỡ blog</button>
+                      <button class="btn btn-xs btn-info" ng-click="openModalDisabledBlog('md',data)" ng-show="data.blog_is_active == 1 && data.blog_map_account == <?php echo $user['id'] ?>">Gỡ blog</button>
                       <!-- <button class="btn btn-xs btn-primary"  ng-show="data.blog_is_active == 0 && data.blog_is_draft == 1">Đăng blog</button> -->
-                      <a class="btn btn-xs btn-warning" href="<?php echo base_url('admin/blog/edit') ?>/{{data.blog_id}}" >sửa</a>
-                      <button class="btn btn-xs btn-danger" ng-click="openModalDeleteBlog('md',data)">xóa</button>
+                      <a ng-show="data.blog_map_account == <?php echo $user['id'] ?>" class="btn btn-xs btn-warning" href="<?php echo base_url('admin/blog/edit') ?>/{{data.blog_id}}" >sửa</a>
+                      <button ng-show="data.blog_map_account == <?php echo $user['id'] ?>" class="btn btn-xs btn-danger" ng-click="openModalDeleteBlog('md',data)">xóa</button>
                       </td>
                     </tr>
 

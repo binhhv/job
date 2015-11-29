@@ -55,13 +55,13 @@
                                 </p>
                             </div>
                         </li>-->
-                        <li class="right clearfix"><span class="chat-img pull-right-chat">
+                        <li class="sp-intro right clearfix"><span class="chat-img pull-right-chat">
                             <img width="35"src="<?php echo base_url() ?>assets/main/img/header/icon_black.png" alt="User Avatar" class="icon-support-online " />
                         </span>
                             <div class="chat-body clearfix">
 
                                 <p>
-                                    <small><?php echo lang('sp_intro'); ?></small>
+                                    <small><?php echo lang('sp_intro_n'); ?></small>
 									<!-- Hi, you. May I help you?
 									こんにちは。何かありましたら、ご連絡下さい。 -->
                                 </p>
@@ -100,7 +100,8 @@
 			$(".open-support-online-box").addClass('hide');
 			$(".close-support-online-box").removeClass('hide');
 			console.log("open");
-			$("ul.chat").empty();
+			//$("ul.chat").empty();
+			$("ul.chat li").not('.sp-intro').remove();
 			getTokenSP(addTokenInput);
 			getAllMessage();
 			getMessage();
@@ -267,7 +268,7 @@
     }
     function appendMessage(data,scroll){
     	if(data.schat_type == 0){
-    		var html ='<li class="left clearfix"><span class="chat-img pull-left">';
+    		var html ='<li class="sp-chat left clearfix"><span class="chat-img pull-left">';
                 html+='<img width="35" src="<?php echo base_url() ?>assets/main/img/supportonline/icon_user_support.png" alt="User Avatar" class="icon-support-online " />';
                 html+='</span>';
                 html+='<div class="chat-body clearfix">';
@@ -279,7 +280,7 @@
             $("ul.chat").append(html);
     	}
     	else{
-    		var html ='<li class="right clearfix"><span class="chat-img pull-right-chat">';
+    		var html ='<li class="sp-chat right clearfix"><span class="chat-img pull-right-chat">';
                 html+='<img width="35"src="<?php echo base_url() ?>assets/main/img/header/icon_black.png" alt="User Avatar" class="icon-support-online " />';
                 html+='</span>';
                 html+='<div class="chat-body clearfix">';

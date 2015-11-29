@@ -1,24 +1,24 @@
 <div class="container-fluid about-page-box no-padding-lr">
-    <div class="image-header-adwords" style="background:url(<?php echo base_url() . "assets/main/img/adwords/img-adwords-1.png"?>) 50% 0px repeat-x"></div>
+    <div class="image-header-adwords" style="background:url(<?php echo base_url() . "assets/main/img/adwords/img-adwords-1.png" ?>) 50% 0px repeat-x"></div>
 </div>
 <div class="container-fluid about-page-box">
 
 	<div class="container about-page adwords-page">
 		<div class="row margin-bottom-20 margin-top-20 padding-lr-40 ">
 						<!-- <div class="col-md-12 adwords-info-left"  >
-							<img class="adwords-img-header" src="<?php echo base_url()?>assets/main/img/adwords/img-adwords-1.png" alt="">
+							<img class="adwords-img-header" src="<?php echo base_url() ?>assets/main/img/adwords/img-adwords-1.png" alt="">
 							<div class="space hidden-md hidden-lg"></div>
-              <!-- style="background:url(<?php echo base_url() . "assets/main/img/adwords/img-adwords-1.png"?>) 50% 0px no-repeat"
+              <!-- style="background:url(<?php echo base_url() . "assets/main/img/adwords/img-adwords-1.png" ?>) 50% 0px no-repeat"
 						</div> -->
 						<div class="col-md-12 adwords-info-right ">
             <div class=" bg-info-adwords padding-25">
-							<p class="space-top align-justify">Cho đến thời điểm tháng 10/2015, ALLSHIGOTO là một trong những cộng đồng nhân sự TIẾNG NHẬT lớn nhất ở VIỆT NAM. Quy tụ hơn 90,000 thành viên có năng lực tiếng Nhật từ N5 đến N1 và thu hút hơn 3,000 người xem mỗi ngày trên các trang mạng cộng đồng Facebook và website. Chính vì thế, ALLSHIGOTO sẽ trở thành kênh truyền thông quảng cáo hấp dẫn và hiệu quả đối với khách hàng. </p>
+							<p class="space-top align-justify"><?php echo lang('ad_intro'); ?> </p>
 							<!-- <a href="page-about-2.html" class="btn btn-lg btn-default">Read More</a> -->
             </div>
             </div>
 		</div>
 		<div class="row"><div class="col-md-12 margin-top-20">
-		<h1 class="text-center title-adwords "> Vì sao bạn phải quảng cáo trên ALLSHIGOTO?</h1>
+		<h1 class="text-center title-adwords "><?php echo lang('ad_why_chose'); ?></h1>
 		<div class="border-bottom-title border-color-1  margin-bottom-20 "></div>
 		<ul class="timeline timeline-inverse">
                       <!-- timeline time label -->
@@ -33,9 +33,9 @@
                        <i class="fa fa-users bg-blue"></i>
                         <div class="timeline-item">
                           <!-- <span class="time"><i class="fa fa-clock-o"></i> 12:05</span> -->
-                          <h3 class="timeline-header">Nhắm đến đúng khách hàng mục tiêu</h3>
+                          <h3 class="timeline-header"><?php echo lang('ad_item_1'); ?></h3>
                           <div class="timeline-body">
-                           Dựa trên nền tảng trang cộng đồng nhân sự lớn nhất ở Việt Nam thu hút hàng chục ngàn thành viên nắm giữ trình độ tiếng Nhật, việc thực hiện quảng cáo trên ALLSHIGOTO sẽ đưa thông điệp của bạn hiển thị đến đúng đối tượng ứng viên tiếng Nhật/các bạn đã, đang và sẽ học tiếng Nhật ngay khi họ tìm kiếm thông tin về dịch vụ mà doanh nghiệp/cá nhân bạn cung cấp.
+                           <?php echo lang('ad_item_1_detail'); ?>
                           </div>
                           <div class="timeline-footer">
                            <!--  <a class="btn btn-primary btn-xs">Read more</a>
@@ -49,9 +49,9 @@
                         <i class="fa fa-hand-pointer-o bg-orange"></i>
                         <div class="timeline-item">
                           <!-- <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span> -->
-                          <h3 class="timeline-header no-border">Tìm kiếm khách hàng mục tiêu</h3>
+                          <h3 class="timeline-header no-border"><?php echo lang('ad_item_2'); ?></h3>
                           <div class="timeline-body">
-                          	Thông qua kênh quảng cáo trên ALLSHIGOTO, các đối tượng khách hàng mục tiêu của bạn sẽ biết đến doanh nghiệp/cá nhân bạn nhiều hơn và qua đó, thiết lập các mối quan hệ hợp tác như ứng tuyển, tuyển dụng, đăng ký khóa học, giao lưu, chia sẻ…
+                          	<?php echo lang('ad_item_2_detail'); ?>
                           </div>
                         </div>
                       </li>
@@ -61,9 +61,9 @@
                         <i class="fa fa-suitcase bg-red"></i>
                         <div class="timeline-item">
                           <!-- <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span> -->
-                          <h3 class="timeline-header">Tăng cường hình ảnh quảng bá tích cực cho doanh nghiệp/cá nhân</h3>
+                          <h3 class="timeline-header"><?php echo lang('ad_item_3') ?></h3>
                           <div class="timeline-body">
-                            ALLSHIGOTO sẽ ngày càng phát triển mở rộng trên nhiều phương tiện truyền thông. Điều đó cũng đồng nghĩa là hình ảnh quảng bá của doanh nghiệp/cá nhân của bạn sẽ được nhiều kênh thông tin khác theo dõi, đặt mối quan hệ cộng tác kinh doanh với bạn.
+                            <?php echo lang('ad_item_3_detail'); ?>
                           </div>
                           <div class="timeline-footer">
                             <!-- <a class="btn btn-warning btn-flat btn-xs">View comment</a> -->
@@ -74,9 +74,9 @@
                         <i class="fa fa-globe bg-yellow"></i>
                         <div class="timeline-item">
                           <!-- <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span> -->
-                          <h3 class="timeline-header">Xây dựng thương hiệu</h3>
+                          <h3 class="timeline-header"><?php echo lang('ad_item_4'); ?></h3>
                           <div class="timeline-body">
-                           Quảng cáo trên ALLSHIGOTO sẽ góp phần xây dựng thêm thương hiệu cho dịch vụ sản phẩm mà doanh nghiệp/cá nhân bạn cung cấp.
+                           <?php echo lang('ad_item_4_detail') ?>
                           </div>
                           <div class="timeline-footer">
                             <!-- <a class="btn btn-warning btn-flat btn-xs">View comment</a> -->
@@ -87,9 +87,9 @@
                         <i class="fa fa-money bg-purple"></i>
                         <div class="timeline-item">
                           <!-- <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span> -->
-                          <h3 class="timeline-header">Chi phí rẻ, hiệu quả cao</h3>
+                          <h3 class="timeline-header"><?php echo lang('ad_item_5'); ?></h3>
                           <div class="timeline-body">
-                           Chi phí rẻ, cạnh trang và tương thích thị trường sẽ mang lại cho các bạn hiệu quả tương tác cao kèm với lợi nhuận lớn.
+                           <?php echo lang('ad_item_5_detail'); ?>
                           </div>
                           <div class="timeline-footer">
                             <!-- <a class="btn btn-warning btn-flat btn-xs">View comment</a> -->
@@ -108,7 +108,7 @@
             </div>
             <div class="row">
             	<div class="col-md-12 margin-top-20">
-					<h1 class="text-center title-adwords ">Biểu phí quảng cáo của ALLSHIGOTO</h1>
+					<h1 class="text-center title-adwords "><?php echo lang('ad_title_cost_adwords') ?></h1>
 
 					<div class="border-bottom-title border-color-1  margin-bottom-20 "></div>
 					<div class="padding-lr-25">
@@ -156,22 +156,22 @@ if (isset($adwords)) {
 		<div class="col-sm-4 plan <?php if ($adword->config_content == 'center') {echo "best-value";}
 		?>">
         <div class="header">
-          <h3><?php echo $objectAdword['title']?></h3>
+          <h3><?php echo $objectAdword['title'] ?></h3>
           <div class="price"><span></span></div>
         </div>
         <ul>
-          <li><?php echo $objectAdword['type']?></li>
+          <li><?php echo $objectAdword['type'] ?></li>
           <li>
-            Số lượt xem/tháng: <b><?php echo $objectAdword['view']?></b>
+            <?php echo lang('ad_view_per_month'); ?>: <b><?php echo $objectAdword['view'] ?></b>
           </li>
           <li>
-            Tặng tin đăng tuyển ở vị trí highlight: <b><?php echo $objectAdword['highlight']?></b>
+            <?php echo lang('ad_increase_position_use'); ?>: <b><?php echo $objectAdword['highlight'] ?></b>
           </li>
-          <li>Tặng thêm thời hạn sử dụng: <b><?php echo $objectAdword['expDate']?></b></li>
-          <li><h4><b><?php echo $objectAdword['price']?></b></h4></li>
+          <li><?php echo lang('ad_increase_time_use'); ?>: <b><?php echo $objectAdword['expDate'] ?></b></li>
+          <li><h4><b><?php echo $objectAdword['price'] ?></b></h4></li>
          <!--  <li>Bandwidth</li>
           <li>Databases</li> -->
-          <li style="border:none"><a class="btn btn-default">Liên hệ</a></li>
+          <li style="border:none"><a class="btn btn-default"><?php echo lang('ad_contact'); ?></a></li>
         </ul>
       </div>
 	<?php }

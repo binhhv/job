@@ -2,7 +2,7 @@ $(function(){
 	$("#fCreateBlog").submit(function(event) {
         event.preventDefault();
        var content = CKEDITOR.instances.blog_content.getData();
-       console.log(content);
+       //console.log(content);
         var url = config.base_url;
         if($("input[name=isDraft]:hidden").val() == 1){
             url +="admin/blog/post-draft";
@@ -17,7 +17,7 @@ $(function(){
                     'file_name':$('input:hidden[name=file_name]').val(),
                     'file-tmp':$('input:hidden[name=file-tmp]').val(),
                     'blog-category':$('select[name=blog-category]').val(),
-                    'blog_introduce':$('input[name=blog_introduce]').val(),
+                    'blog_introduce':$("#blog_introduce").val(),
                     'blog_content':content
                     };
        $.ajax({
@@ -78,7 +78,8 @@ $(function(){
     //form submit edit
     $("#fEditBlog").submit(function(event) {
         event.preventDefault();
-       
+        var content = CKEDITOR.instances.blog_content.getData();
+        //alert(content);
         var url = config.base_url;
         if($("input[name=isDraft]:hidden").val() == 1){
             url +="admin/blog/post-update-draft";
@@ -86,12 +87,21 @@ $(function(){
         else{
              url +="admin/blog/post-update";
         }
-        console.log(url);
+        // console.log(url);
+         var dataOb = {'csrf_test_name':$('input:hidden[name=csrf_test_name]').val(),
+                    'blog_title':$('input[name=blog_title]').val(),
+                    'file_name':$('input:hidden[name=file_name]').val(),
+                    'file-tmp':$('input:hidden[name=file-tmp]').val(),
+                    'blog-category':$('select[name=blog-category]').val(),
+                    'blog_introduce':$("#blog_introduce").val(),
+                    'blog_content':content,
+                    'blog_id':$("input:hidden[name=blog_id]").val()
+                    };
         $.ajax({
             type: "POST", // HTTP method POST or GET
             url: url,//base_website + "employer/recruitment/create", //Where to make Ajax calls
             dataType: "json", // Data type, HTML, json etc.
-            data: $(this).serialize(), //Form variables
+            data: dataOb,//$(this).serialize(), //Form variables
             success: function(response) {
                 // var objs = $.parseJSON(response);
 
@@ -166,7 +176,7 @@ function draftBlog(){
    $(".draft-blog").empty().append(draft);
    $("#fCreateBlog").submit();
 }
-function editDraftBlog(){
+function draftEditBlog(){
     var draft = '<input type="hidden" name="isDraft" value="1">';
    $(".draft-blog").empty().append(draft);
   $("#fEditBlog").submit();

@@ -389,6 +389,7 @@ app.controller('blogController', function (blogService,$scope, $http, $timeout,c
     };
 
     $scope.deleteBlog = function(blog){
+        console.log(blog);
         $scope.disabled_modal = true;
         if(blog){
             blogService.deleteBlog(angular.toJson(blog),function(data){

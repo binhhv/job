@@ -34,7 +34,7 @@
 				<div class="content-search-detail-box">
 
 					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
-					    <input type="text" class="form-control" name="key-word" id="key-word" placeholder="Từ khóa" style="height: 39px;">
+					    <input type="text" class="form-control" name="key-word" id="key-word" placeholder="<?php echo lang('s_keyword'); ?>" style="height: 39px;">
 					  </div>
 					  <div class="form-group col-sm-6 col-md-6 col-xs-12">
 					   	<select class="fomr-control" name="province" id="province">

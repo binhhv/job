@@ -86,9 +86,9 @@
 			<div class="col-sm-12">
 				<div class="row contact-map">
 
-						<div class="col-sm-12"><strong>allSHIGOTO</strong></div>
+						<div class="col-sm-12"><strong><?php echo lang('ct_title_contact') ?></strong></div>
 						<div class="col-sm-12"><i class="fa fa-home"></i>&nbsp;<?php echo lang('ct_address'); ?> : Số 5, Lê quang định, phường Thắng nhất , TP Vũng Tàu</div>
-						<div class="col-sm-12"><i class="fa fa-phone"></i>&nbsp;xxxxxxx</div>
+						<div class="col-sm-12"><i class="fa fa-phone"></i>&nbsp;01212 049 149</div>
 						<div class="col-sm-12"><i class="fa fa-envelope"></i> &nbsp;contact@allshigoto.com</div>
 						<div class="col-sm-12 map-box">
 							<div id="map"></div>

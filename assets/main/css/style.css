@@ -1105,6 +1105,7 @@ h5.jobseeker-title {
   font-weight: 400;
   width: 210px;
   text-align: center;
+  min-width: 250px;
 }
 
 .background-color-1 {
@@ -1172,7 +1173,7 @@ h5.employer-title {
 }
 
 .employer-padding-left {
-  padding-left: 100px !important;
+  padding-left: 0px !important;
 }
 
 .image-employer-box {
@@ -3357,6 +3358,10 @@ table#tableStoreResume tr.bg-even {
   margin: -5px -1px 0 -1px !important;
 }
 
+.blog-content {
+  word-wrap: break-word;
+}
+
 .blog-category-image {
   width: 100px;
   height: 75px;
@@ -3439,4 +3444,57 @@ table#tableStoreResume tr.bg-even {
      -moz-box-shadow: -1px -1px 2px #004977;
   -webkit-box-shadow: -1px -1px 2px #004977;
           box-shadow: -1px -1px 2px #004977;
+}
+
+/*FIX 29.11.2015*/
+
+/*btn fix facebook*/
+
+.fix-facebook {
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+  margin: 0 !important;
+}
+
+.fix-link-facebook {
+  height: 32px;
+}
+
+.f-20 {
+  font-size: 20px;
+}
+
+.sp-facebook {
+  background-color: #3b5998;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  display: block;
+  font-size: 30px;
+}
+
+.sp-youtube {
+  background-color: #e62117;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  display: block;
+  font-size: 20px;
+  margin-top: 40px;
+  line-height: 40px;
+}
+
+.social-position {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  /*background: whiteSmoke;*/
+  font-weight: bold;
+  text-decoration: none;
+  position: fixed;
+  top: 150px;
+  right: 0px;
+  display: none;
+  z-index: 99999;
+  display: inline-block;
 }

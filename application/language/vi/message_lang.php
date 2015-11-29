@@ -229,7 +229,7 @@ $lang['nj_title'] = 'VIỆC LÀM HOT';
 #JOBSEEKER BOX HOME
 $lang['jobseeker_title'] = "DÀNH CHO NGƯỜI TÌM VIỆC";
 $lang['jobseeker_register'] = "Đăng ký tài khoản";
-$lang['jobseeker_create_cv'] = "Nộp hồ sơ";
+$lang['jobseeker_create_cv'] = "GỬI CV ứng tuyển ngay"; //"""Nộp hồ sơ";
 $lang['jobseeker_create_cv_online'] = "Tạo hồ sơ ứng tuyển";
 #EMPLOYER BOX HOME
 $lang['employer_title'] = "DÀNH CHO NHÀ TUYỂN DỤNG";
@@ -255,7 +255,7 @@ $lang['lg_remember'] = 'Ghi nhớ tài khoản';
 #POPUP GET NEWS
 $lang['pnew_title_1'] = 'Bạn muốn nhận tin tuyển dụng từ chúng tôi qua email ?';
 $lang['pnew_title_2'] = 'Hãy vui lòng để lại email nhé.';
-$lang['pnew_require'] = 'Vui lòng điền đầy đủ các trường.';
+$lang['pnew_require'] = 'Vui lòng điền đầy đủ các mục thông tin bắt buộc dưới đây. ';
 #TERM PAGe
 $lang['tp_title'] = 'Thỏa thuận sử dụng';
 #JOB CONTENT
@@ -385,8 +385,8 @@ $lang['em_no_rec_manager'] = 'KHÔNG CÓ TIN TUYỂN DỤNG NÀO';
 $lang['em_ms_no_save_resume'] = 'Chưa có hồ sơ nào được lưu';
 #ABOUT US
 $lang['ab_title'] = 'ALLSHIGOTO- CỘNG ĐỒNG NHÂN SỰ TIẾNG NHẬT';
-$lang['ab_introduce'] = 'Bắt đầu bằng nhận thức rõ những khó khăn trong khâu tìm việc của các sinh viên vừa ra trường, và dựa trên mong muốn tạo ra 1 cầu nối NHẬT- VIỆT hay nói ngắn gọn hơn là 1 cộng đồng nhân sự tiếng Nhật giữa người tìm việc và nhà tuyển dụng. Cũng như là phát triển nhịp gạch nối mở rộng  trang facebook Tuyển Dụng Nhân Sự Tiếng Nhật ở Việt Nam (www.facebook.com/japanese.job) để ngày càng đáp ứng nhu cầu, nguyện vọng của các thành viên trên trang. Ngày 1/7/2015, chúng tôi đã đi đến quyết định thành lập trang website www.allshigoto.com. Đây là thể được xem là bước ngoặt đánh dấu sự chuyển mình sau hơn ba năm kể từ năm 2012- năm bắt đầu hoạt động của trang facebook Tuyển Dụng Nhân Sự Tiếng Nhật ở Việt Nam, mở ra 1 kỷ nguyên mới cho chúng tôi cũng như các bạn đã, đang và sẽ song hành gắn bó cùng chúng tôi trong những chặng đường sắp tới.';
-$lang['ab_for_jobseeker'] = 'Đối với ứng viên';
+$lang['ab_introduce'] = 'Bắt đầu bằng nhận thức rõ những khó khăn trong khâu tìm việc của các sinh viên vừa ra trường, và dựa trên mong muốn tạo ra 1 cầu nối NHẬT- VIỆT hay nói ngắn gọn hơn là 1 cộng đồng nhân sự tiếng Nhật giữa người tìm việc và nhà tuyển dụng. Cũng như là phát triển nhịp gạch nối mở rộng trang facebook Tuyển Dụng Nhân Sự Tiếng Nhật ở Việt Nam (www.facebook.com/japanese.job) để ngày càng đáp ứng nhu cầu, nguyện vọng của các thành viên trên trang. Ngày 1/7/2015, chúng tôi đã đi đến quyết định thành lập trang website www.allshigoto.com. Đây được xem là bước ngoặt đánh dấu sự chuyển mình sau hơn ba năm kể từ năm 2012- năm bắt đầu hoạt động của trang facebook Tuyển Dụng Nhân Sự Tiếng Nhật ở Việt Nam, mở ra 1 kỷ nguyên mới cho chúng tôi cũng như các bạn đã, đang và sẽ song hành gắn bó cùng chúng tôi trong những chặng đường sắp tới.'; //'Bắt đầu bằng nhận thức rõ những khó khăn trong khâu tìm việc của các sinh viên vừa ra trường, và dựa trên mong muốn tạo ra 1 cầu nối NHẬT- VIỆT hay nói ngắn gọn hơn là 1 cộng đồng nhân sự tiếng Nhật giữa người tìm việc và nhà tuyển dụng. Cũng như là phát triển nhịp gạch nối mở rộng  trang facebook Tuyển Dụng Nhân Sự Tiếng Nhật ở Việt Nam (www.facebook.com/japanese.job) để ngày càng đáp ứng nhu cầu, nguyện vọng của các thành viên trên trang. Ngày 1/7/2015, chúng tôi đã đi đến quyết định thành lập trang website www.allshigoto.com. Đây là thể được xem là bước ngoặt đánh dấu sự chuyển mình sau hơn ba năm kể từ năm 2012- năm bắt đầu hoạt động của trang facebook Tuyển Dụng Nhân Sự Tiếng Nhật ở Việt Nam, mở ra 1 kỷ nguyên mới cho chúng tôi cũng như các bạn đã, đang và sẽ song hành gắn bó cùng chúng tôi trong những chặng đường sắp tới.';
+$lang['ab_for_jobseeker'] = 'Đối với người tìm việc'; //'Đối với ứng viên';
 $lang['abj_parent_item'] = 'Chúng tôi sẽ nhận các sơ yếu lí lịch (gọi tắt là CV) kèm nguyện vọng công việc từ ứng viên, tiến hành kiểm duyệt, lọc hồ sơ và gửi vào ngân hàng dữ liệu.';
 $lang['abj_item_1'] = 'Chúng tôi không đóng vai trò của công ty nhân sự nên sẽ không thay bạn CHỌN LỰA mà sẽ sát cánh cùng bạn trong công việc HỖ TRỢ- TƯ VẤN nhằm đảm bảo bạn sẽ LỰA CHỌN được công việc phù hợp nhất tại thời điểm đó.';
 $lang['abj_item_2'] = 'Chúng tôi hoàn toàn làm việc theo phong cách CHUYÊN NGHIỆP đảm bảo bạn sẽ có được sự TƯ VẤN và HỖ TRỢ nhiệt tình từ đội ngũ TƯ VẤN viên của ALLSHIGOTO.';
@@ -405,7 +405,7 @@ $lang['abw_1_item_1'] = 'Lấy hiệu quả làm cam kết cao nhất.';
 $lang['abw_1_item_2'] = 'Lấy uy tín làm nền tảng vững chắc nhất.';
 $lang['abw_1_item_3'] = 'Lấy trách nhiệm, hợp tác, đãi ngộ làm phương châm hoạt động.';
 $lang['abw_1_item_4'] = 'Lấy tốc độ và sự khác biệt làm lợi thế trong cạnh tranh.';
-$lang['abw_1_content_item'] = 'ALLSHIGOTO được xây dựng bởi một đội ngũ dày dạn kinh nghiệm, năng lực cao, tiếp thu và sáng tạo theo phong cách làm việc chuyên nghiệp- nhanh chóng- hiệu quả của người Nhật. Đến với ALLSHIGOTO cũng là đến với môi trường hợp tác mang tính tốc độ, uy tin. Chúng tôi tin rằng chúng tôi sẽ là mảnh kết nối thích hợp cho thành công của bạn trên con đường tương lai.';
+$lang['abw_1_content_item'] = 'ALLSHIGOTO được xây dựng bởi một đội ngũ dày dạn kinh nghiệm, năng lực cao, tiếp thu và sáng tạo theo phong cách làm việc chuyên nghiệp- nhanh chóng- hiệu quả của người Nhật. Đến với ALLSHIGOTO cũng là đến với môi trường hợp tác mang tính tốc độ, uy tín. Chúng tôi tin rằng chúng tôi sẽ là mảnh kết nối thích hợp cho thành công của bạn trên con đường tương lai.'; //'ALLSHIGOTO được xây dựng bởi một đội ngũ dày dạn kinh nghiệm, năng lực cao, tiếp thu và sáng tạo theo phong cách làm việc chuyên nghiệp- nhanh chóng- hiệu quả của người Nhật. Đến với ALLSHIGOTO cũng là đến với môi trường hợp tác mang tính tốc độ, uy tin. Chúng tôi tin rằng chúng tôi sẽ là mảnh kết nối thích hợp cho thành công của bạn trên con đường tương lai.';
 $lang['abw_2_item_1'] = 'Cam kết đem lại sự hài lòng cho khách hàng. ';
 $lang['abw_2_item_2'] = 'Đảm bảo mang lại chất lượng tối ưu cho khách hàng.';
 $lang['abw_2_item_3'] = 'Chất lượng của việc hợp tác luôn là mục tiêu của ALLSHIGOTO.';
@@ -461,6 +461,7 @@ $lang['term_3_p_13_2'] = 'Khi bạn tiết lộ thông tin đăng nhập cho m�
 $lang['term_3_p_13_3'] = 'Khi bạn quyết định/thỏa thuận với bên thứ ba khi sử dụng website ALLSHIGOTO phát sinh vấn đề mẫu thuẫn tranh chấp…';
 $lang['term_3_p_13_4'] = 'Khi bạn bị thiệt hại nào đó do việc sử dụng bất kì liên kết nào khác ngoài website ALLSHIGOTO. ';
 $lang['term_end'] = 'Bản thỏa thuận này sẽ được quản lý và thực thi theo Quy Định Pháp Luật. Bản thỏa thuận này dành riêng cho bạn và ALLSHIGOTO, bạn không thể chuyển quyền và nghĩa vụ của bạn cho bất kỳ ai. Khi bạn truy cập và sử dụng dịch vụ từ ALLSHIGOTO, mặc nhiên xem như bạn đã đồng ý và ràng buộc với điều khoản sử dụng này.';
+
 #COMMON
 $lang['m_close'] = 'Đóng';
 $lang['m_default_title_page'] = 'Tuyển dụng nhân sự tiếng Nhật';
@@ -531,4 +532,64 @@ $lang['register_facebook'] = 'Đăng ký bằng Facebook';
 $lang['m_blog'] = 'Blog';
 $lang['m_placeholder_email'] = 'Vui lòng nhập địa chỉ email';
 $lang['m_title_forgot_password'] = 'QUÊN MẬT KHẨU';
+$lang['m_title_forgot_password_lower'] = 'Quên mật khẩu';
 $lang['m_title_change_forgot_password'] = 'THAY ĐỔI MẬT KHẨU';
+$lang['m_title_check_email_cpass'] = 'Vui lòng kiểm tra email để lấy lại mât khẩu. Nhấn vào <a href=\'"%s"\'>ĐÂY</a> để về trang chủ.';
+$lang['m_title_token_exp'] = 'Token đã hết hạn sử dụng. Nhấn vào <a href=\'"%s"\'>ĐÂY</a> để về trang chủ.';
+$lang['m_title_change_pass_success'] = ' Bạn đã đổi mật khẩu thành công. Nhấn vào <a href="\'"%s"login\'>ĐÂY </a> để đăng nhập vào website.';
+$lang['m_read_more'] = 'Đọc tiếp';
+#BLOG
+$lang['blog_title_current'] = 'Bài viết liên quan';
+$lang['blog_created_at'] = 'Ngày đăng';
+$lang['blog_no_blog'] = 'Hiện chưa có blog nào . Bạn vui lòng quay lại sau.';
+
+#29.11.2015
+$lang['m_title_require_create_rec'] = 'Vui lòng đăng nhập hoặc đăng ký tài khoản nhà tuyển dụng để thực hiện chức năng này.';
+$lang['m_sign_term'] = 'Ban quản trị website ALLSHIGOTO ';
+$lang['ct_title_contact'] = 'ALLSHIGOTO - CỘNG ĐỒNG NHÂN SỰ TiẾNG NHẬT Ở ViỆT NAM ';
+$lang['m_title_default_page'] = 'Tuyển dụng nhân sự tiếng Nhật';
+$lang['sp_intro_n'] = 'Chào bạn.<br>Mình có thể giúp gì cho bạn?<br>Vui lòng để lại tên, số điện thoại để bên mình có thể trao đổi trực tiếp với bạn nếu cần nhé.';
+#SERVICE
+$lang['sv_object'] = 'Đối tượng';
+$lang['sv_support'] = 'Hỗ trợ';
+$lang['sv_detail'] = 'Chi tiết';
+$lang['sv_apply'] = 'Ứng tuyển ngay';
+$lang['sv_contact'] = 'Liên hệ';
+$lang['sv_jobseeker'] = 'Dành cho người tìm việc';
+$lang['sv_jobseeker_1'] = 'Hỗ trợ ứng viên.';
+$lang['sv_jobseeker_1_intro'] = 'Hỗ trợ tư vấn HOÀN TOÀN MIỄN PHÍ nhằm đảm bảo các bạn ứng viên sẽ LỰA CHỌN được công việc phù hợp nhất tại thời điểm đó.';
+$lang['sv_jobseeker_1_ob_1'] = 'Tất cả các bạn đã, đang và sẽ học tiếng Nhật có dự định làm việc cho doanh nghiệp Nhật.';
+$lang['sv_jobseeker_2'] = 'Chuyển tiếp thông tin ứng viên theo yêu cầu của ứng viên.';
+$lang['sv_jobseeker_2_intro'] = 'ALLSHIGOTO sẽ nhận các sơ yếu lí lịch (gọi tắt là CV) kèm nguyện vọng công việc từ ứng viên, tiến hành kiểm duyệt, lọc hồ sơ và gửi vào ngân hàng dữ liệu.';
+$lang['sv_jobseeker_2_ob_1'] = 'Tất cả các bạn đã, đang và sẽ học tiếng Nhật có nhu cầu làm việc cho doanh nghiệp Nhật.';
+$lang['sv_employer'] = 'Dành cho nhà tuyển dụng.';
+$lang['sv_employer_1'] = 'Đăng tin quảng cáo, cam kết số lượng sơ yếu lí lịch (gọi tắt là CV) gửi về cho nhà tuyển dụng.';
+$lang['sv_employer_1_intro'] = 'Đăng tin, chạy quảng cáo để thu hút thành viên xem tin và cam kết sẽ trả số lượng CV ứng viên (số lượng cam kết sẽ tùy theo nội dung tin tuyển mà đưa ra).';
+$lang['sv_employer_1_ob_1'] = 'Dành cho các nhà tuyển dụng muốn đăng tuyển gấp, hiệu quả cao trong thời gian ngắn.';
+$lang['sv_employer_1_ob_2'] = 'Dành cho các nhà tuyển dụng muốn mở rộng lượng người xem thông tin tuyển dụng.';
+$lang['sv_employer_1_ob_3'] = 'Dành cho các nhà tuyển dụng không có nhiều thời gian để thực hiện từng bước theo flow chart tuyển dụng.';
+$lang['sv_employer_2'] = 'Đăng tin và không chạy quảng cáo cũng như không cam kết số lượng CV ứng viên.';
+$lang['sv_employer_2_intro'] = 'Đăng tin và không chạy quảng cáo cũng như không cam kết số lượng CV ứng viên (Loại này phụ thuộc theo yêu cầu của nhà tuyển dụng sẽ tách thành gói giới hạn và gói không giới hạn số lượng tin đăng trong 1 ngày).';
+$lang['sv_employer_2_ob_1'] = 'Dành cho các nhà HR.';
+$lang['sv_employer_2_ob_2'] = 'Dành cho nhà tuyển dụng muốn đăng tuyển trong thời gian dài với mức chi phí thấp.';
+$lang['sv_employer_3'] = 'Đăng tin MIỄN PHÍ và không chạy quảng cáo cũng như không cam kết số lượng CV ứng viên.';
+$lang['sv_employer_3_intro'] = 'Đăng tin và không chạy quảng cáo cũng như không cam kết số lượng CV ứng viên.  (Loại này sẽ duyệt theo kiểu 1 tin tuyển dụng/ngày/nhà tuyển dụng).';
+$lang['sv_employer_3_ob_1'] = 'Dành cho tất cả các nhà tuyển dụng muốn thử nghiệp hiệu quả của việc đăng tin trên ALLSHIGOTO.';
+#ADWORDS
+$lang['ad_intro'] = 'Cho đến thời điểm tháng 10/2015, ALLSHIGOTO là một trong những cộng đồng nhân sự TIẾNG NHẬT lớn nhất ở VIỆT NAM. Quy tụ hơn 90,000 thành viên có năng lực tiếng Nhật từ N5 đến N1 và thu hút hơn 3,000 người xem mỗi ngày trên các trang mạng cộng đồng Facebook và website. Chính vì thế, ALLSHIGOTO sẽ trở thành kênh truyền thông quảng cáo hấp dẫn và hiệu quả đối với khách hàng.';
+$lang['ad_why_chose'] = ' Vì sao bạn phải quảng cáo trên ALLSHIGOTO?';
+$lang['ad_item_1'] = 'Nhắm đến đúng khách hàng mục tiêu';
+$lang['ad_item_1_detail'] = 'Dựa trên nền tảng trang cộng đồng nhân sự lớn nhất ở Việt Nam thu hút hàng chục ngàn thành viên nắm giữ trình độ tiếng Nhật, việc thực hiện quảng cáo trên ALLSHIGOTO sẽ đưa thông điệp của bạn hiển thị đến đúng đối tượng ứng viên tiếng Nhật/các bạn đã, đang và sẽ học tiếng Nhật ngay khi họ tìm kiếm thông tin về dịch vụ mà doanh nghiệp/cá nhân bạn cung cấp.';
+$lang['ad_item_2'] = 'Tìm kiếm khách hàng mục tiêu';
+$lang['ad_item_2_detail'] = 'Thông qua kênh quảng cáo trên ALLSHIGOTO, các đối tượng khách hàng mục tiêu của bạn sẽ biết đến doanh nghiệp/cá nhân bạn nhiều hơn và qua đó, thiết lập các mối quan hệ hợp tác như ứng tuyển, tuyển dụng, đăng ký khóa học, giao lưu, chia sẻ…';
+$lang['ad_item_3'] = 'Tăng cường hình ảnh quảng bá tích cực cho doanh nghiệp/cá nhân';
+$lang['ad_item_3_detail'] = 'ALLSHIGOTO sẽ ngày càng phát triển mở rộng trên nhiều phương tiện truyền thông. Điều đó cũng đồng nghĩa là hình ảnh quảng bá của doanh nghiệp/cá nhân của bạn sẽ được nhiều kênh thông tin khác theo dõi, đặt mối quan hệ cộng tác kinh doanh với bạn.';
+$lang['ad_item_4'] = 'Xây dựng thương hiệu';
+$lang['ad_item_4_detail'] = 'Quảng cáo trên ALLSHIGOTO sẽ góp phần xây dựng thêm thương hiệu cho dịch vụ sản phẩm mà doanh nghiệp/cá nhân bạn cung cấp.';
+$lang['ad_item_5'] = 'Chi phí rẻ, hiệu quả cao';
+$lang['ad_item_5_detail'] = 'Chi phí rẻ, cạnh trang và tương thích thị trường sẽ mang lại cho các bạn hiệu quả tương tác cao kèm với lợi nhuận lớn.';
+$lang['ad_title_cost_adwords'] = 'Biểu phí quảng cáo của ALLSHIGOTO';
+$lang['ad_contact'] = 'Liên hệ';
+$lang['ad_increase_time_use'] = 'Tặng thêm thời gian sử dụng';
+$lang['ad_increase_position_use'] = 'Tặng tin đăng tuyển ở vị trí highlight';
+$lang['ad_view_per_month'] = 'Số lượt xem/tháng';

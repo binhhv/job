@@ -1,10 +1,15 @@
-
+<?php $loginUrl = $this->globals->getLoginUrl();?>
 				<div class="container">
 					<div class="row top-header">
-					<?php if (!isset($user)) {?>
+					<?php if (!isset($user)) {
+	?>
 						<div class="col-sm-6 text-center">
 							<a href="#" data-toggle="modal" data-target="#modalTypeRegister"><?php echo lang('hd_register'); ?></a> |
-							<a href="<?php echo base_url('login'); ?>?url=<?php echo urlencode(current_url()); ?>"><?php echo lang('m_login'); ?></a>
+							<a href="<?php echo base_url('login'); ?>?url=<?php echo urlencode(current_url()); ?>"><?php echo lang('m_login'); ?></a> |
+							<a class="btn fix-facebook btn-xs btn-social btn-facebook" href="<?php if (isset($loginUrl)) {echo $loginUrl;}
+	?>">
+              <span class="fa fa-facebook"></span> <?php echo lang('login_facebook'); ?>
+            </a>
 						</div>
 						<?php } else {
 	?>
@@ -147,10 +152,13 @@ if (isset($logoJson)) {
 	echo 'active-menu';
 }
 ?> register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="<?php echo base_url('contact'); ?>"><?php echo lang('m_contact'); ?></a></li>
-<?php if (!isset($user)) {?>
+<?php if (!isset($user)) {
+	?>
 
 							<li  id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="#" data-toggle="modal" data-target="#modalTypeRegister"><?php echo lang('hd_register'); ?></a></li>
 	<li id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="<?php echo base_url('login'); ?>?url=<?php echo urlencode(current_url()); ?>"><?php echo lang('m_login'); ?></a></li>
+	<li id="register-modal" class=" reponsive-menu register menu-item menu-item-type-post_type menu-item-object-page menu-item-1945"><a href="<?php if (isset($loginUrl)) {echo $loginUrl;}
+	?>"><?php echo lang('login_facebook'); ?></a></li>
 
 						<?php } else {
 	?>

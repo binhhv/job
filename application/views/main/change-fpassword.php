@@ -52,13 +52,13 @@
         </form>
 <?php } else {?>
  <div class="col-sm-12 forgot-success" style="padding:20px;">
-            Token đã hết hạn sử dụng. Nhấn vào <a href="<?php echo base_url() ?>">ĐÂY</a> để về trang chủ.
+            <?php echo str_replace('"%s"', base_url(), lang('m_title_token_exp')); ?>
         </div>
 <?php }
 ?>
 
   <div class="col-sm-12 change-fpass-success hide" style="padding:20px">
-  Bạn đã đổi mật khẩu thành công. Nhấn vào <a href="<?php echo base_url('login') ?>">ĐÂY </a> để đăng nhập vào website.
+ <?php echo str_replace('"%s"', base_url(), lang('m_title_change_pass_success')); ?>
   </div>
 
         </div>

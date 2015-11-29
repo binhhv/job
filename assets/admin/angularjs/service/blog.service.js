@@ -44,6 +44,7 @@ app.factory('blogService' ,function ($http,$q,$timeout){
  		return $http.get(pathWebsite + 'admin/blog/get-blog').success(callback);
  	}
  	_blogService.deleteBlog = function(blog,callback){
+ 		console.log(blog);
  		var objectBlog = JSON.parse(blog);
 			var csrf_name = objectBlog['csrf']['name'];
 			var csrf_hash = objectBlog['csrf']['hash'];

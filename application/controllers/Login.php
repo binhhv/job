@@ -15,8 +15,9 @@ class Login extends CI_Controller {
 		$this->load->library(array('form_validation', 'session'));
 		$this->load->model('DBUtil');
 		$this->load->model('Utilmodel', 'util');
-		$this->load->model('Account/Account_model', 'account');
+		$this->load->model('account/Account_model', 'account');
 		$this->load->model('admin/Mail_model', 'mail');
+		//$this->load->model('Facebook_model', 'fbModel');
 		$this->lang->load('message', 'vi');
 		// if (!isset($this->session->userdata['user'])) {
 		// 	$this->session->set_userdata('last_page', current_url());
@@ -62,17 +63,18 @@ class Login extends CI_Controller {
 		// }
 	}
 	function loadViewLogin($error = null) {
-		$fb = new Facebook\Facebook([
-			'app_id' => APP_ID,
-			'app_secret' => SECRET_KEY,
-			'default_graph_version' => 'v2.5',
-			//'default_access_token' => '{access-token}', // optional
-		]);
+		// $fb = new Facebook\Facebook([
+		// 	'app_id' => APP_ID,
+		// 	'app_secret' => SECRET_KEY,
+		// 	'default_graph_version' => 'v2.5',
+		// 	//'default_access_token' => '{access-token}', // optional
+		// ]);
 
-		$helper = $fb->getRedirectLoginHelper();
-		$permissions = ['email', 'user_likes']; // optional
-		$loginUrl = $helper->getLoginUrl(base_url('login-callback'), $permissions);
+		// $helper = $fb->getRedirectLoginHelper();
+		// $permissions = ['email', 'user_likes']; // optional
+		// $loginUrl = $helper->getLoginUrl(base_url('login-callback'), $permissions);
 
+		//$loginUrl = $this->fbModel->getLoginUrl();
 		$head = $this->load->view('main/head', array('titlePage' => 'JOB7VN Group|Contact'), TRUE);
 		$header = $this->load->view('main/header', array(
 			'logo' => 'img/header/allSHIGOTO.png',
@@ -87,7 +89,7 @@ class Login extends CI_Controller {
 			'name' => $this->security->get_csrf_token_name(),
 			'hash' => $this->security->get_csrf_hash(),
 		);
-		$content = $this->load->view('main/login', array('errors' => $error, 'csrf' => $csrf, 'loginUrl' => $loginUrl), TRUE);
+		$content = $this->load->view('main/login', array('errors' => $error, 'csrf' => $csrf), TRUE);
 		$footer = $this->load->view('main/footer', array(), TRUE);
 		$this->load->view('main/layout', array('isGray' => true, 'head' => $head, 'header' => $header, 'content' => $content, 'footer' => $footer));
 
@@ -329,11 +331,13 @@ class Login extends CI_Controller {
 			$accessToken = $helper->getAccessToken();
 		} catch (Facebook\Exceptions\FacebookResponseException $e) {
 			// When Graph returns an error
-			echo 'Graph returned an error: ' . $e->getMessage();
+			//echo 'Graph returned an error: ' . $e->getMessage();
+			redirect(base_url(), 'refresh');
 			exit;
 		} catch (Facebook\Exceptions\FacebookSDKException $e) {
 			// When validation fails or other local issues
-			echo 'Facebook SDK returned an error: ' . $e->getMessage();
+			//echo 'Facebook SDK returned an error: ' . $e->getMessage();
+			redirect(base_url(), 'refresh');
 			exit;
 		}
 

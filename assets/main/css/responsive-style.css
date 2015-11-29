@@ -24,6 +24,10 @@
   .slide-job-xs {
     display: none;
   }
+
+  .employer-padding-left {
+    padding-left: 20px !important;
+  }
 }
 
 @media (min-width: 992px) {
@@ -67,6 +71,10 @@
 
   .fb-xs {
     display: none;
+  }
+
+  .employer-padding-left {
+    padding-left: 280px !important;
   }
 }
 
@@ -138,8 +146,7 @@
     padding-bottom: 10px;
   }
 
-  .btn-employer {
-    margin: 0 auto;
+  .btn-employer {/*margin: 0 auto;*/
     display: block;
   }
 
@@ -173,8 +180,7 @@
     padding-left: 15px !important;
   }
 
-  .employer-title-box {
-    margin: 0 auto;
+  .employer-title-box {/*margin: 0 auto;*/
   }
 
   .image-employer-box {

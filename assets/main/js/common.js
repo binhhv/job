@@ -28,8 +28,10 @@ $(function(){
 	});
 	$(".btn-create-recruit-not-login").on('click',function(){
 		//window.location.href = base_website + 'job/search/all';
+		$("#modal-login-create-recruit").modal('show');
 	});
 	$(".btn-create-recruit-login").on('click',function(){
-		//window.location.href = base_website + 'job/search/all';
+		window.location.href = base_website + 'employer/create-recruitment';
+	
 	});
 });

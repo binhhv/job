@@ -28,7 +28,7 @@ class Jobseeker_register extends CI_Controller {
 		$loginUrl = $helper->getLoginUrl(base_url('login-callback'), $permissions);
 
 		$user = (isset($this->session->userdata['user'])) ? $this->session->userdata['user'] : null;
-		$head = $this->load->view('main/head', array('title' => 'Đăng ký tài khoản'), TRUE);
+		$head = $this->load->view('main/head', array('title' => $this->lang->line('m_title_jobseeker_register')), TRUE);
 		$header = $this->load->view('main/header', array('user' => $user, 'showTitle' => true,
 		), TRUE);
 

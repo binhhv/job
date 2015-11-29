@@ -89,8 +89,23 @@
 57. thay doi mat khau admin . mat khau log delete.
 58. chuc nang quen mat khau.
 59. login facebook (done)
-60. tao blog.
-61. double chat trong suport chat.
+60. tao blog. (done)
+61. double chat trong suport chat. (penđing)
+62. thong tin lien he cua nha tuyen dung trong chi tiet tin tuyen dung chi user moi thay. anonymus k tahy. (done)
+63. tieu de website chua co ngon ngu. (done)
+64. them ngon ngu trang quang cao va service
+65. chat them vao : (done)
+Chào bạn.
+Mình có thể giúp gì cho bạn?
+Vui lòng để lại tên, số điện thoại để bên mình có thể trao đổi trực tiếp với bạn nếu cần nhé.
+66. lam lai scroll modal .
+
+
+AuthType Basic
+AuthName "restricted area"
+AuthUserFile C:/xampp/htdocs/job/.htpasswd
+require valid-user
+
 
 
 

@@ -53,7 +53,8 @@
 												<h1 class="title-detail-job"><?php echo $jobDetail->rec_title; ?></h1>
 												<span class="employer-name-dj"><?php echo $jobDetail->employer_name; ?></span>
 												<span class="employer-address-dj"><?php echo $jobDetail->employer_address; ?></span>
-												<span><button class="btn btn-md btn-primary" data-toggle="modal" data-target="#modalContactEmployer"><i class="fa fa-paper-plane"></i> <?php echo lang('job_title_contact_employer'); ?></button></span>
+												<?php if (isset($user)) {?><span><button class="btn btn-md btn-primary" data-toggle="modal" data-target="#modalContactEmployer"><i class="fa fa-paper-plane"></i> <?php echo lang('job_title_contact_employer'); ?></button></span><?php }
+	?>
 											</div>
 
 										</div>

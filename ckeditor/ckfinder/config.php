@@ -61,7 +61,7 @@ ATTENTION: The trailing slash is required.
  */
 $protocol = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
 $base_url = $protocol . "://" . $_SERVER['HTTP_HOST'];
-$baseUrl = $base_url . '/job/uploads/uploads';
+$baseUrl = $base_url . '/uploads/uploads';
 $enabled = true;
 /*
 $baseDir : the path to the local directory (in the server) which points to the
